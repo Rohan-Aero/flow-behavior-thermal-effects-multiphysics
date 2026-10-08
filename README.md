@@ -4,7 +4,7 @@ This repository holds the files for a multiphysics study of a tube with internal
 
 The main work was carried out as an internship project from February to May 2025. The original internship project files were not retained. The analysis was carried out after the internship, from the documented project scope, as stated in the report's declaration. The LS-DYNA study is a follow-on extension carried out after the internship. It was not part of the internship.
 
-**Status:** staging copy for review. It has not been published. No open-source licence is granted. Third-party items and their terms are listed in [NOTICE.md](NOTICE.md). The publication decision is in [GITHUB_CONTENT_AUDIT.md](GITHUB_CONTENT_AUDIT.md).
+Status: Public project repository. The internship work covers February–May 2025, while the documented analysis was carried out afterward from the retained project scope. The LS-DYNA nonlinear buckling study is a follow-on technical extension and was not part of the internship. No open-source licence is granted. Third-party items and attribution information are listed in NOTICE.md
 
 ## Geometry and conditions
 
