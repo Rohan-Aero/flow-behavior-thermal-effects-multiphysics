@@ -80,7 +80,3 @@ Solver databases, binary result files, aborted and killed solver runs, licence-p
 ## Reproducing the analysis
 
 Reproducing the analysis needs ANSYS and LS-DYNA with valid licences. Scripts and input files that referred to the original working folder now use placeholders such as `<PROJECT_ROOT>`, `<OUTPUT_ROOT>` and `<SCRATCH_ROOT>`. Set these to local paths before running anything. This README does not claim that the analyses can be re-run from this copy.
-
-## Licence and third-party material
-
-No open-source licence is granted. Before publication the owner needs to decide: whether outputs from ANSYS, Fluent and LS-DYNA produced under student licences may be published, and whether Eleation permits publication of its name and of the internship description. Until those decisions are made, treat the contents as not cleared for publication. The third-party IEEE citation style file is not in this copy; see [NOTICE.md](NOTICE.md) for its source and terms.
