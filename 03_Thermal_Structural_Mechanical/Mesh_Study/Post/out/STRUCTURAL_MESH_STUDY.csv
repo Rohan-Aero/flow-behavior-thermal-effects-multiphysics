@@ -1,0 +1,9 @@
+Mesh,Nodes,Elements,LC1 Stress [MPa],LC1 Deformation [mm],LC2 Stress [MPa],LC2 Deformation [mm],λ1,Critical Buckling Load [kN],Status,LC2 mean axial stress [MPa],LC1 free growth [mm],LC2 pressure effect on max VM [Pa]
+"XC (21x3x76, bias 4)",24171,4788,24.158,1.84437,604.867,0.134887,1.107988,608.22,family level 1 (coarsest),-582.447,1.84091,76.0
+"C (27x4x98, bias 4)",50652,10584,24.0698,1.84432,605.0957,0.134887,1.108034,608.24,family level 2,-582.4399,1.84087,45.0
+"B (36x5x130, bias 4)",108252,23400,24.2822,1.84431,605.1609,0.134884,1.108047,608.25,family level 3 = baseline; SELECTED,-582.4398,1.84086,45.0
+"B_official (36x5x130, bias 4)",108252,23400,24.2822,1.84431,605.1609,0.134884,1.108047,608.25,official 7B/8A solution of the baseline mesh (identity reference for B),-582.4398,1.84086,45.0
+"FR (36x6x130, bias 4)",127080,28080,24.5502,1.84432,605.2204,0.134884,1.10804,608.25,licence-limited fine (through-wall),-582.4431,1.84087,77.0
+"FA (36x5x152, bias 4)",126468,27360,24.5529,1.84431,605.1396,0.134887,1.108048,608.25,licence-limited fine (axial),-582.4392,1.84086,77.0
+"FC (42x5x130, bias 4)",126294,27300,24.2056,1.84432,605.1698,0.134885,1.108041,608.25,licence-limited fine (circumferential),-582.4441,1.84087,77.0
+"IL (36x5x130, bias 8)",108252,23400,24.5105,1.84431,605.1336,0.134885,,,inlet-bias sensitivity (static only),-582.4396,1.84086,

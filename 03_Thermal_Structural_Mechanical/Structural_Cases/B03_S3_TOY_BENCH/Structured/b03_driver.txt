@@ -1,0 +1,28 @@
+2026-09-27 15:09:44  start -b -np 2 -j b03 -i b03_main.inp -o b03_main.out
+2026-09-27 15:12:06  end exit=
+2026-09-27 15:12:06    file b03_0.err 1384
+2026-09-27 15:12:06    file b03_0.log 90
+2026-09-27 15:12:06    file b03_1.err 80
+2026-09-27 15:12:06    file b03_1.out 15460
+2026-09-27 15:12:06    file b03_check_stdout.txt 1733
+2026-09-27 15:12:06    file b03_driver.txt 108
+2026-09-27 15:12:06    file b03_main.inp 3595
+2026-09-27 15:12:06    file b03_main.out 55565
+2026-09-27 15:12:06    file b03_reaction_inlet.txt 21475
+2026-09-27 15:12:06    file s7b_nodal.csv 21802535
+2026-09-27 15:12:06    file s7b_post_snippet.inp 3527
+2026-09-27 15:12:06    file s7b_prrsol.txt 55177
+2026-09-27 15:12:06    file s7b_react.csv 75810
+2026-09-27 15:12:06    file s7b_totals.txt 158
+2026-09-27 15:12:06    file s8a_buckle_snippet.inp 1782
+2026-09-27 15:12:06    file s8a_load_factors.csv 216
+2026-09-27 15:12:06    file s8a_mode1.csv 2483061
+2026-09-27 15:12:06    file s8a_mode2.csv 2483061
+2026-09-27 15:12:06    file s8a_mode3.csv 2483061
+2026-09-27 15:12:06    file s8a_mode4.csv 2483061
+2026-09-27 15:12:06    file s8a_mode5.csv 2483061
+2026-09-27 15:12:06    file s8a_mode6.csv 2483061
+2026-09-27 15:12:06    file s8a_set_list.txt 553
+2026-09-27 15:12:06    file stderr.txt 0
+2026-09-27 15:12:06    file stdout.txt 0
+2026-09-27 15:12:06  driver done

@@ -1,0 +1,171 @@
+{
+ "hashes": {
+  "03_CAD_Geometry\\STEP\\heated_duct.step": {
+   "sha256": "0cef81c6fd57a5dea2372159242734f5b0997ac4da9c64d1396fdc5525b25c3a",
+   "bytes": 9337
+  },
+  "03_CAD_Geometry\\Native_CAD\\heated_duct.scdocx": {
+   "sha256": "6e34b470a60397278d3d0ee0ed1674cc191a6c85566bf02781cc7915f0528b3f",
+   "bytes": 45861
+  },
+  "03_CAD_Geometry\\Geometry_Check\\cad_measurements.json": {
+   "sha256": "60f458263d6dbae3ea25e192c1d785de62fb359b924e401588abf9dcc98f68b4",
+   "bytes": 1791
+  },
+  "07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb": {
+   "sha256": "0c453094bbc9d04c3abeb4aadb802d7e962946c537c7ff5bd3507fb5b3263700",
+   "bytes": 12705453
+  },
+  "07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv": {
+   "sha256": "cb4f3babb38fceb80502a5e9d894ed50b8657aad27fd76ea6d4f2729455e997d",
+   "bytes": 829110
+  },
+  "07_Thermal_Analysis\\Mapping\\Mechanical_Export\\LC2_imported_body_temperature.txt": {
+   "sha256": "da7b7af5e72fb8549f26f5e9e4d45850b219c4f87db74c2078b92c86cb8d09d0",
+   "bytes": 1608128
+  },
+  "07_Thermal_Analysis\\Temperature_Source\\fluent_interface_wall_pressure.csv": {
+   "sha256": "73e7083c64237028eda572b2181b96a975c05b2004b2f0688e9ef8dd265d79f0",
+   "bytes": 414819
+  },
+  "07_Thermal_Analysis\\Validation\\mapping_validation_7A.json": {
+   "sha256": "df3cf63bb4c051afeb37283f7220b0246147bbeb572e40d73dd8f3b703d82f0e",
+   "bytes": 8928
+  },
+  "08_Structural_Analysis\\LC2_Restrained\\Solver_Output\\LC2_solve_input_ds.dat": {
+   "sha256": "51d806783abc26ac2a6f89e47e3a19f079c59acb53d3655a90e21ecf6ae15b09",
+   "bytes": 15527234
+  },
+  "08_Structural_Analysis\\LC2_Restrained\\Solver_Output\\s7b_nodal.csv": {
+   "sha256": "dc650a0c2532296a48e8eda039e682f83e4b072d83f461cf0dfd2d24f33a5864",
+   "bytes": 28578623
+  },
+  "08_Structural_Analysis\\LC2_Restrained\\Solver_Output\\s7b_react.csv": {
+   "sha256": "5afafe8956f42a93604ea161639a4257eff5c24963c6dba3a2fb60acbbb5a71d",
+   "bytes": 184110
+  },
+  "08_Structural_Analysis\\LC1_Free_Expansion\\Solver_Output\\LC1_solve_input_ds.dat": {
+   "sha256": "6e56fe95b1a12195b20d9507cfe6713988aa5971a07ebf01b2b250aa60042326",
+   "bytes": 15526163
+  },
+  "08_Structural_Analysis\\Pressure_Check\\Solver_Output\\LC2P_solve_input_ds.dat": {
+   "sha256": "e56118f559e6e1540c75c002bbb772850eb28ddc941a98324d21e5023023d3b0",
+   "bytes": 15916141
+  },
+  "08_Structural_Analysis\\Loads\\wall_pressure_profile_7A.csv": {
+   "sha256": "8b9326da7f2be5a476b7b70dacf22d537c2984672cb61f94752c6b8c1c7229a5",
+   "bytes": 3424
+  },
+  "08_Structural_Analysis\\Materials\\materials_7A.csv": {
+   "sha256": "593e726c321f5782569100f788e7a2999e217e3e0084fe2641f9c44240ced3a2",
+   "bytes": 2404
+  },
+  "08_Structural_Analysis\\Materials\\MATERIAL_MODEL_7A.md": {
+   "sha256": "a908678349b5c2eae5b72e1bd4b4c395ab4c961c1b2fc383bb682ab0a9785fca",
+   "bytes": 4799
+  },
+  "08_Structural_Analysis\\Boundary_Conditions\\BOUNDARY_CONDITIONS_7A.md": {
+   "sha256": "22c911333e6ee51b161b0ae40d5afdf226f5a812f4807f72eca4f3529ff634ff",
+   "bytes": 6545
+  },
+  "08_Structural_Analysis\\Mesh\\MESH_7A.md": {
+   "sha256": "edac5cfa4da8f37012f1b2de562ef2221209d58c0828fd967eeb44bd208e2cfe",
+   "bytes": 4083
+  },
+  "08_Structural_Analysis\\Mesh\\mesh_stats_7A.json": {
+   "sha256": "8032fd9420b38cc164a9f871c50f53d1e0b7c1dcf7fea806cefb024619dcba13",
+   "bytes": 3265
+  },
+  "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_Linear_Buckling\\Solver_Output\\s8a_mode1.csv": {
+   "sha256": "a5fdc844dddebbda732822334c790d4f6c59e3590d5932009ffcb09001ca2b29",
+   "bytes": 3225771
+  },
+  "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_Linear_Buckling\\Solver_Output\\s8a_mode2.csv": {
+   "sha256": "6cec6fcbb640d6dfc15bc0cabd9dd16bf23b45fcd140832b47f5eac39573dd37",
+   "bytes": 3225771
+  },
+  "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_Linear_Buckling\\Solver_Output\\s8a_load_factors.csv": {
+   "sha256": "a0761e938efc97193d042862afea8c9ddfdd1d8f33fc676c9da0697a654596a3",
+   "bytes": 216
+  },
+  "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_Linear_Buckling\\Solver_Output\\ds.dat": {
+   "sha256": "083afd501aa6ac81730137ac2148883aa4e81e3b7c11126cae8c9d0cfbd88499",
+   "bytes": 5776
+  },
+  "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_prestress_resolve\\Solver_Output\\ds.dat": {
+   "sha256": "ae6069d39dd2194e0bcae324dfbe8492d2eaae7a37d7e779243cc067068dc614",
+   "bytes": 15528174
+  },
+  "08_Structural_Analysis\\Buckling\\fe_modes_8A.json": {
+   "sha256": "2dada9c2edeb3e091f1fdce166b5fe9ebed3053560b90bbcf61c2e60054dba4f",
+   "bytes": 8642
+  },
+  "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md": {
+   "sha256": "5babd2dc621995f436d73ecd1d631f1db453568d42f4d39ed9cfb96de0698003",
+   "bytes": 15685
+  },
+  "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A.wbpj": {
+   "sha256": "9faee1a01bfc0631ac44766d696caa6f4966db5db8a227be54e08ad25ab451ba",
+   "bytes": 118003
+  },
+  "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B.wbpj": {
+   "sha256": "67398cf447b6fc76c1a22cee5c1e0294e92b0952c9c62c27d6951d72bbbeaf3b",
+   "bytes": 89925
+  },
+  "11_Final_Audit\\MASTER_PROJECT_DATA.csv": {
+   "sha256": "727add0a71be79011a96dce517274b26bbc511e835154b30c0cb45fff10722d3",
+   "bytes": 55210
+  }
+ },
+ "n_nodes": 108252,
+ "n_elem_lines": 23400,
+ "n_DISPZEROUZ": 1224,
+ "DISPZEROUZ_z_values": [
+  0.0,
+  0.6
+ ],
+ "n_SOLID_INLET_END": 612,
+ "n_SOLID_OUTLET_END": 612,
+ "n_NS_LC2_HOOP_3NODES_MIDSPAN_OUTER": 3,
+ "n_NS_LC1_SUPPORT_3NODES_INLET_OUTE": 3,
+ "hoop_nodes": {
+  "25862": [
+   -0.01,
+   -0.017321,
+   0.3,
+   -120.0
+  ],
+  "25874": [
+   0.02,
+   0.0,
+   0.3,
+   0.0
+  ],
+  "25886": [
+   -0.01,
+   0.017321,
+   0.3,
+   120.0
+  ]
+ },
+ "n_BF": 108252,
+ "T_min_C": 150.687372,
+ "T_max_C": 289.4076399,
+ "T_min_K": 423.83737199999996,
+ "T_max_K": 562.5576398999999,
+ "z_range": [
+  0.0,
+  0.6
+ ],
+ "r_range": [
+  0.009999999999495836,
+  0.020000000005165684
+ ],
+ "mode1_n_rows": 28296,
+ "mode1_max_lateral": 1.0475668187886982,
+ "mode1_max_lateral_z": 0.6,
+ "mode1_lateral_dir_deg": -17.355,
+ "mode1_max_abs_uz_over_max_lat": 0.10277616479347156,
+ "mode1_midspan_max_lat_over_max": 2.8908427439736182e-05,
+ "mode1_corr_cos_pi_z_over_L": -0.9999877145714362
+}

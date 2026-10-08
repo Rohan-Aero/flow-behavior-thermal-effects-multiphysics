@@ -1,0 +1,56 @@
+=== SECTION 9B-2 WB PARAMETRIC MECHANICAL C00 (RE-ANALYSIS 2026) ===
+---- case C00_PIPELINE_CHECK {'bias': 4.0, 'geometry': None, 'tag': 'C00_PIPELINE_CHECK', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [423.83734130859375, 562.54364013671875], 'source_T_range_K': [423.21115, 562.57678], 'buckling': True, 'cfd_case': 'C00_PIPELINE_CHECK', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb', 'Do': 0.040000000000000001, 'nr': 5, 'csv': '10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\C00_PIPELINE_CHECK\Project\C00_PIPELINE_CHECK.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'C00_PIPELINE_CHECK'}
+OK   ED update 
+OK   rename LC2 Linear Buckling C00_PIPELINE_CHECK 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved C00_PIPELINE_CHECK
+OK   state C00_PIPELINE_CHECK Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state C00_PIPELINE_CHECK Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state C00_PIPELINE_CHECK Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state C00_PIPELINE_CHECK LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC1 Free Expansion/Setup 2 <cell state: OutOfDate: wb2qh_setupcellSim_rr>
+OK   state C00_PIPELINE_CHECK LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Axially Restrained/Setup 3 <cell state: OutOfDate: wb2qh_setupcellSim_rr>
+OK   state C00_PIPELINE_CHECK LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Linear Buckling C00_PIPELINE_CHECK/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Linear Buckling C00_PIPELINE_CHECK/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Linear Buckling C00_PIPELINE_CHECK/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Linear Buckling C00_PIPELINE_CHECK/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Linear Buckling C00_PIPELINE_CHECK/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2 Linear Buckling C00_PIPELINE_CHECK/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C00_PIPELINE_CHECK LC2P Restrained Thermal + Pressure/Setup 4 <cell state: OutOfDate: wb2qh_setupcellSim_rr>
+OK   state C00_PIPELINE_CHECK LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state C00_PIPELINE_CHECK LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state C00_PIPELINE_CHECK CFD solid T (C00_PIPELINE_CHECK)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB PARAMETRIC MECHANICAL C00 DONE ===

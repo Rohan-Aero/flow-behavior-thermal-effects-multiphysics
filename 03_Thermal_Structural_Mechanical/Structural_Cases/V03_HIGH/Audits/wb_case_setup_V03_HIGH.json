@@ -1,0 +1,64 @@
+{
+ "bias": 4.0, 
+ "geometry": null, 
+ "tag": "V03_HIGH", 
+ "external_data_readback": {
+  "after": [
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V03_HIGH\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V03_HIGH\\fluent_solid_node_temperature.csv"
+  ], 
+  "delimiter": [
+   "Comma", 
+   ","
+  ], 
+  "master": [
+   true, 
+   false
+  ], 
+  "ok": true, 
+  "start_line": "2", 
+  "length_units": [
+   "m", 
+   "m"
+  ], 
+  "columns": [
+   [
+    "Node ID", 
+    ""
+   ], 
+   [
+    "Temperature", 
+    "K"
+   ]
+  ], 
+  "before": [
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+  ], 
+  "format": [
+   "Cdb", 
+   "Delimited"
+  ], 
+  "case": "V03_HIGH"
+ }, 
+ "Di": 0.02, 
+ "L": 0.59999999999999998, 
+ "source_node_T_K": [
+  413.88430786132813, 
+  542.0657958984375
+ ], 
+ "source_T_range_K": [
+  413.27658, 
+  542.09778
+ ], 
+ "buckling": true, 
+ "cfd_case": "V03_HIGH", 
+ "nc": 36, 
+ "cdb": "10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_mesh.cdb", 
+ "Do": 0.040000000000000001, 
+ "nr": 5, 
+ "csv": "10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_node_temperature.csv", 
+ "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH.wbpj", 
+ "na": 130, 
+ "pressure": false
+}

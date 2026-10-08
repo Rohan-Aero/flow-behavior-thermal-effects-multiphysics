@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Area-Weighted Average
+         Total Surface Heat Flux              [W/m^2]
+-------------------------------- --------------------
+           fluid_solid_interface                17600
+               heated_outer_wall                 8800
+                ---------------- --------------------
+                             Net            11733.333

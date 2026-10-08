@@ -1,0 +1,72 @@
+=== 9B-2 WB PROBE ===
+saved as probe <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Probe\PROBE_9B2.wbpj
+systems [('Geom', 'Geometry'), ('SYS', 'Mesh'), ('FLU', 'Fluent'), ('SYS 2', 'LC1 Free Expansion'), ('SYS 3', 'LC2 Axially Restrained'), ('SYS 4', 'LC2P Restrained Thermal + Pressure'), ('SYS 1', 'CFD solid T (baseline_medium_final)')]
+DIR  ED setup container ['AddDataFile', 'GetAllParameters', 'GetExternalLoadData', 'GetExternalLoadOutput', 'GetFiles', 'InsertDataFile', 'InsertRegisteredFile', 'InsertSupportFile', 'ModifySupportFile', 'Name', 'RereadDataFiles', 'ScanForFileChanges', 'ToString', 'Type']
+OK   GetExternalLoadData /Setup 1/ExternalLoadData:ExternalLoadData
+DIR  ExternalLoadData ['Container', 'DeleteFileData', 'DisplayText', 'DuplicateFileData', 'DuplicateSupportFile', 'FilesData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetExternalLoadFileData', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Name', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'ToString', 'Type']
+OK   GetExternalLoadFileData ExternalLoadFileData /Setup 1/ExternalLoadFileData:ExternalLoadFileData
+DIR  fd ExternalLoadFileData ['Container', 'Description', 'DisplayText', 'File', 'FileDataProperty', 'GetDataProperty', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Master', 'ModifyFileData', 'Name', 'Output', 'SetAsMaster', 'SetDelimiterCharacter', 'SetDelimiterType', 'SetDummyNetData', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatType', 'SetMaterialFieldData', 'SetStartImportAtLine', 'SimulationSetEntityProperty', 'ToString', 'Type']
+OK   fd ExternalLoadFileData .File /FileContainer/FileReference:F6
+FAIL fd ExternalLoadFileData .FileName: 'DataReference' object has no attribute 'FileName'
+FAIL fd ExternalLoadFileData .FilePath: 'DataReference' object has no attribute 'FilePath'
+OK   fd ExternalLoadFileData .Master True
+FAIL fd ExternalLoadFileData .Identifier: 'DataReference' object has no attribute 'Identifier'
+OK   fd ExternalLoadFileData .DisplayText ExternalLoadFileData
+OK   fd ExternalLoadFileData .Name ExternalLoadFileData
+OK   fd ExternalLoadFileData file path <PROJECT_ROOT>\07_Thermal_Analysis\Mapping\MeshBased\fluent_solid_mesh.cdb
+OK   fd ExternalLoadFileData data property /Setup 1/ExternalLoadFileDataProperty:ExternalLoadFileDataProperty
+DIR  prop ExternalLoadFileData ['ColumnsData', 'Container', 'ConversionOption', 'CoordinateSystemType', 'DelimiterCharacter', 'DelimiterType', 'Dimensions', 'DisplayText', 'DummyNetData', 'FileIdentifier', 'FormatString', 'FormatType', 'GetColumnData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'LengthUnit', 'MaterialFieldData', 'Name', 'OriginX', 'OriginXUnit', 'OriginY', 'OriginYUnit', 'OriginZ', 'OriginZUnit', 'ScaleX', 'ScaleXToolTip', 'ScaleXValid', 'ScaleY', 'ScaleYToolTip', 'ScaleYValid', 'ScaleZ', 'ScaleZToolTip', 'ScaleZValid', 'SetColumnDataType', 'SetCoordinateSystemType', 'SetDimensionLengthUnit', 'SetDimensionType', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatString', 'SetLengthUnit', 'SimulationSetEntityProperty', 'Sliver', 'StartImportAtLine', 'SupportingFiles', 'ThetaXY', 'ThetaXYUnit', 'ThetaYZ', 'ThetaYZUnit', 'ThetaZX', 'ThetaZXUnit', 'ToString', 'Type']
+OK   GetExternalLoadFileData ExternalLoadFileData 1 /Setup 1/ExternalLoadFileData:ExternalLoadFileData 1
+DIR  fd ExternalLoadFileData 1 ['Container', 'Description', 'DisplayText', 'File', 'FileDataProperty', 'GetDataProperty', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Master', 'ModifyFileData', 'Name', 'Output', 'SetAsMaster', 'SetDelimiterCharacter', 'SetDelimiterType', 'SetDummyNetData', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatType', 'SetMaterialFieldData', 'SetStartImportAtLine', 'SimulationSetEntityProperty', 'ToString', 'Type']
+OK   fd ExternalLoadFileData 1 .File /FileContainer/FileReference:F7
+FAIL fd ExternalLoadFileData 1 .FileName: 'DataReference' object has no attribute 'FileName'
+FAIL fd ExternalLoadFileData 1 .FilePath: 'DataReference' object has no attribute 'FilePath'
+OK   fd ExternalLoadFileData 1 .Master False
+FAIL fd ExternalLoadFileData 1 .Identifier: 'DataReference' object has no attribute 'Identifier'
+OK   fd ExternalLoadFileData 1 .DisplayText ExternalLoadFileData
+OK   fd ExternalLoadFileData 1 .Name ExternalLoadFileData 1
+OK   fd ExternalLoadFileData 1 file path <PROJECT_ROOT>\07_Thermal_Analysis\Mapping\MeshBased\fluent_solid_node_temperature.csv
+OK   fd ExternalLoadFileData 1 data property /Setup 1/ExternalLoadFileDataProperty:ExternalLoadFileDataProperty 2
+DIR  prop ExternalLoadFileData 1 ['ColumnsData', 'Container', 'ConversionOption', 'CoordinateSystemType', 'DelimiterCharacter', 'DelimiterType', 'Dimensions', 'DisplayText', 'DummyNetData', 'FileIdentifier', 'FormatString', 'FormatType', 'GetColumnData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'LengthUnit', 'MaterialFieldData', 'Name', 'OriginX', 'OriginXUnit', 'OriginY', 'OriginYUnit', 'OriginZ', 'OriginZUnit', 'ScaleX', 'ScaleXToolTip', 'ScaleXValid', 'ScaleY', 'ScaleYToolTip', 'ScaleYValid', 'ScaleZ', 'ScaleZToolTip', 'ScaleZValid', 'SetColumnDataType', 'SetCoordinateSystemType', 'SetDimensionLengthUnit', 'SetDimensionType', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatString', 'SetLengthUnit', 'SimulationSetEntityProperty', 'Sliver', 'StartImportAtLine', 'SupportingFiles', 'ThetaXY', 'ThetaXYUnit', 'ThetaYZ', 'ThetaYZUnit', 'ThetaZX', 'ThetaZXUnit', 'ToString', 'Type']
+FAIL GetExternalLoadFileData ExternalLoadFileData 2: ExternalLoadFileData 2 does not contain the required entity type ExternalLoadFileData.
+OK   setup.GetFiles ['/FileContainer/FileReference:F6', '/FileContainer/FileReference:F7', '/FileContainer/FileReference:F8', '/FileContainer/FileReference:F9', '/FileContainer/FileReference:F10']
+OK   setup.GetDataEntities ['/Setup 1/ConnectionsDataObject:ComponentConnections', '/Setup 1/ExternalLoadData:ExternalLoadData', '/Setup 1/ExternalDataSetup:ExternalDataSetup', '/Setup 1/ExternalTraceDataSetup:ExternalTraceDataSetup', '/Setup 1/ExternalMaterialFieldDataSetup:ExternalMaterialFieldDataSetup', '/Setup 1/ExternalDataCdbOutputProvider:ExternalDataCdbOutputProvider', '/Setup 1/ExternalLoadFileData:ExternalLoadFileData', '/Setup 1/ExternalLoadFileData:ExternalLoadFileData 1', '/Setup 1/ExternalLoadFileDataProperty:ExternalLoadFileDataProperty', '/Setup 1/ExternalLoadFileDataProperty:ExternalLoadFileDataProperty 1', '/Setup 1/ExternalLoadFileDataProperty:ExternalLoadFileDataProperty 2', '/Setup 1/ExternalLoadFileDataProperty:ExternalLoadFileDataProperty 3', '/Setup 1/ExternalLoadFileDataOutput:ExternalLoadFileDataOutput', '/Setup 1/ExternalLoadFileDataOutput:ExternalLoadFileDataOutput 1', '/Setup 1/ExternalLoadColumnData:ExternalLoadColumnData', '/Setup 1/ExternalLoadColumnData:ExternalLoadColumnData 1', '/Setup 1/ExternalDataOutput:ExternalDataOutput', '/Setup 1/ExternalDataTraceOutput:ExternalDataTraceOutput', '/Setup 1/ExternalDataMaterialFieldDataOutput:ExternalDataMaterialFieldDataOutput', '/Setup 1/ExternalDataCdbOutput:ExternalDataCdbOutput']
+FAIL GetFiles project: 'str' object has no attribute 'FileName'
+DIR  geometry container ['Edit', 'Exit', 'Export', 'GetAllParameters', 'GetFiles', 'GetGeometryProperties', 'Name', 'Refresh', 'RunScript', 'SendCommand', 'SetFile', 'Stop', 'ToString', 'Type', 'UpdateCAD', 'UpdateICManagerParam', 'WriteNDFFile']
+OK   geometry props /Geometry/Geometry:GeometryDataObject
+OK   geometry properties obj /Geometry/Geometry:GeometryDataObject
+DIR  geometry properties ['Container', 'DisplayText', 'GeometryFilePath', 'GeometryImportAnalysisType', 'GeometryImportCadAssociativity', 'GeometryImportCadAttributes', 'GeometryImportCadAttributesFilter', 'GeometryImportCleanGeometryOnImport', 'GeometryImportComparePartsOnUpdate', 'GeometryImportComparePartsTolerance', 'GeometryImportCoordinateSystems', 'GeometryImportCoordinateSystemsFilter', 'GeometryImportDecomposeDisjointFaces', 'GeometryImportFacetQuality', 'GeometryImportFlattenAssembly', 'GeometryImportImportUsingInstances', 'GeometryImportLineBodies', 'GeometryImportMaterialProperties', 'GeometryImportMixedResolutionOption', 'GeometryImportNamedSelections', 'GeometryImportNamedSelectionsFilter', 'GeometryImportParameters', 'GeometryImportParametersFilter', 'GeometryImportPhysicsDefinition', 'GeometryImportProcessEnclosures', 'GeometryImportSavePartFile', 'GeometryImportSmartUpdate', 'GeometryImportSolidBodies', 'GeometryImportStitchSurfacesOnImport', 'GeometryImportStitchTolerance', 'GeometryImportSurfaceBodies', 'GeometryImportWeightclass', 'GeometryImportWorkPoints', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Name', 'PlugInName', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'TeamcenterConnection', 'ToString', 'Type']
+OK   gp.GeometryImportNamedSelections True
+FAIL gp.GeometryImportNamedSelectionKey: 'DataReference' object has no attribute 'GeometryImportNamedSelectionKey'
+FAIL gp.NamedSelectionKey: 'DataReference' object has no attribute 'NamedSelectionKey'
+OK   gp.GeometryImportAnalysisType AnalysisType_3D
+OK   SetFile T01 
+OK   geometry update 
+OK   model refresh 
+mechanical opened
+mechanical probe returned
+OK   state Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Mesh <cell state: OutOfDate: wb2qh_modelcellSim_rr>
+OK   state Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Model <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC1 Free Expansion/Setup 2 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC1 Free Expansion/Solution 1 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC1 Free Expansion/Results <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Model 1 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC2 Axially Restrained/Setup 3 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC2 Axially Restrained/Solution 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2 Axially Restrained/Results 1 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Model 2 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC2P Restrained Thermal + Pressure/Setup 4 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== PROBE DONE ===

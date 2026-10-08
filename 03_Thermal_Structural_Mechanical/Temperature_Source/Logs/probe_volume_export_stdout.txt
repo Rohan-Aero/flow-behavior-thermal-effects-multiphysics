@@ -1,0 +1,241 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\\fluent-20260925-010103-24080.trn".
+Auto-Transcript Start Time:  01:01:03, 25 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:64978 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  21992  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  20348  12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  7812   12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  4664   12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  6248   12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\07_Thermal_Analysis\\Temperature_Source\\cleanup-fluent-<HOST>-6248.bat
+
+<HOST> is already loaded (28.4698).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import os, sys
+>>> sys.path.insert(0, "Journals")
+>>> from s5_common import *
+>>> solver.file.batch_options.confirm_overwrite = False
+>>> step("read case", lambda: solver.file.read_case(file_name="../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5"))
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      159840 cells,     2 cell zones ...
+         116640 hexahedral cells,  zone id: 2
+          43200 hexahedral cells,  zone id: 3
+      487776 faces,     9 face zones ...
+         346464 quadrilateral interior faces,  zone id: 4
+         124800 quadrilateral interior faces,  zone id: 5
+           1296 quadrilateral velocity-inlet faces,  zone id: 6
+           1296 quadrilateral pressure-outlet faces,  zone id: 7
+           4320 quadrilateral wall faces,  zone id: 8
+           4320 quadrilateral wall faces,  zone id: 12
+           4320 quadrilateral wall faces,  zone id: 9
+            480 quadrilateral wall faces,  zone id: 10
+            480 quadrilateral wall faces,  zone id: 11
+      168163 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	distributing mesh
+		pairs....,
+		parts....,
+		faces....,
+		nodes....,
+		shadow nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 25341/982 = 25.8055
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+S5B OK    read case                                              
+>>> step("read data", lambda: solver.file.read_data(file_name="../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5"))
+
+Reading from <HOST>:"<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+S5B OK    read data                                              
+>>> EX = solver.file.export
+>>> for nm in ("tecplot", "vtk", "ensight_gold"):
+    try:
+        cmd = getattr(EX, nm)
+        args = list(cmd.argument_names)
+        log("%s args: %s" % (nm, args))
+        kw = {}
+        for a in args:
+            arg = getattr(cmd, a)
+            try:
+                av = arg.allowed_values()
+            except Exception:
+                av = None
+            log("   arg %s allowed=%s" % (a, str(av)[:300]))
+            if a == "file_name":
+                kw[a] = "Probe/probe_solid_%s" % nm
+            elif av and "solid_domain" in av:
+                kw[a] = ["solid_domain"]
+            elif av and "temperature" in av:
+                kw[a] = ["temperature"]
+        log("%s call kwargs %s" % (nm, kw))
+        step("export %s" % nm, lambda c=cmd, k=kw: c(**k), critical=False)
+    except Exception as e:
+        log("%s not usable: %s" % (nm, e))
+S5B tecplot args: ['file_name', 'surfaces', 'quantities']
+S5B    arg file_name allowed=None
+S5B    arg surfaces allowed=['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'heated_outer_wall', 'fluid_solid_interface', 'fluid_outlet', 'fluid_inlet']
+S5B    arg quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z
+S5B tecplot call kwargs {'file_name': 'Probe/probe_solid_tecplot', 'quantities': ['temperature']}
+
+Opening library "C:\\PROGRA~1\\ANSYSI~1\\ANSYSS~1\\v261\\fluent\\fluent26.1.0\\ceetron_sam\\win64\\CeetronSAM.dll"... done.
+
+
+Writing "Probe/probe_solid_tecplot.plt"
+  168163 nodes written.
+  159840 elements written.
+       6 node sets written.
+         temperature is written as result for 168163 nodes
+Done. 
+
+Closing library "C:\\PROGRA~1\\ANSYSI~1\\ANSYSS~1\\v261\\fluent\\fluent26.1.0\\ceetron_sam\\win64\\CeetronSAM.dll"... done.
+
+S5B OK    export tecplot                                         
+S5B vtk args: ['file_name', 'scope', 'cell_zones', 'surfaces', 'cell_centered', 'binary_format', 'point_cloud', 'quantities']
+S5B    arg file_name allowed=None
+S5B    arg scope allowed=['volume-select', 'surface-select']
+S5B    arg cell_zones allowed=[]
+S5B    arg surfaces allowed=[]
+S5B    arg cell_centered allowed=None
+S5B    arg binary_format allowed=None
+S5B    arg point_cloud allowed=None
+S5B    arg quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z
+S5B vtk call kwargs {'file_name': 'Probe/probe_solid_vtk', 'quantities': ['temperature']}
+S5B warn  export vtk                                             RuntimeError: No cell zones selected to export.
+
+Error Object: #f
+S5B ensight_gold args: ['file_name', 'quantities', 'binary_format', 'cellzones', 'interior_zone_surfaces', 'cell_centered']
+S5B    arg file_name allowed=None
+S5B    arg quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z
+S5B    arg binary_format allowed=None
+S5B    arg cellzones allowed=['fluid_domain', 'solid_domain']
+S5B    arg interior_zone_surfaces allowed=None
+S5B    arg cell_centered allowed=None
+S5B ensight_gold call kwargs {'file_name': 'Probe/probe_solid_ensight_gold', 'quantities': ['temperature'], 'cellzones': ['solid_domain']}
+
+Writing "Probe/probe_solid_ensight_gold.geo"...
+
+Done.
+
+
+Writing "Probe/probe_solid_ensight_gold.vel"...
+
+Wrote velocity
+Done.
+
+
+Writing "Probe/probe_solid_ensight_gold.scl1"...
+
+Static Temperature
+Done.
+
+
+Writing "Probe/probe_solid_ensight_gold.encas"...
+
+Done.
+
+Writing <PROJECT_ROOT>/07_Thermal_Analysis/Temperature_Source\\Probe\\probe_solid_ensight_gold.xml...
+Done.
+S5B OK    export ensight_gold                                    
+>>> for fn in sorted(os.listdir("Probe")):
+    log("Probe file %s %d" % (fn, os.path.getsize(os.path.join("Probe", fn))))
+S5B Probe file probe_export_api_log.txt 1392
+S5B Probe file probe_mapdl_export_log.txt 321
+S5B Probe file probe_solid_ensight_gold.encas 327
+S5B Probe file probe_solid_ensight_gold.geo 2427848
+S5B Probe file probe_solid_ensight_gold.scl1 260792
+S5B Probe file probe_solid_ensight_gold.vel 779592
+S5B Probe file probe_solid_ensight_gold.xml 882
+S5B Probe file probe_solid_tecplot.plt 7808028
+>>> flush_log("Probe/probe_volume_export_log.txt")
+>>> print("PROBE-VOLUME-EXPORT-DONE")
+PROBE-VOLUME-EXPORT-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  01:01:37, 25 Sep 2026 India Standard Time 
+Total Transcript Time: 0 Minute 34 Second.
+
+Automatic transcript closed.

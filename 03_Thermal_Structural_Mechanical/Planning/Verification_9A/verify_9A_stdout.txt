@@ -1,0 +1,44 @@
+PASS P00_BASELINE: Re_in = rho V D / mu | 29956.6 vs 29956.6
+PASS V01_LOW: Re_in = rho V D / mu | 26960.9 vs 26960.9
+PASS V03_HIGH: Re_in = rho V D / mu | 32952.2 vs 32952.2
+PASS Q01_LOW: Q = q'' pi Do L | 542.867 W vs 542.867 W
+PASS Q03_HIGH: Q = q'' pi Do L | 663.504 W vs 663.504 W
+PASS T01_THIN: Q = q'' pi Do L | 603.186 W vs 603.186 W
+PASS T03_THICK: Q = q'' pi Do L | 603.186 W vs 603.186 W
+PASS Q01_LOW: T_out by energy balance (cp 1008.5) within 0.5 K of the marching model | 361.97 vs 361.98 K
+PASS Q03_HIGH: T_out by energy balance (cp 1008.5) within 0.5 K of the marching model | 375.74 vs 375.72 K
+PASS T01_THIN: lambda1(S1) ~ r_g^2 scaling within 1 % | 0.9396 vs 0.9419
+PASS T03_THICK: lambda1(S1) ~ r_g^2 scaling within 1 % | 1.2942 vs 1.2914
+PASS V01_LOW: lambda1 ~ 1/N within 2 % | 1.0050 vs 0.9978
+PASS V03_HIGH: lambda1 ~ 1/N within 2 % | 1.2094 vs 1.2165
+PASS Q01_LOW: lambda1 ~ 1/N within 2 % | 1.2542 vs 1.2645
+PASS Q03_HIGH: lambda1 ~ 1/N within 2 % | 0.9893 vs 0.9810
+PASS T01 FE 36x4x130: nodes 89424, fits 128,000 = True | 89424
+PASS T03 FE 36x6x130: nodes 127080, fits 128,000 = True | 127080
+PASS t = 14 mm FE 36x7x130: nodes 145908, fits 128,000 = False | 145908
+PASS M01/M02 FE 36x5x130: nodes 108252, fits 128,000 = True | 108252
+PASS CFD solid layers for t = 8 mm (first 0.5 mm, growth <= 1.147) | n 9, g 1.1388
+PASS CFD solid layers for t = 10 mm (first 0.5 mm, growth <= 1.147) | n 10, g 1.1469
+PASS CFD solid layers for t = 12 mm (first 0.5 mm, growth <= 1.147) | n 12, g 1.1191
+PASS CFD cell counts T01 / T03 / M03 | 155,520 / 168,480 / 194,400
+PASS V01_LOW: y+ max ~ V^0.9 within 2 % of the screening estimate, and <= 0.8 | 0.532 vs 0.533
+PASS V03_HIGH: y+ max ~ V^0.9 within 2 % of the screening estimate, and <= 0.8 | 0.637 vs 0.636
+PASS V01_LOW: no INVALID flag, near-wall air <= 590 K, solid <= 663 K | 580.3 K / 586.9 K
+PASS V03_HIGH: no INVALID flag, near-wall air <= 590 K, solid <= 663 K | 534.6 K / 541.6 K
+PASS Q01_LOW: no INVALID flag, near-wall air <= 590 K, solid <= 663 K | 527.5 K / 533.9 K
+PASS Q03_HIGH: no INVALID flag, near-wall air <= 590 K, solid <= 663 K | 583.4 K / 590.7 K
+PASS T01_THIN: no INVALID flag, near-wall air <= 590 K, solid <= 663 K | 555.3 K / 561.1 K
+PASS T03_THICK: no INVALID flag, near-wall air <= 590 K, solid <= 663 K | 555.3 K / 563.1 K
+PASS cand_V_0.800 is rejected (INVALID) | INVALID: near-wall air 611 K above the 600 K air-property ta
+PASS cand_Q_9500 is rejected (INVALID) | INVALID: near-wall air 608 K above the 600 K air-property ta
+PASS cand_Q_10000 is rejected (INVALID) | INVALID: near-wall air 626 K above the 600 K air-property ta
+PASS corner_Vlow_Qhigh is rejected (INVALID) | INVALID: near-wall air 611 K above the 600 K air-property ta
+PASS self-check vs Section 2 reproduced | 8 quantities
+PASS matrix: required columns in order | Case, Parameter, Value, Units, Geometry change?, Mesh change?, CFD required?, Mechanical required?, Expected trend, Reason, Status
+PASS matrix: every case name follows the convention | 18 rows
+PASS matrix: 8 new Fluent runs | 8
+PASS matrix: 29 Mechanical analyses (+ 1 MAPDL benchmark) | 29
+PASS matrix: P00 is the solved reference; aliases point to P00 | 
+PASS S1 / S2 lambda1 in the support study = 8A solver files | S1 1.108047 (8A 1.108047), S2 4.29995 (8A 4.29995)
+PASS required-stiffness formula confirmed by the independent beam FE | 6 targets
+43/43 PASS

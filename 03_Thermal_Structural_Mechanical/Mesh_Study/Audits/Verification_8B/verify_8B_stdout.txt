@@ -1,0 +1,127 @@
+PASS XC: nodes = swept formula and < 128,000 | 24171 vs 24171
+PASS XC: elements = nc*nr*na | 4788
+PASS XC: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 24171 values, 150.687-289.405 C
+PASS XC: pre-solve gate | 43/43
+PASS XC LC1: no solver errors (file0.err) | errors 0
+PASS XC LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.157956 vs 24.157956 MPa
+PASS XC LC1: support reactions ~ 0 | max 2.34e-07 N
+PASS XC LC2: no solver errors (file0.err) | errors 0
+PASS XC LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 604.867022 vs 604.867022 MPa
+PASS XC LC2: end reactions balance | 548943.3709 / -548943.3709 N
+PASS XC LC2P: no solver errors (file0.err) | errors 0
+PASS XC LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 604.867098 vs 604.867098 MPa
+PASS XC LC2P: end reactions balance | 548943.2890 / -548943.2890 N
+PASS XC: 6 load multipliers identical in solve.out, snippet CSV and Mechanical | lambda1 1.1079876 / 1.107987580 / 1.107987580
+PASS XC: buckling solver errors | 
+PASS XC: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes) | inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 2.6e-10, n=3 6.0e-10
+PASS C: nodes = swept formula and < 128,000 | 50652 vs 50652
+PASS C: elements = nc*nr*na | 10584
+PASS C: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 50652 values, 150.687-289.408 C
+PASS C: pre-solve gate | 43/43
+PASS C LC1: no solver errors (file0.err) | errors 0
+PASS C LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.069799 vs 24.069799 MPa
+PASS C LC1: support reactions ~ 0 | max 5.59e-06 N
+PASS C LC2: no solver errors (file0.err) | errors 0
+PASS C LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.095699 vs 605.095699 MPa
+PASS C LC2: end reactions balance | 548936.6860 / -548936.6860 N
+PASS C LC2P: no solver errors (file0.err) | errors 0
+PASS C LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.095744 vs 605.095744 MPa
+PASS C LC2P: end reactions balance | 548936.6041 / -548936.6041 N
+PASS C: 6 load multipliers identical in solve.out, snippet CSV and Mechanical | lambda1 1.1080342 / 1.108034231 / 1.108034231
+PASS C: buckling solver errors | 
+PASS C: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes) | inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 4.3e-10, n=3 9.3e-10
+PASS B: nodes = swept formula and < 128,000 | 108252 vs 108252
+PASS B: elements = nc*nr*na | 23400
+PASS B: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 108252 values, 150.687-289.408 C
+PASS B: pre-solve gate | 43/43
+PASS B LC1: no solver errors (file0.err) | errors 0
+PASS B LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.282183 vs 24.282183 MPa
+PASS B LC1: support reactions ~ 0 | max 6.61e-06 N
+PASS B LC2: no solver errors (file0.err) | errors 0
+PASS B LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.160873 vs 605.160873 MPa
+PASS B LC2: end reactions balance | 548936.6138 / -548936.6138 N
+PASS B LC2P: no solver errors (file0.err) | errors 0
+PASS B LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.160918 vs 605.160918 MPa
+PASS B LC2P: end reactions balance | 548936.5318 / -548936.5318 N
+PASS B: 6 load multipliers identical in solve.out, snippet CSV and Mechanical | lambda1 1.1080471 / 1.108047120 / 1.108047120
+PASS B: buckling solver errors | 
+PASS B: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes) | inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 1.5e-16, n=3 1.6e-09
+PASS FR: nodes = swept formula and < 128,000 | 127080 vs 127080
+PASS FR: elements = nc*nr*na | 28080
+PASS FR: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 127080 values, 150.687-289.408 C
+PASS FR: pre-solve gate | 43/43
+PASS FR LC1: no solver errors (file0.err) | errors 0
+PASS FR LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.550223 vs 24.550223 MPa
+PASS FR LC1: support reactions ~ 0 | max 8.27e-06 N
+PASS FR LC2: no solver errors (file0.err) | errors 0
+PASS FR LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.220427 vs 605.220427 MPa
+PASS FR LC2: end reactions balance | 548939.7294 / -548939.7294 N
+PASS FR LC2P: no solver errors (file0.err) | errors 0
+PASS FR LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.220504 vs 605.220504 MPa
+PASS FR LC2P: end reactions balance | 548939.6475 / -548939.6475 N
+PASS FR: 6 load multipliers identical in solve.out, snippet CSV and Mechanical | lambda1 1.1080404 / 1.108040449 / 1.108040449
+PASS FR: buckling solver errors | 
+PASS FR: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes) | inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 4.3e-16, n=3 1.9e-09
+PASS FA: nodes = swept formula and < 128,000 | 126468 vs 126468
+PASS FA: elements = nc*nr*na | 27360
+PASS FA: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 126468 values, 150.687-289.408 C
+PASS FA: pre-solve gate | 43/43
+PASS FA LC1: no solver errors (file0.err) | errors 0
+PASS FA LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.552853 vs 24.552853 MPa
+PASS FA LC1: support reactions ~ 0 | max 6.38e-06 N
+PASS FA LC2: no solver errors (file0.err) | errors 0
+PASS FA LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.139634 vs 605.139634 MPa
+PASS FA LC2: end reactions balance | 548936.0373 / -548936.0373 N
+PASS FA LC2P: no solver errors (file0.err) | errors 0
+PASS FA LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.139711 vs 605.139711 MPa
+PASS FA LC2P: end reactions balance | 548935.9554 / -548935.9554 N
+PASS FA: 6 load multipliers identical in solve.out, snippet CSV and Mechanical | lambda1 1.1080483 / 1.108048317 / 1.108048317
+PASS FA: buckling solver errors | 
+PASS FA: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes) | inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 1.1e-16, n=3 3.5e-10
+PASS FC: nodes = swept formula and < 128,000 | 126294 vs 126294
+PASS FC: elements = nc*nr*na | 27300
+PASS FC: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 126294 values, 150.687-289.410 C
+PASS FC: pre-solve gate | 43/43
+PASS FC LC1: no solver errors (file0.err) | errors 0
+PASS FC LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.205632 vs 24.205632 MPa
+PASS FC LC1: support reactions ~ 0 | max 9.89e-06 N
+PASS FC LC2: no solver errors (file0.err) | errors 0
+PASS FC LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.169767 vs 605.169767 MPa
+PASS FC LC2: end reactions balance | 548940.6396 / -548940.6396 N
+PASS FC LC2P: no solver errors (file0.err) | errors 0
+PASS FC LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.169844 vs 605.169844 MPa
+PASS FC LC2P: end reactions balance | 548940.5577 / -548940.5577 N
+PASS FC: 6 load multipliers identical in solve.out, snippet CSV and Mechanical | lambda1 1.1080410 / 1.108041004 / 1.108041004
+PASS FC: buckling solver errors | 
+PASS FC: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes) | inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 2.2e-16, n=3 1.4e-09
+PASS IL: nodes = swept formula and < 128,000 | 108252 vs 108252
+PASS IL: elements = nc*nr*na | 23400
+PASS IL: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K) | 108252 values, 150.687-289.407 C
+PASS IL: pre-solve gate | 31/31
+PASS IL LC1: no solver errors (file0.err) | errors 0
+PASS IL LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 24.510515 vs 24.510515 MPa
+PASS IL LC1: support reactions ~ 0 | max 9.93e-06 N
+PASS IL LC2: no solver errors (file0.err) | errors 0
+PASS IL LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum | 605.133609 vs 605.133609 MPa
+PASS IL LC2: end reactions balance | 548936.4109 / -548936.4109 N
+PASS B vs official 7B LC1: identical mesh and nodal results | max |diff| stress 0.000e+00 Pa, displacement 0.000e+00 m
+PASS B vs official 7B LC2: identical mesh and nodal results | max |diff| stress 0.000e+00 Pa, displacement 0.000e+00 m
+PASS B vs official 7B LC2P: identical mesh and nodal results | max |diff| stress 0.000e+00 Pa, displacement 0.000e+00 m
+PASS B vs official 8A buckling: lambda identical within Lanczos tolerance | 8A 1.10804700 vs B 1.10804712
+PASS B vs 7B: BFBLOCK (mapped temperature) byte-identical | 108252 lines
+PASS Richardson LC2_max_vm recomputed independently = post_8B | p 4.746 ext 6.0518685e+08 GCI 5.37e-05
+PASS Richardson lambda1 recomputed independently = post_8B | p 4.864 ext 1.108052 GCI 5.55e-06
+   fine vs B LC2 max VM {'FR': '+9.84e-05', 'FA': '-3.51e-05', 'FC': '+1.47e-05'}
+   fine vs B LC2 end force {'FR': '+5.68e-06', 'FA': '-1.05e-06', 'FC': '+7.33e-06'}
+   fine vs B lambda1 {'FR': '-6.02e-06', 'FA': '+1.08e-06', 'FC': '-5.52e-06'}
+   fine vs B P_cr {'FR': '-3.44e-07', 'FA': '+3.04e-08', 'FC': '+1.81e-06'}
+   fine vs B LC1 max VM {'FR': '+1.10e-02', 'FA': '+1.11e-02', 'FC': '-3.15e-03'}
+   fine vs B LC1 dL {'FR': '+7.28e-06', 'FA': '-1.19e-06', 'FC': '+6.91e-06'}
+PASS XC: pressure effect on max VM tiny and positive (no anomaly) | +76 Pa (1.3e-07 relative)
+PASS C: pressure effect on max VM tiny and positive (no anomaly) | +45 Pa (7.4e-08 relative)
+PASS B: pressure effect on max VM tiny and positive (no anomaly) | +45 Pa (7.4e-08 relative)
+PASS FR: pressure effect on max VM tiny and positive (no anomaly) | +77 Pa (1.3e-07 relative)
+PASS FA: pressure effect on max VM tiny and positive (no anomaly) | +77 Pa (1.3e-07 relative)
+PASS FC: pressure effect on max VM tiny and positive (no anomaly) | +77 Pa (1.3e-07 relative)
+PASS official 7B project unchanged by the mesh study (SHA-256) | 58 files before, 58 after, changed 0
+120/120 PASS

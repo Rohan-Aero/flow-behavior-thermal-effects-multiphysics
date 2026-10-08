@@ -1,0 +1,197 @@
+==============================================================================
+Section 5A baseline setup - RE-ANALYSIS 2026
+turbulence intensity from 0.16*Re^-0.125 at Re=29957  ->  4.411 %
+==============================================================================
+      file.batch_options children = ['confirm_overwrite', 'exit_on_error', 'hide_answer', 'redisplay_question']
+      batch_options.redisplay_question -> api-set-var: the object is not active
+Error Object: file/batch-options/redisplay-question?
+OK    disable batch overwrite prompts                      ['confirm_overwrite', 'exit_on_error']
+OK    transcript                                           
+OK    read medium mesh                                     
+OK    mesh check                                           
+OK    mesh quality                                         
+OK    check before solve                                   
+ZONES {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"], "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"], "wall": ["fluid_solid_interface", "heated_outer_wall", "solid_inlet_end", "solid_outlet_end", "fluid_solid_interface-shadow"], "interior": []}
+OK    solver type = pressure-based                         
+OK    time = steady (A-004)                                
+OK    velocity formulation = absolute                      
+OK    operating pressure = 101325 Pa                       
+OK    gravity OFF (A-007, Gr/Re2 = 4.3e-5)                 
+OK    verify gravity state                                 {'enable': False}
+OK    energy equation ON                                   
+OK    viscous model = k-omega                              
+OK    k-omega variant = SST (D-011)                        
+      near-wall-treatment children = ['wall_treatment', 'user_defined', 'enhanced_wall_treatment_options', 'wall_omega_treatment', 'use_second_cell_off_a_wall_quantities']
+      wall_omega_treatment = correlation
+      air.density allowed=['value', 'ideal-gas', 'incompressible-ideal-gas', 'rgp-table', 'real-gas-soave-redlich-kwong', 'real-gas-peng-robinson', 'real-gas-aungier-redlich-kwong', 'real-gas-redlich-kwong', 'real-gas-nist', 'boussinesq', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'compressible-liquid']
+OK    air density = incompressible-ideal-gas (D-009/D-021) 'incompressible-ideal-gas (no scalar value)'
+OK    air molecular weight = 28.966                        
+      air.specific_heat allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'nasa-9-piecewise-polynomial', 'kinetic-theory']
+OK    air cp = piecewise-linear (Incropera A.4)            'piecewise-linear, 8 points verified 250..600 K'
+      air.viscosity allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'power-law', 'sutherland', 'kinetic-theory']
+OK    air mu = piecewise-linear (Incropera A.4)            'piecewise-linear, 8 points verified 250..600 K'
+      air.thermal_conductivity allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'kinetic-theory']
+OK    air k = piecewise-linear (Incropera A.4)             'piecewise-linear, 8 points verified 250..600 K'
+OK    create solid material inconel-718                    ['inconel-718', 'aluminum']
+      inconel.density allowed=['value']
+OK    inconel rho = 8190 kg/m3                             'value = 8190.0 (verified)'
+      inconel.specific_heat allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'nasa-9-piecewise-polynomial']
+OK    inconel cp = piecewise-linear (VDM 4127)             'piecewise-linear, 5 points verified 293.15..673.15 K'
+      inconel.thermal_conductivity allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'cyl-orthotropic', 'orthotropic', 'anisotropic', 'biaxial', 'principal-axes-values']
+OK    inconel k = piecewise-linear (VDM 4127)              'piecewise-linear, 5 points verified 293.15..673.15 K'
+OK    FLUID_DOMAIN -> air                                  
+OK    SOLID_DOMAIN -> inconel-718                          
+      inlet.vspec allowed=['Magnitude and Direction', 'Components', 'Magnitude, Normal to Boundary']
+OK    inlet velocity spec = normal to boundary             
+OK    inlet velocity = 23.5 m/s                            
+OK    inlet temperature = 300 K                            
+      inlet.tspec allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+OK    inlet turbulence spec = I and Dh                     
+      turbulent_intensity default = 0.05 -> treating as FRACTION, writing 0.0441121
+OK    inlet I = 4.411 % (written as 0.0441121)             'turbulent_intensity <- 0.04411209588036475 (direct, read back 0.04411209588036475)'
+OK    inlet Dh = 0.020 m                                   'hydraulic_diameter <- 0.02 (direct, read back 0.02)'
+OK    outlet gauge pressure = 0 Pa                         
+OK    outlet backflow total temperature = 300 K            
+      outlet.tspec allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+OK    outlet backflow turbulence spec = I and Dh           
+OK    outlet backflow I                                    'backflow_turbulent_intensity <- 0.04411209588036475 (direct, read back 0.0441120958803647
+OK    outlet backflow Dh                                   'backflow_hydraulic_diameter <- 0.02 (direct, read back 0.02)'
+OK    outlet prevent reverse flow = on                     
+      heated_outer_wall.thermal_condition allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+OK    HEATED_OUTER_WALL: heat flux 8000 W/m2               'heated_outer_wall -> Heat Flux q=8000 W/m2'
+      solid_inlet_end.thermal_condition allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+OK    SOLID_INLET_END: adiabatic (A-011)                   'solid_inlet_end -> Heat Flux q=0 W/m2'
+      solid_outlet_end.thermal_condition allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+OK    SOLID_OUTLET_END: adiabatic (A-011)                  'solid_outlet_end -> Heat Flux q=0 W/m2'
+      fluid_solid_interface thermal_condition = Coupled
+      fluid_solid_interface-shadow thermal_condition = Coupled
+OK    reference area         = 0.000314159                 'area <- 0.0003141592653589793 (direct, read back 0.0003141592653589793)'
+OK    reference length       = 0.02                        'length <- 0.02 (direct, read back 0.02)'
+OK    reference temperature  = 300                         'temperature <- 300.0 (direct, read back 300.0)'
+OK    reference velocity     = 23.5                        'velocity <- 23.5 (direct, read back 23.5)'
+OK    reference density      = 1.17659                     'density <- 1.1765914902214885 (direct, read back 1.1765914902214885)'
+OK    reference pressure     = 0                           'pressure <- 0.0 (direct, read back 0)'
+OK    reference viscosity    = 1.846e-05                   'viscosity <- 1.846e-05 (direct, read back 1.846e-05)'
+      flow_scheme allowed=['SIMPLE', 'SIMPLEC', 'PISO', 'Coupled']
+OK    p-v coupling = Coupled                               
+      gradient allowed=['green-gauss-node-based', 'green-gauss-cell-based', 'least-square-cell-based']
+OK    gradient = least-squares cell based                  
+      discretization_scheme keys = ['pressure', 'mom', 'k', 'omega', 'temperature']
+      scheme.pressure allowed=['second-order', 'standard', 'presto!', 'linear', 'body-force-weighted']
+OK    startup scheme pressure                              'second-order'
+      scheme.mom allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+OK    startup scheme mom                                   'first-order-upwind'
+      scheme.k allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+OK    startup scheme k                                     'first-order-upwind'
+      scheme.omega allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+OK    startup scheme omega                                 'first-order-upwind'
+      scheme.temperature allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+OK    startup scheme temperature                           'first-order-upwind'
+OK    log pseudo-time method state                         {'formulation': {'coupled_solver': 'global-time-step'}}
+OK    log pseudo-time children                             ['formulation', 'relaxation_method', 'convergence_acceleration_for_stretched_meshes']
+OK    log run_calculation pseudo-time settings             {'time_step_method': {'time_step_method': 'automatic', 'length_scale_methods': 'conservati
+warn  courant number (inactive under pseudo-time - expected) RuntimeError: value: AttributeError; direct: RuntimeError; set_state: RuntimeError
+OK    log relaxation containers                            {'pseudo_time_explicit_relaxation_factor': 'n/a (AttributeError)', 'under_relaxation': ['d
+      mdot_in.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+OK    rep mdot_in                                          'mdot_in (flux-massflow)'
+      mdot_out.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+OK    rep mdot_out                                         'mdot_out (flux-massflow)'
+      mass_imbalance.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+OK    rep mass_imbalance                                   'mass_imbalance (flux-massflow)'
+      q_heated_wall.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+OK    rep q_heated_wall                                    'q_heated_wall (flux-heattransfer)'
+      q_interface.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+OK    rep q_interface                                      'q_interface (flux-heattransfer)'
+      q_fluid_net.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+OK    rep q_fluid_net                                      'q_fluid_net (flux-heattransfer)'
+      p_in.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+OK    rep p_in                                             'p_in (surface-massavg)'
+      p_out.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+OK    rep p_out                                            'p_out (surface-massavg)'
+      T_out_bulk.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+OK    rep T_out_bulk                                       'T_out_bulk (surface-massavg)'
+      T_wall_max.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+OK    rep T_wall_max                                       'T_wall_max (surface-facetmax)'
+      T_solid_max.report_type allowed=['volume-mass', 'volume-massavg', 'volume-massintegral', 'volume-max', 'volume-min', 'volume-zonevol', 'volume-average', 'volume-integral', 'volume-sum']
+OK    rep T_solid_max                                      'T_solid_max (volume-max)'
+      T_solid_mean.report_type allowed=['volume-mass', 'volume-massavg', 'volume-massintegral', 'volume-max', 'volume-min', 'volume-zonevol', 'volume-average', 'volume-integral', 'volume-sum']
+OK    rep T_solid_mean                                     'T_solid_mean (volume-average)'
+      v_out_max.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+OK    rep v_out_max                                        'v_out_max (surface-facetmax)'
+      yplus_max.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+OK    rep yplus_max (field=y-plus)                         'yplus_max (surface-facetmax)'
+      expression report children = ['name', 'average_over', 'expr_value', 'define', 'output_parameter', 'create_report_file', 'create_report_plot']
+OK    rep dp_total (expression)                            "define = MassAvg(AbsolutePressure,['fluid_inlet']) - MassAvg(AbsolutePressure,['fluid_out
+REPORT DEFINITIONS CREATED: ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_out', 'T_out_bulk', 'T_wall_max', 'T_solid_max', 'T_solid_mean', 'v_out_max', 'yplus_max', 'dp_total']
+      report_files children = ['name', 'file_name', 'frequency_of', 'frequency', 'flow_frequency', 'itr_index', 'run_index', 'report_defs', 'print', 'active', 'write_instantaneous_values']
+      report_files state = {'name': 's5a_monitors', 'file_name': 'Test_Run\\\\s5a_monitors.out', 'frequency_of': 'iteration', 'frequency': 1, 'itr_index': '1', 'run_index': '0', 'report_defs': ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_out', 'T_out_bulk', 'T_wall_max', 'T_solid_max', 'T_solid_mean', 'v_out_max', 'yplus_max'], 'print': True, 'active': True, 'write_instantaneous_values': False}
+OK    per-iteration monitor file                           {'name': 's5a_monitors', 'file_name': 'Test_Run\\\\s5a_monitors.out', 'frequency_of': 'ite
+OK    residual: do not use for convergence (NR-04)         
+      residual equations now = ['continuity', 'x-velocity', 'y-velocity', 'z-velocity', 'energy', 'k', 'omega']
+------------------------------------------------------------------------------
+VERIFICATION - values read back from Fluent, not from this script
+VER   solver type                  got='pressure-based'           expected='pressure-based'
+VER   time                         got='steady'                   expected='steady'
+VER   velocity formulation         got='absolute'                 expected='absolute'
+VER   operating pressure           got=101325                     expected=101325.0
+VER   gravity                      got=False                      expected=False
+VER   energy enabled               got=True                       expected=True
+VER   viscous model                got='k-omega'                  expected='k-omega'
+VER   k-omega variant              got='sst'                      expected='sst'
+VER   air density option           got='incompressible-ideal-gas' expected='incompressible-ideal-gas'
+VER   fluid zone material          got='air'                      expected='air'
+VER   solid zone material          got='inconel-718'              expected='inconel-718'
+VER   inlet velocity               got=23.5                       expected=23.5
+VER   inlet temperature            got=300                        expected=300.0
+VER   inlet intensity              got=0.04411209588036475        expected=0.04411209588036475
+VER   inlet Dh                     got=0.02                       expected=0.02
+VER   inlet turb spec              got='Intensity and Hydraulic D expected='Intensity and Hydraulic Diameter'
+VER   air cp is piecewise          got='piecewise-linear'         expected='piecewise-linear'
+VER   air mu is piecewise          got='piecewise-linear'         expected='piecewise-linear'
+VER   air k is piecewise           got='piecewise-linear'         expected='piecewise-linear'
+VER   inconel k is piecewise       got='piecewise-linear'         expected='piecewise-linear'
+VER   inconel density              got=8190.0                     expected=8190.0
+VER   outlet gauge pressure        got=0                          expected=0.0
+VER   heated wall condition        got='Heat Flux'                expected='Heat Flux'
+VER   heated wall flux             got=8000.0                     expected=8000.0
+VER   solid inlet end flux         got=0                          expected=0.0
+VER   solid outlet end flux        got=0                          expected=0.0
+VER   INTERFACE is coupled         got='Coupled'                  expected='Coupled'
+VER   INTERFACE shadow coupled     got='Coupled'                  expected='Coupled'
+HEAT-PATH fluid_solid_interface            condition=Coupled    flux=None
+HEAT-PATH fluid_solid_interface-shadow     condition=Coupled    flux=None
+HEAT-PATH solid_inlet_end                  condition=Heat Flux  flux=0
+HEAT-PATH solid_outlet_end                 condition=Heat Flux  flux=0
+------------------------------------------------------------------------------
+OK    initialization type = standard                       
+OK    compute defaults from fluid_inlet                    
+OK    list defaults                                        
+OK    force sensible init values                           {'temperature': 300.0, 'x-velocity': 0.0, 'y-velocity': 0.0, 'z-velocity': 23.5, 'gauge-pr
+OK    standard initialize                                  
+OK    write setup case                                     
+------------------------------------------------------------------------------
+STARTING SHORT DIAGNOSTIC SOLVE: 150 iterations. This is NOT a converged run.
+------------------------------------------------------------------------------
+OK    iterate 150                                          
+MONITOR mdot_in          = [{'mdot_in': [0.008662155126142544, 'kg/s']}]
+MONITOR mdot_out         = [{'mdot_out': [-0.008662141648102173, 'kg/s']}]
+MONITOR mass_imbalance   = [{'mass_imbalance': [1.347804037127309e-08, 'kg/s']}]
+MONITOR q_heated_wall    = [{'q_heated_wall': [602.7552389850018, 'W']}]
+MONITOR q_interface      = [{'q_interface': [602.7761682844996, 'W']}]
+MONITOR q_fluid_net      = [{'q_fluid_net': [-603.0717546905746, 'W']}]
+MONITOR p_in             = [{'p_in': [438.9348699364398, 'Pa']}]
+MONITOR p_out            = [{'p_out': [0.0, 'Pa']}]
+MONITOR T_out_bulk       = [{'T_out_bulk': [368.9691728933993, 'K']}]
+MONITOR T_wall_max       = [{'T_wall_max': [555.0536499023438, 'K']}]
+MONITOR T_solid_max      = [{'T_solid_max': [561.9147030682, 'K']}]
+MONITOR T_solid_mean     = [{'T_solid_mean': [525.1706877159221, 'K']}]
+MONITOR v_out_max        = [{'v_out_max': [34.95264053344727, 'm/s']}]
+MONITOR yplus_max        = [{'yplus_max': [0.5915653109550476, '']}]
+MONITOR dp_total         = [[]]
+DERIVED dp_total = p_in - p_out = 438.9349 - 0.0000 = 438.9349 Pa
+OK    derive dp from p_in - p_out                          438.9348699364398
+OK    verify monitor file written                          'Test_Run/s5a_monitors.out exists, 153 lines'
+OK    flux balance mass                                    
+OK    flux balance heat                                    
+OK    write test case+data                                 
+summary written

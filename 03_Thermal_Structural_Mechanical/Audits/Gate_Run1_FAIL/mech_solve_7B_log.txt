@@ -1,0 +1,85 @@
+15:10:04 === SECTION 7B MECHANICAL SOLVE (RE-ANALYSIS 2026) ===
+15:10:04 analyses ['LC1_Free_Expansion', 'LC2_Axially_Restrained', 'Static Structural']
+15:10:04 PASS  geometry: SOLID_DOMAIN active | expected not suppressed | found False
+15:10:04 PASS  geometry: FLUID_DOMAIN suppressed (structural model = solid only) | expected True | found True
+15:10:04 PASS  geometry: solid volume = pi(ro^2-ri^2)L (Di 20, Do 40, L 600 mm) | expected 5.654867e-04 m3 (+/-0.1%) | found 0.000565486677646
+15:10:04 PASS  material: SOLID_DOMAIN = Inconel_718_Re_analysis | expected Inconel_718_Re_analysis | found Inconel_718_Re_analysis
+15:10:04 PASS  mesh: node count | expected 108252 | found 108252
+15:10:04 PASS  mesh: element count | expected 23400 | found 23400
+15:10:04 PASS  mesh: quadratic elements | expected Quadratic | found Quadratic
+15:10:04 PASS  mesh: below measured Student MAPDL limit | expected < 128,000 nodes | found 108252
+15:10:04 PASS  mesh: no invalid elements (Jacobian ratio finite, < 40; element quality > 0) | expected JR max < 40, EQ min > 0 | found JR {'min': 1.1153, 'max': 1.2046000000000001, 'avg': 1.1535000000000084} / EQ {'min': 0.23667418368906179, 'max': 0.99120634986953271, 'avg': 0.68822512405437941}
+15:10:04 PASS  geometry: mesh extents r 10-20 mm, z 0-600 mm | expected r 0.010-0.020 m, z 0-0.600 m | found r 0.010000000-0.020000000 z 0.000000000-0.600000000 (108252 nodes)
+15:10:04 PASS  BC nodes: NS_LC1_SUPPORT_3NODES_INLET_OUTER = 7A ids at r 20 mm, z 0.0 m, 0/120/240 deg | expected [18870, 18882, 18894] | found [(18870, 0.02, 0.0, -120.0), (18882, 0.02, 0.0, 0.0), (18894, 0.02, 0.0, 120.0)]
+15:10:04 PASS  BC nodes: NS_LC2_HOOP_3NODES_MIDSPAN_OUTER = 7A ids at r 20 mm, z 0.3 m, 0/120/240 deg | expected [25862, 25874, 25886] | found [(25862, 0.02, 0.29999999999999999, -120.0), (25874, 0.02, 0.29999999999999999, 0.0), (25886, 0.02, 0.29999999999999999, 120.0)]
+15:10:04 PASS  CS_DUCT_CYL fully defined, cylindrical, origin 0,0,0 | expected FullyDefined / Cylindrical / (0,0,0) | found FullyDefined / Cylindrical / (0 [m],0 [m],0 [m])
+15:10:04 PASS  LC1: environment (stress-free reference) temperature = 300 K | expected 300 K | found 26.850000000000023 [C]
+15:10:04 LC1 imported temperature state on open: Solved
+15:10:05 PASS  LC1: mapped temperature identical to the 7A export (field unchanged) | expected byte-identical to 07_Thermal_Analysis/Mapping/Mechanical_Export/LC1_imported_body_temperature.txt | found identical
+15:10:05 PASS  LC1: imported temperature settings | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode (state on open Solved, now Solved)
+15:10:05 PASS  LC1: no unmapped nodes | expected 0 unmapped | found no unmapped-node NS created (0 unmapped)
+15:10:05 PASS  LC1: no under-defined / error objects | expected none | found []
+15:10:05 PASS  LC1: pressure objects suppressed (thermal-only case) | expected 2 pressure objects, both suppressed | found [('LC1_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC1_P_CFD_linear_fit_SUPPRESSED', True)]
+15:10:05 OK   LC1 LargeDeflection False
+15:10:05 OK   LC1 NumberOfSteps 1
+15:10:05 OK   LC1 SolverType ProgramControlled
+15:10:05 OK   LC1 WeakSprings Off
+15:10:05 OK   LC1 InertiaRelief False
+15:10:05 PASS  LC1: analysis settings (small deflection, 1 step, no inertia relief) | expected LargeDeflection off, 1 step, InertiaRelief off | found {'InertiaRelief': 'False', 'LargeDeflection': 'False', 'NumberOfSteps': '1', 'SolverType': 'ProgramControlled', 'WeakSprings': 'Off'}
+15:10:05 LC1 solution state before solve: NotSolved
+15:10:05 PASS  LC2: environment (stress-free reference) temperature = 300 K | expected 300 K | found 26.850000000000023 [C]
+15:10:05 LC2 imported temperature state on open: Solved
+15:10:05 PASS  LC2: mapped temperature identical to the 7A export (field unchanged) | expected byte-identical to 07_Thermal_Analysis/Mapping/Mechanical_Export/LC1_imported_body_temperature.txt | found identical
+15:10:05 PASS  LC2: imported temperature settings | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode (state on open Solved, now Solved)
+15:10:05 PASS  LC2: no unmapped nodes | expected 0 unmapped | found no unmapped-node NS created (0 unmapped)
+15:10:05 PASS  LC2: no under-defined / error objects | expected none | found []
+15:10:05 PASS  LC2: pressure objects suppressed (thermal-only case) | expected 2 pressure objects, both suppressed | found [('LC2_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC2_P_CFD_linear_fit_SUPPRESSED', True)]
+15:10:05 OK   LC2 LargeDeflection False
+15:10:05 OK   LC2 NumberOfSteps 1
+15:10:05 OK   LC2 SolverType ProgramControlled
+15:10:05 OK   LC2 WeakSprings Off
+15:10:05 OK   LC2 InertiaRelief False
+15:10:05 PASS  LC2: analysis settings (small deflection, 1 step, no inertia relief) | expected LargeDeflection off, 1 step, InertiaRelief off | found {'InertiaRelief': 'False', 'LargeDeflection': 'False', 'NumberOfSteps': '1', 'SolverType': 'ProgramControlled', 'WeakSprings': 'Off'}
+15:10:05 LC2 solution state before solve: NotSolved
+15:10:09 PASS  LC1 input vs 7A input: identical nblock section | expected identical | found identical
+15:10:09 PASS  LC1 input vs 7A input: identical eblock section | expected identical | found identical
+15:10:09 PASS  LC1 input vs 7A input: identical bf section | expected identical | found identical
+15:10:09 PASS  LC1 input vs 7A input: identical material section | expected identical | found identical
+15:10:09 PASS  LC1 input vs 7A input: identical resolved constraints (DOF, value, node set) | expected [('D', 'uy', 0.0, 3, 56646, 18870, 18894), ('D', 'uz', 0.0, 3, 56646, 18870, 18894), ('NROT_csys12', '', 0.0, 3, 56646, 18870, 18894)] | found [('D', 'uy', 0.0, 3, 56646, 18870, 18894), ('D', 'uz', 0.0, 3, 56646, 18870, 18894), ('NROT_csys12', '', 0.0, 3, 56646, 18870, 18894)]
+15:10:09 PASS  LC1 input: 108,252 nodes, 23,400 SOLID186, BF on all nodes | expected 108252 / 23400 / 108252 / et,1,186 | found 108252 / 23400 / 108252 / ['et,1,186']
+15:10:09 PASS  LC1 input: mapped T range 423.84-562.56 K | expected 423.84-562.56 K | found 423.837-562.558 K
+15:10:10 PASS  LC1 input: T_ref, density, E(T) table, nu 0.294 [ASSUMED], secant alpha(T) table, MPAMOD 21.11 | expected tref 26.85 C; DENS 8190; EX 204/199/193/187/180 GPa @20-400 C; NUXY 0.294; ALPX 12.8-14.8e-6 @93.33-537.78 C; MPAMOD 21.11 | found ['tref,26.85', 'MP,DENS,1,8190,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,NUXY,1, ,0.294,0.
+15:10:10 PASS  LC1 input: no weak springs | expected no wsprings | found False
+15:10:12 PASS  LC2 input vs 7A input: identical nblock section | expected identical | found identical
+15:10:12 PASS  LC2 input vs 7A input: identical eblock section | expected identical | found identical
+15:10:13 PASS  LC2 input vs 7A input: identical bf section | expected identical | found identical
+15:10:13 PASS  LC2 input vs 7A input: identical material section | expected identical | found identical
+15:10:13 PASS  LC2 input vs 7A input: identical resolved constraints (DOF, value, node set) | expected [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)] | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+15:10:13 PASS  LC2 input: 108,252 nodes, 23,400 SOLID186, BF on all nodes | expected 108252 / 23400 / 108252 / et,1,186 | found 108252 / 23400 / 108252 / ['et,1,186']
+15:10:13 PASS  LC2 input: mapped T range 423.84-562.56 K | expected 423.84-562.56 K | found 423.837-562.558 K
+15:10:13 PASS  LC2 input: T_ref, density, E(T) table, nu 0.294 [ASSUMED], secant alpha(T) table, MPAMOD 21.11 | expected tref 26.85 C; DENS 8190; EX 204/199/193/187/180 GPa @20-400 C; NUXY 0.294; ALPX 12.8-14.8e-6 @93.33-537.78 C; MPAMOD 21.11 | found ['tref,26.85', 'MP,DENS,1,8190,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,NUXY,1, ,0.294,0.
+15:10:13 PASS  LC2 input: no weak springs | expected no wsprings | found False
+15:10:13 PASS  LC1 constraints: 3 rotated nodes (csys 12), U_theta = 0 and U_z = 0 only | expected nrot(3, csys 12) + d uy + d uz on the same 3 nodes | found [('D', 'uy', 0.0, 3, 56646, 18870, 18894), ('D', 'uz', 0.0, 3, 56646, 18870, 18894), ('NROT_csys12', '', 0.0, 3, 56646, 18870, 18894)]
+15:10:13 PASS  LC2 constraints: U_z = 0 on 1,224 end-face nodes + 3 rotated mid-span nodes U_theta = 0 | expected d uz (1224 nodes) + nrot(3, csys 12) + d uy (3) | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+15:10:13 PASS  LC2P: External Data linked (imported load group present) | expected 1 | found 1
+15:10:19 OK   LC2P import 
+15:10:19 PASS  LC2P: mapped temperature identical to the 7A export | expected byte-identical | found identical
+15:10:20 OK   LC2P LargeDeflection False
+15:10:20 OK   LC2P NumberOfSteps 1
+15:10:20 OK   LC2P SolverType ProgramControlled
+15:10:20 OK   LC2P WeakSprings Off
+15:10:20 OK   LC2P InertiaRelief False
+15:10:20 PASS  LC2P: no under-defined / error objects | expected none | found []
+15:10:22 PASS  LC2P input vs LC2 input: identical nblock section | expected identical | found identical
+15:10:22 **FAIL**  LC2P input vs LC2 input: identical eblock section | expected identical | found DIFFERENT
+15:10:22 PASS  LC2P input vs LC2 input: identical bf section | expected identical | found identical
+15:10:22 PASS  LC2P input vs LC2 input: identical material section | expected identical | found identical
+15:10:22 PASS  LC2P input: same resolved constraints as LC2 | expected [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)] | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+15:10:22 PASS  LC2P input: pressure 443.41 Pa present | expected 443.41 in input | found ['/title,Flow_Behavior_Thermal_Effects_Structural_7B--LC2P_Restrained_Thermal_Plus_Pressure', 'sf,all,pres,443.41']
+15:10:22 PASS  LC2 input: no pressure (thermal only) | expected no 443.41 | found False
+15:10:22 PASS  LC1 input: no pressure (thermal only) | expected no 443.41 | found False
+15:10:22 FATAL PRE-SOLVE GATE FAILED - nothing solved: ['LC2P input vs LC2 input: identical eblock section']
+15:10:22 Traceback (most recent call last):
+  File "<PROJECT_ROOT>\08_Structural_Analysis\Workbench\Scripts\mech_solve_7B.py", line 488, in <module>
+    raise Exception("PRE-SOLVE GATE FAILED - nothing solved: %s" % [c["check"] for c in failed])
+Exception: PRE-SOLVE GATE FAILED - nothing solved: ['LC2P input vs LC2 input: identical eblock section']

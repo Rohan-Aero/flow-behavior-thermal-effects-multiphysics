@@ -1,0 +1,115 @@
+﻿Section 12A machine audit - run 2026-10-02T13:10:15.3941875+05:30 on <HOST>
+
+== 1. ANSYS root folders ==
+ANSYS Student  2026-09-17 21:48
+Shared Files  2025-11-24 09:39
+v261  2026-10-01 21:55
+install.log  2026-10-01 21:55
+install_licconfig.log  2026-10-01 21:55
+
+== 2. Student v261 identity ==
+Unified Package Created: 202602040408P01 | Unified Package Name: R261RC2P01 | Patched blademodeler. 202602040408P01
+v261 (non-Student) folder contents: installer, builddate.txt, install.id, package.id
+
+== 3. LS-DYNA / LS-PrePost / LS-Run executables under C:\Program Files\ANSYS Inc ==
+NONE FOUND
+Expected LS-PrePost path from installer config (ansys\bin\winx64\lsprepost413): exists = False
+ansys\bin\winx64 files matching dyna/lspp/prepost: 
+
+== 4. LS-DYNA integration components present (not solvers) ==
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA.wbex  2103016 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDynaSolverExtension.dll  2869856 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDYNAAnalysisTemplate.xml  2670 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\keywordmanager\Ansys.ACTLSDYNA.KeywordLibrary.dll  15032936 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\WBAddinConfiguration\LSDYNAAddIn.xml  510 bytes  2026-02-04
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\LSDYNAParser.dll  29674352 bytes  2026-02-04
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SEC\SolverExecutionController\sec\plugins\lsdyna.py  26057 bytes  2026-01-12
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\launcherQT\src\RunLsdyna.py  6251 bytes  2026-01-28
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\installer\dev_configs\lsdyna\config_lsdyna.json  2701 bytes  2026-02-24
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\docu\LS-DYNA_Manual_Vol_I_R16.pdf  31080047 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\docu\LS-DYNA_Manual_Vol_II_R16.pdf  14349251 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\docu\LS-DYNA_Manual_Vol_III_R16.pdf  4004858 bytes  2026-02-03
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\tp\MPI\WindowsHPC\mat_pie_lin_pla.k  618901 bytes  2025-08-19
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\examples\simple_car\reference\simplecar.k  791486 bytes  2026-01-09
+ACT default-extension list contains LSDYNA: True
+
+== 5. Student installation product selection (install.log header) ==
+
+Windows x64
+     3D Design
+          Discovery (full install)
+     Connect
+          optiSLang Core UI
+     Fluids
+          CFX (includes CFD-Post)
+          Chemkin
+          EnSight
+          FENSAP-ICE
+          Fluent (includes CFD-Post)
+          Forte (includes EnSight)
+          Model Fuel Library (Encrypted)
+          Polyflow (includes CFD-Post)
+          Reaction Workbench
+          Rocky
+          TurboGrid
+     Geometry Interfaces
+          Catia, Version 4 Geometry Interface
+          Catia, Version 6 Geometry Interface
+          Discovery Geometry Interface
+          JTOpen Geometry Interface
+     Optics
+          Speos
+          Speos RPC
+          Zemax OpticStudio
+     Platform
+          Dynamic Reporting
+     Structures
+          Aqwa
+          Autodyn
+          Material Calibration App
+          Mechanical Products
+          Motion
+
+
+
+
+== 6. Licensing evidence ==
+LSTC_LICENSE : machine='Ansys' user=''
+ANSYSLMD_LICENSE_FILE : machine='' user=''
+ANSYSLIC_DIR : machine='C:\Program Files\ANSYS Inc\Shared Files\Licensing' user=''
+AWP_ROOT261 : machine='C:\Program Files\ANSYS Inc\ANSYS Student\v261' user=''
+ANSYS261_DIR : machine='C:\Program Files\ANSYS Inc\ANSYS Student\v261\ANSYS' user=''
+LSTC_LICENSE_SERVER : machine='' user=''
+LSTC_FILE : machine='' user=''
+Shared Files\Licensing\license_files: backup
+ansyslmd.ini present: False
+service: ANSYS, Inc. License Manager CVD | Stopped | Automatic
+service: ANSYS Licensing Tomcat | Running | Automatic
+License Manager install log (2026-10-01) header:
+
+>>>--------------------------------------->
+Start Installation: Thu Oct 01 21:54:54 2026
+Revision: 2026 R1
+
+Platform specifics:
+    Windows
+Username of Installer: <HOST>\<user>
+User Has Administrator Privileges
+<USER_HOME>\AppData\Local\Temp\ans_install_tmp16432\instcore.exe -usetempdir <USER_HOME>\AppData\Local\Temp\ans_install_tmp16432 -Silent -LM -launchdir "<USER_HOME>\Downloads\Ansys_STK_Pro_ODTK_v13.1.0\Ansys License Manager" -admin -manifestFileDir "<USER_HOME>\Downloads\Ansys_STK_Pro_ODTK_v13.1.0\Ansys License Manager\manifest\license"
+Initial mount directory:
+    <USER_HOME>\Downloads\Ansys_STK_Pro_ODTK_v13.1.0\Ansys License Manager
+
+== 7. Hardware ==
+CPU: 12th Gen Intel(R) Core(TM) i5-12450HX; cores 8; logical 12
+RAM total 15.71 GB; free at audit 4.99 GB; OS Microsoft Windows 11 Home Single Language 10.0.26200
+drive C: free 107.3 GB
+drive D: free 199.0 GB
+GPU: Intel(R) UHD Graphics
+GPU: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+
+== 8. Keyword files in the project ==
+NONE FOUND
+
+== 9. Full-drive search not repeated in this run; see raw\ for the 2026-10-02 results ==
+
+END

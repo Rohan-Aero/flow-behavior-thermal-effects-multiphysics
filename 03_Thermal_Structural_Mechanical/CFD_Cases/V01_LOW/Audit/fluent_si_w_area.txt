@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Area-Weighted Average
+                      Z Velocity                [m/s]
+-------------------------------- --------------------
+                     fluid_inlet                21.15
+                    fluid_outlet            26.541575
+                ---------------- --------------------
+                             Net            23.845788

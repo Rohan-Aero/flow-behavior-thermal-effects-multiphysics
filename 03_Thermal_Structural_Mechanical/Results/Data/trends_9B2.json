@@ -1,0 +1,722 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 one-factor-at-a-time trends (values, % change vs P00, local sensitivity)",
+ "families": {
+  "V": {
+   "x": [
+    21.15,
+    23.5,
+    25.85
+   ],
+   "cases": [
+    "V01_LOW",
+    "P00_BASELINE",
+    "V03_HIGH"
+   ],
+   "quantities": {
+    "dp_Pa": {
+     "values": [
+      379.93272,
+      438.12633,
+      499.68721
+     ],
+     "pct_change_vs_P00": [
+      -13.282381362471408,
+      0.0,
+      14.050942795426149
+     ],
+     "normalised_sensitivity": 1.366666207894877,
+     "midpoint_deviation_from_linear_pct": -0.3842807164773772,
+     "monotonic": true
+    },
+    "T_out_K": {
+     "values": [
+      376.5566,
+      368.93236,
+      362.68712
+     ],
+     "pct_change_vs_P00": [
+      2.0665685167871928,
+      0.0,
+      -1.692787263226252
+     ],
+     "normalised_sensitivity": -0.1879677890006721,
+     "midpoint_deviation_from_linear_pct": -0.1868906267804626,
+     "monotonic": true
+    },
+    "T_solid_max_K": {
+     "values": [
+      587.46741,
+      562.57678,
+      542.09778
+     ],
+     "pct_change_vs_P00": [
+      4.424396968534675,
+      0.0,
+      -3.640214229958094
+     ],
+     "normalised_sensitivity": -0.4032305599246382,
+     "midpoint_deviation_from_linear_pct": -0.3920913692882802,
+     "monotonic": true
+    },
+    "T_solid_mean_K": {
+     "values": [
+      546.9617397,
+      525.4829346,
+      507.7825605
+     ],
+     "pct_change_vs_P00": [
+      4.08744103485486,
+      0.0,
+      -3.3684013189645516
+     ],
+     "normalised_sensitivity": -0.3727921176909704,
+     "midpoint_deviation_from_linear_pct": -0.3595198579451599,
+     "monotonic": true
+    },
+    "LC1_max_utot_mm": {
+     "values": [
+      2.0375453288213365,
+      1.8443072934482097,
+      1.687438139593393
+     ],
+     "pct_change_vs_P00": [
+      10.477540053091658,
+      0.0,
+      -8.50558659134976
+     ],
+     "normalised_sensitivity": -0.9491563322220704,
+     "midpoint_deviation_from_linear_pct": -0.9859767308709497,
+     "monotonic": true
+    },
+    "LC1_dL_mm": {
+     "values": [
+      2.033883208815736,
+      1.8408599669426453,
+      1.684166840747749
+     ],
+     "pct_change_vs_P00": [
+      10.485492940219105,
+      0.0,
+      -8.511952511800061
+     ],
+     "normalised_sensitivity": -0.9498722726009579,
+     "midpoint_deviation_from_linear_pct": -0.986770214209522,
+     "monotonic": true
+    },
+    "LC1_max_vm_MPa": {
+     "values": [
+      24.9246555,
+      24.282183,
+      23.532086399999997
+     ],
+     "pct_change_vs_P00": [
+      2.6458597235676886,
+      0.0,
+      -3.089082229550789
+     ],
+     "normalised_sensitivity": -0.2867470976559237,
+     "midpoint_deviation_from_linear_pct": 0.22161125299155032,
+     "monotonic": true
+    },
+    "LC2_max_vm_MPa": {
+     "values": [
+      663.00101,
+      605.1608729999999,
+      557.543826
+     ],
+     "pct_change_vs_P00": [
+      9.557811745704194,
+      0.0,
+      -7.86849400291614
+     ],
+     "normalised_sensitivity": -0.871315287431016,
+     "midpoint_deviation_from_linear_pct": -0.8446588713940354,
+     "monotonic": true
+    },
+    "LC2_mean_axial_MPa": {
+     "values": [
+      -639.0527734143743,
+      -582.4398368194766,
+      -535.8533279313659
+     ],
+     "pct_change_vs_P00": [
+      -9.719962992923604,
+      0.0,
+      7.998510050841496
+     ],
+     "normalised_sensitivity": -0.8859236521882544,
+     "midpoint_deviation_from_linear_pct": 0.8607264710410633,
+     "monotonic": true
+    },
+    "LC2_max_utot_mm": {
+     "values": [
+      0.15024193179201262,
+      0.13488427764164404,
+      0.12241489254077534
+     ],
+     "pct_change_vs_P00": [
+      11.385800049409962,
+      0.0,
+      -9.244505971257036
+     ],
+     "normalised_sensitivity": -1.0315153010333493,
+     "midpoint_deviation_from_linear_pct": -1.0706470390764529,
+     "monotonic": true
+    },
+    "LC2_max_ur_mm": {
+     "values": [
+      0.0993298492,
+      0.0897340069,
+      0.08197418470000001
+     ],
+     "pct_change_vs_P00": [
+      10.69365186232423,
+      0.0,
+      -8.647582413930953
+     ],
+     "normalised_sensitivity": -0.9670617138127587,
+     "midpoint_deviation_from_linear_pct": -1.0230347241966313,
+     "monotonic": true
+    },
+    "LC2_end_reaction_kN": {
+     "values": [
+      602.2930494644344,
+      548.9366137530317,
+      505.02986352924654
+     ],
+     "pct_change_vs_P00": [
+      9.71996299292361,
+      0.0,
+      -7.998510050841484
+     ],
+     "normalised_sensitivity": -0.8859236521882542,
+     "midpoint_deviation_from_linear_pct": -0.8607264710410524,
+     "monotonic": true
+    },
+    "LC2_utilisation": {
+     "values": [
+      0.6347221693365006,
+      0.5779772944955913,
+      0.5314606463796826
+     ],
+     "pct_change_vs_P00": [
+      9.817838067571723,
+      0.0,
+      -8.048179151484565
+     ],
+     "normalised_sensitivity": -0.8933008609528138,
+     "midpoint_deviation_from_linear_pct": -0.8848294580435697,
+     "monotonic": true
+    },
+    "lambda1": {
+     "values": [
+      1.00306981164583,
+      1.1080469964202,
+      1.21087203680819
+     ],
+     "pct_change_vs_P00": [
+      -9.474073312190077,
+      0.0,
+      9.279844692525668
+     ],
+     "normalised_sensitivity": 0.9376959002357866,
+     "midpoint_deviation_from_linear_pct": 0.09711430983220437,
+     "monotonic": true
+    },
+    "Pcr_kN": {
+     "values": [
+      604.1419756818829,
+      608.2475660941222,
+      611.5265395006211
+     ],
+     "pct_change_vs_P00": [
+      -0.6749867391337956,
+      0.0,
+      0.539085331250045
+     ],
+     "normalised_sensitivity": 0.060703603519192,
+     "midpoint_deviation_from_linear_pct": 0.06795070394186598,
+     "monotonic": true
+    }
+   }
+  },
+  "Q": {
+   "x": [
+    7200,
+    8000,
+    8800
+   ],
+   "cases": [
+    "Q01_LOW",
+    "P00_BASELINE",
+    "Q03_HIGH"
+   ],
+   "quantities": {
+    "dp_Pa": {
+     "values": [
+      419.73641,
+      438.12633,
+      456.63526
+     ],
+     "pct_change_vs_P00": [
+      -4.197401238131481,
+      0.0,
+      4.224564636414347
+     ],
+     "normalised_sensitivity": 0.4210982937272914,
+     "midpoint_deviation_from_linear_pct": -0.0135816991414329,
+     "monotonic": true
+    },
+    "T_out_K": {
+     "values": [
+      362.06322,
+      368.93236,
+      375.79302
+     ],
+     "pct_change_vs_P00": [
+      -1.861896852854007,
+      0.0,
+      1.859598328539138
+     ],
+     "normalised_sensitivity": 0.18607475906965726,
+     "midpoint_deviation_from_linear_pct": 0.0011492621574267954,
+     "monotonic": true
+    },
+    "T_solid_max_K": {
+     "values": [
+      534.44556,
+      562.57678,
+      591.12708
+     ],
+     "pct_change_vs_P00": [
+      -5.000423231118779,
+      0.0,
+      5.074916174108713
+     ],
+     "normalised_sensitivity": 0.5037669702613746,
+     "midpoint_deviation_from_linear_pct": -0.03724647149495705,
+     "monotonic": true
+    },
+    "T_solid_mean_K": {
+     "values": [
+      501.0686269,
+      525.4829346,
+      550.3068677
+     ],
+     "pct_change_vs_P00": [
+      -4.646070517700879,
+      0.0,
+      4.72402269712071
+     ],
+     "normalised_sensitivity": 0.4685046607410795,
+     "midpoint_deviation_from_linear_pct": -0.03897608970990435,
+     "monotonic": true
+    },
+    "LC1_max_utot_mm": {
+     "values": [
+      1.6284074081711943,
+      1.8443072934482097,
+      2.0679628323899752
+     ],
+     "pct_change_vs_P00": [
+      -11.70628593423594,
+      0.0,
+      12.126804450445347
+     ],
+     "normalised_sensitivity": 1.1916545192340642,
+     "midpoint_deviation_from_linear_pct": -0.21025925810470347,
+     "monotonic": true
+    },
+    "LC1_dL_mm": {
+     "values": [
+      1.6253372486493487,
+      1.8408599669426453,
+      2.064143732747104
+     ],
+     "pct_change_vs_P00": [
+      -11.70771933572129,
+      0.0,
+      12.12931835197084
+     ],
+     "normalised_sensitivity": 1.1918518843846064,
+     "midpoint_deviation_from_linear_pct": -0.21079950812477605,
+     "monotonic": true
+    },
+    "LC1_max_vm_MPa": {
+     "values": [
+      21.7035515,
+      24.282183,
+      26.6492488
+     ],
+     "pct_change_vs_P00": [
+      -10.619438540595795,
+      0.0,
+      9.748158969067974
+     ],
+     "normalised_sensitivity": 1.0183798754831883,
+     "midpoint_deviation_from_linear_pct": 0.4356397857639104,
+     "monotonic": true
+    },
+    "LC2_max_vm_MPa": {
+     "values": [
+      538.525933,
+      605.1608729999999,
+      673.023928
+     ],
+     "pct_change_vs_P00": [
+      -11.01111175110621,
+      0.0,
+      11.214052002995249
+     ],
+     "normalised_sensitivity": 1.111258187705073,
+     "midpoint_deviation_from_linear_pct": -0.10147012594452023,
+     "monotonic": true
+    },
+    "LC2_mean_axial_MPa": {
+     "values": [
+      -518.2295270607111,
+      -582.4398368194766,
+      -647.8298506664385
+     ],
+     "pct_change_vs_P00": [
+      11.02436778867978,
+      0.0,
+      -11.226913015434606
+     ],
+     "normalised_sensitivity": 1.112564040205719,
+     "midpoint_deviation_from_linear_pct": 0.10127261337742255,
+     "monotonic": true
+    },
+    "LC2_max_utot_mm": {
+     "values": [
+      0.1189020818142834,
+      0.13488427764164404,
+      0.1512474275442171
+     ],
+     "pct_change_vs_P00": [
+      -11.84882041613597,
+      0.0,
+      12.131250720003205
+     ],
+     "normalised_sensitivity": 1.1990035568069586,
+     "midpoint_deviation_from_linear_pct": -0.14121515193362347,
+     "monotonic": true
+    },
+    "LC2_max_ur_mm": {
+     "values": [
+      0.0791856359,
+      0.0897340069,
+      0.100674177
+     ],
+     "pct_change_vs_P00": [
+      -11.755154332688114,
+      0.0,
+      12.191777095378997
+     ],
+     "normalised_sensitivity": 1.1973465714033555,
+     "midpoint_deviation_from_linear_pct": -0.21831138134544092,
+     "monotonic": true
+    },
+    "LC2_end_reaction_kN": {
+     "values": [
+      488.419822526173,
+      548.9366137530317,
+      610.5652498889568
+     ],
+     "pct_change_vs_P00": [
+      -11.024367788679767,
+      0.0,
+      11.226913015434615
+     ],
+     "normalised_sensitivity": 1.1125640402057189,
+     "midpoint_deviation_from_linear_pct": -0.10127261337741368,
+     "monotonic": true
+    },
+    "LC2_utilisation": {
+     "values": [
+      0.5129043061609908,
+      0.5779772944955913,
+      0.6446144522700555
+     ],
+     "pct_change_vs_P00": [
+      -11.258744755949385,
+      0.0,
+      11.529372937153072
+     ],
+     "normalised_sensitivity": 1.1394058846551227,
+     "midpoint_deviation_from_linear_pct": -0.13531409060185384,
+     "monotonic": true
+    },
+    "lambda1": {
+     "values": [
+      1.25464489399189,
+      1.1080469964202,
+      0.988344623877155
+     ],
+     "pct_change_vs_P00": [
+      13.230296011388333,
+      0.0,
+      -10.803005010597106
+     ],
+     "normalised_sensitivity": -1.201665051099272,
+     "midpoint_deviation_from_linear_pct": -1.2136455003956188,
+     "monotonic": true
+    },
+    "Pcr_kN": {
+     "values": [
+      612.793436456888,
+      608.2475660941222,
+      603.4488822539622
+     ],
+     "pct_change_vs_P00": [
+      0.7473717308820782,
+      0.0,
+      -0.7889359707552819
+     ],
+     "normalised_sensitivity": -0.076815385081868,
+     "midpoint_deviation_from_linear_pct": 0.02078211993660182,
+     "monotonic": true
+    }
+   }
+  },
+  "T": {
+   "x": [
+    8.0,
+    10.0,
+    12.0
+   ],
+   "cases": [
+    "T01_THIN",
+    "P00_BASELINE",
+    "T03_THICK"
+   ],
+   "quantities": {
+    "dp_Pa": {
+     "values": [
+      438.11047,
+      438.12633,
+      438.14279
+     ],
+     "pct_change_vs_P00": [
+      -0.003619960480342534,
+      0.0,
+      0.0037569072828823216
+     ],
+     "normalised_sensitivity": 0.0001844216940806214,
+     "midpoint_deviation_from_linear_pct": -6.847340126340666e-05,
+     "monotonic": true
+    },
+    "T_out_K": {
+     "values": [
+      368.93236,
+      368.93236,
+      368.9324
+     ],
+     "pct_change_vs_P00": [
+      0.0,
+      0.0,
+      1.0842095812862044e-05
+     ],
+     "normalised_sensitivity": 2.710523953215511e-07,
+     "midpoint_deviation_from_linear_pct": -5.42104789872725e-06,
+     "monotonic": false
+    },
+    "T_solid_max_K": {
+     "values": [
+      561.96619,
+      562.57678,
+      563.07239
+     ],
+     "pct_change_vs_P00": [
+      -0.10853451861273086,
+      0.0,
+      0.08809641947896535
+     ],
+     "normalised_sensitivity": 0.004915773452292406,
+     "midpoint_deviation_from_linear_pct": 0.01021904956689286,
+     "monotonic": true
+    },
+    "T_solid_mean_K": {
+     "values": [
+      524.5425316,
+      525.4829346,
+      526.3839843
+     ],
+     "pct_change_vs_P00": [
+      -0.17895976026622049,
+      0.0,
+      0.17147078252613732
+     ],
+     "normalised_sensitivity": 0.008760763569808944,
+     "midpoint_deviation_from_linear_pct": 0.0037444888700415868,
+     "monotonic": true
+    },
+    "LC1_max_utot_mm": {
+     "values": [
+      1.8355298779015201,
+      1.8443072934482097,
+      1.8528390437693176
+     ],
+     "pct_change_vs_P00": [
+      -0.4759193642984971,
+      0.0,
+      0.4625991748455643
+     ],
+     "normalised_sensitivity": 0.023462963478601537,
+     "midpoint_deviation_from_linear_pct": 0.006660094726460397,
+     "monotonic": true
+    },
+    "LC1_dL_mm": {
+     "values": [
+      1.8327695987353916,
+      1.8408599669426453,
+      1.8486793240229822
+     ],
+     "pct_change_vs_P00": [
+      -0.4394885190909144,
+      0.0,
+      0.4247665341608517
+     ],
+     "normalised_sensitivity": 0.021606376331294152,
+     "midpoint_deviation_from_linear_pct": 0.007360992465031354,
+     "monotonic": true
+    },
+    "LC1_max_vm_MPa": {
+     "values": [
+      20.871646199999997,
+      24.282183,
+      27.206370399999997
+     ],
+     "pct_change_vs_P00": [
+      -14.045429111542413,
+      0.0,
+      12.042522700697862
+     ],
+     "normalised_sensitivity": 0.6521987953060068,
+     "midpoint_deviation_from_linear_pct": 1.0014532054222673,
+     "monotonic": true
+    },
+    "LC2_max_vm_MPa": {
+     "values": [
+      602.308941,
+      605.1608729999999,
+      607.73507
+     ],
+     "pct_change_vs_P00": [
+      -0.47126840601274633,
+      0.0,
+      0.4253739980311032
+     ],
+     "normalised_sensitivity": 0.022416060101096237,
+     "midpoint_deviation_from_linear_pct": 0.02294720399082157,
+     "monotonic": true
+    },
+    "LC2_mean_axial_MPa": {
+     "values": [
+      -580.0484289681186,
+      -582.4398368194766,
+      -584.749811092398
+     ],
+     "pct_change_vs_P00": [
+      0.4105845273937093,
+      0.0,
+      -0.3966030698613375
+     ],
+     "normalised_sensitivity": 0.020179689931376168,
+     "midpoint_deviation_from_linear_pct": -0.0069907287661957005,
+     "monotonic": true
+    },
+    "LC2_max_utot_mm": {
+     "values": [
+      0.1316977471367966,
+      0.13488427764164404,
+      0.13845476729923412
+     ],
+     "pct_change_vs_P00": [
+      -2.362418037566469,
+      0.0,
+      2.6470762345453123
+     ],
+     "normalised_sensitivity": 0.12523735680279452,
+     "midpoint_deviation_from_linear_pct": -0.14232909848942168,
+     "monotonic": true
+    },
+    "LC2_max_ur_mm": {
+     "values": [
+      0.0806140974,
+      0.0897340069,
+      0.0988674967
+     ],
+     "pct_change_vs_P00": [
+      -10.163270108024113,
+      0.0,
+      10.178404058316943
+     ],
+     "normalised_sensitivity": 0.5085418541585264,
+     "midpoint_deviation_from_linear_pct": -0.007566975146414694,
+     "monotonic": true
+    },
+    "LC2_end_reaction_kN": {
+     "values": [
+      408.18979783064947,
+      548.9366137530317,
+      705.4255529149043
+     ],
+     "pct_change_vs_P00": [
+      -25.639903113787316,
+      0.0,
+      28.50765192942249
+     ],
+     "normalised_sensitivity": 1.353688876080245,
+     "midpoint_deviation_from_linear_pct": -1.4338744078175885,
+     "monotonic": true
+    },
+    "LC2_utilisation": {
+     "values": [
+      0.574324210357255,
+      0.5779772944955913,
+      0.5812544015943217
+     ],
+     "pct_change_vs_P00": [
+      -0.6320463058197489,
+      0.0,
+      0.5669958197216709
+     ],
+     "normalised_sensitivity": 0.029976053138535495,
+     "midpoint_deviation_from_linear_pct": 0.032525243049038956,
+     "monotonic": true
+    },
+    "lambda1": {
+     "values": [
+      0.944972246726218,
+      1.1080469964202,
+      1.28701719896263
+     ],
+     "pct_change_vs_P00": [
+      -14.717313455190286,
+      0.0,
+      16.151860265912397
+     ],
+     "normalised_sensitivity": 0.771729343027567,
+     "midpoint_deviation_from_linear_pct": -0.7172734053610529,
+     "monotonic": true
+    },
+    "Pcr_kN": {
+     "values": [
+      385.7280303467496,
+      608.2475660941222,
+      907.8948191892048
+     ],
+     "pct_change_vs_P00": [
+      -36.583711658114424,
+      0.0,
+      49.26402830006789
+     ],
+     "normalised_sensitivity": 2.1461934989545575,
+     "midpoint_deviation_from_linear_pct": -6.340158320976734,
+     "monotonic": true
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "imported": [
+  [
+   "LC1_Free_Expansion", 
+   "Imported Load (Setup 1) ", 
+   "ImportedLoadGroup", 
+   "FullyDefined"
+  ], 
+  [
+   "LC1_Free_Expansion", 
+   "Imported_Body_Temperature_CFD", 
+   "ImportedBodyTemperature", 
+   "Solved"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Imported Load (Setup 1) ", 
+   "ImportedLoadGroup", 
+   "FullyDefined"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Imported_Body_Temperature_CFD", 
+   "ImportedBodyTemperature", 
+   "Solved"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Imported Load (Setup 1) ", 
+   "ImportedLoadGroup", 
+   "FullyDefined"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Imported_Body_Temperature_CFD", 
+   "ImportedBodyTemperature", 
+   "Solved"
+  ], 
+  [
+   "S3_LC2_Intermediate_Clamped_Pinned", 
+   "Imported Load (Setup 1) ", 
+   "ImportedLoadGroup", 
+   "UnderDefined"
+  ]
+ ], 
+ "DONE": true, 
+ "analyses": [
+  [
+   "LC1_Free_Expansion", 
+   "Static", 
+   "Solved"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Static", 
+   "Solved"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Static", 
+   "Solved"
+  ], 
+  [
+   "S3_LC2_Intermediate_Clamped_Pinned", 
+   "Static", 
+   "UnderDefined"
+  ], 
+  [
+   "S3_Linear_Buckling", 
+   "Buckling", 
+   "NotSolved"
+  ]
+ ], 
+ "steps": [
+  [
+   "LC1 ibt ExternalDataIdentifier", 
+   "OK", 
+   "File2:Temperature1"
+  ], 
+  [
+   "LC1 ibt Location", 
+   "OK", 
+   "<Ansys.ACT.Automation.Mechanical.NamedSelection object at 0x000000000000003C [Ansys.ACT.Automation.Mechanical.NamedSelection]>"
+  ], 
+  [
+   "LC1 ibt MappingControl", 
+   "OK", 
+   "Manual"
+  ], 
+  [
+   "LC1 ibt Algorithm", 
+   "OK", 
+   "BucketVolume"
+  ], 
+  [
+   "LC1 ibt Weighting", 
+   "OK", 
+   "ShapeFunctions"
+  ], 
+  [
+   "LC1 ibt OutsideOption", 
+   "OK", 
+   "NearestNode"
+  ], 
+  [
+   "LC1 ibt SourceMinimum", 
+   "OK", 
+   "150.687341 [C]"
+  ], 
+  [
+   "LC1 ibt SourceMaximum", 
+   "OK", 
+   "289.39364 [C]"
+  ], 
+  [
+   "LC1 ibt ObjectState", 
+   "OK", 
+   "Solved"
+  ], 
+  [
+   "LC1 group type", 
+   "OK", 
+   "ImportedLoadGroup"
+  ], 
+  [
+   "LC1 group dir", 
+   "OK", 
+   "['Accept', 'Activate', 'AddComment', 'AddFigure', 'AddImage', 'AddImportedAeroacousticSource', 'AddImportedBodyForceDensity', 'AddImportedBodyTemperature', 'AddImportedCFDPressure', 'AddImportedConvection', 'AddImportedCutBoundaryConstraint', 'AddImportedCutBoundaryRemoteConstraint', 'AddImportedCutBoundaryRemoteForce', 'AddImportedDisplacement', 'AddImportedElementOrientation', 'AddImportedFiberRatio', 'AddImportedForce', 'AddImportedHeatFlux', 'AddImportedHeatGeneration', 'AddImportedInitialStrain', 'AddImportedInitialStress', 'AddImportedMaterialField', 'AddImportedPressure', 'AddImportedSurfaceForceDensity', 'AddImportedTemperature', 'AddImportedThickness', 'AddImportedTrace', 'AddImportedVelocity', 'AddImportedWarpWeftRatio', 'AddImportedYarnAngle', 'AttachedRefs', 'AwaitObjectDuplica"
+  ], 
+  [
+   "LC1 ibt ImportLoad", 
+   "FAIL", 
+   "Object reference not set to an instance of an object. | System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at Ansys.ACT.Automation.Mechanical.ImportedLoads.ImportedLoad.ImportLoad()\r\n   at Microsoft.Scripting.Interpreter.ActionCallInstruction`1.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.LightLambda.Run3[T0,T1,T2,TRet](T0 arg0, T1 arg1, T2 arg2)\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)\r\n   at Microsoft.Scripting.Interpreter.FuncCallInstruction`5.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.LightLambda.Run3[T0,T1,T2,TRet](T0 arg0, T1 arg1, T2 arg2)\r\n   at IronPython.Compiler.Ast.CallExpression.Invoke0Instruction.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.LightLambda.Run1[T0,TRet](T0 arg0)\r\n   at Microsoft.Scripting.Interpreter.FuncCallInstruction`3.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.LightLambda.Run3[T0,T1,T2,TRet](T0 arg0, T1 arg1, T2 arg2)\r\n   at Microsoft.Scripting.Interpreter.DynamicInstruction`3.Run(InterpretedFrame frame)\r\n   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)"
+  ], 
+  [
+   "LC1 group ImportLoad", 
+   "OK", 
+   "None"
+  ], 
+  [
+   "messages", 
+   "OK", 
+   "[('Info', 'When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No.'), ('Info', 'When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No.'), ('Info', 'When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No.'), ('Info', 'When you change the Color Theme, Mechanical automatically uses the background color of "
+  ]
+ ]
+}

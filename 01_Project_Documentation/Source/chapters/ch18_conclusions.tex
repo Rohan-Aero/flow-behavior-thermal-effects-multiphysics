@@ -1,0 +1,42 @@
+% ===================================================================== Chapter 18
+\chapter{Conclusions}\label{ch:conclusions}
+The following conclusions apply within the idealised numerical model; they are simulation results that have not been
+validated against measurement.
+
+\begin{enumerate}
+\item \textbf{CFD.} The baseline Fluent solution of the heated duct is converged (iteration 600, confirmed at 700) and conserves mass and
+      energy to $7.0\times10^{-13}$\,\% and $3.1\times10^{-11}$\,\%. The wall is resolved ($y^+ \le$ 0.585). The pressure drop is 438.13~Pa, the
+      fully developed Nusselt number 54.17 and the friction factor 0.02163, 10.4\,\% below Petukhov, mainly because of gas heating.
+\item \textbf{Mesh independence.} The three-mesh study, with the polygon-faceting effect separated exactly, shows approximately convergent
+      behaviour (apparent order 1.2--1.6). The medium mesh is 4.4~K hotter than the extrapolated solution at the maximum solid temperature; its
+      error is small and conservative for the structural phase. Strict mesh independence is not claimed.
+\item \textbf{Thermal field.} The air film carries most of the thermal resistance. The maximum solid temperature is 562.58~K on the medium mesh (fine mesh
+      560.83~K, extrapolated 558.13~K) against 581.7~K in the one-dimensional analytical model; the through-wall temperature difference is only
+      7.58~K at mid-span.
+\item \textbf{Structural response.} Free expansion gives 1.8443~mm of maximum deformation and a 24.28~MPa peak von Mises stress. Full axial
+      restraint gives an end force of 548.94~kN, a mean axial stress of $-$582.44~MPa and a local peak von Mises stress of 605.16~MPa,
+      57.8\,\% of the local yield strength. Restraint, not the through-wall gradient, dominates the thermal stress (32$\times$ at mid-span).
+      The structural results are insensitive to the structural mesh ($\le 4.9\times10^{-4}$) and to the fluid pressure ($7.4\times10^{-6}$\,\%).
+\item \textbf{Buckling.} Under the baseline S1 support the linear eigenvalue buckling factor is 1.108, below the first-yield factor of 1.730:
+      the idealised S1 model is stability-limited and close to instability. $\lambda_1$ is a linear stability indicator of a perfect elastic
+      column, not a collapse load and not a factor of safety.
+\item \textbf{Parametric study.} Velocity acts mainly on cooling and pressure drop and on the structure through the temperature; heat flux
+      drives temperature and thermal stress directly; wall thickness acts on stiffness and buckling capacity with little thermal effect. Under
+      S1, $\lambda_1$ falls below 1 for +10\,\% heat flux (Q03, 0.988) and the 8~mm wall (T01, 0.945); their static stresses are pre-buckling
+      equilibrium results. The $-$10\,\% velocity case lies at 1.003.
+\item \textbf{Support sensitivity.} The end restraint changes $\lambda_1$ from 1.108 (S1) to 2.232 (S3) and 4.300 (S2) at identical static stress
+      and switches the governing mechanism from bifurcation-first to first-yield-first. The supports are the dominant uncertainty of the
+      stability conclusion.
+\item \textbf{Additional nonlinear LS-DYNA analysis (extension).} With numerical mode-1 imperfections of 0.1, 0.6 and 1.2~mm, the
+      Southwell characteristic-load estimates (607.7--612.3~kN) are close to the linear critical load of 608.25~kN: the characteristic
+      global buckling load is relatively insensitive to the tested amplitudes, while the onset of lateral deformation, the deflection
+      and the stress at a given load are strongly imperfection-sensitive. The model is elastic and first local yield is reached at
+      $\lambda$ = 0.974--1.109, so the later parts of the load paths lie outside its validated range. The result is not a real-world
+      capacity, a factor of safety or an experimental validation (Section~\ref{sec:lsdyna}).
+\item \textbf{Limitations.} The real end restraint and inelastic material behaviour were not modelled, geometric imperfections only as
+      numerical amplitudes in the additional elastic LS-DYNA analysis, the CFD model form was not varied, and no experimental data exist. The original internship data are unavailable.
+\end{enumerate}
+
+The evidence therefore supports a quantified characterisation of the thermal-stress mechanism of the heated duct, its sensitivity to the
+operating and design parameters and its dependence on the end restraint. It does not support a statement that a real component is
+structurally adequate.

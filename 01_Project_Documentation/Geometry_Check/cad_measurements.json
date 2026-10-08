@@ -1,0 +1,75 @@
+{
+  "fluid_volume_m3": 0.0001884955592153876, 
+  "final_groups": [
+    "FLUID_DOMAIN", 
+    "SOLID_DOMAIN", 
+    "FLUID_INLET", 
+    "FLUID_OUTLET", 
+    "FLUID_WALL", 
+    "FLUID_SOLID_INTERFACE", 
+    "SOLID_INNER_INTERFACE", 
+    "HEATED_OUTER_WALL", 
+    "SOLID_INLET_END", 
+    "SOLID_OUTLET_END", 
+    "STRUCTURAL_SUPPORT"
+  ], 
+  "area_solid_inlet_end": 0.00094247779607693825, 
+  "area_heated_outer": 0.075398223686155036, 
+  "bbox_solid": [
+    -0.02, 
+    -0.02, 
+    0.0, 
+    0.02, 
+    0.02, 
+    0.59999999999999998
+  ], 
+  "share_topology": "no suitable enum member in ['DefaultTolerance', 'Equals', 'GetHashCode', 'GetType', 'MemberwiseClone', 'PreserveInstances', 'ReferenceEquals', 'ToString', 'Tolerance']", 
+  "solid_volume_m3": 0.00056548667764616284, 
+  "area_solid_inner": 0.037699111843077518, 
+  "fluid_faces": 3, 
+  "solid_faces": 4, 
+  "bbox_fluid": [
+    -0.01, 
+    -0.01, 
+    0.0, 
+    0.01, 
+    0.01, 
+    0.59999999999999998
+  ], 
+  "area_solid_outlet_end": 0.00094247779607693825, 
+  "named_selections": [
+    "FLUID_DOMAIN", 
+    "SOLID_DOMAIN", 
+    "FLUID_INLET", 
+    "FLUID_OUTLET", 
+    "FLUID_WALL", 
+    "FLUID_SOLID_INTERFACE", 
+    "SOLID_INNER_INTERFACE", 
+    "HEATED_OUTER_WALL", 
+    "SOLID_INLET_END", 
+    "SOLID_OUTLET_END", 
+    "STRUCTURAL_SUPPORT"
+  ], 
+  "area_fluid_wall": 0.037699111843077518, 
+  "area_fluid_inlet": 0.00031415926535897936, 
+  "area_fluid_outlet": 0.00031415926535897936, 
+  "total_bodies": 2, 
+  "exports": {
+    "heated_duct.scdoc": [
+      false, 
+      0
+    ], 
+    "heated_duct.step": [
+      true, 
+      9337
+    ], 
+    "heated_duct.xmt_txt": [
+      false, 
+      0
+    ], 
+    "heated_duct.x_t": [
+      false, 
+      0
+    ]
+  }
+}

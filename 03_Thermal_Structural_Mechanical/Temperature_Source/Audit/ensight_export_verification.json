@@ -1,0 +1,23 @@
+{
+  "case": "../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5",
+  "data": "../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5",
+  "exporter": "file.export.ensight_gold",
+  "arguments": {
+    "quantities": [
+      "temperature"
+    ],
+    "binary_format": true,
+    "cellzones": [
+      "solid_domain"
+    ],
+    "cell_centered": false
+  },
+  "files": {
+    "solid_domain_T.encas": 287,
+    "solid_domain_T.geo": 2427848,
+    "solid_domain_T.scl1": 260792,
+    "solid_domain_T.vel": 779592,
+    "solid_domain_T.xml": 882
+  },
+  "failures": []
+}

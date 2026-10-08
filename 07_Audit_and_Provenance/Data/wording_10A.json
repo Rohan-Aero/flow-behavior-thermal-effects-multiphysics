@@ -1,0 +1,1846 @@
+{
+ "hits": [
+  {
+   "file": "CFD_TO_MECHANICAL_MAPPING_AUDIT.md",
+   "line": 5,
+   "word": "original internship",
+   "context": "> - No original internship file or result, and no experimental measurement, is involved."
+  },
+  {
+   "file": "CFD_TO_MECHANICAL_MAPPING_AUDIT.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - No original internship file or result, and no experimental measurement, is involved."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 4,
+   "word": "original internship",
+   "context": "**Organisation (original internship):** Eleation"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 5,
+   "word": "original internship",
+   "context": "**Original internship period:** February 2025 \u2013 May 2025"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 21,
+   "word": "experimental",
+   "context": "2. **No original experimental or measured data exists or will be invented.**"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 21,
+   "word": "measured",
+   "context": "2. **No original experimental or measured data exists or will be invented.**"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 148,
+   "word": "margin",
+   "context": "| Margin of safety LC2 | **0.56** |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 148,
+   "word": "safety",
+   "context": "| Margin of safety LC2 | **0.56** |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 554,
+   "word": "measured",
+   "context": "| **\u26a0 Student limitation** | **Fluent capped at 4-way parallel** \u2014 measured from the transcript |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 624,
+   "word": "original internship",
+   "context": "| T-002 | Confirm the original internship used ANSYS Student (A-001) | No | any |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 670,
+   "word": "worst",
+   "context": "| Medium | Not a bug. The super-ellipse core boundary is fixed while `NC` rises, so the four O-grid corner columns distort relatively more. Worst cells sit at r \u2248 5.3 mm on the axis side, far from wall and interface. Still > 3\u00d7 Fluent's 0.10 threshold; no cell below 0.20. T-018 |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 672,
+   "word": "worst",
+   "context": "spect ratio 438\u2013974** | Low \u2014 by design | `AR \u2248 \u0394z/\u0394r_first \u2248 360\u2013820` is the direct consequence of a 12.2 \u00b5m first layer in a 600 mm duct. Worst cells are the inflation cells at r \u2248 9.95\u20139.99 mm, stretched *along* the flow. **Improves** monotonically with refinement |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 679,
+   "word": "measured",
+   "context": "w \u2014 expected | Both are the inscribed-48-gon faceting of the circular section: planar area ratio 0.997147, lateral area ratio 0.999286. The measured deficits match those factors to six figures. Quote the CFD against the *faceted* areas, not the ideal circle, when closing the energy balan"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 681,
+   "word": "measured",
+   "context": "y on the O-grid axes (12.2 \u00b5m design); \u2248 10.4 \u00b5m at the diagonals** (cell-centre distance 5.19\u20136.06 \u00b5m; super-ellipse predicts ratio 0.845, measured 0.856) | Low | Harmless (thinner). Explains a 15.5 % circumferential y\u207a variation against 0.078 % in wall shear. Mesh unchanged; note added"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 768,
+   "word": "measured",
+   "context": "internship result, and no measured data exists."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 871,
+   "word": "margin",
+   "context": "diagnostic reaches y\u207a 0.85, so the margin shrinks for cooler or faster flow."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 908,
+   "word": "best",
+   "context": "| Peak solid temperature | \u22125.1 / +1.6 K (best estimate \u22124.4 K), i.e. LC2 local stress \u2248 +11.5 MPa (+1.7 %), conservative |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 909,
+   "word": "best",
+   "context": "| Volume-mean solid temperature | \u22123.6 / +1.0 K (best estimate \u22123.1 K), i.e. free growth \u2248 +0.026 mm, conservative |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 969,
+   "word": "recovered",
+   "context": "> Nothing is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 969,
+   "word": "experimental",
+   "context": "> Nothing is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 980,
+   "word": "measured",
+   "context": "| Licence (T-026 closed) | Student MAPDL limit **128,000 nodes, measured**: 127,955 nodes solved; 128,045 gave \"maximum number of nodes \u2026 (128000) has been exceeded\". Element limit not measured (largest solved ca"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 980,
+   "word": "measured",
+   "context": "t **128,000 nodes, measured**: 127,955 nodes solved; 128,045 gave \"maximum number of nodes \u2026 (128000) has been exceeded\". Element limit not measured (largest solved case 22,736 SOLID186) |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1043,
+   "word": "margins",
+   "context": "e-dependent tensile yield by script, so the scalar 1020 MPa is used: a lower bound, 0.2 % low at the hot end and 2.8 % low at the cold end. Margins in 7B must use S_y(T) at the local temperature |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1045,
+   "word": "measured",
+   "context": "| T-008 / F-004 | Mechanical side now also measured: the MAPDL limit is 128,000 nodes |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1046,
+   "word": "measured",
+   "context": "| ~~T-026~~ | **CLOSED**: 128,000-node limit measured (`08_Structural_Analysis/Licence_Check/LICENCE_CHECK_7A.md`) |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1053,
+   "word": "margins",
+   "context": "| **T-031** (new) | 7B: margins with S_y(T) at the local temperature of the peak-stress location |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1087,
+   "word": "measured",
+   "context": "*End of Section 7A. The structural model is built, the CFD temperature field is transferred and verified, the mesh fits the measured licence limit, and the LC1/LC2 strategy is defined in the model. **Not started, by instruction:** LC1/LC2 solution, stresses and deformatio"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1095,
+   "word": "recovered",
+   "context": "> - Not recovered results; no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1095,
+   "word": "experimental",
+   "context": "> - Not recovered results; no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1136,
+   "word": "margin",
+   "context": "**Yield and margin**"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1140,
+   "word": "margin",
+   "context": "yield / utilisation | S_y(T) linear in the VDM 4127 table, no extrapolation. LC2 peak: S_y(164.8 \u00b0C) = **1047.0 MPa**, **utilisation 0.578, margin 0.730**. Hot-end interior 0.575. LC1: 0.023. The scalar 1020 MPa is not used (T-031 closed) |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1163,
+   "word": "margins",
+   "context": "| **D-050** | Margins with S_y(T) interpolated linearly in the VDM 4127 table at the local temperature; utilisation = \u03c3_vm/S_y(T), margin = S_y/\u03c3_vm \u2212 1 | Brief"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1163,
+   "word": "margin",
+   "context": "| **D-050** | Margins with S_y(T) interpolated linearly in the VDM 4127 table at the local temperature; utilisation = \u03c3_vm/S_y(T), margin = S_y/\u03c3_vm \u2212 1 | Brief requirement; the governing location depends on S_y(T) |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1169,
+   "word": "margin",
+   "context": "). The LC2 model's end faces are laterally free. An eigenvalue buckling analysis with the real end restraint is needed before the LC2 yield margin is called a structural margin |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1169,
+   "word": "margin",
+   "context": "re laterally free. An eigenvalue buckling analysis with the real end restraint is needed before the LC2 yield margin is called a structural margin |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1174,
+   "word": "margins",
+   "context": "| F-037 | **Addressed**: margins use S_y(T) |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1213,
+   "word": "recovered",
+   "context": "> - Not recovered results; no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1213,
+   "word": "experimental",
+   "context": "> - Not recovered results; no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1244,
+   "word": "margin",
+   "context": "the LC2 idealisation (sway-free ends), instability (\u03bb = 1.108) comes before first yield**: the 7B utilisation of 0.578 is not a structural margin |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1246,
+   "word": "safe",
+   "context": "| Conclusion | **The component cannot be called safe.** Whether the real duct is adequate depends on the end-restraint stiffness, geometric tolerances and the inelastic material behaviour, non"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1260,
+   "word": "margin",
+   "context": "c buckling \u03bb\u2081 = 1.108 (hand 1.06\u20131.12), below the first-yield factor 1.73: stability governs, and a factor this close to 1 has no practical margin |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1265,
+   "word": "margin",
+   "context": "| **T-034** (new) | define the real end restraint (flange lateral and rotational stiffness) before any margin is claimed |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1301,
+   "word": "recovered",
+   "context": "> - Not recovered results; no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1301,
+   "word": "experimental",
+   "context": "> - Not recovered results; no experimental data."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1374,
+   "word": "safe",
+   "context": "ic stress is mesh-sensitive. **Primary remaining uncertainty: the end-restraint definition (T-034).** Not a statement that the component is safe |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1465,
+   "word": "measured",
+   "context": "s at both thickness extremes (M01 refine, M02 coarsen, M03 CFD solid \u00d71.5). Reuse the meshes for V and q\u2033 if the estimated y\u207a_max is \u2264 0.8 (measured \u2264 1.0, mean \u2264 0.5). No temperature outside a property table at any iteration. The frozen-settings diff must show only the intended change |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1466,
+   "word": "measured",
+   "context": "| Practicality | about 5 h device time (Fluent medium run 13 min measured; FE sets 5\u20138 min measured in 8B); T03 at 99.3 % of the node limit (proven solvable in 8B); RAM adequate |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1466,
+   "word": "measured",
+   "context": "| Practicality | about 5 h device time (Fluent medium run 13 min measured; FE sets 5\u20138 min measured in 8B); T03 at 99.3 % of the node limit (proven solvable in 8B); RAM adequate |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1477,
+   "word": "margin",
+   "context": "| **D-062** | Property-table limits with margin for range selection; no table extension in 9B | no unsupported extrapolation |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1518,
+   "word": "recovered",
+   "context": "> RE-ANALYSIS 2026. Every number below is a newly generated Fluent result of this project, not a recovered internship value, and no experimental data exist."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1518,
+   "word": "experimental",
+   "context": "> RE-ANALYSIS 2026. Every number below is a newly generated Fluent result of this project, not a recovered internship value, and no experimental data exist."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1580,
+   "word": "margin",
+   "context": "very iteration (monitor history, re-checked independently) | **all cases inside.** Closest to the air limit (600 K): **Q03 583.36 K (16.6 K margin)** and **V01 580.40 K (19.6 K)**. Inconel maximum 591.14 K (Q03; 82 K margin); minimum 300 K (start). No extrapolation |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1580,
+   "word": "margin",
+   "context": "de.** Closest to the air limit (600 K): **Q03 583.36 K (16.6 K margin)** and **V01 580.40 K (19.6 K)**. Inconel maximum 591.14 K (Q03; 82 K margin); minimum 300 K (start). No extrapolation |"
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1653,
+   "word": "recovered",
+   "context": "number below is a newly generated ANSYS 2026 R1 Student result of this project (Fluent CFD of 9B-1, Mechanical/MAPDL of 9B-2). Nothing is a recovered internship value, and no experimental data exist."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1653,
+   "word": "experimental",
+   "context": "NSYS 2026 R1 Student result of this project (Fluent CFD of 9B-1, Mechanical/MAPDL of 9B-2). Nothing is a recovered internship value, and no experimental data exist."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1695,
+   "word": "factor of safety",
+   "context": "or in **all 7 design cases** (buckling first in the idealised model). **No case is yield-limited** (max utilisation 0.6446, Q03). No single factor of safety is formed."
+  },
+  {
+   "file": "PROJECT_STATE.md",
+   "line": 1756,
+   "word": "factor of safety",
+   "context": "First-yield factor (1/utilisation with S_y(T)) and \u03bb\u2081 reported separately with \"occurs first\" per case; Part I label for \u03bb\u2081 < 1; no single factor of safety; no ranking | brief Parts I, J; the two mechanisms have different meanings |"
+  },
+  {
+   "file": "README.md",
+   "line": 35,
+   "word": "recovered",
+   "context": "No output may be described as recovered, restored, or as the original work product."
+  },
+  {
+   "file": "README.md",
+   "line": 36,
+   "word": "experimental",
+   "context": "2. **No experimental data is invented.** There were no physical measurements in the"
+  },
+  {
+   "file": "00_admin\\software_inventory.md",
+   "line": 58,
+   "word": "original internship",
+   "context": "**Conclusion:** all three tools documented on the original internship \u2014 Workbench,"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 93,
+   "word": "measured",
+   "context": "| Fluent cell limit (commonly quoted 1 024 000) | \u274c **UNVERIFIED** \u2014 quoted from general knowledge, not measured on this install |"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 98,
+   "word": "measured",
+   "context": "measured.** They will be confirmed empirically during the Section 4 mesh independence study,"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 103,
+   "word": "original internship",
+   "context": "### A-001 / A-002 \u00b7 Facts about the original internship that cannot be recovered"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 103,
+   "word": "recovered",
+   "context": "### A-001 / A-002 \u00b7 Facts about the original internship that cannot be recovered"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 108,
+   "word": "original internship",
+   "context": "| A-001 | The original internship used a Student/academic ANSYS licence comparable to the one installed here. | **Confirmation from <HOST>** |"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 138,
+   "word": "measured",
+   "context": "A-016 | Stress-free reference temperature **300 K**, equal to inlet/assembly temperature. | Defines the datum from which thermal strain is measured. | `[ASSUMED]` |"
+  },
+  {
+   "file": "01_Requirements\\ASSUMPTIONS.md",
+   "line": 158,
+   "word": "margin",
+   "context": "ample elastic margin."
+  },
+  {
+   "file": "01_Requirements\\ENGINEERING_REQUIREMENTS.md",
+   "line": 37,
+   "word": "margin",
+   "context": "| PR-10 | Margin of safety against hot yield shall be reported for both load cases. | LC2 MoS \u2248 0.59 (utilisation 0.63) | must be **> 0** | OPEN |"
+  },
+  {
+   "file": "01_Requirements\\ENGINEERING_REQUIREMENTS.md",
+   "line": 37,
+   "word": "safety",
+   "context": "| PR-10 | Margin of safety against hot yield shall be reported for both load cases. | LC2 MoS \u2248 0.59 (utilisation 0.63) | must be **> 0** | OPEN |"
+  },
+  {
+   "file": "01_Requirements\\ENGINEERING_REQUIREMENTS.md",
+   "line": 56,
+   "word": "measured",
+   "context": "| CR-01 | Fluent parallel execution is capped by the Student licence. | **4 cores** | Measured: Fluent transcript, 2026-09-18 | **MET (verified)** |"
+  },
+  {
+   "file": "01_Requirements\\ENGINEERING_REQUIREMENTS.md",
+   "line": 57,
+   "word": "measured",
+   "context": "| CR-02 | Available system memory. | 15.7 GB | Measured on device | **MET (verified)** |"
+  },
+  {
+   "file": "01_Requirements\\ENGINEERING_REQUIREMENTS.md",
+   "line": 68,
+   "word": "recovered",
+   "context": "| DR-02 | No output shall ever be described as recovered, restored, measured, or original. | **MET** |"
+  },
+  {
+   "file": "01_Requirements\\ENGINEERING_REQUIREMENTS.md",
+   "line": 68,
+   "word": "measured",
+   "context": "| DR-02 | No output shall ever be described as recovered, restored, measured, or original. | **MET** |"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 4,
+   "word": "original internship",
+   "context": "**Original internship:** Eleation, February \u2013 May 2025"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 11,
+   "word": "original internship",
+   "context": "> in 2026.** None of these are the original internship values, and no measured or"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 11,
+   "word": "measured",
+   "context": "> in 2026.** None of these are the original internship values, and no measured or"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 12,
+   "word": "experimental",
+   "context": "> experimental data appears anywhere in this project. Nothing here may be described as"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 13,
+   "word": "recovered",
+   "context": "> recovered, restored, or original."
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 53,
+   "word": "margin",
+   "context": "| RQ4 | Is the duct structurally acceptable at operating temperature, and what governs the margin? | Section 6 |"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 222,
+   "word": "experiment",
+   "context": "is the experiment that answers RQ3."
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 238,
+   "word": "margin",
+   "context": "| Margin of safety | 61 | **0.59** | \u2014 |"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 238,
+   "word": "safety",
+   "context": "| Margin of safety | 61 | **0.59** | \u2014 |"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 281,
+   "word": "margin",
+   "context": "13. Margin of safety against hot yield"
+  },
+  {
+   "file": "01_Requirements\\PROJECT_CONCEPT.md",
+   "line": 281,
+   "word": "safety",
+   "context": "13. Margin of safety against hot yield"
+  },
+  {
+   "file": "02_Engineering_Calculations\\BASELINE_PARAMETERS.md",
+   "line": 6,
+   "word": "original internship",
+   "context": "> **No parameter in this project is class A.** The original internship data was lost and a"
+  },
+  {
+   "file": "02_Engineering_Calculations\\BASELINE_PARAMETERS.md",
+   "line": 107,
+   "word": "margin",
+   "context": "0.63 to **0.642**, margin of safety from 0.59 to **0.56**. The Section 1 finding is"
+  },
+  {
+   "file": "02_Engineering_Calculations\\BASELINE_PARAMETERS.md",
+   "line": 107,
+   "word": "safety",
+   "context": "0.63 to **0.642**, margin of safety from 0.59 to **0.56**. The Section 1 finding is"
+  },
+  {
+   "file": "02_Engineering_Calculations\\ENGINEERING_THEORY.md",
+   "line": 4,
+   "word": "original internship",
+   "context": "**Original internship:** Eleation, February \u2013 May 2025"
+  },
+  {
+   "file": "02_Engineering_Calculations\\ENGINEERING_THEORY.md",
+   "line": 104,
+   "word": "margin",
+   "context": "| Margin of safety | 61 | **0.56** |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\ENGINEERING_THEORY.md",
+   "line": 104,
+   "word": "safety",
+   "context": "| Margin of safety | 61 | **0.56** |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\EXPECTED_RESULTS.md",
+   "line": 74,
+   "word": "margin",
+   "context": "| LC2 margin of safety | 0.43 \u2013 0.67 | S_y/\\|\u03c3\\| \u2212 1 | Negative \u2192 design unacceptable as restrained |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\EXPECTED_RESULTS.md",
+   "line": 74,
+   "word": "safety",
+   "context": "| LC2 margin of safety | 0.43 \u2013 0.67 | S_y/\\|\u03c3\\| \u2212 1 | Negative \u2192 design unacceptable as restrained |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\FLUID_CALCULATIONS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "**The flow is fully turbulent over the entire duct**, with a 6\u00d7 margin above the"
+  },
+  {
+   "file": "02_Engineering_Calculations\\GOVERNING_EQUATIONS.md",
+   "line": 258,
+   "word": "margin",
+   "context": "**Margin of safety** against hot yield (yield at operating temperature, never room"
+  },
+  {
+   "file": "02_Engineering_Calculations\\GOVERNING_EQUATIONS.md",
+   "line": 258,
+   "word": "safety",
+   "context": "**Margin of safety** against hot yield (yield at operating temperature, never room"
+  },
+  {
+   "file": "02_Engineering_Calculations\\HEAT_TRANSFER_CALCULATIONS.md",
+   "line": 120,
+   "word": "recovered",
+   "context": "| Q recovered from \u1e41c\u209a\u0394T | 603.19 W |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\MATERIAL_PROPERTIES.md",
+   "line": 29,
+   "word": "margin",
+   "context": "our operating temperature. **Using it overstated the margin.** Corrected to 1023.7 MPa."
+  },
+  {
+   "file": "02_Engineering_Calculations\\MATERIAL_PROPERTIES.md",
+   "line": 30,
+   "word": "margin",
+   "context": "Effect: LC2 utilisation 0.620 \u2192 **0.642**, margin of safety 0.61 \u2192 **0.56**. Still"
+  },
+  {
+   "file": "02_Engineering_Calculations\\MATERIAL_PROPERTIES.md",
+   "line": 30,
+   "word": "safety",
+   "context": "Effect: LC2 utilisation 0.620 \u2192 **0.642**, margin of safety 0.61 \u2192 **0.56**. Still"
+  },
+  {
+   "file": "02_Engineering_Calculations\\MATERIAL_PROPERTIES.md",
+   "line": 136,
+   "word": "margin",
+   "context": "| 3 | Yield strength | 3.4 % (now corrected) | direct on margin of safety |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\MATERIAL_PROPERTIES.md",
+   "line": 136,
+   "word": "safety",
+   "context": "| 3 | Yield strength | 3.4 % (now corrected) | direct on margin of safety |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\THERMAL_STRESS_ESTIMATE.md",
+   "line": 111,
+   "word": "margin",
+   "context": "| **Margin of safety** | **0.56** |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\THERMAL_STRESS_ESTIMATE.md",
+   "line": 111,
+   "word": "safety",
+   "context": "| **Margin of safety** | **0.56** |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\THERMAL_STRESS_ESTIMATE.md",
+   "line": 119,
+   "word": "margin",
+   "context": "| Margin of safety | 61 | 0.56 | |"
+  },
+  {
+   "file": "02_Engineering_Calculations\\THERMAL_STRESS_ESTIMATE.md",
+   "line": 119,
+   "word": "safety",
+   "context": "| Margin of safety | 61 | 0.56 | |"
+  },
+  {
+   "file": "03_CAD_Geometry\\CAD_NOTES.md",
+   "line": 4,
+   "word": "original internship",
+   "context": "**Original internship:** Eleation, February \u2013 May 2025"
+  },
+  {
+   "file": "03_CAD_Geometry\\CAD_NOTES.md",
+   "line": 9,
+   "word": "recovered",
+   "context": "> This geometry was **created from scratch in 2026**. It is not a recovered original file."
+  },
+  {
+   "file": "05_Meshing\\MESH_NOTES.md",
+   "line": 10,
+   "word": "recovered",
+   "context": "> recovered 2025 artefact, and no original measurement is reproduced anywhere in it."
+  },
+  {
+   "file": "05_Meshing\\MESH_NOTES.md",
+   "line": 319,
+   "word": "measured",
+   "context": "fluid cell height of 12.2 \u00b5m. Measured on the converged Section 5B medium-mesh solution at"
+  },
+  {
+   "file": "05_Meshing\\Mesh_Quality\\MESH_QUALITY_TABLE.md",
+   "line": 22,
+   "word": "worst",
+   "context": "| Quantity | coarse F | coarse P | medium F | medium P | fine F | fine P | worst rel. diff |"
+  },
+  {
+   "file": "05_Meshing\\Mesh_Quality\\MESH_QUALITY_TABLE.md",
+   "line": 134,
+   "word": "worst",
+   "context": "by construction. The worst cells sit at r = 9.95\u20139.99 mm \u2014 i.e. they are the inflation cells,"
+  },
+  {
+   "file": "05_Meshing\\Mesh_Quality\\MESH_QUALITY_TABLE.md",
+   "line": 224,
+   "word": "best",
+   "context": "- Best quality of the three: minimum OQ 0.4458, zero cells above skewness 0.80, and a max"
+  },
+  {
+   "file": "06_Fluent_CFD\\FLUENT_SETUP_NOTES.md",
+   "line": 8,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS.** Every file here was created in 2026. Nothing is a recovered 2025"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_AUDIT.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 this audit describes newly generated runs, not recovered originals.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_AUDIT.md",
+   "line": 71,
+   "word": "margin",
+   "context": "for margin; by iteration 150 the flow-only residuals were \u2264 1.2 \u00d7 10\u207b\u2076 and \u0394p had plateaued at"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_AUDIT.md",
+   "line": 163,
+   "word": "historical",
+   "context": "| Final and historical temperatures vs property tables | min/max from exports and every monitor row | inside both tables at every iteration |"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_AUDIT.md",
+   "line": 195,
+   "word": "measured",
+   "context": "iagonals** (cell-centre distance 5.19\u20136.06 \u00b5m). The Section 4 notes state 12.2 \u00b5m uniformly. Super-ellipse geometry predicts a ratio 0.845; measured 0.856 | Low | Harmless (thinner, not thicker; y\u207a \u2264 0.59). Explains the geometric 15 % circumferential y\u207a variation against 0.078 % in wall"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_RESULTS.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_RESULTS.md",
+   "line": 5,
+   "word": "measured",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_RESULTS.md",
+   "line": 210,
+   "word": "margin",
+   "context": "**resolved, not modelled by a wall function**. NR-01 (y\u207a \u2264 1 target) is met with margin, and"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_BASELINE_RESULTS.md",
+   "line": 339,
+   "word": "measured",
+   "context": "be decided without measured data, and none exists."
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_VS_ANALYTICAL.md",
+   "line": 4,
+   "word": "original internship",
+   "context": "**Date:** 2026-09-23 \u00b7 **RE-ANALYSIS 2026 \u2014 not an original internship result**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_VS_ANALYTICAL.md",
+   "line": 110,
+   "word": "margin",
+   "context": "margin of more than 75\u00d7 on either outlet measure (+0.022 % mass-weighted, +0.038 % mixing-cup)."
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_VS_ANALYTICAL.md",
+   "line": 137,
+   "word": "measured",
+   "context": "\u221219.24 K splits exactly into two measured parts:"
+  },
+  {
+   "file": "06_Fluent_CFD\\Baseline\\CFD_VS_ANALYTICAL.md",
+   "line": 158,
+   "word": "measured",
+   "context": "applied Kays & Crawford's `(T_b/T_w)^n` with n = 0.5. Measured against Gnielinski at the CFD's"
+  },
+  {
+   "file": "06_Fluent_CFD\\Diagnostics\\F029_Isothermal\\F029_ISOTHERMAL_DIAGNOSTIC.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 a newly generated diagnostic run, not a recovered original. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Diagnostics\\F029_Isothermal\\F029_ISOTHERMAL_DIAGNOSTIC.md",
+   "line": 5,
+   "word": "measured",
+   "context": "**RE-ANALYSIS 2026 \u2014 a newly generated diagnostic run, not a recovered original. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Diagnostics\\F029_Isothermal\\F029_ISOTHERMAL_DIAGNOSTIC.md",
+   "line": 59,
+   "word": "measured",
+   "context": "That 2.6 % is within the combined size of the two effects measured separately:"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Coarse\\COARSE_CFD_AUDIT.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 this audit describes newly generated runs, not recovered originals.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Coarse\\COARSE_CFD_RESULTS.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Coarse\\COARSE_CFD_RESULTS.md",
+   "line": 5,
+   "word": "measured",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Fine\\FINE_CFD_AUDIT.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 this audit describes newly generated runs, not recovered originals.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Fine\\FINE_CFD_RESULTS.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Fine\\FINE_CFD_RESULTS.md",
+   "line": 5,
+   "word": "measured",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Fine\\FINE_CFD_RESULTS.md",
+   "line": 145,
+   "word": "recovered",
+   "context": "um 560.682 K at iteration 302 is 0.080 K above the final value; T_fluid_min dipped 0.23 mK below 300 K at iteration 301 (scheme switch) and recovered |"
+  },
+  {
+   "file": "07_Thermal_Analysis\\THERMAL_MAPPING_NOTES.md",
+   "line": 4,
+   "word": "recovered",
+   "context": "> Sections 5\u20136. It is not a recovered internship result, and no experimental measurement is involved."
+  },
+  {
+   "file": "07_Thermal_Analysis\\THERMAL_MAPPING_NOTES.md",
+   "line": 4,
+   "word": "experimental",
+   "context": "> Sections 5\u20136. It is not a recovered internship result, and no experimental measurement is involved."
+  },
+  {
+   "file": "07_Thermal_Analysis\\THERMAL_MAPPING_NOTES.md",
+   "line": 80,
+   "word": "measured",
+   "context": "- **Size:** 108,252 nodes (84.6 % of the measured 128,000-node Student limit), 23,400 elements."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_AUDIT.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026.** This is an audit of new solutions of the newly built 7A model. Nothing is a recovered original, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_AUDIT.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "> **RE-ANALYSIS 2026.** This is an audit of new solutions of the newly built 7A model. Nothing is a recovered original, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_AUDIT.md",
+   "line": 40,
+   "word": "measured",
+   "context": "| Licence | 108,252 < 128,000 nodes (measured limit) |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_AUDIT.md",
+   "line": 157,
+   "word": "margin",
+   "context": "| Case | Critical point | Local T | S_y(T) | Utilisation | Margin |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_AUDIT.md",
+   "line": 242,
+   "word": "margins",
+   "context": "| T-013, T-028, T-030, T-031 | **CLOSED** (mid-span comparison; LC1/LC2 solved with reaction checks; pressure superposition; S_y(T) margins) |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_AUDIT.md",
+   "line": 251,
+   "word": "margins",
+   "context": ", the untransformed one does not); the pressure difference (+45.0 Pa, nodes +14 \u2026 +161 Pa) and the Lam\u00e9 comparison; S_y(T), utilisation and margins, including the node-wise scan; the LC1 and LC2 mid-span values; the buckling hand estimate; the 6B sensitivities; the Section 2 ratios; Mec"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 6,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship result."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 7,
+   "word": "experimental",
+   "context": "> - No experimental data exist or are used."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 222,
+   "word": "margin",
+   "context": "## 6. Local yield strength, utilisation and margin"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 226,
+   "word": "margins",
+   "context": "- The Engineering Data scalar of 1020 MPa is **not** used for margins."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 227,
+   "word": "margin",
+   "context": "- Utilisation = \u03c3_vm / S_y(T_local). Margin = S_y / \u03c3_vm \u2212 1."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 229,
+   "word": "margin",
+   "context": "| Case | Point | \u03c3_vm | T | S_y(T) | **Utilisation** | **Margin** |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 240,
+   "word": "margin",
+   "context": "- **The location of the governing margin therefore depends on S_y(T)**, which is why a single yield value would mislead."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 242,
+   "word": "margin",
+   "context": "**Limitations of this margin.** It is a first-yield margin for a linear-elastic, steady-state, perfectly restrained duct."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 242,
+   "word": "margin",
+   "context": "**Limitations of this margin.** It is a first-yield margin for a linear-elastic, steady-state, perfectly restrained duct."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 251,
+   "word": "margin",
+   "context": "stress | 24.28 MPa | bore r 10 mm, z 6.52 mm, \u03b8 \u2212170\u00b0 (node 19007) | 427.81 K (154.7 \u00b0C) | S_y(T) 1049.1 MPa (VDM 4127, linear); U 0.0231; margin 42.2 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 253,
+   "word": "margin",
+   "context": "stress | 605.16 MPa | outer edge of the inlet face, r 20 mm, z 0, \u03b8 \u2212170\u00b0 (node 18865) | 437.99 K (164.8 \u00b0C) | S_y(T) 1047.0 MPa; U 0.578; margin 0.730 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 255,
+   "word": "margin",
+   "context": "(thermal + pressure) | max von Mises stress | 605.160918 MPa | same node as LC2 (18865) | 437.99 K (164.8 \u00b0C) | S_y(T) 1047.0 MPa; U 0.578; margin 0.730 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 256,
+   "word": "margin",
+   "context": "utilisation outside the end zones | 587.59 MPa | outer surface, z 562.7 mm (node 24110) | 561.74 K (288.6 \u00b0C) | S_y(T) 1022.3 MPa; U 0.575; margin 0.740 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 288,
+   "word": "margin",
+   "context": "| Margin LC2 | 0.56 | **0.73** | \u2014 | as above |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 297,
+   "word": "best",
+   "context": "- peak solid T \u22125.1 / +1.6 K (best estimate \u22124.4 K);"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 298,
+   "word": "best",
+   "context": "- volume-mean T \u22123.6 / +1.0 K (best \u22123.1 K);"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 302,
+   "word": "best",
+   "context": "| Result | Sensitivity | 6B range | Best estimate | Relative |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 325,
+   "word": "margin",
+   "context": "end faces are free laterally (only U_z held). **An eigenvalue buckling analysis with the real end conditions is needed before the LC2 yield margin can be called a structural margin.**"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_RESULTS.md",
+   "line": 325,
+   "word": "margin",
+   "context": "U_z held). **An eigenvalue buckling analysis with the real end conditions is needed before the LC2 yield margin can be called a structural margin.**"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_SETUP_NOTES.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship file or result, and no experimental data exists or is used."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_SETUP_NOTES.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is a recovered internship file or result, and no experimental data exists or is used."
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_SETUP_NOTES.md",
+   "line": 51,
+   "word": "measured",
+   "context": "| Licence | Student MAPDL limit **128,000 nodes** (measured); element limit not binding | `Licence_Check/LICENCE_CHECK_7A.md` |"
+  },
+  {
+   "file": "08_Structural_Analysis\\STRUCTURAL_SETUP_NOTES.md",
+   "line": 103,
+   "word": "margins",
+   "context": "5. **Yield.** Use S_y(T) at the local temperature for margins; the Engineering Data scalar of 1020 MPa is a lower bound."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_AUDIT.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026.** This audits the new linear-buckling solutions and the hand estimate. Nothing here is a recovered original, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_AUDIT.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "RUCTION 2026.** This audits the new linear-buckling solutions and the hand estimate. Nothing here is a recovered original, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_HAND_CALCULATION.md",
+   "line": 6,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship value, and nothing is a measurement."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_HAND_CALCULATION.md",
+   "line": 134,
+   "word": "safe",
+   "context": "**Why a factor this close to 1 is not \"safe\".** Imperfections, residual stress, end-condition uncertainty, material scatter and thermal-field uncertainty all push the real capacity *b"
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship result, and no experimental data exist or are used."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is a recovered internship result, and no experimental data exist or are used."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 123,
+   "word": "margin",
+   "context": "| Equivalent temperature margin (approximate) | about +24 K of mean temperature rise (225.5 \u2192 about 250 K) |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 126,
+   "word": "safe",
+   "context": "**A factor of 1.108 does not mean \"safe\".** It is a *theoretical elastic bifurcation* of a *perfect* tube with *idealised* supports (\u00a77). A load factor this close to 1 means that"
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 126,
+   "word": "margin",
+   "context": "supports (\u00a77). A load factor this close to 1 means that very small departures from the ideal (well within normal tolerances) can remove the margin entirely."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 173,
+   "word": "margin",
+   "context": "- The first-yield utilisation of 0.578 found in 7B **is not a structural margin**."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 175,
+   "word": "safe",
+   "context": "**The component cannot be called safe on the present evidence.** Whether the real duct is adequate depends on:"
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\BUCKLING_RESULTS.md",
+   "line": 185,
+   "word": "margin",
+   "context": "as an elastic buckling load factor of only 1.108, below the first-yield factor of 1.73. The real end restraint must be specified before any margin is claimed."
+  },
+  {
+   "file": "08_Structural_Analysis\\Buckling\\README.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "RE-ANALYSIS 2026. This is new work on the re-analysed duct. It contains no recovered internship results and no measurements."
+  },
+  {
+   "file": "08_Structural_Analysis\\LC1_Free_Expansion\\README.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "LC1 free thermal expansion, **thermal only**. This is a new solution of the 7A model; it is not a recovered original."
+  },
+  {
+   "file": "08_Structural_Analysis\\LC2_Restrained\\README.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "LC2 axially restrained, **thermal only**. This is a new solution of the 7A model; it is not a recovered original."
+  },
+  {
+   "file": "08_Structural_Analysis\\Licence_Check\\LICENCE_CHECK_7A.md",
+   "line": 1,
+   "word": "measured",
+   "context": "# Section 7A: Student licence limit, measured (closes T-026)"
+  },
+  {
+   "file": "08_Structural_Analysis\\Licence_Check\\LICENCE_CHECK_7A.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> RE-ANALYSIS 2026. The limit was measured on this machine; it does not rely on a remembered or undocumented number."
+  },
+  {
+   "file": "08_Structural_Analysis\\Licence_Check\\LICENCE_CHECK_7A.md",
+   "line": 24,
+   "word": "measured",
+   "context": "- **Element limit.** Not measured. The largest solved case had 22,736 SOLID186 elements, and every refused SOLID186 case stopped with the node message."
+  },
+  {
+   "file": "08_Structural_Analysis\\Materials\\MATERIAL_MODEL_7A.md",
+   "line": 4,
+   "word": "recovered",
+   "context": "> (Section 2, `02_Engineering_Calculations/MATERIAL_PROPERTIES.md`). None of them is a recovered internship value."
+  },
+  {
+   "file": "08_Structural_Analysis\\Materials\\MATERIAL_MODEL_7A.md",
+   "line": 17,
+   "word": "margins",
+   "context": "apped range 150.7\u2013289.4 \u00b0C. The full table (1030 / 1060 / 1040 / 1020 / 1000 MPa at 20\u2026400 \u00b0C) is kept in `materials_7A.csv` for Section 7B margins at the local temperature | VDM 4127, age-hardened | datasheet. Not used by the linear solve |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Materials\\MATERIAL_MODEL_7A.md",
+   "line": 56,
+   "word": "margins",
+   "context": "- **Yield is temperature-dependent.** 7B must evaluate margins with S_y at the local temperature of the peak-stress location, not with the 1020 MPa scalar blindly."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh\\MESH_7A.md",
+   "line": 19,
+   "word": "measured",
+   "context": "| Nodes | **108,252** (28,296 corner + 79,956 mid-side) = **84.6 % of the measured 128,000-node limit** |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh\\MESH_7A.md",
+   "line": 46,
+   "word": "margin",
+   "context": "- **Licence.** 108,252 nodes leave 15 % margin below the 128,000-node limit (see `Licence_Check/LICENCE_CHECK_7A.md`)."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\BUCKLING_MESH_COMPARISON.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is recovered, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\BUCKLING_MESH_COMPARISON.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is recovered, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\README.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - They are not recovered internship results, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\README.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - They are not recovered internship results, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\STRUCTURAL_MESH_AUDIT.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered original, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\STRUCTURAL_MESH_AUDIT.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is a recovered original, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\STRUCTURAL_MESH_AUDIT.md",
+   "line": 134,
+   "word": "safe",
+   "context": "This audit does **not** state that the component is safe."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\STRUCTURAL_MESH_COMPARISON.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\STRUCTURAL_MESH_COMPARISON.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\Post\\doc_src\\BUCKLING_MESH_COMPARISON.src.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is recovered, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\Post\\doc_src\\BUCKLING_MESH_COMPARISON.src.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is recovered, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\Post\\doc_src\\STRUCTURAL_MESH_COMPARISON.src.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Mesh_Study\\Post\\doc_src\\STRUCTURAL_MESH_COMPARISON.src.md",
+   "line": 5,
+   "word": "experimental",
+   "context": "> - Nothing here is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "08_Structural_Analysis\\Pressure_Check\\README.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "**LC2P = LC2 + internal pressure.** Thermal + pressure. This is a new solution; it is not a recovered original."
+  },
+  {
+   "file": "08_Structural_Analysis\\Results\\critical_locations_7B.md",
+   "line": 3,
+   "word": "margin",
+   "context": "52 mm, theta -170 deg (bore (inner surface); node 19007) | 427.81 K (154.7 C) | S_y(T) = 1049.1 MPa (VDM 4127, linear); utilisation 0.0231; margin 42.203 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Results\\critical_locations_7B.md",
+   "line": 5,
+   "word": "margin",
+   "context": "ta -170 deg (outer surface / inlet end face; node 18865) | 437.99 K (164.8 C) | S_y(T) = 1047.0 MPa (VDM 4127, linear); utilisation 0.5780; margin 0.730 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Results\\critical_locations_7B.md",
+   "line": 7,
+   "word": "margin",
+   "context": "mm, z 0.00 mm, theta -170 deg (outer surface / inlet end face; node 18865) | 437.99 K (164.8 C) | S_y(T) = 1047.0 MPa; utilisation 0.5780; margin 0.730 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Results\\critical_locations_7B.md",
+   "line": 8,
+   "word": "margin",
+   "context": "Pa | r 10 mm, z 15.91 mm, theta -140 deg (bore (inner surface); node 19150) | 438.10 K (164.9 C) | S_y(T) = 1047.0 MPa; utilisation 0.0192; margin 51.061 |"
+  },
+  {
+   "file": "08_Structural_Analysis\\Results\\critical_locations_7B.md",
+   "line": 9,
+   "word": "margin",
+   "context": "7.59 MPa | r 20 mm, z 562.70 mm, theta -140 deg (outer surface; node 24110) | 561.74 K (288.6 C) | S_y(T) = 1022.3 MPa; utilisation 0.5748; margin 0.740 |"
+  },
+  {
+   "file": "09_Mesh_Independence\\MESH_INDEPENDENCE_AUDIT.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated analysis of newly generated CFD runs, not recovered originals.**"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 5,
+   "word": "measured",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 211,
+   "word": "measured",
+   "context": "12.2 \u00b5m first layer. Any error tied to the first-cell height is outside them. At y\u207a \u2248 0.24 that part is expected to be small, but it is not measured;"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 360,
+   "word": "measured",
+   "context": "measured first-cell-centre distances differ by about 1 %. The study refines everything"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 374,
+   "word": "margin",
+   "context": "air is colder, which shows the margin to 1 shrinks when the wall is cooler or the flow faster."
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 418,
+   "word": "safe",
+   "context": "thermal stress and free growth by 1.4\u20131.7 %, which is on the safe side. The through-wall \u0394T that"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 441,
+   "word": "best",
+   "context": "| CFD input to Mechanical | Medium | Best estimate (extrapolated) | Medium \u2212 best | Structural effect of using medium |"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 441,
+   "word": "best",
+   "context": "| CFD input to Mechanical | Medium | Best estimate (extrapolated) | Medium \u2212 best | Structural effect of using medium |"
+  },
+  {
+   "file": "09_Mesh_Independence\\Mesh_Independence_Report.md",
+   "line": 488,
+   "word": "measured",
+   "context": "cannot be resolved without measured data. Nu shows the opposite tendency: the CFD's property"
+  },
+  {
+   "file": "09_Mesh_Independence\\Uncertainty\\UNCERTAINTY.md",
+   "line": 69,
+   "word": "best",
+   "context": "| Quantity | Medium | Band from the fine-mesh GCI | Relative to medium | Best estimate relative to medium |"
+  },
+  {
+   "file": "09_Mesh_Independence\\Uncertainty\\UNCERTAINTY.md",
+   "line": 76,
+   "word": "best",
+   "context": "> uncertainty of **\u22125.1 / +1.6 K on the peak solid temperature** (best estimate 4.4 K below the"
+  },
+  {
+   "file": "10_Parametric_Study\\PARAMETRIC_STUDY_NOTES.md",
+   "line": 6,
+   "word": "recovered",
+   "context": "> - Nothing here is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "10_Parametric_Study\\PARAMETRIC_STUDY_NOTES.md",
+   "line": 6,
+   "word": "experimental",
+   "context": "> - Nothing here is a recovered internship result, and there are no experimental data."
+  },
+  {
+   "file": "10_Parametric_Study\\PARAMETRIC_STUDY_NOTES.md",
+   "line": 51,
+   "word": "measured",
+   "context": "| D-061 | Mesh rebuild rules M-1 \u2026 M-5 and the y\u207a policy (measured y\u207a_max \u2264 1, mean \u2264 0.5; reuse if the estimate is \u2264 0.8) |"
+  },
+  {
+   "file": "10_Parametric_Study\\PARAMETRIC_STUDY_NOTES.md",
+   "line": 52,
+   "word": "margin",
+   "context": "| D-062 | Operating ranges are limited by the frozen property tables with margin: near-wall air \u2264 590 K for acceptance in screening; no temperature outside a table at any iteration in 9B. Extending the air table is not p"
+  },
+  {
+   "file": "10_Parametric_Study\\PARAMETRIC_STUDY_NOTES.md",
+   "line": 74,
+   "word": "factor of safety",
+   "context": "| D-074 | First-yield factor and \u03bb\u2081 reported separately with \"occurs first\" per case; Part I label for \u03bb\u2081 < 1; no single factor of safety; no ranking |"
+  },
+  {
+   "file": "10_Parametric_Study\\Analytical_Screening\\SCREENING_RESULTS.md",
+   "line": 66,
+   "word": "margin",
+   "context": "- **Velocity.** \u221215 % is MARGINAL (near-wall air 595 K); \u221220 % and below are INVALID (air table exceeded). \u00b110 % keeps about 20 K of margin at the low end."
+  },
+  {
+   "file": "10_Parametric_Study\\Analytical_Screening\\SCREENING_RESULTS.md",
+   "line": 67,
+   "word": "margin",
+   "context": "000 W/m\u00b2) is MARGINAL (591 K); +18.75 % and above are INVALID; 12,000 W/m\u00b2 also exceeds the Inconel tables. +10 % (8,800 W/m\u00b2) keeps a 17 K margin."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\README.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "TION 2026 \u2014 Section 9B-1.** This folder holds the Fluent runs of the approved CFD parametric cases. They are newly generated solutions, not recovered results."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\C00_REPRODUCTION.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "-1 parametric pipeline (`CFD_Cases/Journals/solve_param.py`). The reference is the Section 5B solution in `06_Fluent_CFD`. Neither run is a recovered internship result."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 555.27 K (margin 44.7 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 562.58 K (margin 110.6 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q01_LOW\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q01_LOW\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q01_LOW\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 527.66 K (margin 72.3 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q01_LOW\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 534.45 K (margin 138.7 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q03_HIGH\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q03_HIGH\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q03_HIGH\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 583.36 K (margin 16.6 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\Q03_HIGH\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 591.14 K (margin 82.0 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T01_THIN\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T01_THIN\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T01_THIN\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 555.76 K (margin 44.2 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T01_THIN\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 561.97 K (margin 111.2 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T03_THICK\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T03_THICK\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T03_THICK\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 554.78 K (margin 45.2 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\T03_THICK\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 563.08 K (margin 110.1 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V01_LOW\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V01_LOW\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V01_LOW\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 580.40 K (margin 19.6 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V01_LOW\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 587.49 K (margin 85.7 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V03_HIGH\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V03_HIGH\\CASE_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V03_HIGH\\CASE_RESULTS.md",
+   "line": 50,
+   "word": "margin",
+   "context": "| Air table 250\u2013600 K, every iteration | min 300.00 K, max 534.61 K (margin 65.4 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Cases\\V03_HIGH\\CASE_RESULTS.md",
+   "line": 51,
+   "word": "margin",
+   "context": "| Inconel table 293.15\u2013673.15 K, every iteration | min 300.00 K, max 542.10 K (margin 131.1 K) \u2014 inside |"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\PARAMETRIC_CFD_TABLE.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated Fluent results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\PARAMETRIC_CFD_TABLE.md",
+   "line": 3,
+   "word": "measured",
+   "context": "> **RE-ANALYSIS 2026 \u2014 newly generated Fluent results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\README.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026.** These are newly generated Fluent results of the re-analysed duct. They are not recovered internship results, and no experimental data exist."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\README.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "ECONSTRUCTION 2026.** These are newly generated Fluent results of the re-analysed duct. They are not recovered internship results, and no experimental data exist."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\SCREENING_COMPARISON.md",
+   "line": 53,
+   "word": "margin",
+   "context": "- None of these differences changes a validity margin: the closest is Q03 near-wall air at 583.4 K against 583.4 K screened."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\SCREENING_COMPARISON.md",
+   "line": 149,
+   "word": "margins",
+   "context": "- **The screening is adequate for trends and validity margins of the operating variables.** For those, the CFD confirms it within the stated accuracy."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\SCREENING_COMPARISON.md",
+   "line": 151,
+   "word": "margin",
+   "context": "- **The y\u207a policy margin is unaffected.** The largest measured y\u207a is 0.645 (V03), against the 1.0 limit and the 0.8 reuse threshold."
+  },
+  {
+   "file": "10_Parametric_Study\\CFD_Results\\SCREENING_COMPARISON.md",
+   "line": 151,
+   "word": "measured",
+   "context": "- **The y\u207a policy margin is unaffected.** The largest measured y\u207a is 0.645 (V03), against the 1.0 limit and the 0.8 reuse threshold."
+  },
+  {
+   "file": "10_Parametric_Study\\Geometry_Checks\\GEOMETRY_CHECKS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "> **RE-ANALYSIS 2026.** Both geometries are new CAD models made in 2026 for the parametric study. They are not recovered files. The P00 CAD in `03_CAD_Geometry/` was **not opened, modified or re-exported**."
+  },
+  {
+   "file": "10_Parametric_Study\\Mapping\\MAPPING_AUDIT_9B2.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "of this re-analysis (Fluent CFD of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Mapping\\MAPPING_AUDIT_9B2.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Mapping\\MAPPING_AUDIT_9B2.md",
+   "line": 3,
+   "word": "measured",
+   "context": "Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Mesh_Checks\\M03_MESH_ADEQUACY.md",
+   "line": 4,
+   "word": "recovered",
+   "context": "recovered from the lost internship and no measurement is involved."
+  },
+  {
+   "file": "10_Parametric_Study\\Mesh_Checks\\MESH_CHECKS.md",
+   "line": 71,
+   "word": "measured",
+   "context": "- The measured y\u207a is in `CFD_Results/PARAMETRIC_CFD_TABLE.md`."
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\MESH_YPLUS_MATERIAL_POLICY.md",
+   "line": 10,
+   "word": "measured",
+   "context": "e y\u207a rule (\u00a72) holds, (b) the property-table rule (\u00a73) holds and (c) the flow stays turbulent and attached | y\u207a estimate before the run and measured y\u207a after it; re-map the temperature field with the unchanged 7A settings and check the mapping per case (as in 8B) |"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\MESH_YPLUS_MATERIAL_POLICY.md",
+   "line": 30,
+   "word": "measured",
+   "context": "| Acceptance (measured in Fluent, conjugate interface) | **y\u207a_max \u2264 1.0** and **area-weighted mean \u2264 0.5**, i.e. 100 % of the wall at y\u207a \u2264 1. Same as the baseline"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\MESH_YPLUS_MATERIAL_POLICY.md",
+   "line": 32,
+   "word": "margin",
+   "context": "| Reuse threshold | reuse the medium mesh if the estimate is \u2264 0.8 (20 % margin); run and verify if 0.8\u20131.0; **re-mesh** the inflation layer (y\u2081 scaled by 0.8 / estimate) if > 1.0 |"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\MESH_YPLUS_MATERIAL_POLICY.md",
+   "line": 34,
+   "word": "measured",
+   "context": "| Failure handling | a case whose measured y\u207a_max exceeds 1.0 is **invalid**. It is re-meshed and re-run; it is not reported with a wall-function caveat |"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\MESH_YPLUS_MATERIAL_POLICY.md",
+   "line": 38,
+   "word": "worst",
+   "context": "| Property table (frozen) | Valid range | Governing quantity | Worst proposed case (screening) | Status |"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\MESH_YPLUS_MATERIAL_POLICY.md",
+   "line": 40,
+   "word": "margin",
+   "context": "0 K | near-wall air = interface temperature (P00: 555.27 K; fluid-cell maximum 553.41 K) | Q03: 583.4 K; V01: 580.3 K | inside, with \u2265 16 K margin |"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\PARAMETRIC_PLAN.md",
+   "line": 57,
+   "word": "margin",
+   "context": "end is **set by the frozen air table**: \u221215 % gives near-wall air of 595 K (marginal) and \u221220 % gives 611 K (invalid). \u00b110 % keeps 20 K of margin | Re_out \u2265 22,600, fully turbulent; Mach \u2264 0.09; \u0394p \u2264 0.5 % of p_op | near-wall air 580 K (V01); solid 541.6\u2013586.9 K | LC2 utilisation \u2264 0."
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\PARAMETRIC_PLAN.md",
+   "line": 130,
+   "word": "measured",
+   "context": "| y\u207a | measured y\u207a_max \u2264 1.0 and mean \u2264 0.5. Pre-run estimates: V01 0.53, V03 0.64, all others 0.585. Re-mesh the inflation layer if the estimate is > 1 or"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\PARAMETRIC_PLAN.md",
+   "line": 130,
+   "word": "measured",
+   "context": "ax \u2264 1.0 and mean \u2264 0.5. Pre-run estimates: V01 0.53, V03 0.64, all others 0.585. Re-mesh the inflation layer if the estimate is > 1 or the measured value is > 1 |"
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\PARAMETRIC_PLAN.md",
+   "line": 170,
+   "word": "safe",
+   "context": "No \u03bb\u2081 > 1 will be called \"safe\", and no \u03bb\u2081 < 1 will be called \"collapse\"."
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\PARAMETRIC_PLAN.md",
+   "line": 174,
+   "word": "measured",
+   "context": "1. **One-factor-at-a-time.** Interactions are not measured."
+  },
+  {
+   "file": "10_Parametric_Study\\Planning\\PARAMETRIC_PLAN.md",
+   "line": 187,
+   "word": "measured",
+   "context": "| Item | Basis (measured in earlier sections) | Estimate |"
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\FINAL_PARAMETRIC_AUDIT.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "of this re-analysis (Fluent CFD of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\FINAL_PARAMETRIC_AUDIT.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\FINAL_PARAMETRIC_AUDIT.md",
+   "line": 3,
+   "word": "measured",
+   "context": "Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\FINAL_PARAMETRIC_AUDIT.md",
+   "line": 53,
+   "word": "margin",
+   "context": "datasheet tables (VDM 4127 / Special Metals), about \u00b12 % in E and \u03b1 (8B); S_y typical, not minimum-guaranteed \u2014 utilisation not a certified margin |"
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_STRUCTURAL_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "of this re-analysis (Fluent CFD of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_STRUCTURAL_RESULTS.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_STRUCTURAL_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_STRUCTURAL_RESULTS.md",
+   "line": 121,
+   "word": "margin",
+   "context": "on factor of the idealised straight tube. It includes no imperfection, no plasticity and no large-deflection effect, and it is not a design margin (8A)."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_STRUCTURAL_RESULTS.md",
+   "line": 130,
+   "word": "factor of safety",
+   "context": "They are reported separately. No single factor of safety is formed."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_STRUCTURAL_RESULTS.md",
+   "line": 143,
+   "word": "margins",
+   "context": "irst yield**. The LC2 idealisation is stability-controlled, as found in 8A for P00; the utilisation values are therefore **not** structural margins."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_TRENDS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "of this re-analysis (Fluent CFD of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_TRENDS.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_TRENDS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\PARAMETRIC_TRENDS.md",
+   "line": 62,
+   "word": "margin",
+   "context": "e Euler load scales with the bending stiffness EI (P_cr -36.6 / +49.3 %). Because \u03bb\u2081 \u221d I/(A\u00b7\u03b5_th) \u221d r_g\u00b2, the thin wall **loses** stability margin (\u03bb\u2081 0.9450) and the thick wall **gains** it (\u03bb\u2081 1.2870). Thickness is the one variable of the three that changes \u03bb\u2081 through the section rat"
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\SUPPORT_SENSITIVITY_RESULTS.md",
+   "line": 3,
+   "word": "recovered",
+   "context": "of this re-analysis (Fluent CFD of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\SUPPORT_SENSITIVITY_RESULTS.md",
+   "line": 3,
+   "word": "experimental",
+   "context": "of Section 9B-1, Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\SUPPORT_SENSITIVITY_RESULTS.md",
+   "line": 3,
+   "word": "measured",
+   "context": "Mechanical of Section 9B-2), computed from the solver's own output tables. Nothing is a recovered internship value, and no experimental or measured data exist or are implied."
+  },
+  {
+   "file": "10_Parametric_Study\\Results\\SUPPORT_SENSITIVITY_RESULTS.md",
+   "line": 49,
+   "word": "measured",
+   "context": "- **Static lateral translation.** Run 1 measured the node-mean of (u_x, u_y) per section: 4.59e-06 m. On the free mesh the face nodes are unevenly distributed (node centroid 1.2 mm off the"
+  },
+  {
+   "file": "10_Parametric_Study\\Structural_Cases\\B03_S3_TOY_BENCH\\B03_BENCHMARK.md",
+   "line": 4,
+   "word": "recovered",
+   "context": "> its answers are known in closed form. Nothing here is a project result, a recovered internship value or a measurement."
+  },
+  {
+   "file": "Claude outputs\\FINE_CFD_AUDIT.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 this audit describes newly generated runs, not recovered originals.**"
+  },
+  {
+   "file": "Claude outputs\\FINE_CFD_RESULTS.md",
+   "line": 5,
+   "word": "recovered",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "Claude outputs\\FINE_CFD_RESULTS.md",
+   "line": 5,
+   "word": "measured",
+   "context": "**RE-ANALYSIS 2026 \u2014 newly generated results, not recovered originals. No measured data exists or is used.**"
+  },
+  {
+   "file": "Claude outputs\\FINE_CFD_RESULTS.md",
+   "line": 145,
+   "word": "recovered",
+   "context": "um 560.682 K at iteration 302 is 0.080 K above the final value; T_fluid_min dipped 0.23 mK below 300 K at iteration 301 (scheme switch) and recovered |"
+  }
+ ]
+}

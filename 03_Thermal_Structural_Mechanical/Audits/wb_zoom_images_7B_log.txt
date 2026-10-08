@@ -1,0 +1,3 @@
+opened 7B project (read-only use, not saved)
+mechanical script returned
+exited without save

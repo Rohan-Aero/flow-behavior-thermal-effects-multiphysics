@@ -1,0 +1,291 @@
+{
+  "mesh": "../05_Meshing/Mesh_Medium/medium.msh",
+  "iterations": 150,
+  "zones": {
+    "cell_fluid": [
+      "fluid_domain"
+    ],
+    "cell_solid": [
+      "solid_domain"
+    ],
+    "velocity_inlet": [
+      "fluid_inlet"
+    ],
+    "pressure_outlet": [
+      "fluid_outlet"
+    ],
+    "wall": [
+      "fluid_solid_interface",
+      "heated_outer_wall",
+      "solid_inlet_end",
+      "solid_outlet_end",
+      "fluid_solid_interface-shadow"
+    ],
+    "interior": []
+  },
+  "turbulent_intensity": 0.04411209588036475,
+  "ti_written": 0.04411209588036475,
+  "verification": {
+    "solver type": {
+      "got": "pressure-based",
+      "expected": "pressure-based",
+      "ok": true
+    },
+    "time": {
+      "got": "steady",
+      "expected": "steady",
+      "ok": true
+    },
+    "velocity formulation": {
+      "got": "absolute",
+      "expected": "absolute",
+      "ok": true
+    },
+    "operating pressure": {
+      "got": 101325,
+      "expected": 101325.0,
+      "ok": true
+    },
+    "gravity": {
+      "got": false,
+      "expected": false,
+      "ok": true
+    },
+    "energy enabled": {
+      "got": true,
+      "expected": true,
+      "ok": true
+    },
+    "viscous model": {
+      "got": "k-omega",
+      "expected": "k-omega",
+      "ok": true
+    },
+    "k-omega variant": {
+      "got": "sst",
+      "expected": "sst",
+      "ok": true
+    },
+    "air density option": {
+      "got": "incompressible-ideal-gas",
+      "expected": "incompressible-ideal-gas",
+      "ok": true
+    },
+    "fluid zone material": {
+      "got": "air",
+      "expected": "air",
+      "ok": true
+    },
+    "solid zone material": {
+      "got": "inconel-718",
+      "expected": "inconel-718",
+      "ok": true
+    },
+    "inlet velocity": {
+      "got": 23.5,
+      "expected": 23.5,
+      "ok": true
+    },
+    "inlet temperature": {
+      "got": 300,
+      "expected": 300.0,
+      "ok": true
+    },
+    "inlet intensity": {
+      "got": 0.04411209588036475,
+      "expected": 0.04411209588036475,
+      "ok": true
+    },
+    "inlet Dh": {
+      "got": 0.02,
+      "expected": 0.02,
+      "ok": true
+    },
+    "inlet turb spec": {
+      "got": "Intensity and Hydraulic Diameter",
+      "expected": "Intensity and Hydraulic Diameter",
+      "ok": true
+    },
+    "air cp is piecewise": {
+      "got": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    "air mu is piecewise": {
+      "got": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    "air k is piecewise": {
+      "got": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    "inconel k is piecewise": {
+      "got": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    "inconel density": {
+      "got": 8190.0,
+      "expected": 8190.0,
+      "ok": true
+    },
+    "outlet gauge pressure": {
+      "got": 0,
+      "expected": 0.0,
+      "ok": true
+    },
+    "heated wall condition": {
+      "got": "Heat Flux",
+      "expected": "Heat Flux",
+      "ok": true
+    },
+    "heated wall flux": {
+      "got": 8000.0,
+      "expected": 8000.0,
+      "ok": true
+    },
+    "solid inlet end flux": {
+      "got": 0,
+      "expected": 0.0,
+      "ok": true
+    },
+    "solid outlet end flux": {
+      "got": 0,
+      "expected": 0.0,
+      "ok": true
+    },
+    "INTERFACE is coupled": {
+      "got": "Coupled",
+      "expected": "Coupled",
+      "ok": true
+    },
+    "INTERFACE shadow coupled": {
+      "got": "Coupled",
+      "expected": "Coupled",
+      "ok": true
+    }
+  },
+  "monitors": {
+    "mdot_in": [
+      {
+        "mdot_in": [
+          0.008662155126142544,
+          "kg/s"
+        ]
+      }
+    ],
+    "mdot_out": [
+      {
+        "mdot_out": [
+          -0.008662141648102173,
+          "kg/s"
+        ]
+      }
+    ],
+    "mass_imbalance": [
+      {
+        "mass_imbalance": [
+          1.347804037127309e-08,
+          "kg/s"
+        ]
+      }
+    ],
+    "q_heated_wall": [
+      {
+        "q_heated_wall": [
+          602.7552389850018,
+          "W"
+        ]
+      }
+    ],
+    "q_interface": [
+      {
+        "q_interface": [
+          602.7761682844996,
+          "W"
+        ]
+      }
+    ],
+    "q_fluid_net": [
+      {
+        "q_fluid_net": [
+          -603.0717546905746,
+          "W"
+        ]
+      }
+    ],
+    "p_in": [
+      {
+        "p_in": [
+          438.9348699364398,
+          "Pa"
+        ]
+      }
+    ],
+    "p_out": [
+      {
+        "p_out": [
+          0.0,
+          "Pa"
+        ]
+      }
+    ],
+    "T_out_bulk": [
+      {
+        "T_out_bulk": [
+          368.9691728933993,
+          "K"
+        ]
+      }
+    ],
+    "T_wall_max": [
+      {
+        "T_wall_max": [
+          555.0536499023438,
+          "K"
+        ]
+      }
+    ],
+    "T_solid_max": [
+      {
+        "T_solid_max": [
+          561.9147030682,
+          "K"
+        ]
+      }
+    ],
+    "T_solid_mean": [
+      {
+        "T_solid_mean": [
+          525.1706877159221,
+          "K"
+        ]
+      }
+    ],
+    "v_out_max": [
+      {
+        "v_out_max": [
+          34.95264053344727,
+          "m/s"
+        ]
+      }
+    ],
+    "yplus_max": [
+      {
+        "yplus_max": [
+          0.5915653109550476,
+          ""
+        ]
+      }
+    ],
+    "dp_total": [
+      []
+    ],
+    "dp_total_derived_Pa": 438.9348699364398
+  },
+  "failures": [
+    "minor courant number (inactive under pseudo-time - expected): RuntimeError: value: AttributeError; direct: RuntimeError; set_state: RuntimeError"
+  ]
+}

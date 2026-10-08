@@ -1,0 +1,3 @@
+nodes    108252. max_node    108252.
+inlet_face_nodes       612. sum_RF_FZ_N    0.548936613753031E+06
+outlet_face_nodes      1440. sum_RF_FZ_N   -0.548936613753050E+06

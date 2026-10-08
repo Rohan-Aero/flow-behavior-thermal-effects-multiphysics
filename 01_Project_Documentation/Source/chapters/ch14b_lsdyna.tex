@@ -1,0 +1,131 @@
+% ===================================================================== Chapter 14 (continued)
+% Additional nonlinear buckling analysis using ANSYS LS-DYNA (follow-on extension; values from
+% 15_LS_DYNA_Extension/12C_Nonlinear_Buckling: FINAL_12C_RESULTS.md, IMPERFECTION_SENSITIVITY.csv, MECHANICAL_vs_LSDYNA.csv)
+\section{Additional Nonlinear Buckling Analysis Using ANSYS LS-DYNA}\label{sec:lsdyna}
+This section reports an additional nonlinear buckling analysis using ANSYS LS-DYNA, carried out as a follow-on extension of the
+thermo-structural analysis of Chapters~\ref{ch:buckling} and~\ref{ch:supports}. It is not part of the internship work programme described in
+Chapter~\ref{ch:intro} and does not change any result of the preceding chapters; the Mechanical linear buckling result ($\lambda_1$ = 1.108,
+$P_{cr}$ = 608.25~kN under S1) remains the reference.
+
+\subsection{Purpose and Model}
+The linear eigenvalue analysis gives the bifurcation load of a perfectly straight, elastic column (Chapter~\ref{ch:buckling}). It cannot show how a duct
+with an initial out-of-straightness deflects as the thermal load rises. The extension therefore follows the geometrically nonlinear
+(large-deflection) load path of the S1 / LC2 configuration with small imperfections in the shape of the first buckling mode.
+
+The LS-DYNA model is the LC2 model of Chapter~\ref{ch:struct} carried over unchanged:
+\begin{itemize}
+\item the same mesh (108,252 nodes, 23,400 twenty-node solid elements);
+\item the same CFD-derived temperature field mapped from the medium Fluent solution, with the reference temperature of 300~K;
+\item the same LC2 support condition (S1);
+\item temperature-dependent elastic Inconel~718 properties.
+\end{itemize}
+Before any nonlinear run, the LS-DYNA model was verified against Mechanical. The static LC2 state gives a peak von Mises stress of
+605.160~MPa against 605.161~MPa at the same location. The LS-DYNA linear buckling factor is 1.1095, +0.13\,\% from the Mechanical value, or
+$-$0.64\,\% after the documented large-deformation effect is removed. The mode shape agrees with the Mechanical mode~1 to 0.9999998.
+
+In the nonlinear analysis the temperature rise above 300~K is scaled by a load parameter $\lambda$ up to 1.3. The load steps are fine
+($\Delta\lambda$ = 0.005) between $\lambda$ = 1.0 and 1.2, around the expected instability. The imperfection is the normalised first buckling
+mode, applied with peak lateral amplitudes of 0.1~mm (case C1), 0.6~mm (C3) and 1.2~mm (C5). These amplitudes are numerical sensitivity
+values, not manufacturing tolerances. A perfect-geometry run (C0) serves as a reference path. All four runs terminated normally.
+
+\subsection{Results}
+Table~\ref{tab:lsdyna} summarises the three-point imperfection sensitivity study, and Figure~\ref{fig:lsdpath} shows the load paths.
+
+\begin{itemize}
+\item \textbf{Load path.} All imperfect cases deflect laterally from the start of loading. The axial compression $N$ (the end reaction)
+      flattens towards the critical load as the deflection grows.
+\item \textbf{Effect of amplitude below the critical load.} The imperfection amplitude governs where the response leaves the perfect path,
+      defined here as $N$ falling 1\,\% below the perfect-geometry value: at $\lambda$ = 1.070 (C1), 0.825 (C3) and 0.375 (C5). It also governs
+      the response at the LC2 temperature field ($\lambda$ = 1):
+      \begin{itemize}
+      \item $N$ is 552.2, 531.2 and 503.5~kN;
+      \item the peak von Mises stress is 690, 966 and 1104~MPa;
+      \item the end faces translate sideways by 0.85, 3.71 and 5.32~mm.
+      \end{itemize}
+\item \textbf{Maximum load.} The smallest imperfection reaches a maximum of 601.0~kN at $\lambda$ = 1.185 and then decreases slowly while the
+      sway continues to grow. C3 and C5 are still rising at the end of the analysis ($\lambda$ = 1.3), at 572.4 and 545.3~kN.
+\item \textbf{Characteristic load.} Southwell plots of the pre-critical branches give 612.3 (C1), 611.1 (C3) and 607.7~kN (C5).
+\end{itemize}
+
+\input{../Tables/tab_lsdyna}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,keepaspectratio]{LSD_load_lateral_nt.png}
+\caption[Additional LS-DYNA analysis: axial compression against lateral end sway]{Additional LS-DYNA analysis: axial compression against the
+total relative sway of the end faces for the three imperfection amplitudes and the perfect-geometry reference (left), and the same paths
+normalised by the Mechanical critical load and the initial sway (right).}
+\label{fig:lsdpath}
+\src{Plotted with matplotlib from the LS-DYNA solver output (binout and nodout) of the additional analysis; title strip cropped.}
+\end{figure}
+
+\subsection{Comparison with the Mechanical Linear Buckling Result}
+The Southwell characteristic-load estimates of 607.7--612.3~kN lie within $-$0.1\,\% to +0.7\,\% of the Mechanical critical load of
+608.25~kN ($\lambda_1$ = 1.108), as shown in Figure~\ref{fig:lsdcomp}.
+
+\begin{itemize}
+\item \textbf{Imperfection-sensitive response.} The amplitude strongly affects:
+      \begin{itemize}
+      \item the onset of lateral deformation;
+      \item the displacement and stress at a given load;
+      \item the maximum load reached within $\lambda \le$ 1.3: 98.8, 94.1 and 89.7\,\% of $P_{cr}$.
+      \end{itemize}
+\item \textbf{Insensitive characteristic load.} The characteristic global buckling load is relatively insensitive to the tested amplitudes
+      and supports the magnitude of the linear eigenvalue prediction.
+\item \textbf{Perfect-geometry run.} C0 stays straight beyond $P_{cr}$ (720.7~kN at $\lambda$ = 1.3) without flagging a bifurcation, because
+      the solver ignores negative eigenvalues by default. A perfect-geometry bifurcation load is therefore not identifiable from the LS-DYNA
+      analysis, and the Mechanical eigenvalue remains the linear perfect-geometry reference.
+\item \textbf{Global mode.} In every case the response is a global sideways (guided-sway) bending of the whole duct, the same shape as
+      Mechanical mode~1 (Figure~\ref{fig:lsdshape}):
+      \begin{itemize}
+      \item the mid-span lateral displacement stays below 0.2\,\% of the end-face translation;
+      \item the ovalisation is at most 0.041~mm;
+      \item there is no local or shell-type mode;
+      \item the highest stress is at the outer edge of the inlet face, the critical location of Chapter~\ref{ch:struct}.
+      \end{itemize}
+\end{itemize}
+None of these load values is a factor of safety or a real-world capacity, and the analysis is not an experimental validation.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{\linewidth}\centering\includegraphics[width=0.78\linewidth,keepaspectratio]{LSD_mechanical_vs_nonlinear_nt.png}\caption{Mechanical and LS-DYNA linear critical loads; maximum attained $N$ (bars) and Southwell estimates (markers) of the nonlinear cases}\end{subfigure}
+\par\medskip
+\begin{subfigure}[t]{\linewidth}\centering\includegraphics[width=0.62\linewidth,keepaspectratio]{LSD_amplitude_vs_characteristic_load_nt.png}\caption{Imperfection amplitude against maximum attained load, Southwell estimate and onset load}\end{subfigure}
+\caption[Mechanical linear buckling against the additional LS-DYNA nonlinear analysis]{Mechanical linear buckling against the additional
+LS-DYNA nonlinear analysis. In (a), 8A denotes the Mechanical linear buckling result of Chapter~\ref{ch:buckling} and 12B G6 the LS-DYNA linear
+buckling verification run. Load values are not factors of safety.}
+\label{fig:lsdcomp}
+\src{Plotted with matplotlib from the LS-DYNA solver output of the additional analysis and the Mechanical result (\texttt{MASTER\_PROJECT\_DATA.csv} M099); title strips cropped.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,keepaspectratio]{LSD_deformed_shape_C5_nt.png}
+\caption[Additional LS-DYNA analysis: deformed shape of the 1.2~mm case]{Additional LS-DYNA analysis, case C5 (1.2~mm): lateral deflection
+along the duct for $\lambda$ = 1.15--1.30 (left), and the deformed outline at $\lambda$ = 1.30 against the imperfect geometry (right, lateral
+axis stretched). Global guided sway, with the ends moving in opposite directions.}
+\label{fig:lsdshape}
+\src{Plotted with matplotlib from the LS-DYNA d3plot output of the additional analysis; title strip cropped.}
+\end{figure}
+
+\subsection{Limitations of the Elastic Model}
+The LS-DYNA model uses elastic, temperature-dependent material behaviour. The project contains no defensible temperature-dependent plastic
+stress--strain curve for Inconel~718 (task T-036), so the analysis is not elastic--plastic and does not predict post-yield or collapse
+behaviour.
+
+\begin{itemize}
+\item \textbf{Yield is reached within the load range.} The peak von Mises stress reaches the local yield estimate at $\lambda$ = 1.109
+      (C1), 1.031 (C3) and 0.974 (C5). C5 slightly exceeds the yield estimate before $\lambda$ = 1, and all three cases reach yield during
+      the extended loading range.
+\item \textbf{Consequences.} The later portions of the load paths lie outside the validated elastic constitutive range. The stresses
+      computed there are not physical, and no part of the extended response is a collapse load. The Southwell characteristic-load
+      comparison, which uses the pre-critical branches, is the meaningful result.
+\item \textbf{Other limitations.}
+      \begin{itemize}
+      \item The imperfection amplitudes are numerical rather than measured.
+      \item Only three amplitudes were analysed.
+      \item No mesh-refinement or load-step study was made for the nonlinear response.
+      \item The end restraint remains the idealised S1 condition discussed above.
+      \end{itemize}
+\end{itemize}
+\FloatBarrier

@@ -1,0 +1,30 @@
+{
+ "ref": "<PROJECT_ROOT>\\15_LS_DYNA_Extension\\work_12B\\G5_static",
+ "test": "<PROJECT_ROOT>\\15_LS_DYNA_Extension\\work_12B\\G6_buckle_10step",
+ "time": 1.0,
+ "n_nodes": 108252,
+ "reaction_inlet_N": [
+  553247.0399999991,
+  552954.4000000004
+ ],
+ "reaction_inlet_rel_diff": -0.0005289499605795056,
+ "peak_vm_MPa": [
+  605.1601789318246,
+  604.6017122760913
+ ],
+ "peak_vm_node": [
+  18865,
+  89468
+ ],
+ "peak_vm_rel_diff": -0.0009228410513048013,
+ "vm_diff_MPa": {
+  "rms": 0.31623672717837226,
+  "max_abs": 0.828717876523614
+ },
+ "sz_diff_MPa": {
+  "rms": 0.3485341689919126,
+  "max_abs": 1.17,
+  "mean": 0.28698887780364335
+ },
+ "mean_sz_ratio_test_over_ref": 0.999505821416184
+}

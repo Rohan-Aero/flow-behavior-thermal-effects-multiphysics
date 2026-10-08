@@ -1,0 +1,392 @@
+{
+  "P00": {
+    "Do_m": 0.04,
+    "qpp_W_m2": 8000.0,
+    "A_heated_analytic_m2": 0.07539822368615504,
+    "A_heated_CAD_m2": 0.07539822368615504,
+    "A_heated_CFD_Fluent_m2": 0.075344405,
+    "Q_analytic_W": 603.1857894892403,
+    "Q_CAD_W": 603.1857894892403,
+    "Q_CFD_Fluent_W": 602.75524,
+    "Q_CFD_qpp_x_Fluent_area_W": 602.7552400000001
+  },
+  "cases": {
+    "T01_THIN": {
+      "verification": [
+        {
+          "quantity": "Outer diameter",
+          "unit": "mm",
+          "analytical": 36.0,
+          "cad": 36.00000000000001,
+          "difference": 7.105427357601002e-15,
+          "relative_pct": 1.9737298215558338e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Inner (bore) diameter",
+          "unit": "mm",
+          "analytical": 20.0,
+          "cad": 20.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Wall thickness",
+          "unit": "mm",
+          "analytical": 7.999999999999998,
+          "cad": 8.000000000000002,
+          "difference": 3.552713678800501e-15,
+          "relative_pct": 4.4408920985006274e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Total length",
+          "unit": "mm",
+          "analytical": 600.0,
+          "cad": 600.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Fluid cross-sectional area",
+          "unit": "mm^2",
+          "analytical": 314.1592653589793,
+          "cad": 314.1592653589794,
+          "difference": 5.684341886080802e-14,
+          "relative_pct": 1.809382218788134e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Hydraulic diameter",
+          "unit": "mm",
+          "analytical": 20.0,
+          "cad": 20.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_DOMAIN volume",
+          "unit": "m^3",
+          "analytical": 0.00018849555921538757,
+          "cad": 0.0001884955592153876,
+          "difference": 2.710505431213761e-20,
+          "relative_pct": 1.4379677921836647e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_DOMAIN volume",
+          "unit": "m^3",
+          "analytical": 0.00042223005264246813,
+          "cad": 0.0004222300526424683,
+          "difference": 1.6263032587282567e-19,
+          "relative_pct": 3.851699443349103e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_INLET area",
+          "unit": "m^2",
+          "analytical": 0.0003141592653589793,
+          "cad": 0.00031415926535897936,
+          "difference": 5.421010862427522e-20,
+          "relative_pct": 1.7255613506203976e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_OUTLET area",
+          "unit": "m^2",
+          "analytical": 0.0003141592653589793,
+          "cad": 0.00031415926535897936,
+          "difference": 5.421010862427522e-20,
+          "relative_pct": 1.7255613506203976e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_WALL area",
+          "unit": "m^2",
+          "analytical": 0.03769911184307752,
+          "cad": 0.03769911184307752,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_INNER_INTERFACE area",
+          "unit": "m^2",
+          "analytical": 0.03769911184307752,
+          "cad": 0.03769911184307752,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "HEATED_OUTER_WALL area",
+          "unit": "m^2",
+          "analytical": 0.06785840131753952,
+          "cad": 0.06785840131753954,
+          "difference": 1.3877787807814457e-17,
+          "relative_pct": 2.0451097488834345e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_INLET_END area",
+          "unit": "m^2",
+          "analytical": 0.0007037167544041136,
+          "cad": 0.0007037167544041139,
+          "difference": 3.2526065174565133e-19,
+          "relative_pct": 4.622039332018922e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_OUTLET_END area",
+          "unit": "m^2",
+          "analytical": 0.0007037167544041136,
+          "cad": 0.0007037167544041139,
+          "difference": 3.2526065174565133e-19,
+          "relative_pct": 4.622039332018922e-14,
+          "status": "EXACT"
+        }
+      ],
+      "cad_structure": {
+        "bodies": 2,
+        "fluid_faces": 3,
+        "solid_faces": 4,
+        "named_selections": 11,
+        "share_topology": "ShareTopology.FindAndFix OK: True",
+        "exports": {
+          "T01_THIN.stp": [
+            true,
+            9327
+          ],
+          "T01_THIN.scdocx": [
+            true,
+            41382
+          ]
+        },
+        "cad_status": "complete"
+      },
+      "cad_structure_ok": true,
+      "derived_heat_flux": {
+        "A_heated_analytic_m2": 0.06785840131753952,
+        "A_heated_CAD_m2": 0.06785840131753954,
+        "A_heated_CFD_mesh_m2": 0.06780996438581233,
+        "qpp_derived_W_m2": 8888.888888888889,
+        "qpp_formula_qpp0_Do0_over_Do": 8888.888888888889,
+        "qpp_derived_vs_formula_rel": 0.0,
+        "Q_CAD_W": 603.1857894892403,
+        "Q_CAD_vs_P00_analytic_rel": 0.0,
+        "Q_CFD_mesh_W": 602.7552389849984,
+        "Q_CFD_mesh_vs_P00_CFD_rel": -1.6839365457599342e-09,
+        "qpp_change_vs_P00_pct": 11.111111111111116
+      },
+      "derived_heat_flux_ok": true,
+      "mesh_counts": {
+        "cells": 155520,
+        "fluid_cells": 116640,
+        "solid_cells": 38880,
+        "faces_by_zone": {
+          "interior_fluid": 346464,
+          "interior_solid": 111888,
+          "fluid_inlet": 1296,
+          "fluid_outlet": 1296,
+          "fluid_solid_interface": 4320,
+          "heated_outer_wall": 4320,
+          "solid_inlet_end": 432,
+          "solid_outlet_end": 432
+        }
+      },
+      "mesh_sha256": "D2CB86B952E5BE6DBD86C0033C27538154683AC98624F844BB6ACF432861ACF8"
+    },
+    "T03_THICK": {
+      "verification": [
+        {
+          "quantity": "Outer diameter",
+          "unit": "mm",
+          "analytical": 44.0,
+          "cad": 44.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Inner (bore) diameter",
+          "unit": "mm",
+          "analytical": 20.0,
+          "cad": 20.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Wall thickness",
+          "unit": "mm",
+          "analytical": 11.999999999999998,
+          "cad": 11.999999999999998,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Total length",
+          "unit": "mm",
+          "analytical": 600.0,
+          "cad": 600.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Fluid cross-sectional area",
+          "unit": "mm^2",
+          "analytical": 314.1592653589793,
+          "cad": 314.1592653589794,
+          "difference": 5.684341886080802e-14,
+          "relative_pct": 1.809382218788134e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "Hydraulic diameter",
+          "unit": "mm",
+          "analytical": 20.0,
+          "cad": 20.0,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_DOMAIN volume",
+          "unit": "m^3",
+          "analytical": 0.00018849555921538757,
+          "cad": 0.0001884955592153876,
+          "difference": 2.710505431213761e-20,
+          "relative_pct": 1.4379677921836647e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_DOMAIN volume",
+          "unit": "m^3",
+          "analytical": 0.0007238229473870882,
+          "cad": 0.0007238229473870881,
+          "difference": -1.0842021724855044e-19,
+          "relative_pct": 1.4978831168579842e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_INLET area",
+          "unit": "m^2",
+          "analytical": 0.0003141592653589793,
+          "cad": 0.00031415926535897936,
+          "difference": 5.421010862427522e-20,
+          "relative_pct": 1.7255613506203976e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_OUTLET area",
+          "unit": "m^2",
+          "analytical": 0.0003141592653589793,
+          "cad": 0.00031415926535897936,
+          "difference": 5.421010862427522e-20,
+          "relative_pct": 1.7255613506203976e-14,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "FLUID_WALL area",
+          "unit": "m^2",
+          "analytical": 0.03769911184307752,
+          "cad": 0.03769911184307752,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_INNER_INTERFACE area",
+          "unit": "m^2",
+          "analytical": 0.03769911184307752,
+          "cad": 0.03769911184307752,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "HEATED_OUTER_WALL area",
+          "unit": "m^2",
+          "analytical": 0.08293804605477052,
+          "cad": 0.08293804605477052,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_INLET_END area",
+          "unit": "m^2",
+          "analytical": 0.0012063715789784803,
+          "cad": 0.0012063715789784803,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        },
+        {
+          "quantity": "SOLID_OUTLET_END area",
+          "unit": "m^2",
+          "analytical": 0.0012063715789784803,
+          "cad": 0.0012063715789784803,
+          "difference": 0.0,
+          "relative_pct": 0.0,
+          "status": "EXACT"
+        }
+      ],
+      "cad_structure": {
+        "bodies": 2,
+        "fluid_faces": 3,
+        "solid_faces": 4,
+        "named_selections": 11,
+        "share_topology": "ShareTopology.FindAndFix OK: True",
+        "exports": {
+          "T03_THICK.stp": [
+            true,
+            9341
+          ],
+          "T03_THICK.scdocx": [
+            true,
+            42138
+          ]
+        },
+        "cad_status": "complete"
+      },
+      "cad_structure_ok": true,
+      "derived_heat_flux": {
+        "A_heated_analytic_m2": 0.08293804605477052,
+        "A_heated_CAD_m2": 0.08293804605477052,
+        "A_heated_CFD_mesh_m2": 0.0828788453604373,
+        "qpp_derived_W_m2": 7272.727272727274,
+        "qpp_formula_qpp0_Do0_over_Do": 7272.727272727273,
+        "qpp_derived_vs_formula_rel": 2.220446049250313e-16,
+        "Q_CAD_W": 603.1857894892403,
+        "Q_CAD_vs_P00_analytic_rel": 0.0,
+        "Q_CFD_mesh_W": 602.7552389849985,
+        "Q_CFD_mesh_vs_P00_CFD_rel": -1.6839363237153293e-09,
+        "qpp_change_vs_P00_pct": -9.090909090909083
+      },
+      "derived_heat_flux_ok": true,
+      "mesh_counts": {
+        "cells": 168480,
+        "fluid_cells": 116640,
+        "solid_cells": 51840,
+        "faces_by_zone": {
+          "interior_fluid": 346464,
+          "interior_solid": 150624,
+          "fluid_inlet": 1296,
+          "fluid_outlet": 1296,
+          "fluid_solid_interface": 4320,
+          "heated_outer_wall": 4320,
+          "solid_inlet_end": 576,
+          "solid_outlet_end": 576
+        }
+      },
+      "mesh_sha256": "9B6CC26C153BD4476CB27DFA5A8D1E6A53979E9ACDBC8D5F9455628056A8A9A1"
+    }
+  },
+  "ALL_OK": true
+}

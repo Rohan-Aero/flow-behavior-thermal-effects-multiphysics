@@ -1,0 +1,685 @@
+{
+ "mesh_metrics": {
+  "ParallelDeviation": {
+   "min": 10.0, 
+   "max": 10.0, 
+   "avg": 10.0
+  }, 
+  "MaximumCornerAngle": {
+   "min": 95.0, 
+   "max": 95.0, 
+   "avg": 95.0
+  }, 
+  "JacobianRatio": {
+   "min": 1.1153, 
+   "max": 1.2046000000000001, 
+   "avg": 1.153499999999964
+  }, 
+  "ElementQuality": {
+   "min": 0.23667418368906179, 
+   "max": 0.99120634986953271, 
+   "avg": 0.68822512405435954
+  }, 
+  "WarpingFactor": {
+   "min": 0.0, 
+   "max": 1.3706999999999999e-13, 
+   "avg": 1.4806164365751934e-14
+  }, 
+  "Skewness": {
+   "min": 0.055555555678873811, 
+   "max": 0.055555555678877488, 
+   "avg": 0.055555555678874644
+  }, 
+  "AspectRatio": {
+   "min": 1.1374, 
+   "max": 4.8823, 
+   "avg": 2.4130510769230544
+  }
+ }, 
+ "mesh_controls_before": [
+  [
+   "M36_Sweep_130_axial_bias4", 
+   "AutomaticMethod", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_Mapped_End_5_radial", 
+   "FaceMeshing", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_36_circumferential", 
+   "Sizing", 
+   "FullyDefined"
+  ]
+ ], 
+ "cases": {
+  "LC1": {
+   "messages": [], 
+   "copied": [
+    "file0.err", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "results": {
+    "LC1_Maximum_Principal_Stress": {
+     "Minimum": -82046.032819209824, 
+     "state": "Solved", 
+     "Maximum": 27195076.590965025, 
+     "type": "MaximumPrincipalStress"
+    }, 
+    "LC1_Equivalent_Stress_averaged": {
+     "Minimum": 253727.63540882315, 
+     "state": "Solved", 
+     "Maximum": 23532086.386877146, 
+     "type": "EquivalentStress"
+    }, 
+    "LC1_Equivalent_Elastic_Strain": {
+     "Minimum": 1.3423362502497536e-06, 
+     "state": "Solved", 
+     "Maximum": 0.00011988012703674135, 
+     "type": "EquivalentElasticStrain"
+    }, 
+    "LC1_Axial_Deformation_Uz_global": {
+     "Minimum": -2.2185235593052965e-10, 
+     "state": "Solved", 
+     "Maximum": 0.0016861943295225501, 
+     "type": "DirectionalDeformation"
+    }, 
+    "LC1_Hoop_Stress_Stheta_CS_DUCT_CYL": {
+     "Minimum": -20537222.94905059, 
+     "state": "Solved", 
+     "Maximum": 27195058.376865089, 
+     "type": "NormalStress"
+    }, 
+    "LC1_Equivalent_Stress_UNaveraged": {
+     "Minimum": 248861.6346294354, 
+     "state": "Solved", 
+     "Maximum": 23600320.385773104, 
+     "type": "EquivalentStress"
+    }, 
+    "LC1_Axial_Stress_Sz_global": {
+     "Minimum": -11740636.5, 
+     "state": "Solved", 
+     "Maximum": 18718261.5, 
+     "type": "NormalStress"
+    }, 
+    "LC1_Radial_Stress_Sr_CS_DUCT_CYL": {
+     "Minimum": -207695.78690846876, 
+     "state": "Solved", 
+     "Maximum": 4258140.07539823, 
+     "type": "NormalStress"
+    }, 
+    "LC1_Total_Deformation": {
+     "Minimum": 1.5388646306781665e-05, 
+     "state": "Solved", 
+     "Maximum": 0.0016874381710861839, 
+     "type": "TotalDeformation"
+    }, 
+    "LC1_Minimum_Principal_Stress": {
+     "Minimum": -20537235.547114119, 
+     "state": "Solved", 
+     "Maximum": 2870366.3219106058, 
+     "type": "MinimumPrincipalStress"
+    }, 
+    "LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE": {
+     "ZAxis": 7.9954503253234794e-08, 
+     "state": "Solved", 
+     "YAxis": 3.7770122984781562e-07, 
+     "Total": 3.8630744331753625e-07, 
+     "type": "ForceReaction", 
+     "XAxis": 1.3509224385859438e-08
+    }, 
+    "LC1_Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE": {
+     "ZAxis": 1.6035965604436581e-08, 
+     "state": "Solved", 
+     "YAxis": 1.1742155811871299e-08, 
+     "Total": 2.019607070753144e-07, 
+     "type": "MomentReaction", 
+     "XAxis": -2.0098033930308708e-07
+    }, 
+    "LC1_Radial_Deformation_Ur_CS_DUCT_CYL": {
+     "Minimum": 1.5003433297211203e-05, 
+     "state": "Solved", 
+     "Maximum": 6.5382404099429569e-05, 
+     "type": "DirectionalDeformation"
+    }, 
+    "LC1_Structural_Error": {
+     "Minimum": 6.4084236066449864e-11, 
+     "state": "Solved", 
+     "Maximum": 1.7420812691613709e-09, 
+     "type": "StructuralError"
+    }
+   }, 
+   "solve_wall_s": 116.9, 
+   "working_dir": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-2\\MECH\\", 
+   "solution_state": "Solved", 
+   "solution_status": "Done"
+  }, 
+  "LC2": {
+   "messages": [], 
+   "copied": [
+    "file0.err", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "results": {
+    "LC2_Moment_Reaction_LC2_HOOP_3NODES_DirectFE": {
+     "ZAxis": 2.2759673919146734e-09, 
+     "state": "Solved", 
+     "YAxis": -1.2482932773498012e-09, 
+     "Total": 2.2147494820064141e-08, 
+     "type": "MomentReaction", 
+     "XAxis": -2.1994846285651383e-08
+    }, 
+    "LC2_Total_Deformation": {
+     "Minimum": 2.4611674380737565e-05, 
+     "state": "Solved", 
+     "Maximum": 0.00012241489057203425, 
+     "type": "TotalDeformation"
+    }, 
+    "LC2_Hoop_Stress_Stheta_CS_DUCT_CYL": {
+     "Minimum": -17907184.171735112, 
+     "state": "Solved", 
+     "Maximum": 46880014.109250821, 
+     "type": "NormalStress"
+    }, 
+    "LC2_Structural_Error": {
+     "Minimum": 3.9290061999529759e-11, 
+     "state": "Solved", 
+     "Maximum": 2.1221510969938611e-09, 
+     "type": "StructuralError"
+    }, 
+    "LC2_Radial_Stress_Sr_CS_DUCT_CYL": {
+     "Minimum": -135917.62500000023, 
+     "state": "Solved", 
+     "Maximum": 7277643.14146462, 
+     "type": "NormalStress"
+    }, 
+    "LC2_Maximum_Principal_Stress": {
+     "Minimum": -135901.73745947436, 
+     "state": "Solved", 
+     "Maximum": 46880026.034946285, 
+     "type": "MaximumPrincipalStress"
+    }, 
+    "LC2_Axial_Stress_Sz_global": {
+     "Minimum": -565713184.0, 
+     "state": "Solved", 
+     "Maximum": -493120760.0, 
+     "type": "NormalStress"
+    }, 
+    "LC2_Radial_Deformation_Ur_CS_DUCT_CYL": {
+     "Minimum": 2.4598249359488286e-05, 
+     "state": "Solved", 
+     "Maximum": 8.1974186677405398e-05, 
+     "type": "DirectionalDeformation"
+    }, 
+    "LC2_Axial_Deformation_Uz_global": {
+     "Minimum": -9.8277065262664109e-05, 
+     "state": "Solved", 
+     "Maximum": 0.0, 
+     "type": "DirectionalDeformation"
+    }, 
+    "LC2_Equivalent_Stress_UNaveraged": {
+     "Minimum": 515420206.984709, 
+     "state": "Solved", 
+     "Maximum": 557568272.77994478, 
+     "type": "EquivalentStress"
+    }, 
+    "LC2_Force_Reaction_LC2_INLET_END": {
+     "ZAxis": 505029.86352924677, 
+     "state": "Solved", 
+     "YAxis": 0.0, 
+     "Total": 505029.86352924677, 
+     "type": "ForceReaction", 
+     "XAxis": 0.0
+    }, 
+    "LC2_Moment_Reaction_LC2_INLET_END": {
+     "ZAxis": 0.0, 
+     "state": "Solved", 
+     "YAxis": -4.9602424242678467e-05, 
+     "Total": 5.4041978216106526e-05, 
+     "type": "MomentReaction", 
+     "XAxis": 2.1450755668728227e-05
+    }, 
+    "LC2_Force_Reaction_LC2_OUTLET_END": {
+     "ZAxis": -505029.86352925422, 
+     "state": "Solved", 
+     "YAxis": 0.0, 
+     "Total": 505029.86352925422, 
+     "type": "ForceReaction", 
+     "XAxis": 0.0
+    }, 
+    "LC2_Equivalent_Stress_averaged": {
+     "Minimum": 515484943.15751427, 
+     "state": "Solved", 
+     "Maximum": 557543826.09981632, 
+     "type": "EquivalentStress"
+    }, 
+    "LC2_Equivalent_Elastic_Strain": {
+     "Minimum": 0.00262463679307836, 
+     "state": "Solved", 
+     "Maximum": 0.0028646626878691202, 
+     "type": "EquivalentElasticStrain"
+    }, 
+    "LC2_Moment_Reaction_LC2_OUTLET_END": {
+     "ZAxis": 0.0, 
+     "state": "Solved", 
+     "YAxis": 4.9604530897084942e-05, 
+     "Total": 5.404460802402965e-05, 
+     "type": "MomentReaction", 
+     "XAxis": -2.1452509665564889e-05
+    }, 
+    "LC2_Minimum_Principal_Stress": {
+     "Minimum": -565713243.6932559, 
+     "state": "Solved", 
+     "Maximum": -493120794.31716877, 
+     "type": "MinimumPrincipalStress"
+    }, 
+    "LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE": {
+     "ZAxis": 0.0, 
+     "state": "Solved", 
+     "YAxis": 7.3316151372182503e-08, 
+     "Total": 7.3434132289875887e-08, 
+     "type": "ForceReaction", 
+     "XAxis": -4.1609774258236153e-09
+    }
+   }, 
+   "solve_wall_s": 118.6, 
+   "working_dir": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-3\\MECH\\", 
+   "solution_state": "Solved", 
+   "solution_status": "Done"
+  }, 
+  "BUCKLING": {
+   "messages": [
+    [
+     "Info", 
+     "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+    ]
+   ], 
+   "copied": [
+    "file0.err", 
+    "s8a_load_factors.csv", 
+    "s8a_mode1.csv", 
+    "s8a_mode2.csv", 
+    "s8a_mode3.csv", 
+    "s8a_mode4.csv", 
+    "s8a_mode5.csv", 
+    "s8a_mode6.csv", 
+    "s8a_set_list.txt", 
+    "solve.out"
+   ], 
+   "solve_wall_s": 173.1, 
+   "working_dir": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-5\\MECH\\", 
+   "solution_state": "Solved", 
+   "modes": [
+    {
+     "LoadMultiplier": "1.21087203681", 
+     "state": "Solved", 
+     "mode": 1
+    }, 
+    {
+     "LoadMultiplier": "1.21087209297", 
+     "state": "Solved", 
+     "mode": 2
+    }, 
+    {
+     "LoadMultiplier": "4.69747885478", 
+     "state": "Solved", 
+     "mode": 3
+    }, 
+    {
+     "LoadMultiplier": "4.69748316673", 
+     "state": "Solved", 
+     "mode": 4
+    }, 
+    {
+     "LoadMultiplier": "10.0829007591", 
+     "state": "Solved", 
+     "mode": 5
+    }, 
+    {
+     "LoadMultiplier": "10.0829230370", 
+     "state": "Solved", 
+     "mode": 6
+    }
+   ], 
+   "solution_status": "Done"
+  }
+ }, 
+ "mesh_regenerated": false, 
+ "mapping_named_selections": [], 
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 parametric structural solution (not recovered)", 
+ "final_states": [
+  [
+   "LC1_Free_Expansion", 
+   "Solved"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Solved"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "NotSolved"
+  ], 
+  [
+   "LC2_Linear_Buckling_V03_HIGH", 
+   "Solved"
+  ]
+ ], 
+ "buckling_settings": {
+  "MaximumModesToFind": "6", 
+  "SolverType": "ProgramControlled", 
+  "IncludeNegativeLoadMultiplier": "No"
+ }, 
+ "mesh": {
+  "expected_nodes": 108252, 
+  "elements": 23400, 
+  "expected_elements": 23400, 
+  "nodes": 108252
+ }, 
+ "midspan_radial_node_positions_m": [
+  0.01, 
+  0.010999999999999999, 
+  0.012, 
+  0.012999999999999999, 
+  0.014, 
+  0.014999999999999999, 
+  0.016, 
+  0.017000000000000001, 
+  0.017999999999999999, 
+  0.019, 
+  0.02
+ ], 
+ "presolve_input": {
+  "LC1": {
+   "bf_identical_to_7B": false, 
+   "bf_max_K": 542.0884281, 
+   "eblock_identical_to_7B": true, 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ]
+   ], 
+   "extra_eblocks": [], 
+   "has_443.41": false, 
+   "n_bf": 108252, 
+   "nblock_identical_to_7B": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "n_nodes": 108252, 
+   "bf_min_K": 413.884308, 
+   "n_elem_lines": 23400
+  }, 
+  "LC2": {
+   "bf_identical_to_7B": false, 
+   "bf_max_K": 542.0884281, 
+   "eblock_identical_to_7B": true, 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     1224, 
+     80282530, 
+     18577, 
+     108252
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ]
+   ], 
+   "extra_eblocks": [], 
+   "has_443.41": false, 
+   "n_bf": 108252, 
+   "nblock_identical_to_7B": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "n_nodes": 108252, 
+   "bf_min_K": 413.884308, 
+   "n_elem_lines": 23400
+  }
+ }, 
+ "images": [
+  "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures\\V03_HIGH_mesh_end_face.png", 
+  "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures\\V03_HIGH_mesh_iso.png", 
+  "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures\\V03_HIGH_LC1_Equivalent_Stress_iso.png", 
+  "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures\\V03_HIGH_LC2_Equivalent_Stress_iso.png", 
+  "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures\\V03_HIGH_BK_Mode_1_iso.png", 
+  "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures\\V03_HIGH_BK_Mode_1_side_YZ.png"
+ ], 
+ "mesh_settings": {
+  "bias": "4.0", 
+  "circumferential": "36", 
+  "face_meshing_location": "SOLID_INLET_END", 
+  "radial": "5", 
+  "element_order": "Quadratic", 
+  "sweep_divisions": "130", 
+  "sizing_edges": "[11, 12, 10, 9]", 
+  "bias_type": "o_ooo_ooooo_ooo_o", 
+  "sweep_location": "SOLID_DOMAIN", 
+  "mapped": "True"
+ }, 
+ "mapping": {
+  "LC1": {
+   "state": "Solved", 
+   "max_K": 542.08999999999992, 
+   "min_C": 140.73, 
+   "source_min_K": 413.884308, 
+   "source_max_K": 542.065796, 
+   "max_C": 268.94, 
+   "n": 108252, 
+   "min_K": 413.88
+  }, 
+  "LC2": {
+   "state": "Solved", 
+   "max_K": 542.08999999999992, 
+   "min_C": 140.73, 
+   "source_min_K": 413.884308, 
+   "source_max_K": 542.065796, 
+   "max_C": 268.94, 
+   "n": 108252, 
+   "min_K": 413.88
+  }
+ }, 
+ "support_nodes": {
+  "LC1": [
+   [
+    18882, 
+    0.02, 
+    0.0, 
+    0.0
+   ], 
+   [
+    18894, 
+    0.02, 
+    0.0, 
+    120.0
+   ], 
+   [
+    18870, 
+    0.02, 
+    0.0, 
+    -120.0
+   ]
+  ], 
+  "LC2": [
+   [
+    25874, 
+    0.02, 
+    0.29999999999999999, 
+    0.0
+   ], 
+   [
+    25886, 
+    0.02, 
+    0.29999999999999999, 
+    120.0
+   ], 
+   [
+    25862, 
+    0.02, 
+    0.29999999999999999, 
+    -120.0
+   ]
+  ]
+ }, 
+ "analyses": [
+  [
+   "LC1_Free_Expansion", 
+   "Static"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Static"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Static"
+  ], 
+  [
+   "LC2_Linear_Buckling_V03_HIGH", 
+   "Buckling"
+  ]
+ ], 
+ "LC2P": {
+  "state_after_clear": "NotSolved", 
+  "solved_in_9B2": false, 
+  "note": "copied from the 7B project; results cleared; not solved for the parametric cases (Part N)"
+ }, 
+ "bodies": {
+  "solid_material": "Inconel_718_Re_analysis", 
+  "fluid_suppressed": true, 
+  "solid_volume_m3": 0.00056548667764616284, 
+  "expected_volume_m3": 0.00056548667764616284
+ }, 
+ "mesh_controls_after": [
+  [
+   "M36_Sweep_130_axial_bias4", 
+   "AutomaticMethod", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_Mapped_End_5_radial", 
+   "FaceMeshing", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_36_circumferential", 
+   "Sizing", 
+   "FullyDefined"
+  ]
+ ], 
+ "case": {
+  "bias": 4.0, 
+  "geometry": null, 
+  "tag": "V03_HIGH", 
+  "external_data_readback": {
+   "length_units": [
+    "m", 
+    "m"
+   ], 
+   "after": [
+    "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V03_HIGH\\fluent_solid_mesh.cdb", 
+    "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V03_HIGH\\fluent_solid_node_temperature.csv"
+   ], 
+   "format": [
+    "Cdb", 
+    "Delimited"
+   ], 
+   "delimiter": [
+    "Comma", 
+    ","
+   ], 
+   "ok": true, 
+   "columns": [
+    [
+     "Node ID", 
+     ""
+    ], 
+    [
+     "Temperature", 
+     "K"
+    ]
+   ], 
+   "case": "V03_HIGH", 
+   "before": [
+    "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+    "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+   ], 
+   "master": [
+    true, 
+    false
+   ], 
+   "start_line": "2"
+  }, 
+  "Di": 0.02, 
+  "L": 0.59999999999999998, 
+  "source_node_T_K": [
+   413.88430786132813, 
+   542.0657958984375
+  ], 
+  "source_T_range_K": [
+   413.27658, 
+   542.09778
+  ], 
+  "buckling": true, 
+  "cfd_case": "V03_HIGH", 
+  "nc": 36, 
+  "cdb": "10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_mesh.cdb", 
+  "Do": 0.040000000000000001, 
+  "nr": 5, 
+  "csv": "10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_node_temperature.csv", 
+  "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH.wbpj", 
+  "na": 130, 
+  "pressure": false
+ }
+}

@@ -1,0 +1,35 @@
+loading Fluent exports ...
+   fluid cells       354780 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'cell-zone', 'cell-volume', 'radial-coordinate', 'pressure', 'total-pressure', 'density', 'temperature', 'enthalpy', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z-velocity', 'viscosity-lam', 'viscosity-turb', 'specific-heat-cp', 'thermal-conductivity-lam', 'turb-kinetic-energy', 'specific-diss-rate', 'cell-wall-distance', 'face-area-magnitude']
+   solid cells       145800 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'cell-zone', 'cell-volume', 'radial-coordinate', 'temperature', 'thermal-conductivity-lam', 'specific-heat-cp', 'density', 'face-area-magnitude']
+   interface faces     9720 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'face-area-magnitude', 'temperature', 'heat-flux', 'y-plus', 'wall-shear', 'z-wall-shear', 'skin-friction-coef', 'wall-adjacent-temperature', 'cell-wall-distance']
+   outer faces         9720 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'face-area-magnitude', 'temperature', 'heat-flux']
+   end faces           2160 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'face-area-magnitude', 'temperature', 'heat-flux']
+   inlet faces         2628 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'face-area-magnitude', 'pressure', 'total-pressure', 'temperature', 'density', 'z-velocity', 'velocity-magnitude', 'enthalpy']
+   outlet faces        2628 rows, columns: ['cellnumber', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'face-area-magnitude', 'pressure', 'total-pressure', 'temperature', 'density', 'z-velocity', 'velocity-magnitude', 'enthalpy']
+   heat-flux sign: interface +1 (faces 602.9944 W vs report 602.9944 W); outer +1 (faces 602.9944 vs 602.9944)
+   wrote Profiles/axial_profiles_cfd.csv
+   fully developed (x/D 18-29): {'Nu_cfd': 54.65789, 'Nu_gn': 63.49939, 'Nu_db': 68.55805, 'Nu_corr_n05': 51.12005, 'n_implied': 0.34549, 'f_cfd': 0.02181, 'f_petukhov': 0.0244, 'f_petukhov_heating_m_minus0p1': 0.02337, 'R_fluent': 287.04248, 'Tw_over_Tb_fd': 1.54289, 'h_cfd_end_of_window': 84.50698, 'Nu_cfd_end_of_window': 54.11496, 'h_cfd_last_slab': 84.69585, 'Nu_cfd_last_slab': 53.95527, 'x_over_D_window': [18.11111111111111, 28.999999999999996]}
+   pressure decomposition: {'dp_total_area': 439.12124, 'dp_total_mass': 439.12124, 'dp_wall_shear': 244.27973, 'dp_momentum_flux': 195.10261, 'dp_accel_1D_cfd_densities': 149.13386, 'dp_profile_development': 45.96875, 'momentum_balance_residual': -0.2611, 'momentum_balance_residual_pct': -0.05946, 'F_wall_N': 0.07665, 'F_wall_monitor_N': 0.07665, 'beta_in': 1.0, 'beta_out': 1.05778, 'rho_in_b': 1.17666, 'rho_out_b': 0.95702, 'A_in': 0.00031, 'A_out': 0.00031}
+   conservation: {'mdot_in': 0.0086759, 'mdot_out': 0.0086759, 'mass_imbalance_pct': 0.0, 'mdot_from_faces_in': 0.0086759, 'mdot_from_faces_out': 0.0086749, 'Q_wall': 602.9944109, 'Q_interface': 602.9944109, 'Q_fluid': 602.9944109, 'Q_ends': 0.0, 'Q_net_all': -0.0, 'energy_imbalance_W': -0.0, 'energy_imbalance_pct': -0.0, 'net_all_boundaries_pct': -0.0, 'interface_vs_wall_pct': -0.0, 'A_outer_mesh': 0.0753743, 'A_outer_exact': 0.0753982, 'lateral_ratio_mesh': 0.9996827, 'lateral_ratio_polygon': 0.9996827, 'Q_wall_expected_from_area': 602.994411, 'Q_analytical': 603.1857895, 'Q_wall_vs_analytical_pct': -0.031728, 'A_in_mesh': 0.0003138, 'A_in_exact': 0.0003142, 'planar_ratio_mesh': 0.9987312, 'planar_ratio_polygon': 0.9987312, 'Q_fluid_from_enthalpy_faces': 602.9609203}
+   mixing-cup: {'h_in_b': 1862.9157749999997, 'h_out_b': 71361.12421884282, 'T_in_mixing_cup': 300.0, 'T_out_mixing_cup': 368.91013754085105, 'T_out_from_cfd_energy_balance': 368.91395615816776, 'T_out_from_analytical_energy_balance': 368.85223200257855, 'faceting_shift_K': 0.061724155589217844}
+   through-wall: {'dT_wall_z300': 7.5966, 'dT_wall_z570': 7.3776, 'dT_wall_last_slab': 7.3272, 'dT_wall_max': 16.6892, 'dT_wall_min': 7.3272, 'dT_1D_localk_z570': 7.4272, 'Twi_z570': 552.8741, 'Two_z570': 560.2517, 'Tb_z570': 365.4751, 'Twi_last_slab': 553.5034, 'Two_last_slab': 560.8306}
+   y+: {'min': 0.2089572047, 'max': 0.6529861437, 'area_mean': 0.24267484258447525, 'median': 0.238432771, 'p05': 0.2108092338, 'p95': 0.2905418861, 'p99': 0.3909174724, 'frac_area_le_1': 1.0, 'frac_area_le_0p5': 0.9925925925925926, 'fd_mean': 0.23076819046766658, 'location_of_max_mm': {'z': 2.2222222219999996, 'theta_deg': 267.5012984687472}, 'location_of_min_mm': {'z': 348.88888890000004, 'theta_deg': 312.49646718211073}, 'first_cell_centre_distance_um': {'min': 5.171853169, 'max': 6.083476532000001}}
+   near-wall geometry at z=300 mm: {'slab_z_mm': 300.0, 'ywall_min_um': 5.171853169, 'ywall_max_um': 6.083476532000001, 'first_layer_equiv_min_um': 10.343706338, 'first_layer_equiv_max_um': 12.166953064000001, 'theta_of_min_ywall': 42.49646718211071, 'theta_of_max_ywall': 2.4987015312527903, 'tau_ptp_pct': 0.12505029393581235, 'yplus_ptp_pct': 16.089383456318487, 'superellipse_prediction_ratio': 0.8451941786341374}
+   velocity: {'w_in_min': 23.5, 'w_in_max': 23.5, 'w_out_area_mean': 28.890011896549908, 'w_out_min': 0.3985593202, 'w_out_max': 34.97255887, 'w_domain_max': 34.97255887, 'w_domain_min': 0.3495989864, 'vmag_max': 34.97255889, 'reverse_flow_cells': 0, 'max_abs_radial_velocity': 0.6597927535045982, 'max_abs_swirl_velocity': 0.012468634956155033, 'centreline_to_bulk_exit': 1.2105415184675692, 'mach_at_max_velocity_outlet_bulkT': 0.09083492503515705}
+   wrote Monitors/fine_monitors.csv (700 rows), residual_history.csv (705 rows)
+   range check: {'fluid_table_K': [250.0, 600.0], 'solid_table_K': [293.15, 673.15], 'final_fluid_within': True, 'final_solid_within': True, 'history_fluid_within': True, 'history_solid_within': True, 'solver_limit_or_divergence_messages': [], 'n_limit_messages': 0, 'nan_or_inf_values_in_exports': 0}
+   geometric (faceting) ratios fine/medium: {'mdot_ratio': 1.0015891209105832, 'Q_ratio': 1.0003967978010595}
+   wrote Fine_vs_Medium.csv
+   wrote fine_cfd_results.json
+   figure figF01_fine_convergence.png
+   figure figF02_axial_temperatures_vs_medium.png
+   figure figF03_through_wall_dT_vs_medium.png
+   figure figF04_pressure_vs_medium.png
+   figure figF05_heat_flux_h_vs_medium.png
+   figure figF06_yplus_vs_medium.png
+   figure figF07_nu_f_vs_medium.png
+   figure figF08_fine_fields.png
+   figure figF09_fine_midspan_section.png
+   figure figF10_differences_vs_medium.png
+   wrote Audit/setup_comparison_vs_medium.csv
+DONE

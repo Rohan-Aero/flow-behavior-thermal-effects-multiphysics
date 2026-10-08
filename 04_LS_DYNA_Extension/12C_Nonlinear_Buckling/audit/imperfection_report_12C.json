@@ -1,0 +1,45 @@
+{
+ "source_mode": "work_12B/G6_buckle_10step/d3eigv mode 1 (lambda 1.109475)",
+ "normalisation": "phi_hat = phi / max_n sqrt(phi_x^2+phi_y^2); imperfect X = X_12B + A*phi_hat (full 3-D vector)",
+ "max_lateral_node": 108228,
+ "max_lateral_node_xyz_m": [
+  0.001743114855,
+  0.01992389396,
+  0.6
+ ],
+ "max_lateral_direction_deg": -6.112916064756548,
+ "max_abs_axial_component_hat": 0.10330633473539029,
+ "max_abs_uz_hat_on_end_faces": 0.0,
+ "max_lateral_hat_at_hoop_nodes": 2.5393375729846737e-05,
+ "lambda_eig": 1.1094746294552227,
+ "files": {
+  "A0p1": {
+   "A_mm": 0.1,
+   "realised_max_lateral_mm": 0.10000000000000017,
+   "sha256": "9b67bc4060afdf31933eeae3a89a8f2afbcd141ef6e67b4ca1df17cdb6b8609d"
+  },
+  "A0p3": {
+   "A_mm": 0.3,
+   "realised_max_lateral_mm": 0.30000000000000016,
+   "sha256": "7602d74360855c436dab68a8d9d0481d01d55293f1224ec086d0a9b06d0b45ca"
+  },
+  "A0p6": {
+   "A_mm": 0.6,
+   "realised_max_lateral_mm": 0.6,
+   "sha256": "7361af6e00beb12aa9c783e53a9c3ba04d4a7e82d2e778068376c699cda6e64d"
+  },
+  "A0p9": {
+   "A_mm": 0.9,
+   "realised_max_lateral_mm": 0.9000000000000001,
+   "sha256": "63cc2cd490e68988aa136540ea8be6167346acd43cec2348f3aef5b267b2df3d"
+  },
+  "A1p2": {
+   "A_mm": 1.2,
+   "realised_max_lateral_mm": 1.2,
+   "sha256": "b93f1fb34ee9764e0f78ad7eacf5c86cd59b5f26e2cead90fa5afc3fc67b340e"
+  }
+ },
+ "n_monitor_nodes": 1048,
+ "n_subset_elements": 4320,
+ "n_elements": 23400
+}

@@ -1,0 +1,4 @@
+scenario,end condition,K,lambda1,P_cr_kN,LC2_static_max_vm_MPa,source
+S1,"guided (ends sway, rotation held)",1.0,1.10805,608.25,605.161,"M090, M098-M109"
+S3,clamped - pinned,0.699,2.23224,1225.36,605.16,"M090, M098-M109"
+S2,clamped - clamped,0.5,4.29995,2360.4,605.16,"M090, M098-M109"

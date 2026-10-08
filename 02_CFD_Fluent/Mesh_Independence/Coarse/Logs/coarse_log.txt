@@ -1,0 +1,593 @@
+================================================================================
+SECTION 6A COARSE-MESH SOLVE (mesh-independence point) - RE-ANALYSIS 2026
+================================================================================
+OK    transcript                                             
+OK    read medium final CASE for its settings (data NOT read) 
+OK    snapshot medium settings                               {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+OK    REPLACE MESH -> coarse.msh (settings kept by Fluent)   
+OK    mesh check                                             
+OK    mesh size_info                                         
+OK    snapshot coarse settings                               {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+SETTINGS DIFF medium -> coarse after replace: 0 differences
+OK    mesh size/volume as printed by Fluent                  {'cells': 51840, 'min_volume_m3': 2.049465e-10}
+OK    zone ids as printed by Fluent's replace                {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'interior-soli
+ZONES {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"], "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"], "wall": ["fluid_solid_interface", "fluid_solid_interface-shadow", "heated_outer_wall", "solid_inlet_end", "solid_outlet_end"], "interior": []}
+OK    1A Inconel 718 density = 8190 kg/m3 (read back)        {'option': 'value', 'value_kg_m3': 8190.0}
+OK    startup scheme pressure     -> second-order            'second-order'
+OK    startup scheme mom          -> first-order-upwind      'first-order-upwind'
+OK    startup scheme k            -> first-order-upwind      'first-order-upwind'
+OK    startup scheme omega        -> first-order-upwind      'first-order-upwind'
+OK    startup scheme temperature  -> first-order-upwind      'first-order-upwind'
+OK    monitor file -> Monitors/coarse_monitors.out           
+OK    monitor file report list (29)                          
+OK    monitor file state                                     {'name': 's5a_monitors', 'file_name': 'Monitors\\\\coarse_monitors.out', 'frequency_of': 'iteration', 'frequen
+AUDIT ok   fluent version                                       26.1.0
+AUDIT ok   solver type                                          'pressure-based'
+AUDIT ok   time                                                 'steady'
+AUDIT ok   velocity formulation                                 'absolute'
+AUDIT ok   operating pressure [Pa]                              101325
+AUDIT ok   gravity enabled                                      False
+AUDIT ok   energy equation                                      True
+AUDIT ok   energy: viscous dissipation                          False
+AUDIT ok   energy: pressure work                                False
+AUDIT ok   energy: kinetic energy                               False
+AUDIT ok   viscous model                                        'k-omega'
+AUDIT ok   k-omega variant                                      'sst'
+AUDIT ok   SST wall omega treatment                             'correlation'
+AUDIT ok   SST low-Re correction                                False
+AUDIT ok   radiation model                                      'none'
+AUDIT ok   air density model                                    'incompressible-ideal-gas'
+AUDIT ok   air molecular weight                                 28.966
+AUDIT ok   air cp model                                         'piecewise-linear'
+AUDIT ok   air cp curve = Incropera A.4                         True
+AUDIT ok   air mu model                                         'piecewise-linear'
+AUDIT ok   air mu curve = Incropera A.4                         True
+AUDIT ok   air k model                                          'piecewise-linear'
+AUDIT ok   air k curve = Incropera A.4                          True
+AUDIT ok   Inconel density option                               'value'
+AUDIT ok   Inconel density [kg/m3]                              8190.0
+AUDIT ok   Inconel k model                                      'piecewise-linear'
+AUDIT ok   Inconel k curve = VDM 4127                           True
+AUDIT ok   Inconel cp model                                     'piecewise-linear'
+AUDIT ok   Inconel cp curve = VDM 4127                          True
+AUDIT ok   fluid zone material                                  'air'
+AUDIT ok   solid zone material                                  'inconel-718'
+AUDIT ok   inlet velocity spec                                  'Magnitude, Normal to Boundary'
+AUDIT ok   inlet velocity [m/s]                                 23.5
+AUDIT ok   inlet temperature [K]                                300
+AUDIT ok   inlet turbulence spec                                'Intensity and Hydraulic Diameter'
+AUDIT ok   inlet turbulent intensity [-]                        0.04411209588036475
+AUDIT ok   inlet hydraulic diameter [m]                         0.02
+AUDIT ok   outlet gauge pressure [Pa]                           0
+AUDIT ok   outlet prevent reverse flow                          True
+AUDIT ok   outlet backflow T branch active                      False
+AUDIT ok   heated wall condition                                'Heat Flux'
+AUDIT ok   heated wall flux [W/m2]                              8000.0
+AUDIT ok   solid inlet end                                      ('Heat Flux', 0)
+AUDIT ok   solid outlet end                                     ('Heat Flux', 0)
+AUDIT ok   interface thermal coupling                           'Coupled'
+AUDIT ok   interface shadow coupling                            'Coupled'
+AUDIT ok   p-v coupling                                         'Coupled'
+AUDIT ok   gradient scheme                                      'least-square-cell-based'
+AUDIT ok   scheme pressure                                      'second-order'
+AUDIT ok   scheme mom                                           'first-order-upwind'
+AUDIT ok   scheme k                                             'first-order-upwind'
+AUDIT ok   scheme omega                                         'first-order-upwind'
+AUDIT ok   scheme temperature                                   'first-order-upwind'
+AUDIT ok   pseudo-time formulation                              'global-time-step'
+AUDIT ok   pseudo-time step settings                            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+AUDIT ok   explicit pseudo relaxation                           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+AUDIT ok   explicit p/mom under-relaxation                      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+AUDIT ok   solution limits                                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+AUDIT ok   equations solved                                     {'flow': True, 'kw': True, 'temperature': True}
+AUDIT ok   6A turbulence model = SST k-omega                    ('k-omega', 'sst')
+AUDIT ok   6A wall omega treatment = correlation                'correlation'
+AUDIT ok   6A low-Re correction off                             False
+AUDIT ok   6A energy extra terms off                            (False, False, False)
+AUDIT ok   6A mesh cells (printed by Fluent)                    51840
+AUDIT ok   6A minimum cell volume > 0 [m3]                      2.049465e-10
+AUDIT ok   6A zone names                                        {'cell_fluid': ['fluid_domain'], 'cell_solid': ['solid_domain'], 'velocity_inlet': ['fluid_inlet'], 
+AUDIT ok   6A zone ids (Fluent replace output)                  {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'int
+AUDIT ok   6A settings diff vs medium after replace             0
+AUDIT ok   6A monitor file name                                 'Monitors\\\\coarse_monitors.out'
+AUDIT ok   6A monitor report list                               ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_
+AUDIT ok   6A init defaults (T 300 K, w 23.5 m/s, u = v = 0, p 0 Pa) {'pressure': 0.0, 'x-velocity': 0, 'y-velocity': 0, 'z-velocity': 23.5, 'k': 1.611915862325738, 'ome
+AUDIT ok   SAME AS MEDIUM: fluent version                       'Ansys Fluent 2026 R1'
+AUDIT ok   SAME AS MEDIUM: solver type                          'pressure-based'
+AUDIT ok   SAME AS MEDIUM: time                                 'steady'
+AUDIT ok   SAME AS MEDIUM: velocity formulation                 'absolute'
+AUDIT ok   SAME AS MEDIUM: operating pressure [Pa]              101325
+AUDIT ok   SAME AS MEDIUM: gravity enabled                      False
+AUDIT ok   SAME AS MEDIUM: energy equation                      True
+AUDIT ok   SAME AS MEDIUM: energy: viscous dissipation          False
+AUDIT ok   SAME AS MEDIUM: energy: pressure work                False
+AUDIT ok   SAME AS MEDIUM: energy: kinetic energy               False
+AUDIT ok   SAME AS MEDIUM: viscous model                        'k-omega'
+AUDIT ok   SAME AS MEDIUM: k-omega variant                      'sst'
+AUDIT ok   SAME AS MEDIUM: SST wall omega treatment             'correlation'
+AUDIT ok   SAME AS MEDIUM: SST low-Re correction                False
+AUDIT ok   SAME AS MEDIUM: radiation model                      'none'
+AUDIT ok   SAME AS MEDIUM: air density model                    'incompressible-ideal-gas'
+AUDIT ok   SAME AS MEDIUM: air molecular weight                 28.966
+AUDIT ok   SAME AS MEDIUM: air cp model                         'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air cp curve = Incropera A.4         True
+AUDIT ok   SAME AS MEDIUM: air mu model                         'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air mu curve = Incropera A.4         True
+AUDIT ok   SAME AS MEDIUM: air k model                          'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air k curve = Incropera A.4          True
+AUDIT ok   SAME AS MEDIUM: Inconel density option               'value'
+AUDIT ok   SAME AS MEDIUM: Inconel density [kg/m3]              8190.0
+AUDIT ok   SAME AS MEDIUM: Inconel k model                      'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: Inconel k curve = VDM 4127           True
+AUDIT ok   SAME AS MEDIUM: Inconel cp model                     'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: Inconel cp curve = VDM 4127          True
+AUDIT ok   SAME AS MEDIUM: fluid zone material                  'air'
+AUDIT ok   SAME AS MEDIUM: solid zone material                  'inconel-718'
+AUDIT ok   SAME AS MEDIUM: inlet velocity spec                  'Magnitude, Normal to Boundary'
+AUDIT ok   SAME AS MEDIUM: inlet velocity [m/s]                 23.5
+AUDIT ok   SAME AS MEDIUM: inlet temperature [K]                300
+AUDIT ok   SAME AS MEDIUM: inlet turbulence spec                'Intensity and Hydraulic Diameter'
+AUDIT ok   SAME AS MEDIUM: inlet turbulent intensity [-]        0.04411209588036475
+AUDIT ok   SAME AS MEDIUM: inlet hydraulic diameter [m]         0.02
+AUDIT ok   SAME AS MEDIUM: outlet gauge pressure [Pa]           0
+AUDIT ok   SAME AS MEDIUM: outlet prevent reverse flow          True
+AUDIT ok   SAME AS MEDIUM: outlet backflow T branch active      False
+AUDIT ok   SAME AS MEDIUM: heated wall condition                'Heat Flux'
+AUDIT ok   SAME AS MEDIUM: heated wall flux [W/m2]              8000.0
+AUDIT ok   SAME AS MEDIUM: solid inlet end                      ['Heat Flux', 0]
+AUDIT ok   SAME AS MEDIUM: solid outlet end                     ['Heat Flux', 0]
+AUDIT ok   SAME AS MEDIUM: interface thermal coupling           'Coupled'
+AUDIT ok   SAME AS MEDIUM: interface shadow coupling            'Coupled'
+AUDIT ok   SAME AS MEDIUM: p-v coupling                         'Coupled'
+AUDIT ok   SAME AS MEDIUM: gradient scheme                      'least-square-cell-based'
+AUDIT ok   SAME AS MEDIUM: scheme pressure                      'second-order'
+AUDIT ok   SAME AS MEDIUM: scheme mom                           'first-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme k                             'first-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme omega                         'first-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme temperature                   'first-order-upwind'
+AUDIT ok   SAME AS MEDIUM: pseudo-time formulation              'global-time-step'
+AUDIT ok   SAME AS MEDIUM: pseudo-time step settings            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+AUDIT ok   SAME AS MEDIUM: explicit pseudo relaxation           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+AUDIT ok   SAME AS MEDIUM: explicit p/mom under-relaxation      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+AUDIT ok   SAME AS MEDIUM: solution limits                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+AUDIT ok   SAME AS MEDIUM: equations solved                     {'flow': True, 'kw': True, 'temperature': True}
+AUDIT 1_presolve: 130 items, 0 failed
+OK    initialization type standard                           
+OK    standard initialize (300 K, w = 23.5 m/s, 0 Pa gauge)  
+OK    STAGE 1: energy equation OFF                           
+OK    equations                                              {'flow': True, 'kw': True, 'temperature': False}
+OK    stage 1 flow-only: iterate 150                         
+OK    STAGE 2: energy equation ON                            
+OK    equations                                              {'flow': True, 'kw': True, 'temperature': True}
+OK    stage 2 energy first-order: iterate 150                
+OK    write end-of-stage-2 case/data                         
+stage 3 starts at iteration 301.0
+OK    STAGE 3 scheme pressure     -> second-order            'second-order'
+OK    STAGE 3 scheme mom          -> second-order-upwind     'second-order-upwind'
+OK    STAGE 3 scheme k            -> second-order-upwind     'second-order-upwind'
+OK    STAGE 3 scheme omega        -> second-order-upwind     'second-order-upwind'
+OK    STAGE 3 scheme temperature  -> second-order-upwind     'second-order-upwind'
+AUDIT ok   fluent version                                       26.1.0
+AUDIT ok   solver type                                          'pressure-based'
+AUDIT ok   time                                                 'steady'
+AUDIT ok   velocity formulation                                 'absolute'
+AUDIT ok   operating pressure [Pa]                              101325
+AUDIT ok   gravity enabled                                      False
+AUDIT ok   energy equation                                      True
+AUDIT ok   energy: viscous dissipation                          False
+AUDIT ok   energy: pressure work                                False
+AUDIT ok   energy: kinetic energy                               False
+AUDIT ok   viscous model                                        'k-omega'
+AUDIT ok   k-omega variant                                      'sst'
+AUDIT ok   SST wall omega treatment                             'correlation'
+AUDIT ok   SST low-Re correction                                False
+AUDIT ok   radiation model                                      'none'
+AUDIT ok   air density model                                    'incompressible-ideal-gas'
+AUDIT ok   air molecular weight                                 28.966
+AUDIT ok   air cp model                                         'piecewise-linear'
+AUDIT ok   air cp curve = Incropera A.4                         True
+AUDIT ok   air mu model                                         'piecewise-linear'
+AUDIT ok   air mu curve = Incropera A.4                         True
+AUDIT ok   air k model                                          'piecewise-linear'
+AUDIT ok   air k curve = Incropera A.4                          True
+AUDIT ok   Inconel density option                               'value'
+AUDIT ok   Inconel density [kg/m3]                              8190.0
+AUDIT ok   Inconel k model                                      'piecewise-linear'
+AUDIT ok   Inconel k curve = VDM 4127                           True
+AUDIT ok   Inconel cp model                                     'piecewise-linear'
+AUDIT ok   Inconel cp curve = VDM 4127                          True
+AUDIT ok   fluid zone material                                  'air'
+AUDIT ok   solid zone material                                  'inconel-718'
+AUDIT ok   inlet velocity spec                                  'Magnitude, Normal to Boundary'
+AUDIT ok   inlet velocity [m/s]                                 23.5
+AUDIT ok   inlet temperature [K]                                300
+AUDIT ok   inlet turbulence spec                                'Intensity and Hydraulic Diameter'
+AUDIT ok   inlet turbulent intensity [-]                        0.04411209588036475
+AUDIT ok   inlet hydraulic diameter [m]                         0.02
+AUDIT ok   outlet gauge pressure [Pa]                           0
+AUDIT ok   outlet prevent reverse flow                          True
+AUDIT ok   outlet backflow T branch active                      False
+AUDIT ok   heated wall condition                                'Heat Flux'
+AUDIT ok   heated wall flux [W/m2]                              8000.0
+AUDIT ok   solid inlet end                                      ('Heat Flux', 0)
+AUDIT ok   solid outlet end                                     ('Heat Flux', 0)
+AUDIT ok   interface thermal coupling                           'Coupled'
+AUDIT ok   interface shadow coupling                            'Coupled'
+AUDIT ok   p-v coupling                                         'Coupled'
+AUDIT ok   gradient scheme                                      'least-square-cell-based'
+AUDIT ok   scheme pressure                                      'second-order'
+AUDIT ok   scheme mom                                           'second-order-upwind'
+AUDIT ok   scheme k                                             'second-order-upwind'
+AUDIT ok   scheme omega                                         'second-order-upwind'
+AUDIT ok   scheme temperature                                   'second-order-upwind'
+AUDIT ok   pseudo-time formulation                              'global-time-step'
+AUDIT ok   pseudo-time step settings                            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+AUDIT ok   explicit pseudo relaxation                           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+AUDIT ok   explicit p/mom under-relaxation                      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+AUDIT ok   solution limits                                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+AUDIT ok   equations solved                                     {'flow': True, 'kw': True, 'temperature': True}
+AUDIT ok   6A turbulence model = SST k-omega                    ('k-omega', 'sst')
+AUDIT ok   6A wall omega treatment = correlation                'correlation'
+AUDIT ok   6A low-Re correction off                             False
+AUDIT ok   6A energy extra terms off                            (False, False, False)
+AUDIT ok   6A mesh cells (printed by Fluent)                    51840
+AUDIT ok   6A minimum cell volume > 0 [m3]                      2.049465e-10
+AUDIT ok   6A zone names                                        {'cell_fluid': ['fluid_domain'], 'cell_solid': ['solid_domain'], 'velocity_inlet': ['fluid_inlet'], 
+AUDIT ok   6A zone ids (Fluent replace output)                  {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'int
+AUDIT ok   6A settings diff vs medium after replace             0
+AUDIT ok   6A monitor file name                                 'Monitors\\\\coarse_monitors.out'
+AUDIT ok   6A monitor report list                               ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_
+AUDIT ok   6A init defaults (T 300 K, w 23.5 m/s, u = v = 0, p 0 Pa) {'pressure': 0.0, 'x-velocity': 0, 'y-velocity': 0, 'z-velocity': 23.5, 'k': 1.611915862325738, 'ome
+AUDIT ok   SAME AS MEDIUM: fluent version                       'Ansys Fluent 2026 R1'
+AUDIT ok   SAME AS MEDIUM: solver type                          'pressure-based'
+AUDIT ok   SAME AS MEDIUM: time                                 'steady'
+AUDIT ok   SAME AS MEDIUM: velocity formulation                 'absolute'
+AUDIT ok   SAME AS MEDIUM: operating pressure [Pa]              101325
+AUDIT ok   SAME AS MEDIUM: gravity enabled                      False
+AUDIT ok   SAME AS MEDIUM: energy equation                      True
+AUDIT ok   SAME AS MEDIUM: energy: viscous dissipation          False
+AUDIT ok   SAME AS MEDIUM: energy: pressure work                False
+AUDIT ok   SAME AS MEDIUM: energy: kinetic energy               False
+AUDIT ok   SAME AS MEDIUM: viscous model                        'k-omega'
+AUDIT ok   SAME AS MEDIUM: k-omega variant                      'sst'
+AUDIT ok   SAME AS MEDIUM: SST wall omega treatment             'correlation'
+AUDIT ok   SAME AS MEDIUM: SST low-Re correction                False
+AUDIT ok   SAME AS MEDIUM: radiation model                      'none'
+AUDIT ok   SAME AS MEDIUM: air density model                    'incompressible-ideal-gas'
+AUDIT ok   SAME AS MEDIUM: air molecular weight                 28.966
+AUDIT ok   SAME AS MEDIUM: air cp model                         'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air cp curve = Incropera A.4         True
+AUDIT ok   SAME AS MEDIUM: air mu model                         'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air mu curve = Incropera A.4         True
+AUDIT ok   SAME AS MEDIUM: air k model                          'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air k curve = Incropera A.4          True
+AUDIT ok   SAME AS MEDIUM: Inconel density option               'value'
+AUDIT ok   SAME AS MEDIUM: Inconel density [kg/m3]              8190.0
+AUDIT ok   SAME AS MEDIUM: Inconel k model                      'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: Inconel k curve = VDM 4127           True
+AUDIT ok   SAME AS MEDIUM: Inconel cp model                     'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: Inconel cp curve = VDM 4127          True
+AUDIT ok   SAME AS MEDIUM: fluid zone material                  'air'
+AUDIT ok   SAME AS MEDIUM: solid zone material                  'inconel-718'
+AUDIT ok   SAME AS MEDIUM: inlet velocity spec                  'Magnitude, Normal to Boundary'
+AUDIT ok   SAME AS MEDIUM: inlet velocity [m/s]                 23.5
+AUDIT ok   SAME AS MEDIUM: inlet temperature [K]                300
+AUDIT ok   SAME AS MEDIUM: inlet turbulence spec                'Intensity and Hydraulic Diameter'
+AUDIT ok   SAME AS MEDIUM: inlet turbulent intensity [-]        0.04411209588036475
+AUDIT ok   SAME AS MEDIUM: inlet hydraulic diameter [m]         0.02
+AUDIT ok   SAME AS MEDIUM: outlet gauge pressure [Pa]           0
+AUDIT ok   SAME AS MEDIUM: outlet prevent reverse flow          True
+AUDIT ok   SAME AS MEDIUM: outlet backflow T branch active      False
+AUDIT ok   SAME AS MEDIUM: heated wall condition                'Heat Flux'
+AUDIT ok   SAME AS MEDIUM: heated wall flux [W/m2]              8000.0
+AUDIT ok   SAME AS MEDIUM: solid inlet end                      ['Heat Flux', 0]
+AUDIT ok   SAME AS MEDIUM: solid outlet end                     ['Heat Flux', 0]
+AUDIT ok   SAME AS MEDIUM: interface thermal coupling           'Coupled'
+AUDIT ok   SAME AS MEDIUM: interface shadow coupling            'Coupled'
+AUDIT ok   SAME AS MEDIUM: p-v coupling                         'Coupled'
+AUDIT ok   SAME AS MEDIUM: gradient scheme                      'least-square-cell-based'
+AUDIT ok   SAME AS MEDIUM: scheme pressure                      'second-order'
+AUDIT ok   SAME AS MEDIUM: scheme mom                           'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme k                             'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme omega                         'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme temperature                   'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: pseudo-time formulation              'global-time-step'
+AUDIT ok   SAME AS MEDIUM: pseudo-time step settings            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+AUDIT ok   SAME AS MEDIUM: explicit pseudo relaxation           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+AUDIT ok   SAME AS MEDIUM: explicit p/mom under-relaxation      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+AUDIT ok   SAME AS MEDIUM: solution limits                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+AUDIT ok   SAME AS MEDIUM: equations solved                     {'flow': True, 'kw': True, 'temperature': True}
+AUDIT 2_final_schemes: 130 items, 0 failed
+OK    stage 3 second-order: iterate 100                      
+EVAL iter 400: not evaluable yet (residuals ok, stage-3 rows 100 < 200)
+OK    stage 3 second-order: iterate 100                      
+EVAL iter 500: not yet  (failing: drift T_out_bulk over 200 it [K], drift T_solid_max over 200 it [K], drift T_wall_max over 200 it [K], drift T_outer_max over 200 it [K], rel drift dp_area over 200 it, rel drift q_interface over 200 it, rel drift mdot_out over 200 it)
+OK    stage 3 second-order: iterate 100                      
+EVAL iter 600: CONVERGED  (failing: none)
+OK    confirmation: iterate 100                              
+CONFIRM iter 700: HOLDS  (failing: none)
+STAGE 3 finished after 400 second-order iterations; converged=True
+AUDIT ok   fluent version                                       26.1.0
+AUDIT ok   solver type                                          'pressure-based'
+AUDIT ok   time                                                 'steady'
+AUDIT ok   velocity formulation                                 'absolute'
+AUDIT ok   operating pressure [Pa]                              101325
+AUDIT ok   gravity enabled                                      False
+AUDIT ok   energy equation                                      True
+AUDIT ok   energy: viscous dissipation                          False
+AUDIT ok   energy: pressure work                                False
+AUDIT ok   energy: kinetic energy                               False
+AUDIT ok   viscous model                                        'k-omega'
+AUDIT ok   k-omega variant                                      'sst'
+AUDIT ok   SST wall omega treatment                             'correlation'
+AUDIT ok   SST low-Re correction                                False
+AUDIT ok   radiation model                                      'none'
+AUDIT ok   air density model                                    'incompressible-ideal-gas'
+AUDIT ok   air molecular weight                                 28.966
+AUDIT ok   air cp model                                         'piecewise-linear'
+AUDIT ok   air cp curve = Incropera A.4                         True
+AUDIT ok   air mu model                                         'piecewise-linear'
+AUDIT ok   air mu curve = Incropera A.4                         True
+AUDIT ok   air k model                                          'piecewise-linear'
+AUDIT ok   air k curve = Incropera A.4                          True
+AUDIT ok   Inconel density option                               'value'
+AUDIT ok   Inconel density [kg/m3]                              8190.0
+AUDIT ok   Inconel k model                                      'piecewise-linear'
+AUDIT ok   Inconel k curve = VDM 4127                           True
+AUDIT ok   Inconel cp model                                     'piecewise-linear'
+AUDIT ok   Inconel cp curve = VDM 4127                          True
+AUDIT ok   fluid zone material                                  'air'
+AUDIT ok   solid zone material                                  'inconel-718'
+AUDIT ok   inlet velocity spec                                  'Magnitude, Normal to Boundary'
+AUDIT ok   inlet velocity [m/s]                                 23.5
+AUDIT ok   inlet temperature [K]                                300
+AUDIT ok   inlet turbulence spec                                'Intensity and Hydraulic Diameter'
+AUDIT ok   inlet turbulent intensity [-]                        0.04411209588036475
+AUDIT ok   inlet hydraulic diameter [m]                         0.02
+AUDIT ok   outlet gauge pressure [Pa]                           0
+AUDIT ok   outlet prevent reverse flow                          True
+AUDIT ok   outlet backflow T branch active                      False
+AUDIT ok   heated wall condition                                'Heat Flux'
+AUDIT ok   heated wall flux [W/m2]                              8000.0
+AUDIT ok   solid inlet end                                      ('Heat Flux', 0)
+AUDIT ok   solid outlet end                                     ('Heat Flux', 0)
+AUDIT ok   interface thermal coupling                           'Coupled'
+AUDIT ok   interface shadow coupling                            'Coupled'
+AUDIT ok   p-v coupling                                         'Coupled'
+AUDIT ok   gradient scheme                                      'least-square-cell-based'
+AUDIT ok   scheme pressure                                      'second-order'
+AUDIT ok   scheme mom                                           'second-order-upwind'
+AUDIT ok   scheme k                                             'second-order-upwind'
+AUDIT ok   scheme omega                                         'second-order-upwind'
+AUDIT ok   scheme temperature                                   'second-order-upwind'
+AUDIT ok   pseudo-time formulation                              'global-time-step'
+AUDIT ok   pseudo-time step settings                            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+AUDIT ok   explicit pseudo relaxation                           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+AUDIT ok   explicit p/mom under-relaxation                      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+AUDIT ok   solution limits                                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+AUDIT ok   equations solved                                     {'flow': True, 'kw': True, 'temperature': True}
+AUDIT ok   6A turbulence model = SST k-omega                    ('k-omega', 'sst')
+AUDIT ok   6A wall omega treatment = correlation                'correlation'
+AUDIT ok   6A low-Re correction off                             False
+AUDIT ok   6A energy extra terms off                            (False, False, False)
+AUDIT ok   6A mesh cells (printed by Fluent)                    51840
+AUDIT ok   6A minimum cell volume > 0 [m3]                      2.049465e-10
+AUDIT ok   6A zone names                                        {'cell_fluid': ['fluid_domain'], 'cell_solid': ['solid_domain'], 'velocity_inlet': ['fluid_inlet'], 
+AUDIT ok   6A zone ids (Fluent replace output)                  {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'int
+AUDIT ok   6A settings diff vs medium after replace             0
+AUDIT ok   6A monitor file name                                 'Monitors\\\\coarse_monitors.out'
+AUDIT ok   6A monitor report list                               ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_
+AUDIT ok   6A init defaults (T 300 K, w 23.5 m/s, u = v = 0, p 0 Pa) {'pressure': 0.0, 'x-velocity': 0, 'y-velocity': 0, 'z-velocity': 23.5, 'k': 1.611915862325738, 'ome
+AUDIT ok   SAME AS MEDIUM: fluent version                       'Ansys Fluent 2026 R1'
+AUDIT ok   SAME AS MEDIUM: solver type                          'pressure-based'
+AUDIT ok   SAME AS MEDIUM: time                                 'steady'
+AUDIT ok   SAME AS MEDIUM: velocity formulation                 'absolute'
+AUDIT ok   SAME AS MEDIUM: operating pressure [Pa]              101325
+AUDIT ok   SAME AS MEDIUM: gravity enabled                      False
+AUDIT ok   SAME AS MEDIUM: energy equation                      True
+AUDIT ok   SAME AS MEDIUM: energy: viscous dissipation          False
+AUDIT ok   SAME AS MEDIUM: energy: pressure work                False
+AUDIT ok   SAME AS MEDIUM: energy: kinetic energy               False
+AUDIT ok   SAME AS MEDIUM: viscous model                        'k-omega'
+AUDIT ok   SAME AS MEDIUM: k-omega variant                      'sst'
+AUDIT ok   SAME AS MEDIUM: SST wall omega treatment             'correlation'
+AUDIT ok   SAME AS MEDIUM: SST low-Re correction                False
+AUDIT ok   SAME AS MEDIUM: radiation model                      'none'
+AUDIT ok   SAME AS MEDIUM: air density model                    'incompressible-ideal-gas'
+AUDIT ok   SAME AS MEDIUM: air molecular weight                 28.966
+AUDIT ok   SAME AS MEDIUM: air cp model                         'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air cp curve = Incropera A.4         True
+AUDIT ok   SAME AS MEDIUM: air mu model                         'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air mu curve = Incropera A.4         True
+AUDIT ok   SAME AS MEDIUM: air k model                          'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: air k curve = Incropera A.4          True
+AUDIT ok   SAME AS MEDIUM: Inconel density option               'value'
+AUDIT ok   SAME AS MEDIUM: Inconel density [kg/m3]              8190.0
+AUDIT ok   SAME AS MEDIUM: Inconel k model                      'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: Inconel k curve = VDM 4127           True
+AUDIT ok   SAME AS MEDIUM: Inconel cp model                     'piecewise-linear'
+AUDIT ok   SAME AS MEDIUM: Inconel cp curve = VDM 4127          True
+AUDIT ok   SAME AS MEDIUM: fluid zone material                  'air'
+AUDIT ok   SAME AS MEDIUM: solid zone material                  'inconel-718'
+AUDIT ok   SAME AS MEDIUM: inlet velocity spec                  'Magnitude, Normal to Boundary'
+AUDIT ok   SAME AS MEDIUM: inlet velocity [m/s]                 23.5
+AUDIT ok   SAME AS MEDIUM: inlet temperature [K]                300
+AUDIT ok   SAME AS MEDIUM: inlet turbulence spec                'Intensity and Hydraulic Diameter'
+AUDIT ok   SAME AS MEDIUM: inlet turbulent intensity [-]        0.04411209588036475
+AUDIT ok   SAME AS MEDIUM: inlet hydraulic diameter [m]         0.02
+AUDIT ok   SAME AS MEDIUM: outlet gauge pressure [Pa]           0
+AUDIT ok   SAME AS MEDIUM: outlet prevent reverse flow          True
+AUDIT ok   SAME AS MEDIUM: outlet backflow T branch active      False
+AUDIT ok   SAME AS MEDIUM: heated wall condition                'Heat Flux'
+AUDIT ok   SAME AS MEDIUM: heated wall flux [W/m2]              8000.0
+AUDIT ok   SAME AS MEDIUM: solid inlet end                      ['Heat Flux', 0]
+AUDIT ok   SAME AS MEDIUM: solid outlet end                     ['Heat Flux', 0]
+AUDIT ok   SAME AS MEDIUM: interface thermal coupling           'Coupled'
+AUDIT ok   SAME AS MEDIUM: interface shadow coupling            'Coupled'
+AUDIT ok   SAME AS MEDIUM: p-v coupling                         'Coupled'
+AUDIT ok   SAME AS MEDIUM: gradient scheme                      'least-square-cell-based'
+AUDIT ok   SAME AS MEDIUM: scheme pressure                      'second-order'
+AUDIT ok   SAME AS MEDIUM: scheme mom                           'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme k                             'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme omega                         'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: scheme temperature                   'second-order-upwind'
+AUDIT ok   SAME AS MEDIUM: pseudo-time formulation              'global-time-step'
+AUDIT ok   SAME AS MEDIUM: pseudo-time step settings            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+AUDIT ok   SAME AS MEDIUM: explicit pseudo relaxation           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+AUDIT ok   SAME AS MEDIUM: explicit p/mom under-relaxation      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+AUDIT ok   SAME AS MEDIUM: solution limits                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+AUDIT ok   SAME AS MEDIUM: equations solved                     {'flow': True, 'kw': True, 'temperature': True}
+AUDIT 3_final: 130 items, 0 failed
+OK    write case                                             
+OK    write data                                             
+OK    Fluent flux report: mass                               
+OK    Fluent flux report: heat                               
+OK    Fluent surface integral p_area                         
+OK    Fluent surface integral p_mass                         
+OK    Fluent surface integral p0_area                        
+OK    Fluent surface integral T_mass                         
+OK    Fluent surface integral h_mass                         
+OK    Fluent surface integral rho_area                       
+OK    Fluent surface integral w_area                         
+OK    Fluent surface integral areas                          
+OK    Fluent surface integral Twall_area                     
+OK    Fluent surface integral Twall_max                      
+OK    Fluent surface integral Twall_min                      
+OK    Fluent surface integral yplus_area                     
+OK    Fluent surface integral yplus_max                      
+OK    Fluent surface integral yplus_min                      
+OK    Fluent surface integral qpp_area                       
+OK    ASCII export Exports/wall_interface.csv                
+OK    ASCII export Exports/wall_outer.csv                    
+OK    ASCII export Exports/wall_solid_ends.csv               
+OK    ASCII export Exports/boundary_inlet.csv                
+OK    ASCII export Exports/boundary_outlet.csv               
+OK    iso zf00 z=0.005000                                    
+OK    iso zf01 z=0.015000                                    
+OK    iso zf02 z=0.025000                                    
+OK    iso zf03 z=0.035000                                    
+OK    iso zf04 z=0.045000                                    
+OK    iso zf05 z=0.055000                                    
+OK    iso zf06 z=0.065000                                    
+OK    iso zf07 z=0.075000                                    
+OK    iso zf08 z=0.085000                                    
+OK    iso zf09 z=0.095000                                    
+OK    iso zf10 z=0.105000                                    
+OK    iso zf11 z=0.115000                                    
+OK    iso zf12 z=0.125000                                    
+OK    iso zf13 z=0.135000                                    
+OK    iso zf14 z=0.145000                                    
+OK    iso zf15 z=0.155000                                    
+OK    iso zf16 z=0.165000                                    
+OK    iso zf17 z=0.175000                                    
+OK    iso zf18 z=0.185000                                    
+OK    iso zf19 z=0.195000                                    
+OK    iso zf20 z=0.205000                                    
+OK    iso zf21 z=0.215000                                    
+OK    iso zf22 z=0.225000                                    
+OK    iso zf23 z=0.235000                                    
+OK    iso zf24 z=0.245000                                    
+OK    iso zf25 z=0.255000                                    
+OK    iso zf26 z=0.265000                                    
+OK    iso zf27 z=0.275000                                    
+OK    iso zf28 z=0.285000                                    
+OK    iso zf29 z=0.295000                                    
+OK    iso zf30 z=0.305000                                    
+OK    iso zf31 z=0.315000                                    
+OK    iso zf32 z=0.325000                                    
+OK    iso zf33 z=0.335000                                    
+OK    iso zf34 z=0.345000                                    
+OK    iso zf35 z=0.355000                                    
+OK    iso zf36 z=0.365000                                    
+OK    iso zf37 z=0.375000                                    
+OK    iso zf38 z=0.385000                                    
+OK    iso zf39 z=0.395000                                    
+OK    iso zf40 z=0.405000                                    
+OK    iso zf41 z=0.415000                                    
+OK    iso zf42 z=0.425000                                    
+OK    iso zf43 z=0.435000                                    
+OK    iso zf44 z=0.445000                                    
+OK    iso zf45 z=0.455000                                    
+OK    iso zf46 z=0.465000                                    
+OK    iso zf47 z=0.475000                                    
+OK    iso zf48 z=0.485000                                    
+OK    iso zf49 z=0.495000                                    
+OK    iso zf50 z=0.505000                                    
+OK    iso zf51 z=0.515000                                    
+OK    iso zf52 z=0.525000                                    
+OK    iso zf53 z=0.535000                                    
+OK    iso zf54 z=0.545000                                    
+OK    iso zf55 z=0.555000                                    
+OK    iso zf56 z=0.565000                                    
+OK    iso zf57 z=0.575000                                    
+OK    iso zf58 z=0.585000                                    
+OK    iso zf59 z=0.595000                                    
+OK    iso zs00 z=0.005000                                    
+OK    iso zs01 z=0.015000                                    
+OK    iso zs02 z=0.025000                                    
+OK    iso zs03 z=0.035000                                    
+OK    iso zs04 z=0.045000                                    
+OK    iso zs05 z=0.055000                                    
+OK    iso zs06 z=0.065000                                    
+OK    iso zs07 z=0.075000                                    
+OK    iso zs08 z=0.085000                                    
+OK    iso zs09 z=0.095000                                    
+OK    iso zs10 z=0.105000                                    
+OK    iso zs11 z=0.115000                                    
+OK    iso zs12 z=0.125000                                    
+OK    iso zs13 z=0.135000                                    
+OK    iso zs14 z=0.145000                                    
+OK    iso zs15 z=0.155000                                    
+OK    iso zs16 z=0.165000                                    
+OK    iso zs17 z=0.175000                                    
+OK    iso zs18 z=0.185000                                    
+OK    iso zs19 z=0.195000                                    
+OK    iso zs20 z=0.205000                                    
+OK    iso zs21 z=0.215000                                    
+OK    iso zs22 z=0.225000                                    
+OK    iso zs23 z=0.235000                                    
+OK    iso zs24 z=0.245000                                    
+OK    iso zs25 z=0.255000                                    
+OK    iso zs26 z=0.265000                                    
+OK    iso zs27 z=0.275000                                    
+OK    iso zs28 z=0.285000                                    
+OK    iso zs29 z=0.295000                                    
+OK    iso zs30 z=0.305000                                    
+OK    iso zs31 z=0.315000                                    
+OK    iso zs32 z=0.325000                                    
+OK    iso zs33 z=0.335000                                    
+OK    iso zs34 z=0.345000                                    
+OK    iso zs35 z=0.355000                                    
+OK    iso zs36 z=0.365000                                    
+OK    iso zs37 z=0.375000                                    
+OK    iso zs38 z=0.385000                                    
+OK    iso zs39 z=0.395000                                    
+OK    iso zs40 z=0.405000                                    
+OK    iso zs41 z=0.415000                                    
+OK    iso zs42 z=0.425000                                    
+OK    iso zs43 z=0.435000                                    
+OK    iso zs44 z=0.445000                                    
+OK    iso zs45 z=0.455000                                    
+OK    iso zs46 z=0.465000                                    
+OK    iso zs47 z=0.475000                                    
+OK    iso zs48 z=0.485000                                    
+OK    iso zs49 z=0.495000                                    
+OK    iso zs50 z=0.505000                                    
+OK    iso zs51 z=0.515000                                    
+OK    iso zs52 z=0.525000                                    
+OK    iso zs53 z=0.535000                                    
+OK    iso zs54 z=0.545000                                    
+OK    iso zs55 z=0.555000                                    
+OK    iso zs56 z=0.565000                                    
+OK    iso zs57 z=0.575000                                    
+OK    iso zs58 z=0.585000                                    
+OK    iso zs59 z=0.595000                                    
+iso surfaces: fluid 60, solid 60
+OK    export fluid volume                                    
+OK    export solid volume                                    
+ROWS Exports/cells_fluid.csv = 38400 (expected 38400 cells) OK
+ROWS Exports/cells_solid.csv = 13440 (expected 13440 cells) OK
+================================================================================
+RUN COMPLETE  converged=True  total iterations=700
+FAILURES (0)
+================================================================================

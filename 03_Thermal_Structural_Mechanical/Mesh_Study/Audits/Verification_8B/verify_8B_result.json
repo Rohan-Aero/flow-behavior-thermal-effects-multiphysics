@@ -1,0 +1,786 @@
+{
+ "checks": [
+  {
+   "check": "XC: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "24171 vs 24171"
+  },
+  {
+   "check": "XC: elements = nc*nr*na",
+   "pass": true,
+   "detail": "4788"
+  },
+  {
+   "check": "XC: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "24171 values, 150.687-289.405 C"
+  },
+  {
+   "check": "XC: pre-solve gate",
+   "pass": true,
+   "detail": "43/43"
+  },
+  {
+   "check": "XC LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "XC LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.157956 vs 24.157956 MPa"
+  },
+  {
+   "check": "XC LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 2.34e-07 N"
+  },
+  {
+   "check": "XC LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "XC LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "604.867022 vs 604.867022 MPa"
+  },
+  {
+   "check": "XC LC2: end reactions balance",
+   "pass": true,
+   "detail": "548943.3709 / -548943.3709 N"
+  },
+  {
+   "check": "XC LC2P: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "XC LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "604.867098 vs 604.867098 MPa"
+  },
+  {
+   "check": "XC LC2P: end reactions balance",
+   "pass": true,
+   "detail": "548943.2890 / -548943.2890 N"
+  },
+  {
+   "check": "XC: 6 load multipliers identical in solve.out, snippet CSV and Mechanical",
+   "pass": true,
+   "detail": "lambda1 1.1079876 / 1.107987580 / 1.107987580"
+  },
+  {
+   "check": "XC: buckling solver errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "XC: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes)",
+   "pass": true,
+   "detail": "inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 2.6e-10, n=3 6.0e-10"
+  },
+  {
+   "check": "C: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "50652 vs 50652"
+  },
+  {
+   "check": "C: elements = nc*nr*na",
+   "pass": true,
+   "detail": "10584"
+  },
+  {
+   "check": "C: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "50652 values, 150.687-289.408 C"
+  },
+  {
+   "check": "C: pre-solve gate",
+   "pass": true,
+   "detail": "43/43"
+  },
+  {
+   "check": "C LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "C LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.069799 vs 24.069799 MPa"
+  },
+  {
+   "check": "C LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 5.59e-06 N"
+  },
+  {
+   "check": "C LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "C LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.095699 vs 605.095699 MPa"
+  },
+  {
+   "check": "C LC2: end reactions balance",
+   "pass": true,
+   "detail": "548936.6860 / -548936.6860 N"
+  },
+  {
+   "check": "C LC2P: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "C LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.095744 vs 605.095744 MPa"
+  },
+  {
+   "check": "C LC2P: end reactions balance",
+   "pass": true,
+   "detail": "548936.6041 / -548936.6041 N"
+  },
+  {
+   "check": "C: 6 load multipliers identical in solve.out, snippet CSV and Mechanical",
+   "pass": true,
+   "detail": "lambda1 1.1080342 / 1.108034231 / 1.108034231"
+  },
+  {
+   "check": "C: buckling solver errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "C: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes)",
+   "pass": true,
+   "detail": "inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 4.3e-10, n=3 9.3e-10"
+  },
+  {
+   "check": "B: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "108252 vs 108252"
+  },
+  {
+   "check": "B: elements = nc*nr*na",
+   "pass": true,
+   "detail": "23400"
+  },
+  {
+   "check": "B: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "108252 values, 150.687-289.408 C"
+  },
+  {
+   "check": "B: pre-solve gate",
+   "pass": true,
+   "detail": "43/43"
+  },
+  {
+   "check": "B LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "B LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.282183 vs 24.282183 MPa"
+  },
+  {
+   "check": "B LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 6.61e-06 N"
+  },
+  {
+   "check": "B LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "B LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.160873 vs 605.160873 MPa"
+  },
+  {
+   "check": "B LC2: end reactions balance",
+   "pass": true,
+   "detail": "548936.6138 / -548936.6138 N"
+  },
+  {
+   "check": "B LC2P: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "B LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.160918 vs 605.160918 MPa"
+  },
+  {
+   "check": "B LC2P: end reactions balance",
+   "pass": true,
+   "detail": "548936.5318 / -548936.5318 N"
+  },
+  {
+   "check": "B: 6 load multipliers identical in solve.out, snippet CSV and Mechanical",
+   "pass": true,
+   "detail": "lambda1 1.1080471 / 1.108047120 / 1.108047120"
+  },
+  {
+   "check": "B: buckling solver errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "B: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes)",
+   "pass": true,
+   "detail": "inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 1.5e-16, n=3 1.6e-09"
+  },
+  {
+   "check": "FR: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "127080 vs 127080"
+  },
+  {
+   "check": "FR: elements = nc*nr*na",
+   "pass": true,
+   "detail": "28080"
+  },
+  {
+   "check": "FR: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "127080 values, 150.687-289.408 C"
+  },
+  {
+   "check": "FR: pre-solve gate",
+   "pass": true,
+   "detail": "43/43"
+  },
+  {
+   "check": "FR LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FR LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.550223 vs 24.550223 MPa"
+  },
+  {
+   "check": "FR LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 8.27e-06 N"
+  },
+  {
+   "check": "FR LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FR LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.220427 vs 605.220427 MPa"
+  },
+  {
+   "check": "FR LC2: end reactions balance",
+   "pass": true,
+   "detail": "548939.7294 / -548939.7294 N"
+  },
+  {
+   "check": "FR LC2P: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FR LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.220504 vs 605.220504 MPa"
+  },
+  {
+   "check": "FR LC2P: end reactions balance",
+   "pass": true,
+   "detail": "548939.6475 / -548939.6475 N"
+  },
+  {
+   "check": "FR: 6 load multipliers identical in solve.out, snippet CSV and Mechanical",
+   "pass": true,
+   "detail": "lambda1 1.1080404 / 1.108040449 / 1.108040449"
+  },
+  {
+   "check": "FR: buckling solver errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FR: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes)",
+   "pass": true,
+   "detail": "inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 4.3e-16, n=3 1.9e-09"
+  },
+  {
+   "check": "FA: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "126468 vs 126468"
+  },
+  {
+   "check": "FA: elements = nc*nr*na",
+   "pass": true,
+   "detail": "27360"
+  },
+  {
+   "check": "FA: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "126468 values, 150.687-289.408 C"
+  },
+  {
+   "check": "FA: pre-solve gate",
+   "pass": true,
+   "detail": "43/43"
+  },
+  {
+   "check": "FA LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FA LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.552853 vs 24.552853 MPa"
+  },
+  {
+   "check": "FA LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 6.38e-06 N"
+  },
+  {
+   "check": "FA LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FA LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.139634 vs 605.139634 MPa"
+  },
+  {
+   "check": "FA LC2: end reactions balance",
+   "pass": true,
+   "detail": "548936.0373 / -548936.0373 N"
+  },
+  {
+   "check": "FA LC2P: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FA LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.139711 vs 605.139711 MPa"
+  },
+  {
+   "check": "FA LC2P: end reactions balance",
+   "pass": true,
+   "detail": "548935.9554 / -548935.9554 N"
+  },
+  {
+   "check": "FA: 6 load multipliers identical in solve.out, snippet CSV and Mechanical",
+   "pass": true,
+   "detail": "lambda1 1.1080483 / 1.108048317 / 1.108048317"
+  },
+  {
+   "check": "FA: buckling solver errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FA: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes)",
+   "pass": true,
+   "detail": "inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 1.1e-16, n=3 3.5e-10"
+  },
+  {
+   "check": "FC: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "126294 vs 126294"
+  },
+  {
+   "check": "FC: elements = nc*nr*na",
+   "pass": true,
+   "detail": "27300"
+  },
+  {
+   "check": "FC: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "126294 values, 150.687-289.410 C"
+  },
+  {
+   "check": "FC: pre-solve gate",
+   "pass": true,
+   "detail": "43/43"
+  },
+  {
+   "check": "FC LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FC LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.205632 vs 24.205632 MPa"
+  },
+  {
+   "check": "FC LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 9.89e-06 N"
+  },
+  {
+   "check": "FC LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FC LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.169767 vs 605.169767 MPa"
+  },
+  {
+   "check": "FC LC2: end reactions balance",
+   "pass": true,
+   "detail": "548940.6396 / -548940.6396 N"
+  },
+  {
+   "check": "FC LC2P: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "FC LC2P: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.169844 vs 605.169844 MPa"
+  },
+  {
+   "check": "FC LC2P: end reactions balance",
+   "pass": true,
+   "detail": "548940.5577 / -548940.5577 N"
+  },
+  {
+   "check": "FC: 6 load multipliers identical in solve.out, snippet CSV and Mechanical",
+   "pass": true,
+   "detail": "lambda1 1.1080410 / 1.108041004 / 1.108041004"
+  },
+  {
+   "check": "FC: buckling solver errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "FC: mode 1 = guided sway (ends opposite, mid-span ~0, no ovalisation / lobes)",
+   "pass": true,
+   "detail": "inlet/outlet -0.9890, mid/outlet 1.4e-05, n=2 2.2e-16, n=3 1.4e-09"
+  },
+  {
+   "check": "IL: nodes = swept formula and < 128,000",
+   "pass": true,
+   "detail": "108252 vs 108252"
+  },
+  {
+   "check": "IL: elements = nc*nr*na",
+   "pass": true,
+   "detail": "23400"
+  },
+  {
+   "check": "IL: temperature on every node, range 150.69-289.41 C (source 423.84-562.56 K)",
+   "pass": true,
+   "detail": "108252 values, 150.687-289.407 C"
+  },
+  {
+   "check": "IL: pre-solve gate",
+   "pass": true,
+   "detail": "31/31"
+  },
+  {
+   "check": "IL LC1: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "IL LC1: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "24.510515 vs 24.510515 MPa"
+  },
+  {
+   "check": "IL LC1: support reactions ~ 0",
+   "pass": true,
+   "detail": "max 9.93e-06 N"
+  },
+  {
+   "check": "IL LC2: no solver errors (file0.err)",
+   "pass": true,
+   "detail": "errors 0"
+  },
+  {
+   "check": "IL LC2: max von Mises (corner nodes, raw table) = Mechanical averaged maximum",
+   "pass": true,
+   "detail": "605.133609 vs 605.133609 MPa"
+  },
+  {
+   "check": "IL LC2: end reactions balance",
+   "pass": true,
+   "detail": "548936.4109 / -548936.4109 N"
+  },
+  {
+   "check": "B vs official 7B LC1: identical mesh and nodal results",
+   "pass": true,
+   "detail": "max |diff| stress 0.000e+00 Pa, displacement 0.000e+00 m"
+  },
+  {
+   "check": "B vs official 7B LC2: identical mesh and nodal results",
+   "pass": true,
+   "detail": "max |diff| stress 0.000e+00 Pa, displacement 0.000e+00 m"
+  },
+  {
+   "check": "B vs official 7B LC2P: identical mesh and nodal results",
+   "pass": true,
+   "detail": "max |diff| stress 0.000e+00 Pa, displacement 0.000e+00 m"
+  },
+  {
+   "check": "B vs official 8A buckling: lambda identical within Lanczos tolerance",
+   "pass": true,
+   "detail": "8A 1.10804700 vs B 1.10804712"
+  },
+  {
+   "check": "B vs 7B: BFBLOCK (mapped temperature) byte-identical",
+   "pass": true,
+   "detail": "108252 lines"
+  },
+  {
+   "check": "Richardson LC2_max_vm recomputed independently = post_8B",
+   "pass": true,
+   "detail": "p 4.746 ext 6.0518685e+08 GCI 5.37e-05"
+  },
+  {
+   "check": "Richardson lambda1 recomputed independently = post_8B",
+   "pass": true,
+   "detail": "p 4.864 ext 1.108052 GCI 5.55e-06"
+  },
+  {
+   "check": "XC: pressure effect on max VM tiny and positive (no anomaly)",
+   "pass": true,
+   "detail": "+76 Pa (1.3e-07 relative)"
+  },
+  {
+   "check": "C: pressure effect on max VM tiny and positive (no anomaly)",
+   "pass": true,
+   "detail": "+45 Pa (7.4e-08 relative)"
+  },
+  {
+   "check": "B: pressure effect on max VM tiny and positive (no anomaly)",
+   "pass": true,
+   "detail": "+45 Pa (7.4e-08 relative)"
+  },
+  {
+   "check": "FR: pressure effect on max VM tiny and positive (no anomaly)",
+   "pass": true,
+   "detail": "+77 Pa (1.3e-07 relative)"
+  },
+  {
+   "check": "FA: pressure effect on max VM tiny and positive (no anomaly)",
+   "pass": true,
+   "detail": "+77 Pa (1.3e-07 relative)"
+  },
+  {
+   "check": "FC: pressure effect on max VM tiny and positive (no anomaly)",
+   "pass": true,
+   "detail": "+77 Pa (1.3e-07 relative)"
+  },
+  {
+   "check": "official 7B project unchanged by the mesh study (SHA-256)",
+   "pass": true,
+   "detail": "58 files before, 58 after, changed 0"
+  }
+ ],
+ "richardson": {
+  "LC2_max_vm": {
+   "p": 4.746388804929566,
+   "ext": 605186852.0357119,
+   "gci": 5.366142473631751e-05
+  },
+  "lambda1": {
+   "p": 4.864016725357878,
+   "ext": 1.1080520398183162,
+   "gci": 5.550431315868397e-06
+  }
+ },
+ "fine_vs_B": {
+  "LC2 max VM": {
+   "FR": 9.841019579592825e-05,
+   "FA": -3.509645277410822e-05,
+   "FC": 1.4696918450685104e-05
+  },
+  "LC2 end force": {
+   "FR": 5.675854273912151e-06,
+   "FA": -1.0500853298012203e-06,
+   "FC": 7.3338901656061495e-06
+  },
+  "lambda1": {
+   "FR": -6.019864887907289e-06,
+   "FA": 1.0805020458359849e-06,
+   "FC": -5.51938069348612e-06
+  },
+  "P_cr": {
+   "FR": -3.4404478188587717e-07,
+   "FA": 3.041558160887803e-08,
+   "FC": 1.814468993499574e-06
+  },
+  "LC1 max VM": {
+   "FR": 0.011038525654798015,
+   "FA": 0.011146839639582629,
+   "FC": -0.003152574873519387
+  },
+  "LC1 dL": {
+   "FR": 7.277273749162205e-06,
+   "FA": -1.1860890583026418e-06,
+   "FC": 6.9083661333735336e-06
+  }
+ },
+ "values": {
+  "XC": {
+   "nodes": 24171,
+   "LC1_max_vm": 24157955.9,
+   "LC1_max_utot": 0.0018443678149071723,
+   "LC1_dL_nodemean": 0.001840613635007649,
+   "LC2_max_vm": 604867022.0,
+   "LC2_max_utot": 0.0001348869672308618,
+   "LC2_N": 548943.3708819625,
+   "LC2P_max_vm": 604867098.0,
+   "LC2P_max_utot": 0.00013488698416491414,
+   "LC2P_N": 548943.288974128,
+   "lambda": [
+    1.10798757963167,
+    1.10798762143391,
+    4.29765470712836,
+    4.29768867502129,
+    9.22435762703753,
+    9.22438973667098
+   ],
+   "Pcr": 608222.4368583558
+  },
+  "C": {
+   "nodes": 50652,
+   "LC1_max_vm": 24069799.4,
+   "LC1_max_utot": 0.0018443184025761046,
+   "LC1_dL_nodemean": 0.0018405741183906144,
+   "LC2_max_vm": 605095699.0,
+   "LC2_max_utot": 0.00013488656375879873,
+   "LC2_N": 548936.6860341305,
+   "LC2P_max_vm": 605095744.0,
+   "LC2P_max_utot": 0.00013488658065096331,
+   "LC2P_N": 548936.604125436,
+   "lambda": [
+    1.10803423107584,
+    1.10803426403754,
+    4.29784846132807,
+    4.29784852875915,
+    9.22472579100176,
+    9.22472625860351
+   ],
+   "Pcr": 608240.6388191476
+  },
+  "B": {
+   "nodes": 108252,
+   "LC1_max_vm": 24282183.0,
+   "LC1_max_utot": 0.0018443072934482096,
+   "LC1_dL_nodemean": 0.0018405686150531665,
+   "LC2_max_vm": 605160873.0,
+   "LC2_max_utot": 0.00013488427764164404,
+   "LC2_N": 548936.6137530317,
+   "LC2P_max_vm": 605160918.0,
+   "LC2P_max_utot": 0.00013488429450689786,
+   "LC2P_N": 548936.5318439972,
+   "lambda": [
+    1.10804711970677,
+    1.10804749766892,
+    4.2978922373132,
+    4.29789786559226,
+    9.22480761491014,
+    9.22482558454137
+   ],
+   "Pcr": 608247.6337706345
+  },
+  "FR": {
+   "nodes": 127080,
+   "LC1_max_vm": 24550222.5,
+   "LC1_max_utot": 0.0018443167833624402,
+   "LC1_dL_nodemean": 0.0018405820093748322,
+   "LC2_max_vm": 605220427.0,
+   "LC2_max_utot": 0.00013488445809003278,
+   "LC2_N": 548939.7294372569,
+   "LC2P_max_vm": 605220504.0,
+   "LC2P_max_utot": 0.00013488447501474755,
+   "LC2P_N": 548939.6475282272,
+   "lambda": [
+    1.10804044941282,
+    1.10804048540738,
+    4.29787169774934,
+    4.29787472068407,
+    9.22476414094138,
+    9.22476878672376
+   ],
+   "Pcr": 608247.42450621
+  },
+  "FA": {
+   "nodes": 126468,
+   "LC1_max_vm": 24552852.6,
+   "LC1_max_utot": 0.0018443050547034857,
+   "LC1_dL_nodemean": 0.001840566431974871,
+   "LC2_max_vm": 605139634.0,
+   "LC2_max_utot": 0.00013488715844985457,
+   "LC2_N": 548936.0373227466,
+   "LC2P_max_vm": 605139711.0,
+   "LC2P_max_utot": 0.0001348871753869145,
+   "LC2P_N": 548935.9554137078,
+   "lambda": [
+    1.10804831695395,
+    1.10804834745328,
+    4.29789665888135,
+    4.29790125384987,
+    9.22482839206837,
+    9.22484230730272
+   ],
+   "Pcr": 608247.65227084
+  },
+  "FC": {
+   "nodes": 126294,
+   "LC1_max_vm": 24205631.6,
+   "LC1_max_utot": 0.0018443201822660098,
+   "LC1_dL_nodemean": 0.0018405813303750528,
+   "LC2_max_vm": 605169767.0,
+   "LC2_max_utot": 0.00013488452385412798,
+   "LC2_N": 548940.6395938648,
+   "LC2P_max_vm": 605169844.0,
+   "LC2P_max_utot": 0.00013488454077886133,
+   "LC2P_N": 548940.5576847565,
+   "lambda": [
+    1.10804100397289,
+    1.10804113752984,
+    4.29786953867425,
+    4.29787500041283,
+    9.22477489023939,
+    9.22477567240458
+   ],
+   "Pcr": 608248.7374171064
+  },
+  "IL": {
+   "nodes": 108252,
+   "LC1_max_vm": 24510515.3,
+   "LC1_max_utot": 0.001844305806724691,
+   "LC1_dL_nodemean": 0.001840567776556861,
+   "LC2_max_vm": 605133609.0,
+   "LC2_max_utot": 0.0001348848092259593,
+   "LC2_N": 548936.4108976644
+  }
+ },
+ "summary": "120/120 PASS"
+}

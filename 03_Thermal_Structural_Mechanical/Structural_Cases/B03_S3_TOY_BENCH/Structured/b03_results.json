@@ -1,0 +1,206 @@
+{
+ "note": "RE-ANALYSIS 2026 - B03 toy benchmark of the S3 supports (method check only, NOT project results)",
+ "exact": {
+  "N_N": 547956.5906391317,
+  "Euler_K0.6992_N": 1255246.8689104437,
+  "Euler_shear_N": 1219545.9243343142,
+  "lambda_Euler": 2.2907779381690343,
+  "lambda_Euler_shear": 2.2256250680584873,
+  "K_shear_Cowper": 0.6197080571625608
+ },
+ "solver_messages": {
+  "errors": 0,
+  "warnings": 8,
+  "pivot_or_rigid_body": 0,
+  "min_pivot_lines": [
+   "minimum pivot= 10037919 at node 54590 UY.     ",
+   "minimum pivot in absolute value= 10037919 at  "
+  ],
+  "end_marker": true,
+  "warning_texts": [
+   "*** WARNING ***                         ELAPSED TIME =      35.274   TIME= 15:10:19 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,9)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.296   TIME= 15:10:19 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,10)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.320   TIME= 15:10:19 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,11)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.343   TIME= 15:10:19 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,12)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.649   TIME= 15:10:20 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,13)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.679   TIME= 15:10:20 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,14)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.812   TIME= 15:10:20 Some entities requested in the *VGET were undefined.  VECTOR GET OPERATION  s7b_a(1,15)  VECTOR LENGTH=   82585",
+   "*** WARNING ***                         ELAPSED TIME =      35.976   TIME= 15:10:20 Some entities requested in the *VGET were undefined.  OPENED FILE= s7b_nodal.csv FOR COMMAND FILE DATA"
+  ]
+ },
+ "reactions": {
+  "constrained_nodes": 505,
+  "inlet_nodes": 504,
+  "pilot_nodes": 1,
+  "outlet_face_nodes_constrained": 0,
+  "inlet_Fz_N": 547955.5044085991,
+  "pilot_Fz_N": -547955.50440613,
+  "inlet_lateral_N": 0.00011069726477370204,
+  "pilot_lateral_N": 0.00011076329954099663,
+  "N_exact_N": 547956.5906391317,
+  "inlet_Fz_rel_err": -1.9823295333010194e-06,
+  "equilibrium_rel": 4.505927299364315e-12
+ },
+ "static_shape": {
+  "max_rigid_lateral_translation_LSfit_m": 2.4871178375560172e-11,
+  "node_mean_lateral_offset_m (not a translation)": 5.8566486978821175e-08,
+  "max_abs_u_theta_m": 1.02026632e-09,
+  "max_abs_u_z_m": 5.27402835e-08,
+  "midspan_u_r_outer_m": 7.919279908194444e-05,
+  "midspan_u_r_outer_free_expansion_m": 7.919280000000001e-05,
+  "midspan_s_z_corner_nodes_Pa": -581400000.0,
+  "exact_s_z_Pa": -581400000.0
+ },
+ "buckling": {
+  "load_factors": [
+   2.23765603145761,
+   2.23765687574176,
+   6.35992831128625,
+   6.35993204538738,
+   11.9841102044605,
+   11.9841132163191
+  ],
+  "lambda1": 2.23765603145761,
+  "FE_over_Euler": 0.9768105385396355,
+  "FE_over_Euler_shear": 1.0054056559533713,
+  "pair_split_rel": 3.773073867629442e-07,
+  "modes": {
+   "1": {
+    "planes": 121,
+    "lateral_direction_deg": 58.04214780045019,
+    "beam_type_share_of_inplane_motion": 0.9999975760667141,
+    "max_ovalisation_over_max_lateral": 3.6824770910884323e-06,
+    "max_lobes_over_max_lateral": 8.603628354597343e-06,
+    "perpendicular_over_main": 5.164563617551992e-06,
+    "z_of_max_lateral_mm": 360.0,
+    "lateral_at_ends_and_mid": [
+     0.0012577375568033856,
+     0.9301405794640024,
+     -2.9396767835125937e-05
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.4219319518014093,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.863024540680664,
+     "pinned_n1 sin(pi z/L)": 0.8722254638706719
+    },
+    "corr_fixed_pinned": 0.9999935910365843
+   },
+   "2": {
+    "planes": 121,
+    "lateral_direction_deg": 148.0426787956881,
+    "beam_type_share_of_inplane_motion": 0.999997575876904,
+    "max_ovalisation_over_max_lateral": 2.3750859180752134e-06,
+    "max_lobes_over_max_lateral": 1.0467889613668398e-05,
+    "perpendicular_over_main": 5.164841210027525e-06,
+    "z_of_max_lateral_mm": 360.0,
+    "lateral_at_ends_and_mid": [
+     0.0012597513577643938,
+     0.9301409557767762,
+     -3.0106753463665008e-05
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.42192979143195164,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.8630253937181566,
+     "pinned_n1 sin(pi z/L)": 0.8722263634268403
+    },
+    "corr_fixed_pinned": 0.9999935839696847
+   },
+   "3": {
+    "planes": 121,
+    "lateral_direction_deg": -155.85951350603986,
+    "beam_type_share_of_inplane_motion": 0.9999819302915001,
+    "max_ovalisation_over_max_lateral": 5.902650481088064e-06,
+    "max_lobes_over_max_lateral": 2.0656695026609192e-05,
+    "perpendicular_over_main": 1.4153282931453475e-06,
+    "z_of_max_lateral_mm": 225.0,
+    "lateral_at_ends_and_mid": [
+     0.002915017981615106,
+     0.7150510702787874,
+     0.0001259252153041218
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.6458400485592164,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.5722388050047517,
+     "pinned_n1 sin(pi z/L)": 0.528318801766515
+    },
+    "corr_fixed_pinned": 0.08543812341092615
+   },
+   "4": {
+    "planes": 121,
+    "lateral_direction_deg": 114.14065830593154,
+    "beam_type_share_of_inplane_motion": 0.9999819191731254,
+    "max_ovalisation_over_max_lateral": 8.756646799719224e-06,
+    "max_lobes_over_max_lateral": 3.0210165927757818e-05,
+    "perpendicular_over_main": 1.415820700475364e-06,
+    "z_of_max_lateral_mm": 225.0,
+    "lateral_at_ends_and_mid": [
+     0.002930027828417331,
+     0.7150528331604011,
+     0.0001304626705637938
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.6458485255838026,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.5722341290505458,
+     "pinned_n1 sin(pi z/L)": 0.5283145154316461
+    },
+    "corr_fixed_pinned": 0.08543189802552922
+   },
+   "5": {
+    "planes": 121,
+    "lateral_direction_deg": -159.9072093626344,
+    "beam_type_share_of_inplane_motion": 0.9999425000697674,
+    "max_ovalisation_over_max_lateral": 1.6664873528492075e-05,
+    "max_lobes_over_max_lateral": 3.528645469859751e-05,
+    "perpendicular_over_main": 2.6958542672898175e-06,
+    "z_of_max_lateral_mm": 160.0,
+    "lateral_at_ends_and_mid": [
+     0.004784141969356195,
+     -0.1377307081433379,
+     -0.0003358078246085605
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.23213915067869248,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.3010302020090388,
+     "pinned_n1 sin(pi z/L)": -0.1535104679448603
+    },
+    "corr_fixed_pinned": -0.3961648490319679
+   },
+   "6": {
+    "planes": 121,
+    "lateral_direction_deg": 110.09279694178238,
+    "beam_type_share_of_inplane_motion": 0.9999424404484132,
+    "max_ovalisation_over_max_lateral": 1.5624674823191476e-05,
+    "max_lobes_over_max_lateral": 5.217228556138525e-05,
+    "perpendicular_over_main": 2.759337417031133e-06,
+    "z_of_max_lateral_mm": 160.0,
+    "lateral_at_ends_and_mid": [
+     0.00481039819826777,
+     -0.13770067818572734,
+     -0.0003466527987693935
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.23217190776799115,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.30102386339276355,
+     "pinned_n1 sin(pi z/L)": -0.15350434369637808
+    },
+    "corr_fixed_pinned": -0.3961715870455613
+   }
+  }
+ },
+ "angle_between_modes_1_2_deg": 89.99946900476209,
+ "checks": {
+  "1 solve completed, no errors, no pivot / rigid-body messages": true,
+  "2a inlet axial force = E alpha dT A within 0.1 %": true,
+  "2b pilot axial force = - inlet axial force (equilibrium, 1e-6)": true,
+  "2c outlet face nodes carry no constraint; one constrained pilot": true,
+  "2d no lateral reaction resultant (< 1e-6 x N)": true,
+  "3 static state: no rigid lateral translation of any section (LS fit < 1e-4 x free radial growth)": true,
+  "3b static axial stress = -E alpha dT (corner nodes, mid-span, 0.1 %)": true,
+  "4 lambda1 between shear-corrected and plain clamped-pinned Euler": 1.0,
+  "5a mode 1 global lateral (beam share > 0.99, ovalisation < 1 %)": true,
+  "5b mode 1 fixed-pinned shape (corr > 0.99)": true,
+  "5c max lateral deflection at 0.55-0.65 L from the clamped inlet": true,
+  "5d modes 1-2 orthogonal pair (split < 1e-4, 90 +- 1 deg)": true
+ },
+ "B03_PASS": true
+}

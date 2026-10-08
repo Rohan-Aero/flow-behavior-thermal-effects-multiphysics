@@ -1,0 +1,44 @@
+{
+  "zones": {
+    "cell_fluid": [
+      "fluid_domain"
+    ],
+    "cell_solid": [
+      "solid_domain"
+    ],
+    "velocity_inlet": [
+      "fluid_inlet"
+    ],
+    "pressure_outlet": [
+      "fluid_outlet"
+    ],
+    "wall": [
+      "fluid_solid_interface",
+      "fluid_solid_interface-shadow",
+      "heated_outer_wall",
+      "solid_inlet_end",
+      "solid_outlet_end"
+    ],
+    "interior": []
+  },
+  "zone_ids_from_replace": {
+    "fluid_domain": 2,
+    "solid_domain": 3,
+    "fluid_solid_interface-shadow": 12,
+    "interior-fluid": 4,
+    "interior-solid": 5,
+    "fluid_inlet": 6,
+    "fluid_outlet": 7,
+    "fluid_solid_interface": 8,
+    "heated_outer_wall": 9,
+    "solid_inlet_end": 10,
+    "solid_outlet_end": 11
+  },
+  "mesh": {
+    "cells": 168480,
+    "min_volume_m3": 9.051023e-11,
+    "min_orthogonal_quality": 0.445829,
+    "mesh_check_warnings": []
+  },
+  "mesh_file": "../../Mesh_Checks/Mesh_T03_THICK/T03_THICK.msh"
+}

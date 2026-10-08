@@ -1,0 +1,38 @@
+OK   start at line 2 
+OK   delimiter comma 
+OK   length unit m 
+OK   column 0 -> X Coordinate 
+OK   column 1 -> Y Coordinate 
+OK   column 2 -> Z Coordinate 
+OK   column 3 -> Temperature 
+OK   temperature unit K 
+OK   columns now [('X Coordinate', 'm'), ('Y Coordinate', 'm'), ('Z Coordinate', 'm'), ('Temperature', 'K')]
+OK   file props [('StartImportAtLine', 2), ('DelimiterType', 'Comma'), ('LengthUnit', 'm'), ('FormatType', 'Delimited'), ('Dimensions', 'Dimension3D'), ('CoordinateSystemType', 'Cartesian')]
+external data updated
+external data -> static structural setup linked
+SetData present on property: True
+OK   density 
+OK   E 
+OK   nu 
+OK   CTE sheets [['Coefficient of Thermal Expansion 1', ('Qualifiers', 'err'), ('DisplayName', 'err'), ('Definition', 'Secant'), ('Behavior', 'Isotropic'), ('vars', 'n/a')], ['Zero-Thermal-Strain Reference Temperature 1', ('Qualifiers', 'err'), ('DisplayName', 'err'), ('Definition', 'Secant'), ('Behavior', 'Isotrop
+DIR CTE propdata ['BeginBatchUpdate', 'Behavior', 'Container', 'CreateCurveFitting', 'CreateDataProvider', 'CreateVariable', 'Definition', 'Delete', 'DependentColl', 'Description', 'DisplayText', 'EndBatchUpdate', 'GetChartData', 'GetCurveFitting', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetFieldVariableDataObject', 'GetProperties', 'GetProperty', 'GetVariable', 'HasAssociatedParameter', 'IndependentColl', 'IsSuppressed', 'IsValid', 'Name', 'PrimaryIndependent', 'RowsCount', 'SetEntityProperties', 'SetEntityProperty', 'SetSuppression', 'SimulationSetEntityProperty', 'ToString', 'Type', 'TypeName', 'VariableColl']
+ALPHA SET with {'Definition': 'Secant', 'Behavior': 'Isotropic'}
+zero-ref variant {'Definition': 'Secant', 'Behavior': ''} failed A unique sheet could not be found for the arguments SheetName=Zero-Thermal-Strain Reference Temperature, SheetQualifiers=System.Collections.Generic.Dictionary`2[System.String,System.String]
+ZERO-STRAIN REF SET with {'Definition': 'Secant', 'Behavior': 'Isotropic'}
+OK   CTE sheets after [['Coefficient of Thermal Expansion 1', ('Qualifiers', 'err'), ('DisplayName', 'err'), ('Definition', 'Secant'), ('Behavior', 'Isotropic'), ('vars', 'n/a')], ['Zero-Thermal-Strain Reference Temperature 1', ('Qualifiers', 'err'), ('DisplayName', 'err'), ('Definition', 'Secant'), ('Behavior', 'Isotrop
+OK   Sy 
+OK   k create /Engineering Data/MaterialProperty:Thermal Conductivity 1
+OK   k 
+OK   material valid True
+FAIL valid density: The following required arguments for command/query EngData.ValidateMaterialProperty are missing or null: Material
+FAIL valid elasticity: The following required arguments for command/query EngData.ValidateMaterialProperty are missing or null: Material
+FAIL valid cte: The following required arguments for command/query EngData.ValidateMaterialProperty are missing or null: Material
+FAIL valid yield: The following required arguments for command/query EngData.ValidateMaterialProperty are missing or null: Material
+OK   engineering data component state n/a
+OK   update engineering data 
+OK   readback E 188100000000 [Pa]
+saved
+OK   model refresh 
+Edit(Interactive=False) ok
+mechanical script sent
+=== WB PROBE 2 DONE ===

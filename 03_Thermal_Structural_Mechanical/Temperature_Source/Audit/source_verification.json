@@ -1,0 +1,259 @@
+{
+  "case": "../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5",
+  "data": "../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5",
+  "checks": [
+    {
+      "item": "fluent version",
+      "value": "Ansys Fluent 2026 R1",
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "solver time",
+      "value": "steady",
+      "expected": "steady",
+      "ok": true
+    },
+    {
+      "item": "energy equation",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "viscous model",
+      "value": [
+        "k-omega",
+        "sst"
+      ],
+      "expected": [
+        "k-omega",
+        "sst"
+      ],
+      "ok": true
+    },
+    {
+      "item": "solid cell zones",
+      "value": [
+        "solid_domain"
+      ],
+      "expected": [
+        "solid_domain"
+      ],
+      "ok": true
+    },
+    {
+      "item": "solid zone material",
+      "value": "inconel-718",
+      "expected": "inconel-718",
+      "ok": true
+    },
+    {
+      "item": "Inconel density [kg/m3]",
+      "value": [
+        "value",
+        8190.0
+      ],
+      "expected": [
+        "value",
+        8190.0
+      ],
+      "ok": true
+    },
+    {
+      "item": "Inconel k piecewise-linear = VDM 4127",
+      "value": [
+        [
+          293.15,
+          11.5
+        ],
+        [
+          373.15,
+          12.1
+        ],
+        [
+          473.15,
+          13.5
+        ],
+        [
+          573.15,
+          15.2
+        ],
+        [
+          673.15,
+          17.1
+        ]
+      ],
+      "expected": "see check",
+      "ok": true
+    },
+    {
+      "item": "Inconel cp piecewise-linear = VDM 4127",
+      "value": [
+        [
+          293.15,
+          460.0
+        ],
+        [
+          373.15,
+          458.0
+        ],
+        [
+          473.15,
+          468.0
+        ],
+        [
+          573.15,
+          485.0
+        ],
+        [
+          673.15,
+          501.0
+        ]
+      ],
+      "expected": "see check",
+      "ok": true
+    },
+    {
+      "item": "scheme pressure (final, second order)",
+      "value": "second-order",
+      "expected": "second-order",
+      "ok": true
+    },
+    {
+      "item": "scheme mom (final, second order)",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "scheme k (final, second order)",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "scheme omega (final, second order)",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "scheme temperature (final, second order)",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "heated wall",
+      "value": [
+        "Heat Flux",
+        8000.0
+      ],
+      "expected": [
+        "Heat Flux",
+        8000.0
+      ],
+      "ok": true
+    },
+    {
+      "item": "interface coupling",
+      "value": [
+        "Coupled",
+        "Coupled"
+      ],
+      "expected": [
+        "Coupled",
+        "Coupled"
+      ],
+      "ok": true
+    },
+    {
+      "item": "solid ends adiabatic",
+      "value": [
+        0,
+        0
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "ok": true
+    },
+    {
+      "item": "solution limits (temperature)",
+      "value": {
+        "min_pressure": 1,
+        "max_pressure": 50000000000.0,
+        "min_temperature": 1,
+        "max_temperature": 5000,
+        "min_tke": 1e-14,
+        "min_omega": 1e-20,
+        "max_turb_visc_ratio": 100000.0
+      },
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "equations solved",
+      "value": {
+        "flow": true,
+        "kw": true,
+        "temperature": true
+      },
+      "expected": "(recorded)",
+      "ok": true
+    }
+  ],
+  "fluent_reports": {
+    "T_solid_max": [
+      562.1271022462935,
+      "K"
+    ],
+    "T_solid_min": [
+      423.9664735799979,
+      "K"
+    ],
+    "T_solid_mean": [
+      525.4829345868314,
+      "K"
+    ],
+    "T_outer_max": [
+      562.5767822265625,
+      "K"
+    ],
+    "T_wall_max": [
+      555.26708984375,
+      "K"
+    ],
+    "T_inner_avg": [
+      520.7399438723266,
+      "K"
+    ],
+    "T_outer_avg": [
+      528.4630291224228,
+      "K"
+    ],
+    "q_heated_wall": [
+      602.7552389849993,
+      "W"
+    ],
+    "q_interface": [
+      602.7552389840987,
+      "W"
+    ],
+    "q_net_all": [
+      -1.855369191616774e-10,
+      "W"
+    ]
+  },
+  "row_counts": {
+    "fluent_solid_cells.csv": 43200,
+    "fluent_solid_face_heated_outer_wall.csv": 4320,
+    "fluent_solid_face_fluid_solid_interface-shadow.csv": 4320,
+    "fluent_solid_face_solid_inlet_end.csv": 480,
+    "fluent_solid_face_solid_outlet_end.csv": 480
+  },
+  "expected_solid_cells": 43200,
+  "failures": []
+}

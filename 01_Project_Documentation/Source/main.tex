@@ -1,0 +1,42 @@
+% ===================================================================== main.tex
+% FLOW BEHAVIOR AND THERMAL EFFECTS IN MULTIPHYSICS SYSTEMS
+% Section 10B final internship engineering report - RE-ANALYSIS 2026
+% Build: latexmk -pdf main.tex   (BIBINPUTS must include ../References)
+\documentclass[10pt,a4paper,oneside,openany]{report}
+\input{preamble}
+
+\begin{document}
+\pagenumbering{alph}   % cover page gets its own anchor (avoids a duplicate "page.i" destination)
+\input{chapters/frontmatter}
+
+\cleardoublepage
+\pagenumbering{arabic}
+\input{chapters/ch01_introduction}
+\input{chapters/ch02_system}
+\input{chapters/ch03_theory}
+\input{chapters/ch04_parameters}
+\input{chapters/ch05_cad}
+\input{chapters/ch06_cfd_method}
+\input{chapters/ch07_meshing}
+\input{chapters/ch08_cfd_results}
+\input{chapters/ch09_mesh_independence}
+\input{chapters/ch10_mapping}
+\input{chapters/ch11_structural}
+\input{chapters/ch12_structural_mesh}
+\input{chapters/ch13_buckling}
+\input{chapters/ch14_supports}
+\input{chapters/ch14b_lsdyna}
+\input{chapters/ch15_parametric}
+\input{chapters/ch16_uncertainty}
+\input{chapters/ch17_discussion}
+\input{chapters/ch18_conclusions}
+\input{chapters/ch19_future}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+
+\appendix
+\input{../Appendices/appendices}
+\end{document}

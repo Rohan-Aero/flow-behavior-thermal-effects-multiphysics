@@ -1,0 +1,7 @@
+{
+  "header_identical": true,
+  "rows_P00": 700,
+  "rows_C00": 700,
+  "rows_bitwise_identical": 700,
+  "max_abs_difference_any_monitor_any_iteration": 0.0
+}

@@ -1,0 +1,126 @@
+{
+ "run": "<PROJECT_ROOT>\\15_LS_DYNA_Extension\\work_12B\\G5_static",
+ "time": 1.0,
+ "n_nodout": 108252,
+ "n_eloutdet_nodes": 108252,
+ "n_common_corner": 28296,
+ "reaction_inlet_Fz_N": 553247.0399999991,
+ "reaction_outlet_Fz_N": -553240.8400000001,
+ "hoop_node_forces_local_N": [
+  [
+   25862,
+   1.0658e-11,
+   -6.1537e-12,
+   0.0
+  ],
+  [
+   25874,
+   0.0,
+   -1.9007e-12,
+   0.0
+  ],
+  [
+   25886,
+   1.1168e-11,
+   6.4481e-12,
+   0.0
+  ]
+ ],
+ "mean_axial_stress_MPa_from_inlet_reaction": -587.0133411130627,
+ "max_vm_corner_MPa": 605.1601789318246,
+ "max_vm_node": 18865,
+ "max_vm_xyz_m": [
+  -0.01969615506,
+  -0.003472963553,
+  0.0
+ ],
+ "max_vm_r_m": 0.01999999999970075,
+ "max_vm_T_K": 437.988705,
+ "mech_max_vm_MPa": 605.160873,
+ "mech_max_vm_node": 18865,
+ "mech_max_vm_T_K": 437.988699,
+ "vm_diff_corner_MPa": {
+  "max_abs": 4.966297176547528,
+  "rms": 1.1055076052789778
+ },
+ "sz_diff_corner_MPa": {
+  "max_abs": 9.006896,
+  "rms": 1.933661464066761
+ },
+ "max_total_disp_mm": 0.13556373423803286,
+ "max_total_disp_node": 104005,
+ "max_total_disp_xyz_m": [
+  -0.01931851653,
+  -0.005176380902,
+  0.2441229695
+ ],
+ "mech_max_total_disp_mm": 0.13488427764164404,
+ "mech_max_total_disp_node": 104046,
+ "u_r_range_mm": [
+  0.026785815466522842,
+  0.08991456692483148
+ ],
+ "mech_u_r_range_mm": [
+  0.0267453196,
+  0.0897340069
+ ],
+ "u_r_midspan_outer_mm": 0.0827189155632842,
+ "mech_u_r_midspan_outer_mm": 0.08256269537361109,
+ "u_r_diff_mm": {
+  "max_abs": 0.00018211508707488588,
+  "rms": 0.00011437739095401664
+ },
+ "u_z_diff_mm": {
+  "max_abs": 0.0007470390000000049
+ },
+ "max_lateral_disp_mm": 6.39897564801907e-07,
+ "max_abs_vm_diff_at": {
+  "node": 18974,
+  "xyz_m": [
+   -0.008660254038,
+   -0.005,
+   0.004301782547
+  ],
+  "diff_MPa": 4.966297176547528
+ },
+ "max_abs_sz_diff_at": {
+  "node": 18945,
+  "xyz_m": [
+   6.123233996e-19,
+   -0.01,
+   0.002127597118
+  ],
+  "diff_MPa": -9.006896
+ },
+ "interior_15_585mm_diff_MPa": {
+  "n": 25272,
+  "vm_rms": 1.043936853482516,
+  "vm_max_abs": 3.256290081628084,
+  "sz_rms": 1.8384219583460435,
+  "sz_max_abs": 5.39536,
+  "sz_mean": -0.14009296866096865
+ },
+ "max_abs_uz_diff_at": {
+  "node": 26032,
+  "xyz_m": [
+   -0.01969615506,
+   -0.003472963553,
+   0.2592329993
+  ],
+  "diff_mm": -0.0007470390000000049,
+  "mech_uz_mm": -0.107776961
+ },
+ "mech_max_total_disp_xyz_m": [
+  0.01638304089,
+  0.01147152873,
+  0.2441229695
+ ],
+ "uz_range_mm": [
+  -0.109486,
+  0.0
+ ],
+ "mech_uz_range_mm": [
+  -0.108756251,
+  0.0
+ ]
+}

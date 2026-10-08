@@ -1,0 +1,13 @@
+                          "Flux Report"
+
+        Total Heat Transfer Rate                  [W]
+-------------------------------- --------------------
+                     fluid_inlet             16.10284
+                    fluid_outlet            -679.1336
+           fluid_solid_interface            663.03076
+    fluid_solid_interface-shadow           -663.03076
+               heated_outer_wall            663.03076
+                 solid_inlet_end                   -0
+                solid_outlet_end                   -0
+                ---------------- --------------------
+                             Net       -2.0577318e-10

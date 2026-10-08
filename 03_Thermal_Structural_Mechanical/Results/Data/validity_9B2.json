@@ -1,0 +1,1899 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 case validity scan (Part R)",
+ "cases": {
+  "C00_PIPELINE_CHECK": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 3,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "performance only (sparse solver out-of-core mode)": 1,
+       "performance only": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "During this session the elapsed time exceeds the CPU time by 39%. This often indicates either a lack of physical memory (RAM) required to efficiently handle this simulation or a particularly slow hard drive configuration. This simulation can be expected to run faster on",
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "The Distributed Sparse Matrix Solver is running in out-of-core memory mode. This mode may result in significantly lower performance than in-core memory mode, depending on available system memory and I/O speed. Monitor solver performance to ensure that high I/O to solver"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 3,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_C00_PIPELINE_CHECK",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1153,
+     "max": 1.2046000000000001,
+     "avg": 1.1534999999997726
+    },
+    "ElementQuality": {
+     "min": 0.2366741836890618,
+     "max": 0.9912063498695327,
+     "avg": 0.6882251240543724
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.4130510769230655
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Warning",
+      "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+     ],
+     [
+      "Info",
+      "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 562.5699999999999,
+     "min_C": 150.69,
+     "source_min_K": 423.837341,
+     "source_max_K": 562.54364,
+     "max_C": 289.42,
+     "n": 108252,
+     "min_K": 423.84
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 562.5699999999999,
+     "min_C": 150.69,
+     "source_min_K": 423.837341,
+     "source_max_K": 562.54364,
+     "max_C": 289.42,
+     "n": 108252,
+     "min_K": 423.84
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 49,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     150.69,
+     289.42
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "V01_LOW": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 1,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 1,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_V01_LOW",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1153,
+     "max": 1.2046000000000001,
+     "avg": 1.1535000000000044
+    },
+    "ElementQuality": {
+     "min": 0.2366741836890618,
+     "max": 0.9912063498695327,
+     "avg": 0.6882251240543653
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.4130510769230646
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Info",
+      "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 587.45,
+     "min_C": 162.77,
+     "source_min_K": 435.915558,
+     "source_max_K": 587.433044,
+     "max_C": 314.3,
+     "n": 108252,
+     "min_K": 435.91999999999996
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 587.45,
+     "min_C": 162.77,
+     "source_min_K": 435.915558,
+     "source_max_K": 587.433044,
+     "max_C": 314.3,
+     "n": 108252,
+     "min_K": 435.91999999999996
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 49,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     162.77,
+     314.3
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "V03_HIGH": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 1,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 1,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_V03_HIGH",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1153,
+     "max": 1.2046000000000001,
+     "avg": 1.153499999999964
+    },
+    "ElementQuality": {
+     "min": 0.2366741836890618,
+     "max": 0.9912063498695327,
+     "avg": 0.6882251240543595
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.4130510769230544
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Info",
+      "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 542.0899999999999,
+     "min_C": 140.73,
+     "source_min_K": 413.884308,
+     "source_max_K": 542.065796,
+     "max_C": 268.94,
+     "n": 108252,
+     "min_K": 413.88
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 542.0899999999999,
+     "min_C": 140.73,
+     "source_min_K": 413.884308,
+     "source_max_K": 542.065796,
+     "max_C": 268.94,
+     "n": 108252,
+     "min_K": 413.88
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 49,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     140.73,
+     268.94
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "Q01_LOW": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 1,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 1,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_Q01_LOW",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1153,
+     "max": 1.2046000000000001,
+     "avg": 1.1534999999999695
+    },
+    "ElementQuality": {
+     "min": 0.2366741836890618,
+     "max": 0.9912063498695327,
+     "avg": 0.6882251240543649
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.4130510769230744
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Info",
+      "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 534.44,
+     "min_C": 137.45,
+     "source_min_K": 410.59668,
+     "source_max_K": 534.414734,
+     "max_C": 261.29,
+     "n": 108252,
+     "min_K": 410.59999999999997
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 534.44,
+     "min_C": 137.45,
+     "source_min_K": 410.59668,
+     "source_max_K": 534.414734,
+     "max_C": 261.29,
+     "n": 108252,
+     "min_K": 410.59999999999997
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 49,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     137.45,
+     261.29
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "Q03_HIGH": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 2,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "performance only": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "During this session the elapsed time exceeds the CPU time by 32%. This often indicates either a lack of physical memory (RAM) required to efficiently handle this simulation or a particularly slow hard drive configuration. This simulation can be expected to run faster on",
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 2,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_Q03_HIGH",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1153,
+     "max": 1.2046000000000001,
+     "avg": 1.1534999999998288
+    },
+    "ElementQuality": {
+     "min": 0.2366741836890618,
+     "max": 0.9912063498695327,
+     "avg": 0.6882251240543595
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.413051076923067
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Warning",
+      "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+     ],
+     [
+      "Info",
+      "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 591.12,
+     "min_C": 164.13,
+     "source_min_K": 437.278992,
+     "source_max_K": 591.091797,
+     "max_C": 317.97,
+     "n": 108252,
+     "min_K": 437.28
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 591.12,
+     "min_C": 164.13,
+     "source_min_K": 437.278992,
+     "source_max_K": 591.091797,
+     "max_C": 317.97,
+     "n": 108252,
+     "min_K": 437.28
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 49,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     164.13,
+     317.97
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "T01_THIN": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 1,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 1,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 89424 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 89424 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 89424 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 89424 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 89424 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 89424 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 89424 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 89424 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 89424 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 89424 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 89424 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 89424 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 89424 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 89424 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_T01_THIN",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 89424,
+    "elements": 18720,
+    "expected_elements": 18720,
+    "nodes": 89424
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1293,
+     "max": 1.2046000000000001,
+     "avg": 1.1630500000000132
+    },
+    "ElementQuality": {
+     "min": 0.23667418368906123,
+     "max": 0.9912063498695585,
+     "avg": 0.6832543352481631
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.4127503846153893
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Warning",
+      "One or more objects may have lost some scoping attachments during the geometry update. You can identify these tree objects by activating the Scoping Wizard in the Selection Toolbar, or by filtering the tree using the Scoping option set to Partial."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 561.94,
+     "min_C": 144.82,
+     "source_min_K": 417.966278,
+     "source_max_K": 561.926941,
+     "max_C": 288.79,
+     "n": 89424,
+     "min_K": 417.96999999999997
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 561.94,
+     "min_C": 144.82,
+     "source_min_K": 417.966278,
+     "source_max_K": 561.926941,
+     "max_C": 288.79,
+     "n": 89424,
+     "min_K": 417.96999999999997
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 44,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     144.82,
+     288.79
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "T03_THICK": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 3,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "performance only (sparse solver out-of-core mode)": 1,
+       "performance only": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "During this session the elapsed time exceeds the CPU time by 30%. This often indicates either a lack of physical memory (RAM) required to efficiently handle this simulation or a particularly slow hard drive configuration. This simulation can be expected to run faster on",
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "The Distributed Sparse Matrix Solver is running in out-of-core memory mode. This mode may result in significantly lower performance than in-core memory mode, depending on available system memory and I/O speed. Monitor solver performance to ensure that high I/O to solver"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 3,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 127080 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 127080 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 127080 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 127080 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 127080 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 127080 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 127080 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 127080 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 127080 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 127080 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 127080 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 127080 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 127080 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 127080 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_T03_THICK",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 127080,
+    "elements": 28080,
+    "expected_elements": 28080,
+    "nodes": 127080
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1042,
+     "max": 1.2046000000000001,
+     "avg": 1.1452833333333232
+    },
+    "ElementQuality": {
+     "min": 0.2366741836890597,
+     "max": 0.9912063498695391,
+     "avg": 0.6896676404336728
+    },
+    "AspectRatio": {
+     "min": 1.1374,
+     "max": 4.8823,
+     "avg": 2.4237735897435595
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Warning",
+      "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+     ],
+     [
+      "Warning",
+      "One or more objects may have lost some scoping attachments during the geometry update. You can identify these tree objects by activating the Scoping Wizard in the Selection Toolbar, or by filtering the tree using the Scoping option set to Partial."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 563.06,
+     "min_C": 155.63,
+     "source_min_K": 428.783386,
+     "source_max_K": 563.043518,
+     "max_C": 289.91,
+     "n": 127080,
+     "min_K": 428.78
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 563.06,
+     "min_C": 155.63,
+     "source_min_K": 428.783386,
+     "source_max_K": 563.043518,
+     "max_C": 289.91,
+     "n": 127080,
+     "min_K": 428.78
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 44,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     155.63,
+     289.91
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "M01_T01_STRUCT_NR5": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 1,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 1,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_M01_T01_STRUCT_NR5",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1017000000000001,
+     "max": 1.1644,
+     "avg": 1.129240000000073
+    },
+    "ElementQuality": {
+     "min": 0.19154649609298513,
+     "max": 0.9583889236679446,
+     "avg": 0.6027942351292898
+    },
+    "AspectRatio": {
+     "min": 1.3297,
+     "max": 5.319,
+     "avg": 2.9098104615385068
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Warning",
+      "One or more objects may have lost some scoping attachments during the geometry update. You can identify these tree objects by activating the Scoping Wizard in the Selection Toolbar, or by filtering the tree using the Scoping option set to Partial."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 561.94,
+     "min_C": 144.82,
+     "source_min_K": 417.966278,
+     "source_max_K": 561.926941,
+     "max_C": 288.79,
+     "n": 108252,
+     "min_K": 417.96999999999997
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 561.94,
+     "min_C": 144.82,
+     "source_min_K": 417.966278,
+     "source_max_K": 561.926941,
+     "max_C": 288.79,
+     "n": 108252,
+     "min_K": 417.96999999999997
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 44,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     144.82,
+     288.79
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "M02_T03_STRUCT_NR5": {
+   "solver": {
+    "BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 2,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "performance only": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "During this session the elapsed time exceeds the CPU time by 125%. This often indicates either a lack of physical memory (RAM) required to efficiently handle this simulation or a particularly slow hard drive configuration. This simulation can be expected to run faster on",
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired."
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 2,
+      "errors": 0
+     }
+    },
+    "LC1": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    },
+    "LC2": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 9,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 7
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108252 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108252 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108252 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108252 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108252 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108252 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108252 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 9,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "NotSolved"
+    ],
+    [
+     "LC2_Linear_Buckling_M02_T03_STRUCT_NR5",
+     "Solved"
+    ]
+   ],
+   "mesh": {
+    "expected_nodes": 108252,
+    "elements": 23400,
+    "expected_elements": 23400,
+    "nodes": 108252
+   },
+   "mesh_metrics": {
+    "JacobianRatio": {
+     "min": 1.1267,
+     "max": 1.2447000000000001,
+     "avg": 1.1759999999999335
+    },
+    "ElementQuality": {
+     "min": 0.279141990769242,
+     "max": 0.9963689141025878,
+     "avg": 0.7494154800394385
+    },
+    "AspectRatio": {
+     "min": 1.0969,
+     "max": 4.8823,
+     "avg": 2.1718959999999945
+    }
+   },
+   "messages": {
+    "LC1": [],
+    "LC2": [],
+    "BUCKLING": [
+     [
+      "Info",
+      "The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times."
+     ],
+     [
+      "Warning",
+      "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+     ],
+     [
+      "Warning",
+      "One or more objects may have lost some scoping attachments during the geometry update. You can identify these tree objects by activating the Scoping Wizard in the Selection Toolbar, or by filtering the tree using the Scoping option set to Partial."
+     ]
+    ]
+   },
+   "mapping": {
+    "LC1": {
+     "state": "Solved",
+     "max_K": 563.06,
+     "min_C": 155.63,
+     "source_min_K": 428.783386,
+     "source_max_K": 563.043518,
+     "max_C": 289.91,
+     "n": 108252,
+     "min_K": 428.78
+    },
+    "LC2": {
+     "state": "Solved",
+     "max_K": 563.06,
+     "min_C": 155.63,
+     "source_min_K": 428.783386,
+     "source_max_K": 563.043518,
+     "max_C": 289.91,
+     "n": 108252,
+     "min_K": 428.78
+    }
+   },
+   "gate": "PASS",
+   "gate_checks": 44,
+   "gate_failed": [],
+   "cfd": {
+    "status": "CONVERGED_VALID",
+    "valid": true,
+    "failed_checks": []
+   },
+   "material_range": {
+    "mapped_T_C": [
+     155.63,
+     289.91
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "Mechanical imported-load summary (LC2)"
+   }
+  },
+  "S3_LC2_INTERMEDIATE": {
+   "solver": {
+    "S3_BUCKLING": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 4,
+      "errors": 0,
+      "warning_categories": {
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "S3 buckling advisory: the only contact pair is the bonded (KEYOPT(12)=5) MPC force-distributed remote-point constraint, whose status cannot change; every buckling case of the project (S1, S2, S3, design cases) uses a small-deflection (NLGEOM off) pre-stress by design; the MPC outlet block reproduced the expected column behaviour in B03 - explained": 1,
+       "performance only (sparse solver out-of-core mode)": 1,
+       "performance only": 1
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "A linear perturbation analysis with contact usually requires turning on large deflection option (NLGEOM,ON) in the base analysis. Otherwise the down-stream analysis will not use the current deformation configuration which might lead to inaccurate solution or even memory",
+       "During this session the elapsed time exceeds the CPU time by 38%. This often indicates either a lack of physical memory (RAM) required to efficiently handle this simulation or a particularly slow hard drive configuration. This simulation can be expected to run faster on",
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "The Distributed Sparse Matrix Solver is running in out-of-core memory mode. This mode may result in significantly lower performance than in-core memory mode, depending on available system memory and I/O speed. Monitor solver performance to ensure that high I/O to solver"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 4,
+      "errors": 0
+     }
+    },
+    "S3_STATIC": {
+     "solve.out": {
+      "file": "solve.out",
+      "warnings": 10,
+      "errors": 0,
+      "warning_categories": {
+       "secant-alpha re-referencing to TREF 26.85 degC (MPAMOD) - 7B, expected": 1,
+       "Mechanical default (SHPP off); mesh quality checked separately - expected": 1,
+       "APDL snippet: SOLID186 mid-side nodes carry no nodal stress - 7B, expected": 8
+      },
+      "unclassified_warnings": [],
+      "warning_texts": [
+       "Element shape checking is currently inactive. Issue SHPP,ON or SHPP,WARN to reactivate, if desired.",
+       "Material property ALPX of material 1 is evaluated at a temperature of 26.85, which is below the supplied temperature range. Temperature range checking terminates.",
+       "Some entities requested in the *VGET were undefined. OPENED FILE= s7b_nodal.csv FOR COMMAND FILE DATA",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,10) VECTOR LENGTH= 108253 NAME= NODE 1 S Z",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,11) VECTOR LENGTH= 108253 NAME= NODE 1 S 1",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,12) VECTOR LENGTH= 108253 NAME= NODE 1 S 3",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,13) VECTOR LENGTH= 108253 NAME= NODE 1 S EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,14) VECTOR LENGTH= 108253 NAME= NODE 1 EPEL EQV",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,15) VECTOR LENGTH= 108253 NAME= NODE 1 BFE TEMP",
+       "Some entities requested in the *VGET were undefined. VECTOR GET OPERATION s7b_a(1,9) VECTOR LENGTH= 108253 NAME= NODE 1 S Y"
+      ],
+      "error_texts": [],
+      "licence_messages": [],
+      "pivot_or_rigid_body": [],
+      "solution_done": true
+     },
+     "file0.err": {
+      "file": "file0.err",
+      "warnings": 10,
+      "errors": 0
+     }
+    }
+   },
+   "fatal": null,
+   "final_states": [
+    [
+     "LC1_Free_Expansion",
+     "Solved"
+    ],
+    [
+     "LC2_Axially_Restrained",
+     "Solved"
+    ],
+    [
+     "LC2P_Restrained_Thermal_Plus_Pressure",
+     "Solved"
+    ],
+    [
+     "S3_LC2_Intermediate_Clamped_Pinned",
+     "Solved"
+    ],
+    [
+     "S3_Linear_Buckling",
+     "Solved"
+    ]
+   ],
+   "mesh": null,
+   "mesh_metrics": {
+    "JacobianRatio": null,
+    "ElementQuality": null,
+    "AspectRatio": null
+   },
+   "messages": {
+    "S3_BUCKLING": [
+     [
+      "Info",
+      "Changes to Named Selection Creation options will take effect on next import operation."
+     ],
+     [
+      "Info",
+      "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+     ]
+    ],
+    "S3_STATIC": []
+   },
+   "mapping": null,
+   "gate": "PASS",
+   "gate_checks": 22,
+   "gate_failed": [],
+   "cfd": {
+    "status": "uses the P00 (Section 5B) CFD field",
+    "valid": true
+   },
+   "material_range": {
+    "mapped_T_C": [
+     150.69,
+     289.41
+    ],
+    "E_and_Sy_table_C": [
+     20,
+     400
+    ],
+    "alpha_table_C": [
+     93.33,
+     537.78
+    ],
+    "inside_E_Sy_table": true,
+    "inside_alpha_table": true,
+    "source": "T_used column of Solver_Output/S3_STATIC/s7b_nodal.csv (P00 field, same External Data as 7B); 108252 solid nodes, 1 pilot node(s) on the axis excluded"
+   }
+  }
+ }
+}

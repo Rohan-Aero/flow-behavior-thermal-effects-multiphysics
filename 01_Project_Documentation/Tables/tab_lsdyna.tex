@@ -1,0 +1,20 @@
+%% Section 13 - additional LS-DYNA analysis; values from 15_LS_DYNA_Extension/12C_Nonlinear_Buckling/IMPERFECTION_SENSITIVITY.csv
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.4pt}
+\caption{Additional LS-DYNA nonlinear analysis: three-point imperfection sensitivity under S1 / LC2 (elastic, geometrically nonlinear)}
+\label{tab:lsdyna}
+\begin{tabular}{l r r r r r >{\raggedright\arraybackslash}p{0.155\linewidth} r r}
+\toprule
+Case & $A$ [mm] & 1\,\% drop $\lambda$ & $N$ ($\lambda$ = 1) [kN] & VM ($\lambda$ = 1) [MPa] & Yield $\lambda$ & Maximum $N$ ($\lambda \le$ 1.3) & Southwell [kN] & vs $P_{cr}$ \\
+\midrule
+C1 & 0.1 & 1.070 & 552.2 & 690 & 1.109 & 601.0~kN at $\lambda$ = 1.185 (maximum) & 612.3 & +0.7\,\% \\
+C3 & 0.6 & 0.825 & 531.2 & 966 & 1.031 & 572.4~kN at $\lambda$ = 1.3, still rising & 611.1 & +0.5\,\% \\
+C5 & 1.2 & 0.375 & 503.5 & 1104 & 0.974 & 545.3~kN at $\lambda$ = 1.3, still rising & 607.7 & $-$0.1\,\% \\
+\midrule
+C0 (perfect) & 0 & -- & 553.2 & 605.2 & not reached & no instability flagged (720.7~kN at $\lambda$ = 1.3) & \multicolumn{2}{l}{not identifiable} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{\linewidth}{\footnotesize\raggedright Source: \texttt{15\_LS\_DYNA\_Extension/12C\_Nonlinear\_Buckling/IMPERFECTION\_SENSITIVITY.csv} and \texttt{FINAL\_12C\_RESULTS.md} (additional LS-DYNA analysis); Mechanical reference $\lambda_1$ = 1.108 and $P_{cr}$ = 608.25~kN from \texttt{MASTER\_PROJECT\_DATA.csv} rows M098--M099. $A$: imperfection amplitude. 1\,\% drop: $\lambda$ at which $N$ falls 1\,\% below the perfect path. $N$: axial compression (end reaction); VM: peak von Mises stress. Yield $\lambda$: first local yield, i.e.\ the peak von Mises stress equals the local yield estimate $S_y(T)$ of the elastic model. The perfect-geometry run C0 is a reference path; its $N$ at $\lambda$ = 1 is 0.79\,\% above the Mechanical 548.94~kN because of the large-deformation formulation. Load values are not factors of safety.}
+\end{table}

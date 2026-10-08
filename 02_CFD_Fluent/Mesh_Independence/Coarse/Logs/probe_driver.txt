@@ -1,0 +1,4 @@
+2026-09-23 23:34:36  launching (audit-only=1): 3ddp -g -py -t4 -i Journals/probe_replace.py
+2026-09-23 23:34:36  fluent pid 17512
+2026-09-23 23:36:08  fluent exited
+2026-09-23 23:36:11  driver done

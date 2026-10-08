@@ -1,0 +1,102 @@
+{
+  "converged": true,
+  "stage1_iters": 150,
+  "second_order_iters": 400,
+  "total_iters": 550,
+  "failures": [],
+  "final_eval": {
+    "tag": "confirm+400",
+    "iteration": 550,
+    "residuals": {
+      "continuity": 6.5802e-12,
+      "x-velocity": 2.6858e-17,
+      "y-velocity": 2.6769e-17,
+      "z-velocity": 1.0733e-17,
+      "k": 2.4615e-16,
+      "omega": 1.6127e-16,
+      "F_wall_z": 0.073047,
+      "q_net_all": 0.0,
+      "q_ends": 0.0,
+      "T_solid_mi": 300.0,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 300.0,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.4621,
+      "yplus_min": 0.41371,
+      "T_inner_av": 300.0,
+      "T_outer_av": 300.0,
+      "T_outer_ma": 300.0,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 258.08,
+      "yplus_max": 0.84987,
+      "v_out_max": 28.889,
+      "T_solid_me": 300.0,
+      "T_solid_ma": 300.0,
+      "T_wall_max": 300.0,
+      "T_out_bulk": 300.0,
+      "p_out": 0.0,
+      "p_in": 258.08,
+      "q_fluid_ne": 0.0,
+      "q_interfac": 0.0,
+      "q_heated_w": 0.0,
+      "mass_imbal": 5.2042e-17,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 6.5802e-12,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 2.6858e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 2.6769e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 1.0733e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 2.4615e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 1.6127e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "rel drift dp_area": {
+        "value": 1.286102714115556e-11,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift F_wall_z": {
+        "value": 1.6941415758147412e-11,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out": {
+        "value": 2.485284322824102e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance": {
+        "value": 6.007939539461859e-15,
+        "target": 0.0001,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  }
+}

@@ -1,0 +1,96 @@
+% ===================================================================== Chapter 13
+\chapter{Buckling Analysis}\label{ch:buckling}
+
+\section{Why Buckling Was Investigated}
+The LC2 static state stores a compressive force of 548.94~kN in a column with a slenderness ratio $L/r$ of 53.67. A static stress check
+alone cannot tell whether that state is stable: a yield utilisation of 0.578 says nothing about the load at which the straight equilibrium
+bifurcates into a laterally deflected one. Because the LC2 restraint is exactly the condition that creates the compressive force, its
+stability had to be examined before the static result could be interpreted.
+
+\section{Applied Thermal Compression}
+The column load is the LC2 end reaction, $N$ = 548,936.6~N, equivalent to a mean axial stress of 582.44~MPa over the section area of
+942.48~mm$^2$. The 605.16~MPa von Mises peak is a local stress, not the column load. The load is thermal and displacement-controlled: it is
+the force needed to hold the thermally expanded duct at its original length. In the linear buckling analysis the load factor $\lambda$
+multiplies this entire thermal pre-stress; $\lambda$ = 1.108 therefore corresponds to about 10.8\,\% more restrained thermal strain, or
+roughly 24~K more mean temperature rise.
+
+\section{Euler Estimate}
+Hand estimates were made before the FE analysis (Table~\ref{tab:section}), using Equation~\eqref{eq:euler} with a Rayleigh average of the
+axially varying modulus $E(z)$ and, separately, with the shear correction. For the guided end condition of the LC2 supports ($K$ = 1) they give
+load factors of 1.119 (Euler) and 1.104 (Euler + shear). All end conditions give intermediate columns ($KL/r$ below $C_c$ = 60.2), and the
+elastic Euler stress of about 650~MPa exceeds the conventional proportional limit. The conventional Johnson estimate for the guided column
+is 1.058, and the squash load corresponds to a factor of 1.755. Local or shell buckling is not credible: with $R/t$ = 1.5 the tube is far
+outside thin-shell theory and compact by the round-HSS criterion $D/t < 0.11E/F_y$ ($4 < 20.2$) \cite{aisc360}.
+
+\input{../Tables/tab_section}
+
+\section{ANSYS Linear Buckling}
+The Eigenvalue Buckling system was linked to the LC2 static solution in a save-as copy of the project, as a perturbation restart that keeps
+all LC2 boundary conditions. The re-solved LC2 pre-stress in the copy reproduced the Section 7B values exactly (peak von Mises and end
+reaction). The full 108,252-node model solved within the Student licence. Before the project model was solved, the workflow was benchmarked
+on a constant-property toy tube whose Euler loads are known in closed form for both end conditions.
+
+\section{Mode Shapes}
+The first mode (Figure~\ref{fig:bkmode}) is a global column mode: the end planes stay perpendicular to the axis but translate sideways in
+opposite directions; the lateral deflection is zero at mid-span and the bending curvature is largest at the rotation-held end sections. The
+cross-section moves as a rigid section (99.9999\,\%); there is no ovalisation, shell or local mode. The shape correlates with
+$\cos(\pi z/L)$ to 0.999997. Modes 1 and 2 are an orthogonal pair with the same eigenvalue, as expected for an
+axisymmetric column.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC2_Linear_Buckling_Mode_1_Total_Deformation_iso.png}\caption{Isometric view}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC2_Linear_Buckling_Mode_1_Total_Deformation_side_YZ.png}\caption{Side view}\end{subfigure}
+\caption[First buckling mode of the restrained duct under S1]{First buckling mode of the restrained duct under S1 (load multiplier 1.108; normalised eigenvector, amplitude arbitrary).}
+\label{fig:bkmode}
+\src{\provmech}
+\end{figure}
+
+
+\section{Buckling Factor}
+The first eigenvalue is $\lambda_1$ = 1.108 (Table~\ref{tab:buckling}), giving a critical load $P_{cr} = \lambda_1 N$ = 608.25~kN. The next
+eigenvalue pair is 4.298. The FE value lies between the Euler estimate with $E(z)$ ($-$1.0\,\%) and the shear-corrected estimate (+0.4\,\%),
+which is the expected position for a stocky tube (Figure~\ref{fig:bkpcr}).
+
+\input{../Tables/tab_buckling}
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{F8A_03_critical_load_summary.png}\caption{Critical axial force [kN]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{F8A_04_load_factor_comparison.png}\caption{Buckling load factors}\end{subfigure}
+\caption[Hand estimates and FE results against the applied restrained force]{Hand estimates and FE results against the applied restrained force: elastic Euler, shear-corrected, conventional Johnson (inelastic) and FE linear buckling.}
+\label{fig:bkpcr}
+\src{\provdata}
+\end{figure}
+
+\section{Buckling Mesh Sensitivity}
+The same buckling analysis was repeated on the six meshes of Chapter~\ref{ch:smesh} that carry a buckling solution (Table~\ref{tab:appF}). $\lambda_1$ ranges from 1.1079876 (XC) to 1.1080483 (FA); the coarsening family is monotonic with a GCI of
+$5.6\times10^{-6}$, and the fine meshes lie within $6\times10^{-6}$ of mesh B. The mode is the same guided-sway shape on every mesh. The buckling
+result is not sensitive to the structural mesh.
+
+
+\section{Yield vs Buckling}
+Two different load factors describe the idealised LC2 state and are reported side by side:
+\begin{itemize}
+\item the first-yield factor, 1.730: the thermal load multiplier at which the most highly stressed point reaches the local yield strength;
+\item the linear buckling factor, $\lambda_1$ = 1.108: the multiplier at which the perfect, elastic column bifurcates.
+\end{itemize}
+Because $\lambda_1$ is below the first-yield factor, the idealised S1 model is stability-limited: elastic bifurcation is reached before first
+yield. With $\lambda_1$ this close to 1, the idealised model is close to instability at the applied thermal load. The yield utilisation of
+0.578 is therefore not a structural margin. Expressed on the Section 2 temperature basis (254.7~K mean rise instead of 225.5~K), the same
+analysis would give $\lambda_1 \approx$ 0.98. No single factor of safety is formed in this project.
+
+\section{Limitations of Linear Eigenvalue Buckling}
+$\lambda_1$ is a linear stability indicator for an idealised elastic model. It is \textbf{not} a guaranteed real-world collapse load. The
+analysis assumes:
+\begin{itemize}
+\item a perfectly straight tube without out-of-straightness, load eccentricity or residual stress;
+\item linear elastic material, although the columns are intermediate and the elastic buckling stress exceeds the proportional limit;
+\item small deflections, with no post-buckling path;
+\item idealised supports whose relation to a real flange is undefined.
+\end{itemize}
+A real, imperfect duct would deflect laterally at loads below $\lambda_1$, and inelastic behaviour lowers its capacity further; the
+conventional Johnson estimate of 1.058 indicates the direction of that reduction, not its material-specific size. Rotational flexibility of
+real end fixtures would lower $\lambda_1$ below the S1 value, so S1 is not a lower bound. An imperfection-sensitive, geometrically and
+materially nonlinear analysis would be required to determine a collapse load (Chapter~\ref{ch:future}). An elastic, geometrically
+nonlinear imperfection-sensitivity extension is reported in Section~\ref{sec:lsdyna}; it does not determine a collapse load.

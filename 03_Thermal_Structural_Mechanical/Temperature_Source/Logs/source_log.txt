@@ -1,0 +1,131 @@
+================================================================================
+SECTION 7A - READ-ONLY EXPORT OF THE MEDIUM SOLID TEMPERATURE FIELD - RE-ANALYSIS 2026
+================================================================================
+OK    transcript                                             
+OK    read case  ../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5 
+OK    read data  ../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5 
+CHECK ok   fluent version                                 26.1.0
+CHECK ok   solver time                                    'steady'
+CHECK ok   energy equation                                True
+CHECK ok   viscous model                                  ('k-omega', 'sst')
+CHECK ok   solid cell zones                               ['solid_domain']
+CHECK ok   solid zone material                            'inconel-718'
+CHECK ok   Inconel density [kg/m3]                        ('value', 8190.0)
+CHECK ok   Inconel k piecewise-linear = VDM 4127          [(293.15, 11.5), (373.15, 12.1), (473.15, 13.5), (573.15, 15.2), (673.15, 17.1)]
+CHECK ok   Inconel cp piecewise-linear = VDM 4127         [(293.15, 460.0), (373.15, 458.0), (473.15, 468.0), (573.15, 485.0), (673.15, 501.0)]
+CHECK ok   scheme pressure (final, second order)          'second-order'
+CHECK ok   scheme mom (final, second order)               'second-order-upwind'
+CHECK ok   scheme k (final, second order)                 'second-order-upwind'
+CHECK ok   scheme omega (final, second order)             'second-order-upwind'
+CHECK ok   scheme temperature (final, second order)       'second-order-upwind'
+CHECK ok   heated wall                                    ('Heat Flux', 8000.0)
+CHECK ok   interface coupling                             ('Coupled', 'Coupled')
+CHECK ok   solid ends adiabatic                           (0, 0)
+CHECK ok   solution limits (temperature)                  {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+CHECK ok   equations solved                               {'flow': True, 'kw': True, 'temperature': True}
+OK    Fluent report definitions on the loaded data           {'T_solid_max': [562.1271022462935, 'K'], 'T_solid_min': [423.9664735799979, 'K'], 'T_solid_mean': [525.482934
+OK    iso zs00 z=0.003333                                    
+OK    iso zs01 z=0.010000                                    
+OK    iso zs02 z=0.016667                                    
+OK    iso zs03 z=0.023333                                    
+OK    iso zs04 z=0.030000                                    
+OK    iso zs05 z=0.036667                                    
+OK    iso zs06 z=0.043333                                    
+OK    iso zs07 z=0.050000                                    
+OK    iso zs08 z=0.056667                                    
+OK    iso zs09 z=0.063333                                    
+OK    iso zs10 z=0.070000                                    
+OK    iso zs11 z=0.076667                                    
+OK    iso zs12 z=0.083333                                    
+OK    iso zs13 z=0.090000                                    
+OK    iso zs14 z=0.096667                                    
+OK    iso zs15 z=0.103333                                    
+OK    iso zs16 z=0.110000                                    
+OK    iso zs17 z=0.116667                                    
+OK    iso zs18 z=0.123333                                    
+OK    iso zs19 z=0.130000                                    
+OK    iso zs20 z=0.136667                                    
+OK    iso zs21 z=0.143333                                    
+OK    iso zs22 z=0.150000                                    
+OK    iso zs23 z=0.156667                                    
+OK    iso zs24 z=0.163333                                    
+OK    iso zs25 z=0.170000                                    
+OK    iso zs26 z=0.176667                                    
+OK    iso zs27 z=0.183333                                    
+OK    iso zs28 z=0.190000                                    
+OK    iso zs29 z=0.196667                                    
+OK    iso zs30 z=0.203333                                    
+OK    iso zs31 z=0.210000                                    
+OK    iso zs32 z=0.216667                                    
+OK    iso zs33 z=0.223333                                    
+OK    iso zs34 z=0.230000                                    
+OK    iso zs35 z=0.236667                                    
+OK    iso zs36 z=0.243333                                    
+OK    iso zs37 z=0.250000                                    
+OK    iso zs38 z=0.256667                                    
+OK    iso zs39 z=0.263333                                    
+OK    iso zs40 z=0.270000                                    
+OK    iso zs41 z=0.276667                                    
+OK    iso zs42 z=0.283333                                    
+OK    iso zs43 z=0.290000                                    
+OK    iso zs44 z=0.296667                                    
+OK    iso zs45 z=0.303333                                    
+OK    iso zs46 z=0.310000                                    
+OK    iso zs47 z=0.316667                                    
+OK    iso zs48 z=0.323333                                    
+OK    iso zs49 z=0.330000                                    
+OK    iso zs50 z=0.336667                                    
+OK    iso zs51 z=0.343333                                    
+OK    iso zs52 z=0.350000                                    
+OK    iso zs53 z=0.356667                                    
+OK    iso zs54 z=0.363333                                    
+OK    iso zs55 z=0.370000                                    
+OK    iso zs56 z=0.376667                                    
+OK    iso zs57 z=0.383333                                    
+OK    iso zs58 z=0.390000                                    
+OK    iso zs59 z=0.396667                                    
+OK    iso zs60 z=0.403333                                    
+OK    iso zs61 z=0.410000                                    
+OK    iso zs62 z=0.416667                                    
+OK    iso zs63 z=0.423333                                    
+OK    iso zs64 z=0.430000                                    
+OK    iso zs65 z=0.436667                                    
+OK    iso zs66 z=0.443333                                    
+OK    iso zs67 z=0.450000                                    
+OK    iso zs68 z=0.456667                                    
+OK    iso zs69 z=0.463333                                    
+OK    iso zs70 z=0.470000                                    
+OK    iso zs71 z=0.476667                                    
+OK    iso zs72 z=0.483333                                    
+OK    iso zs73 z=0.490000                                    
+OK    iso zs74 z=0.496667                                    
+OK    iso zs75 z=0.503333                                    
+OK    iso zs76 z=0.510000                                    
+OK    iso zs77 z=0.516667                                    
+OK    iso zs78 z=0.523333                                    
+OK    iso zs79 z=0.530000                                    
+OK    iso zs80 z=0.536667                                    
+OK    iso zs81 z=0.543333                                    
+OK    iso zs82 z=0.550000                                    
+OK    iso zs83 z=0.556667                                    
+OK    iso zs84 z=0.563333                                    
+OK    iso zs85 z=0.570000                                    
+OK    iso zs86 z=0.576667                                    
+OK    iso zs87 z=0.583333                                    
+OK    iso zs88 z=0.590000                                    
+OK    iso zs89 z=0.596667                                    
+OK    export solid cells                                     
+OK    export faces heated_outer_wall                         
+OK    export nodes heated_outer_wall                         
+OK    export faces fluid_solid_interface-shadow              
+OK    export nodes fluid_solid_interface-shadow              
+OK    export faces solid_inlet_end                           
+OK    export nodes solid_inlet_end                           
+OK    export faces solid_outlet_end                          
+OK    export nodes solid_outlet_end                          
+ROWS fluent_solid_cells.csv                             43200
+ROWS fluent_solid_face_heated_outer_wall.csv            4320
+ROWS fluent_solid_face_fluid_solid_interface-shadow.csv 4320
+ROWS fluent_solid_face_solid_inlet_end.csv              480
+ROWS fluent_solid_face_solid_outlet_end.csv             480
+CHECKS 19, failed 0; step failures 0

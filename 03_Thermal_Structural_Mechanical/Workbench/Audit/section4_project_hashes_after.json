@@ -1,0 +1,49 @@
+﻿{
+    "root":  "<PROJECT_ROOT>\\05_Meshing\\Workbench",
+    "taken":  "2026-09-25T11:11:56",
+    "count":  7,
+    "files":  [
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics.wbpj",
+                      "bytes":  39167,
+                      "mtime":  "2026-09-19T14:20:01",
+                      "sha256":  "1245CBEA490295B3325453D1DC601F97961479ABE6127AFB6D675EA26D693F70"
+                  },
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics_files\\.project_cache",
+                      "bytes":  316,
+                      "mtime":  "2026-09-25T11:04:32",
+                      "sha256":  "1F2E0B6B0F89C73EFFCFECCE2BCAA0624EF44B7A6FD27F36B8ACF37127FB6027"
+                  },
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics_files\\dp0\\act.dat",
+                      "bytes":  265640,
+                      "mtime":  "2026-09-19T14:20:01",
+                      "sha256":  "85134383D7A72F837554B0EC965A34720903494D3B80C3DCD9ED86029B287B8B"
+                  },
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics_files\\dp0\\designPoint.wbdp",
+                      "bytes":  29447,
+                      "mtime":  "2026-09-19T14:20:01",
+                      "sha256":  "25DFDE1815E6463D4D4223697420540098F1E708F2E6DB8A97C6E0D6A90994F4"
+                  },
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics_files\\dp0\\Geom\\DM\\Geom.scdocx",
+                      "bytes":  45861,
+                      "mtime":  "2026-09-18T19:13:22",
+                      "sha256":  "6E34B470A60397278D3D0EE0ED1674CC191A6C85566BF02781CC7915F0528B3F"
+                  },
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics_files\\dp0\\global\\MECH\\SYS.mshdb",
+                      "bytes":  3179144,
+                      "mtime":  "2026-09-19T14:17:39",
+                      "sha256":  "957EBFAC7D8C3D4E3AC0DF7D0C5EEF61FB64A11C62F9C4EC99B574797B582843"
+                  },
+                  {
+                      "file":  "Flow_Behavior_Thermal_Effects_Multiphysics_files\\session_files\\journal1.wbjn",
+                      "bytes":  1601,
+                      "mtime":  "2026-09-19T14:20:01",
+                      "sha256":  "6A310C286AF0554F78C629657725A041E9F081B32BDFF2ECEB8EC556C741EBE3"
+                  }
+              ]
+}

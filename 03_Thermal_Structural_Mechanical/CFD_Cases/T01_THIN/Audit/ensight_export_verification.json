@@ -1,0 +1,20 @@
+{
+  "exporter": "file.export.ensight_gold",
+  "arguments": {
+    "quantities": [
+      "temperature"
+    ],
+    "binary_format": true,
+    "cellzones": [
+      "solid_domain"
+    ],
+    "cell_centered": false
+  },
+  "files": {
+    "solid_domain_T.encas": 287,
+    "solid_domain_T.geo": 2234504,
+    "solid_domain_T.scl1": 242936,
+    "solid_domain_T.vel": 726024,
+    "solid_domain_T.xml": 882
+  }
+}

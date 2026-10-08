@@ -1,0 +1,356 @@
+{
+ "mesh_metrics": {
+  "ParallelDeviation": {
+   "min": 10.0, 
+   "max": 10.0, 
+   "avg": 10.0
+  }, 
+  "MaximumCornerAngle": {
+   "min": 95.0, 
+   "max": 95.0, 
+   "avg": 95.0
+  }, 
+  "JacobianRatio": {
+   "min": 1.1153, 
+   "max": 1.2046000000000001, 
+   "avg": 1.15350000000001
+  }, 
+  "ElementQuality": {
+   "min": 0.23667418368906179, 
+   "max": 0.99120634986953271, 
+   "avg": 0.68822512405436831
+  }, 
+  "WarpingFactor": {
+   "min": 0.0, 
+   "max": 1.3706999999999999e-13, 
+   "avg": 1.4806164365752113e-14
+  }, 
+  "Skewness": {
+   "min": 0.055555555678873811, 
+   "max": 0.055555555678877488, 
+   "avg": 0.055555555678875615
+  }, 
+  "AspectRatio": {
+   "min": 1.1374, 
+   "max": 4.8823, 
+   "avg": 2.4130510769230917
+  }
+ }, 
+ "mesh_controls_before": [
+  [
+   "M36_Sweep_130_axial_bias4", 
+   "AutomaticMethod", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_Mapped_End_5_radial", 
+   "FaceMeshing", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_36_circumferential", 
+   "Sizing", 
+   "FullyDefined"
+  ]
+ ], 
+ "cases": {}, 
+ "mesh_regenerated": false, 
+ "mapping_named_selections": [], 
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 parametric structural solution (not recovered)", 
+ "mesh": {
+  "expected_nodes": 108252, 
+  "elements": 23400, 
+  "expected_elements": 23400, 
+  "nodes": 108252
+ }, 
+ "midspan_radial_node_positions_m": [
+  0.01, 
+  0.010999999999999999, 
+  0.012, 
+  0.012999999999999999, 
+  0.014, 
+  0.014999999999999999, 
+  0.016, 
+  0.017000000000000001, 
+  0.017999999999999999, 
+  0.019, 
+  0.02
+ ], 
+ "FATAL": "PRE-SOLVE GATE FAILED - nothing solved: ['LC1 input (C00 control): nodal temperatures identical to the 7B solved input', 'LC2 input (C00 control): nodal temperatures identical to the 7B solved input']", 
+ "presolve_input": {
+  "LC1": {
+   "bf_identical_to_7B": false, 
+   "bf_max_K": 562.5658217, 
+   "eblock_identical_to_7B": true, 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ]
+   ], 
+   "extra_eblocks": [], 
+   "has_443.41": false, 
+   "n_bf": 108252, 
+   "nblock_identical_to_7B": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "n_nodes": 108252, 
+   "bf_min_K": 423.83737199999996, 
+   "n_elem_lines": 23400
+  }, 
+  "LC2": {
+   "bf_identical_to_7B": false, 
+   "bf_max_K": 562.5658217, 
+   "eblock_identical_to_7B": true, 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     1224, 
+     80282530, 
+     18577, 
+     108252
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ]
+   ], 
+   "extra_eblocks": [], 
+   "has_443.41": false, 
+   "n_bf": 108252, 
+   "nblock_identical_to_7B": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "n_nodes": 108252, 
+   "bf_min_K": 423.83737199999996, 
+   "n_elem_lines": 23400
+  }
+ }, 
+ "mesh_settings": {
+  "bias": "4.0", 
+  "circumferential": "36", 
+  "face_meshing_location": "SOLID_INLET_END", 
+  "radial": "5", 
+  "element_order": "Quadratic", 
+  "sweep_divisions": "130", 
+  "sizing_edges": "[11, 12, 10, 9]", 
+  "bias_type": "o_ooo_ooooo_ooo_o", 
+  "sweep_location": "SOLID_DOMAIN", 
+  "mapped": "True"
+ }, 
+ "mapping": {
+  "LC1": {
+   "state": "Solved", 
+   "max_K": 562.56999999999994, 
+   "min_C": 150.69, 
+   "source_min_K": 423.837341, 
+   "source_max_K": 562.54364, 
+   "max_C": 289.42, 
+   "n": 108252, 
+   "min_K": 423.84
+  }, 
+  "LC2": {
+   "state": "Solved", 
+   "max_K": 562.56999999999994, 
+   "min_C": 150.69, 
+   "source_min_K": 423.837341, 
+   "source_max_K": 562.54364, 
+   "max_C": 289.42, 
+   "n": 108252, 
+   "min_K": 423.84
+  }
+ }, 
+ "support_nodes": {
+  "LC1": [
+   [
+    18882, 
+    0.02, 
+    0.0, 
+    0.0
+   ], 
+   [
+    18894, 
+    0.02, 
+    0.0, 
+    120.0
+   ], 
+   [
+    18870, 
+    0.02, 
+    0.0, 
+    -120.0
+   ]
+  ], 
+  "LC2": [
+   [
+    25874, 
+    0.02, 
+    0.29999999999999999, 
+    0.0
+   ], 
+   [
+    25886, 
+    0.02, 
+    0.29999999999999999, 
+    120.0
+   ], 
+   [
+    25862, 
+    0.02, 
+    0.29999999999999999, 
+    -120.0
+   ]
+  ]
+ }, 
+ "analyses": [
+  [
+   "LC1_Free_Expansion", 
+   "Static"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Static"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Static"
+  ], 
+  [
+   "LC2_Linear_Buckling_C00_PIPELINE_CHECK", 
+   "Buckling"
+  ]
+ ], 
+ "LC2P": {
+  "state_after_clear": "NotSolved", 
+  "solved_in_9B2": false, 
+  "note": "copied from the 7B project; results cleared; not solved for the parametric cases (Part N)"
+ }, 
+ "bodies": {
+  "solid_material": "Inconel_718_Re_analysis", 
+  "fluid_suppressed": true, 
+  "solid_volume_m3": 0.00056548667764616284, 
+  "expected_volume_m3": 0.00056548667764616284
+ }, 
+ "mesh_controls_after": [
+  [
+   "M36_Sweep_130_axial_bias4", 
+   "AutomaticMethod", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_Mapped_End_5_radial", 
+   "FaceMeshing", 
+   "FullyDefined"
+  ], 
+  [
+   "M36_36_circumferential", 
+   "Sizing", 
+   "FullyDefined"
+  ]
+ ], 
+ "case": {
+  "bias": 4.0, 
+  "geometry": null, 
+  "tag": "C00_PIPELINE_CHECK", 
+  "external_data_readback": {
+   "length_units": [
+    "m", 
+    "m"
+   ], 
+   "after": [
+    "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_mesh.cdb", 
+    "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_node_temperature.csv"
+   ], 
+   "format": [
+    "Cdb", 
+    "Delimited"
+   ], 
+   "delimiter": [
+    "Comma", 
+    ","
+   ], 
+   "ok": true, 
+   "columns": [
+    [
+     "Node ID", 
+     ""
+    ], 
+    [
+     "Temperature", 
+     "K"
+    ]
+   ], 
+   "case": "C00_PIPELINE_CHECK", 
+   "before": [
+    "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+    "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+   ], 
+   "master": [
+    true, 
+    false
+   ], 
+   "start_line": "2"
+  }, 
+  "Di": 0.02, 
+  "L": 0.59999999999999998, 
+  "source_node_T_K": [
+   423.83734130859375, 
+   562.54364013671875
+  ], 
+  "source_T_range_K": [
+   423.21115, 
+   562.57678
+  ], 
+  "buckling": true, 
+  "cfd_case": "C00_PIPELINE_CHECK", 
+  "nc": 36, 
+  "cdb": "10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb", 
+  "Do": 0.040000000000000001, 
+  "nr": 5, 
+  "csv": "10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv", 
+  "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK.wbpj", 
+  "na": 130, 
+  "pressure": false
+ }
+}

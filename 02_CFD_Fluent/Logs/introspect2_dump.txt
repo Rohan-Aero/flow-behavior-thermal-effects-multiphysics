@@ -1,0 +1,70 @@
+mesh read
+solver.setup.general.solver.type                               allowed=['pressure-based', 'density-based-implicit', 'density-based-explicit']
+solver.setup.general.solver.time                               allowed=['steady', 'transient']
+solver.setup.general.solver.velocity_formulation               allowed=['absolute', 'relative']
+solver.setup.models.viscous.model                              allowed=['inviscid', 'laminar', 'k-epsilon', 'k-omega', 'mixing-length', 'spalart-allmaras', 'k-kl-w', 'transition-sst', 'reynolds-stress', 'scale-adaptive-simulation', 'detached-eddy-simulation', 'large-eddy-simulation']
+solver.setup.models.viscous.k_omega_model                      allowed=['standard', 'geko', 'bsl', 'sst', 'wj-bsl-earsm']
+solver.setup.models.viscous.near_wall_treatment                children=['wall_treatment', 'user_defined', 'enhanced_wall_treatment_options', 'wall_omega_treatment', 'use_second_cell_off_a_wall_quantities']
+solver.setup.materials.fluid['air'].density.option             allowed=['value', 'ideal-gas', 'incompressible-ideal-gas', 'rgp-table', 'real-gas-soave-redlich-kwong', 'real-gas-peng-robinson', 'real-gas-aungier-redlich-kwong', 'real-gas-redlich-kwong', 'real-gas-nist', 'boussinesq', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'compressible-liquid']
+solver.setup.materials.fluid['air'].viscosity.option           allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'power-law', 'sutherland', 'kinetic-theory']
+solver.setup.materials.fluid['air'].specific_heat.option       UNAVAILABLE '<session>.settings.setup.materials.fluid["air"].specific_heat' is currently inactive.
+solver.setup.materials.fluid['air'].thermal_conductivity.option UNAVAILABLE '<session>.settings.setup.materials.fluid["air"].thermal_conductivity' is currently inactive.
+solver.setup.boundary_conditions.wall['heated_outer_wall'].thermal.thermal_condition UNAVAILABLE '<session>.settings.setup.boundary_conditions.wall["heated_outer_wall"].thermal' is currently inactive.
+solver.setup.boundary_conditions.wall['fluid_solid_interface'].thermal.thermal_condition UNAVAILABLE '<session>.settings.setup.boundary_conditions.wall["fluid_solid_interface"].thermal' is currently inactive.
+solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].turbulence.turbulence_specification allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].momentum.velocity_specification_method allowed=['Magnitude and Direction', 'Components', 'Magnitude, Normal to Boundary']
+solver.setup.boundary_conditions.pressure_outlet['fluid_outlet'].turbulence.turbulence_specification allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+solver.setup.cell_zone_conditions.fluid['fluid_domain'].general children=['material', 'participates_in_radiation', 'glass', 'laminar', 'vapor_phase_realgas', 'contact_property']
+solver.setup.cell_zone_conditions.solid['solid_domain'].general children=['material', 'participates_in_radiation']
+solver.setup.cell_zone_conditions.fluid['fluid_domain'].general children=['material', 'participates_in_radiation', 'glass', 'laminar', 'vapor_phase_realgas', 'contact_property']
+solver.setup.cell_zone_conditions.solid['solid_domain'].general children=['material', 'participates_in_radiation']
+solver.setup.materials.fluid['air'].specific_heat              children=['option', 'value', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'nasa_9_piecewise_polynomial', 'user_defined_function', 'rgp_table', 'real_gas_nist']
+solver.setup.materials.fluid['air'].thermal_conductivity       children=['option', 'value', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'gupta_curve_fit_conductivity', 'user_defined_function', 'rgp_table', 'real_gas_nist']
+solver.setup.materials.fluid['air'].density.piecewise_linear   children=['function_of', 'data_points']
+solver.solution.methods.p_v_coupling                           children=['flow_scheme', 'skewness_correction_itr_count', 'neighbor_correction_itr_count', 'skewness_neighbor_coupling', 'coupled_form', 'solve_n_phase', 'flux_type', 'flux_auto_select']
+solver.solution.methods.spatial_discretization                 children=['gradient_scheme', 'discretization_scheme']
+solver.solution.monitor.residual                               children=['equations', 'options', 'axes', 'curves']
+solver.solution.monitor.residual                               commands=['reset', 'renormalize', 'plot', 'write']
+solver.solution.monitor.report_files                           children=[]
+solver.solution.monitor.report_files                           commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy', 'delete_all', 'clear_data']
+solver.solution.monitor.report_plots                           children=[]
+solver.solution.monitor.report_plots                           commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy', 'delete_all']
+solver.solution.report_definitions.surface                     children=[]
+solver.solution.report_definitions.surface                     commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+solver.solution.report_definitions.volume                      children=[]
+solver.solution.report_definitions.volume                      commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+solver.solution.report_definitions.flux                        children=[]
+solver.solution.report_definitions.flux                        commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+solver.solution.initialization.defaults                        children=[]
+solver.solution.initialization.defaults                        commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+solver.solution.run_calculation.parameters                     children=['period', 'frequency', 'time_steps_per_period', 'time_step_count', 'error_tolerance', 'incremental_time', 'total_time_step_count', 'total_time', 'time_step_size', 'total_periods', 'global_courant_number', 'courant_number', 'fixed_time_step_size', 'initial_time_step_size', 'iter_count', 'max_iter_per_time_step', 'reporting_interval', 'profile_update_interval', 'update_interval', 'adaptive_time_stepping']
+solver.results.surfaces                                        children=['point_surface', 'line_surface', 'rake_surface', 'plane_surface', 'iso_surface', 'iso_clip', 'zone_surface', 'partition_surface', 'transform_surface', 'imprint_surface', 'plane_slice', 'sphere_slice', 'quadric_surface', 'surface_cells', 'expression_volume', 'group_surface']
+solver.results.surfaces                                        commands=['delete', 'create_multiple_zone_surfaces', 'create_multiple_iso_surfaces', 'create_multiple_plane_surfaces', 'create_group_surfaces', 'ungroup_surfaces', 'set_rendering_priority', 'reset_zone_surfaces', 'split_surface', 'external_surface']
+solver.file                                                    children=['single_precision_coordinates', 'binary_legacy_files', 'cff_files', 'auto_merge_zones', 'convert_hanging_nodes_during_read', 'async_optimize', 'write_pdat', 'export', 'import_', 'parametric_project', 'cffio_options', 'batch_options', 'interpolate', 'table_file_manager']
+solver.file                                                    commands=['define_macro', 'execute_macro', 'read_macros', 'read', 'read_case', 'read_case_data', 'read_case_lightweight', 'read_data', 'read_mesh', 'read_surface_mesh', 'read_journal', 'start_journal', 'start_python_journal', 'stop_journal', 'replace_mesh', 'write', 'write_case', 'write_data', 'write_case_data', 'read_settings', 'read_field_functions', 'read_injections', 'read_profile', 'read_pdf', 'read_isat_table', 'show_configuration', 'stop_macro', 'start_transcript', 'stop_transcript', 'data_file_options', 'beta_settings']
+solver.mesh                                                    children=['adapt', 'geometry', 'anisotropic_adaption', 'check_before_solve', 'check_verbosity', 'enhanced_orthogonal_quality', 'matching_tolerance', 'modify_zones', 'show_periodic_shadow_zones', 'reorder', 'repair_improve', 'surface_mesh', 'polyhedra', 'wall_distance_method']
+solver.mesh                                                    commands=['adjacency', 'check', 'memory_usage', 'mesh_info', 'quality', 'rotate', 'scale', 'size_info', 'redistribute_boundary_layer', 'swap_mesh_faces', 'smooth_mesh', 'replace', 'translate']
+solver.setup.reference_values                                  children=['area', 'depth', 'density', 'enthalpy', 'length', 'pressure', 'temperature', 'yplus', 'velocity', 'viscosity', 'ratio_of_specific_heats', 'zone', 'volume']
+solver.setup.reference_values                                  commands=['compute', 'list_values']
+solver.solution.methods.p_v_coupling.flow_scheme               allowed=['SIMPLE', 'SIMPLEC', 'PISO', 'Coupled']
+solver.solution.methods.spatial_discretization.gradient_scheme allowed=['green-gauss-node-based', 'green-gauss-cell-based', 'least-square-cell-based']
+solver.solution.methods.spatial_discretization.pressure_scheme UNAVAILABLE 'spatial_discretization' object has no attribute 'pressure_scheme'.
+The most similar names are: gradient_scheme
+solver.solution.methods.spatial_discretization.mom_scheme      UNAVAILABLE 'spatial_discretization' object has no attribute 'mom_scheme'.
+The most similar names are: gradient_scheme
+solver.solution.methods.spatial_discretization.energy_scheme   UNAVAILABLE 'spatial_discretization' object has no attribute 'energy_scheme'.
+The most similar names are: gradient_scheme
+solver.solution.methods.spatial_discretization.k_scheme        UNAVAILABLE 'spatial_discretization' object has no attribute 'k_scheme'.
+The most similar names are: gradient_scheme
+solver.solution.methods.spatial_discretization.omega_scheme    UNAVAILABLE 'spatial_discretization' object has no attribute 'omega_scheme'.
+The most similar names are: gradient_scheme
+solver.solution.initialization.initialization_type             allowed=['standard', 'hybrid']
+residual children: ['equations', 'options', 'axes', 'curves']
+residual equations: ['continuity', 'x-velocity', 'y-velocity', 'z-velocity', 'k', 'omega']
+flux report children: ['name', 'report_type', 'boundaries', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'phase', 'output_parameter', 'create_report_file', 'create_report_plot']
+surface report children: ['name', 'report_type', 'field', 'surface_names', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'custom_vector', 'phase', 'output_parameter', 'create_report_file', 'create_report_plot']
+volume report children: ['name', 'report_type', 'field', 'cell_zones', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'phase', 'output_parameter', 'create_report_file', 'create_report_plot']
+report_files children: ['name', 'file_name', 'frequency_of', 'frequency', 'flow_frequency', 'itr_index', 'run_index', 'report_defs', 'print', 'active', 'write_instantaneous_values']
+MW read failed: '<session>.settings.setup.materials.fluid["air"].molecular_weight' is currently inactive.
+database list (solid, inconel search):
+None

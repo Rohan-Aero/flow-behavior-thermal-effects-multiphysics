@@ -1,0 +1,12 @@
+﻿V1   PASS  the eight 10A deliverables exist in 11_Final_Audit
+V2   PASS  re-analysis notice at the top of every deliverable
+V3   PASS  no judgement words (safe / best / optimal / failure-proof) outside quoted scan-term lists
+V4   PASS  master CSV: header notice, sequential unique IDs, allowed statuses, no MISMATCH
+V5   PASS  every recomputed item is in the CSV with the same status and a correctly rounded value
+V6   PASS  every file named in the 'Source file' column exists in the project
+V7   PASS  parametric tables in the synthesis and in MASTER_PROJECT_DATA.md equal the CSV cell by cell
+V8   PASS  the brief's key numbers exist in the master data with their modelling level
+V9   PASS  content rules of the brief
+V10  PASS  project files unchanged since the 10A manifest except the three planned edits
+V11  PASS  no Python bytecode written into 11_Final_Audit
+PASSED 11 / 11

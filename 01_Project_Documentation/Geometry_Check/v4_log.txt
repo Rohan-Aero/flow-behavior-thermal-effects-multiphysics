@@ -1,0 +1,15 @@
+opened; bodies=2 groups=11
+groups: ['FLUID_DOMAIN', 'SOLID_DOMAIN', 'FLUID_INLET', 'FLUID_OUTLET', 'FLUID_WALL', 'FLUID_SOLID_INTERFACE', 'SOLID_INNER_INTERFACE', 'HEATED_OUTER_WALL', 'SOLID_INLET_END', 'SOLID_OUTLET_END', 'STRUCTURAL_SUPPORT']
+-- globals containing 'hare' or 'opolog' --
+['DesignMeshTopology', 'FixUnshareOptions', 'ForceShare', 'ForceShareOptions', 'IDesignMeshTopology', 'SharePrep', 'SharePrepOptions', 'SharePrepResult', 'ShareTopology', 'ShareTopologyNamedSelection', 'ShareTopologyNamedSelectionOptions', 'ShareTopologyOptions', 'SplitBlockUnshareEdge', 'SplitBlockUnshareEdgeResult', 'Unshare']
+Document attrs with 'hare': []
+Part attrs with 'hare': ['ShareTopology']
+ShareTopology globals: ['BodyList', 'CurveContainerList', 'CurveList', 'Equals', 'ExcludeProblemArea', 'ExecuteCommand', 'FindAndFix', 'FindProblemAreas', 'FindProblemAreasConsideringInstancing', 'Fix', 'FixSpecific', 'GetHashCode', 'GetType', 'IncludeProblemArea', 'MemberwiseClone', 'MeshList', 'ProblemAreas', 'ReferenceEquals', 'ToString', 'UpgradeLegacy', 'options', 'problemAreas']
+share topology attempt: ShareTopology.FindAndFix OK: True
+-- exports --
+  heated_duct.x_t              -> False
+  heated_duct.x_b              -> False
+  heated_duct.xmt_txt          -> False
+  heated_duct.stp              -> True
+  reference_mesh_preview.stl   -> True
+=== v4 DONE ===

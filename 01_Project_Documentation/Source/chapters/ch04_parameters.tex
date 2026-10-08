@@ -1,0 +1,59 @@
+% ===================================================================== Chapter 4
+\chapter{Engineering Parameters and Materials}\label{ch:params}
+
+\section{Geometry Parameters}
+The geometry of Table~\ref{tab:geometry} was chosen by decision D-008: a bore of 20~mm with $L/D_i$ = 30 gives a turbulent flow that
+develops over the first 18 diameters; $D_o/D_i$ = 2 gives a wall whose conduction resistance is small but measurable. For the thickness
+study the outer diameter is changed to 36 and 44~mm with the bore unchanged.
+
+\section{Fluid Properties}
+Air is modelled with temperature-dependent specific heat, viscosity and conductivity from Incropera and DeWitt, Table A.4 \cite{incropera}
+(Table~\ref{tab:air}). A cross-check against a second table \cite{cengel} showed about 3\,\% spread in $k$ and $Pr$, which partly cancel to
+less than 2\,\% in $h$. Density is not read from the table, whose values refer to 100~kPa; it is computed from Equation~\eqref{eq:idealgas}
+at 101,325~Pa. The CFD inlet density implied by the solved mass flow agrees with the analytical value to 0.006\,\%.
+
+\input{../Tables/tab_air}
+
+\section{Inconel 718 Properties}
+The solid is age-hardened Inconel 718. Temperature-dependent elastic modulus, conductivity, specific heat and proof strength are taken from
+the VDM data sheet \cite{vdm718}; the mean thermal expansion coefficient and density from Special Metals data \cite{htm718}
+(Table~\ref{tab:inconel}). Poisson's ratio appears in neither data sheet and is an assumption (0.294, literature range 0.284--0.294). The
+data are generic datasheet values, not lot-specific properties.
+
+\input{../Tables/tab_inconel}
+
+\section{Temperature-Dependent Properties}
+Across the solved temperature range the conductivity of Inconel varies by about 32\,\% and the elastic modulus by about 8\,\%, so constant
+properties would change the answer. Fluent uses piecewise-linear $k_s(T)$ and $c_{p,s}(T)$; Mechanical uses $E(T)$ and the secant
+$\alpha(T)$, re-referenced from the 70\,\textdegree F datum of the data to $T_{ref}$ = 300~K. The yield strength $S_y(T)$ is used only for
+assessment and is interpolated at each node's own temperature. The analytical baseline used single values at the mean temperature
+($E$ = 188.1~GPa, $\alpha$ = $13.72\times10^{-6}$/K, $S_y$ = 1023.7~MPa at 281.6\,\textdegree C).
+
+\section{Boundary Conditions}
+The CFD boundary conditions are listed in Table~\ref{tab:bc}. The heat flux enters only through \texttt{heated\_outer\_wall}; the interface
+temperature is solved, never imposed.
+
+\input{../Tables/tab_bc}
+
+\section{Structural Constraints}
+Table~\ref{tab:supports} defines the structural load cases and support scenarios. LC1 is statically determinate, so the duct can expand
+freely and any reaction is numerical noise. LC2 holds both complete end faces axially; the three mid-span hoop nodes only remove the rigid-body
+rotation. Under LC2 the end faces stay plane and perpendicular to the axis, but the ends are free to translate sideways: in buckling terms
+this is a guided (sway) column with $K = 1$. S2 and S3 add lateral restraint at one or both ends. None of the three is a model of a real
+flange, whose stiffness is undefined.
+
+\input{../Tables/tab_supports}
+
+\section{Assumptions}
+The principal assumptions and their final status after all simulations are listed in Table~\ref{tab:assumptions}. Several Section 1
+assumptions were superseded by the solved models (for example constant material properties); the full register of 31 entries with its
+evidence is kept in \texttt{MASTER\_ASSUMPTIONS.md}.
+
+\input{../Tables/tab_assumptions}
+
+\section{Property Validity Ranges}
+Table~\ref{tab:validity} compares the ranges of the property data and correlations with the ranges actually reached. Every solved case stayed
+inside the air and Inconel property tables at every iteration. The air table ends at 600~K, which set the lower velocity and upper heat-flux
+limits of the parametric study: the highest air-side temperature, 583.4~K in case Q03, is 16.6~K below the table end.
+
+\input{../Tables/tab_validity}

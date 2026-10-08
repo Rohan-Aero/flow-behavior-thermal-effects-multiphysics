@@ -1,0 +1,64 @@
+{
+ "bias": 4.0, 
+ "geometry": null, 
+ "tag": "C00_PIPELINE_CHECK", 
+ "external_data_readback": {
+  "after": [
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_node_temperature.csv"
+  ], 
+  "delimiter": [
+   "Comma", 
+   ","
+  ], 
+  "master": [
+   true, 
+   false
+  ], 
+  "ok": true, 
+  "start_line": "2", 
+  "length_units": [
+   "m", 
+   "m"
+  ], 
+  "columns": [
+   [
+    "Node ID", 
+    ""
+   ], 
+   [
+    "Temperature", 
+    "K"
+   ]
+  ], 
+  "before": [
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+  ], 
+  "format": [
+   "Cdb", 
+   "Delimited"
+  ], 
+  "case": "C00_PIPELINE_CHECK"
+ }, 
+ "Di": 0.02, 
+ "L": 0.59999999999999998, 
+ "source_node_T_K": [
+  423.83734130859375, 
+  562.54364013671875
+ ], 
+ "source_T_range_K": [
+  423.21115, 
+  562.57678
+ ], 
+ "buckling": true, 
+ "cfd_case": "C00_PIPELINE_CHECK", 
+ "nc": 36, 
+ "cdb": "10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb", 
+ "Do": 0.040000000000000001, 
+ "nr": 5, 
+ "csv": "10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv", 
+ "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK.wbpj", 
+ "na": 130, 
+ "pressure": false
+}

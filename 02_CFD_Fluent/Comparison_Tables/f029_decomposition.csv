@@ -1,0 +1,16 @@
+# F-029: multiplicative decomposition of the medium-mesh friction-factor gap vs Section 2 (window x/D 18-29). Isothermal factor from the CFD isothermal diagnostic on the medium mesh. RE-ANALYSIS 2026.
+factor,value,percent
+re_basis,1.011175,+1.117
+sst_isothermal_medium,0.974275,-2.572
+heating_cfd,0.909615,-9.038
+product,0.896119,-10.388
+medium_over_section2,0.896119,-10.388
+heating_petukhov_m_minus0p1,0.957251,-4.275
+heating_beyond_m_minus0p1,0.950237,-4.976
+mesh_medium_to_fine,1.008473,+0.847
+mesh_medium_to_extrapolated,1.022734,+2.273
+iso_mesh_corrected_vs_petukhov,0.996425,-0.358
+iso_development_xD29_over_window,1.015785,+1.579
+iso_rise_xD18_to_29,1.029329,+2.933
+iso_xD29_vs_petukhov,0.989654,-1.035
+heated_medium_consistency,1.000000,+0.000

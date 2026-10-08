@@ -1,0 +1,74 @@
+=== SECTION 8A WB BUCKLING (RE-ANALYSIS 2026) ===
+opened 7B project
+SAVED AS <PROJECT_ROOT>\08_Structural_Analysis\Buckling\Workbench\Flow_Behavior_Thermal_Effects_Buckling_8A.wbpj (7B project kept as solved in 7B)
+systems ['CFD solid T (baseline_medium_final)', 'Fluent', 'Geometry', 'LC1 Free Expansion', 'LC2 Axially Restrained', 'LC2P Restrained Thermal + Pressure', 'Mesh']
+template Eigenvalue Buckling not available: Template Eigenvalue Buckling (ANSYS) not found in Project.
+buckling template: Linear Buckling
+DataTransferFrom route failed (LC2 Linear Buckling): Component Template SimulationSetupCellTemplate_StructuralEigenvalueBucklingANSYS not found in Project. - fallback: create then TransferData
+buckling system created + Solution->Setup TransferData (LC2 Linear Buckling)
+OK   rename LC2 Linear Buckling 
+OK   rename NS 
+OK   ED -> LC2NS Setup 
+template Eigenvalue Buckling not available: Template Eigenvalue Buckling (ANSYS) not found in Project.
+buckling template: Linear Buckling
+DataTransferFrom route failed (LC2NS Linear Buckling): Component Template SimulationSetupCellTemplate_StructuralEigenvalueBucklingANSYS not found in Project. - fallback: create then TransferData
+buckling system created + Solution->Setup TransferData (LC2NS Linear Buckling)
+OK   rename LC2NS Linear Buckling 
+saved with buckling systems
+system Geometry (Geom): ['Geometry']
+system Mesh (SYS): ['Geometry 1', 'Mesh']
+system Fluent (FLU): ['Setup', 'Solution']
+system LC1 Free Expansion (SYS 2): ['Engineering Data', 'Geometry 2', 'Model', 'Setup 2', 'Solution 1', 'Results']
+system LC2 Axially Restrained (SYS 3): ['Engineering Data 1', 'Geometry 3', 'Model 1', 'Setup 3', 'Solution 2', 'Results 1']
+system LC2 Linear Buckling (SYS 5): ['Engineering Data 3', 'Geometry 5', 'Model 3', 'Setup 5', 'Solution 4', 'Results 3']
+system LC2P Restrained Thermal + Pressure (SYS 4): ['Engineering Data 2', 'Geometry 4', 'Model 2', 'Setup 4', 'Solution 3', 'Results 2']
+system LC2NS No-Sway Static (SYS 6): ['Engineering Data 4', 'Geometry 6', 'Model 4', 'Setup 6', 'Solution 5', 'Results 4']
+system LC2NS Linear Buckling (SYS 7): ['Engineering Data 5', 'Geometry 7', 'Model 5', 'Setup 7', 'Solution 6', 'Results 5']
+system CFD solid T (baseline_medium_final) (SYS 1): ['Setup 1']
+OK   model refresh 
+mechanical opened
+mechanical script sent (returned)
+saved after solve
+OK   state Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Setup 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2 Axially Restrained/Solution 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2 Axially Restrained/Results 1 <cell state: Modified: wb2qh_Mech_ur>
+OK   state LC2 Linear Buckling/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Linear Buckling/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Linear Buckling/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Linear Buckling/Setup 5 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2 Linear Buckling/Solution 4 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2 Linear Buckling/Results 3 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Setup 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Solution 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Results 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS No-Sway Static/Engineering Data 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS No-Sway Static/Geometry 6 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS No-Sway Static/Model 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS No-Sway Static/Setup 6 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2NS No-Sway Static/Solution 5 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2NS No-Sway Static/Results 4 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2NS Linear Buckling/Engineering Data 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS Linear Buckling/Geometry 7 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS Linear Buckling/Model 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2NS Linear Buckling/Setup 7 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2NS Linear Buckling/Solution 6 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2NS Linear Buckling/Results 5 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB BUCKLING 8A DONE ===

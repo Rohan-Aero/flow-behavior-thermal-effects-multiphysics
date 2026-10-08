@@ -1,0 +1,179 @@
+"# Fine-mesh setup read back from Fluent vs the medium run's own read-back audit, same stage. RE-ANALYSIS 2026."
+stage,item,fine_value,medium_value,match
+1_presolve,fluent version,"""Ansys Fluent 2026 R1""","""Ansys Fluent 2026 R1""",yes
+1_presolve,solver type,"""pressure-based""","""pressure-based""",yes
+1_presolve,time,"""steady""","""steady""",yes
+1_presolve,velocity formulation,"""absolute""","""absolute""",yes
+1_presolve,operating pressure [Pa],101325,101325,yes
+1_presolve,gravity enabled,false,false,yes
+1_presolve,energy equation,true,true,yes
+1_presolve,energy: viscous dissipation,false,false,yes
+1_presolve,energy: pressure work,false,false,yes
+1_presolve,energy: kinetic energy,false,false,yes
+1_presolve,viscous model,"""k-omega""","""k-omega""",yes
+1_presolve,k-omega variant,"""sst""","""sst""",yes
+1_presolve,SST wall omega treatment,"""correlation""","""correlation""",yes
+1_presolve,SST low-Re correction,false,false,yes
+1_presolve,radiation model,"""none""","""none""",yes
+1_presolve,air density model,"""incompressible-ideal-gas""","""incompressible-ideal-gas""",yes
+1_presolve,air molecular weight,28.966,28.966,yes
+1_presolve,air cp model,"""piecewise-linear""","""piecewise-linear""",yes
+1_presolve,air cp curve = Incropera A.4,true,true,yes
+1_presolve,air mu model,"""piecewise-linear""","""piecewise-linear""",yes
+1_presolve,air mu curve = Incropera A.4,true,true,yes
+1_presolve,air k model,"""piecewise-linear""","""piecewise-linear""",yes
+1_presolve,air k curve = Incropera A.4,true,true,yes
+1_presolve,Inconel density option,"""value""","""value""",yes
+1_presolve,Inconel density [kg/m3],8190.0,8190.0,yes
+1_presolve,Inconel k model,"""piecewise-linear""","""piecewise-linear""",yes
+1_presolve,Inconel k curve = VDM 4127,true,true,yes
+1_presolve,Inconel cp model,"""piecewise-linear""","""piecewise-linear""",yes
+1_presolve,Inconel cp curve = VDM 4127,true,true,yes
+1_presolve,fluid zone material,"""air""","""air""",yes
+1_presolve,solid zone material,"""inconel-718""","""inconel-718""",yes
+1_presolve,inlet velocity spec,"""Magnitude, Normal to Boundary""","""Magnitude, Normal to Boundary""",yes
+1_presolve,inlet velocity [m/s],23.5,23.5,yes
+1_presolve,inlet temperature [K],300,300,yes
+1_presolve,inlet turbulence spec,"""Intensity and Hydraulic Diameter""","""Intensity and Hydraulic Diameter""",yes
+1_presolve,inlet turbulent intensity [-],0.04411209588036475,0.04411209588036475,yes
+1_presolve,inlet hydraulic diameter [m],0.02,0.02,yes
+1_presolve,outlet gauge pressure [Pa],0,0,yes
+1_presolve,outlet prevent reverse flow,true,true,yes
+1_presolve,outlet backflow T branch active,false,false,yes
+1_presolve,heated wall condition,"""Heat Flux""","""Heat Flux""",yes
+1_presolve,heated wall flux [W/m2],8000.0,8000.0,yes
+1_presolve,solid inlet end,"[""Heat Flux"", 0]","[""Heat Flux"", 0]",yes
+1_presolve,solid outlet end,"[""Heat Flux"", 0]","[""Heat Flux"", 0]",yes
+1_presolve,interface thermal coupling,"""Coupled""","""Coupled""",yes
+1_presolve,interface shadow coupling,"""Coupled""","""Coupled""",yes
+1_presolve,p-v coupling,"""Coupled""","""Coupled""",yes
+1_presolve,gradient scheme,"""least-square-cell-based""","""least-square-cell-based""",yes
+1_presolve,scheme pressure,"""second-order""","""second-order""",yes
+1_presolve,scheme mom,"""first-order-upwind""","""first-order-upwind""",yes
+1_presolve,scheme k,"""first-order-upwind""","""first-order-upwind""",yes
+1_presolve,scheme omega,"""first-order-upwind""","""first-order-upwind""",yes
+1_presolve,scheme temperature,"""first-order-upwind""","""first-order-upwind""",yes
+1_presolve,pseudo-time formulation,"""global-time-step""","""global-time-step""",yes
+1_presolve,pseudo-time step settings,"{""time_step_method"": ""automatic"", ""length_scale_methods"": ""conservative"", ""time_step_size_scale_factor"": 1.0, ""verbosity"": 0, ""auto_time_size_calc_solid_zone"": true, ""time_solid_scale_factor"": 1.0}","{""time_step_method"": ""automatic"", ""length_scale_methods"": ""conservative"", ""time_step_size_scale_factor"": 1.0, ""verbosity"": 0, ""auto_time_size_calc_solid_zone"": true, ""time_solid_scale_factor"": 1.0}",yes
+1_presolve,explicit pseudo relaxation,"{""global_dt_pseudo_relax"": {""density"": 1.0, ""body-force"": 1.0, ""k"": 0.75, ""omega"": 0.75, ""turb-viscosity"": 1.0, ""temperature"": 0.75}}","{""global_dt_pseudo_relax"": {""density"": 1.0, ""body-force"": 1.0, ""k"": 0.75, ""omega"": 0.75, ""turb-viscosity"": 1.0, ""temperature"": 0.75}}",yes
+1_presolve,explicit p/mom under-relaxation,"{""explicit_pressure_under_relaxation"": 0.5, ""explicit_momentum_under_relaxation"": 0.5}","{""explicit_pressure_under_relaxation"": 0.5, ""explicit_momentum_under_relaxation"": 0.5}",yes
+1_presolve,solution limits,"{""min_pressure"": 1, ""max_pressure"": 50000000000.0, ""min_temperature"": 1, ""max_temperature"": 5000, ""min_tke"": 1e-14, ""min_omega"": 1e-20, ""max_turb_visc_ratio"": 100000.0}","{""min_pressure"": 1, ""max_pressure"": 50000000000.0, ""min_temperature"": 1, ""max_temperature"": 5000, ""min_tke"": 1e-14, ""min_omega"": 1e-20, ""max_turb_visc_ratio"": 100000.0}",yes
+1_presolve,equations solved,"{""flow"": true, ""kw"": true, ""temperature"": true}","{""flow"": true, ""kw"": true, ""temperature"": true}",yes
+2_final_schemes,fluent version,"""Ansys Fluent 2026 R1""","""Ansys Fluent 2026 R1""",yes
+2_final_schemes,solver type,"""pressure-based""","""pressure-based""",yes
+2_final_schemes,time,"""steady""","""steady""",yes
+2_final_schemes,velocity formulation,"""absolute""","""absolute""",yes
+2_final_schemes,operating pressure [Pa],101325,101325,yes
+2_final_schemes,gravity enabled,false,false,yes
+2_final_schemes,energy equation,true,true,yes
+2_final_schemes,energy: viscous dissipation,false,false,yes
+2_final_schemes,energy: pressure work,false,false,yes
+2_final_schemes,energy: kinetic energy,false,false,yes
+2_final_schemes,viscous model,"""k-omega""","""k-omega""",yes
+2_final_schemes,k-omega variant,"""sst""","""sst""",yes
+2_final_schemes,SST wall omega treatment,"""correlation""","""correlation""",yes
+2_final_schemes,SST low-Re correction,false,false,yes
+2_final_schemes,radiation model,"""none""","""none""",yes
+2_final_schemes,air density model,"""incompressible-ideal-gas""","""incompressible-ideal-gas""",yes
+2_final_schemes,air molecular weight,28.966,28.966,yes
+2_final_schemes,air cp model,"""piecewise-linear""","""piecewise-linear""",yes
+2_final_schemes,air cp curve = Incropera A.4,true,true,yes
+2_final_schemes,air mu model,"""piecewise-linear""","""piecewise-linear""",yes
+2_final_schemes,air mu curve = Incropera A.4,true,true,yes
+2_final_schemes,air k model,"""piecewise-linear""","""piecewise-linear""",yes
+2_final_schemes,air k curve = Incropera A.4,true,true,yes
+2_final_schemes,Inconel density option,"""value""","""value""",yes
+2_final_schemes,Inconel density [kg/m3],8190.0,8190.0,yes
+2_final_schemes,Inconel k model,"""piecewise-linear""","""piecewise-linear""",yes
+2_final_schemes,Inconel k curve = VDM 4127,true,true,yes
+2_final_schemes,Inconel cp model,"""piecewise-linear""","""piecewise-linear""",yes
+2_final_schemes,Inconel cp curve = VDM 4127,true,true,yes
+2_final_schemes,fluid zone material,"""air""","""air""",yes
+2_final_schemes,solid zone material,"""inconel-718""","""inconel-718""",yes
+2_final_schemes,inlet velocity spec,"""Magnitude, Normal to Boundary""","""Magnitude, Normal to Boundary""",yes
+2_final_schemes,inlet velocity [m/s],23.5,23.5,yes
+2_final_schemes,inlet temperature [K],300,300,yes
+2_final_schemes,inlet turbulence spec,"""Intensity and Hydraulic Diameter""","""Intensity and Hydraulic Diameter""",yes
+2_final_schemes,inlet turbulent intensity [-],0.04411209588036475,0.04411209588036475,yes
+2_final_schemes,inlet hydraulic diameter [m],0.02,0.02,yes
+2_final_schemes,outlet gauge pressure [Pa],0,0,yes
+2_final_schemes,outlet prevent reverse flow,true,true,yes
+2_final_schemes,outlet backflow T branch active,false,false,yes
+2_final_schemes,heated wall condition,"""Heat Flux""","""Heat Flux""",yes
+2_final_schemes,heated wall flux [W/m2],8000.0,8000.0,yes
+2_final_schemes,solid inlet end,"[""Heat Flux"", 0]","[""Heat Flux"", 0]",yes
+2_final_schemes,solid outlet end,"[""Heat Flux"", 0]","[""Heat Flux"", 0]",yes
+2_final_schemes,interface thermal coupling,"""Coupled""","""Coupled""",yes
+2_final_schemes,interface shadow coupling,"""Coupled""","""Coupled""",yes
+2_final_schemes,p-v coupling,"""Coupled""","""Coupled""",yes
+2_final_schemes,gradient scheme,"""least-square-cell-based""","""least-square-cell-based""",yes
+2_final_schemes,scheme pressure,"""second-order""","""second-order""",yes
+2_final_schemes,scheme mom,"""second-order-upwind""","""second-order-upwind""",yes
+2_final_schemes,scheme k,"""second-order-upwind""","""second-order-upwind""",yes
+2_final_schemes,scheme omega,"""second-order-upwind""","""second-order-upwind""",yes
+2_final_schemes,scheme temperature,"""second-order-upwind""","""second-order-upwind""",yes
+2_final_schemes,pseudo-time formulation,"""global-time-step""","""global-time-step""",yes
+2_final_schemes,pseudo-time step settings,"{""time_step_method"": ""automatic"", ""length_scale_methods"": ""conservative"", ""time_step_size_scale_factor"": 1.0, ""verbosity"": 0, ""auto_time_size_calc_solid_zone"": true, ""time_solid_scale_factor"": 1.0}","{""time_step_method"": ""automatic"", ""length_scale_methods"": ""conservative"", ""time_step_size_scale_factor"": 1.0, ""verbosity"": 0, ""auto_time_size_calc_solid_zone"": true, ""time_solid_scale_factor"": 1.0}",yes
+2_final_schemes,explicit pseudo relaxation,"{""global_dt_pseudo_relax"": {""density"": 1.0, ""body-force"": 1.0, ""k"": 0.75, ""omega"": 0.75, ""turb-viscosity"": 1.0, ""temperature"": 0.75}}","{""global_dt_pseudo_relax"": {""density"": 1.0, ""body-force"": 1.0, ""k"": 0.75, ""omega"": 0.75, ""turb-viscosity"": 1.0, ""temperature"": 0.75}}",yes
+2_final_schemes,explicit p/mom under-relaxation,"{""explicit_pressure_under_relaxation"": 0.5, ""explicit_momentum_under_relaxation"": 0.5}","{""explicit_pressure_under_relaxation"": 0.5, ""explicit_momentum_under_relaxation"": 0.5}",yes
+2_final_schemes,solution limits,"{""min_pressure"": 1, ""max_pressure"": 50000000000.0, ""min_temperature"": 1, ""max_temperature"": 5000, ""min_tke"": 1e-14, ""min_omega"": 1e-20, ""max_turb_visc_ratio"": 100000.0}","{""min_pressure"": 1, ""max_pressure"": 50000000000.0, ""min_temperature"": 1, ""max_temperature"": 5000, ""min_tke"": 1e-14, ""min_omega"": 1e-20, ""max_turb_visc_ratio"": 100000.0}",yes
+2_final_schemes,equations solved,"{""flow"": true, ""kw"": true, ""temperature"": true}","{""flow"": true, ""kw"": true, ""temperature"": true}",yes
+3_final,fluent version,"""Ansys Fluent 2026 R1""","""Ansys Fluent 2026 R1""",yes
+3_final,solver type,"""pressure-based""","""pressure-based""",yes
+3_final,time,"""steady""","""steady""",yes
+3_final,velocity formulation,"""absolute""","""absolute""",yes
+3_final,operating pressure [Pa],101325,101325,yes
+3_final,gravity enabled,false,false,yes
+3_final,energy equation,true,true,yes
+3_final,energy: viscous dissipation,false,false,yes
+3_final,energy: pressure work,false,false,yes
+3_final,energy: kinetic energy,false,false,yes
+3_final,viscous model,"""k-omega""","""k-omega""",yes
+3_final,k-omega variant,"""sst""","""sst""",yes
+3_final,SST wall omega treatment,"""correlation""","""correlation""",yes
+3_final,SST low-Re correction,false,false,yes
+3_final,radiation model,"""none""","""none""",yes
+3_final,air density model,"""incompressible-ideal-gas""","""incompressible-ideal-gas""",yes
+3_final,air molecular weight,28.966,28.966,yes
+3_final,air cp model,"""piecewise-linear""","""piecewise-linear""",yes
+3_final,air cp curve = Incropera A.4,true,true,yes
+3_final,air mu model,"""piecewise-linear""","""piecewise-linear""",yes
+3_final,air mu curve = Incropera A.4,true,true,yes
+3_final,air k model,"""piecewise-linear""","""piecewise-linear""",yes
+3_final,air k curve = Incropera A.4,true,true,yes
+3_final,Inconel density option,"""value""","""value""",yes
+3_final,Inconel density [kg/m3],8190.0,8190.0,yes
+3_final,Inconel k model,"""piecewise-linear""","""piecewise-linear""",yes
+3_final,Inconel k curve = VDM 4127,true,true,yes
+3_final,Inconel cp model,"""piecewise-linear""","""piecewise-linear""",yes
+3_final,Inconel cp curve = VDM 4127,true,true,yes
+3_final,fluid zone material,"""air""","""air""",yes
+3_final,solid zone material,"""inconel-718""","""inconel-718""",yes
+3_final,inlet velocity spec,"""Magnitude, Normal to Boundary""","""Magnitude, Normal to Boundary""",yes
+3_final,inlet velocity [m/s],23.5,23.5,yes
+3_final,inlet temperature [K],300,300,yes
+3_final,inlet turbulence spec,"""Intensity and Hydraulic Diameter""","""Intensity and Hydraulic Diameter""",yes
+3_final,inlet turbulent intensity [-],0.04411209588036475,0.04411209588036475,yes
+3_final,inlet hydraulic diameter [m],0.02,0.02,yes
+3_final,outlet gauge pressure [Pa],0,0,yes
+3_final,outlet prevent reverse flow,true,true,yes
+3_final,outlet backflow T branch active,false,false,yes
+3_final,heated wall condition,"""Heat Flux""","""Heat Flux""",yes
+3_final,heated wall flux [W/m2],8000.0,8000.0,yes
+3_final,solid inlet end,"[""Heat Flux"", 0]","[""Heat Flux"", 0]",yes
+3_final,solid outlet end,"[""Heat Flux"", 0]","[""Heat Flux"", 0]",yes
+3_final,interface thermal coupling,"""Coupled""","""Coupled""",yes
+3_final,interface shadow coupling,"""Coupled""","""Coupled""",yes
+3_final,p-v coupling,"""Coupled""","""Coupled""",yes
+3_final,gradient scheme,"""least-square-cell-based""","""least-square-cell-based""",yes
+3_final,scheme pressure,"""second-order""","""second-order""",yes
+3_final,scheme mom,"""second-order-upwind""","""second-order-upwind""",yes
+3_final,scheme k,"""second-order-upwind""","""second-order-upwind""",yes
+3_final,scheme omega,"""second-order-upwind""","""second-order-upwind""",yes
+3_final,scheme temperature,"""second-order-upwind""","""second-order-upwind""",yes
+3_final,pseudo-time formulation,"""global-time-step""","""global-time-step""",yes
+3_final,pseudo-time step settings,"{""time_step_method"": ""automatic"", ""length_scale_methods"": ""conservative"", ""time_step_size_scale_factor"": 1.0, ""verbosity"": 0, ""auto_time_size_calc_solid_zone"": true, ""time_solid_scale_factor"": 1.0}","{""time_step_method"": ""automatic"", ""length_scale_methods"": ""conservative"", ""time_step_size_scale_factor"": 1.0, ""verbosity"": 0, ""auto_time_size_calc_solid_zone"": true, ""time_solid_scale_factor"": 1.0}",yes
+3_final,explicit pseudo relaxation,"{""global_dt_pseudo_relax"": {""density"": 1.0, ""body-force"": 1.0, ""k"": 0.75, ""omega"": 0.75, ""turb-viscosity"": 1.0, ""temperature"": 0.75}}","{""global_dt_pseudo_relax"": {""density"": 1.0, ""body-force"": 1.0, ""k"": 0.75, ""omega"": 0.75, ""turb-viscosity"": 1.0, ""temperature"": 0.75}}",yes
+3_final,explicit p/mom under-relaxation,"{""explicit_pressure_under_relaxation"": 0.5, ""explicit_momentum_under_relaxation"": 0.5}","{""explicit_pressure_under_relaxation"": 0.5, ""explicit_momentum_under_relaxation"": 0.5}",yes
+3_final,solution limits,"{""min_pressure"": 1, ""max_pressure"": 50000000000.0, ""min_temperature"": 1, ""max_temperature"": 5000, ""min_tke"": 1e-14, ""min_omega"": 1e-20, ""max_turb_visc_ratio"": 100000.0}","{""min_pressure"": 1, ""max_pressure"": 50000000000.0, ""min_temperature"": 1, ""max_temperature"": 5000, ""min_tke"": 1e-14, ""min_omega"": 1e-20, ""max_turb_visc_ratio"": 100000.0}",yes
+3_final,equations solved,"{""flow"": true, ""kw"": true, ""temperature"": true}","{""flow"": true, ""kw"": true, ""temperature"": true}",yes

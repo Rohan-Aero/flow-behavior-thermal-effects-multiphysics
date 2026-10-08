@@ -1,0 +1,512 @@
+{
+  "run": {
+    "tag": "baseline",
+    "converged": true,
+    "stage1_iters": 150,
+    "stage2_iters": 150,
+    "stage3_iters": 400,
+    "total_iters": 700,
+    "stage3_first_iteration": 301.0,
+    "failures": [],
+    "final_eval": {
+      "tag": "confirmation+400",
+      "iteration": 700,
+      "residuals": {
+        "continuity": 9.0195e-11,
+        "x-velocity": 3.7161e-16,
+        "y-velocity": 3.1441e-16,
+        "z-velocity": 1.5772e-14,
+        "energy": 1.5624e-14,
+        "k": 7.2202e-13,
+        "omega": 2.0331e-13,
+        "F_wall_z": 0.076082,
+        "q_net_all": -1.8554e-10,
+        "q_ends": 0.0,
+        "T_solid_mi": 423.97,
+        "T_fluid_mi": 300.0,
+        "T_fluid_ma": 553.41,
+        "area_in": 0.00031326,
+        "yplus_avg": 0.24096,
+        "yplus_min": 0.20816,
+        "T_inner_av": 520.74,
+        "T_outer_av": 528.46,
+        "T_outer_ma": 562.58,
+        "T_in_bulk": 300.0,
+        "p_out_area": 0.0,
+        "p_in_area": 438.13,
+        "yplus_max": 0.58484,
+        "v_out_max": 34.987,
+        "T_solid_me": 525.48,
+        "T_solid_ma": 562.13,
+        "T_wall_max": 555.27,
+        "T_out_bulk": 368.93,
+        "p_out": 0.0,
+        "p_in": 438.13,
+        "q_fluid_ne": -602.76,
+        "q_interfac": 602.76,
+        "q_heated_w": 602.76,
+        "mass_imbal": -6.0715e-17,
+        "mdot_out": -0.0086622,
+        "mdot_in": 0.0086622
+      },
+      "checks": {
+        "residual continuity": {
+          "value": 9.0195e-11,
+          "target": 0.0001,
+          "ok": true
+        },
+        "residual x-velocity": {
+          "value": 3.7161e-16,
+          "target": 0.0001,
+          "ok": true
+        },
+        "residual y-velocity": {
+          "value": 3.1441e-16,
+          "target": 0.0001,
+          "ok": true
+        },
+        "residual z-velocity": {
+          "value": 1.5772e-14,
+          "target": 0.0001,
+          "ok": true
+        },
+        "residual k": {
+          "value": 7.2202e-13,
+          "target": 0.0001,
+          "ok": true
+        },
+        "residual omega": {
+          "value": 2.0331e-13,
+          "target": 0.0001,
+          "ok": true
+        },
+        "residual energy": {
+          "value": 1.5624e-14,
+          "target": 1e-06,
+          "ok": true
+        },
+        "drift T_out_bulk over 200 it [K]": {
+          "value": 2.2825411178928334e-06,
+          "target": 0.1,
+          "ok": true
+        },
+        "drift T_solid_max over 200 it [K]": {
+          "value": 7.064509532028751e-06,
+          "target": 0.1,
+          "ok": true
+        },
+        "drift T_wall_max over 200 it [K]": {
+          "value": 0.0,
+          "target": 0.1,
+          "ok": true
+        },
+        "drift T_outer_max over 200 it [K]": {
+          "value": 0.0,
+          "target": 0.1,
+          "ok": true
+        },
+        "rel drift dp_area over 200 it": {
+          "value": 6.857815667407566e-10,
+          "target": 0.001,
+          "ok": true
+        },
+        "rel drift q_interface over 200 it": {
+          "value": 3.5269407576660167e-09,
+          "target": 0.001,
+          "ok": true
+        },
+        "rel drift mdot_out over 200 it": {
+          "value": 1.32426602801056e-10,
+          "target": 0.0001,
+          "ok": true
+        },
+        "mass imbalance |in-out|/in": {
+          "value": 7.009262796038835e-15,
+          "target": 0.0001,
+          "ok": true
+        },
+        "energy imbalance |sum Q|/Q_wall": {
+          "value": 3.078146935298473e-13,
+          "target": 0.005,
+          "ok": true
+        }
+      },
+      "ready": true,
+      "converged": true
+    }
+  },
+  "residuals_final": {
+    "continuity": 9.0195e-11,
+    "x-velocity": 3.7161e-16,
+    "y-velocity": 3.1441e-16,
+    "z-velocity": 1.5772e-14,
+    "energy": 1.5624e-14,
+    "k": 7.2202e-13,
+    "omega": 2.0331e-13,
+    "F_wall_z": 0.076082,
+    "q_net_all": -1.8554e-10,
+    "q_ends": 0.0,
+    "T_solid_mi": 423.97,
+    "T_fluid_mi": 300.0,
+    "T_fluid_ma": 553.41,
+    "area_in": 0.00031326,
+    "yplus_avg": 0.24096,
+    "yplus_min": 0.20816,
+    "T_inner_av": 520.74,
+    "T_outer_av": 528.46,
+    "T_outer_ma": 562.58,
+    "T_in_bulk": 300.0,
+    "p_out_area": 0.0,
+    "p_in_area": 438.13,
+    "yplus_max": 0.58484,
+    "v_out_max": 34.987,
+    "T_solid_me": 525.48,
+    "T_solid_ma": 562.13,
+    "T_wall_max": 555.27,
+    "T_out_bulk": 368.93,
+    "p_out": 0.0,
+    "p_in": 438.13,
+    "q_fluid_ne": -602.76,
+    "q_interfac": 602.76,
+    "q_heated_w": 602.76,
+    "mass_imbal": -6.0715e-17,
+    "mdot_out": -0.0086622,
+    "mdot_in": 0.0086622,
+    "iter": 700
+  },
+  "conservation": {
+    "mdot_in": 0.008662155126142577,
+    "mdot_out": 0.008662155126142638,
+    "mass_imbalance_pct": 7.009262796038835e-13,
+    "mdot_from_faces_in": 0.00866215512937115,
+    "mdot_from_faces_out": 0.008660444421671687,
+    "Q_wall": 602.7552389849993,
+    "Q_interface": 602.7552389840987,
+    "Q_fluid": 602.7552389851849,
+    "Q_ends": 0.0,
+    "Q_net_all": -1.855369191616774e-10,
+    "energy_imbalance_W": -1.8553691916167736e-10,
+    "energy_imbalance_pct": -3.078146935298472e-11,
+    "net_all_boundaries_pct": -3.078146935298473e-11,
+    "interface_vs_wall_pct": -1.4941838248428e-10,
+    "A_outer_mesh": 0.07534440486720001,
+    "A_outer_exact": 0.07539822368615504,
+    "lateral_ratio_mesh": 0.9992862057443284,
+    "lateral_ratio_48gon": 0.9992862058229085,
+    "Q_wall_expected_from_area": 602.7552389376001,
+    "Q_analytical": 603.1857895,
+    "Q_wall_vs_analytical_pct": -0.07137941949156845,
+    "A_in_mesh": 0.00031326286133004,
+    "A_in_exact": 0.0003141592653589793,
+    "planar_ratio_mesh": 0.9971466573557363,
+    "planar_ratio_48gon": 0.9971466573496368,
+    "Q_fluid_from_enthalpy_faces": 602.7256117253158
+  },
+  "pressure": {
+    "dp_total_area": 438.1263349204161,
+    "dp_total_mass": 438.1263349181902,
+    "dp_wall_shear": 242.8679830027177,
+    "dp_momentum_flux": 195.45550823901138,
+    "dp_accel_1D_cfd_densities": 149.30937799447773,
+    "dp_profile_development": 46.14613024453365,
+    "momentum_balance_residual": -0.1971563213129457,
+    "momentum_balance_residual_pct": -0.04499987916698921,
+    "F_wall_N": 0.07608151928088686,
+    "F_wall_monitor_N": 0.07608151927775024,
+    "beta_in": 1.0000000000000002,
+    "beta_out": 1.05816430576315,
+    "rho_in_b": 1.176655108,
+    "rho_out_b": 0.9568054404187551,
+    "A_in": 0.00031326286133004,
+    "A_out": 0.00031326286133004
+  },
+  "temperatures": {
+    "T_in_bulk": 300.0,
+    "T_out_bulk": 368.9324050214397,
+    "T_out_bulk_monitor": 368.9323577621899,
+    "T_fluid_min": 300.0000001,
+    "T_fluid_max": 553.4130789,
+    "T_solid_min": 423.9664736,
+    "T_solid_max": 562.1271022,
+    "T_solid_max_location_mm": {
+      "r": 19.100569320486468,
+      "z": 596.6666937,
+      "theta_deg": 318.7500005884615
+    },
+    "T_solid_mean_volume": 525.4829345871722,
+    "T_inner_wall_min": 423.2111489,
+    "T_inner_wall_max": 555.2671023,
+    "T_outer_wall_min": 438.3314939,
+    "T_outer_wall_max": 562.5767528,
+    "T_inner_wall_area_avg": 520.7399438718518,
+    "T_outer_wall_area_avg": 528.4630291235184,
+    "T_end_faces_max": 562.1271022
+  },
+  "near_wall": {
+    "slab_z_mm": 303.3333333333333,
+    "ywall_min_um": 5.1915047780000005,
+    "ywall_max_um": 6.064436130000001,
+    "first_layer_equiv_min_um": 10.383009556000001,
+    "first_layer_equiv_max_um": 12.128872260000001,
+    "theta_of_min_ywall": 41.238532732914564,
+    "theta_of_max_ywall": 3.745609902337381,
+    "tau_ptp_pct": 0.0777961192894645,
+    "yplus_ptp_pct": 15.453997298954993,
+    "superellipse_prediction_ratio": 0.8451941786341374
+  },
+  "mixing_cup": {
+    "h_in_b": 1862.9157749999997,
+    "h_out_b": 71444.40014274442,
+    "T_in_mixing_cup": 300.0,
+    "T_out_mixing_cup": 368.9925159408758,
+    "T_out_from_cfd_energy_balance": 368.9958993996461,
+    "T_out_from_analytical_energy_balance": 368.85223200257855,
+    "faceting_shift_K": 0.1436673970675315
+  },
+  "through_wall": {
+    "dT_wall_z300": 7.580517575000044,
+    "dT_wall_z570": 7.360607183333286,
+    "dT_wall_last_slab": 7.310087750000093,
+    "dT_wall_max": 15.119461816666671,
+    "dT_wall_min": 7.310087750000093,
+    "dT_1D_localk_z570": 7.412307314946703,
+    "Twi_z570": 554.64271095,
+    "Two_z570": 562.0033181333333,
+    "Tb_z570": 365.55481678737243,
+    "Twi_last_slab": 555.26658085,
+    "Two_last_slab": 562.5766686000001,
+    "h_cfd_z570": 83.63683365365709,
+    "analytical_z570": {
+      "Twi": 571.9219932581287,
+      "dTwall": 7.3063208210817265,
+      "h": 77.4800612522132,
+      "h_cfd": 83.63683365365709
+    }
+  },
+  "yplus": {
+    "min": 0.2081601875,
+    "max": 0.5848356794,
+    "area_mean": 0.24095960310722214,
+    "median": 0.23599022414999998,
+    "p05": 0.20895569769,
+    "p95": 0.28804512166500024,
+    "p99": 0.4992583963,
+    "frac_area_le_1": 1.0,
+    "frac_area_le_0p5": 0.9907407407407407,
+    "fd_mean": 0.2286482943919192,
+    "location_of_max_mm": {
+      "z": 3.333333333,
+      "theta_deg": 183.74560990233738
+    },
+    "location_of_min_mm": {
+      "z": 356.6666667,
+      "theta_deg": 41.238532732914564
+    },
+    "first_cell_centre_distance_um": {
+      "min": 5.1915047780000005,
+      "max": 6.064436130000001
+    }
+  },
+  "velocity": {
+    "w_in_min": 23.5,
+    "w_in_max": 23.5,
+    "w_out_area_mean": 28.893997605463596,
+    "w_out_min": 0.395783994,
+    "w_out_max": 34.98742244,
+    "w_domain_max": 34.98742244,
+    "w_domain_min": 0.3472137965,
+    "vmag_max": 34.98742249,
+    "reverse_flow_cells": 0,
+    "max_abs_radial_velocity": 0.5372989441946612,
+    "max_abs_swirl_velocity": 0.013403421397873164,
+    "centreline_to_bulk_exit": 1.210888950628721,
+    "mach_at_max_velocity_outlet_bulkT": 0.09086355045396967
+  },
+  "reynolds": {
+    "Re_in_nominalD": 29958.17446120664,
+    "Re_in_Dh48": 29894.03171005389,
+    "Re_out_nominalD": 25544.911387885797,
+    "Re_out_Dh48": 25490.217771741267,
+    "G": 27.651395027693727
+  },
+  "fully_developed": {
+    "Nu_cfd": 54.171831335463644,
+    "Nu_gn": 63.50592096416938,
+    "Nu_db": 68.56514626418034,
+    "Nu_corr_n05": 51.04255719492681,
+    "n_implied": 0.36364768334780473,
+    "f_cfd": 0.021626137384011035,
+    "f_petukhov": 0.024403941600567313,
+    "f_petukhov_heating_m_minus0p1": 0.023360976546934753,
+    "R_fluent": 287.04247974080096,
+    "Tw_over_Tb_fd": 1.547898504800607,
+    "h_cfd_end_of_window": 83.73592454635376,
+    "Nu_cfd_end_of_window": 53.65917315481908,
+    "h_cfd_last_slab": 83.95432516398884,
+    "Nu_cfd_last_slab": 53.472889962178115,
+    "x_over_D_window": [
+      18.166666666666664,
+      28.833333333333332
+    ]
+  },
+  "history": {
+    "max_T_solid_history": 562.1333249664019,
+    "iter_of_max_T_solid": 393,
+    "final_T_solid_max_monitor": 562.1271022462935,
+    "max_T_fluid_history": 553.4193961146931,
+    "min_T_fluid_history": 299.9978441549041,
+    "min_T_solid_history": 300.0,
+    "section5A_startup_peak_K": 761.0,
+    "solid_overshoot_above_final_K": 0.006222720108439717
+  },
+  "range_check": {
+    "fluid_table_K": [
+      250.0,
+      600.0
+    ],
+    "solid_table_K": [
+      293.15,
+      673.15
+    ],
+    "final_fluid_within": true,
+    "final_solid_within": true,
+    "history_fluid_within": true,
+    "history_solid_within": true,
+    "solver_limit_or_divergence_messages": [],
+    "n_limit_messages": 0,
+    "nan_or_inf_values_in_exports": 0
+  },
+  "faceting": {
+    "planar": 0.9971466573496368,
+    "lateral": 0.9992862058229085,
+    "Dh48": 0.01995717846477207
+  },
+  "comparison": [
+    {
+      "quantity": "Reynolds number, inlet",
+      "analytical": 29956.55473,
+      "cfd": 29958.17446120664,
+      "units": "-",
+      "abs_diff": 1.619731206639699,
+      "pct_diff": 0.005406934212690415,
+      "basis": "CFD from Fluent mass flux G = mdot/A_poly and mu(T_in) from the same Incropera table; nominal D = 20 mm"
+    },
+    {
+      "quantity": "Reynolds number, outlet",
+      "analytical": 25547.6628,
+      "cfd": 25544.911387885797,
+      "units": "-",
+      "abs_diff": -2.75141211420123,
+      "pct_diff": -0.010769721425167824,
+      "basis": "mu at the CFD mass-weighted outlet temperature"
+    },
+    {
+      "quantity": "Pressure drop, inlet-to-outlet static (CFD-comparable)",
+      "analytical": 441.5281159,
+      "cfd": 438.1263349204161,
+      "units": "Pa",
+      "abs_diff": -3.4017809795838616,
+      "pct_diff": -0.7704562534256183,
+      "basis": "area-weighted static pressure, inlet face minus outlet face; analytical = friction + acceleration + entry"
+    },
+    {
+      "quantity": "Outlet bulk temperature",
+      "analytical": 368.8524523,
+      "cfd": 368.9324050214397,
+      "units": "K",
+      "abs_diff": 0.07995272143972443,
+      "pct_diff": 0.021676071540578025,
+      "basis": "mass-weighted static temperature over the outlet faces (Fluent's standard bulk measure)"
+    },
+    {
+      "quantity": "Outlet mixing-cup temperature",
+      "analytical": 368.8524523,
+      "cfd": 368.9925159408758,
+      "units": "K",
+      "abs_diff": 0.14006364087583734,
+      "pct_diff": 0.03797280999555858,
+      "basis": "additional: from Fluent's enthalpy, mass-flux weighted and inverted with the same cp table - the like-for-like counterpart of the 1-D energy march"
+    },
+    {
+      "quantity": "Heat-transfer rate",
+      "analytical": 603.1857895,
+      "cfd": 602.7552389849993,
+      "units": "W",
+      "abs_diff": -0.43055051500073205,
+      "pct_diff": -0.07137941949156812,
+      "basis": "Fluent heat flux through HEATED_OUTER_WALL; equals the heat carried out by the air to the stated imbalance"
+    },
+    {
+      "quantity": "Maximum solid temperature",
+      "analytical": 581.7125934,
+      "cfd": 562.5767528,
+      "units": "K",
+      "abs_diff": -19.135840599999938,
+      "pct_diff": -3.289569594523401,
+      "basis": "analytical = outer-wall temperature at the exit station (1-D); CFD = maximum facet temperature of HEATED_OUTER_WALL (outlet end); the maximum cell-centre value is 562.127 K"
+    },
+    {
+      "quantity": "Through-wall temperature difference",
+      "analytical": 7.284649393,
+      "cfd": 7.360607183333286,
+      "units": "K",
+      "abs_diff": 0.07595779033328665,
+      "pct_diff": 1.042710310893979,
+      "basis": "analytical = Section 2 headline value (exit; k = 15.22 W/m.K at the 574.4 K inner wall); CFD: outer minus inner wall, circumferential average, at z = 570 mm (x/D = 28.5, clear of the adiabatic end)"
+    },
+    {
+      "quantity": "Through-wall temperature difference at z = 570 mm (station-matched)",
+      "analytical": 7.3063208210817265,
+      "cfd": 7.360607183333286,
+      "units": "K",
+      "abs_diff": 0.054286362251559694,
+      "pct_diff": 0.7430054548784844,
+      "basis": "additional: analytical from the Section 2 axial march at the same station (k at the local inner-wall temperature)"
+    },
+    {
+      "quantity": "Peak inner-wall temperature (PR-06)",
+      "analytical": 574.4279441,
+      "cfd": 555.2671023,
+      "units": "K",
+      "abs_diff": -19.160841799999957,
+      "pct_diff": -3.335638872865196,
+      "basis": "additional: analytical peak is at the exit; CFD = maximum facet temperature of the fluid-solid interface (outlet end)"
+    },
+    {
+      "quantity": "Inner-wall temperature at z = 570 mm (station-matched)",
+      "analytical": 571.9219932581287,
+      "cfd": 554.64271095,
+      "units": "K",
+      "abs_diff": -17.2792823081287,
+      "pct_diff": -3.0212655767427266,
+      "basis": "additional: circumferential average; analytical = property-corrected march at the same station"
+    },
+    {
+      "quantity": "Heat-transfer coefficient at z = 570 mm (station-matched)",
+      "analytical": 77.4800612522132,
+      "cfd": 83.63683365365709,
+      "units": "W/m2K",
+      "abs_diff": 6.156772401443888,
+      "pct_diff": 7.946266822637575,
+      "basis": "additional: CFD h = q_inner / (T_inner_wall - T_bulk,mass) per slab; analytical = property-corrected Gnielinski"
+    },
+    {
+      "quantity": "Fully developed Nusselt number (x/D 18-29)",
+      "analytical": 49.58145803,
+      "cfd": 54.171831335463644,
+      "units": "-",
+      "abs_diff": 4.590373305463643,
+      "pct_diff": 9.258245900485964,
+      "basis": "additional (PR-03): CFD mean over the window vs property-corrected Gnielinski at exit"
+    },
+    {
+      "quantity": "Darcy friction factor (x/D 18-29)",
+      "analytical": 0.02413326646,
+      "cfd": 0.021626137384011035,
+      "units": "-",
+      "abs_diff": -0.0025071290759889654,
+      "pct_diff": -10.388685179208705,
+      "basis": "additional (PR-04): CFD from wall shear, f = 8 tau_w rho_b / G^2"
+    }
+  ]
+}

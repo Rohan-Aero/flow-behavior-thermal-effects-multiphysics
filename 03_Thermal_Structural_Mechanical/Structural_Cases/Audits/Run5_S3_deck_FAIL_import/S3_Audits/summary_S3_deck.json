@@ -1,0 +1,28 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 S3 support sensitivity (not recovered)", 
+ "mode": "deck", 
+ "cases": {}, 
+ "analyses": [
+  [
+   "LC1_Free_Expansion", 
+   "Static"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Static"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Static"
+  ], 
+  [
+   "Static Structural", 
+   "Static"
+  ], 
+  [
+   "Eigenvalue Buckling", 
+   "Buckling"
+  ]
+ ], 
+ "FATAL": "Object reference not set to an instance of an object."
+}

@@ -1,0 +1,6 @@
+"# Inscribed regular N-gon vs true circle (R_i = 10 mm, R_o = 20 mm, L = 600 mm). Exact geometry."
+section,N,planar_area_ratio,lateral_perimeter_ratio,Dh_over_D_and_apothem_over_R,flow_area_m2,wetted_perimeter_m,outer_heated_area_m2,Q_at_8000W_m2,Q_over_mdot_factor
+circle,inf,1.0000000,1.0000000,1.0000000,3.14159265e-04,6.28318531e-02,7.53982237e-02,603.1858,1.0000000
+coarse,32,0.9935869,0.9983944,0.9951847,3.12144515e-04,6.27309698e-02,7.52771638e-02,602.2173,1.0048386
+medium,48,0.9971467,0.9992862,0.9978589,3.13262861e-04,6.27870041e-02,7.53444049e-02,602.7552,1.0021457
+fine,72,0.9987312,0.9996827,0.9990482,3.13760674e-04,6.28119178e-02,7.53743014e-02,602.9944,1.0009527

@@ -1,0 +1,10 @@
+
+Error: wta(1st) to string_eq
+Error Object: #f
+
+Error: wta(1st) to string_eq
+Error Object: #f
+
+Error: No cell zones selected to export.
+
+Error Object: #f

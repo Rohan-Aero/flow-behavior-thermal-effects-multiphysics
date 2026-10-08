@@ -1,0 +1,149 @@
+[
+    {
+        "file":  "Case\\baseline_medium_final.cas.h5",
+        "unchanged":  true,
+        "sha256_after":  "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204",
+        "bytes":  5000324,
+        "mtime_after":  "2026-09-23T13:40:58.4532363Z"
+    },
+    {
+        "file":  "Data\\baseline_medium_final.dat.h5",
+        "unchanged":  true,
+        "sha256_after":  "F05837C5C27E022FC7974E7F04469098FD34A8500F111E4E2D782C4B705A352F",
+        "bytes":  8546549,
+        "mtime_after":  "2026-09-23T13:41:00.0224512Z"
+    },
+    {
+        "file":  "Case\\intermediate_end_stage2_firstorder_iter300.cas.h5",
+        "unchanged":  true,
+        "sha256_after":  "AC80C126677F61BD2A8C9B3F283317B8FB3B2CC8C79E820F3EA53A21548E28FF",
+        "bytes":  5000123,
+        "mtime_after":  "2026-09-23T13:33:40.5687931Z"
+    },
+    {
+        "file":  "Data\\intermediate_end_stage2_firstorder_iter300.dat.h5",
+        "unchanged":  true,
+        "sha256_after":  "4B03FFA9F7FDFD30DEFA7E4570AEA8F2005F8DFFE74154298CE7772A5C5454C2",
+        "bytes":  12581795,
+        "mtime_after":  "2026-09-23T13:33:42.9018907Z"
+    },
+    {
+        "file":  "Baseline_Setup\\baseline_setup.cas.h5",
+        "unchanged":  true,
+        "sha256_after":  "8CC73B06D335989EE92EA80E0EF535B810E51654582D08654A8E9BD1DDA73043",
+        "bytes":  4985657,
+        "mtime_after":  "2026-09-19T14:37:36.4399358Z"
+    },
+    {
+        "file":  "Monitors\\baseline_monitors.out",
+        "unchanged":  true,
+        "sha256_after":  "0DF5C0DE284BFEFB4AF34A6D245192FE5F79E5D1CD632CFB9AFBE78C4338D47E",
+        "bytes":  327168,
+        "mtime_after":  "2026-09-23T13:40:55.8980341Z"
+    },
+    {
+        "file":  "Monitors\\baseline_monitors.csv",
+        "unchanged":  true,
+        "sha256_after":  "D7FBF73133C72B2F57EF67696736B5207BE342E21550F0B4A8C81DB108823139",
+        "bytes":  217142,
+        "mtime_after":  "2026-09-23T14:20:03.5709960Z"
+    },
+    {
+        "file":  "Baseline\\cfd_baseline_results.json",
+        "unchanged":  true,
+        "sha256_after":  "995B124BDB1FC64E2DDBA95C4F8C0A473DE555CA408392B71538EDED8350FE4D",
+        "bytes":  17084,
+        "mtime_after":  "2026-09-23T14:20:03.6135720Z"
+    },
+    {
+        "file":  "Baseline\\CFD_vs_Analytical.csv",
+        "unchanged":  true,
+        "sha256_after":  "FC775C6FD7D536EE378F57318F062FEC6EFB142880AC835168188BC22C4EEBF5",
+        "bytes":  2799,
+        "mtime_after":  "2026-09-23T14:20:03.6135720Z"
+    },
+    {
+        "file":  "Baseline\\CFD_BASELINE_RESULTS.md",
+        "unchanged":  true,
+        "sha256_after":  "747E605BE3C57B1BC0015BCB5C20714D202EA98847AB51FCE4425CA236131A86",
+        "bytes":  21555,
+        "mtime_after":  "2026-09-23T14:20:57.1458456Z"
+    },
+    {
+        "file":  "Baseline\\CFD_BASELINE_AUDIT.md",
+        "unchanged":  true,
+        "sha256_after":  "753C00507A9C7DEAF79BDB54DE3095C449B896B64C10B512DCF76A7E82922BCE",
+        "bytes":  15216,
+        "mtime_after":  "2026-09-23T14:20:56.5520499Z"
+    },
+    {
+        "file":  "Baseline\\CFD_VS_ANALYTICAL.md",
+        "unchanged":  true,
+        "sha256_after":  "3DF7CDA94C2BF4F5CC13FDBDE0C6345C06772C6F35ABEA2C87A82187528FDA8E",
+        "bytes":  16372,
+        "mtime_after":  "2026-09-23T14:20:57.7466182Z"
+    },
+    {
+        "file":  "Exports\\cells_fluid.csv",
+        "unchanged":  true,
+        "sha256_after":  "DC53C2E9E396734892E7B42C3159FD77B737A0881582B3C574D38364BD4ABB9B",
+        "bytes":  46889703,
+        "mtime_after":  "2026-09-23T13:44:18.0993697Z"
+    },
+    {
+        "file":  "Exports\\cells_solid.csv",
+        "unchanged":  true,
+        "sha256_after":  "15792DF976F7DA685E86582052768E3A3DB1062597F9108C327F95F0BD376794",
+        "bytes":  8553810,
+        "mtime_after":  "2026-09-23T13:44:24.1679462Z"
+    },
+    {
+        "file":  "Exports\\wall_interface.csv",
+        "unchanged":  true,
+        "sha256_after":  "E37C573BEF784D490D34A7F56A110EF019CB1E2FBC5CAD336EF70DB97A405B57",
+        "bytes":  1149402,
+        "mtime_after":  "2026-09-23T13:41:02.9525787Z"
+    },
+    {
+        "file":  "Profiles\\axial_profiles_cfd.csv",
+        "unchanged":  true,
+        "sha256_after":  "FB851BA933508EA65687BC914F978DAD516963FF58E681BE3DEC342251E9A7FC",
+        "bytes":  26371,
+        "mtime_after":  "2026-09-23T14:20:03.5509369Z"
+    },
+    {
+        "file":  "Journals\\solve_baseline.py",
+        "unchanged":  true,
+        "sha256_after":  "91998F171B8305DC41C3E96DA00FBA6C7C166F1A5822637C42D7D7D526DA4931",
+        "bytes":  30284,
+        "mtime_after":  "2026-09-23T13:26:19.6044585Z"
+    },
+    {
+        "file":  "Journals\\postprocess_baseline.py",
+        "unchanged":  true,
+        "sha256_after":  "915BF6878F5DC0742AAFC6AE3E9BF30EEF77805A39A41ED7055D35B0729A4DD9",
+        "bytes":  60769,
+        "mtime_after":  "2026-09-23T14:19:50.7803781Z"
+    },
+    {
+        "file":  "..\\05_Meshing\\Mesh_Coarse\\coarse.msh",
+        "unchanged":  true,
+        "sha256_after":  "5C0DE888DCAFB7FAB94E3ABD3CF24139EAE8527750E7137598971646D26D4A98",
+        "bytes":  7965362,
+        "mtime_after":  "2026-09-19T09:06:20.1941821Z"
+    },
+    {
+        "file":  "..\\05_Meshing\\Mesh_Medium\\medium.msh",
+        "unchanged":  true,
+        "sha256_after":  "2C6FCFB31108654DB2361449127761ECF687D7446C740C33C0BB350877363479",
+        "bytes":  26292846,
+        "mtime_after":  "2026-09-19T09:06:26.1859678Z"
+    },
+    {
+        "file":  "..\\PROJECT_STATE.md",
+        "unchanged":  true,
+        "sha256_after":  "01D0B2DD3CCD6E48381CF0798F8DC8A4DDE4B107D9D896C820F7192E487971F0",
+        "bytes":  52341,
+        "mtime_after":  "2026-09-23T14:20:59.6941229Z"
+    }
+]

@@ -1,0 +1,4 @@
+2026-09-26 23:23:42  launching runwb2 -B -R <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Scripts\wb_param_9B2_T01.wbjn
+2026-09-26 23:23:42  pid 27112
+2026-09-26 23:26:22  runwb2 exited
+2026-09-26 23:26:22  driver done

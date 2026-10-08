@@ -1,0 +1,174 @@
+{
+ "gate": "FAIL (1)", 
+ "note": "RE-ANALYSIS 2026 - pre-solve audit of the 8A buckling model", 
+ "checks": [
+  {
+   "check": "mesh: 108,252 nodes / 23,400 elements (unchanged since 7A)", 
+   "expected": "108252 / 23400", 
+   "found": "108252 / 23400", 
+   "pass": true
+  }, 
+  {
+   "check": "licence: below the measured Student MAPDL limit (128,000 nodes)", 
+   "expected": "< 128,000", 
+   "found": "108252", 
+   "pass": true
+  }, 
+  {
+   "check": "CS_DUCT_CYL fully defined, cylindrical, origin 0,0,0", 
+   "expected": "FullyDefined / Cylindrical / (0,0,0)", 
+   "found": "FullyDefined / Cylindrical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 hoop nodes = 7A ids 25862/25874/25886 at r 20 mm, z 0.3 m", 
+   "expected": "[25862, 25874, 25886]", 
+   "found": "[(25862, 0.02, 0.29999999999999999), (25874, 0.02, 0.29999999999999999), (25886, 0.02, 0.29999999999999999)]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: mapped temperature identical to the 7A export (thermal field unchanged)", 
+   "expected": "byte-identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: environment (stress-free reference) temperature 300 K", 
+   "expected": "300 K", 
+   "found": "26.850000000000023 [C]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: no under-defined / error objects", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: pressure objects suppressed (thermal-only pre-stress)", 
+   "expected": "all suppressed", 
+   "found": "[('LC2_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC2_P_CFD_linear_fit_SUPPRESSED', True)]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: small deflection, direct solver (as solved in 7B)", 
+   "expected": "LargeDeflection off, Direct", 
+   "found": "{'InertiaRelief': 'False', 'LargeDeflection': 'False', 'SolverType': 'Direct', 'WeakSprings': 'Off', 'FutureAnalysis': 'PrestressedAnalysis'}", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input vs 7B solved LC2 input: identical nblock section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input vs 7B solved LC2 input: identical eblock section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input vs 7B solved LC2 input: identical bf section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input vs 7B solved LC2 input: identical material section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input vs 7B solved LC2 input: identical resolved constraints", 
+   "expected": "[('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]", 
+   "found": "[('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: U_z = 0 on 1,224 end-face nodes + 3 rotated mid-span nodes U_theta = 0, nothing else", 
+   "expected": "d uz (1224) + nrot csys12 (3) + d uy (3)", 
+   "found": "[('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: no weak springs, no extra elements, no pressure", 
+   "expected": "none", 
+   "found": "(False, [], False)", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 buckling: no loads or supports of its own (it inherits the LC2 pre-stress state and supports)", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 buckling: pre-stress environment = LC2_Axially_Restrained", 
+   "expected": "LC2", 
+   "found": "[('PreStressICEnvironment', 'LC2_Axially_Restrained'), ('ic_name', 'Pre-Stress (LC2_Axially_Restrained)')]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 buckling: no under-defined / error objects", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS: External Data linked", 
+   "expected": "1", 
+   "found": "1", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS: mapped temperature identical to the 7A export", 
+   "expected": "byte-identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS: no under-defined / error objects", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS input vs LC2 input: identical nblock section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS input vs LC2 input: identical eblock section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS input vs LC2 input: identical bf section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS input vs LC2 input: identical material section", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2NS input: the 1,224 end-face nodes rotated to csys 12 with U_theta = 0 and U_z = 0; nothing else", 
+   "expected": "uy, uz, nrot each on the 1224 LC2 end-face nodes (id sum 80282530)", 
+   "found": "[('D', 'uy', 0.0, 1224, 80282530, 18577, 108252), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252)]", 
+   "pass": false
+  }, 
+  {
+   "check": "LC2NS buckling: pre-stress environment = LC2NS", 
+   "expected": "LC2NS", 
+   "found": "[('PreStressICEnvironment', 'LC2NS_NoSway_Static_SENSITIVITY'), ('ic_name', 'Pre-Stress (LC2NS_NoSway_Static_SENSITIVITY)')]", 
+   "pass": true
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+% ===================================================================== Chapter 15
+\chapter{Parametric Study}\label{ch:param}
+
+\section{Study Design}
+The parametric study asks how the flow, thermal and structural responses change with the two operating variables and one design variable
+(Table~\ref{tab:pmatrix}). It is a one-factor-at-a-time design around P00 with the S1 supports throughout; the support question is treated
+separately (Chapter~\ref{ch:supports}). Every case is an actual simulation chain:
+\begin{itemize}
+\item a converged Fluent CFD solution of its own (Section 9B-1), with the same physics, staging and convergence criteria as P00;
+\item mapping of its own solid temperature field with the method of Chapter~\ref{ch:mapping};
+\item Mechanical LC1 and LC2 solutions and a linear buckling solution on the LC2 pre-stress (Section 9B-2).
+\end{itemize}
+No screening estimate, uniform temperature or interpolated value enters any result of this chapter. A control case, C00, repeated the whole
+pipeline for P00 and reproduced it (LC2 peak within $9.5\times10^{-6}$, $\lambda_1$ within $4.2\times10^{-7}$).
+
+\input{../Tables/tab_pmatrix}
+
+The ranges are limited by the solver data rather than chosen arbitrarily. Lower velocity and higher heat flux raise the air temperature at
+the wall; the air property table ends at 600~K, and the $-$10\,\% velocity and +10\,\% heat-flux cases reach 580.4~K and 583.4~K on the air side.
+The 12~mm wall is the thickest that a 2~mm radial element size allows under the 128,000-node licence (127,080~nodes).
+
+\section{Velocity Cases}
+V01 and V03 change the inlet velocity by $\mp$10\,\% at unchanged heat input. Velocity sets the cooling capacity: at 21.15~m/s the air leaves
+7.6~K hotter, the maximum solid temperature rises by 24.9~K and the solid mean by 21.5~K; at 25.85~m/s the changes are $-$6.2~K, $-$20.5~K and
+$-$17.7~K. The pressure drop changes by $-$13.3 and +14.1\,\% (Figure~\ref{fig:pv}a), a local exponent of about 1.37, lower than the
+1.75--2 of isothermal turbulent flow because part of the static pressure drop accelerates the heated air, and that part grows when the air
+heats more.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F01_V_vs_pressure_drop.png}\caption{Pressure drop}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F03_V_vs_max_solid_temperature.png}\caption{Maximum solid temperature}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F05_V_vs_lambda1.png}\caption{First buckling load factor (S1)}\end{subfigure}
+\caption[Effect of inlet velocity (21.15, 23.5, 25.85~m/s)]{Effect of inlet velocity (21.15, 23.5, 25.85~m/s); the dashed line only connects the three solved cases.}
+\label{fig:pv}
+\src{\provdata}
+\end{figure}
+
+\section{Heat-Flux Cases}
+Q01 and Q03 change the outer-wall heat flux by $\mp$10\,\%. The heat flux is the thermal load itself: the maximum solid temperature changes by
+$-$28.1 and +28.6~K and the outlet temperature by $\mp$6.9~K (Figure~\ref{fig:pq}). The solid-mean temperature rise above the inlet changes by
+$-$10.8 and +11.0\,\%, slightly more than in proportion; the cause (temperature-dependent air and Inconel properties are a plausible
+explanation) was not isolated. The pressure drop changes by only $\pm$4.2\,\%, through the air temperature.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F07_q_vs_max_solid_temperature.png}\caption{Maximum solid temperature}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F08_q_vs_LC2_stress.png}\caption{LC2 maximum von Mises stress}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F09_q_vs_lambda1.png}\caption{First buckling load factor (S1)}\end{subfigure}
+\caption{Effect of outer-wall heat flux (7200, 8000, 8800~W/m$^2$).}
+\label{fig:pq}
+\src{\provdata}
+\end{figure}
+
+\section{Wall-Thickness Cases}
+T01 and T03 change the wall thickness to 8 and 12~mm (outer diameter 36 and 44~mm) with the bore unchanged. To isolate the section effect,
+the total heat input is held at the baseline value, so the outer-wall flux becomes 8888.9 and 7272.7~W/m$^2$. New CAD models, CFD meshes
+(9 and 12 solid layers) and structural meshes (four and six 2.0~mm elements through the wall) were built. The outlet temperature and pressure drop are unchanged,
+and the solid temperatures move by less than 1~K: the through-wall temperature difference (6.44 / 7.58 / 8.61~K for 8 / 10 / 12~mm) and the
+axial conduction through the changed cross-section act in opposite directions. A check solution of T03 with 18 instead of 12 solid layers
+changed the node temperatures by at most 0.197~K.
+
+
+\section{CFD Results}
+Table~\ref{tab:pcfd} lists the CFD results. Every case converged at iteration 600 and held at 700, with mass and energy imbalances of at most
+$4.2\times10^{-14}$ and $1.3\times10^{-12}$, $y^+_{max}$ between 0.524 and 0.645, and all temperatures inside the property tables. An independent
+verification script re-derived the CFD results from the raw case outputs (309 of 309 checks passed).
+
+\input{../Tables/tab_pcfd}
+
+\section{Structural Results}
+The static structural results are given in Table~\ref{tab:pstruct}. For velocity and heat flux, every structural response follows the change
+of the wall temperature: the LC1 growth, the LC2 end force, the LC2 stresses and the utilisation all change with normalised sensitivities
+between 0.87 and 1.20 in magnitude. The LC2 peak von Mises stress changes slightly less than the mean axial stress (for V01 +9.56\,\% against
++9.72\,\%), because the temperature at the critical inlet-edge node changes less than the duct mean. For thickness the stress level barely
+changes (LC2 peak $-$0.47 / +0.43\,\%), while the end force scales with the section area ($-$25.6 / +28.5\,\%). The critical locations do not move
+in any case: LC2 at the outer edge of the inlet face, LC1 at the bore 6.5~mm from the inlet. No case is yield-limited; the highest
+utilisation is 0.6446 (Q03).
+
+\input{../Tables/tab_pstruct}
+
+\section{Buckling Results}
+Table~\ref{tab:pbk} gives the buckling results. The mode is the global guided-sway shape in every case. Velocity and heat flux change
+$\lambda_1$ through the end force, with the critical load itself almost constant ($P_{cr}$ changes by less than 0.8\,\%) because the section and
+the modulus change little. Thickness changes $\lambda_1$ through the section: $P_{cr}$ scales with the bending stiffness ($-$36.6 / +49.3\,\%),
+the end force with the area, and $\lambda_1 \propto I/(A\,\varepsilon_{th}) \propto r_g^2$, so the thin wall loses and the thick wall gains
+stability margin in the idealised sense (Figure~\ref{fig:pt}).
+
+Under S1, $\lambda_1$ falls below 1 for \textbf{Q03} (0.98834) and \textbf{T01} (0.94497). For these two cases the LC2 static stresses are
+idealised pre-buckling equilibrium results: the linear stability criterion indicates loss of stability before the applied load level, and
+they are not presented as physically stable operating states. \textbf{V01} ($\lambda_1$ = 1.00307) lies 0.31\,\% above 1, extremely close to the
+limit; its side of 1 is inside the thermal and material uncertainty bands. In all seven S1 cases $\lambda_1$ is below the first-yield factor, so
+every case is stability-first in the idealised model.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F11_t_vs_LC2_stress.png}\caption{LC2 maximum von Mises stress}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F12_t_vs_lambda1.png}\caption{First buckling load factor (S1)}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.325\linewidth}\centering\includegraphics[width=\linewidth]{F13_t_vs_critical_buckling_load.png}\caption{Critical buckling load}\end{subfigure}
+\caption{Effect of wall thickness (8, 10, 12~mm) at constant total heat input.}
+\label{fig:pt}
+\src{\provdata}
+\end{figure}
+
+\input{../Tables/tab_pbk}
+
+\section{Sensitivity Trends}
+Table~\ref{tab:psens} compares the three variables through normalised sensitivities, which remove the different step sizes. Velocity acts
+most strongly on the pressure drop ($S$ = +1.37); heat flux most strongly on $\lambda_1$ ($S = -1.20$) and on the thermal growth; thickness most
+strongly on the critical load ($S$ = +2.15) and the end force, with a negligible effect on temperatures ($|S| \le 0.009$). The normalised effect
+of thickness on $\lambda_1$ (+0.77) is of the same order as those of velocity (+0.94) and heat flux ($-$1.20), although it acts through a
+different mechanism. The 9A analytical screening, prepared before the simulations, agreed with the FE values of $\lambda_1$ to within
+0.78\,\%, but placed V01 at or below 1; the FE result (1.0031) supersedes it, and no conclusion of this report uses a screening value.
+
+\input{../Tables/tab_psens}
+
+\section{Limitations of One-Factor-at-a-Time Analysis}
+The design varies one parameter at a time about P00. It cannot identify interactions: the screening estimated the velocity $\times$ heat-flux
+interaction at about 8--11\,\% of the main effects, so combined off-baseline states (for example low velocity and high heat flux together) cannot
+be obtained by adding the one-factor changes. The mid-point deviation from linearity describes curvature along one axis only. No response
+surface was fitted and nothing is extrapolated beyond the $\pm$10\,\% ($V$, $q''$) and $\pm$20\,\% ($t$) steps.

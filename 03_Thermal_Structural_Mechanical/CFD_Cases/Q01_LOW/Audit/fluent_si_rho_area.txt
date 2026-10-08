@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Area-Weighted Average
+                         Density             [kg/m^3]
+-------------------------------- --------------------
+                     fluid_inlet            1.1766551
+                    fluid_outlet           0.95647368
+                ---------------- --------------------
+                             Net            1.0665644

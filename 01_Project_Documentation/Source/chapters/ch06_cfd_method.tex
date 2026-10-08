@@ -1,0 +1,68 @@
+% ===================================================================== Chapter 6
+\chapter{CFD Methodology}\label{ch:cfdmethod}
+
+\section{Fluent Setup}
+The CFD model was set up and solved in ANSYS Fluent 2026 R1 \cite{ansysfluent} under the Student licence (4-way parallel). The case was built by a Python/Fluent
+journal that writes each setting and reads it back before continuing; the settings of the final solution were read back once more from the
+converged case (Table~\ref{tab:solver}).
+
+\input{../Tables/tab_solver}
+
+\section{Solver Type}
+A pressure-based solver with coupled pressure--velocity treatment was used. The maximum local Mach number is 0.097 at the outlet
+centreline, so density-based compressible formulations are not required; the coupled algorithm gives robust convergence of the strongly
+coupled velocity, temperature and density fields.
+
+\section{Steady-State Formulation}
+All boundary conditions are time-invariant and the physical question concerns the operating state, not the start-up transient; the problem
+is therefore solved as steady (A-004). A steady solution is also the correct input for a linear static structural analysis.
+
+\section{Energy Equation}
+The energy equation is solved in both the fluid and the solid. Viscous dissipation is negligible (Brinkman number $1.8\times10^{-3}$) and
+buoyancy is switched off (Richardson number $4.4\times10^{-5}$). The fluid--solid interface is a coupled wall: temperature and heat flux are
+continuous and solved as part of the solution.
+
+\section{k-omega SST}
+The $k$--$\omega$ SST model \cite{menter1994} was chosen because it can be integrated through the viscous sublayer to the wall without wall
+functions. In conjugate heat transfer the wall heat flux sets the solid temperature, which in turn sets the stress; a wall function would
+model the quantity of interest instead of resolving it.
+
+\section{Wall Treatment}
+Fluent's blended SST wall treatment with the \texttt{correlation} $\omega$ formulation integrates the equations to the wall when the first cell
+centre lies inside the viscous sublayer ($y^+ \lesssim 1$). The mesh was designed with a first fluid cell height of 12.2~\textmu m; the
+converged solution confirms $y^+ \le$ 0.585 on the whole conjugate wall (Section~\ref{sec:yplus}).
+
+\section{Material Models}
+Air is an incompressible ideal gas with piecewise-linear $c_p$, $\mu$ and $k$ (8 points, 250--600~K). Inconel 718 is a new material with
+constant density and piecewise-linear $k_s$ and $c_{p,s}$ (5 points, 293--673~K). Fluent's default solid material carried by the mesh file
+was replaced explicitly. Temperature-dependent properties make the CFD consistent with the axially marched analytical model, which used the
+same table.
+
+\section{Boundary Conditions}
+The boundary conditions of Table~\ref{tab:bc} were read back after assignment. A heat-path audit walked every wall and confirmed that the
+flux of 8000~W/m$^2$ is applied only on the outer wall; any second non-zero flux would have been flagged as a double heat input. The inlet
+turbulence intensity of 4.411\,\% follows the fully developed pipe estimate $I = 0.16\,Re^{-1/8}$ and is an assumption whose influence is
+confined to the first few diameters.
+
+\section{Initialization}
+The whole domain, fluid and solid, was initialised from the inlet: 300~K, axial velocity 23.5~m/s and 0~Pa gauge pressure. This cold
+start corresponds to the state before heating begins. No solution was initialised from another case.
+
+\section{Numerical Schemes}
+Gradients use the least-squares cell-based method and pressure is second-order throughout. The solution was advanced in stages
+(Table~\ref{tab:stages}): first-order upwind for momentum, $k$, $\omega$ and energy while the flow and then the thermal field develop, followed by
+second-order upwind for all equations. Only the second-order solution is used as a result.
+
+\input{../Tables/tab_stages}
+
+\section{Convergence Criteria}
+Residuals alone were not accepted as evidence of convergence. The criteria combine residual targets with physical-monitor plateaus over the
+last 200 iterations and with the global mass and energy balances (Table~\ref{tab:convcrit}); they were evaluated every 100 iterations of the
+second-order stage.
+
+\input{../Tables/tab_convcrit}
+
+\section{Engineering Monitors}
+Besides the residuals, fourteen physical monitors were recorded every iteration, among them the outlet bulk temperature, the maximum solid,
+wetted-wall and outer-wall temperatures, the pressure drop, the heat rate across the interface and the outlet mass flow. The solid and fluid
+temperature ranges were checked against the property tables at every iteration to exclude silent extrapolation.

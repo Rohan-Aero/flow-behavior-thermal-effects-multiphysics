@@ -1,0 +1,47 @@
+=== SECTION 7A MECHANICAL BUILD (no solve) ===
+OK   assign material 
+OK   body ReferenceTemperature False
+FAIL body ReferenceTemperatureType: 'Body' object has no attribute 'ReferenceTemperatureType'
+OK   body StiffnessBehavior Flexible
+OK   body Volume 0.00056548667764616284 [m m m]
+OK   body Mass 4.6313358899220738 [kg]
+geometry NS ['FLUID_DOMAIN', 'FLUID_INLET', 'FLUID_OUTLET', 'FLUID_SOLID_INTERFACE', 'FLUID_WALL', 'HEATED_OUTER_WALL', 'SOLID_DOMAIN', 'SOLID_INLET_END', 'SOLID_INNER_INTERFACE', 'SOLID_OUTLET_END', 'STRUCTURAL_SUPPORT']
+OK   bias both ends 
+OK   bias factor 4 
+OK   generate mesh 
+mesh nodes 108252 elements 23400
+metrics {'ParallelDeviation': {'min': '10', 'sd': '0', 'max': '10', 'avg': '10'}, 'MaximumCornerAngle': {'min': '95 [deg]', 'sd': '0 [deg]', 'max': '95 [deg]', 'avg': '95 [deg]'}, 'JacobianRatio': {'min': '1.1153', 'sd': '0.031640966866082407', 'max': '1.2046000000000001', 'avg': '1.1535000000000004'}, 'OrthogonalQuality': "n/a 'type' object has no attribute 'OrthogonalQuality'", 'ElementQuality': {'min': '0.23667418368906179', 'sd': '0.21790109210754122', 'max': '0.99120634986953271', 'avg': '0.6882251240543662'}, 'WarpingFactor': {'min': '0', 'sd': '0', 'max': '1.3707E-13', 'avg': '1.4806164365752012E-14'}, 'Skewness': {'min': '0.055555555678873811', 'sd': '0', 'max': '0.055555555678877488', 'avg': '0.05555555567887565'}, 'AspectRatio': {'min': '1.1374', 'sd': '0.92138176921078285', 'max': '4.8823', 'avg': '2.4130510769231073'}}
+OK   cs origin ('0 [m]', '0 [m]', '0 [m]')
+NS_LC1_SUPPORT_3NODES_INLET_OUTER {'ring_nodes': 72, 'named_selection': 'NS_LC1_SUPPORT_3NODES_INLET_OUTER', 'nodes': [{'z': 0.0, 'theta_deg': 3.9756933518293961e-14, 'id': 18882, 'x': 0.02, 'y': 1.3877787807814457e-17}, {'z': 0.0, 'theta_deg': 120.00000000000009, 'id': 18894, 'x': -0.010000000000000026, 'y': 0.017320508075688759}, {'z': 0.0, 'theta_deg': -120.00000000000001, 'id': 18870, 'x': -0.010000000000000005, 'y': -0.017320508075688773}]}
+NS_LC2_HOOP_3NODES_MIDSPAN_OUTER {'ring_nodes': 72, 'named_selection': 'NS_LC2_HOOP_3NODES_MIDSPAN_OUTER', 'nodes': [{'z': 0.30000000000000016, 'theta_deg': 3.9756933518293961e-14, 'id': 25874, 'x': 0.02, 'y': 1.3877787807814457e-17}, {'z': 0.3000000000000001, 'theta_deg': 120.00000000000009, 'id': 25886, 'x': -0.010000000000000026, 'y': 0.017320508075688759}, {'z': 0.3000000000000001, 'theta_deg': -120.00000000000001, 'id': 25862, 'x': -0.010000000000000005, 'y': -0.017320508075688773}]}
+OK   LC1 outside NS name 
+OK   LC1 unmapped NS name 
+OK   LC1 import 
+OK   LC1 src min 150.687341 [C]
+OK   LC1 src max 289.39364 [C]
+OK   LC1 export mapped 
+LC1 imported temperature {'state': 'Solved', 'source_max': '289.39364 [C]', 'identifier': 'File2:Temperature1', 'mapping_NS': [], 'source_min': '150.687341 [C]', 'environment_temperature': '26.850000000000023 [C]', 'bucket_tol': ['On', 'AbsoluteGap', '0 [m]'], 'native_mapping_validation_object': 'not added: the batch API gives no statistics (run 2 probe crashed on it); verification is external (validate_mapping_7A.py)', 'algorithm': 'BucketVolume', 'method': 'PointElement', 'outside': 'NearestNode', 'control': 'Manual', 'weighting': 'ShapeFunctions'}
+OK   LC1 pressure formula (None, None)
+OK   LC1 formula readback 407.36-681.55*z
+OK   LC2 outside NS name 
+OK   LC2 unmapped NS name 
+OK   LC2 import 
+OK   LC2 src min 150.687341 [C]
+OK   LC2 src max 289.39364 [C]
+OK   LC2 export mapped 
+LC2 imported temperature {'state': 'Solved', 'source_max': '289.39364 [C]', 'identifier': 'File2:Temperature1', 'mapping_NS': [], 'source_min': '150.687341 [C]', 'environment_temperature': '26.850000000000023 [C]', 'bucket_tol': ['On', 'AbsoluteGap', '0 [m]'], 'native_mapping_validation_object': 'not added: the batch API gives no statistics (run 2 probe crashed on it); verification is external (validate_mapping_7A.py)', 'algorithm': 'BucketVolume', 'method': 'PointElement', 'outside': 'NearestNode', 'control': 'Manual', 'weighting': 'ShapeFunctions'}
+OK   LC2 pressure formula (None, None)
+OK   LC2 formula readback 407.36-681.55*z
+OK   LC1 LargeDeflection False
+OK   LC1 NumberOfSteps 1
+OK   LC1 SolverType ProgramControlled
+OK   LC1 WeakSprings Off
+OK   LC1 InertiaRelief False
+OK   LC2 LargeDeflection False
+OK   LC2 NumberOfSteps 1
+OK   LC2 SolverType ProgramControlled
+OK   LC2 WeakSprings Off
+OK   LC2 InertiaRelief False
+OK   write input LC1_Free_Expansion 
+OK   write input LC2_Axially_Restrained 
+MECH-BUILD-7A-DONE (nothing solved)

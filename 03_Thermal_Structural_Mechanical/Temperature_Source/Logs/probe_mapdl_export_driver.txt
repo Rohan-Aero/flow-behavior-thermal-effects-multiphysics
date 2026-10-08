@@ -1,0 +1,4 @@
+2026-09-25 00:45:24  fluent pid 16120 journal Journals/probe_fluent_mapdl_export.py
+2026-09-25 00:46:35  fluent exited
+2026-09-25 00:46:38  case/data identical after run: True
+2026-09-25 00:46:38  driver done

@@ -1,0 +1,122 @@
+[
+    {
+        "file":  "06_Fluent_CFD\\Case\\baseline_medium_final.cas.h5",
+        "sha256":  "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204",
+        "bytes":  5000324
+    },
+    {
+        "file":  "06_Fluent_CFD\\Data\\baseline_medium_final.dat.h5",
+        "sha256":  "F05837C5C27E022FC7974E7F04469098FD34A8500F111E4E2D782C4B705A352F",
+        "bytes":  8546549
+    },
+    {
+        "file":  "06_Fluent_CFD\\Baseline\\cfd_baseline_results.json",
+        "sha256":  "995B124BDB1FC64E2DDBA95C4F8C0A473DE555CA408392B71538EDED8350FE4D",
+        "bytes":  17084
+    },
+    {
+        "file":  "06_Fluent_CFD\\Baseline\\CFD_vs_Analytical.csv",
+        "sha256":  "FC775C6FD7D536EE378F57318F062FEC6EFB142880AC835168188BC22C4EEBF5",
+        "bytes":  2799
+    },
+    {
+        "file":  "06_Fluent_CFD\\Baseline\\CFD_BASELINE_RESULTS.md",
+        "sha256":  "747E605BE3C57B1BC0015BCB5C20714D202EA98847AB51FCE4425CA236131A86",
+        "bytes":  21555
+    },
+    {
+        "file":  "06_Fluent_CFD\\Monitors\\baseline_monitors.out",
+        "sha256":  "0DF5C0DE284BFEFB4AF34A6D245192FE5F79E5D1CD632CFB9AFBE78C4338D47E",
+        "bytes":  327168
+    },
+    {
+        "file":  "06_Fluent_CFD\\Profiles\\axial_profiles_cfd.csv",
+        "sha256":  "FB851BA933508EA65687BC914F978DAD516963FF58E681BE3DEC342251E9A7FC",
+        "bytes":  26371
+    },
+    {
+        "file":  "06_Fluent_CFD\\Exports\\wall_interface.csv",
+        "sha256":  "E37C573BEF784D490D34A7F56A110EF019CB1E2FBC5CAD336EF70DB97A405B57",
+        "bytes":  1149402
+    },
+    {
+        "file":  "06_Fluent_CFD\\Exports\\cells_fluid.csv",
+        "sha256":  "DC53C2E9E396734892E7B42C3159FD77B737A0881582B3C574D38364BD4ABB9B",
+        "bytes":  46889703
+    },
+    {
+        "file":  "06_Fluent_CFD\\Journals\\solve_baseline.py",
+        "sha256":  "91998F171B8305DC41C3E96DA00FBA6C7C166F1A5822637C42D7D7D526DA4931",
+        "bytes":  30284
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Case\\coarse_final.cas.h5",
+        "sha256":  "184CD888B0BD739FF7A791D26ABE56FB6F9866F6CAC759B46D25167EA82088E8",
+        "bytes":  2232524
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Data\\coarse_final.dat.h5",
+        "sha256":  "F26E4E93F62E835DC306BE1C889BB9ECA82BFC3BB2E7F3D2E3FDB24E83852469",
+        "bytes":  3579767
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\coarse_cfd_results.json",
+        "sha256":  "90012E713BB5E4740F3C502CBF95EFCE99C9FF52BA5F0F95F203865ECAB7B84D",
+        "bytes":  22761
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Coarse_vs_Medium.csv",
+        "sha256":  "95A80F549FC93D7B68AF2C816E33FF01978E9F27DBC608B282347305D5C590E0",
+        "bytes":  3025
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\COARSE_CFD_RESULTS.md",
+        "sha256":  "B11CEF8663712B958D71DBE7971ADF9D4E0438D440DC16D0349F40DF37CB1476",
+        "bytes":  16104
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\COARSE_CFD_AUDIT.md",
+        "sha256":  "C9A0AA73F9F3C579EAD227347E23AB24D196AE1172843D8265D8466B72F79CA4",
+        "bytes":  12270
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Monitors\\coarse_monitors.out",
+        "sha256":  "5910DCBE94C840283877B320F864C223E05FEB84C884E9169E2EC74409E9F434",
+        "bytes":  327002
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Profiles\\axial_profiles_cfd.csv",
+        "sha256":  "5CF6D5C9CD9F0AC8D28C51EDFB771A5E4EA8494EA9177A5B642A3D35D3E42571",
+        "bytes":  17371
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Exports\\wall_interface.csv",
+        "sha256":  "F459AE933EA22D1ADE34C0A7563E24AEC3CCB69FD75C1D81C59F0AF3D812594F",
+        "bytes":  511002
+    },
+    {
+        "file":  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Journals\\solve_coarse.py",
+        "sha256":  "E5013A3684AA1EE5BA2B8815EC5004B11CA399806E3190272F41C0BF1550E24D",
+        "bytes":  36885
+    },
+    {
+        "file":  "05_Meshing\\Mesh_Coarse\\coarse.msh",
+        "sha256":  "5C0DE888DCAFB7FAB94E3ABD3CF24139EAE8527750E7137598971646D26D4A98",
+        "bytes":  7965362
+    },
+    {
+        "file":  "05_Meshing\\Mesh_Medium\\medium.msh",
+        "sha256":  "2C6FCFB31108654DB2361449127761ECF687D7446C740C33C0BB350877363479",
+        "bytes":  26292846
+    },
+    {
+        "file":  "05_Meshing\\Mesh_Fine\\fine.msh",
+        "sha256":  "436EF76E234109BF5A4E457206DB7E6010A1D9B2F1DFB30A5E2CA3BF509F37DB",
+        "bytes":  84643549
+    },
+    {
+        "file":  "PROJECT_STATE.md",
+        "sha256":  "B3D300C68EC0D35A135D4FA6BEF8AEF8ABCF22FC8FF8CA9B3E9D92DE6628BB9A",
+        "bytes":  57710
+    }
+]

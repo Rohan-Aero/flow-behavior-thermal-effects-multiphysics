@@ -1,0 +1,16 @@
+
+Error: api-set-var: the object is not active
+Error Object: "file/batch-options/redisplay-question?"
+
+Error: api-set-var: the object is not active
+Error Object: "solution/controls/courant-number"
+
+Error: api-set-var: the object is not active
+Error Object: "solution/controls/courant-number"
+
+Error: Unknown calculator button MassAvg
+
+Error Object: #f
+
+Error: api-create-obj: Object can not be created
+Error Object: "solution/initialization/defaults"

@@ -1,0 +1,148 @@
+% ===================================================================== Chapter 8
+\chapter{Baseline CFD Results}\label{ch:cfdres}
+All values in this chapter belong to the official baseline P00 on the medium mesh (159,840~cells) and are summarised in
+Table~\ref{tab:cfdres}. They are simulation results of the baseline problem.
+
+\input{../Tables/tab_cfdres}
+
+\section{Convergence}
+The solution converged at iteration 600 and was confirmed at iteration 700 (Figure~\ref{fig:conv}). The evaluation at iteration 500 was
+refused because the 200-iteration window still contained the transient caused by the switch to second-order schemes (outlet temperature
+drift 0.42~K). The residuals fell to round-off level (continuity $9.0\times10^{-11}$, energy $1.6\times10^{-14}$); the evidence of convergence,
+however, is the physical monitors, which are flat to within $10^{-5}$ K. The solid temperature rose monotonically during the energy stage,
+without overshoot.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{fig16_convergence_nt.png}
+\caption[Convergence history of the baseline run]{Convergence history of the baseline run: (a) scaled residuals, (b) monitored temperatures, (c) pressure drop and interface heat rate.
+Stage boundaries at iterations 150 (energy on) and 300 (second-order schemes).}
+\label{fig:conv}
+\src{\provcfd}
+\end{figure}
+
+\section{Mass Conservation}
+Inlet and outlet mass flow are both 8.662155~g/s; the Fluent flux report gives a mass imbalance of $7.0\times10^{-13}$\,\% of the flow. The mass
+flow is 0.28\,\% below the analytical 8.686~g/s, which is entirely explained by the inscribed-polygon inlet area (area ratio 0.997147) and the
+gas constant used by Fluent. No reverse-flow cell or outlet face occurred.
+
+\section{Energy Conservation}
+The heat entering the outer wall (602.755~W) crosses the interface to within $9\times10^{-10}$ W and leaves with the air: the enthalpy flux rises
+from 16.107 to 618.862~W. The net energy imbalance over all boundaries is $3.1\times10^{-11}$\,\% of $Q$. The 0.071\,\% difference from the
+analytical 603.186~W is exactly the ratio of the 48-gon lateral area to the cylinder area.
+
+\section{Velocity Field}
+The uniform inlet profile develops into a turbulent profile (Figure~\ref{fig:vel}). The ratio of maximum to bulk velocity reaches 98\,\% of its
+exit value at $x/D \approx 17.8$. Because heating lowers the density by about 19\,\% along the duct, the flow accelerates: the area-mean
+velocity rises from 23.500~m/s to 28.894~m/s and the maximum velocity, 34.99~m/s, occurs on the outlet centreline. Radial and swirl
+velocities stay below 0.54~m/s and 0.013~m/s; secondary flow is negligible.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig01_velocity_contour_nt.png}\caption{Axial velocity (radial scale exaggerated) [m/s]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig13_velocity_profiles_nt.png}\caption{Normalised axial-velocity profiles $w/w_b$}\end{subfigure}
+\caption[Velocity field of the baseline]{Velocity field of the baseline: development from the uniform inlet profile to a turbulent profile, and acceleration of the heated air.}
+\label{fig:vel}
+\src{\provcfd{} The 1/7 power law in (b) is a textbook reference shape only.}
+\end{figure}
+
+\section{Pressure Field}
+The static pressure is almost uniform over each cross-section and falls monotonically from 438.13~Pa (area average at the inlet) to 0~Pa
+gauge at the outlet (Figure~\ref{fig:press}). The gradient is steepest in the entry region, where the boundary layer is thin, and steepens
+again downstream as heating accelerates the air. An axial momentum balance on the exported field decomposes the drop into wall shear
+(242.87~Pa), one-dimensional acceleration (149.31~Pa) and momentum-flux profile development (46.15~Pa), closing to $-$0.045\,\%.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.52\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig04_pressure_contour_nt.png}\caption{Static gauge pressure [Pa]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.46\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig10_pressure_axial_nt.png}\caption{Area-averaged static pressure along the duct}\end{subfigure}
+\caption[Pressure field of the baseline]{Pressure field of the baseline: inlet-to-outlet static pressure drop of 438.13~Pa.}
+\label{fig:press}
+\src{\provcfd}
+\end{figure}
+
+\section{Temperature Field}
+The air heats almost linearly along the duct, from 300~K to a mass-weighted outlet temperature of 368.93~K (Figures~\ref{fig:temp}
+and~\ref{fig:taxial}a). The heated layer is thin: at the outlet a hot wall layer surrounds a core that is still close to the bulk temperature.
+The solid ranges from 423.97~K (inlet end) to 562.58~K (medium mesh) at the outer-wall facet near the adiabatic outlet end; the hottest cell centre is at
+562.13~K and the volume-mean solid temperature is 525.48~K. The through-wall temperature difference is 7.581~K at mid-span and 7.361~K at
+$z$ = 570~mm, but rises to 15.1~K in the first axial slab, where the cold air and thin thermal boundary layer draw heat axially through the
+wall towards the inlet (Figure~\ref{fig:taxial}b).
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.40\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig05_fluid_temperature_contour_nt.png}\caption{Air temperature [K]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.58\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig06_solid_temperature_contour_nt.png}\caption{Inconel 718 wall temperature [K]}\end{subfigure}
+\caption{Temperature field of the baseline in the meridional plane (radial scale exaggerated) and in three wall cross-sections.}
+\label{fig:temp}
+\src{\provcfd}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.48\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig11_bulk_temperature_axial_nt.png}\caption{Bulk and wall temperatures, CFD and analytical}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.50\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig12_through_wall_temperature_nt.png}\caption{Radial profile and through-wall $\Delta T$ along the duct}\end{subfigure}
+\caption[Axial temperature development and through-wall temperature difference]{Axial temperature development and through-wall temperature difference. Dashed and dotted lines are the Section 2 analytical estimates.}
+\label{fig:taxial}
+\src{\provcfd}
+\end{figure}
+
+\section{Heat Transfer}
+Heat enters uniformly at 8000~W/m$^2$ on the outside but does not leave uniformly at the bore (Figure~\ref{fig:flux}a). In the first slab
+the bore flux reaches 38,471~W/m$^2$, 2.4 times the one-dimensional 16,000~W/m$^2$, because the heat-transfer coefficient is very high in the
+thermal entrance region; it recovers to within 1\,\% of 16,000~W/m$^2$ by $z \approx$ 250~mm. Figure~\ref{fig:flux}b shows that almost the
+whole wall-to-bulk temperature difference lies in the thin air layer next to the wall: the 10~mm of Inconel carries only a few kelvin.
+This is the Section 2 finding that the film carries about 97\,\% of the thermal resistance, seen directly in the solution.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.54\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig08_wall_heat_flux_nt.png}\caption{Wall heat flux [W/m$^2$]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.44\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{fig14_radial_temperature_nt.png}\caption{Radial temperature in air and wall}\end{subfigure}
+\caption{Heat-flux distribution at the interface and radial temperature distribution at three stations.}
+\label{fig:flux}
+\src{\provcfd}
+\end{figure}
+
+\section{Nusselt Number}
+Over the fully developed window $x/D$ = 18--29 the mean Nusselt number is 54.17 (Figure~\ref{fig:nuf}a); the corresponding film coefficient
+near the outlet is 83.6~W/(m$^2$\,K). The value lies between the property-corrected correlation (51.0 at the CFD conditions) and the
+constant-property correlations (Gnielinski 63.5, Dittus--Boelter 68.6), and inside the expected band of 44--67. The CFD implies a
+property-ratio exponent of about 0.36 instead of the 0.5 assumed in the analytical model.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\linewidth]{fig15_nusselt_friction_nt.png}
+\caption[Local Nusselt number (a) and Darcy friction factor (b) along the duct compared with correlations]{Local Nusselt number (a) and Darcy friction factor (b) along the duct compared with correlations; the shaded band is the fully developed window $x/D$ = 18--29.}
+\label{fig:nuf}
+\src{\provcfd}
+\end{figure}
+
+\section{Friction Factor}
+The fully developed Darcy friction factor, $f = 8\tau_w\rho_b/G^2$ over the same window, is 0.02163, 10.4\,\% below the Petukhov value of
+0.0241 (Figure~\ref{fig:nuf}b). This marginally misses the $\pm$10\,\% requirement set in Section 1 (PR-04), which is recorded rather than
+re-interpreted. The mesh study (Chapter~\ref{ch:mi}) traces the difference mainly to gas heating: the variable-property effect reduces the
+friction factor by a factor of 0.910 beyond the constant-property Reynolds-number change, which the constant-property correlation omits.
+
+\section{y+}\label{sec:yplus}
+On the conjugate wall $y^+$ ranges from 0.208 to 0.585 with an area mean of 0.241 (Figure~\ref{fig:yplus}); 100\,\% of the area has
+$y^+ \le 1$ and 99.07\,\% has $y^+ \le 0.5$. The maximum occurs in the first slab, where the wall shear is highest. Wall shear and wall heat
+flux are therefore resolved, not modelled by a wall function.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{fig09_yplus_nt.png}
+\caption[Wall $y^+$ on the fluid--solid interface]{Wall $y^+$ on the fluid--solid interface: (a) unwrapped distribution, (b) along the duct, (c) area-weighted histogram.}
+\label{fig:yplus}
+\src{\provcfd{} The four-fold circumferential pattern in (a) is geometric (thinner first cells at the O-grid diagonals).}
+\end{figure}
+
+\section{Analytical vs CFD Comparison}
+Table~\ref{tab:anvscfd} compares the Section 2 analytical estimates with the CFD. The two are different modelling levels and neither was
+adjusted towards the other. The conservation-based quantities agree to within the exact faceting effect. The maximum solid temperature is
+19.1~K lower in the CFD (562.58~K against the analytical 581.71~K): 15.0~K of the difference comes from the higher CFD film coefficient and 4.2~K from axial
+conduction towards the adiabatic outlet end, which the one-dimensional model cannot represent. Mesh refinement moves the CFD further from
+the analytical value (Chapter~\ref{ch:mi}), so the gap is a model difference, not a mesh artefact. Table~\ref{tab:appB} lists the analytical
+pressure-drop components.
+
+\input{../Tables/tab_anvscfd}
+

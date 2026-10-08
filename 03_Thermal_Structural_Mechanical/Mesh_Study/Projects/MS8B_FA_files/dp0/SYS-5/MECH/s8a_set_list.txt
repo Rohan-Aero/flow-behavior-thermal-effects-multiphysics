@@ -1,0 +1,11 @@
+
+
+  *****  INDEX OF DATA SETS ON RESULTS FILE  *****
+
+     SET   TIME/FREQ    LOAD STEP   SUBSTEP  CUMULATIVE
+       1  1.1080483             1         1         1                  
+       2  1.1080483             1         2         2                  
+       3  4.2978967             1         3         3                  
+       4  4.2979013             1         4         4                  
+       5  9.2248284             1         5         5                  
+       6  9.2248423             1         6         6                  

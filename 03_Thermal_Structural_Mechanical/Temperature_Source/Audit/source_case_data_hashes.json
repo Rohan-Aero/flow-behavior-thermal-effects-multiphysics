@@ -1,0 +1,31 @@
+﻿{
+    "before":  [
+                   {
+                       "file":  "06_Fluent_CFD\\Case\\baseline_medium_final.cas.h5",
+                       "sha256":  "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204",
+                       "bytes":  5000324,
+                       "mtime":  "2026-09-23T19:10:58"
+                   },
+                   {
+                       "file":  "06_Fluent_CFD\\Data\\baseline_medium_final.dat.h5",
+                       "sha256":  "F05837C5C27E022FC7974E7F04469098FD34A8500F111E4E2D782C4B705A352F",
+                       "bytes":  8546549,
+                       "mtime":  "2026-09-23T19:11:00"
+                   }
+               ],
+    "after":  [
+                  {
+                      "file":  "06_Fluent_CFD\\Case\\baseline_medium_final.cas.h5",
+                      "sha256":  "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204",
+                      "bytes":  5000324,
+                      "mtime":  "2026-09-23T19:10:58"
+                  },
+                  {
+                      "file":  "06_Fluent_CFD\\Data\\baseline_medium_final.dat.h5",
+                      "sha256":  "F05837C5C27E022FC7974E7F04469098FD34A8500F111E4E2D782C4B705A352F",
+                      "bytes":  8546549,
+                      "mtime":  "2026-09-23T19:11:00"
+                  }
+              ],
+    "identical":  true
+}

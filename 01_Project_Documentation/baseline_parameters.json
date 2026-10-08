@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "project": "Flow Behavior and Thermal Effects in Multiphysics Systems",
+    "organisation_original": "Eleation",
+    "internship_period_original": "February 2025 - May 2025",
+    "status": "RE-ANALYSIS - original project data was lost. No value here is an original internship value.",
+    "frozen_on": "2026-09-18",
+    "frozen_by": "Section 2, Step 1",
+    "classification_key": {
+      "A": "Documented from surviving evidence",
+      "B": "Re-analysed / assumed during 2026 re-analysis",
+      "C": "Calculated from other parameters"
+    },
+    "note_on_class_A": "NO parameter in this project is class A. The original files were lost and a filesystem sweep on 2026-09-18 confirmed no surviving artefact. Class A is retained in the schema only to make its absence explicit."
+  },
+  "params": {
+    "Di":    {"value": 0.020,    "units": "m",     "group": "Geometry",   "name": "Inner (bore) diameter",        "class": "B", "source": "Section 1 decision D-008", "note": "Selected to give Re=30000 at low-subsonic air velocity"},
+    "Do":    {"value": 0.040,    "units": "m",     "group": "Geometry",   "name": "Outer diameter",               "class": "B", "source": "Section 1 decision D-008", "note": "Do/Di = 2 exactly so ln(Do/Di)=ln2; clean thick-cylinder validation"},
+    "L":     {"value": 0.600,    "units": "m",     "group": "Geometry",   "name": "Heated length",                "class": "B", "source": "Section 1 decision D-008", "note": "L/D = 30; entry length is 18 D, leaving ~12 D developed"},
+    "T_in":  {"value": 300.0,    "units": "K",     "group": "Operating",  "name": "Inlet air temperature",        "class": "B", "source": "Section 1 decision D-009", "note": "Standard ambient; also the stress-free reference temperature"},
+    "V_in":  {"value": 23.5,     "units": "m/s",   "group": "Operating",  "name": "Inlet velocity",               "class": "B", "source": "Section 1 decision D-009", "note": "Set to hit Re = 30000"},
+    "p_op":  {"value": 101325.0, "units": "Pa",    "group": "Operating",  "name": "Operating (absolute) pressure","class": "B", "source": "Standard sea-level atmosphere", "note": "Outlet is 0 Pa GAUGE, i.e. p_op absolute"},
+    "p_out_gauge": {"value": 0.0,"units": "Pa",    "group": "Operating",  "name": "Outlet gauge pressure",        "class": "B", "source": "Section 1 decision", "note": "Pressure-outlet discharging to ambient"},
+    "qpp_o": {"value": 8000.0,   "units": "W/m2",  "group": "Thermal BC", "name": "Heat flux on outer surface",   "class": "B", "source": "Section 1 decision D-015", "note": "Re-selected from 12000 after the correlation-validity check; keeps both load cases elastic"},
+    "T_ref": {"value": 300.0,    "units": "K",     "group": "Structural", "name": "Stress-free reference temp",   "class": "B", "source": "Section 1 decision", "note": "Assembly / inlet condition"},
+    "R_air": {"value": 287.058,  "units": "J/kg.K","group": "Fluid",      "name": "Specific gas constant, air",   "class": "B", "source": "CODATA / standard dry air", "note": ""},
+    "gamma": {"value": 1.4,      "units": "-",     "group": "Fluid",      "name": "Ratio of specific heats",      "class": "B", "source": "Standard diatomic ideal gas", "note": "Used only for Mach number"},
+    "nu_s":  {"value": 0.294,    "units": "-",     "group": "Solid",      "name": "Poisson's ratio, Inconel 718", "class": "B", "source": "MatWeb / Special Metals; literature range 0.284-0.294", "note": "AUDIT: neither fetched datasheet listed it. Upper end taken (conservative for LC1). 1.4% spread."},
+    "rho_s": {"value": 8190.0,   "units": "kg/m3", "group": "Solid",      "name": "Density, Inconel 718",         "class": "B", "source": "Special Metals; VDM lists 8260, HighTempMetals 8220", "note": "0.9% source spread. Does not enter any steady-state result."},
+    "n_corr":{"value": 0.5,      "units": "-",     "group": "Correlation","name": "Property-variation exponent",  "class": "B", "source": "Kays & Crawford, turbulent gas heating", "note": "Literature range 0.4-0.575; sensitivity is computed and plotted"},
+    "K_in":  {"value": 0.5,      "units": "-",     "group": "Minor loss", "name": "Sharp-edged entrance loss K",  "class": "B", "source": "Standard handbook value (Crane TP-410 / White)", "note": "NOT present in the CFD domain - reported separately for a real installation"},
+    "K_out": {"value": 1.0,      "units": "-",     "group": "Minor loss", "name": "Sudden-expansion exit loss K", "class": "B", "source": "Standard handbook value", "note": "NOT present in the CFD domain - reported separately for a real installation"},
+    "K_dev": {"value": 0.09,     "units": "-",     "group": "Minor loss", "name": "Incremental entry-region dp",  "class": "B", "source": "Kays & London K(inf), turbulent", "note": "IS present in the CFD domain (developing flow)"}
+  },
+  "air_primary": {
+    "source": "Incropera & DeWitt, Fundamentals of Heat and Mass Transfer, Table A.4 (air, 1 atm). FROZEN in Section 1.",
+    "T_K":  [250, 300, 350, 400, 450, 500, 550, 600],
+    "cp":   [1006, 1007, 1009, 1014, 1021, 1030, 1040, 1051],
+    "mu":   [1.596e-5, 1.846e-5, 2.082e-5, 2.301e-5, 2.507e-5, 2.701e-5, 2.884e-5, 3.058e-5],
+    "k":    [0.02227, 0.02624, 0.03003, 0.03365, 0.03707, 0.04038, 0.04360, 0.04659],
+    "Pr":   [0.720, 0.707, 0.700, 0.690, 0.686, 0.684, 0.683, 0.685],
+    "density_note": "Density is NOT taken from the table. It is computed as p_op/(R*T) at the stated operating pressure, because textbook air tables tabulate density at 100 kPa, not 101.325 kPa."
+  },
+  "air_crosscheck": {
+    "source": "Cengel, Table A-15, Properties of air at 1 atm (verified 2026-09-18 via me.psu.edu hosted copy)",
+    "T_K":  [298.15, 373.15],
+    "cp":   [1007, 1009],
+    "mu":   [1.849e-5, 2.181e-5],
+    "k":    [0.02551, 0.03095],
+    "Pr":   [0.7296, 0.7111]
+  },
+  "solid_props": {
+    "source_thermal_mech": "VDM Metals, VDM Alloy 718 Material Data Sheet No. 4127 (verified 2026-09-18)",
+    "source_cte": "High Temp Metals / Special Metals Inconel 718 tech data - mean CTE from 21 C, dual units given (verified 2026-09-18)",
+    "T_C":   [20, 100, 200, 300, 400],
+    "cp":    [460, 458, 468, 485, 501],
+    "k":     [11.5, 12.1, 13.5, 15.2, 17.1],
+    "E_GPa": [204, 199, 193, 187, 180],
+    "Sy_MPa":[1030, 1060, 1040, 1020, 1000],
+    "cte_T_C": [93, 204, 316, 427, 538],
+    "cte":     [12.8e-6, 13.3e-6, 13.9e-6, 14.2e-6, 14.8e-6],
+    "cte_note": "Mean CTE referenced from 21 C. Our reference is 27 C; the 6 K datum offset changes total thermal strain by 0.15% and is neglected."
+  }
+}

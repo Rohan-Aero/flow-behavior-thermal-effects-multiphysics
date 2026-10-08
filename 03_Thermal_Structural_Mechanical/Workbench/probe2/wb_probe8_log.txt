@@ -1,0 +1,7 @@
+opened
+system Geom Geometry
+system SYS 1 Static Structural
+system SYS External Data
+mechanical opened
+script sent
+=== WB PROBE 8 DONE ===

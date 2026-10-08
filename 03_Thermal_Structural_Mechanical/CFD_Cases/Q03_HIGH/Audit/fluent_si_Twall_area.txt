@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Area-Weighted Average
+              Static Temperature                  [K]
+-------------------------------- --------------------
+               heated_outer_wall            553.49219
+           fluid_solid_interface            545.23547
+                ---------------- --------------------
+                             Net            550.73995

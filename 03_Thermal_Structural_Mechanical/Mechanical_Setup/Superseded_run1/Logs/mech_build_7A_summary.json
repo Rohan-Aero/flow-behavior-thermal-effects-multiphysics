@@ -1,0 +1,332 @@
+{
+ "support_nodes": [
+  {
+   "z": 0.0, 
+   "theta_deg": 3.9756933518293961e-14, 
+   "id": 18882, 
+   "x": 0.02, 
+   "y": 1.3877787807814457e-17
+  }, 
+  {
+   "z": 0.0, 
+   "theta_deg": 120.00000000000009, 
+   "id": 18894, 
+   "x": -0.010000000000000026, 
+   "y": 0.017320508075688759
+  }, 
+  {
+   "z": 0.0, 
+   "theta_deg": -120.00000000000001, 
+   "id": 18870, 
+   "x": -0.010000000000000005, 
+   "y": -0.017320508075688773
+  }
+ ], 
+ "mesh": {
+  "edges": [
+   [
+    11, 
+    "GeoCurveCircle", 
+    0.062831853071795868
+   ], 
+   [
+    12, 
+    "GeoCurveCircle", 
+    0.062831853071795868
+   ], 
+   [
+    10, 
+    "GeoCurveCircle", 
+    0.12566370614359174
+   ], 
+   [
+    9, 
+    "GeoCurveCircle", 
+    0.12566370614359174
+   ]
+  ], 
+  "order": "Quadratic", 
+  "elements": 23400, 
+  "metrics": {
+   "ParallelDeviation": {
+    "min": "10", 
+    "sd": "0", 
+    "max": "10", 
+    "avg": "10"
+   }, 
+   "MaximumCornerAngle": {
+    "min": "95 [deg]", 
+    "sd": "0 [deg]", 
+    "max": "95 [deg]", 
+    "avg": "95 [deg]"
+   }, 
+   "JacobianRatio": {
+    "min": "1.1153", 
+    "sd": "0.031640966865882858", 
+    "max": "1.2046000000000001", 
+    "avg": "1.1534999999999984"
+   }, 
+   "OrthogonalQuality": "n/a 'type' object has no attribute 'OrthogonalQuality'", 
+   "ElementQuality": {
+    "min": "0.23667418368906179", 
+    "sd": "0.21790109210754371", 
+    "max": "0.99120634986953271", 
+    "avg": "0.68822512405436609"
+   }, 
+   "WarpingFactor": {
+    "min": "0", 
+    "sd": "0", 
+    "max": "1.3707E-13", 
+    "avg": "1.4806164365752098E-14"
+   }, 
+   "Skewness": {
+    "min": "0.055555555678873811", 
+    "sd": "0", 
+    "max": "0.055555555678877488", 
+    "avg": "0.055555555678875053"
+   }, 
+   "AspectRatio": {
+    "min": "1.1374", 
+    "sd": "0.9213817692108377", 
+    "max": "4.8823", 
+    "avg": "2.4130510769230784"
+   }
+  }, 
+  "nodes": 108252
+ }, 
+ "unit_system": "StandardMKS", 
+ "messages": [
+  [
+   "Error", 
+   "The solver has found conflicting DOF constraints with defined Direct FE loading at one or more nodes. Please refer to the Troubleshooting section in the Ansys Workbench Manual"
+  ], 
+  [
+   "Info", 
+   "The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times."
+  ], 
+  [
+   "Warning", 
+   "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid valu"
+  ], 
+  [
+   "Warning", 
+   "Not enough constraints appear to be applied to prevent rigid body motion.  This may lead to solution warnings or errors.  Check results carefully."
+  ], 
+  [
+   "Info", 
+   "The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times."
+  ], 
+  [
+   "Warning", 
+   "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid valu"
+  ], 
+  [
+   "Info", 
+   "Changes to Named Selection Creation options will take effect on next import operation."
+  ], 
+  [
+   "Info", 
+   "Changes to Named Selection Creation options will take effect on next import operation."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ]
+ ], 
+ "analyses": {
+  "LC1": {
+   "pressure": [
+    {
+     "definition": "uniform 443.41 Pa gauge (CFD wall maximum, first station)", 
+     "name": "LC1_P_equivalent_uniform_443Pa_SUPPRESSED", 
+     "suppressed": true
+    }, 
+    {
+     "formula_readback": "407.36-681.55*z", 
+     "definition": "p(z) = 407.36 - 681.55 z [Pa gauge, z in m] (least-squares fit of the 90 CFD wall stations)", 
+     "name": "LC1_P_CFD_linear_fit_SUPPRESSED", 
+     "formula_set": true, 
+     "suppressed": true
+    }
+   ], 
+   "supports": [
+    {
+     "cs": "CS_DUCT_CYL", 
+     "state": "FullyDefined", 
+     "fixed": [
+      "Y", 
+      "Z"
+     ], 
+     "name": "LC1_SUPPORT_3NODES_Utheta0_Uz0", 
+     "type": "NodalOrientation+NodalDisplacement"
+    }
+   ], 
+   "imported_temperature": {
+    "state": "Solved", 
+    "source_max": "289.39364 [C]", 
+    "identifier": "File2:Temperature1", 
+    "mapping_NS": [], 
+    "source_min": "150.687341 [C]", 
+    "environment_temperature": "26.850000000000023 [C]", 
+    "bucket_tol": [
+     "On", 
+     "AbsoluteGap", 
+     "0 [m]"
+    ], 
+    "algorithm": "BucketVolume", 
+    "method": "PointElement", 
+    "outside": "NearestNode", 
+    "validation_object": "added; type not set: 'MappingValidation' object has no attribute 'ValidationType'", 
+    "control": "Manual", 
+    "weighting": "ShapeFunctions"
+   }, 
+   "solution_state": "UnderDefined", 
+   "name": "LC1_Free_Expansion", 
+   "settings": {
+    "InertiaRelief": "False", 
+    "LargeDeflection": "False", 
+    "NumberOfSteps": "1", 
+    "SolverType": "ProgramControlled", 
+    "WeakSprings": "Off"
+   }, 
+   "input_file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Mechanical_Setup\\Input_Files\\LC1_Free_Expansion_ds.dat"
+  }, 
+  "LC2": {
+   "pressure": [
+    {
+     "definition": "uniform 443.41 Pa gauge (CFD wall maximum, first station)", 
+     "name": "LC2_P_equivalent_uniform_443Pa_SUPPRESSED", 
+     "suppressed": true
+    }, 
+    {
+     "formula_readback": "407.36-681.55*z", 
+     "definition": "p(z) = 407.36 - 681.55 z [Pa gauge, z in m] (least-squares fit of the 90 CFD wall stations)", 
+     "name": "LC2_P_CFD_linear_fit_SUPPRESSED", 
+     "formula_set": true, 
+     "suppressed": true
+    }
+   ], 
+   "supports": [
+    {
+     "cs": "Global Cartesian", 
+     "state": "FullyDefined", 
+     "fixed": [
+      "Z"
+     ], 
+     "Y": "Free", 
+     "X": "Free", 
+     "name": "LC2_INLET_END_Uz0", 
+     "Z": "Discrete"
+    }, 
+    {
+     "cs": "Global Cartesian", 
+     "state": "FullyDefined", 
+     "fixed": [
+      "Z"
+     ], 
+     "Y": "Free", 
+     "X": "Free", 
+     "name": "LC2_OUTLET_END_Uz0", 
+     "Z": "Discrete"
+    }, 
+    {
+     "cs": "CS_DUCT_CYL", 
+     "state": "FullyDefined", 
+     "fixed": [
+      "Y"
+     ], 
+     "name": "LC2_SUPPORT_3NODES_Utheta0", 
+     "type": "NodalOrientation+NodalDisplacement"
+    }
+   ], 
+   "imported_temperature": {
+    "state": "Solved", 
+    "source_max": "289.39364 [C]", 
+    "identifier": "File2:Temperature1", 
+    "mapping_NS": [], 
+    "source_min": "150.687341 [C]", 
+    "environment_temperature": "26.850000000000023 [C]", 
+    "bucket_tol": [
+     "On", 
+     "AbsoluteGap", 
+     "0 [m]"
+    ], 
+    "algorithm": "BucketVolume", 
+    "method": "PointElement", 
+    "outside": "NearestNode", 
+    "validation_object": "added; type not set: 'MappingValidation' object has no attribute 'ValidationType'", 
+    "control": "Manual", 
+    "weighting": "ShapeFunctions"
+   }, 
+   "solution_state": "UnderDefined", 
+   "name": "LC2_Axially_Restrained", 
+   "settings": {
+    "InertiaRelief": "False", 
+    "LargeDeflection": "False", 
+    "NumberOfSteps": "1", 
+    "SolverType": "ProgramControlled", 
+    "WeakSprings": "Off"
+   }, 
+   "input_file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Mechanical_Setup\\Input_Files\\LC2_Axially_Restrained_ds.dat"
+  }
+ }, 
+ "named_selections": [
+  [
+   "FLUID_DOMAIN", 
+   0
+  ], 
+  [
+   "SOLID_DOMAIN", 
+   1
+  ], 
+  [
+   "FLUID_INLET", 
+   0
+  ], 
+  [
+   "FLUID_OUTLET", 
+   0
+  ], 
+  [
+   "FLUID_WALL", 
+   1
+  ], 
+  [
+   "FLUID_SOLID_INTERFACE", 
+   1
+  ], 
+  [
+   "SOLID_INNER_INTERFACE", 
+   1
+  ], 
+  [
+   "HEATED_OUTER_WALL", 
+   1
+  ], 
+  [
+   "SOLID_INLET_END", 
+   1
+  ], 
+  [
+   "SOLID_OUTLET_END", 
+   1
+  ], 
+  [
+   "STRUCTURAL_SUPPORT", 
+   1
+  ], 
+  [
+   "NS_SUPPORT_3NODES_INLET_OUTER", 
+   3
+  ]
+ ], 
+ "solid_body": {
+  "fluid_suppressed": true, 
+  "StiffnessBehavior": "Flexible", 
+  "ReferenceTemperature": "False", 
+  "ReferenceTemperatureType": "None", 
+  "material": "Inconel_718_Re_analysis", 
+  "Volume": "0.00056548667764616284 [m m m]", 
+  "Mass": "4.6313358899220738 [kg]"
+ }
+}

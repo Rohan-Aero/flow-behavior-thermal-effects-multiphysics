@@ -1,0 +1,335 @@
+{
+ "gate": "PASS", 
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 pre-solve audit", 
+ "checks": [
+  {
+   "check": "buckling analysis present as requested", 
+   "expected": "True", 
+   "found": "True", 
+   "pass": true
+  }, 
+  {
+   "check": "bodies: FLUID_DOMAIN suppressed, SOLID_DOMAIN = Inconel_718_Re_analysis", 
+   "expected": "suppressed / Inconel_718_Re_analysis", 
+   "found": "True / Inconel_718_Re_analysis", 
+   "pass": true
+  }, 
+  {
+   "check": "geometry: solid volume = pi/4 (Do^2 - Di^2) L for Do 36 mm", 
+   "expected": "4.222300526e-04 m3", 
+   "found": "0.000422230052642", 
+   "pass": true
+  }, 
+  {
+   "check": "geometry: 4 circular edges, circumferences 2 pi Ri and 2 pi Ro", 
+   "expected": "2x 0.062832, 2x 0.113097 m", 
+   "found": "[0.062831852999999993, 0.062831852999999993, 0.11309733600000001, 0.11309733600000001]", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh controls: sweep 130 axial / bias 4 both ends / 36 circumferential / 4 through-wall / quadratic", 
+   "expected": "130 / 4 / 36 / 4", 
+   "found": "{'bias': '4.0', 'circumferential': '36', 'face_meshing_location': 'SOLID_INLET_END', 'radial': '4', 'element_order': 'Quadratic', 'sweep_divisions': '130', 'sizing_edges': '[26, 30, 25, 24]', 'bias_type': 'o_ooo_ooooo_ooo_o', 'sweep_location': 'SOLID_DOMAIN', 'mapped': 'True'}", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: node count = swept quadratic-hex formula nc[(nr+1)(na+1)2 + nr(na+1) + (nr+1)na]", 
+   "expected": "89424", 
+   "found": "89424", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: element count = nc x nr x na", 
+   "expected": "18720", 
+   "found": "18720", 
+   "pass": true
+  }, 
+  {
+   "check": "licence: below the measured Student MAPDL limit (128,000 nodes)", 
+   "expected": "< 128,000", 
+   "found": "89424", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: quadratic elements", 
+   "expected": "Quadratic", 
+   "found": "Quadratic", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: no invalid / inverted elements (Jacobian ratio finite and < 40, element quality > 0)", 
+   "expected": "JR < 40, EQ > 0", 
+   "found": "JR {'min': 1.1293, 'max': 1.2046000000000001, 'avg': 1.1630500000000132} / EQ {'min': 0.23667418368906123, 'max': 0.99120634986955847, 'avg': 0.68325433524816315}", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: aspect ratio acceptable (< 20)", 
+   "expected": "< 20", 
+   "found": "{'min': 1.1374, 'max': 4.8823, 'avg': 2.4127503846153893}", 
+   "pass": true
+  }, 
+  {
+   "check": "geometry: mesh extents r 10-18 mm, z 0-600 mm", 
+   "expected": "r 0.010-0.018, z 0-0.6", 
+   "found": "r 0.010000000-0.018000000 z 0.000000000-0.600000000", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: end-face node count = 2 nc (3 nr + 2)", 
+   "expected": "1008", 
+   "found": "1008", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh: 2 nr + 1 node radii through the wall (quadratic), uniform 2.00 mm elements", 
+   "expected": "9 radii, step 1.0000 mm", 
+   "found": "[0.01, 0.010999999999999999, 0.012, 0.012999999999999999, 0.014, 0.014999999999999999, 0.016, 0.017000000000000001, 0.017999999999999999]", 
+   "pass": true
+  }, 
+  {
+   "check": "support nodes NS_LC1_SUPPORT_3NODES_INLET_OUTER at r 18 mm (outer), z 0.00 m, 0/120/240 deg", 
+   "expected": "3 nodes at the 7A positions", 
+   "found": "[(14166, 0.017999999999999999, 0.0, 0.0), (14178, 0.017999999999999999, 0.0, 120.0), (14154, 0.017999999999999999, 0.0, -120.0)] state FullyDefined", 
+   "pass": true
+  }, 
+  {
+   "check": "support nodes NS_LC2_HOOP_3NODES_MIDSPAN_OUTER at r 18 mm (outer), z 0.30 m, 0/120/240 deg", 
+   "expected": "3 nodes at the 7A positions", 
+   "found": "[(21158, 0.017999999999999999, 0.29999999999999999, 0.0), (21170, 0.017999999999999999, 0.29999999999999999, 120.0), (21146, 0.017999999999999999, 0.29999999999999999, -120.0)] state FullyDefined", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1: import settings unchanged", 
+   "expected": "Manual / BucketVolume / ShapeFunctions / NearestNode", 
+   "found": "Manual / BucketVolume / ShapeFunctions / NearestNode", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1: environment (reference) temperature 300 K", 
+   "expected": "300 K", 
+   "found": "26.850000000000023 [C]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1: Mechanical reads the T01_THIN node temperatures (source min/max = case CSV 417.966 / 561.927 K)", 
+   "expected": "417.966 / 561.927 K", 
+   "found": "417.966278 / 561.926941", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1: mapped temperature on every node, range inside the T01_THIN CFD solid range 417.37-561.97 K", 
+   "expected": "89424 values in [417.37, 561.97] K", 
+   "found": "{'state': 'Solved', 'max_K': 561.94, 'min_C': 144.82, 'source_min_K': 417.966278, 'source_max_K': 561.926941, 'max_C': 288.79, 'n': 89424, 'min_K': 417.96999999999997}", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: import settings unchanged", 
+   "expected": "Manual / BucketVolume / ShapeFunctions / NearestNode", 
+   "found": "Manual / BucketVolume / ShapeFunctions / NearestNode", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: environment (reference) temperature 300 K", 
+   "expected": "300 K", 
+   "found": "26.850000000000023 [C]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: Mechanical reads the T01_THIN node temperatures (source min/max = case CSV 417.966 / 561.927 K)", 
+   "expected": "417.966 / 561.927 K", 
+   "found": "417.966278 / 561.926941", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: mapped temperature on every node, range inside the T01_THIN CFD solid range 417.37-561.97 K", 
+   "expected": "89424 values in [417.37, 561.97] K", 
+   "found": "{'state': 'Solved', 'max_K': 561.94, 'min_C': 144.82, 'source_min_K': 417.966278, 'source_max_K': 561.926941, 'max_C': 288.79, 'n': 89424, 'min_K': 417.96999999999997}", 
+   "pass": true
+  }, 
+  {
+   "check": "temperature export identical for LC1 and LC2", 
+   "expected": "identical", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "no unmapped nodes", 
+   "expected": "0", 
+   "found": "no unmapped-node set created", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1: no under-defined / error objects", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2: no under-defined / error objects", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "BUCKLING: no under-defined / error objects", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1 input: material section identical to the 7B solved input (E(T), alpha(T), nu 0.294, TREF 26.85, MPAMOD)", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1 input: 89424 nodes, 18720 SOLID186, temperature on every node", 
+   "expected": "89424 / 18720 / 89424 / et,1,186", 
+   "found": "89424 / 18720 / 89424", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1 input: sparse direct solver (same as 7B)", 
+   "expected": "eqsl,sparse", 
+   "found": "['eqsl,sparse,,,,,1']", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1 input: no weak springs", 
+   "expected": "none", 
+   "found": "False", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1 input: BF temperatures inside the T01_THIN CFD solid range", 
+   "expected": "[417.37, 561.97] K", 
+   "found": "417.966309 - 561.9412895", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: material section identical to the 7B solved input (E(T), alpha(T), nu 0.294, TREF 26.85, MPAMOD)", 
+   "expected": "identical", 
+   "found": "identical", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: 89424 nodes, 18720 SOLID186, temperature on every node", 
+   "expected": "89424 / 18720 / 89424 / et,1,186", 
+   "found": "89424 / 18720 / 89424", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: sparse direct solver (same as 7B)", 
+   "expected": "eqsl,sparse", 
+   "found": "['eqsl,sparse,,,,,1']", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: no weak springs", 
+   "expected": "none", 
+   "found": "False", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 input: BF temperatures inside the T01_THIN CFD solid range", 
+   "expected": "[417.37, 561.97] K", 
+   "found": "417.966309 - 561.9412895", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1 constraints: the 3 support nodes rotated to csys 12, U_theta = 0 and U_z = 0; nothing else", 
+   "expected": "uy, uz, nrot on [14154, 14166, 14178]", 
+   "found": "[('D', 'uy', 0.0, 3, 42498, 14154, 14178), ('D', 'uz', 0.0, 3, 42498, 14154, 14178), ('NROT_csys12', '', 0.0, 3, 42498, 14154, 14178)]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC2 constraints: U_z = 0 on all 1008 end-face nodes + 3 mid-span nodes U_theta = 0 (csys 12); nothing else", 
+   "expected": "uz on the end faces, uy + nrot on [21146, 21158, 21170]", 
+   "found": "[('D', 'uy', 0.0, 3, 63474, 21146, 21170), ('D', 'uz', 0.0, 1008, 52244758, 13933, 89424), ('NROT_csys12', '', 0.0, 3, 63474, 21146, 21170)]", 
+   "pass": true
+  }, 
+  {
+   "check": "LC1/LC2 inputs: no pressure (thermal only)", 
+   "expected": "none", 
+   "found": "(False, False)", 
+   "pass": true
+  }, 
+  {
+   "check": "buckling: pre-stress environment = LC2_Axially_Restrained", 
+   "expected": "LC2", 
+   "found": "['LC2_Axially_Restrained']", 
+   "pass": true
+  }, 
+  {
+   "check": "buckling: no loads or supports of its own", 
+   "expected": "none", 
+   "found": "[]", 
+   "pass": true
+  }
+ ], 
+ "case": {
+  "bias": 4.0, 
+  "geometry": "10_Parametric_Study/Geometry_Checks/T01_THIN/T01_THIN.scdocx", 
+  "tag": "T01_THIN", 
+  "external_data_readback": {
+   "length_units": [
+    "m", 
+    "m"
+   ], 
+   "after": [
+    "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T01_THIN\\fluent_solid_mesh.cdb", 
+    "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T01_THIN\\fluent_solid_node_temperature.csv"
+   ], 
+   "format": [
+    "Cdb", 
+    "Delimited"
+   ], 
+   "delimiter": [
+    "Comma", 
+    ","
+   ], 
+   "ok": true, 
+   "columns": [
+    [
+     "Node ID", 
+     ""
+    ], 
+    [
+     "Temperature", 
+     "K"
+    ]
+   ], 
+   "case": "T01_THIN", 
+   "geometry_file": "<PROJECT_ROOT>\\10_Parametric_Study\\Geometry_Checks\\T01_THIN\\T01_THIN.scdocx", 
+   "before": [
+    "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+    "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+   ], 
+   "master": [
+    true, 
+    false
+   ], 
+   "start_line": "2"
+  }, 
+  "Di": 0.02, 
+  "L": 0.59999999999999998, 
+  "source_node_T_K": [
+   417.96627807617188, 
+   561.92694091796875
+  ], 
+  "source_T_range_K": [
+   417.36783, 
+   561.96619
+  ], 
+  "buckling": true, 
+  "cfd_case": "T01_THIN", 
+  "nc": 36, 
+  "cdb": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_mesh.cdb", 
+  "Do": 0.035999999999999997, 
+  "nr": 4, 
+  "csv": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_node_temperature.csv", 
+  "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\T01_THIN\\Project\\T01_THIN.wbpj", 
+  "na": 130, 
+  "pressure": false
+ }
+}

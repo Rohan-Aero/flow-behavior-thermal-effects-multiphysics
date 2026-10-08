@@ -1,0 +1,290 @@
+=== SECTION 9B-2 WB PARAMETRIC MECHANICAL REST (RE-ANALYSIS 2026) ===
+---- case T03_THICK {'bias': 4.0, 'geometry': '10_Parametric_Study/Geometry_Checks/T03_THICK/T03_THICK.scdocx', 'tag': 'T03_THICK', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [428.78338623046875, 563.04351806640625], 'source_T_range_K': [428.13391, 563.07239], 'buckling': True, 'cfd_case': 'T03_THICK', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/T03_THICK/fluent_solid_mesh.cdb', 'Do': 0.043999999999999997, 'nr': 6, 'csv': '10_Parametric_Study/Mapping/T03_THICK/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\T03_THICK\Project\T03_THICK.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/T03_THICK/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/T03_THICK/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T03_THICK\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T03_THICK\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'T03_THICK'}
+OK   ED update 
+OK   geometry SetFile -> <PROJECT_ROOT>\10_Parametric_Study/Geometry_Checks/T03_THICK/T03_THICK.scdocx 
+OK   geometry update 
+OK   geometry file read-back <PROJECT_ROOT>\10_Parametric_Study\Geometry_Checks\T03_THICK\T03_THICK.scdocx
+OK   refresh Setup of LC1 Free Expansion (External Data -> analysis) 
+OK   refresh Setup of LC2 Axially Restrained (External Data -> analysis) 
+OK   refresh Setup of LC2P Restrained Thermal + Pressure (External Data -> analysis) 
+OK   rename LC2 Linear Buckling T03_THICK 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved T03_THICK
+OK   state T03_THICK Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK Mesh/Mesh <cell state: OutOfDate: wb2qh_modelcellSim_rr>
+OK   state T03_THICK Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state T03_THICK Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state T03_THICK LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Linear Buckling T03_THICK/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Linear Buckling T03_THICK/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Linear Buckling T03_THICK/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Linear Buckling T03_THICK/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Linear Buckling T03_THICK/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2 Linear Buckling T03_THICK/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state T03_THICK LC2P Restrained Thermal + Pressure/Setup 4 <cell state: Modified: wb2qh_Mech_ur>
+OK   state T03_THICK LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state T03_THICK LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state T03_THICK CFD solid T (T03_THICK)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+---- case V01_LOW {'bias': 4.0, 'geometry': None, 'tag': 'V01_LOW', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [435.91555786132813, 587.43304443359375], 'source_T_range_K': [435.26837, 587.46741], 'buckling': True, 'cfd_case': 'V01_LOW', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/V01_LOW/fluent_solid_mesh.cdb', 'Do': 0.040000000000000001, 'nr': 5, 'csv': '10_Parametric_Study/Mapping/V01_LOW/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\V01_LOW\Project\V01_LOW.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/V01_LOW/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/V01_LOW/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V01_LOW\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V01_LOW\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'V01_LOW'}
+OK   ED update 
+OK   refresh Setup of LC1 Free Expansion (External Data -> analysis) 
+OK   refresh Setup of LC2 Axially Restrained (External Data -> analysis) 
+OK   refresh Setup of LC2P Restrained Thermal + Pressure (External Data -> analysis) 
+OK   rename LC2 Linear Buckling V01_LOW 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved V01_LOW
+OK   state V01_LOW Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state V01_LOW Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state V01_LOW Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state V01_LOW LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Linear Buckling V01_LOW/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Linear Buckling V01_LOW/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Linear Buckling V01_LOW/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Linear Buckling V01_LOW/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Linear Buckling V01_LOW/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2 Linear Buckling V01_LOW/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V01_LOW LC2P Restrained Thermal + Pressure/Setup 4 <cell state: Modified: wb2qh_Mech_ur>
+OK   state V01_LOW LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state V01_LOW LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state V01_LOW CFD solid T (V01_LOW)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+---- case V03_HIGH {'bias': 4.0, 'geometry': None, 'tag': 'V03_HIGH', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [413.88430786132813, 542.0657958984375], 'source_T_range_K': [413.27658, 542.09778], 'buckling': True, 'cfd_case': 'V03_HIGH', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_mesh.cdb', 'Do': 0.040000000000000001, 'nr': 5, 'csv': '10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\V03_HIGH\Project\V03_HIGH.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V03_HIGH\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V03_HIGH\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'V03_HIGH'}
+OK   ED update 
+OK   refresh Setup of LC1 Free Expansion (External Data -> analysis) 
+OK   refresh Setup of LC2 Axially Restrained (External Data -> analysis) 
+OK   refresh Setup of LC2P Restrained Thermal + Pressure (External Data -> analysis) 
+OK   rename LC2 Linear Buckling V03_HIGH 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved V03_HIGH
+OK   state V03_HIGH Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state V03_HIGH Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state V03_HIGH Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state V03_HIGH LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Linear Buckling V03_HIGH/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Linear Buckling V03_HIGH/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Linear Buckling V03_HIGH/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Linear Buckling V03_HIGH/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Linear Buckling V03_HIGH/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2 Linear Buckling V03_HIGH/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state V03_HIGH LC2P Restrained Thermal + Pressure/Setup 4 <cell state: Modified: wb2qh_Mech_ur>
+OK   state V03_HIGH LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state V03_HIGH LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state V03_HIGH CFD solid T (V03_HIGH)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+---- case Q01_LOW {'bias': 4.0, 'geometry': None, 'tag': 'Q01_LOW', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [410.5966796875, 534.41473388671875], 'source_T_range_K': [410.0336, 534.44556], 'buckling': True, 'cfd_case': 'Q01_LOW', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/Q01_LOW/fluent_solid_mesh.cdb', 'Do': 0.040000000000000001, 'nr': 5, 'csv': '10_Parametric_Study/Mapping/Q01_LOW/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Q01_LOW\Project\Q01_LOW.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/Q01_LOW/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/Q01_LOW/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\Q01_LOW\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\Q01_LOW\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'Q01_LOW'}
+OK   ED update 
+OK   refresh Setup of LC1 Free Expansion (External Data -> analysis) 
+OK   refresh Setup of LC2 Axially Restrained (External Data -> analysis) 
+OK   refresh Setup of LC2P Restrained Thermal + Pressure (External Data -> analysis) 
+OK   rename LC2 Linear Buckling Q01_LOW 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved Q01_LOW
+OK   state Q01_LOW Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state Q01_LOW Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Q01_LOW Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state Q01_LOW LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Linear Buckling Q01_LOW/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Linear Buckling Q01_LOW/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Linear Buckling Q01_LOW/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Linear Buckling Q01_LOW/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Linear Buckling Q01_LOW/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2 Linear Buckling Q01_LOW/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q01_LOW LC2P Restrained Thermal + Pressure/Setup 4 <cell state: Modified: wb2qh_Mech_ur>
+OK   state Q01_LOW LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state Q01_LOW LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state Q01_LOW CFD solid T (Q01_LOW)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+---- case Q03_HIGH {'bias': 4.0, 'geometry': None, 'tag': 'Q03_HIGH', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [437.27899169921875, 591.091796875], 'source_T_range_K': [436.58963, 591.12708], 'buckling': True, 'cfd_case': 'Q03_HIGH', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/Q03_HIGH/fluent_solid_mesh.cdb', 'Do': 0.040000000000000001, 'nr': 5, 'csv': '10_Parametric_Study/Mapping/Q03_HIGH/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Q03_HIGH\Project\Q03_HIGH.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/Q03_HIGH/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/Q03_HIGH/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\Q03_HIGH\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\Q03_HIGH\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'Q03_HIGH'}
+OK   ED update 
+OK   refresh Setup of LC1 Free Expansion (External Data -> analysis) 
+OK   refresh Setup of LC2 Axially Restrained (External Data -> analysis) 
+OK   refresh Setup of LC2P Restrained Thermal + Pressure (External Data -> analysis) 
+OK   rename LC2 Linear Buckling Q03_HIGH 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved Q03_HIGH
+OK   state Q03_HIGH Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state Q03_HIGH Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Q03_HIGH Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state Q03_HIGH LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Linear Buckling Q03_HIGH/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Linear Buckling Q03_HIGH/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Linear Buckling Q03_HIGH/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Linear Buckling Q03_HIGH/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Linear Buckling Q03_HIGH/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2 Linear Buckling Q03_HIGH/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Q03_HIGH LC2P Restrained Thermal + Pressure/Setup 4 <cell state: Modified: wb2qh_Mech_ur>
+OK   state Q03_HIGH LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state Q03_HIGH LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state Q03_HIGH CFD solid T (Q03_HIGH)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB PARAMETRIC MECHANICAL REST DONE ===

@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+         Maximum of Facet Values
+              Static Temperature                  [K]
+-------------------------------- --------------------
+               heated_outer_wall            534.44556
+           fluid_solid_interface            527.65259
+                ---------------- --------------------
+                             Net            534.44556

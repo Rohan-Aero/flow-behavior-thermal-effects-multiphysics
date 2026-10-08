@@ -1,0 +1,73 @@
+% ===================================================================== Chapter 10
+\chapter{Thermal Field Transfer}\label{ch:mapping}
+
+\section{CFD-to-Mechanical Workflow}
+The converged medium-mesh solution was transferred to ANSYS Mechanical without re-solving any thermal problem: the Fluent solid temperature
+field is imported directly into Static Structural as a body temperature (decision D-039). The source case and data files were hash-verified
+before and after every structural run and are unchanged. Nineteen read-back checks confirmed that the source is the converged second-order
+solution with the correct solid material and a temperature range inside the property tables.
+
+\section{One-Way Coupling}
+The coupling is one-way: CFD temperature to structure, with no feedback of deformation to the flow. The analytical thermal growth of the bore radius,
+34.94~\textmu m, changes the flow area by only 0.70\,\%, so the flow field is not affected by the deformation. A two-way or fluid--structure interaction analysis would not change the conclusions and was not performed.
+
+\section{Temperature Mapping}
+The first method tried, an External Data point cloud of cell and face centroids with triangulation, failed validation: it flagged 77,088
+of the 111,216~nodes of the structural mesh then in use as outside the cloud, left 27,696~nodes without a temperature and produced errors of up to 4.0~K. Kriging and
+radial-basis interpolation failed in batch mode, and a Workbench Fluent-system route held only the initial 300~K field. These attempts are
+kept as evidence. The accepted method is mesh-based External Data:
+\begin{itemize}
+\item the master mesh is the Fluent solid mesh itself, rebuilt from the case file as an MAPDL archive;
+\item the data are Fluent's own node temperatures (48,048~nodes), exported in EnSight format and keyed by node number;
+\item Mechanical maps them with the Bucket Volume search and Shape Function interpolation; the outside option is Nearest Node.
+\end{itemize}
+The 9,408 structural nodes on the outer surface that lie in the 0.038~mm chord gap between the true circle and the 48-sided CFD polygon
+receive shape-function values of the adjacent source element (verified), not a nearest-node copy.
+
+\section{Mapping Validation}
+Table~\ref{tab:mapping} and Figures~\ref{fig:mapside}--\ref{fig:mapaxial} summarise the checks of the transfer; ``validation'' here means a numerical comparison with the Fluent source field and an
+independent reference, not an experimental validation. All 108,252 structural nodes received a
+temperature; the mapped range, 423.84--562.56~K, matches the source node range of 423.84--562.54~K. The mid-span through-wall temperature
+difference (7.580~K mapped against 7.581~K in Fluent) and the volume mean (525.520~K against 525.483~K) are preserved. In Mechanical the imported field is displayed
+in degrees Celsius, 150.69--289.41\,\textdegree C.
+
+\input{../Tables/tab_mapping}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.68\linewidth]{F7A_03_side_by_side_and_difference_nt.png}
+\caption{Fluent source temperature (top), temperature mapped onto the Mechanical nodes (middle) and difference from an independent
+finite-volume reference (bottom), circumferential means [K].}
+\label{fig:mapside}
+\src{\provdata}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.56\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{F7A_04_axial_wall_temperature_nt.png}\caption{Inner and outer wall temperature and through-wall $\Delta T$ along the duct}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.42\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{F7A_05_through_wall_midspan_nt.png}\caption{Through-wall profile at mid-span}\end{subfigure}
+\caption{Mapped temperatures compared with the Fluent source values.}
+\label{fig:mapaxial}
+\src{\provdata}
+\end{figure}
+
+
+\section{Mapping Error}
+Two error measures are distinguished. Error (A) compares the mapped value with the exact shape-function evaluation of the source node
+field: at most 0.081~K inside the source mesh, mean 0.002~K. This is the error of the transfer itself. Error (B) compares the mapped value
+with an independent finite-volume reference built from the cell and face values: at most 2.57~K, at the bore within about 11~mm of the inlet,
+and at most 0.25~K over $z$ = 14--586~mm. Error (B) reflects Fluent's reconstruction of node values from cell values in the region of the
+steepest gradients; it is a property of the source data, identical on every structural mesh. Its effect was bounded at $\pm$9.8~MPa on the
+LC1 inlet peak stress and 1.6\,\% on the LC2 peak; interior values are unaffected. Every parametric case was mapped with the same method and
+passed the same checks, with error (A) between 0.086 and 0.154~K.
+
+\section{Reference Temperature}
+The stress-free reference temperature is $T_{ref}$ = 300~K, equal to the inlet air temperature (decision D-041).
+The thermal load is the full spatial field $\Delta T(x,y,z) = T - T_{ref}$, which ranges from 123.8 to 262.6~K; neither the analytical mean
+temperature nor the CFD maximum is used as a uniform substitute. The reference value was read back from every solver input file.
+
+\section{Temperature-Dependent Material Properties}
+The structural material uses $E(T)$ from the VDM table (204~GPa at 20\,\textdegree C to 180~GPa at 400\,\textdegree C) and the secant $\alpha(T)$
+from 12.8 to $14.8\times10^{-6}$/K, re-referenced by the solver from the 70\,\textdegree F datum of the data to $T_{ref}$. Every node lies
+inside the tabulated temperature range, so no property is extrapolated. $S_y(T)$ is interpolated at the node temperature only for the yield
+assessment.

@@ -1,0 +1,5 @@
+2026-09-26 17:47:58  launch T01_THIN: /RunScript="<PROJECT_ROOT>\10_Parametric_Study\Geometry_Checks\build_geometry_T01_THIN.py" /ScriptAPI=21 /Headless=True /Splash=False /Welcome=False /ExitAfterScript=True
+2026-09-26 17:51:12  T01_THIN exit code 0 after 193.9 s
+2026-09-26 17:51:14  launch T03_THICK: /RunScript="<PROJECT_ROOT>\10_Parametric_Study\Geometry_Checks\build_geometry_T03_THICK.py" /ScriptAPI=21 /Headless=True /Splash=False /Welcome=False /ExitAfterScript=True
+2026-09-26 17:52:53  T03_THICK exit code 0 after 98.9 s
+2026-09-26 17:52:55  cad driver done

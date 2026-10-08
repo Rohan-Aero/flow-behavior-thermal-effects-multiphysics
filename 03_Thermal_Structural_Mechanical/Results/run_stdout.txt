@@ -1,0 +1,259 @@
+{
+ "gate": "PASS",
+ "temperature_check": {
+  "LC1": {
+   "T_used_min_K": 423.83737799999994,
+   "T_used_max_K": 562.557654,
+   "max_abs_diff_vs_7A_mapped_export_K": 0.005015000000014425,
+   "max_abs_diff_vs_ds.dat_BFBLOCK_K": 1.5700000005836046e-05,
+   "nodes": 108252
+  },
+  "LC2": {
+   "T_used_min_K": 423.83737799999994,
+   "T_used_max_K": 562.557654,
+   "max_abs_diff_vs_7A_mapped_export_K": 0.005015000000014425,
+   "max_abs_diff_vs_ds.dat_BFBLOCK_K": 1.5700000005836046e-05,
+   "nodes": 108252
+  },
+  "LC2P": {
+   "T_used_min_K": 423.83737799999994,
+   "T_used_max_K": 562.557654,
+   "max_abs_diff_vs_7A_mapped_export_K": 0.005015000000014425,
+   "max_abs_diff_vs_ds.dat_BFBLOCK_K": 1.5700000005836046e-05,
+   "nodes": 108252
+  },
+  "note": "T_used = PRNSOL/*VGET BFE,TEMP from the solved database: the nodal temperature MAPDL applied. The 7A export has 2 decimals (0.005 K rounding); the BFBLOCK has 10 significant digits."
+ },
+ "LC1_expansion": {
+  "FE_dL_mean_face_m": 0.0018408599669426447,
+  "FE_uz_outlet_face_mean_m": 0.0018423707774845675,
+  "FE_uz_inlet_face_mean_m": 1.5108105419227207e-06,
+  "FE_uz_outlet_outer_mean_m": 0.0018429409304166666,
+  "FE_uz_outlet_bore_mean_m": 0.0018415632012500002,
+  "FE_uz_max_m": 0.0018429411,
+  "independent_integral_area_mean_m": 0.0018408491041481333,
+  "independent_integral_E_weighted_m": 0.0018408364503284928,
+  "independent_integral_direct_secant_form_m": 0.001840937561115278,
+  "simple_estimate_CFD_volume_mean_T_m": 0.001837163952801943,
+  "CFD_volume_mean_T_K": 525.5172401218493,
+  "section2_analytical_m": 0.002096,
+  "section2_basis": "alpha 13.72e-6 x 254.7 K x 0.600 m (uniform mean rise, Section 2)",
+  "FE_vs_integral_E_rel": 1.2774961158479314e-05,
+  "FE_vs_section2_rel": -0.12172711500828026,
+  "integral_vs_section2_rel": -0.12173833476694051
+ },
+ "LC2_axial": {
+  "FE_section_force_N": -549064.2542702873,
+  "FE_reaction_inlet_Fz_N": 548936.6137530317,
+  "FE_reaction_outlet_Fz_N": -548936.6137530496,
+  "FE_mean_axial_stress_Pa": -582575267.6145436,
+  "analytical_CFD_field_N": -548931.395691865,
+  "analytical_CFD_field_mean_stress_Pa": -582434300.284623,
+  "FE_vs_analytical_rel": 0.00024203129838262782,
+  "section2_stress_Pa": -657200000.0,
+  "section2_basis": "-E alpha dT with E 188.1 GPa, alpha 13.72e-6, dT 254.7 K (uniform)",
+  "section2_rescaled_to_CFD_mean_rise_Pa": -581900000.8169587
+ },
+ "pressure": {
+  "definition": "LC2P = LC2 + uniform 443.41 Pa gauge on the bore (CFD wall maximum; bound of p(z) = 407.36 - 681.55 z)",
+  "vm_max_LC2_Pa": 605160873.0,
+  "vm_max_LC2P_Pa": 605160918.0,
+  "vm_max_diff_Pa": 45.0,
+  "vm_max_diff_pct": 7.436039243072478e-06,
+  "same_max_node": true,
+  "nodewise_dvm_min_Pa": 14.0,
+  "nodewise_dvm_max_Pa": 161.0,
+  "usum_max_LC2_m": 0.00013488427764164404,
+  "usum_max_LC2P_m": 0.00013488429450689786,
+  "usum_max_diff_m": 1.686525382240192e-11,
+  "ur_max_LC2_m": 8.97340069e-05,
+  "ur_max_LC2P_m": 8.97340357e-05,
+  "mech_native_vm_max_LC2": 605160873.3807464,
+  "mech_native_vm_max_LC2P": 605160918.4122063,
+  "lame_check_midspan": {
+   "lame_constant_E_plane_strain": {
+    "s_t_bore": 739.0166666666667,
+    "s_r_bore": -443.41,
+    "s_t_outer": 295.6066666666667,
+    "s_r_outer": 0.0,
+    "s_z": 86.90836,
+    "u_r_bore_m": 4.4532058919163865e-11
+   },
+   "FE_LC2P_minus_LC2": {
+    "st_bore": 736.6333333336645,
+    "sr_bore": -440.1527499999963,
+    "sz_bore": 81.77777777777777,
+    "ur_bore": 4.45736111108242e-11,
+    "st_outer": 295.82222222205667,
+    "sr_outer": -0.6420055555570596,
+    "sz_outer": 92.44444444444444,
+    "ur_outer": 2.853055555482962e-11
+   },
+   "E_bore_Pa": 189487791336.66666
+  }
+ },
+ "utilisation": {
+  "LC1": {
+   "at_max_vm": {
+    "vm_Pa": 24282183.0,
+    "Sy_T_Pa": 1049067379.8,
+    "utilisation": 0.02314644747092345,
+    "margin_Sy_over_vm_minus_1": 42.203174105062956,
+    "loc": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "surface": "bore (inner surface)"
+   },
+   "max_utilisation_anywhere": {
+    "vm_Pa": 24282183.0,
+    "Sy_T_Pa": 1049067379.8,
+    "utilisation": 0.02314644747092345,
+    "margin": 42.203174105062956,
+    "loc": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "surface": "bore (inner surface)"
+   },
+   "with_scalar_1020MPa_for_reference": 0.023806061764705882,
+   "max_utilisation_interior_15-585mm": {
+    "vm_Pa": 20111212.6,
+    "Sy_T_Pa": 1047010263.0,
+    "utilisation": 0.019208228716283367,
+    "margin": 51.06102107438315,
+    "loc": {
+     "node": 19150,
+     "x_mm": -7.6604,
+     "y_mm": -6.4279,
+     "z_mm": 15.908,
+     "r_mm": 10.0,
+     "theta_deg": -140.0,
+     "T_K": 438.099,
+     "T_C": 164.949
+    },
+    "surface": "bore (inner surface)"
+   }
+  },
+  "LC2": {
+   "at_max_vm": {
+    "vm_Pa": 605160873.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779772944955913,
+    "margin_Sy_over_vm_minus_1": 0.7301717723577943,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "max_utilisation_anywhere": {
+    "vm_Pa": 605160873.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779772944955913,
+    "margin": 0.7301717723577943,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "with_scalar_1020MPa_for_reference": 0.5932949735294117,
+   "max_utilisation_interior_15-585mm": {
+    "vm_Pa": 587590460.0,
+    "Sy_T_Pa": 1022282013.0,
+    "utilisation": 0.5747831347199884,
+    "margin": 0.7397866074952952,
+    "loc": {
+     "node": 24110,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 562.6981,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 561.74,
+     "T_C": 288.59
+    },
+    "surface": "outer surface"
+   }
+  },
+  "LC2P": {
+   "at_max_vm": {
+    "vm_Pa": 605160918.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779773374742098,
+    "margin_Sy_over_vm_minus_1": 0.730171643701552,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "max_utilisation_anywhere": {
+    "vm_Pa": 605160918.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779773374742098,
+    "margin": 0.730171643701552,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "with_scalar_1020MPa_for_reference": 0.5932950176470588,
+   "max_utilisation_interior_15-585mm": {
+    "vm_Pa": 587590507.0,
+    "Sy_T_Pa": 1022282013.0,
+    "utilisation": 0.5747831806955602,
+    "margin": 0.7397864683338051,
+    "loc": {
+     "node": 24110,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 562.6981,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 561.74,
+     "T_C": 288.59
+    },
+    "surface": "outer surface"
+   }
+  }
+ }
+}

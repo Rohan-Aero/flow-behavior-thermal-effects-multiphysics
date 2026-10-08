@@ -1,0 +1,4 @@
+OK    read case                                              
+OK    read data                                              
+FAIL  export mechanical_apdl solid_domain                    InactiveObjectError: '<session>.settings.file.export.mechanical_apdl' is currently inactive.
+Probe file probe_export_api_log.txt 1392

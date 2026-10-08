@@ -1,0 +1,87 @@
+[
+ {
+  "status": "PASS",
+  "check": "applied force: 8A LC2 re-solve inlet/outlet reactions balance and equal 7B",
+  "detail": "inlet 548936.6138 N, outlet -548936.6138 N, 7B inlet 548936.6138 N"
+ },
+ {
+  "status": "PASS",
+  "check": "mean axial stress N/A = 582.44 MPa",
+  "detail": "582.4398 MPa"
+ },
+ {
+  "status": "PASS",
+  "check": "r = 11.180 mm, L/r = 53.67",
+  "detail": "r 11.18034 mm, L/r 53.6656"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2_Linear_Buckling: 6 load factors agree (solve.out / snippet / Mechanical)",
+  "detail": "solve.out [1.108047, 1.1080471, 4.2978959, 4.2979052, 9.2248152, 9.224832] | csv [1.108047, 1.1080471, 4.2978959, 4.2979052, 9.2248152, 9.224832] | mech [1.108047, 1.1080471, 4.2978959, 4.2979052, 9.2248152, 9.224832]"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2_Linear_Buckling: 0 solver errors, solution Solved",
+  "detail": "Solved"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2NS_Linear_Buckling: 6 load factors agree (solve.out / snippet / Mechanical)",
+  "detail": "solve.out [4.299945, 4.2999454, 8.3561528, 8.3561548, 15.424441, 15.424443] | csv [4.299945, 4.2999454, 8.3561528, 8.3561548, 15.4244408, 15.4244432] | mech [4.299945, 4.2999454, 8.3561528, 8.3561548, 15.4244408, 15.4244432]"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2NS_Linear_Buckling: 0 solver errors, solution Solved",
+  "detail": "Solved"
+ },
+ {
+  "status": "PASS",
+  "check": "guided Euler with an independent E weighting within 0.5 % of the documented 1.119",
+  "detail": "E_g 190.33 GPa, LF 1.1198"
+ },
+ {
+  "status": "PASS",
+  "check": "FE lambda_1 between Euler + shear (1.1036) and Euler (1.1194)",
+  "detail": "lambda_1 1.108047"
+ },
+ {
+  "status": "PASS",
+  "check": "Johnson K=1.0 (hot-end S_y, E) = 1.058",
+  "detail": "1.0575"
+ },
+ {
+  "status": "PASS",
+  "check": "Johnson K=0.5 (hot-end S_y, E) = 1.581",
+  "detail": "1.5805"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2 (pre-stress of the buckling): U_z = 0 on exactly the nodes with z = 0 or z = 0.6 m (1,224)",
+  "detail": "uz set 1224 nodes, end-face nodes 1224, equal True"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2: U_theta = 0 only on 25862/25874/25886, rotated (nrot) to the cylindrical CS; no other D",
+  "detail": "D entries [('uz', 1224), ('uy', 3)], nrot [[25862, 25874, 25886]]"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2NS: uy and uz on the 1,224 end-face nodes; cylindrical nodal systems (NMOD) except at theta = 0",
+  "detail": "1202 NMOD, max angle error 1.63e-07 deg, 22 unrotated at theta 0"
+ },
+ {
+  "status": "PASS",
+  "check": "mode 1: both end planes translate laterally in opposite directions, mid-span ~0 (guided sway)",
+  "detail": "|u| inlet 1.0344, mid 1.51e-05, outlet 1.0459, cos(angle) -1.0000"
+ },
+ {
+  "status": "PASS",
+  "check": "LC2NS mode 1: ends fixed laterally, maximum at mid-span (clamped shape)",
+  "detail": "inlet 1.83e-03, mid 1.1839, outlet 1.88e-03"
+ },
+ {
+  "status": "PASS",
+  "check": "7B project files SHA-identical before/after 8A",
+  "detail": "58 files, identical True"
+ }
+]

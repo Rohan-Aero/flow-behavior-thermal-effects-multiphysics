@@ -1,0 +1,4 @@
+2026-09-25 00:13:40  launching runwb2 -B -R <PROJECT_ROOT>\08_Structural_Analysis\Workbench\Scripts\wb_probe2.wbjn
+2026-09-25 00:13:40  pid 9060
+2026-09-25 00:16:03  runwb2 exited
+2026-09-25 00:16:03  driver done

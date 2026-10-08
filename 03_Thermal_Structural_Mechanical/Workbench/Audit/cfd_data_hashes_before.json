@@ -1,0 +1,19 @@
+﻿{
+    "root":  "<PROJECT_ROOT>\\06_Fluent_CFD\\Data",
+    "taken":  "2026-09-25T01:20:16",
+    "count":  2,
+    "files":  [
+                  {
+                      "file":  "baseline_medium_final.dat.h5",
+                      "bytes":  8546549,
+                      "mtime":  "2026-09-23T19:11:00",
+                      "sha256":  "F05837C5C27E022FC7974E7F04469098FD34A8500F111E4E2D782C4B705A352F"
+                  },
+                  {
+                      "file":  "intermediate_end_stage2_firstorder_iter300.dat.h5",
+                      "bytes":  12581795,
+                      "mtime":  "2026-09-23T19:03:42",
+                      "sha256":  "4B03FFA9F7FDFD30DEFA7E4570AEA8F2005F8DFFE74154298CE7772A5C5454C2"
+                  }
+              ]
+}

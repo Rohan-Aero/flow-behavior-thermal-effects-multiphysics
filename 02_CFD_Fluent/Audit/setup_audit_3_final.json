@@ -1,0 +1,404 @@
+{
+  "label": "3_final",
+  "n_items": 59,
+  "n_failed": 0,
+  "rows": [
+    {
+      "item": "fluent version",
+      "value": "Ansys Fluent 2026 R1",
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "solver type",
+      "value": "pressure-based",
+      "expected": "pressure-based",
+      "ok": true
+    },
+    {
+      "item": "time",
+      "value": "steady",
+      "expected": "steady",
+      "ok": true
+    },
+    {
+      "item": "velocity formulation",
+      "value": "absolute",
+      "expected": "absolute",
+      "ok": true
+    },
+    {
+      "item": "operating pressure [Pa]",
+      "value": 101325,
+      "expected": 101325.0,
+      "ok": true
+    },
+    {
+      "item": "gravity enabled",
+      "value": false,
+      "expected": false,
+      "ok": true
+    },
+    {
+      "item": "energy equation",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "energy: viscous dissipation",
+      "value": false,
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "energy: pressure work",
+      "value": false,
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "energy: kinetic energy",
+      "value": false,
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "viscous model",
+      "value": "k-omega",
+      "expected": "k-omega",
+      "ok": true
+    },
+    {
+      "item": "k-omega variant",
+      "value": "sst",
+      "expected": "sst",
+      "ok": true
+    },
+    {
+      "item": "SST wall omega treatment",
+      "value": "correlation",
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "SST low-Re correction",
+      "value": false,
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "radiation model",
+      "value": "none",
+      "expected": "none",
+      "ok": true
+    },
+    {
+      "item": "air density model",
+      "value": "incompressible-ideal-gas",
+      "expected": "incompressible-ideal-gas",
+      "ok": true
+    },
+    {
+      "item": "air molecular weight",
+      "value": 28.966,
+      "expected": 28.966,
+      "ok": true
+    },
+    {
+      "item": "air cp model",
+      "value": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    {
+      "item": "air cp curve = Incropera A.4",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "air mu model",
+      "value": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    {
+      "item": "air mu curve = Incropera A.4",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "air k model",
+      "value": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    {
+      "item": "air k curve = Incropera A.4",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "Inconel density option",
+      "value": "value",
+      "expected": "value",
+      "ok": true
+    },
+    {
+      "item": "Inconel density [kg/m3]",
+      "value": 8190.0,
+      "expected": 8190.0,
+      "ok": true
+    },
+    {
+      "item": "Inconel k model",
+      "value": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    {
+      "item": "Inconel k curve = VDM 4127",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "Inconel cp model",
+      "value": "piecewise-linear",
+      "expected": "piecewise-linear",
+      "ok": true
+    },
+    {
+      "item": "Inconel cp curve = VDM 4127",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "fluid zone material",
+      "value": "air",
+      "expected": "air",
+      "ok": true
+    },
+    {
+      "item": "solid zone material",
+      "value": "inconel-718",
+      "expected": "inconel-718",
+      "ok": true
+    },
+    {
+      "item": "inlet velocity spec",
+      "value": "Magnitude, Normal to Boundary",
+      "expected": "Magnitude, Normal to Boundary",
+      "ok": true
+    },
+    {
+      "item": "inlet velocity [m/s]",
+      "value": 23.5,
+      "expected": 23.5,
+      "ok": true
+    },
+    {
+      "item": "inlet temperature [K]",
+      "value": 300,
+      "expected": 300.0,
+      "ok": true
+    },
+    {
+      "item": "inlet turbulence spec",
+      "value": "Intensity and Hydraulic Diameter",
+      "expected": "Intensity and Hydraulic Diameter",
+      "ok": true
+    },
+    {
+      "item": "inlet turbulent intensity [-]",
+      "value": 0.04411209588036475,
+      "expected": 0.04411209588036475,
+      "ok": true
+    },
+    {
+      "item": "inlet hydraulic diameter [m]",
+      "value": 0.02,
+      "expected": 0.02,
+      "ok": true
+    },
+    {
+      "item": "outlet gauge pressure [Pa]",
+      "value": 0,
+      "expected": 0.0,
+      "ok": true
+    },
+    {
+      "item": "outlet prevent reverse flow",
+      "value": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "item": "outlet backflow T branch active",
+      "value": false,
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "heated wall condition",
+      "value": "Heat Flux",
+      "expected": "Heat Flux",
+      "ok": true
+    },
+    {
+      "item": "heated wall flux [W/m2]",
+      "value": 8000.0,
+      "expected": 8000.0,
+      "ok": true
+    },
+    {
+      "item": "solid inlet end",
+      "value": [
+        "Heat Flux",
+        0
+      ],
+      "expected": [
+        "Heat Flux",
+        0
+      ],
+      "ok": true
+    },
+    {
+      "item": "solid outlet end",
+      "value": [
+        "Heat Flux",
+        0
+      ],
+      "expected": [
+        "Heat Flux",
+        0
+      ],
+      "ok": true
+    },
+    {
+      "item": "interface thermal coupling",
+      "value": "Coupled",
+      "expected": "Coupled",
+      "ok": true
+    },
+    {
+      "item": "interface shadow coupling",
+      "value": "Coupled",
+      "expected": "Coupled",
+      "ok": true
+    },
+    {
+      "item": "p-v coupling",
+      "value": "Coupled",
+      "expected": "Coupled",
+      "ok": true
+    },
+    {
+      "item": "gradient scheme",
+      "value": "least-square-cell-based",
+      "expected": "least-square-cell-based",
+      "ok": true
+    },
+    {
+      "item": "scheme pressure",
+      "value": "second-order",
+      "expected": "second-order",
+      "ok": true
+    },
+    {
+      "item": "scheme mom",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "scheme k",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "scheme omega",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "scheme temperature",
+      "value": "second-order-upwind",
+      "expected": "second-order-upwind",
+      "ok": true
+    },
+    {
+      "item": "pseudo-time formulation",
+      "value": "global-time-step",
+      "expected": "global-time-step",
+      "ok": true
+    },
+    {
+      "item": "pseudo-time step settings",
+      "value": {
+        "time_step_method": "automatic",
+        "length_scale_methods": "conservative",
+        "time_step_size_scale_factor": 1.0,
+        "verbosity": 0,
+        "auto_time_size_calc_solid_zone": true,
+        "time_solid_scale_factor": 1.0
+      },
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "explicit pseudo relaxation",
+      "value": {
+        "global_dt_pseudo_relax": {
+          "density": 1.0,
+          "body-force": 1.0,
+          "k": 0.75,
+          "omega": 0.75,
+          "turb-viscosity": 1.0,
+          "temperature": 0.75
+        }
+      },
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "explicit p/mom under-relaxation",
+      "value": {
+        "explicit_pressure_under_relaxation": 0.5,
+        "explicit_momentum_under_relaxation": 0.5
+      },
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "solution limits",
+      "value": {
+        "min_pressure": 1,
+        "max_pressure": 50000000000.0,
+        "min_temperature": 1,
+        "max_temperature": 5000,
+        "min_tke": 1e-14,
+        "min_omega": 1e-20,
+        "max_turb_visc_ratio": 100000.0
+      },
+      "expected": "(recorded)",
+      "ok": true
+    },
+    {
+      "item": "equations solved",
+      "value": {
+        "flow": true,
+        "kw": true,
+        "temperature": true
+      },
+      "expected": "(recorded)",
+      "ok": true
+    }
+  ]
+}

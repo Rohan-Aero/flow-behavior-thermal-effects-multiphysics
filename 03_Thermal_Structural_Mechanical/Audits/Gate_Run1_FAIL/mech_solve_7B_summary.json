@@ -1,0 +1,435 @@
+{
+ "mesh_metrics": {
+  "ParallelDeviation": {
+   "min": 10.0, 
+   "max": 10.0, 
+   "avg": 10.0
+  }, 
+  "MaximumCornerAngle": {
+   "min": 95.0, 
+   "max": 95.0, 
+   "avg": 95.0
+  }, 
+  "JacobianRatio": {
+   "min": 1.1153, 
+   "max": 1.2046000000000001, 
+   "avg": 1.1535000000000084
+  }, 
+  "OrthogonalQuality": "n/a 'type' object has no attribute 'OrthogonalQuality'", 
+  "ElementQuality": {
+   "min": 0.23667418368906179, 
+   "max": 0.99120634986953271, 
+   "avg": 0.68822512405437941
+  }, 
+  "WarpingFactor": {
+   "min": 0.0, 
+   "max": 1.3706999999999999e-13, 
+   "avg": 1.480616436575206e-14
+  }, 
+  "Skewness": {
+   "min": 0.055555555678873811, 
+   "max": 0.055555555678877488, 
+   "avg": 0.055555555678874331
+  }, 
+  "AspectRatio": {
+   "min": 1.1374, 
+   "max": 4.8823, 
+   "avg": 2.4130510769231237
+  }
+ }, 
+ "cases": {}, 
+ "note": "RE-ANALYSIS 2026 - newly generated structural solutions (not recovered originals)", 
+ "FATAL": "PRE-SOLVE GATE FAILED - nothing solved: ['LC2P input vs LC2 input: identical eblock section']", 
+ "presolve_input": {
+  "LC1": {
+   "bf_min_K": 423.83737199999996, 
+   "lines_with_443.41": [], 
+   "bf_min_C": 150.687372, 
+   "eblock_header": "eblock,21,COMPACT,,23400", 
+   "constraints_raw": [
+    "local,12,1,0.,0.,0.,0.,0.,0.", 
+    "csys,0", 
+    "csys,12", 
+    "nrot,_CM77", 
+    "csys,0", 
+    "d,_CM78U,uy,0.", 
+    "d,_CM78U,uz,0."
+   ], 
+   "n_nodes": 108252, 
+   "has_443.41": false, 
+   "wsprings": false, 
+   "bf_max_K": 562.55763989999991, 
+   "n_bf": 108252, 
+   "misc": [
+    "antype,0", 
+    "eqsl,pcg,1e-8,,,,,,1", 
+    "et,1,186", 
+    "keyo,1,2,1", 
+    "nsub,1,1,1", 
+    "outres,all,none", 
+    "outres,cont,all,", 
+    "outres,eangl,all", 
+    "outres,epel,all,", 
+    "outres,eppl,all,", 
+    "outres,epth,all,", 
+    "outres,erase", 
+    "outres,etmp,all", 
+    "outres,nsol,all,", 
+    "outres,rsol,all", 
+    "outres,strs,all,", 
+    "outres,veng,all"
+   ], 
+   "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC1_presolve_ds.dat", 
+   "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+   "pressure_lines": [], 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ]
+   ], 
+   "bf_max_C": 289.4076399, 
+   "material": [
+    "tref,26.85", 
+    "MP,DENS,1,8190,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,93.33", 
+    "MPTEMP,2,204.44", 
+    "MPTEMP,3,315.56", 
+    "MPTEMP,4,426.67", 
+    "MPTEMP,5,537.78", 
+    "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+    "MPTEMP,,,,,,,,", 
+    "MPAMOD,1,21.11,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+    "MPTEMP,,,,,,,,"
+   ], 
+   "nblock_header": "nblock,3,,119077", 
+   "n_elem_lines": 23400, 
+   "lines": 240187
+  }, 
+  "LC2P": {
+   "bf_min_K": 423.83737199999996, 
+   "lines_with_443.41": [
+    "sf,all,pres,443.41"
+   ], 
+   "bf_min_C": 150.687372, 
+   "eblock_header": "eblock,21,COMPACT,,4680", 
+   "constraints_raw": [
+    "local,12,1,0.,0.,0.,0.,0.,0.", 
+    "csys,0", 
+    "csys,12", 
+    "nrot,_CM114", 
+    "csys,0", 
+    "cmsel,s,_DISPZEROUZ", 
+    "d,all,uz,0", 
+    "nsel,all", 
+    "nsel,all", 
+    "d,_CM115U,uy,0."
+   ], 
+   "n_nodes": 108252, 
+   "has_443.41": true, 
+   "wsprings": false, 
+   "bf_max_K": 562.55763989999991, 
+   "n_bf": 108252, 
+   "misc": [
+    "antype,0", 
+    "eqsl,pcg,1e-8,,,,,,1", 
+    "et,1,186", 
+    "et,2,154", 
+    "keyo,1,2,1", 
+    "nsub,1,1,1", 
+    "outres,all,none", 
+    "outres,cont,all,", 
+    "outres,eangl,all", 
+    "outres,epel,all,", 
+    "outres,eppl,all,", 
+    "outres,epth,all,", 
+    "outres,erase", 
+    "outres,etmp,all", 
+    "outres,nsol,all,", 
+    "outres,rsol,all", 
+    "outres,strs,all,", 
+    "outres,veng,all", 
+    "sf,all,pres,443.41"
+   ], 
+   "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC2P_presolve_ds.dat", 
+   "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+   "pressure_lines": [
+    "/title,Flow_Behavior_Thermal_Effects_Structural_7B--LC2P_Restrained_Thermal_Plus_Pressure", 
+    "sf,all,pres,443.41"
+   ], 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     1224, 
+     80282530, 
+     18577, 
+     108252
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ]
+   ], 
+   "bf_max_C": 289.4076399, 
+   "material": [
+    "tref,26.85", 
+    "MP,DENS,1,8190,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,93.33", 
+    "MPTEMP,2,204.44", 
+    "MPTEMP,3,315.56", 
+    "MPTEMP,4,426.67", 
+    "MPTEMP,5,537.78", 
+    "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+    "MPTEMP,,,,,,,,", 
+    "MPAMOD,1,21.11,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+    "MPTEMP,,,,,,,,"
+   ], 
+   "nblock_header": "nblock,3,,119077", 
+   "n_elem_lines": 28080, 
+   "lines": 244901
+  }, 
+  "LC2": {
+   "bf_min_K": 423.83737199999996, 
+   "lines_with_443.41": [], 
+   "bf_min_C": 150.687372, 
+   "eblock_header": "eblock,21,COMPACT,,23400", 
+   "constraints_raw": [
+    "local,12,1,0.,0.,0.,0.,0.,0.", 
+    "csys,0", 
+    "csys,12", 
+    "nrot,_CM92", 
+    "csys,0", 
+    "cmsel,s,_DISPZEROUZ", 
+    "d,all,uz,0", 
+    "nsel,all", 
+    "d,_CM93U,uy,0."
+   ], 
+   "n_nodes": 108252, 
+   "has_443.41": false, 
+   "wsprings": false, 
+   "bf_max_K": 562.55763989999991, 
+   "n_bf": 108252, 
+   "misc": [
+    "antype,0", 
+    "eqsl,pcg,1e-8,,,,,,1", 
+    "et,1,186", 
+    "keyo,1,2,1", 
+    "nsub,1,1,1", 
+    "outres,all,none", 
+    "outres,cont,all,", 
+    "outres,eangl,all", 
+    "outres,epel,all,", 
+    "outres,eppl,all,", 
+    "outres,epth,all,", 
+    "outres,erase", 
+    "outres,etmp,all", 
+    "outres,nsol,all,", 
+    "outres,rsol,all", 
+    "outres,strs,all,", 
+    "outres,veng,all"
+   ], 
+   "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC2_presolve_ds.dat", 
+   "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+   "pressure_lines": [], 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     1224, 
+     80282530, 
+     18577, 
+     108252
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ]
+   ], 
+   "bf_max_C": 289.4076399, 
+   "material": [
+    "tref,26.85", 
+    "MP,DENS,1,8190,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,93.33", 
+    "MPTEMP,2,204.44", 
+    "MPTEMP,3,315.56", 
+    "MPTEMP,4,426.67", 
+    "MPTEMP,5,537.78", 
+    "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+    "MPTEMP,,,,,,,,", 
+    "MPAMOD,1,21.11,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+    "MPTEMP,,,,,,,,"
+   ], 
+   "nblock_header": "nblock,3,,119077", 
+   "n_elem_lines": 23400, 
+   "lines": 240204
+  }
+ }, 
+ "settings_before": {
+  "LC1": {
+   "InertiaRelief": "False", 
+   "LargeDeflection": "False", 
+   "NumberOfSteps": "1", 
+   "SolverType": "ProgramControlled", 
+   "WeakSprings": "Off"
+  }, 
+  "LC2P": {
+   "InertiaRelief": "False", 
+   "LargeDeflection": "False", 
+   "NumberOfSteps": "1", 
+   "SolverType": "ProgramControlled", 
+   "WeakSprings": "Off"
+  }, 
+  "LC2": {
+   "InertiaRelief": "False", 
+   "LargeDeflection": "False", 
+   "NumberOfSteps": "1", 
+   "SolverType": "ProgramControlled", 
+   "WeakSprings": "Off"
+  }
+ }, 
+ "unit_system": "StandardMKS", 
+ "presolve_input_raw_constraints_identical_to_7A": {
+  "LC1": true, 
+  "LC2": true
+ }, 
+ "LC2P_definition": {
+  "pressure": "uniform 443.41 Pa gauge (= CFD wall static pressure at the first station, maximum of the CFD wall distribution) on SOLID_INNER_INTERFACE, normal to the bore (pushes outward). Differential internal-external pressure: the outlet is at 0 Pa gauge and the outside of the duct at ambient, so no atmospheric absolute pressure is applied.", 
+  "why_uniform": "upper bound of the CFD distribution p(z) = 407.36-681.55 z <= 443.41 Pa; the model is linear, so the pressure contribution scales with p and the uniform maximum bounds the effect of the real distribution", 
+  "restraints": "identical to LC2", 
+  "states": {
+   "orientation": "FullyDefined", 
+   "pressure": "FullyDefined", 
+   "hoop": "FullyDefined", 
+   "inlet": "FullyDefined", 
+   "outlet": "FullyDefined", 
+   "import": "Solved"
+  }, 
+  "temperature": "identical CFD import"
+ }
+}

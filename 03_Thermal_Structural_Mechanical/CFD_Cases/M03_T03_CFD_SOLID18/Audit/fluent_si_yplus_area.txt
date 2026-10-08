@@ -1,0 +1,6 @@
+                         "Surface Integral Report"
+
+           Area-Weighted Average
+                      Wall Yplus                     
+-------------------------------- --------------------
+           fluid_solid_interface           0.24076353

@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Mass-Weighted Average
+                        Enthalpy               [J/kg]
+-------------------------------- --------------------
+                     fluid_inlet            1862.9158
+                    fluid_outlet            71444.351
+                ---------------- --------------------
+                             Net            36653.633

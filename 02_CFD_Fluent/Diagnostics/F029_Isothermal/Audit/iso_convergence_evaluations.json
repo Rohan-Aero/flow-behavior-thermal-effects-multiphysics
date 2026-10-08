@@ -1,0 +1,330 @@
+[
+  {
+    "tag": "so+100",
+    "iteration": 250,
+    "residuals": {
+      "continuity": 5.9567e-06,
+      "x-velocity": 1.3673e-10,
+      "y-velocity": 1.3607e-10,
+      "z-velocity": 6.0529e-09,
+      "k": 1.0834e-07,
+      "omega": 1.2485e-08,
+      "F_wall_z": 0.073047,
+      "q_net_all": 0.0,
+      "q_ends": 0.0,
+      "T_solid_mi": 300.0,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 300.0,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.4621,
+      "yplus_min": 0.41371,
+      "T_inner_av": 300.0,
+      "T_outer_av": 300.0,
+      "T_outer_ma": 300.0,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 258.08,
+      "yplus_max": 0.84987,
+      "v_out_max": 28.889,
+      "T_solid_me": 300.0,
+      "T_solid_ma": 300.0,
+      "T_wall_max": 300.0,
+      "T_out_bulk": 300.0,
+      "p_out": 0.0,
+      "p_in": 258.08,
+      "q_fluid_ne": 0.0,
+      "q_interfac": 0.0,
+      "q_heated_w": 0.0,
+      "mass_imbal": 3.0187e-10,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {},
+    "ready": false
+  },
+  {
+    "tag": "so+200",
+    "iteration": 350,
+    "residuals": {
+      "continuity": 4.4298e-11,
+      "x-velocity": 7.618e-16,
+      "y-velocity": 7.9246e-16,
+      "z-velocity": 4.8452e-14,
+      "k": 6.8921e-13,
+      "omega": 9.6447e-14,
+      "F_wall_z": 0.073047,
+      "q_net_all": 0.0,
+      "q_ends": 0.0,
+      "T_solid_mi": 300.0,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 300.0,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.4621,
+      "yplus_min": 0.41371,
+      "T_inner_av": 300.0,
+      "T_outer_av": 300.0,
+      "T_outer_ma": 300.0,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 258.08,
+      "yplus_max": 0.84987,
+      "v_out_max": 28.889,
+      "T_solid_me": 300.0,
+      "T_solid_ma": 300.0,
+      "T_wall_max": 300.0,
+      "T_out_bulk": 300.0,
+      "p_out": 0.0,
+      "p_in": 258.08,
+      "q_fluid_ne": 0.0,
+      "q_interfac": 0.0,
+      "q_heated_w": 0.0,
+      "mass_imbal": 2.2014e-15,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 4.4298e-11,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 7.618e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 7.9246e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 4.8452e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 6.8921e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 9.6447e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "rel drift dp_area": {
+        "value": 0.0025224025875209594,
+        "target": 0.001,
+        "ok": false
+      },
+      "rel drift F_wall_z": {
+        "value": 0.006262592648154838,
+        "target": 0.001,
+        "ok": false
+      },
+      "rel drift mdot_out": {
+        "value": 3.0647106070660366e-05,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance": {
+        "value": 2.541358425192366e-13,
+        "target": 0.0001,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": false
+  },
+  {
+    "tag": "so+300",
+    "iteration": 450,
+    "residuals": {
+      "continuity": 7.7438e-12,
+      "x-velocity": 3.5751e-17,
+      "y-velocity": 3.5797e-17,
+      "z-velocity": 1.191e-17,
+      "k": 3.2496e-16,
+      "omega": 1.752e-16,
+      "F_wall_z": 0.073047,
+      "q_net_all": 0.0,
+      "q_ends": 0.0,
+      "T_solid_mi": 300.0,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 300.0,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.4621,
+      "yplus_min": 0.41371,
+      "T_inner_av": 300.0,
+      "T_outer_av": 300.0,
+      "T_outer_ma": 300.0,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 258.08,
+      "yplus_max": 0.84987,
+      "v_out_max": 28.889,
+      "T_solid_me": 300.0,
+      "T_solid_ma": 300.0,
+      "T_wall_max": 300.0,
+      "T_out_bulk": 300.0,
+      "p_out": 0.0,
+      "p_in": 258.08,
+      "q_fluid_ne": 0.0,
+      "q_interfac": 0.0,
+      "q_heated_w": 0.0,
+      "mass_imbal": 5.3776e-17,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 7.7438e-12,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 3.5751e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 3.5797e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 1.191e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 3.2496e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 1.752e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "rel drift dp_area": {
+        "value": 1.153706904043785e-06,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift F_wall_z": {
+        "value": 1.5613023837779837e-06,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out": {
+        "value": 3.791011834711625e-08,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance": {
+        "value": 6.208204190777254e-15,
+        "target": 0.0001,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  },
+  {
+    "tag": "confirm+400",
+    "iteration": 550,
+    "residuals": {
+      "continuity": 6.5802e-12,
+      "x-velocity": 2.6858e-17,
+      "y-velocity": 2.6769e-17,
+      "z-velocity": 1.0733e-17,
+      "k": 2.4615e-16,
+      "omega": 1.6127e-16,
+      "F_wall_z": 0.073047,
+      "q_net_all": 0.0,
+      "q_ends": 0.0,
+      "T_solid_mi": 300.0,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 300.0,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.4621,
+      "yplus_min": 0.41371,
+      "T_inner_av": 300.0,
+      "T_outer_av": 300.0,
+      "T_outer_ma": 300.0,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 258.08,
+      "yplus_max": 0.84987,
+      "v_out_max": 28.889,
+      "T_solid_me": 300.0,
+      "T_solid_ma": 300.0,
+      "T_wall_max": 300.0,
+      "T_out_bulk": 300.0,
+      "p_out": 0.0,
+      "p_in": 258.08,
+      "q_fluid_ne": 0.0,
+      "q_interfac": 0.0,
+      "q_heated_w": 0.0,
+      "mass_imbal": 5.2042e-17,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 6.5802e-12,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 2.6858e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 2.6769e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 1.0733e-17,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 2.4615e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 1.6127e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "rel drift dp_area": {
+        "value": 1.286102714115556e-11,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift F_wall_z": {
+        "value": 1.6941415758147412e-11,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out": {
+        "value": 2.485284322824102e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance": {
+        "value": 6.007939539461859e-15,
+        "target": 0.0001,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  }
+]

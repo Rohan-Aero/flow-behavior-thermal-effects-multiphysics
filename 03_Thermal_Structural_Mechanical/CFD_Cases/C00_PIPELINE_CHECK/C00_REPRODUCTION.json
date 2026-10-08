@@ -1,0 +1,219 @@
+{
+  "case": "C00_PIPELINE_CHECK",
+  "reference": "P00_BASELINE (06_Fluent_CFD, Section 5B)",
+  "C00_status": "CONVERGED",
+  "C00_iterations": 700,
+  "P00_iterations": 700,
+  "rows": [
+    {
+      "quantity": "dp_Pa",
+      "P00": 438.12633,
+      "C00": 438.12633,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "case matrix C00: dp 0.1 %"
+    },
+    {
+      "quantity": "T_out_K",
+      "P00": 368.93236,
+      "C00": 368.93236,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "T_solid_max_K",
+      "P00": 562.57678,
+      "C00": 562.57678,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "T_solid_cell_max_K",
+      "P00": 562.1271022462935,
+      "C00": 562.1271022462935,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "T_interface_max_K",
+      "P00": 555.26709,
+      "C00": 555.26709,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "T_fluid_max_K",
+      "P00": 553.4130788694047,
+      "C00": 553.4130788694047,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "T_solid_mean_K",
+      "P00": 525.4829345868314,
+      "C00": 525.4829345868314,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "T_outer_avg_K",
+      "P00": 528.46303,
+      "C00": 528.46303,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "abs",
+      "tolerance": 0.1,
+      "ok": true,
+      "source": "case matrix C00: T 0.1 K"
+    },
+    {
+      "quantity": "Q_heated_wall_W",
+      "P00": 602.75524,
+      "C00": 602.75524,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "5B plateau criterion q_interface 0.1 %"
+    },
+    {
+      "quantity": "Q_interface_W",
+      "P00": 602.75524,
+      "C00": 602.75524,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "5B plateau criterion q_interface 0.1 %"
+    },
+    {
+      "quantity": "mdot_in_kg_s",
+      "P00": 0.0086621551,
+      "C00": 0.0086621551,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.0001,
+      "ok": true,
+      "source": "5B plateau criterion mdot 0.01 %"
+    },
+    {
+      "quantity": "mdot_out_kg_s",
+      "P00": -0.0086621551,
+      "C00": -0.0086621551,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.0001,
+      "ok": true,
+      "source": "5B plateau criterion mdot 0.01 %"
+    },
+    {
+      "quantity": "yplus_max",
+      "P00": 0.58483571,
+      "C00": 0.58483571,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "same relative tolerance as Q / dp"
+    },
+    {
+      "quantity": "yplus_mean",
+      "P00": 0.2409596,
+      "C00": 0.2409596,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "same relative tolerance as Q / dp"
+    },
+    {
+      "quantity": "yplus_min",
+      "P00": 0.20816019,
+      "C00": 0.20816019,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "same relative tolerance as Q / dp"
+    },
+    {
+      "quantity": "Re_in",
+      "P00": 29958.174497987522,
+      "C00": 29958.174497987522,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.0001,
+      "ok": true,
+      "source": "follows mdot"
+    },
+    {
+      "quantity": "Re_out",
+      "P00": 25544.913746028156,
+      "C00": 25544.913746028156,
+      "difference": 0.0,
+      "error": 0.0,
+      "kind": "rel",
+      "tolerance": 0.001,
+      "ok": true,
+      "source": "follows mdot and T_out"
+    },
+    {
+      "quantity": "mass_error_monitor",
+      "P00": 7.009262796038835e-15,
+      "C00": 7.009262796038835e-15,
+      "difference": 0.0,
+      "error": 7.009262796038835e-15,
+      "kind": "acceptance",
+      "tolerance": 0.0001,
+      "ok": true,
+      "source": "5B acceptance |in-out|/in < 1e-4"
+    },
+    {
+      "quantity": "energy_error_monitor",
+      "P00": 3.078146935298473e-13,
+      "C00": 3.078146935298473e-13,
+      "difference": 0.0,
+      "error": 3.078146935298473e-13,
+      "kind": "acceptance",
+      "tolerance": 0.005,
+      "ok": true,
+      "source": "5B acceptance |sum Q|/Q_wall < 5e-3"
+    }
+  ],
+  "PASS": true
+}

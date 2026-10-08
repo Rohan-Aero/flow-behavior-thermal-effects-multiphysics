@@ -1,0 +1,227 @@
+{
+ "C00_PIPELINE_CHECK": {
+  "tag": "C00_PIPELINE_CHECK",
+  "cfd_case": "C00_PIPELINE_CHECK",
+  "geometry": null,
+  "Do": 0.04,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   423.83734130859375,
+   562.5436401367188
+  ],
+  "source_T_range_K": [
+   423.21115,
+   562.57678
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "V01_LOW": {
+  "tag": "V01_LOW",
+  "cfd_case": "V01_LOW",
+  "geometry": null,
+  "Do": 0.04,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/V01_LOW/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/V01_LOW/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   435.9155578613281,
+   587.4330444335938
+  ],
+  "source_T_range_K": [
+   435.26837,
+   587.46741
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "V03_HIGH": {
+  "tag": "V03_HIGH",
+  "cfd_case": "V03_HIGH",
+  "geometry": null,
+  "Do": 0.04,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/V03_HIGH/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   413.8843078613281,
+   542.0657958984375
+  ],
+  "source_T_range_K": [
+   413.27658,
+   542.09778
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "Q01_LOW": {
+  "tag": "Q01_LOW",
+  "cfd_case": "Q01_LOW",
+  "geometry": null,
+  "Do": 0.04,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/Q01_LOW/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/Q01_LOW/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   410.5966796875,
+   534.4147338867188
+  ],
+  "source_T_range_K": [
+   410.0336,
+   534.44556
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "Q03_HIGH": {
+  "tag": "Q03_HIGH",
+  "cfd_case": "Q03_HIGH",
+  "geometry": null,
+  "Do": 0.04,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/Q03_HIGH/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/Q03_HIGH/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   437.27899169921875,
+   591.091796875
+  ],
+  "source_T_range_K": [
+   436.58963,
+   591.12708
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "T01_THIN": {
+  "tag": "T01_THIN",
+  "cfd_case": "T01_THIN",
+  "geometry": "10_Parametric_Study/Geometry_Checks/T01_THIN/T01_THIN.scdocx",
+  "Do": 0.036,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 4,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   417.9662780761719,
+   561.9269409179688
+  ],
+  "source_T_range_K": [
+   417.36783,
+   561.96619
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "T03_THICK": {
+  "tag": "T03_THICK",
+  "cfd_case": "T03_THICK",
+  "geometry": "10_Parametric_Study/Geometry_Checks/T03_THICK/T03_THICK.scdocx",
+  "Do": 0.044,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 6,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/T03_THICK/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/T03_THICK/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   428.78338623046875,
+   563.0435180664062
+  ],
+  "source_T_range_K": [
+   428.13391,
+   563.07239
+  ],
+  "buckling": true,
+  "pressure": false
+ },
+ "_notes": {
+  "source_T_range_K": "[Fluent T_interface_min (facet), T_solid_max (facet)] of the case's 9B-1 CFD solution (10_Parametric_Study/CFD_Results/parametric_cfd_results.json, extracted.T_interface_min_K / T_solid_max_K); same criterion as 8B ('inside the CFD source range 423.21-562.58 K' for P00), tolerance 0.01 K",
+  "source_node_T_K": "min/max of the case's Fluent node temperatures written to Mapping/<case>/fluent_solid_node_temperature.csv (build_case_source.py)",
+  "mesh": "V/Q/C00 keep the 7B mesh B (36 x 5 x 130, bias 4, 108,252 nodes); T01 36 x 4 x 130 (89,424 nodes), T03 36 x 6 x 130 (127,080 nodes): same 2.0 mm radial element size",
+  "note": "RE-ANALYSIS 2026 - Section 9B-2 case definitions",
+  "M01_M02": "9A case-matrix rows M01/M02: LC2 and lambda1 change <= 1e-4 vs T01/T03 (class A as in 8B); LC1 bore stress change ~1-2 % expected (surface stress recovery)"
+ },
+ "M01_T01_STRUCT_NR5": {
+  "tag": "M01_T01_STRUCT_NR5",
+  "cfd_case": "T01_THIN",
+  "geometry": "10_Parametric_Study/Geometry_Checks/T01_THIN/T01_THIN.scdocx",
+  "Do": 0.036,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   417.9662780761719,
+   561.9269409179688
+  ],
+  "source_T_range_K": [
+   417.36783,
+   561.96619
+  ],
+  "buckling": true,
+  "pressure": false,
+  "purpose": "9A M01: structural mesh adequacy of the thin extreme, through-wall 4 -> 5 elements (1.6 mm), same T01 geometry and CFD field"
+ },
+ "M02_T03_STRUCT_NR5": {
+  "tag": "M02_T03_STRUCT_NR5",
+  "cfd_case": "T03_THICK",
+  "geometry": "10_Parametric_Study/Geometry_Checks/T03_THICK/T03_THICK.scdocx",
+  "Do": 0.044,
+  "Di": 0.02,
+  "L": 0.6,
+  "nc": 36,
+  "nr": 5,
+  "na": 130,
+  "bias": 4.0,
+  "cdb": "10_Parametric_Study/Mapping/T03_THICK/fluent_solid_mesh.cdb",
+  "csv": "10_Parametric_Study/Mapping/T03_THICK/fluent_solid_node_temperature.csv",
+  "source_node_T_K": [
+   428.78338623046875,
+   563.0435180664062
+  ],
+  "source_T_range_K": [
+   428.13391,
+   563.07239
+  ],
+  "buckling": true,
+  "pressure": false,
+  "purpose": "9A M02: structural mesh adequacy of the thick extreme, through-wall 6 -> 5 elements (2.4 mm; refinement would exceed 128,000 nodes), same T03 geometry and CFD field"
+ }
+}

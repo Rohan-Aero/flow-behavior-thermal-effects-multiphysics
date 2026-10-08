@@ -1,0 +1,52 @@
+{
+ "source": {
+  "case": "baseline_medium_final (same for every mesh)",
+  "node_min_K": 423.837341,
+  "node_max_K": 562.54364
+ },
+ "FA": {
+  "ds": "FA_LC2_presolve_ds.dat",
+  "nodes": 126468,
+  "elements": 27360,
+  "tref_degC": 26.85,
+  "mapped": 126468,
+  "unmapped": 0,
+  "T_min_K": 423.83737199999996,
+  "T_max_K": 562.5577211,
+  "extrapolation_above_source_max_K": 0.014081099999998514,
+  "extrapolation_below_source_min_K": 0.0,
+  "nodes_outside_source_mesh": 14656,
+  "outside_max_local_coord_excess": 0.044433436640887836,
+  "A_vs_source_node_field": {
+   "max": 0.13328660000001946,
+   "mean": 0.001993359392584775,
+   "max_inside": 0.08033698444052106,
+   "max_outside": 0.13328660000001946
+  },
+  "B_vs_FV_solution": {
+   "max": 2.378530220965274,
+   "mean": 0.03922141586556227,
+   "rms": 0.1442262451922876
+  },
+  "by_axial_band": {
+   "0-14 mm": {
+    "n": 6408,
+    "A_max": 0.13328660000001946,
+    "B_max": 2.378530220965274,
+    "B_mean": 0.40125037306631484
+   },
+   "14-586 mm": {
+    "n": 113652,
+    "A_max": 0.07150093989412198,
+    "B_max": 0.2780722585612807,
+    "B_mean": 0.01910097588568206
+   },
+   "586-600.1 mm": {
+    "n": 6408,
+    "A_max": 0.021343814107012804,
+    "B_max": 0.3866931980854815,
+    "B_mean": 0.03404767785852772
+   }
+  }
+ }
+}

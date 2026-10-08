@@ -1,0 +1,69 @@
+% ===================================================================== Chapter 16
+\chapter{Uncertainty and Limitations}\label{ch:unc}
+Nine sources of uncertainty were identified and are kept separate (Table~\ref{tab:unc}). They are of different kinds -- discretisation
+errors, model-form and idealisation errors, data scatter and assumptions -- several have a known sign and some are not quantified. A combined
+uncertainty percentage would therefore have no mathematical basis and is not formed. The evidence supports the ranking primary (end restraint
+and stability modelling) $\gg$ secondary (thermal field and material data) $\gg$ smaller (mapping, structural mesh, Poisson's ratio).
+
+\input{../Tables/tab_unc}
+
+\section{Data-Availability Limitation}
+The original internship files were not retained, so no result can be compared with the analysis made during the internship, and nothing
+in this report is a recovered value. The analysed problem is representative of the internship problem, not a reproduction of it.
+
+\section{CFD Model Form}
+The turbulence and property models were not varied. Indicators of the model-form uncertainty are the 9\,\% difference between the CFD Nusselt
+number and the property-corrected correlation, the 10.4\,\% difference in friction factor (mostly a gas-heating effect, about five points
+unexplained), the 19.1~K difference in maximum solid temperature from the analytical model and the difference of about 30~K in mean
+temperature rise. The last one matters structurally: on the Section 2 temperature basis the S1 buckling factor would be about 0.98 instead of
+1.108. Uniform heating, neglected radiation and the assumed inlet turbulence intensity add further, unquantified, model-form uncertainty.
+
+\section{CFD Mesh}
+The medium mesh is approximately convergent. Its band against the extrapolated solution is $-$5.1 / +1.6~K on the maximum solid temperature, which
+propagates to $-$10.1 / +2.8~MPa on the LC2 stress, $-$13.7 / +4.3~MPa on the local peak, +1.8 / $-$0.5\,\% on $\lambda_1$ and $-$32 / +9~\textmu m on
+the free growth. The medium field is slightly hot, so the structural results lean conservative.
+
+\section{Temperature Mapping}
+The transfer error is at most 0.081~K inside the source mesh. Within about 11~mm of the inlet the source node values carry the Fluent
+reconstruction limitation of up to 2.6~K, which bounds the LC1 inlet peak at $\pm$9.8~MPa and the LC2 peak at 1.6\,\%. The re-numbering of source
+nodes between otherwise identical cases changes the mapped field by at most 0.081~K and the LC2 peak by $9.5\times10^{-6}$.
+
+\section{Structural Mesh}
+The governing LC2 results and $\lambda_1$ change by at most $4.9\times10^{-4}$ and $5.4\times10^{-5}$ across seven meshes. The LC1 mid-span bore
+stress is under-predicted by 2.1\,\% on mesh B (sign known). On one thickness check mesh the LC2 inlet-edge peak changed by $1.4\times10^{-4}$,
+above the $10^{-4}$ class-A tolerance at a single node; this was reported, not relaxed.
+
+\section{Material Data}
+The properties are generic datasheet values, not lot-specific. An uncertainty of about $\pm$2\,\% on $E$ and $\alpha$ acts directly on the
+restrained stress and end force ($\propto E\alpha$). The yield strengths are typical rather than minimum-guaranteed values, so the utilisation
+is not a certified margin. No temperature-dependent stress--strain curve is available.
+
+\section{Poisson's Ratio}
+$\nu$ = 0.294 is assumed; the literature range is 0.284--0.294. It affects the LC1 radial and hoop stresses by about 1.4\,\% and the uniaxial LC2
+axial stress not at all; $\lambda_1$ is affected only through the shear correction.
+
+\section{End Restraint}
+The real flange stiffness is undefined. The idealised supports change $\lambda_1$ from 1.108 (S1) to 2.232 (S3) and 4.300 (S2) at identical
+static stress and switch the governing mechanism from bifurcation-first to first-yield-first. Rotational flexibility would lower $\lambda_1$ below
+S1. This is the primary uncertainty of every stability statement in the report.
+
+\section{Geometric Imperfections}
+The tube is modelled perfectly straight, without out-of-straightness, eccentricity of the end load or residual stress. A real tube deflects
+laterally below the bifurcation load and its capacity is lower; the size of the reduction is unknown without an imperfection-sensitive
+nonlinear analysis. The additional LS-DYNA analysis (Section~\ref{sec:lsdyna}) quantifies the elastic response for three numerical imperfection
+amplitudes; without measured imperfection data and an inelastic material model, the reduction for a real tube remains unknown.
+
+\section{Inelastic Buckling}
+All cases are intermediate columns ($KL/r$ = 49.7--58.3 under S1, below $C_c \approx$ 60) with an elastic buckling stress above the conventional
+proportional limit. The linear elastic eigenvalue analysis cannot capture the resulting inelastic reduction; the conventional Johnson factors
+(1.058 guided, 1.414 fixed--pinned, 1.581 fixed--fixed) indicate its direction but are not material-specific.
+
+\section{Missing Experimental Validation}
+No measured data exist. The CFD is verified against conservation laws, correlations and mesh studies, and the structural model against
+closed-form solutions and equilibrium checks, but neither is validated against experiment. Agreement with correlations shows consistency,
+not accuracy with respect to a physical duct.
+
+\section{Interaction Effects}
+The parametric study is one factor at a time over a narrow envelope ($\pm$10\,\% in velocity and heat flux, $\pm$20\,\% in thickness). Interactions
+of about 8--11\,\% of the main effects were estimated for velocity and heat flux but not simulated. Transient start-up, thermal cycling and
+fatigue are outside the scope.

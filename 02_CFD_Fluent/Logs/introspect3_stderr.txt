@@ -1,0 +1,18 @@
+
+Error: api-get-var: the object is not active
+Error Object: "solution/controls/pseudo-time-method-local-time-step"
+
+Error: api-get-var: the object is not active
+Error Object: "solution/controls/under-relaxation"
+
+Error: api-get-var: the object is not active
+Error Object: "solution/controls/relaxation-factor"
+
+Error: wta(1st) to string_eq
+Error Object: #f
+
+Error: wta(1st) to string_eq
+Error Object: #f
+
+Error: eval: unbound variable
+Error Object: %iterate-count

@@ -1,0 +1,90 @@
+% ===================================================================== Chapter 9
+\chapter{CFD Mesh Independence}\label{ch:mi}
+
+\section{Purpose}
+The mesh study estimates how much of each baseline result is discretisation error, and whether the medium mesh is adequate as the thermal
+input to the structural analysis. The coarse and fine meshes were solved with physics, boundary conditions, solution staging and convergence
+criteria identical to the medium baseline. Both converged at iteration 600 and held at 700; the fine solution conserves mass and energy to
+$3.9\times10^{-12}$\,\% and $6.2\times10^{-11}$\,\%. Table~\ref{tab:mi} lists the results and Figure~\ref{fig:mi} plots four of them.
+
+\input{../Tables/tab_mi}
+
+\section{Coarse Mesh}
+The coarse mesh (51,840~cells) gives a maximum solid temperature of 565.40~K, 7.3~K above the extrapolated value; from coarse to medium the Nusselt number
+changes by +1.48\,\%. It was used only to complete the three-level family and was rejected for downstream use.
+
+\section{Medium Mesh}
+The medium mesh (159,840~cells) is the official baseline. Its maximum solid temperature is 4.4~K above the extrapolated value and its
+volume-mean solid temperature 3.1~K above; the mid-span through-wall temperature difference is 0.04~K low. For the structural analysis these
+errors are small and act in the conservative direction (slightly hotter wall, slightly larger restrained force).
+
+\section{Fine Mesh}
+The fine mesh (500,580~cells) is the verification reference. From medium to fine the pressure drop changes by +0.23\,\%, the maximum solid
+temperature by $-$1.75~K ($-$0.66\,\% of the temperature rise), the Nusselt number by +0.91\,\%, the friction factor by +0.85\,\% and the
+through-wall temperature difference by +0.21\,\%. Its maximum solid temperature, 560.83~K, is quoted wherever the fine result is referred to.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{MI01_cells_vs_pressure_drop.png}\caption{Pressure drop [Pa]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{MI04_cells_vs_max_solid_temperature.png}\caption{Maximum solid temperature [K]}\end{subfigure}\\[4pt]
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{MI06_cells_vs_nusselt.png}\caption{Fully developed Nusselt number}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{MI07_cells_vs_friction_factor.png}\caption{Fully developed Darcy friction factor}\end{subfigure}
+\caption[Mesh-independence study]{Mesh-independence study: raw CFD results on the three meshes, geometry-adjusted values, Richardson extrapolation and GCI$_{fine}$ error bars.}
+\label{fig:mi}
+\src{\provcfd{} In (b) the extrapolated line belongs to the bulk-corrected series ($p$ = 1.26, 558.06~K); the raw series gives $p$ = 1.31 and 558.13~K (Table~\ref{tab:gci}).}
+\end{figure}
+
+\section{Geometry/Faceting Effect}
+The three meshes approximate the circular sections by inscribed polygons with 32, 48 and 72 sides. The flow area, heated area and therefore
+the mass flow, heat input and outlet temperature change with the number of sides by exactly known ratios. These changes are geometry, not
+discretisation error, and were separated exactly before any convergence assessment (decision D-035). Corrected to the true circle, the mass
+flow is 8.68694~g/s and the heat input 603.186~W on all three meshes; Richardson extrapolation of the raw values recovers the exact circle
+values to within 0.004\,\%, which checks the procedure. Of the raw changes, nearly all of those in mass flow, heat rate and outlet temperature are geometric,
+only 5--7\,\% of the change in maximum solid temperature, and a negligible part of the changes in Nusselt number and friction factor.
+
+
+\section{Pressure-Drop Convergence}
+The raw pressure drop increases monotonically (437.09, 438.13, 439.12~Pa), but the geometric part of the change opposes the resolution trend,
+so the raw values give no credible order. The geometry-adjusted estimate has an apparent order of 1.05 and extrapolates to 441.8~Pa with a
+fine-mesh GCI of 0.89\,\% (3.9~Pa). The medium value is 0.8\,\% below that estimate.
+
+\section{Thermal Convergence}
+The maximum solid temperature decreases monotonically (565.40, 562.58, 560.83~K) with an apparent order of 1.31, extrapolating to 558.13~K
+with GCI$_{fine}$ = 3.4~K, 1.3\,\% of the temperature rise (Table~\ref{tab:gci}). Refinement raises the heat-transfer coefficient slightly
+and therefore lowers the wall temperature, which moves the CFD further from the analytical 581.71~K. The mid-span through-wall temperature
+difference converges to 7.620~K with GCI$_{fine}$ = 0.029~K.
+
+\input{../Tables/tab_gci}
+
+\section{Nusselt Number Convergence}
+The fully developed Nusselt number increases monotonically (53.38, 54.17, 54.66) with an apparent order of 1.30 and extrapolates to 55.43
+(GCI 1.8\,\%). Every value lies inside the expected band of 44--67. Convergence is monotonic for all quantities, but the apparent orders of
+1.2--1.6 are below the formal second order, because the first layer is identical on all meshes and the directional refinement ratios are not
+equal. The status of every flow and thermal quantity is therefore ``approximately convergent''; strict mesh independence is not claimed.
+
+\section{Friction-Factor Behavior}
+The friction factor rises with refinement (0.02134, 0.02163, 0.02181) towards an extrapolated 0.02212, still 8.4\,\% below the Petukhov
+value. An isothermal diagnostic run on the medium mesh (energy equation off) gives $f$ = 0.02304, only 2.6\,\% below Petukhov
+(Figure~\ref{fig:mifric}). The medium-mesh gap of $-$10.4\,\% decomposes exactly into a Reynolds-number basis factor of 1.011, an isothermal SST
+factor of 0.974 and a heating factor of 0.910. The difference is therefore mainly a gas-heating (variable-property) effect, not a mesh defect;
+about five percentage points remain unexplained by the standard $(T_w/T_b)^{-0.1}$ heating correction (finding F-034).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.68\linewidth]{MI11_F029_friction_evidence_nt.png}
+\caption{Local Darcy friction factor on the three heated meshes and in the isothermal diagnostic, compared with Petukhov with and without the heating correction.}
+\label{fig:mifric}
+\src{\provcfd}
+\end{figure}
+
+\section{Final Mesh Selection}
+The medium mesh was retained for all downstream work, with the fine mesh as the verification reference (D-034). The reasons are:
+\begin{itemize}
+\item its error is small and conservative for thermal stress and growth (maximum solid temperature +4.4~K, volume mean +3.1~K above the extrapolated values);
+\item the mesh error is about one quarter of the 19~K difference between the CFD and the analytical model, so the dominant thermal uncertainty is the
+      heat-transfer and friction modelling, which a finer mesh does not reduce;
+\item the fine mesh costs 3.4 times the run time and 4 times the storage;
+\item the medium solid fits a 1:1 structural mesh under the 128,000-node Student limit, whereas the fine solid would not.
+\end{itemize}
+The structural consequence of the mesh error was carried forward as an uncertainty band: LC2 stress $-$10.1 / +2.8~MPa, local peak
+$-$13.7 / +4.3~MPa and $\lambda_1$ +1.8 / $-$0.5\,\% (Chapter~\ref{ch:unc}).

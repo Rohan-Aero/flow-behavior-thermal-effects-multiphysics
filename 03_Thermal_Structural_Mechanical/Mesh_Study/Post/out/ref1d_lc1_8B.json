@@ -1,0 +1,25 @@
+{
+ "note": "SECTION 8B - mesh-converged 1-D reference for the LC1 mid-span through-wall stress (RE-ANALYSIS 2026).",
+ "z_m": 0.3,
+ "elements": 2000,
+ "theta_directions": 96,
+ "unlocated_share": 0.0,
+ "points_outside_source_polygon_share_clamped": 0.00325,
+ "T_bore_K": 531.6919596453685,
+ "T_outer_K": 539.252548,
+ "dT_wall_K": 7.560588354631591,
+ "net_axial_force_N": 4.361366099207716e-09,
+ "bore": {
+  "s_r_MPa": 0.027903839601716107,
+  "s_t_MPa": 18.698054621808453,
+  "s_z_MPa": 18.70072955013026,
+  "vm_MPa": 18.67148839007421
+ },
+ "outer": {
+  "s_r_MPa": 0.0024749041402660488,
+  "s_t_MPa": -11.550388055923818,
+  "s_z_MPa": -11.551779197530815,
+  "vm_MPa": 11.553558593681833
+ },
+ "bore_first_gauss_point_s_t_MPa": 18.686256097854105
+}

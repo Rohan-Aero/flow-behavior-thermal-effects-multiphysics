@@ -1,0 +1,136 @@
+{
+  "tag": "coarse",
+  "converged": true,
+  "stage1_iters": 150,
+  "stage2_iters": 150,
+  "stage3_iters": 400,
+  "total_iters": 700,
+  "stage3_first_iteration": 301.0,
+  "failures": [],
+  "final_eval": {
+    "tag": "confirmation+400",
+    "iteration": 700,
+    "residuals": {
+      "continuity": 1.2155e-10,
+      "x-velocity": 5.8747e-16,
+      "y-velocity": 5.1103e-16,
+      "z-velocity": 4.233e-14,
+      "energy": 5.0312e-14,
+      "k": 1.9238e-12,
+      "omega": 4.0909e-13,
+      "F_wall_z": 0.075232,
+      "q_net_all": -1.2324e-10,
+      "q_ends": 0.0,
+      "T_solid_mi": 425.41,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 556.26,
+      "area_in": 0.00031214,
+      "yplus_avg": 0.23812,
+      "yplus_min": 0.20684,
+      "T_inner_av": 522.91,
+      "T_outer_av": 530.61,
+      "T_outer_ma": 565.4,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 437.09,
+      "yplus_max": 0.52173,
+      "v_out_max": 34.992,
+      "T_solid_me": 527.66,
+      "T_solid_ma": 564.65,
+      "T_wall_max": 558.12,
+      "T_out_bulk": 369.12,
+      "p_out": 0.0,
+      "p_in": 437.09,
+      "q_fluid_ne": -602.22,
+      "q_interfac": 602.22,
+      "q_heated_w": 602.22,
+      "mass_imbal": 1.0408e-17,
+      "mdot_out": -0.0086312,
+      "mdot_in": 0.0086312
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 1.2155e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 5.8747e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 5.1103e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 4.233e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 1.9238e-12,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 4.0909e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual energy": {
+        "value": 5.0312e-14,
+        "target": 1e-06,
+        "ok": true
+      },
+      "drift T_out_bulk over 200 it [K]": {
+        "value": 2.840542208559782e-06,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_solid_max over 200 it [K]": {
+        "value": 1.01313239611045e-05,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_wall_max over 200 it [K]": {
+        "value": 6.103515625e-05,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_outer_max over 200 it [K]": {
+        "value": 0.0,
+        "target": 0.1,
+        "ok": true
+      },
+      "rel drift dp_area over 200 it": {
+        "value": 7.461040370284756e-10,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift q_interface over 200 it": {
+        "value": 4.2108756737567435e-09,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out over 200 it": {
+        "value": 1.6821281950290783e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance |in-out|/in": {
+        "value": 1.2058929367743395e-15,
+        "target": 0.0001,
+        "ok": true
+      },
+      "energy imbalance |sum Q|/Q_wall": {
+        "value": 2.0463797703260121e-13,
+        "target": 0.005,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  }
+}

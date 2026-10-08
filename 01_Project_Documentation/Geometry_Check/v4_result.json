@@ -1,0 +1,10 @@
+{
+  "share_topology": "ShareTopology.FindAndFix OK: True", 
+  "exports": {
+    "heated_duct.x_t": false, 
+    "heated_duct.stp": true, 
+    "reference_mesh_preview.stl": true, 
+    "heated_duct.xmt_txt": false, 
+    "heated_duct.x_b": false
+  }
+}

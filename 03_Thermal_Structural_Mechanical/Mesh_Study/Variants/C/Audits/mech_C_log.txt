@@ -1,0 +1,241 @@
+12:27:01 === SECTION 8B MESH VARIANT C: 27 circ x 4 wall x 98 axial, bias 4.0 (RE-ANALYSIS 2026) ===
+12:27:01 analyses [('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('LC2_Linear_Buckling_C', 'Buckling')]
+12:27:01 PASS  buckling analysis present as requested | expected True | found True
+12:27:01 PASS  starting point is the 7B baseline mesh (36 circ, 5 wall, 130 axial, bias 4) | expected 36/5/130/4 | found {'bias_type': 'o_ooo_ooooo_ooo_o', 'sweep_divisions': '130', 'bias': '4.0', 'radial': '5', 'circumferential': '36'}
+12:27:03 OK   circumferential divisions 
+12:27:03 OK   through-wall divisions 
+12:27:03 OK   axial divisions 
+12:27:03 OK   axial bias 
+12:27:03 OK   clear mesh 
+12:27:07 OK   generate mesh 
+12:27:07 mesh 50652 nodes 10584 elements
+12:27:07 PASS  mesh: node count = swept quadratic-hex formula nc[(nr+1)(na+1)2 + nr(na+1) + (nr+1)na] | expected 50652 | found 50652
+12:27:07 PASS  mesh: element count = nc x nr x na | expected 10584 | found 10584
+12:27:07 PASS  licence: below the measured Student MAPDL limit (128,000 nodes) | expected < 128,000 | found 50652
+12:27:07 PASS  mesh: quadratic elements | expected Quadratic | found Quadratic
+12:27:07 PASS  mesh: no invalid / inverted elements (Jacobian ratio finite and < 40, element quality > 0) | expected JR < 40, EQ > 0 | found JR {'min': 1.1506, 'max': 1.2585, 'avg': 1.1979499999999603} / EQ {'min': 0.23053970456283812, 'max': 0.98716960708639412, 'avg': 0.66717974285810011}
+12:27:07 PASS  mesh: aspect ratio acceptable (< 20) | expected < 20 | found {'min': 1.2146000000000001, 'max': 4.8583, 'avg': 2.537815306122456}
+12:27:07 PASS  geometry: mesh extents r 10-20 mm, z 0-600 mm (geometry unchanged) | expected r 0.010-0.020, z 0-0.6 | found r 0.010000000-0.020000000 z 0.000000000-0.600000000
+12:27:07 PASS  mesh: end-face node count = 2 nc (3 nr + 2) | expected 756 | found 756
+12:27:08 PASS  support nodes NS_LC1_SUPPORT_3NODES_INLET_OUTER re-located at r 20 mm, z 0.0 m, 0/120/240 deg | expected 3 nodes at the 7A positions | found [(40040, 0.02, 0.0, 0.0), (40058, 0.02, 0.0, 120.0), (40022, 0.02, 0.0, -120.0)]
+12:27:08 PASS  support nodes NS_LC2_HOOP_3NODES_MIDSPAN_OUTER re-located at r 20 mm, z 0.3 m, 0/120/240 deg | expected 3 nodes at the 7A positions | found [(47983, 0.02, 0.29999999999999999, -0.0), (48001, 0.02, 0.29999999999999999, 120.0), (47965, 0.02, 0.29999999999999999, -120.0)]
+12:27:08 PASS  LC1: import settings unchanged | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode
+12:27:15 OK   LC1 re-import onto the C mesh 
+12:27:15 PASS  LC1: mapped temperature on every node, range inside the CFD source range 423.21-562.58 K | expected 50652 values in [423.21, 562.58] K | found {'min_C': 150.69, 'max_K': 562.56, 'state': 'Solved', 'n': 50652, 'max_C': 289.41, 'min_K': 423.84}
+12:27:15 PASS  LC2: import settings unchanged | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode
+12:27:21 OK   LC2 re-import onto the C mesh 
+12:27:21 PASS  LC2: mapped temperature on every node, range inside the CFD source range 423.21-562.58 K | expected 50652 values in [423.21, 562.58] K | found {'min_C': 150.69, 'max_K': 562.56, 'state': 'Solved', 'n': 50652, 'max_C': 289.41, 'min_K': 423.84}
+12:27:21 PASS  LC2P: import settings unchanged | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode
+12:27:27 OK   LC2P re-import onto the C mesh 
+12:27:27 PASS  LC2P: mapped temperature on every node, range inside the CFD source range 423.21-562.58 K | expected 50652 values in [423.21, 562.58] K | found {'min_C': 150.69, 'max_K': 562.56, 'state': 'Solved', 'n': 50652, 'max_C': 289.41, 'min_K': 423.84}
+12:27:27 PASS  temperature export identical for all cases on this mesh | expected identical | found []
+12:27:27 PASS  no unmapped nodes | expected 0 | found no unmapped-node set created
+12:27:27 PASS  LC1: no under-defined / error objects | expected none | found []
+12:27:27 PASS  LC2: no under-defined / error objects | expected none | found []
+12:27:27 PASS  LC2P: no under-defined / error objects | expected none | found []
+12:27:27 PASS  BUCKLING: no under-defined / error objects | expected none | found []
+12:27:31 PASS  LC1 input: material section identical to the 7B solved input (E(T), alpha(T), nu 0.294, TREF 26.85, MPAMOD) | expected identical | found identical
+12:27:31 PASS  LC1 input: 50652 nodes, 10584 SOLID186, temperature on every node | expected 50652 / 10584 / 50652 / et,1,186 | found 50652 / 10584 / 50652
+12:27:31 PASS  LC1 input: sparse direct solver (same as 7B) | expected eqsl,sparse | found ['eqsl,sparse,,,,,1']
+12:27:31 PASS  LC1 input: no weak springs | expected none | found False
+12:27:32 PASS  LC2 input: material section identical to the 7B solved input (E(T), alpha(T), nu 0.294, TREF 26.85, MPAMOD) | expected identical | found identical
+12:27:32 PASS  LC2 input: 50652 nodes, 10584 SOLID186, temperature on every node | expected 50652 / 10584 / 50652 / et,1,186 | found 50652 / 10584 / 50652
+12:27:32 PASS  LC2 input: sparse direct solver (same as 7B) | expected eqsl,sparse | found ['eqsl,sparse,,,,,1']
+12:27:32 PASS  LC2 input: no weak springs | expected none | found False
+12:27:33 PASS  LC2P input: material section identical to the 7B solved input (E(T), alpha(T), nu 0.294, TREF 26.85, MPAMOD) | expected identical | found identical
+12:27:33 PASS  LC2P input: 50652 nodes, 10584 SOLID186, temperature on every node | expected 50652 / 10584 / 50652 / et,1,186 | found 50652 / 10584 / 50652
+12:27:33 PASS  LC2P input: sparse direct solver (same as 7B) | expected eqsl,sparse | found ['eqsl,sparse,,,,,1']
+12:27:33 PASS  LC2P input: no weak springs | expected none | found False
+12:27:33 PASS  LC1 constraints: the 3 re-located support nodes rotated to csys 12, U_theta = 0 and U_z = 0; nothing else | expected uy, uz, nrot on [40022, 40040, 40058] | found [('D', 'uy', 0.0, 3, 120120, 40022, 40058), ('D', 'uz', 0.0, 3, 120120, 40022, 40058), ('NROT_csys12', '', 0.0, 3, 120120, 40022, 40058)]
+12:27:33 PASS  LC2 constraints: U_z = 0 on all 756 end-face nodes + 3 re-located mid-span nodes U_theta = 0 (csys 12); nothing else | expected uz on the end faces, uy + nrot on [47965, 47983, 48001] | found [('D', 'uy', 0.0, 3, 143949, 47965, 48001), ('D', 'uz', 0.0, 756, 22179156, 7858, 50652), ('NROT_csys12', '', 0.0, 3, 143949, 47965, 48001)]
+12:27:33 PASS  LC2P constraints: U_z = 0 on all 756 end-face nodes + 3 re-located mid-span nodes U_theta = 0 (csys 12); nothing else | expected uz on the end faces, uy + nrot on [47965, 47983, 48001] | found [('D', 'uy', 0.0, 3, 143949, 47965, 48001), ('D', 'uz', 0.0, 756, 22179156, 7858, 50652), ('NROT_csys12', '', 0.0, 3, 143949, 47965, 48001)]
+12:27:33 PASS  LC1/LC2 inputs: no pressure (thermal only) | expected none | found (False, False)
+12:27:33 PASS  LC2P input: 443.41 Pa on 2646 SURF154 bore faces (nc x na) | expected 2646 SURF154 | found [{'header': 'eblock,21,COMPACT,,2646', 'count': 2646}]
+12:27:33 PASS  buckling: pre-stress environment = LC2_Axially_Restrained | expected LC2 | found ['LC2_Axially_Restrained']
+12:27:33 PASS  buckling: no loads or supports of its own | expected none | found []
+12:27:34 PRE-SOLVE GATE PASS (43 checks)
+12:27:34 OK   buckling 6 modes 
+12:27:34 OK   buckling positive multipliers only 
+12:27:34 OK   bk MaximumModesToFind 6
+12:27:34 OK   bk IncludeNegativeLoadMultiplier No
+12:27:34 OK   bk SolverType ProgramControlled
+12:27:34 OK   mode 1 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000090 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+12:27:34 OK   mode 1 set 
+12:27:34 OK   mode 2 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000091 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+12:27:34 OK   mode 2 set 
+12:27:34 OK   mode 3 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000092 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+12:27:34 OK   mode 3 set 
+12:27:34 OK   mode 4 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000093 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+12:27:34 OK   mode 4 set 
+12:27:34 OK   mode 5 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000094 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+12:27:34 OK   mode 5 set 
+12:27:34 OK   mode 6 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000095 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+12:27:34 OK   mode 6 set 
+12:27:34 OK   buckling snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x0000000000000096 [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+12:27:34 OK   buckling snippet input 
+12:27:34 SOLVING LC1 ...
+12:28:10 OK   LC1 solve 
+12:28:10 LC1: state Solved status Done 36 s
+12:28:11 OK   LC1 evaluate 
+12:28:11 OK   LC1 LC1_Total_Deformation Maximum 0.0018443184491531398 [m]
+12:28:11 OK   LC1 LC1_Total_Deformation Minimum 1.6743685926760085E-05 [m]
+12:28:11 OK   LC1 LC1_Axial_Deformation_Uz_global Maximum 0.0018429522169753909 [m]
+12:28:11 OK   LC1 LC1_Axial_Deformation_Uz_global Minimum -1.9712549370609622E-09 [m]
+12:28:11 OK   LC1 LC1_Radial_Deformation_Ur_CS_DUCT_CYL Maximum 7.1572057968578991E-05 [m]
+12:28:11 OK   LC1 LC1_Radial_Deformation_Ur_CS_DUCT_CYL Minimum 1.6361094314495742E-05 [m]
+12:28:11 OK   LC1 LC1_Equivalent_Stress_averaged Maximum 24069799.3792724 [Pa]
+12:28:11 OK   LC1 LC1_Equivalent_Stress_averaged Minimum 284495.44538346317 [Pa]
+12:28:11 OK   LC1 LC1_Equivalent_Stress_UNaveraged Maximum 24271988.699098289 [Pa]
+12:28:11 OK   LC1 LC1_Equivalent_Stress_UNaveraged Minimum 284594.68280556286 [Pa]
+12:28:11 OK   LC1 LC1_Maximum_Principal_Stress Maximum 27993955.921481814 [Pa]
+12:28:11 OK   LC1 LC1_Maximum_Principal_Stress Minimum -83010.39301736145 [Pa]
+12:28:11 OK   LC1 LC1_Minimum_Principal_Stress Maximum 3092692.4417328686 [Pa]
+12:28:11 OK   LC1 LC1_Minimum_Principal_Stress Minimum -21168410.349601056 [Pa]
+12:28:11 OK   LC1 LC1_Axial_Stress_Sz_global Maximum 18494622.5 [Pa]
+12:28:11 OK   LC1 LC1_Axial_Stress_Sz_global Minimum -11653032.75 [Pa]
+12:28:11 OK   LC1 LC1_Hoop_Stress_Stheta_CS_DUCT_CYL Maximum 27993955.707471214 [Pa]
+12:28:11 OK   LC1 LC1_Hoop_Stress_Stheta_CS_DUCT_CYL Minimum -21168410.349595319 [Pa]
+12:28:11 OK   LC1 LC1_Radial_Stress_Sr_CS_DUCT_CYL Maximum 4227603.1186878039 [Pa]
+12:28:11 OK   LC1 LC1_Radial_Stress_Sr_CS_DUCT_CYL Minimum -170879.73795954173 [Pa]
+12:28:11 OK   LC1 LC1_Equivalent_Elastic_Strain Maximum 0.00012310017739200794 [m m^-1]
+12:28:11 OK   LC1 LC1_Equivalent_Elastic_Strain Minimum 1.515402842244195E-06 [m m^-1]
+12:28:11 OK   LC1 LC1_Structural_Error Maximum 8.7380666020733414E-09 [J]
+12:28:11 OK   LC1 LC1_Structural_Error Minimum 7.5847227679719445E-11 [J]
+12:28:11 OK   LC1 export structural error 
+12:28:11 OK   LC1 LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE XAxis -1.5363833097442307E-08 [N]
+12:28:11 OK   LC1 LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE YAxis 3.4512899706457984E-07 [N]
+12:28:11 OK   LC1 LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE ZAxis -2.178174432318665E-07 [N]
+12:28:11 OK   LC1 LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE Total 4.0840483660005328E-07 [N]
+12:28:11 OK   LC1 LC1_Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE XAxis -1.8668666520984747E-07 [N m]
+12:28:11 OK   LC1 LC1_Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE YAxis -7.5303314103204331E-09 [N m]
+12:28:11 OK   LC1 LC1_Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE ZAxis -4.3038265285014114E-09 [N m]
+12:28:11 OK   LC1 LC1_Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE Total 1.8688804076534796E-07 [N m]
+12:28:11 SOLVING LC2 ...
+12:28:45 OK   LC2 solve 
+12:28:45 LC2: state Solved status Done 34 s
+12:28:47 OK   LC2 evaluate 
+12:28:47 OK   LC2 LC2_Total_Deformation Maximum 0.00013488656171350342 [m]
+12:28:47 OK   LC2 LC2_Total_Deformation Minimum 2.6757774666146665E-05 [m]
+12:28:47 OK   LC2 LC2_Axial_Deformation_Uz_global Maximum 0 [m]
+12:28:47 OK   LC2 LC2_Axial_Deformation_Uz_global Minimum -0.00010875102452700958 [m]
+12:28:47 OK   LC2 LC2_Radial_Deformation_Ur_CS_DUCT_CYL Maximum 8.9735010980541109E-05 [m]
+12:28:47 OK   LC2 LC2_Radial_Deformation_Ur_CS_DUCT_CYL Minimum 2.6746538986185566E-05 [m]
+12:28:47 OK   LC2 LC2_Equivalent_Stress_averaged Maximum 605095699.37592363 [Pa]
+12:28:47 OK   LC2 LC2_Equivalent_Stress_averaged Minimum 561420044.49429917 [Pa]
+12:28:47 OK   LC2 LC2_Equivalent_Stress_UNaveraged Maximum 605095739.04947019 [Pa]
+12:28:47 OK   LC2 LC2_Equivalent_Stress_UNaveraged Minimum 561392078.93734455 [Pa]
+12:28:47 OK   LC2 LC2_Maximum_Principal_Stress Maximum 48422034.5101822 [Pa]
+12:28:47 OK   LC2 LC2_Maximum_Principal_Stress Minimum -175481.02884407391 [Pa]
+12:28:47 OK   LC2 LC2_Minimum_Principal_Stress Maximum -538447442.89234185 [Pa]
+12:28:47 OK   LC2 LC2_Minimum_Principal_Stress Minimum -613533651.5519526 [Pa]
+12:28:47 OK   LC2 LC2_Axial_Stress_Sz_global Maximum -538447440 [Pa]
+12:28:47 OK   LC2 LC2_Axial_Stress_Sz_global Minimum -613533536 [Pa]
+12:28:47 OK   LC2 LC2_Hoop_Stress_Stheta_CS_DUCT_CYL Maximum 48422034.410513058 [Pa]
+12:28:47 OK   LC2 LC2_Hoop_Stress_Stheta_CS_DUCT_CYL Minimum -18676200.126866557 [Pa]
+12:28:47 OK   LC2 LC2_Radial_Stress_Sr_CS_DUCT_CYL Maximum 7817207.7288243053 [Pa]
+12:28:47 OK   LC2 LC2_Radial_Stress_Sr_CS_DUCT_CYL Minimum -175495.99474877468 [Pa]
+12:28:47 OK   LC2 LC2_Equivalent_Elastic_Strain Maximum 0.0031311217555660678 [m m^-1]
+12:28:47 OK   LC2 LC2_Equivalent_Elastic_Strain Minimum 0.0028665684610118423 [m m^-1]
+12:28:47 OK   LC2 LC2_Structural_Error Maximum 1.1253427186531745E-08 [J]
+12:28:47 OK   LC2 LC2_Structural_Error Minimum 6.685350275349809E-11 [J]
+12:28:47 OK   LC2 export structural error 
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_INLET_END XAxis 0 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_INLET_END YAxis 0 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_INLET_END ZAxis 548936.68603413086 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_INLET_END Total 548936.68603413086 [N]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_INLET_END XAxis -5.2719162368930483E-10 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_INLET_END YAxis 3.7588287185030822E-05 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_INLET_END ZAxis 0 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_INLET_END Total 3.7588287188727863E-05 [N m]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_OUTLET_END XAxis 0 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_OUTLET_END YAxis 0 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_OUTLET_END ZAxis -548936.68603413692 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_OUTLET_END Total 548936.68603413692 [N]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_OUTLET_END XAxis 1.1431211532908492E-10 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_OUTLET_END YAxis -3.755407082195461E-05 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_OUTLET_END ZAxis 0 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_OUTLET_END Total 3.7554070822128584E-05 [N m]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE XAxis -6.32747429562577E-09 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE YAxis -2.392704457209807E-08 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE ZAxis 0 [N]
+12:28:47 OK   LC2 LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE Total 2.4749553388232535E-08 [N]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_HOOP_3NODES_DirectFE XAxis 7.1781136568620195E-09 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_HOOP_3NODES_DirectFE YAxis -1.8982423641171025E-09 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_HOOP_3NODES_DirectFE ZAxis -4.2829600896659196E-10 [N m]
+12:28:47 OK   LC2 LC2_Moment_Reaction_LC2_HOOP_3NODES_DirectFE Total 7.4372089667465059E-09 [N m]
+12:28:47 SOLVING LC2P ...
+12:30:16 OK   LC2P solve 
+12:30:16 LC2P: state Solved status Done 88 s
+12:30:17 OK   LC2P evaluate 
+12:30:17 OK   LC2P LC2P_Total_Deformation Maximum 0.00013488658212173653 [m]
+12:30:17 OK   LC2P LC2P_Total_Deformation Minimum 2.6757818393459654E-05 [m]
+12:30:17 OK   LC2P LC2P_Axial_Deformation_Uz_global Maximum 0 [m]
+12:30:17 OK   LC2P LC2P_Axial_Deformation_Uz_global Minimum -0.00010875102452700958 [m]
+12:30:17 OK   LC2P LC2P_Radial_Deformation_Ur_CS_DUCT_CYL Maximum 8.9735036121066066E-05 [m]
+12:30:17 OK   LC2P LC2P_Radial_Deformation_Ur_CS_DUCT_CYL Minimum 2.6746582713499274E-05 [m]
+12:30:17 OK   LC2P LC2P_Equivalent_Stress_averaged Maximum 605095743.769717 [Pa]
+12:30:17 OK   LC2P LC2P_Equivalent_Stress_averaged Minimum 561420168.716429 [Pa]
+12:30:17 OK   LC2P LC2P_Equivalent_Stress_UNaveraged Maximum 605095751.479922 [Pa]
+12:30:17 OK   LC2P LC2P_Equivalent_Stress_UNaveraged Minimum 561392227.784362 [Pa]
+12:30:17 OK   LC2P LC2P_Maximum_Principal_Stress Maximum 48422773.9128268 [Pa]
+12:30:17 OK   LC2P LC2P_Maximum_Principal_Stress Minimum -175478.2172740211 [Pa]
+12:30:17 OK   LC2P LC2P_Minimum_Principal_Stress Maximum -538447378.89234257 [Pa]
+12:30:17 OK   LC2P LC2P_Minimum_Principal_Stress Minimum -613533555.55197072 [Pa]
+12:30:17 OK   LC2P LC2P_Axial_Stress_Sz_global Maximum -538447376 [Pa]
+12:30:17 OK   LC2P LC2P_Axial_Stress_Sz_global Minimum -613533440 [Pa]
+12:30:17 OK   LC2P LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL Maximum 48422773.813186809 [Pa]
+12:30:17 OK   LC2P LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL Minimum -18675903.96984582 [Pa]
+12:30:17 OK   LC2P LC2P_Radial_Stress_Sr_CS_DUCT_CYL Maximum 7816989.0576256644 [Pa]
+12:30:17 OK   LC2P LC2P_Radial_Stress_Sr_CS_DUCT_CYL Minimum -175493.18318059924 [Pa]
+12:30:17 OK   LC2P LC2P_Equivalent_Elastic_Strain Maximum 0.0031311220580657337 [m m^-1]
+12:30:17 OK   LC2P LC2P_Equivalent_Elastic_Strain Minimum 0.0028665691036628737 [m m^-1]
+12:30:17 OK   LC2P LC2P_Structural_Error Maximum 1.1253606573024584E-08 [J]
+12:30:17 OK   LC2P LC2P_Structural_Error Minimum 6.6848894526017375E-11 [J]
+12:30:17 OK   LC2P export structural error 
+12:30:17 OK   LC2P LC2P_Force_Reaction_LC2P_INLET_END XAxis 0 [N]
+12:30:17 OK   LC2P LC2P_Force_Reaction_LC2P_INLET_END YAxis 0 [N]
+12:30:17 OK   LC2P LC2P_Force_Reaction_LC2P_INLET_END ZAxis 548936.60412543453 [N]
+12:30:17 OK   LC2P LC2P_Force_Reaction_LC2P_INLET_END Total 548936.60412543453 [N]
+12:30:17 OK   LC2P LC2P_Moment_Reaction_LC2P_INLET_END XAxis -7.8982909101910082E-10 [N m]
+12:30:17 OK   LC2P LC2P_Moment_Reaction_LC2P_INLET_END YAxis 3.7588562586066132E-05 [N m]
+12:30:17 OK   LC2P LC2P_Moment_Reaction_LC2P_INLET_END ZAxis 0 [N m]
+12:30:17 OK   LC2P LC2P_Moment_Reaction_LC2P_INLET_END Total 3.758856259436427E-05 [N m]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_OUTLET_END XAxis 0 [N]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_OUTLET_END YAxis 0 [N]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_OUTLET_END ZAxis -548936.60412543779 [N]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_OUTLET_END Total 548936.60412543779 [N]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_OUTLET_END XAxis -4.3411674255366961E-10 [N m]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_OUTLET_END YAxis -3.7553743887031033E-05 [N m]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_OUTLET_END ZAxis 0 [N m]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_OUTLET_END Total 3.75537438895402E-05 [N m]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE XAxis 1.2125204848894075E-09 [N]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE YAxis -2.2596563549529913E-08 [N]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE ZAxis 0 [N]
+12:30:18 OK   LC2P LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE Total 2.2629071792148706E-08 [N]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_HOOP_3NODES_DirectFE XAxis 6.7789693342310027E-09 [N m]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_HOOP_3NODES_DirectFE YAxis 3.637561599211928E-10 [N m]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_HOOP_3NODES_DirectFE ZAxis -4.2544976919889876E-10 [N m]
+12:30:18 OK   LC2P LC2P_Moment_Reaction_LC2P_HOOP_3NODES_DirectFE Total 6.80204022955145E-09 [N m]
+12:30:18 SOLVING BUCKLING ...
+12:31:12 OK   BUCKLING solve 
+12:31:12 BUCKLING: state Solved status Done 54 s
+12:31:14 OK   buckling evaluate 
+12:31:14 OK   LM 1 1.10803423108
+12:31:14 OK   LM 2 1.10803426404
+12:31:14 OK   LM 3 4.29784846133
+12:31:14 OK   LM 4 4.29784852876
+12:31:14 OK   LM 5 9.22472579100
+12:31:14 OK   LM 6 9.22472625860
+12:31:14 load multipliers ['1.10803423108', '1.10803426404', '4.29784846133', '4.29784852876', '9.22472579100', '9.22472625860']
+12:31:14 OK   scaling True 
+12:31:14 OK   multiplier 1 
+12:31:16 OK   image C_mesh end_face (None, None, None, None)
+12:31:16 OK   image C_mesh side (None, None, None, None)
+12:31:17 OK   image C_mesh iso (None, None, None, None)
+12:31:17 OK   image C_LC2_Equivalent_Stress iso (None, None, None, None)
+12:31:17 OK   scaling Auto 
+12:31:17 OK   image C_BK_Mode_1 iso (None, None, None, None)
+12:31:18 OK   image C_BK_Mode_1 side_YZ (None, None, None, None)
+12:31:18 OK   scaling True 
+12:31:18 OK   multiplier 1 
+12:31:18 MECH-MESHSTUDY-8B-C-DONE

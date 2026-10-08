@@ -1,0 +1,114 @@
+! =====================================================================================================
+! SECTION 9B-2 Part L - B03_S3_TOY_BENCH (STRUCTURED-MESH VARIANT, run 2): benchmark of the S3 support formulation on the 8A TOY tube
+! (RE-ANALYSIS 2026). Its numbers verify the method only. They are NOT project results.
+! Toy (identical to 08_Structural_Analysis/Buckling/Benchmark/bench_main.inp): ri 10 mm, ro 20 mm, L 600 mm, SOLID186,
+! esize 5 mm, CONSTANT E 190 GPa, nu 0.294, alpha 13.6e-6 /K, UNIFORM temperature rise 225 K -> exact answers known:
+!   restrained force N = E alpha dT A;  clamped-pinned Euler P = pi^2 EI / (0.6992 L)^2 (Engesser/Cowper shear band)
+! S3 ends, copied from the REAL S3 solver input written by Mechanical (S3_LC2_INTERMEDIATE/Audits/Presolve_Inputs/
+! S3_presolve_ds.dat, deck mode, not solved):
+!   inlet  z = 0   : every face node rotated to the cylindrical CS (x = r, y = theta, z = axial); U_theta = U_z = 0
+!   outlet z = 0.6 : pilot node on the axis, TARGE170 (pilot) + CONTA175 on every outlet-face node, MPC bonded,
+!                    force-distributed (deformable) constraint; pilot Ux = Uy = Uz = 0, rotations free
+!                    (element-type key options = those of the real deck; listed in B03_BENCHMARK.md)
+! =====================================================================================================
+/prep7
+et,1,186
+mp,ex,1,190e9
+mp,nuxy,1,0.294
+mp,alpx,1,13.6e-6
+mp,dens,1,8190
+tref,0
+cylind,0.010,0.020,0,0.6,0,360
+! B03 run 2 (structured variant): the same toy, but the annulus is mapped like the real model - 36 equal circumferential
+! divisions (10 deg), 2 through-wall (5 mm), 120 axial (5 mm) - so the outlet-face nodes (the RBE3 weights) are evenly
+! distributed. Run 1 used the 8A free mesh (esize 5 mm).
+lsel,s,length,,0.0099,0.0101
+lesize,all,,,2
+lsel,s,length,,0.5999,0.6001
+lesize,all,,,120
+lsel,all
+lsel,u,length,,0.0099,0.0101
+lsel,u,length,,0.5999,0.6001
+lesize,all,,10
+lsel,all
+mshkey,1
+mshape,0,2d
+vsweep,all
+local,12,1,0,0,0
+csys,0
+allsel,all
+bfunif,temp,225
+*get,b_nsol,node,0,num,max
+*get,b_esol,elem,0,num,max
+! ---------------- inlet: clamped (U_theta = U_z = 0 in CS 12, radial free) ----------------
+nsel,s,loc,z,0
+csys,12
+nrot,all
+csys,0
+d,all,uy,0
+d,all,uz,0
+allsel,all
+! ---------------- outlet: deformable remote point, pinned ----------------
+! copied from S3_presolve_ds.dat (Mechanical 2026 R1, remote displacement "S3_OUTLET_PILOT_..."):
+!   et,cid,174 / et,tid,170 ; keyo,tid,2,1 (pilot not fixed) ; keyo,tid,4,111111 ; keyo,cid,12,5 (bonded always) ;
+!   keyo,cid,4,1 (deformable, RBE3-type force distribution) ; keyo,cid,2,2 (MPC) ; CONTA174 on every outlet element face,
+!   TARGE170 pilot element (tshape,pilo) on the pilot node ; d,pilot,ux/uy/uz = 0, rotations free ; no real constants set
+*get,b_nmax,node,0,num,max
+b_pil=b_nmax+1
+n,b_pil,0,0,0.6
+et,2,174
+et,3,170
+keyopt,3,2,1
+keyopt,3,4,111111
+keyopt,2,12,5
+keyopt,2,4,1
+keyopt,2,2,2
+r,2
+nsel,s,loc,z,0.6
+esln,s,0
+type,2
+mat,2
+real,2
+esurf
+allsel,all
+type,3
+mat,2
+real,2
+tshape,pilo
+e,b_pil
+tshape
+d,b_pil,ux,0
+d,b_pil,uy,0
+d,b_pil,uz,0
+esel,s,type,,2
+*get,b_ncon,elem,0,count
+allsel,all
+allsel,all
+*get,b_nn,node,0,count
+*get,b_ne,elem,0,count
+finish
+/solu
+antype,static
+pstres,on
+eqsl,sparse
+outres,all,all
+solve
+finish
+/post1
+set,last
+nsel,s,loc,z,0
+/output,b03_reaction_inlet,txt
+prrsol,fz
+/output
+allsel,all
+/input,s7b_post_snippet,inp
+finish
+/solu
+antype,buckle
+bucopt,lanb,6
+mxpand,6
+solve
+finish
+/input,s8a_buckle_snippet,inp
+/com,B03-END nodes %b_nn% elements %b_ne% pilot %b_pil% contact elements %b_ncon%
+finish

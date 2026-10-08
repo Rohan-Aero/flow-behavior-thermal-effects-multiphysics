@@ -1,0 +1,95 @@
+{
+  "extremes_so_far": {
+    "T_fluid_max": {
+      "min": 300.0,
+      "max": 552.9313764926508
+    },
+    "T_fluid_min": {
+      "min": 299.9985069329842,
+      "max": 300.0000140333309
+    },
+    "T_wall_max": {
+      "min": 300.0,
+      "max": 554.7813110351562
+    },
+    "T_out_bulk": {
+      "min": 299.9999999999979,
+      "max": 369.2987600105823
+    },
+    "T_in_bulk": {
+      "min": 299.9999999999989,
+      "max": 299.9999999999989
+    },
+    "T_solid_max": {
+      "min": 300.0,
+      "max": 562.7962005562274
+    },
+    "T_solid_min": {
+      "min": 300.0,
+      "max": 429.5539230371347
+    },
+    "T_outer_max": {
+      "min": 300.0,
+      "max": 563.0730590820312
+    },
+    "T_outer_avg": {
+      "min": 300.0000000000027,
+      "max": 529.6491628020019
+    },
+    "T_inner_avg": {
+      "min": 300.0000000000011,
+      "max": 520.8774546536253
+    }
+  },
+  "checks": [
+    {
+      "tag": "stage 1 flow-only",
+      "rows": 150,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    },
+    {
+      "tag": "stage 2 energy first-order",
+      "rows": 300,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    },
+    {
+      "tag": "stage 3 second-order",
+      "rows": 400,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    },
+    {
+      "tag": "stage 3 second-order",
+      "rows": 500,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    },
+    {
+      "tag": "stage 3 second-order",
+      "rows": 600,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    },
+    {
+      "tag": "confirmation",
+      "rows": 700,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    },
+    {
+      "tag": "final",
+      "rows": 700,
+      "violations": [],
+      "messages": [],
+      "ok": true
+    }
+  ]
+}

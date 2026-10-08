@@ -1,0 +1,332 @@
+{
+  "generated": "2026-09-19 19:14:15",
+  "note": "Independent Python audit of the meshes in 05_Meshing. ANSYS Fluent's own /mesh/check and /mesh/quality output is the authoritative record and is stored in Mesh_Quality/<level>_fluent_check.txt.",
+  "provenance": {
+    "coarse": {
+      "msh": "Mesh_Coarse\\coarse.msh",
+      "nodes": 53741,
+      "max_node_coord_diff_m": 4.93875773610597e-15,
+      "fluid_cells": 38400,
+      "solid_cells": 13440,
+      "result": "IDENTICAL"
+    },
+    "medium": {
+      "msh": "Mesh_Medium\\medium.msh",
+      "nodes": 163891,
+      "max_node_coord_diff_m": 3.341771304121721e-14,
+      "fluid_cells": 116640,
+      "solid_cells": 43200,
+      "result": "IDENTICAL"
+    },
+    "fine": {
+      "msh": "Mesh_Fine\\fine.msh",
+      "nodes": 509320,
+      "max_node_coord_diff_m": 4.451994328746878e-14,
+      "fluid_cells": 354780,
+      "solid_cells": 145800,
+      "result": "IDENTICAL"
+    }
+  },
+  "levels": {
+    "coarse": {
+      "level": "coarse",
+      "NC": 8,
+      "NR": 18,
+      "NRS": 7,
+      "NZ": 60,
+      "nodes": 53741,
+      "cells": 51840,
+      "fluid_cells": 38400,
+      "solid_cells": 13440,
+      "faces": 157344,
+      "negative_cells": 0,
+      "vol_min": 2.049464747066731e-10,
+      "vol_max": 1.0565678192726059e-07,
+      "vol_total": 0.0007491468365419325,
+      "vol_exact": 0.0007539822368615503,
+      "vol_ratio": 0.9935868511442059,
+      "oq_min": 0.448185933471583,
+      "oq_mean": 0.9485400508084892,
+      "oq_frac_below_0p2": 0.0,
+      "skew_max": 0.6563520874870584,
+      "skew_mean": 0.08294608005304892,
+      "skew_frac_above_0p5": 0.004629629629629629,
+      "ar_max": 974.4909616869686,
+      "ar_mean": 141.33753902120066,
+      "skew_frac_above_0p8": 0.0,
+      "cells_above_skew_0p8": 0,
+      "oq_worst": {
+        "value": 0.448185933471583,
+        "zone": "fluid",
+        "r_mm": 9.946337500792316,
+        "z_mm": 285.0,
+        "theta_deg": 118.0617996953706
+      },
+      "skew_worst": {
+        "value": 0.6563520874870584,
+        "zone": "fluid",
+        "r_mm": 5.011488305209814,
+        "z_mm": 5.000000000000002,
+        "theta_deg": 44.99999999999999
+      },
+      "ar_worst": {
+        "value": 974.4909616869686,
+        "zone": "fluid",
+        "r_mm": 9.946619420259525,
+        "z_mm": 145.00000000000006,
+        "theta_deg": 320.66064128096014
+      },
+      "h1_fluid_m": 1.22e-05,
+      "h1_solid_m": 0.0005,
+      "growth_fluid": 1.3182123454670047,
+      "growth_solid": 1.3420418608185747,
+      "infl_18_thickness_m": 0.0055,
+      "infl_layers_within_1p56mm": 13,
+      "interface": {
+        "faces": 1920,
+        "distinct_nodes": 1952,
+        "faces_with_fluid_owner": 1920,
+        "faces_with_solid_neighbour": 1920,
+        "orphan_faces": 0,
+        "max_radius_error_m": 1.734723475976807e-18,
+        "hanging_nodes": 0
+      },
+      "fluid_annulus_thickness_m": 0.0055,
+      "axial_cell_m": 0.01,
+      "fluent_reported": {
+        "vol_min": 2.049465e-10,
+        "vol_max": 1.056568e-07,
+        "vol_total": 0.0007491468,
+        "oq_min": 0.448186,
+        "ar_max": 974.491
+      },
+      "python_vs_fluent": {
+        "vol_min": {
+          "python": 2.049464747066731e-10,
+          "fluent": 2.049465e-10,
+          "rel_diff": 1.2341429049473023e-07
+        },
+        "vol_max": {
+          "python": 1.0565678192726059e-07,
+          "fluent": 1.056568e-07,
+          "rel_diff": 1.7105136066445467e-07
+        },
+        "vol_total": {
+          "python": 0.0007491468365419325,
+          "fluent": 0.0007491468,
+          "rel_diff": 4.877806668305393e-08
+        },
+        "oq_min": {
+          "python": 0.448185933471583,
+          "fluent": 0.448186,
+          "rel_diff": 1.4843930198090357e-07
+        },
+        "ar_max": {
+          "python": 974.4909616869686,
+          "fluent": 974.491,
+          "rel_diff": 3.931594173997621e-08
+        }
+      }
+    },
+    "medium": {
+      "level": "medium",
+      "NC": 12,
+      "NR": 24,
+      "NRS": 10,
+      "NZ": 90,
+      "nodes": 163891,
+      "cells": 159840,
+      "fluid_cells": 116640,
+      "solid_cells": 43200,
+      "faces": 483456,
+      "negative_cells": 0,
+      "vol_min": 9.051023276579322e-11,
+      "vol_max": 2.8597433986467822e-08,
+      "vol_total": 0.0007518308671874971,
+      "vol_exact": 0.0007539822368615503,
+      "vol_ratio": 0.997146657349637,
+      "oq_min": 0.44582930736995613,
+      "oq_mean": 0.978743927850333,
+      "oq_frac_below_0p2": 0.0,
+      "skew_max": 0.760020765000701,
+      "skew_mean": 0.06336732430060596,
+      "skew_frac_above_0p5": 0.0022522522522522522,
+      "ar_max": 654.3921151483695,
+      "ar_mean": 96.16063753692747,
+      "skew_frac_above_0p8": 0.0,
+      "cells_above_skew_0p8": 0,
+      "oq_worst": {
+        "value": 0.44582930736995613,
+        "zone": "fluid",
+        "r_mm": 5.189440920320379,
+        "z_mm": 463.3333333333335,
+        "theta_deg": 315.0
+      },
+      "skew_worst": {
+        "value": 0.760020765000701,
+        "zone": "fluid",
+        "r_mm": 5.1894409203203775,
+        "z_mm": 3.3333333333333326,
+        "theta_deg": 315.0
+      },
+      "ar_worst": {
+        "value": 654.3921151483695,
+        "zone": "fluid",
+        "r_mm": 9.973397927357885,
+        "z_mm": 10.000000000000004,
+        "theta_deg": 41.23853273434509
+      },
+      "h1_fluid_m": 1.22e-05,
+      "h1_solid_m": 0.0005,
+      "growth_fluid": 1.209076606791022,
+      "growth_solid": 1.1469127662877496,
+      "infl_18_thickness_m": 0.0017208414272629532,
+      "infl_layers_within_1p56mm": 17,
+      "interface": {
+        "faces": 4320,
+        "distinct_nodes": 4368,
+        "faces_with_fluid_owner": 4320,
+        "faces_with_solid_neighbour": 4320,
+        "orphan_faces": 0,
+        "max_radius_error_m": 1.734723475976807e-18,
+        "hanging_nodes": 0
+      },
+      "fluid_annulus_thickness_m": 0.0055,
+      "axial_cell_m": 0.006666666666666666,
+      "fluent_reported": {
+        "vol_min": 9.051023e-11,
+        "vol_max": 2.859743e-08,
+        "vol_total": 0.0007518309,
+        "oq_min": 0.445829,
+        "ar_max": 654.392
+      },
+      "python_vs_fluent": {
+        "vol_min": {
+          "python": 9.051023276579322e-11,
+          "fluent": 9.051023e-11,
+          "rel_diff": 3.0557796913445276e-08
+        },
+        "vol_max": {
+          "python": 2.8597433986467822e-08,
+          "fluent": 2.859743e-08,
+          "rel_diff": 1.3939951326962197e-07
+        },
+        "vol_total": {
+          "python": 0.0007518308671874971,
+          "fluent": 0.0007518309,
+          "rel_diff": 4.3643461346612176e-08
+        },
+        "oq_min": {
+          "python": 0.44582930736995613,
+          "fluent": 0.445829,
+          "rel_diff": 6.894346400839584e-07
+        },
+        "ar_max": {
+          "python": 654.3921151483695,
+          "fluent": 654.392,
+          "rel_diff": 1.759623733873666e-07
+        }
+      }
+    },
+    "fine": {
+      "level": "fine",
+      "NC": 18,
+      "NR": 32,
+      "NRS": 15,
+      "NZ": 135,
+      "nodes": 509320,
+      "cells": 500580,
+      "fluid_cells": 354780,
+      "solid_cells": 145800,
+      "faces": 1510308,
+      "negative_cells": 0,
+      "vol_min": 4.009135156020198e-11,
+      "vol_max": 6.548913521657024e-09,
+      "vol_total": 0.0007530256173397667,
+      "vol_exact": 0.0007539822368615503,
+      "vol_ratio": 0.9987312439537495,
+      "oq_min": 0.31438629984138294,
+      "oq_mean": 0.9895246512185686,
+      "oq_frac_below_0p2": 0.0,
+      "skew_max": 0.8364119144500181,
+      "skew_mean": 0.05054761283223039,
+      "skew_frac_above_0p5": 0.003236245954692557,
+      "ar_max": 437.8994872067835,
+      "ar_mean": 66.0372907460872,
+      "skew_frac_above_0p8": 0.0010787486515641855,
+      "cells_above_skew_0p8": 540,
+      "oq_worst": {
+        "value": 0.31438629984138294,
+        "zone": "fluid",
+        "r_mm": 5.276689694202402,
+        "z_mm": 402.2222222222224,
+        "theta_deg": 224.99999999999994
+      },
+      "skew_worst": {
+        "value": 0.8364119144500181,
+        "zone": "fluid",
+        "r_mm": 5.276689694202399,
+        "z_mm": 2.222222222222222,
+        "theta_deg": 315.0
+      },
+      "ar_worst": {
+        "value": 437.8994872067835,
+        "zone": "fluid",
+        "r_mm": 9.985310381630722,
+        "z_mm": 60.000000000000014,
+        "theta_deg": 227.50353281698136
+      },
+      "h1_fluid_m": 1.22e-05,
+      "h1_solid_m": 0.0005,
+      "growth_fluid": 1.1384666629739595,
+      "growth_solid": 1.0398413591082498,
+      "infl_18_thickness_m": 0.0008213452924006916,
+      "infl_layers_within_1p56mm": 22,
+      "interface": {
+        "faces": 9720,
+        "distinct_nodes": 9792,
+        "faces_with_fluid_owner": 9720,
+        "faces_with_solid_neighbour": 9720,
+        "orphan_faces": 0,
+        "max_radius_error_m": 1.734723475976807e-18,
+        "hanging_nodes": 0
+      },
+      "fluid_annulus_thickness_m": 0.0055,
+      "axial_cell_m": 0.0044444444444444444,
+      "fluent_reported": {
+        "vol_min": 4.009135e-11,
+        "vol_max": 6.548914e-09,
+        "vol_total": 0.0007530256,
+        "oq_min": 0.314386,
+        "ar_max": 437.899
+      },
+      "python_vs_fluent": {
+        "vol_min": {
+          "python": 4.009135156020198e-11,
+          "fluent": 4.009135e-11,
+          "rel_diff": 3.8916174758307786e-08
+        },
+        "vol_max": {
+          "python": 6.548913521657024e-09,
+          "fluent": 6.548914e-09,
+          "rel_diff": 7.304157247512864e-08
+        },
+        "vol_total": {
+          "python": 0.0007530256173397667,
+          "fluent": 0.0007530256,
+          "rel_diff": 2.302679572485155e-08
+        },
+        "oq_min": {
+          "python": 0.31438629984138294,
+          "fluent": 0.314386,
+          "rel_diff": 9.537364352887815e-07
+        },
+        "ar_max": {
+          "python": 437.8994872067835,
+          "fluent": 437.899,
+          "rel_diff": 1.1126008131449443e-06
+        }
+      }
+    }
+  }
+}

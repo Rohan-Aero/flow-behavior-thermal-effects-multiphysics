@@ -1,0 +1,30 @@
+mesh nodes/elements 111216 24000
+ENUM KrigingPolynom ['PolyNone', 'PolyConst', 'PolyLinear', 'PolyPureQuad', 'PolyCrossQuad']
+ENUM KrigingCorrelationFunction ['CorrFuncNone', 'CorrFuncExp', 'CorrFuncGauss', 'CorrFuncLin', 'CorrFuncSpherical', 'CorrFuncCubic', 'CorrFuncMultiQuadratic', 'CorrFuncThinPlateSpine']
+OK   K1_Kriging_Linear control manual 
+OK   K1_Kriging_Linear algorithm 
+OK   K1_Kriging_Linear weighting 
+OK   K1_Kriging_Linear KrigingPolynom 
+OK   K1_Kriging_Linear outside projection 
+FAIL K1_Kriging_Linear import: Object reference not set to an instance of an object.
+K1_Kriging_Linear state=NotSolved alg=PointCloud wt=KrigingFunction poly=PolyLinear corr=CorrFuncGauss limit=20 out=Projection
+K1_Kriging_Linear NS []
+OK   K1_Kriging_Linear write input 
+OK   K2_Kriging_Quadratic control manual 
+OK   K2_Kriging_Quadratic algorithm 
+OK   K2_Kriging_Quadratic weighting 
+FAIL K2_Kriging_Quadratic KrigingPolynom: Requested value 'PolyQuadratic' was not found.
+OK   K2_Kriging_Quadratic outside projection 
+FAIL K2_Kriging_Quadratic import: Object reference not set to an instance of an object.
+K2_Kriging_Quadratic state=NotSolved alg=PointCloud wt=KrigingFunction poly=PolyNone corr=CorrFuncGauss limit=20 out=Projection
+K2_Kriging_Quadratic NS []
+OK   K2_Kriging_Quadratic write input 
+OK   R1_RBF control manual 
+OK   R1_RBF algorithm 
+OK   R1_RBF weighting 
+OK   R1_RBF outside projection 
+FAIL R1_RBF import: Object reference not set to an instance of an object.
+R1_RBF state=UnderDefined alg=PointCloud wt=RadialBasisFunctions poly=PolyNone corr=CorrFuncGauss limit=20 out=Projection
+R1_RBF NS []
+OK   R1_RBF write input 
+PROBE8-DONE

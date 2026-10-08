@@ -1,0 +1,36 @@
+=== SECTION 7B WB SOLVE (RE-ANALYSIS 2026) ===
+opened 7A project
+SAVED AS <PROJECT_ROOT>\08_Structural_Analysis\Workbench\Flow_Behavior_Thermal_Effects_Structural_7B.wbpj (7A project kept unsolved)
+systems ['CFD solid T (baseline_medium_final)', 'Fluent', 'Geometry', 'LC1 Free Expansion', 'LC2 Axially Restrained', 'Mesh']
+OK   LC2P rename 
+OK   ED -> LC2P Setup 
+saved with LC2P system
+OK   model refresh 
+mechanical opened
+mechanical script sent (returned)
+saved after solve
+OK   state Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Setup 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Solution 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Results 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB SOLVE 7B DONE ===

@@ -1,0 +1,25 @@
+﻿{
+    "root":  "<PROJECT_ROOT>\\06_Fluent_CFD\\Case",
+    "taken":  "2026-09-25T01:20:15",
+    "count":  3,
+    "files":  [
+                  {
+                      "file":  "baseline_medium_final.cas.h5",
+                      "bytes":  5000324,
+                      "mtime":  "2026-09-23T19:10:58",
+                      "sha256":  "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204"
+                  },
+                  {
+                      "file":  "intermediate_end_stage2_firstorder_iter300.cas.h5",
+                      "bytes":  5000123,
+                      "mtime":  "2026-09-23T19:03:40",
+                      "sha256":  "AC80C126677F61BD2A8C9B3F283317B8FB3B2CC8C79E820F3EA53A21548E28FF"
+                  },
+                  {
+                      "file":  "medium_mesh_used_for_baseline.msh",
+                      "bytes":  26292846,
+                      "mtime":  "2026-09-19T14:36:26",
+                      "sha256":  "2C6FCFB31108654DB2361449127761ECF687D7446C740C33C0BB350877363479"
+                  }
+              ]
+}

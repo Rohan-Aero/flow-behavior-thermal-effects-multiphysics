@@ -1,0 +1,205 @@
+{
+  "case": "M03_T03_CFD_SOLID18",
+  "status": "CONVERGED",
+  "converged": true,
+  "journal_sha256": "8205529CA5FE21C0524417EDCCE11F7DCC8224414D208858E32E082544BCA10B",
+  "param_cases_sha256": "E8D72E6C9AC9BEB1C39B5090AF04DA3C52EC290FCA5E14C8A8C7857FBC7317EB",
+  "s5_common_sha256": "8FBD5B4027CD1956ECB5F9E55490504A91CD5876CEEC721708561909503BFC8A",
+  "mesh_sha256": "C8182CF6525101E8B53E0204CB85AE03BA2DE3C428D774124435D420C382131D",
+  "variable": "CFD mesh adequacy of T03 (solid layers 12 -> 18)",
+  "value": 18,
+  "units": "solid layers",
+  "resolved_parameters": {
+    "V_IN": 23.5,
+    "TI": 0.04411209588036475,
+    "INIT_W": 23.5,
+    "QPP": 7272.727272727273,
+    "DO": 0.044,
+    "T_WALL": 0.012,
+    "MESH": "../../Mesh_Checks/Mesh_M03_T03_CFD_SOLID18/M03_T03_CFD_SOLID18.msh",
+    "COUNTS": [
+      194400,
+      116640,
+      77760
+    ]
+  },
+  "applied_read_back": {
+    "QPP": 7272.727272727273
+  },
+  "frozen_physics_gate_passed": true,
+  "stage1_iters": 150,
+  "stage2_iters": 150,
+  "stage3_iters": 400,
+  "total_iters": 700,
+  "stage3_first_iteration": 301.0,
+  "final_audit_failed_rows": 0,
+  "temperature_extremes_all_iterations": {
+    "T_fluid_max": {
+      "min": 300.0,
+      "max": 552.9313764926508
+    },
+    "T_fluid_min": {
+      "min": 299.9985069329842,
+      "max": 300.0000140333309
+    },
+    "T_wall_max": {
+      "min": 300.0,
+      "max": 554.7813110351562
+    },
+    "T_out_bulk": {
+      "min": 299.9999999999979,
+      "max": 369.2987600105823
+    },
+    "T_in_bulk": {
+      "min": 299.9999999999989,
+      "max": 299.9999999999989
+    },
+    "T_solid_max": {
+      "min": 300.0,
+      "max": 562.7962005562274
+    },
+    "T_solid_min": {
+      "min": 300.0,
+      "max": 429.5539230371347
+    },
+    "T_outer_max": {
+      "min": 300.0,
+      "max": 563.0730590820312
+    },
+    "T_outer_avg": {
+      "min": 300.0000000000027,
+      "max": 529.6491628020019
+    },
+    "T_inner_avg": {
+      "min": 300.0000000000011,
+      "max": 520.8774546536253
+    }
+  },
+  "failures": [],
+  "final_eval": {
+    "tag": "confirmation+400",
+    "iteration": 700,
+    "residuals": {
+      "continuity": 3.1943e-10,
+      "x-velocity": 9.8928e-16,
+      "y-velocity": 1.0229e-15,
+      "z-velocity": 6.238e-14,
+      "energy": 1.8919e-14,
+      "k": 2.7159e-12,
+      "omega": 5.7865e-13,
+      "F_wall_z": 0.076093,
+      "q_net_all": -1.0127e-09,
+      "q_ends": 0.0,
+      "T_solid_mi": 428.67,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 552.93,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.24076,
+      "yplus_min": 0.20828,
+      "T_inner_av": 520.87,
+      "T_outer_av": 529.64,
+      "T_outer_ma": 563.07,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 438.14,
+      "yplus_max": 0.57772,
+      "v_out_max": 34.992,
+      "T_solid_me": 526.38,
+      "T_solid_ma": 562.79,
+      "T_wall_max": 554.78,
+      "T_out_bulk": 368.93,
+      "p_out": 0.0,
+      "p_in": 438.14,
+      "q_fluid_ne": -602.76,
+      "q_interfac": 602.76,
+      "q_heated_w": 602.76,
+      "mass_imbal": 3.7817e-16,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 3.1943e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 9.8928e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 1.0229e-15,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 6.238e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 2.7159e-12,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 5.7865e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual energy": {
+        "value": 1.8919e-14,
+        "target": 1e-06,
+        "ok": true
+      },
+      "drift T_out_bulk over 200 it [K]": {
+        "value": 2.891926328629779e-06,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_solid_max over 200 it [K]": {
+        "value": 8.37454899738077e-06,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_wall_max over 200 it [K]": {
+        "value": 0.0,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_outer_max over 200 it [K]": {
+        "value": 0.0,
+        "target": 0.1,
+        "ok": true
+      },
+      "rel drift dp_area over 200 it": {
+        "value": 4.3761897721751997e-10,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift q_interface over 200 it": {
+        "value": 4.7431765895840465e-09,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out over 200 it": {
+        "value": 1.4150880500298582e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance |in-out|/in": {
+        "value": 4.365769398675617e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "energy imbalance |sum Q|/Q_wall": {
+        "value": 1.6801552021837682e-12,
+        "target": 0.005,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  }
+}

@@ -1,0 +1,15 @@
+14:35:10 === SECTION 9B-2 S3 SUPPORT SENSITIVITY, MODE deck (RE-ANALYSIS 2026) ===
+14:35:10 PASS  one new static (S3) and one buckling analysis in the copy | expected 1 / 1 | found [('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('Static Structural', 'Static'), ('Eigenvalue Buckling', 'Buckling')]
+14:35:10 PASS  mesh B unchanged (108,252 nodes / 23,400 SOLID186) | expected 108252 / 23400 | found 108252 / 23400
+14:35:10 PASS  end faces: 612 inlet and 612 outlet nodes | expected 612 / 612 | found 612 / 612
+14:35:10 PASS  S3: External Data linked (one imported load group) | expected 1 | found 1
+14:35:11 FAIL S3 import: Object reference not set to an instance of an object.
+14:35:11 FATAL Object reference not set to an instance of an object.
+14:35:11 Traceback (most recent call last):
+  File "<PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Scripts\mech_s3_9B2.py", line 206, in <module>
+    T("S3 import", lambda: ibt.ImportLoad(), critical=True)
+  File "<PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Scripts\mech_s3_9B2.py", line 61, in T
+    r = fn()
+  File "<PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Scripts\mech_s3_9B2.py", line 206, in <lambda$33>
+    T("S3 import", lambda: ibt.ImportLoad(), critical=True)
+SystemError: Object reference not set to an instance of an object.

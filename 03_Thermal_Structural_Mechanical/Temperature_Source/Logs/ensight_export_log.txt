@@ -1,0 +1,3 @@
+OK    read case  ../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5 
+OK    read data  ../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5 
+OK    export EnSight Gold solid_domain, node-centred temperature 

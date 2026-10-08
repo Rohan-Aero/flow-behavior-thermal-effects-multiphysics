@@ -1,0 +1,55 @@
+=== SECTION 9B-2 WB S3 SUPPORT SENSITIVITY, MODE deck (RE-ANALYSIS 2026) ===
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\S3_LC2_INTERMEDIATE\Project\S3_LC2_INTERMEDIATE.wbpj (7B project not written)
+OK   rename S3 
+OK   ED -> S3 Setup 
+OK   rename S3 Linear Buckling 
+system Geometry (Geom): ['Geometry']
+system Mesh (SYS): ['Geometry 1', 'Mesh']
+system Fluent (FLU): ['Setup', 'Solution']
+system LC1 Free Expansion (SYS 2): ['Engineering Data', 'Geometry 2', 'Model', 'Setup 2', 'Solution 1', 'Results']
+system LC2 Axially Restrained (SYS 3): ['Engineering Data 1', 'Geometry 3', 'Model 1', 'Setup 3', 'Solution 2', 'Results 1']
+system LC2P Restrained Thermal + Pressure (SYS 4): ['Engineering Data 2', 'Geometry 4', 'Model 2', 'Setup 4', 'Solution 3', 'Results 2']
+system S3 LC2 Intermediate (clamped-pinned) (SYS 5): ['Engineering Data 3', 'Geometry 5', 'Model 3', 'Setup 5', 'Solution 4', 'Results 3']
+system S3 Linear Buckling (SYS 6): ['Engineering Data 4', 'Geometry 6', 'Model 4', 'Setup 6', 'Solution 5', 'Results 4']
+system CFD solid T (baseline_medium_final) (SYS 1): ['Setup 1']
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved
+OK   state Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Setup 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Solution 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2P Restrained Thermal + Pressure/Results 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 LC2 Intermediate (clamped-pinned)/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 LC2 Intermediate (clamped-pinned)/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 LC2 Intermediate (clamped-pinned)/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 LC2 Intermediate (clamped-pinned)/Setup 5 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state S3 LC2 Intermediate (clamped-pinned)/Solution 4 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state S3 LC2 Intermediate (clamped-pinned)/Results 3 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state S3 Linear Buckling/Engineering Data 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 Linear Buckling/Geometry 6 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 Linear Buckling/Model 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state S3 Linear Buckling/Setup 6 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state S3 Linear Buckling/Solution 5 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state S3 Linear Buckling/Results 4 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB S3 deck DONE ===

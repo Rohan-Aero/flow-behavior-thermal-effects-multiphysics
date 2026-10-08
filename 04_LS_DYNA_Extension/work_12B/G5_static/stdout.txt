@@ -1,0 +1,470 @@
+ License option : check ansys licenses only
+
+
+ ***************************************************************
+ *            ANSYS LEGAL NOTICES                              *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2025 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+      Date: 10/02/2026      Time: 20:17:24  
+      ___________________________________________________ 
+     |                                                   |
+     |  LS-DYNA, A Program for Nonlinear Dynamic         |
+     |  Analysis of Structures in Three Dimensions       |
+     |  Date    : 07/09/2025    Time: 09:53:35           |
+     |  Version : smp d R16                              |
+     |  Revision: R16.1-180-gd50332dbe5                  |
+     |  AnLicVer: 2026 R1 (20251230+dl-79-g6933d52)      |
+     |                                                   |
+     |  Features enabled in this version:                |
+     |    Shared Memory Parallel                         |
+     |    CESE CHEMISTRY EM ICFD STOCHASTIC_PARTICLES    |
+     |    FFTW (multi-dimensional FFTW Library)          |
+     |    ARPACK (nonsymmetric eigensolver library)      |
+     |    ANSYSLIC enabled                               |
+     |                                                   |
+     |  Platform   : WINDOWS X64                         |
+     |  OS Level   : Windows 10  (Build 26200) uum       |
+     |  Compiler   : Intel Fortran Compiler 19.0 SSE2    |
+     |  Hostname   : <HOST>                               |
+     |  Precision  : Double precision (I8R8)             |
+     |                                                   |
+     |  Unauthorized use infringes Ansys Inc. copyrights |
+     |___________________________________________________|
+
+[license/error] *** ANSYS LICENSE MANAGER ERROR ***
+[license/error] Your version of the Ansys license client software is out of date. Please refer to Licensing Error Messages in the Troubleshooting section of the ANSYS, Inc. Licensing Guide. 
+[license/error]          The version of the license client 55964@<HOST> [Ansys Release 2025 R2] must be greater or equal to the client LSDYNA version [Ansys Release 2026 R1].
+ Student license active; 331 days remaning.
+
+ Executing with ANSYS license
+
+ Command line options: i=lc2_static.k 
+                       ncpu=4 
+                       memory=20m
+
+ Input file: lc2_static.k                                                                    
+
+ The native file format       : 64-bit small endian
+ Memory size from command line:    20000000
+
+ on UNIX computers note the following change:
+
+ ctrl-c interrupts ls-dyna and prompts for a sense  switch.
+ type the desired sense switch: sw1., sw2., etc. to continue
+ the execution.  ls-dyna will respond as explained in the users manual
+
+    type                      response
+   -----   ------------------------------------------------------------
+   quit    ls-dyna terminates.
+   stop    ls-dyna terminates.
+   sw1.    a restart file is written and ls-dyna terminates.
+   sw2.    ls-dyna responds with time and cycle numbers.    
+   sw3.    a restart file is written and ls-dyna continues calculations.
+   sw4.    a plot state is written and ls-dyna continues calculations.
+   swa.    ls-dyna flushes all output i/o buffers.
+   swb.    a dynain is written and ls-dyna continues calculations.
+   swc.    a restart and dynain are written and ls-dyna continues calculations.
+   swd.    a restart and dynain are written and ls-dyna terminates.
+   swe.    stop dynamic relaxation just as though convergence
+   endtime=time change the termination time
+   lpri    toggle implicit lin. alg. solver output on/off.
+   nlpr    toggle implicit nonlinear solver output on/off.
+   iter    toggle implicit output to d3iter database on/off.
+   prof    output timing data to messag and continue.
+   conv    force implicit nonlinear convergence for current time step.
+   ttrm    terminate implicit time step, reduce time step, retry time step.
+   rtrm    terminate implicit at end of current time step.
+
+
+ ********  notice  ********  notice  ********  notice  ********
+ *                                                            *
+ * This is the LS-DYNA Finite Element code.                   *
+ *                                                            *
+ * Neither LST nor the authors assume any responsibility for  *
+ * the validity, accuracy, or applicability of any results    *
+ * obtained from this system. Users must verify their own     *
+ * results.                                                   *
+ *                                                            *
+ * LST endeavors to make the LS-DYNA code as complete,        *
+ * accurate and easy to use as possible.                      *
+ * Suggestions and comments are welcomed.  Please report any  *
+ * errors encountered in either the documentation or results  *
+ * immediately to LST through your site focus.                *
+ *                                                            *
+ * Copyright (C) 1990-2021                                    *
+ * by Livermore Software Technology, LLC                      *
+ * All rights reserved                                        *
+ *                                                            *
+ ********  notice  ********  notice  ********  notice  ********
+
+ Beginning of keyword reader                                   10/02/26 20:17:27
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\mat_inconel_thermoelastic.k
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\nodes.k
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\elements_h20.k
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\sets.k
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\csys_hoop.k
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\spc_lc2.k
+
+                                                               10/02/26 20:17:27
+ Open include file: ..\G4_import\model\temps_lc2.k
+
+ Memory required to process keyword     :   10031809  
+ Additional dynamic memory required     :    7382835  
+
+
+ input of data is completed
+
+ initial kinetic energy = 0.00000000E+00
+
+ termination time                  = 1.000E+00
+
+ Memory required to begin solution      :      11M
+ Constraint dynamically allocated memory:     489K
+ Additional dynamically allocated memory:      33M
+                                   Total:      44M
+
+ initialization completed
+ ____________________________________________________________
+
+ Rate effects are turned off in constitutive models
+ since IRATE > 0 on *CONTROL_IMPLICIT_DYNAMICS card
+   No materials have acted on this flag!
+ ____________________________________________________________
+
+ calculation with mass scaling for minimum dt
+    added mass   =   0.0000E+00
+    physical mass=   4.6313E+00
+    ratio        =   0.0000E+00
+       1 t 0.0000E+00 dt 2.50E-02 flush i/o buffers            10/02/26 20:17:30
+       1 t 0.0000E+00 dt 2.50E-02 write d3plot file            10/02/26 20:17:30
+
+ BEGIN implicit statics  step      1 t= 2.5000E-02             10/02/26 20:17:31
+
+
+     ================================================
+     ==            IMPLICIT USAGE ALERT            ==
+     ================================================
+     == Memory Management for Implicit has changed ==
+     == after R10.  Please use:                    ==
+     ==       memory=    11M                       ==
+     ================================================
+
+ Iteration:   1     *|du|/|u| =  1.0000000E+00     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.0988735E-04     *Ei/E0 =  2.3528230E-09
+ Equilibrium established after     2 iterations                10/02/26 20:17:49
+    
+ estimated total cpu time          =       765 sec (       0 hrs 12 mins)
+ estimated cpu time to complete    =       741 sec (       0 hrs 12 mins)
+ estimated total clock time        =       774 sec (       0 hrs 12 mins)
+ estimated clock time to complete  =       750 sec (       0 hrs 12 mins)
+
+ BEGIN implicit statics  step      2 t= 5.0000E-02             10/02/26 20:17:50
+ Iteration:   1     *|du|/|u| =  4.9951497E-01     *Ei/E0 =  9.9837405E-01
+ Iteration:   2     *|du|/|u| =  1.0815420E-04     *Ei/E0 =  2.5483151E-09
+ Equilibrium established after     2 iterations                10/02/26 20:18:07
+
+ BEGIN implicit statics  step      3 t= 7.5000E-02             10/02/26 20:18:07
+ Iteration:   1     *|du|/|u| =  3.3268687E-01     *Ei/E0 =  9.9674747E-01
+ Iteration:   2     *|du|/|u| =  1.0821640E-04     *Ei/E0 =  2.8794167E-09
+ Equilibrium established after     2 iterations                10/02/26 20:18:25
+
+ BEGIN implicit statics  step      4 t= 1.0000E-01             10/02/26 20:18:25
+ Iteration:   1     *|du|/|u| =  2.4927184E-01     *Ei/E0 =  9.9512023E-01
+ Iteration:   2     *|du|/|u| =  1.0843783E-04     *Ei/E0 =  3.3461931E-09
+ Equilibrium established after     2 iterations                10/02/26 20:18:42
+
+ BEGIN implicit statics  step      5 t= 1.2500E-01             10/02/26 20:18:42
+ Iteration:   1     *|du|/|u| =  1.9922185E-01     *Ei/E0 =  9.9349235E-01
+ Iteration:   2     *|du|/|u| =  1.0867635E-04     *Ei/E0 =  3.9487121E-09
+ Equilibrium established after     2 iterations                10/02/26 20:19:00
+
+ BEGIN implicit statics  step      6 t= 1.5000E-01             10/02/26 20:19:00
+ Iteration:   1     *|du|/|u| =  1.6585433E-01     *Ei/E0 =  9.9186382E-01
+ Iteration:   2     *|du|/|u| =  1.0891079E-04     *Ei/E0 =  4.6870439E-09
+ Equilibrium established after     2 iterations                10/02/26 20:19:17
+
+ BEGIN implicit statics  step      7 t= 1.7500E-01             10/02/26 20:19:18
+ Iteration:   1     *|du|/|u| =  1.4201963E-01     *Ei/E0 =  9.9023465E-01
+ Iteration:   2     *|du|/|u| =  1.0913852E-04     *Ei/E0 =  5.5612617E-09
+ Equilibrium established after     2 iterations                10/02/26 20:19:35
+
+ BEGIN implicit statics  step      8 t= 2.0000E-01             10/02/26 20:19:35
+ Iteration:   1     *|du|/|u| =  1.2414293E-01     *Ei/E0 =  9.8860483E-01
+ Iteration:   2     *|du|/|u| =  1.0936035E-04     *Ei/E0 =  6.5714412E-09
+ Equilibrium established after     2 iterations                10/02/26 20:19:52
+
+ BEGIN implicit statics  step      9 t= 2.2500E-01             10/02/26 20:19:53
+ Iteration:   1     *|du|/|u| =  1.1023822E-01     *Ei/E0 =  9.8697437E-01
+ Iteration:   2     *|du|/|u| =  1.0957754E-04     *Ei/E0 =  7.7176608E-09
+ Equilibrium established after     2 iterations                10/02/26 20:20:10
+    
+ estimated total cpu time          =       711 sec (       0 hrs 11 mins)
+ estimated cpu time to complete    =       547 sec (       0 hrs  9 mins)
+ estimated total clock time        =       712 sec (       0 hrs 11 mins)
+ estimated clock time to complete  =       548 sec (       0 hrs  9 mins)
+
+ BEGIN implicit statics  step     10 t= 2.5000E-01             10/02/26 20:20:10
+ Iteration:   1     *|du|/|u| =  9.9113907E-02     *Ei/E0 =  9.8534326E-01
+ Iteration:   2     *|du|/|u| =  1.0979125E-04     *Ei/E0 =  9.0000017E-09
+ Equilibrium established after     2 iterations                10/02/26 20:20:27
+
+ BEGIN implicit statics  step     11 t= 2.7500E-01             10/02/26 20:20:27
+ Iteration:   1     *|du|/|u| =  9.2874157E-02     *Ei/E0 =  9.9749409E-01
+ Iteration:   2     *|du|/|u| =  1.1572342E-04     *Ei/E0 =  1.1210999E-08
+ Equilibrium established after     2 iterations                10/02/26 20:20:44
+
+ BEGIN implicit statics  step     12 t= 3.0000E-01             10/02/26 20:20:45
+ Iteration:   1     *|du|/|u| =  8.7193129E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2037380E-04     *Ei/E0 =  1.3721121E-08
+ Equilibrium established after     2 iterations                10/02/26 20:21:02
+
+ BEGIN implicit statics  step     13 t= 3.2500E-01             10/02/26 20:21:02
+ Iteration:   1     *|du|/|u| =  8.0513490E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2066619E-04     *Ei/E0 =  1.5859595E-08
+ Equilibrium established after     2 iterations                10/02/26 20:21:19
+
+ BEGIN implicit statics  step     14 t= 3.5000E-01             10/02/26 20:21:20
+ Iteration:   1     *|du|/|u| =  7.4557859E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2063967E-04     *Ei/E0 =  1.8069820E-08
+ Equilibrium established after     2 iterations                10/02/26 20:21:37
+
+ BEGIN implicit statics  step     15 t= 3.7500E-01             10/02/26 20:21:37
+ Iteration:   1     *|du|/|u| =  6.9439935E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2080103E-04     *Ei/E0 =  2.0448443E-08
+ Equilibrium established after     2 iterations                10/02/26 20:21:54
+
+ BEGIN implicit statics  step     16 t= 4.0000E-01             10/02/26 20:21:55
+ Iteration:   1     *|du|/|u| =  6.5009770E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2111796E-04     *Ei/E0 =  2.3005350E-08
+ Equilibrium established after     2 iterations                10/02/26 20:22:11
+
+ BEGIN implicit statics  step     17 t= 4.2500E-01             10/02/26 20:22:12
+ Iteration:   1     *|du|/|u| =  6.1133159E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2153530E-04     *Ei/E0 =  2.5742053E-08
+ Equilibrium established after     2 iterations                10/02/26 20:22:28
+
+ BEGIN implicit statics  step     18 t= 4.5000E-01             10/02/26 20:22:29
+ Iteration:   1     *|du|/|u| =  5.7721501E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2206854E-04     *Ei/E0 =  2.8684593E-08
+ Equilibrium established after     2 iterations                10/02/26 20:22:46
+
+ BEGIN implicit statics  step     19 t= 4.7500E-01             10/02/26 20:22:46
+ Iteration:   1     *|du|/|u| =  5.4689441E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2267400E-04     *Ei/E0 =  3.1828694E-08
+ Equilibrium established after     2 iterations                10/02/26 20:23:03
+
+ BEGIN implicit statics  step     20 t= 5.0000E-01             10/02/26 20:23:04
+ Iteration:   1     *|du|/|u| =  5.1964107E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2328682E-04     *Ei/E0 =  3.5136687E-08
+ Equilibrium established after     2 iterations                10/02/26 20:23:21
+
+ BEGIN implicit statics  step     21 t= 5.2500E-01             10/02/26 20:23:21
+ Iteration:   1     *|du|/|u| =  4.9538313E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2407428E-04     *Ei/E0 =  3.8777690E-08
+ Equilibrium established after     2 iterations                10/02/26 20:23:38
+
+ BEGIN implicit statics  step     22 t= 5.5000E-01             10/02/26 20:23:39
+ Iteration:   1     *|du|/|u| =  4.7357660E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2498047E-04     *Ei/E0 =  4.2747451E-08
+ Equilibrium established after     2 iterations                10/02/26 20:23:56
+
+ BEGIN implicit statics  step     23 t= 5.7500E-01             10/02/26 20:23:56
+ Iteration:   1     *|du|/|u| =  4.5373754E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2591296E-04     *Ei/E0 =  4.6987090E-08
+ Equilibrium established after     2 iterations                10/02/26 20:24:13
+
+ BEGIN implicit statics  step     24 t= 6.0000E-01             10/02/26 20:24:14
+ Iteration:   1     *|du|/|u| =  4.3555681E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2684455E-04     *Ei/E0 =  5.1479043E-08
+ Equilibrium established after     2 iterations                10/02/26 20:24:31
+
+ BEGIN implicit statics  step     25 t= 6.2500E-01             10/02/26 20:24:31
+ Iteration:   1     *|du|/|u| =  4.1882642E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2777655E-04     *Ei/E0 =  5.6230340E-08
+ Equilibrium established after     2 iterations                10/02/26 20:24:48
+
+ BEGIN implicit statics  step     26 t= 6.5000E-01             10/02/26 20:24:48
+ Iteration:   1     *|du|/|u| =  4.0337479E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2870971E-04     *Ei/E0 =  6.1247799E-08
+ Equilibrium established after     2 iterations                10/02/26 20:25:06
+
+ BEGIN implicit statics  step     27 t= 6.7500E-01             10/02/26 20:25:06
+ Iteration:   1     *|du|/|u| =  3.8905977E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2964409E-04     *Ei/E0 =  6.6537607E-08
+ Equilibrium established after     2 iterations                10/02/26 20:25:23
+
+ BEGIN implicit statics  step     28 t= 7.0000E-01             10/02/26 20:25:23
+ Iteration:   1     *|du|/|u| =  3.7782339E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3164849E-04     *Ei/E0 =  7.2840468E-08
+ Equilibrium established after     2 iterations                10/02/26 20:25:40
+
+ BEGIN implicit statics  step     29 t= 7.2500E-01             10/02/26 20:25:41
+ Iteration:   1     *|du|/|u| =  3.6984301E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3494791E-04     *Ei/E0 =  8.0615839E-08
+ Equilibrium established after     2 iterations                10/02/26 20:25:58
+
+ BEGIN implicit statics  step     30 t= 7.5000E-01             10/02/26 20:25:58
+ Iteration:   1     *|du|/|u| =  3.5967357E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3679700E-04     *Ei/E0 =  8.7909538E-08
+ Equilibrium established after     2 iterations                10/02/26 20:26:15
+
+ BEGIN implicit statics  step     31 t= 7.7500E-01             10/02/26 20:26:15
+ Iteration:   1     *|du|/|u| =  3.4916439E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3809009E-04     *Ei/E0 =  9.5136057E-08
+ Equilibrium established after     2 iterations                10/02/26 20:26:33
+
+ BEGIN implicit statics  step     32 t= 8.0000E-01             10/02/26 20:26:33
+ Iteration:   1     *|du|/|u| =  3.3889685E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3914427E-04     *Ei/E0 =  1.0246688E-07
+ Equilibrium established after     2 iterations                10/02/26 20:26:50
+
+ BEGIN implicit statics  step     33 t= 8.2500E-01             10/02/26 20:26:50
+ Iteration:   1     *|du|/|u| =  3.2907595E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4010047E-04     *Ei/E0 =  1.1001310E-07
+ Equilibrium established after     2 iterations                10/02/26 20:27:08
+
+ BEGIN implicit statics  step     34 t= 8.5000E-01             10/02/26 20:27:08
+ Iteration:   1     *|du|/|u| =  3.1971907E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4098826E-04     *Ei/E0 =  1.1779163E-07
+ Equilibrium established after     2 iterations                10/02/26 20:27:25
+
+ BEGIN implicit statics  step     35 t= 8.7500E-01             10/02/26 20:27:25
+ Iteration:   1     *|du|/|u| =  3.1089822E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4188997E-04     *Ei/E0 =  1.2590085E-07
+ Equilibrium established after     2 iterations                10/02/26 20:27:43
+
+ BEGIN implicit statics  step     36 t= 9.0000E-01             10/02/26 20:27:43
+ Iteration:   1     *|du|/|u| =  3.0252961E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4277005E-04     *Ei/E0 =  1.3429385E-07
+ Equilibrium established after     2 iterations                10/02/26 20:28:00
+
+ BEGIN implicit statics  step     37 t= 9.2500E-01             10/02/26 20:28:00
+ Iteration:   1     *|du|/|u| =  2.9466807E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4370180E-04     *Ei/E0 =  1.4309608E-07
+ Equilibrium established after     2 iterations                10/02/26 20:28:17
+
+ BEGIN implicit statics  step     38 t= 9.5000E-01             10/02/26 20:28:17
+ Iteration:   1     *|du|/|u| =  2.8720578E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4462776E-04     *Ei/E0 =  1.5222264E-07
+ Equilibrium established after     2 iterations                10/02/26 20:28:34
+
+ BEGIN implicit statics  step     39 t= 9.7500E-01             10/02/26 20:28:35
+ Iteration:   1     *|du|/|u| =  2.8011833E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4555307E-04     *Ei/E0 =  1.6168399E-07
+ Equilibrium established after     2 iterations                10/02/26 20:28:51
+
+ BEGIN implicit statics  step     40 t= 1.0000E+00             10/02/26 20:28:52
+ Iteration:   1     *|du|/|u| =  2.7339792E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4649507E-04     *Ei/E0 =  1.7152459E-07
+ Equilibrium established after     2 iterations                10/02/26 20:29:09
+     162 t 1.0000E+00 dt 2.50E-02 write d3plot file            10/02/26 20:29:09
+ 
+ *** termination time reached ***
+     162 t 1.0000E+00 dt 2.50E-02 write d3dump01 file          10/02/26 20:29:10
+
+ N o r m a l    t e r m i n a t i o n                          10/02/26 20:29:10
+
+ Memory required to complete solution   :      11M
+ Constraint dynamically allocated memory:      68M
+ Additional dynamically allocated memory:     834M
+                                   Total:     911M
+
+ T i m i n g   i n f o r m a t i o n
+                        CPU(seconds)   %CPU  Clock(seconds) %Clock
+  ----------------------------------------------------------------
+  Keyword Processing ... 1.0000E+00    0.14     8.9700E-01    0.13
+    KW Reading ......... 0.0000E+00    0.00     4.6300E-01    0.07
+    KW Writing ......... 1.0000E+00    0.14     1.8700E-01    0.03
+  Initialization ....... 5.0000E+00    0.71     5.5650E+00    0.79
+    Init Proc Phase 1 .. 0.0000E+00    0.00     5.9300E-01    0.08
+    Init Proc Phase 2 .. 2.0000E+00    0.28     2.1050E+00    0.30
+  Element processing ... 1.6100E+02   22.77     1.5629E+02   22.14
+    Solids ............. 1.6100E+02   22.77     1.5618E+02   22.12
+    E Other ............ 0.0000E+00    0.00     1.0600E-01    0.02
+  Binary databases ..... 0.0000E+00    0.00     1.9000E-02    0.00
+  ASCII database ....... 2.0000E+00    0.28     7.2600E-01    0.10
+  Implicit ............. 7.0000E+00    0.99     2.2220E+00    0.31
+  Implicit Nonlinear ... 6.0000E+00    0.85     5.6620E+00    0.80
+    Imp. NL force mod .. 5.0000E+00    0.71     3.9340E+00    0.56
+  Implicit Lin. Alg. ... 5.2300E+02   73.97     5.3433E+02   75.68
+    Imp. LA Mtx Assemb . 2.0000E+01    2.83     2.8387E+01    4.02
+    Imp. LA Factor ..... 4.9400E+02   69.87     4.9361E+02   69.91
+    Imp. LA Solve ...... 9.0000E+00    1.27     1.2325E+01    1.75
+  Misc. 1 .............. 0.0000E+00    0.00     5.7000E-02    0.01
+    Scale Masses ....... 0.0000E+00    0.00     8.0000E-03    0.00
+  Misc. 3 .............. 0.0000E+00    0.00     1.7700E-01    0.03
+  Misc. 4 .............. 2.0000E+00    0.28     1.0300E-01    0.01
+    Timestep Init ...... 1.0000E+00    0.14     7.1000E-02    0.01
+  ----------------------------------------------------------------
+  T o t a l s            7.0700E+02  100.00     7.0605E+02  100.00
+
+ Problem time       =    1.0000E+00
+ Problem cycle      =       162
+ Total CPU time     =       707 seconds (   0 hours 11 minutes 47 seconds)
+ CPU time per zone cycle  =     184921.389 nanoseconds
+ Clock time per zone cycle=     184547.853 nanoseconds
+
+ Number of CPU's    4
+ NLQ used/max     192/  192
+ Start time   10/02/2026 20:17:27  
+ End time     10/02/2026 20:29:10  
+ Elapsed time     703 seconds for     162 cycles using  4 SMP threads
+             (      0 hour  11 minutes 43 seconds)
+
+ N o r m a l    t e r m i n a t i o n                          10/02/26 20:29:10
+

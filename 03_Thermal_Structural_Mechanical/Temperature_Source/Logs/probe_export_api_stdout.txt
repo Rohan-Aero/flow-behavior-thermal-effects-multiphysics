@@ -1,0 +1,173 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\\fluent-20260925-004312-22344.trn".
+Auto-Transcript Start Time:  00:43:12, 25 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:50634 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  10788  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  15072  12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  22808  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  17832  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  21160  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\07_Thermal_Analysis\\Temperature_Source\\cleanup-fluent-<HOST>-21160.bat
+
+<HOST> is already loaded (34.3842).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import os, sys, json
+>>> sys.path.insert(0, "Journals")
+>>> from s5_common import *
+>>> solver.file.batch_options.confirm_overwrite = False
+>>> step("read case", lambda: solver.file.read_case(file_name="../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5"))
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      159840 cells,     2 cell zones ...
+         116640 hexahedral cells,  zone id: 2
+          43200 hexahedral cells,  zone id: 3
+      487776 faces,     9 face zones ...
+         346464 quadrilateral interior faces,  zone id: 4
+         124800 quadrilateral interior faces,  zone id: 5
+           1296 quadrilateral velocity-inlet faces,  zone id: 6
+           1296 quadrilateral pressure-outlet faces,  zone id: 7
+           4320 quadrilateral wall faces,  zone id: 8
+           4320 quadrilateral wall faces,  zone id: 12
+           4320 quadrilateral wall faces,  zone id: 9
+            480 quadrilateral wall faces,  zone id: 10
+            480 quadrilateral wall faces,  zone id: 11
+      168163 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	distributing mesh
+		pairs....,
+		parts....,
+		faces....,
+		nodes....,
+		shadow nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 25341/982 = 25.8055
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+S5B OK    read case                                              
+>>> step("read data", lambda: solver.file.read_data(file_name="../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5"))
+
+Reading from <HOST>:"<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+S5B OK    read data                                              
+>>> EX = solver.file.export
+>>> log("export children: %s" % (list(EX.child_names) if hasattr(EX, "child_names") else "n/a"))
+S5B export children: ['sc_def_file_settings', 'settings']
+>>> log("export commands: %s" % (list(EX.command_names) if hasattr(EX, "command_names") else "n/a"))
+S5B export commands: ['abaqus', 'mechanical_apdl', 'mechanical_apdl_input', 'ascii', 'avs', 'ensight', 'ensight_gold', 'ensight_gold_surface', 'ensight_dvs', 'visualize_output_options', 'visualize_output_write', 'fieldview', 'fieldview_data', 'gambit', 'cgns', 'custom_heat_flux', 'dx', 'ensight_gold_parallel_surfaces', 'ensight_gold_parallel_volume', 'icemcfd_for_icepak', 'fast_mesh', 'fast_solution', 'fast_velocity', 'taitherm', 'fieldview_unstruct', 'fieldview_unstruct_mesh', 'fieldview_unstruct_data', 'fieldview_unstruct_surfaces', 'ideas', 'nastran', 'patran_neutral', 'patran_nodal', 'vtk', 'tecplot', 'outline_view_settings']
+>>> for nm in ("mechanical_apdl_input", "mechanical_apdl"):
+    try:
+        cmd = getattr(EX, nm)
+        log("%s args: %s" % (nm, cmd.argument_names))
+        for a in cmd.argument_names:
+            try:
+                arg = getattr(cmd, a)
+                av = None
+                try:
+                    av = arg.allowed_values()
+                except Exception:
+                    pass
+                log("   arg %s allowed=%s" % (a, av))
+            except Exception as e:
+                log("   arg %s err %s" % (a, e))
+    except Exception as e:
+        log("%s not available: %s" % (nm, e))
+S5B mechanical_apdl_input args: ['file_name', 'surface_name_list', 'structural_analysis', 'write_loads', 'loads']
+S5B    arg file_name allowed=None
+S5B    arg surface_name_list allowed=['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'heated_outer_wall', 'fluid_solid_interface', 'fluid_outlet', 'fluid_inlet']
+S5B    arg structural_analysis allowed=None
+S5B    arg write_loads allowed=None
+S5B    arg loads allowed=[]
+S5B mechanical_apdl args: ['file_name', 'thread_name_list']
+S5B    arg file_name allowed=None
+S5B    arg thread_name_list allowed=['fluid_domain', 'solid_domain']
+>>> flush_log("Probe/probe_export_api_log.txt")
+>>> print("PROBE-EXPORT-API-DONE")
+PROBE-EXPORT-API-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  00:45:04, 25 Sep 2026 India Standard Time 
+Total Transcript Time: 1 Minute 52 Second.
+
+Automatic transcript closed.

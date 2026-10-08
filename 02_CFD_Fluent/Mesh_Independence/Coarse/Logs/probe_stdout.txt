@@ -1,0 +1,391 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\06_Fluent_CFD\Mesh_Independence\Coarse\\fluent-20260923-233451-1888.trn".
+Auto-Transcript Start Time:  23:34:51, 23 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:55421 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  20980  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  5676   12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  17136  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  19512  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  8748   12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\06_Fluent_CFD\\Mesh_Independence\\Coarse\\cleanup-fluent-<HOST>-8748.bat
+
+<HOST> is already loaded (30.2227).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import os, sys, json
+>>> sys.path.insert(0, "Journals")
+>>> from s5_common import *
+>>> MED_CASE = "../../Case/baseline_medium_final.cas.h5"
+>>> MESH = "../../../05_Meshing/Mesh_Coarse/coarse.msh"
+>>> solver.file.batch_options.confirm_overwrite = False
+>>> step("transcript", lambda: solver.file.start_transcript(file_name="Logs/probe_transcript.trn"), critical=False)
+
+Opening input/output transcript to file "Logs/probe_transcript.trn".
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  20980  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  5676   12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  17136  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  19512  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  8748   12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+S5B OK    transcript                                             
+>>> step("read medium final CASE (settings only, no data)", lambda: solver.file.read_case(file_name=MED_CASE))
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Mesh_Independence\Coarse\../../Case/baseline_medium_final.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      159840 cells,     2 cell zones ...
+         116640 hexahedral cells,  zone id: 2
+          43200 hexahedral cells,  zone id: 3
+      487776 faces,     9 face zones ...
+         346464 quadrilateral interior faces,  zone id: 4
+         124800 quadrilateral interior faces,  zone id: 5
+           1296 quadrilateral velocity-inlet faces,  zone id: 6
+           1296 quadrilateral pressure-outlet faces,  zone id: 7
+           4320 quadrilateral wall faces,  zone id: 8
+           4320 quadrilateral wall faces,  zone id: 12
+           4320 quadrilateral wall faces,  zone id: 9
+            480 quadrilateral wall faces,  zone id: 10
+            480 quadrilateral wall faces,  zone id: 11
+      168163 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	distributing mesh
+		pairs....,
+		parts....,
+		faces....,
+		nodes....,
+		shadow nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 25341/982 = 25.8055
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+S5B OK    read medium final CASE (settings only, no data)        
+>>> def snap():
+    out = {}
+    for k in ("setup", "solution"):
+        try:
+            out[k] = getattr(solver, k)()
+        except Exception as e:
+            out[k] = "ERROR %s" % e
+    return out
+>>> A = step("snapshot settings (medium case)", snap)
+S5B OK    snapshot settings (medium case)                        {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+>>> write_json("Audit/probe_state_medium_case.json", A)
+>>> for obj, nm in ((solver.mesh, "mesh"), (solver.file, "file")):
+    for attr in ("child_names", "command_names"):
+        try:
+            log("%s.%s = %s" % (nm, attr, list(getattr(obj, attr))))
+        except Exception as e:
+            log("%s.%s unreadable: %s" % (nm, attr, e))
+S5B mesh.child_names = ['adapt', 'geometry', 'anisotropic_adaption', 'check_before_solve', 'check_verbosity', 'enhanced_orthogonal_quality', 'matching_tolerance', 'modify_zones', 'show_periodic_shadow_zones', 'reorder', 'repair_improve', 'surface_mesh', 'polyhedra', 'wall_distance_method']
+S5B mesh.command_names = ['adjacency', 'check', 'memory_usage', 'mesh_info', 'quality', 'rotate', 'scale', 'size_info', 'redistribute_boundary_layer', 'swap_mesh_faces', 'smooth_mesh', 'replace', 'translate']
+S5B file.child_names = ['single_precision_coordinates', 'binary_legacy_files', 'cff_files', 'auto_merge_zones', 'convert_hanging_nodes_during_read', 'async_optimize', 'write_pdat', 'export', 'import_', 'parametric_project', 'cffio_options', 'batch_options', 'interpolate', 'table_file_manager']
+S5B file.command_names = ['define_macro', 'execute_macro', 'read_macros', 'read', 'read_case', 'read_case_data', 'read_case_lightweight', 'read_data', 'read_mesh', 'read_surface_mesh', 'read_journal', 'start_journal', 'start_python_journal', 'stop_journal', 'replace_mesh', 'write', 'write_case', 'write_data', 'write_case_data', 'read_settings', 'read_field_functions', 'read_injections', 'read_profile', 'read_pdf', 'read_isat_table', 'show_configuration', 'stop_macro', 'start_transcript', 'stop_transcript', 'data_file_options', 'beta_settings']
+>>> try:
+    log("mesh.replace arguments = %s" % list(solver.mesh.replace.argument_names))
+except Exception as e:
+    log("mesh.replace argument probe: %s" % e)
+S5B mesh.replace arguments = ['file_name', 'zones']
+>>> def do_replace():
+    if "replace" in list(solver.mesh.command_names):
+        return solver.mesh.replace(file_name=MESH)
+    raise RuntimeError("no settings-API mesh.replace")
+>>> r = step("replace mesh via settings API", do_replace, critical=False)
+
+Writing Settings to string...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing fluid_domain (type fluid) (mixture) ... Done.
+	writing solid_domain (type solid) (mixture) ... Done.
+	writing interior-fluid (type interior) (mixture) ... Done.
+	writing interior-solid (type interior) (mixture) ... Done.
+	writing fluid_inlet (type velocity-inlet) (mixture) ... Done.
+	writing fluid_outlet (type pressure-outlet) (mixture) ... Done.
+	writing fluid_solid_interface (type wall) (mixture) ... Done.
+	writing heated_outer_wall (type wall) (mixture) ... Done.
+	writing solid_inlet_end (type wall) (mixture) ... Done.
+	writing solid_outlet_end (type wall) (mixture) ... Done.
+	writing fluid_solid_interface-shadow (type wall) (mixture) ... Done.
+	writing zones map name-id ... Done.
+
+Reading "../../../05_Meshing/Mesh_Coarse/coarse.msh"...
+
+Buffering for file scan...
+
+   53741 nodes.
+   38400 hexahedral cells, zone 13.
+
+Changing thread id 2 to 13
+   13440 hexahedral cells, zone 14.
+
+Changing thread id 3 to 14
+  113600 quadrilateral interior faces, zone 15.
+
+Changing thread id 4 to 15
+   38176 quadrilateral interior faces, zone 16.
+
+Changing thread id 5 to 16
+     640 quadrilateral velocity-inlet faces, zone 17.
+
+Changing thread id 6 to 17
+     640 quadrilateral pressure-outlet faces, zone 18.
+
+Changing thread id 7 to 18
+    1920 quadrilateral wall faces, zone 19.
+
+Changing thread id 8 to 19
+    1920 quadrilateral wall faces, zone 20.
+
+Changing thread id 9 to 20
+     224 quadrilateral wall faces, zone 21.
+
+Changing thread id 10 to 21
+     224 quadrilateral wall faces, zone 22.
+
+Changing thread id 11 to 22
+
+Parallel variables...
+Building...
+     mesh
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 8448/471 = 17.9363
+     materials,
+     zones,
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+        creating fluid_solid_interface-shadow
+Done.
+WARNING: Surface groupings have changed. This has
+resulted in surface list selection changes
+for the following report definitions:
+area_in
+yplus_avg
+yplus_min
+T_inner_avg
+T_outer_avg
+T_outer_max
+T_in_bulk
+p_out_area
+p_in_area
+yplus_max
+v_out_max
+T_wall_max
+T_out_bulk
+p_out
+p_in
+
+Reading Settings from string...
+
+ Setting zone id of fluid_domain to 2.
+ Setting zone id of solid_domain to 3.
+ Setting zone id of fluid_solid_interface-shadow to 12.
+ Setting zone id of interior-fluid to 4.
+ Setting zone id of interior-solid to 5.
+ Setting zone id of fluid_inlet to 6.
+ Setting zone id of fluid_outlet to 7.
+ Setting zone id of fluid_solid_interface to 8.
+ Setting zone id of heated_outer_wall to 9.
+ Setting zone id of solid_inlet_end to 10.
+ Setting zone id of solid_outlet_end to 11.
+Done.
+
+Setting fluid_domain (mixture) ... Done.
+Setting solid_domain (mixture) ... Done.
+Setting interior-fluid (mixture) ... Done.
+Setting interior-solid (mixture) ... Done.
+Setting fluid_inlet (mixture) ... Done.
+Setting fluid_outlet (mixture) ... Done.
+Setting fluid_solid_interface (mixture) ... Done.
+Setting heated_outer_wall (mixture) ... Done.
+Setting solid_inlet_end (mixture) ... Done.
+Setting solid_outlet_end (mixture) ... Done.
+Setting fluid_solid_interface-shadow (mixture) ... Done.
+
+Found new zone. Assigning default settings to interior-fluid-to-be-deleted (type interior).
+Found new zone. Assigning default settings to interior-solid-to-be-deleted (type interior).
+Found new zone. Assigning default settings to fluid_inlet-to-be-deleted (type velocity-inlet).
+Found new zone. Assigning default settings to fluid_outlet-to-be-deleted (type pressure-outlet).
+Found new zone. Assigning default settings to fluid_solid_interface-to-be-deleted (type wall).
+Found new zone. Assigning default settings to heated_outer_wall-to-be-deleted (type wall).
+Found new zone. Assigning default settings to solid_inlet_end-to-be-deleted (type wall).
+Found new zone. Assigning default settings to solid_outlet_end-to-be-deleted (type wall).
+Found new zone. Assigning default settings to fluid_solid_interface-shadow-to-be-deleted (type wall).
+
+
+Deleting cell zone 27.
+Deleting cell zone 28.S5B OK    replace mesh via settings API                          
+>>> if r is None and any("replace mesh via settings" in f for f in FAIL):
+    step("replace mesh via TUI", lambda: solver.execute_tui('/mesh/replace "%s"' % MESH), critical=False)
+>>> step("mesh check", lambda: solver.mesh.check())
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+   minimum volume (m3): 2.049465e-10
+   maximum volume (m3): 1.056568e-07
+     total volume (m3): 7.491468e-04
+ Face area statistics:
+   minimum face area (m2): 2.049465e-08
+   maximum face area (m2): 3.920686e-05
+ Checking mesh..........................................
+ Done.
+S5B OK    mesh check                                             
+>>> for cmd in ("size_info", "info"):
+    step("mesh.%s" % cmd, (lambda c=cmd: getattr(solver.mesh, c)()), critical=False)
+
+Mesh Size
+
+Level    Cells    Faces    Nodes   Partitions
+    0    51840   159264    55629            4
+
+ 2 cell zones, 9 face zones.
+S5B OK    mesh.size_info                                         
+S5B warn  mesh.info                                              AttributeError: 'mesh' object has no attribute 'info'.
+The most similar names are: size_info, mesh_info
+>>> zones = {}
+>>> for kind in ("fluid", "solid"):
+    try:
+        zones["cell_" + kind] = list(getattr(solver.setup.cell_zone_conditions, kind).get_object_names())
+    except Exception as e:
+        zones["cell_" + kind] = ["<%s>" % e]
+>>> for kind in ("velocity_inlet", "pressure_outlet", "wall", "interior"):
+    try:
+        zones[kind] = list(getattr(solver.setup.boundary_conditions, kind).get_object_names())
+    except Exception as e:
+        zones[kind] = ["<%s>" % e]
+>>> log("ZONES " + json.dumps(zones))
+S5B ZONES {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"], "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"], "wall": ["fluid_solid_interface-shadow", "fluid_solid_interface", "heated_outer_wall", "solid_inlet_end", "solid_outlet_end"], "interior": []}
+>>> B = step("snapshot settings (after replace)", snap)
+S5B OK    snapshot settings (after replace)                      {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+>>> write_json("Audit/probe_state_after_replace.json", B)
+>>> def diff(a, b, path=""):
+    d = []
+    if isinstance(a, dict) and isinstance(b, dict):
+        for k in sorted(set(a) | set(b)):
+            if k not in a:
+                d.append((path + "/" + str(k), "<absent>", str(b[k])[:200]))
+            elif k not in b:
+                d.append((path + "/" + str(k), str(a[k])[:200], "<absent>"))
+            else:
+                d += diff(a[k], b[k], path + "/" + str(k))
+    elif isinstance(a, list) and isinstance(b, list) and len(a) == len(b):
+        for i, (x, y) in enumerate(zip(a, b)):
+            d += diff(x, y, "%s[%d]" % (path, i))
+    elif a != b:
+        d.append((path, str(a)[:200], str(b)[:200]))
+    return d
+>>> D = diff(A, B) if isinstance(A, dict) and isinstance(B, dict) else [("snapshot", "failed", "failed")]
+>>> log("SETTINGS DIFF medium case -> after replace: %d differences" % len(D))
+S5B SETTINGS DIFF medium case -> after replace: 0 differences
+>>> for p, x, y in D[:80]:
+    log("  DIFF %s : %s -> %s" % (p, x, y))
+>>> write_json("Audit/probe_state_diff.json", [{"path": p, "medium": x, "coarse": y} for p, x, y in D])
+>>> write_json("Audit/probe_zones.json", zones)
+>>> flush_log("Logs/probe_log.txt")
+>>> step("stop transcript", lambda: solver.file.stop_transcript(), critical=False)
+
+Transcript closed.
+S5B OK    stop transcript                                        
+>>> print("PROBE-DONE")
+PROBE-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  23:36:04, 23 Sep 2026 India Standard Time 
+Total Transcript Time: 1 Minute 13 Second.
+
+Automatic transcript closed.

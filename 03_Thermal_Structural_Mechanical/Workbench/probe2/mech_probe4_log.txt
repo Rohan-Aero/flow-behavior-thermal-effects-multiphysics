@@ -1,0 +1,41 @@
+bias names ['ooooo_ooo_o_o', 'o_o_ooo_ooooo', 'o_ooo_ooooo_ooo_o', 'ooooo_ooo_o_ooo_ooooo', 'NoBias']
+OK   bias type both-ends-fine 
+OK   bias value 5 
+sweep: divs=100 biastype=o_ooo_ooooo_ooo_o biasvalue=5.0
+OK   generate mesh 
+OK   nodes/elements (111216, 24000)
+METRIC ElementQuality min=0.097351608963041014 max=0.98174778232741466 avg=0.5120607443837677 sd=0.27256263936190817
+METRIC AspectRatio min=1.202 max=9.1891 avg=3.5373375999999923 sd=1.7707478860252213
+METRIC JacobianRatio min=1.1135000000000002 max=1.2026000000000001 avg=1.1516000000000339 sd=0.031584514651968446
+METRIC Skewness min=0.041666666791797743 max=0.0416666667918034 avg=0.041666666791798659 sd=0
+METRIC MaximumCornerAngle min=93.75 [deg] max=93.75 [deg] avg=93.75 [deg] sd=0 [deg]
+METRIC WarpingFactor min=0 max=1.2053E-13 avg=1.4878402980133361E-14 sd=0
+METRIC ParallelDeviation min=7.5 max=7.5 avg=7.5 sd=0
+OK   V1_PointCloud_Tri_Projection control manual 
+OK   V1_PointCloud_Tri_Projection algorithm 
+OK   V1_PointCloud_Tri_Projection weighting 
+OK   V1_PointCloud_Tri_Projection outside 
+OK   V1_PointCloud_Tri_Projection import 
+V1_PointCloud_Tri_Projection state=Solved alg=PointCloud method=PointPoint wt=Triangulation out=Projection
+V1_PointCloud_Tri_Projection NS [('Unmapped Nodes', 0), ('Outside Nodes', 0)]
+OK   V1_PointCloud_Tri_Projection export 
+OK   V1_PointCloud_Tri_Projection write input 
+OK   V2_PointCloud_Tri_Nearest control manual 
+OK   V2_PointCloud_Tri_Nearest algorithm 
+OK   V2_PointCloud_Tri_Nearest weighting 
+OK   V2_PointCloud_Tri_Nearest outside 
+OK   V2_PointCloud_Tri_Nearest import 
+V2_PointCloud_Tri_Nearest state=Solved alg=PointCloud method=PointPoint wt=Triangulation out=NearestNode
+V2_PointCloud_Tri_Nearest NS [('Outside Nodes', 0)]
+OK   V2_PointCloud_Tri_Nearest export 
+OK   V2_PointCloud_Tri_Nearest write input 
+OK   V3_Bucket_Tri_Projection control manual 
+OK   V3_Bucket_Tri_Projection algorithm 
+OK   V3_Bucket_Tri_Projection weighting 
+OK   V3_Bucket_Tri_Projection outside 
+OK   V3_Bucket_Tri_Projection import 
+V3_Bucket_Tri_Projection state=Solved alg=BucketVolume method=PointElement wt=Triangulation out=Projection
+V3_Bucket_Tri_Projection NS [('Unmapped Nodes', 0), ('Outside Nodes', 0)]
+OK   V3_Bucket_Tri_Projection export 
+OK   V3_Bucket_Tri_Projection write input 
+PROBE4-DONE

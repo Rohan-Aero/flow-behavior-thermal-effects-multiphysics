@@ -1,0 +1,66 @@
+{
+ "inserted_slides": [
+  {
+   "rebuild_slide": 14,
+   "part": "slide19.xml",
+   "title": "LS-DYNA Nonlinear Buckling Extension"
+  },
+  {
+   "rebuild_slide": 15,
+   "part": "slide20.xml",
+   "title": "Imperfection Sensitivity"
+  },
+  {
+   "rebuild_slide": 16,
+   "part": "slide21.xml",
+   "title": "Mechanical vs LS-DYNA Buckling"
+  }
+ ],
+ "text_edits": [
+  {
+   "part": "ppt/slides/slide17.xml",
+   "old": "<a:t>No geometric imperfections</a:t>",
+   "new": "<a:t>No measured geometric imperfections</a:t>"
+  },
+  {
+   "part": "ppt/slides/slide17.xml",
+   "old": "<a:t>No nonlinear (post-)buckling analysis</a:t>",
+   "new": "<a:t>Nonlinear buckling: elastic LS-DYNA extension only</a:t>"
+  },
+  {
+   "part": "ppt/slides/slide17.xml",
+   "old": "<a:t>imperfection-seeded load–deflection path to the limit point</a:t>",
+   "new": "<a:t>elastic–plastic, with tolerance-based imperfections</a:t>"
+  },
+  {
+   "part": "ppt/notesSlides/notesSlide17.xml",
+   "old": "no imperfections, no plasticity, no post-buckling path.",
+   "new": "no imperfections, no plasticity, no post-buckling path. The additional LS-DYNA extension covers only the elastic, geometrically nonlinear part, with numerical imperfections."
+  },
+  {
+   "part": "ppt/slides/slide14.xml",
+   "old": "slidenum field cached text 14",
+   "new": "17"
+  },
+  {
+   "part": "ppt/slides/slide15.xml",
+   "old": "slidenum field cached text 15",
+   "new": "18"
+  },
+  {
+   "part": "ppt/slides/slide16.xml",
+   "old": "slidenum field cached text 16",
+   "new": "19"
+  },
+  {
+   "part": "ppt/slides/slide17.xml",
+   "old": "slidenum field cached text 17",
+   "new": "20"
+  },
+  {
+   "part": "ppt/slides/slide18.xml",
+   "old": "slidenum field cached text 18",
+   "new": "21"
+  }
+ ]
+}

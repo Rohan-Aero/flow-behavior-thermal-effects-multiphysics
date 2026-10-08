@@ -1,0 +1,313 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\06_Fluent_CFD\\fluent-20260919-193445-7456.trn".
+Auto-Transcript Start Time:  19:34:45, 19 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:59243 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n0    <HOST>     1/12  Windows-x64  16184  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  16720  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\06_Fluent_CFD\\cleanup-fluent-<HOST>-16720.bat
+
+<HOST> is already loaded (50.2183).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import traceback
+>>> OUT = []
+>>> def say(*a):
+    s = " ".join(str(x) for x in a)
+    OUT.append(s)
+    print("INTRO " + s)
+>>> def names(obj, label):
+    try:
+        cn = list(getattr(obj, "child_names", []) or [])
+    except Exception as e:
+        cn = ["<child_names failed: %s>" % e]
+    try:
+        cmd = list(getattr(obj, "command_names", []) or [])
+    except Exception as e:
+        cmd = ["<command_names failed: %s>" % e]
+    say("[%s] children: %s" % (label, cn))
+    if cmd:
+        say("[%s] commands: %s" % (label, cmd))
+>>> def objnames(obj, label):
+    for meth in ("get_object_names", "keys"):
+        try:
+            say("[%s] %s(): %s" % (label, meth, list(getattr(obj, meth)())))
+            return
+        except Exception:
+            pass
+    say("[%s] no object-name accessor" % label)
+>>> try:
+    say("=== reading medium mesh ===")
+    solver.file.read_case(file_name="../05_Meshing/Mesh_Medium/medium.msh")
+    say("read_case OK")
+except Exception:
+    say("read_case(file_name=...) failed:\n" + traceback.format_exc())
+    try:
+        solver.file.read(file_type="case", file_name="../05_Meshing/Mesh_Medium/medium.msh")
+        say("file.read(file_type='case') OK")
+    except Exception:
+        say("file.read failed:\n" + traceback.format_exc())
+INTRO === reading medium mesh ===
+
+Reading "../05_Meshing/Mesh_Medium/medium.msh"...
+
+Buffering for file scan...
+
+  163891 nodes.
+  116640 hexahedral cells, zone  2.
+   43200 hexahedral cells, zone  3.
+  346464 quadrilateral interior faces, zone  4.
+  124800 quadrilateral interior faces, zone  5.
+    1296 quadrilateral velocity-inlet faces, zone  6.
+    1296 quadrilateral pressure-outlet faces, zone  7.
+    4320 quadrilateral wall faces, zone  8.
+    4320 quadrilateral wall faces, zone  9.
+     480 quadrilateral wall faces, zone 10.
+     480 quadrilateral wall faces, zone 11.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+INTRO read_case OK
+>>> for label, path in [
+    ("setup", "solver.setup"),
+    ("general", "solver.setup.general"),
+    ("gen.solver", "solver.setup.general.solver"),
+    ("gen.opcond", "solver.setup.general.operating_conditions"),
+    ("models", "solver.setup.models"),
+    ("energy", "solver.setup.models.energy"),
+    ("viscous", "solver.setup.models.viscous"),
+    ("materials", "solver.setup.materials"),
+    ("cellzones", "solver.setup.cell_zone_conditions"),
+    ("bcs", "solver.setup.boundary_conditions"),
+    ("solution", "solver.solution"),
+    ("methods", "solver.solution.methods"),
+    ("controls", "solver.solution.controls"),
+    ("monitor", "solver.solution.monitor"),
+    ("report_defs", "solver.solution.report_definitions"),
+    ("init", "solver.solution.initialization"),
+    ("runcalc", "solver.solution.run_calculation"),
+    ("results", "solver.results"),
+]:
+    try:
+        names(eval(path), label)
+    except Exception as e:
+        say("[%s] UNAVAILABLE (%s): %s" % (label, path, e))
+INTRO [setup] children: ['general', 'models', 'materials', 'cell_zone_conditions', 'model_topology', 'physics', 'boundary_conditions', 'mesh_interfaces', 'turbo_interfaces', 'dynamic_mesh', 'reference_values', 'reference_frames', 'named_expressions', 'turbomachinery', 'user_defined', 'profiles']
+INTRO [general] children: ['solver', 'adjust_solver_defaults_based_on_setup', 'operating_conditions', 'units_settings']
+INTRO [gen.solver] children: ['type', 'two_dim_space', 'velocity_formulation', 'time']
+INTRO [gen.opcond] children: ['gravity', 'real_gas_state', 'operating_pressure', 'reference_pressure_location', 'reference_pressure_method', 'operating_density', 'operating_temperature', 'inlet_temperature_for_operating_density']
+INTRO [gen.opcond] commands: ['used_ref_pressure_location']
+INTRO [models] children: ['multiphase', 'energy', 'viscous', 'acoustics', 'radiation', 'species', 'discrete_phase', 'virtual_blade_model', 'optics', 'structure', 'ablation', 'dsmc', 'echemistry', 'battery', 'system_coupling', 'sofc', 'pemfc']
+INTRO [energy] children: ['enabled', 'viscous_dissipation', 'pressure_work', 'kinetic_energy', 'inlet_diffusion', 'two_temperature']
+INTRO [viscous] children: ['model', 'spalart_allmaras_production', 'k_epsilon_model', 'k_omega_model', 'k_omega', 'geko', 'k_epsilon', 'reynolds_stress', 'subgrid_scale_model', 'les_model_options', 'reynolds_stress_options', 'near_wall_treatment', 'rans', 'des', 'transition_module', 'hybrid_rans_les', 'sbes', 'user_defined_transition', 'options', 'multiphase_turbulence', 'turbulence_expert', 'transition', 'transition_sst', 'user_defined_functions', 'sa_enhanced_wall_treatment', 'sa_damping']
+INTRO [materials] children: ['database', 'fluid', 'solid', 'mixture', 'inert_particle', 'droplet_particle', 'combusting_particle', 'particle_mixture']
+INTRO [materials] commands: ['list_materials', 'list_properties']
+INTRO [cellzones] children: ['fluid', 'solid']
+INTRO [cellzones] commands: ['copy', 'set_zone_type', 'activate_cell_zone', 'mrf_to_sliding_mesh', 'convert_all_solid_mrf_to_solid_motion', 'copy_mrf_to_mesh_motion', 'copy_mesh_to_mrf_motion', 'dual_potential_zone', 'adjacency']
+INTRO [bcs] children: ['axis', 'degassing', 'exhaust_fan', 'fan', 'geometry', 'inlet_vent', 'intake_fan', 'interface', 'interior', 'mass_flow_inlet', 'mass_flow_outlet', 'network', 'network_end', 'outflow', 'outlet_vent', 'overset', 'periodic', 'porous_jump', 'pressure_far_field', 'pressure_inlet', 'pressure_outlet', 'radiator', 'rans_les_interface', 'recirculation_inlet', 'recirculation_outlet', 'shadow', 'symmetry', 'velocity_inlet', 'wall', 'non_reflecting_bc', 'perforated_wall', 'settings']
+INTRO [bcs] commands: ['copy', 'set_zone_type', 'slit_face_zone', 'non_overlapping_zone_name', 'slit_interior_between_diff_materials', 'create_all_shell_threads', 'recreate_all_shells', 'delete_all_shells', 'orient_face_zone', 'knudsen_number_calculator', 'add_suffix_or_prefix', 'rename_by_adjacency', 'rename_to_default']
+INTRO [solution] children: ['methods', 'controls', 'report_definitions', 'monitor', 'cell_registers', 'initialization', 'calculation_activity', 'run_calculation']
+INTRO [methods] children: ['axisymmetric', 'p_v_coupling', 'spatial_discretization', 'spatial_discretization_parameters', 'pseudo_time_method', 'transient_formulation', 'unsteady_global_time', 'accelerated_non_iterative_time_marching', 'convergence_acceleration_for_stretched_meshes', 'divergence_prevention', 'expert', 'frozen_flux', 'high_order_term_relaxation', 'multiphase_numerics', 'nb_gradient_boundary_option', 'nita', 'nita_expert_controls', 'overset', 'phase_based_vof_discretization', 'reduced_rank_extrapolation', 'reduced_rank_extrapolation_options', 'use_limiter_in_time', 'vof_numerics', 'warped_face_gradient_correction', 'high_speed_numerics', 'species_disc_together', 'poor_mesh_robustness', 'poor_mesh_numerics', 'turbo_numerics']
+INTRO [methods] commands: ['set_solution_methods_to_default', 'set_optimized_les_numerics']
+INTRO [controls] children: ['courant_number', 'p_v_controls', 'residual_smoothing', 'relaxation_factor', 'under_relaxation', 'pseudo_time_method_local_time_step', 'pseudo_time_explicit_relaxation_factor', 'zonal_pbns_solution_controls', 'acoustics_wave_eqn_controls', 'contact_solution_controls', 'equations', 'limits', 'advanced', 'species_urf_together']
+INTRO [controls] commands: ['reset_solution_controls', 'reset_amg_controls', 'reset_multi_stage_parameters', 'reset_limits', 'reset_pseudo_time_method_generic', 'reset_pseudo_time_method_equations', 'reset_pseudo_time_method_relaxations', 'reset_pseudo_time_method_scale_factors']
+INTRO [monitor] children: ['residual', 'report_files', 'report_plots', 'convergence_conditions']
+INTRO [report_defs] children: ['mesh', 'surface', 'volume', 'force', 'lift', 'drag', 'moment', 'time', 'flux', 'vbm', 'injection', 'user_defined', 'aeromechanics', 'icing', 'expression', 'single_valued_expression', 'custom']
+INTRO [report_defs] commands: ['delete', 'compute', 'copy', 'delete_all']
+INTRO [init] children: ['initialization_type', 'reference_frame', 'defaults', 'localized_turb_init', 'hybrid_init_options', 'patch', 'open_channel_auto_init', 'fmg', 'enable_profile_memory_flushing', 'species_selection']
+INTRO [init] commands: ['initialize', 'compute_defaults', 'standard_initialize', 'hybrid_initialize', 'list_defaults', 'init_turb_vel_fluctuations', 'init_flow_statistics', 'show_iterations_sampled', 'show_time_sampled', 'dpm_reset', 'lwf_reset', 'init_lwf', 'init_acoustics_options', 'levelset_auto_init', 'reset_initialization']
+INTRO [runcalc] children: ['parameters', 'pseudo_time_settings', 'adaptive_time_stepping', 'cfl_based_adaptive_time_stepping', 'solution_steering', 'time_step_count', 'transient_controls', 'options', 'pollutants', 'data_sampling', 'data_sampling_options', 'residual_verbosity', 'compute_resources', 'remote_compute']
+INTRO [runcalc] commands: ['calculate', 'interrupt', 'dual_time_iterate', 'iterate']
+INTRO [results] children: ['custom_field_functions', 'custom_vectors', 'surfaces', 'graphics', 'plot', 'ansys_sound_analysis', 'scene', 'annotation', 'animations', 'report']
+>>> for label, path in [
+    ("materials.fluid", "solver.setup.materials.fluid"),
+    ("materials.solid", "solver.setup.materials.solid"),
+    ("cellzones.fluid", "solver.setup.cell_zone_conditions.fluid"),
+    ("cellzones.solid", "solver.setup.cell_zone_conditions.solid"),
+    ("bc.velocity_inlet", "solver.setup.boundary_conditions.velocity_inlet"),
+    ("bc.pressure_outlet", "solver.setup.boundary_conditions.pressure_outlet"),
+    ("bc.wall", "solver.setup.boundary_conditions.wall"),
+    ("bc.interior", "solver.setup.boundary_conditions.interior"),
+]:
+    try:
+        objnames(eval(path), label)
+    except Exception as e:
+        say("[%s] UNAVAILABLE: %s" % (label, e))
+INTRO [materials.fluid] get_object_names(): ['air']
+INTRO [materials.solid] get_object_names(): ['aluminum']
+INTRO [cellzones.fluid] get_object_names(): ['fluid_domain']
+INTRO [cellzones.solid] get_object_names(): ['solid_domain']
+INTRO [bc.velocity_inlet] get_object_names(): ['fluid_inlet']
+INTRO [bc.pressure_outlet] get_object_names(): ['fluid_outlet']
+INTRO [bc.wall] get_object_names(): ['fluid_solid_interface', 'heated_outer_wall', 'solid_inlet_end', 'solid_outlet_end', 'fluid_solid_interface-shadow']
+INTRO [bc.interior] get_object_names(): []
+>>> probes = [
+    ("air", "solver.setup.materials.fluid['air']"),
+    ("fluid zone", "solver.setup.cell_zone_conditions.fluid['fluid_domain']"),
+    ("solid zone", "solver.setup.cell_zone_conditions.solid['solid_domain']"),
+    ("inlet", "solver.setup.boundary_conditions.velocity_inlet['fluid_inlet']"),
+    ("outlet", "solver.setup.boundary_conditions.pressure_outlet['fluid_outlet']"),
+    ("wall heated", "solver.setup.boundary_conditions.wall['heated_outer_wall']"),
+    ("wall interface", "solver.setup.boundary_conditions.wall['fluid_solid_interface']"),
+]
+>>> for label, path in probes:
+    try:
+        o = eval(path)
+        names(o, label)
+    except Exception as e:
+        say("[%s] probe failed: %s" % (label, e))
+INTRO [air] children: ['name', 'chemical_formula', 'density', 'viscosity', 'specific_heat', 'thermal_conductivity', 'molecular_weight', 'premix_laminar_speed', 'premix_critical_strain', 'premix_unburnt_temp', 'premix_unburnt_density', 'premix_heat_trans_coeff', 'premix_heat_of_comb', 'premix_unburnt_fuel_mf', 'premix_adiabatic_temp', 'therm_exp_coeff', 'characteristic_vibrational_temperature', 'reference_diameter', 'viscosity_reference_temperature', 'viscosity_temperature_index', 'rotational_degrees_of_freedom', 'rotational_collision_number', 'vibrational_collision_number', 'absorption_coefficient', 'melting_heat', 'tsolidus', 'tliqidus', 'liquidus_slope', 'partition_coeff', 'eutectic_mf', 'solid_diffusion', 'solut_exp_coeff', 'scattering_coefficient', 'scattering_phase_function', 'refractive_index', 'formation_entropy', 'formation_enthalpy', 'reference_temperature', 'lennard_jones_length', 'lennard_jones_energy', 'thermal_accom_coefficient', 'velocity_accom_coefficient', 'degrees_of_freedom', 'electric_conductivity', 'dual_electric_conductivity', 'lithium_diffusivity', 'magnetic_permeability', 'speed_of_sound', 'critical_temperature', 'critical_pressure', 'critical_volume', 'acentric_factor', 'latent_heat', 'saturation_pressure', 'vaporization_temperature', 'charge', 'uds_diffusivity']
+INTRO [fluid zone] children: ['name', 'phase', 'general', 'conical', 'reference_frame', 'mesh_motion', 'zonal_models', 'porous_zone', 'fan_zone', 'embedded_les', 'reaction', 'sources', 'fixed_values', 'multiphase', 'disabled']
+INTRO [fluid zone] commands: ['display', 'create_surface']
+INTRO [solid zone] children: ['name', 'phase', 'general', 'reference_frame', 'mesh_motion', 'solid_motion', 'sources', 'fixed_values', 'material_orientation', 'disabled', 'internal']
+INTRO [solid zone] commands: ['display', 'create_surface']
+INTRO [inlet] children: ['name', 'phase', 'momentum', 'turbulence', 'thermal', 'radiation', 'species', 'discrete_phase', 'multiphase', 'potential', 'structure', 'uds', 'icing', 'geometry']
+INTRO [inlet] commands: ['display', 'create_surface']
+INTRO [outlet] children: ['name', 'phase', 'momentum', 'turbulence', 'thermal', 'radiation', 'species', 'discrete_phase', 'multiphase', 'potential', 'structure', 'uds', 'icing', 'geometry']
+INTRO [outlet] commands: ['display', 'create_surface']
+INTRO [wall heated] children: ['name', 'phase', 'momentum', 'turbulence', 'thermal', 'radiation', 'species', 'discrete_phase', 'wall_film', 'multiphase', 'potential', 'structure', 'uds', 'icing', 'ablation', 'geometry']
+INTRO [wall heated] commands: ['display', 'create_surface']
+INTRO [wall interface] children: ['name', 'phase', 'momentum', 'turbulence', 'thermal', 'radiation', 'species', 'discrete_phase', 'wall_film', 'multiphase', 'potential', 'structure', 'uds', 'icing', 'ablation', 'geometry']
+INTRO [wall interface] commands: ['display', 'create_surface']
+>>> for label, path in [
+    ("wall.thermal(heated)", "solver.setup.boundary_conditions.wall['heated_outer_wall'].thermal"),
+    ("wall.thermal(interface)", "solver.setup.boundary_conditions.wall['fluid_solid_interface'].thermal"),
+    ("inlet.turbulence", "solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].turbulence"),
+    ("inlet.momentum", "solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].momentum"),
+    ("inlet.thermal", "solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].thermal"),
+    ("outlet.momentum", "solver.setup.boundary_conditions.pressure_outlet['fluid_outlet'].momentum"),
+    ("outlet.turbulence", "solver.setup.boundary_conditions.pressure_outlet['fluid_outlet'].turbulence"),
+    ("outlet.thermal", "solver.setup.boundary_conditions.pressure_outlet['fluid_outlet'].thermal"),
+    ("air.density", "solver.setup.materials.fluid['air'].density"),
+    ("air.viscosity", "solver.setup.materials.fluid['air'].viscosity"),
+]:
+    try:
+        names(eval(path), label)
+    except Exception as e:
+        say("[%s] UNAVAILABLE: %s" % (label, e))
+INTRO [wall.thermal(heated)] children: ['thermal_condition', 'material', 'heat_flux', 'temperature', 'heat_transfer_coeff', 'free_stream_temp', 'external_emissivity', 'ext_rad_temperature', 'wall_thickness_old', 'wall_thickness', 'heat_generation_rate', 'enable_shell_conduction', 'conduction_layers', 'thin_wall', 'radiating_to_fixed_temp', 'internal_radiation_temp', 'area_enhancement_factor', 'contact_resistance', 'therm_accom_coef', 'eve_accom_coef', 'caf', 'thermal_stabilization', 'scale_factor', 'stab_method', 'boundary_advection']
+INTRO [wall.thermal(interface)] children: ['thermal_condition', 'material', 'heat_flux', 'temperature', 'heat_transfer_coeff', 'free_stream_temp', 'external_emissivity', 'ext_rad_temperature', 'wall_thickness_old', 'wall_thickness', 'heat_generation_rate', 'enable_shell_conduction', 'conduction_layers', 'thin_wall', 'radiating_to_fixed_temp', 'internal_radiation_temp', 'area_enhancement_factor', 'contact_resistance', 'therm_accom_coef', 'eve_accom_coef', 'caf', 'thermal_stabilization', 'scale_factor', 'stab_method', 'boundary_advection']
+INTRO [inlet.turbulence] children: ['les_spec', 'fluctuating_velocity_algorithm', 'number_of_fourier_modes', 'number_of_vortices', 'streamwise_fluctuations', 'satisfy_mass_conservation', 'scale_search_limiter', 'stg_turbulent_intensity', 'stg_turbulent_viscosity_ratio', 'wall_distance', 'volumetric_forcing', 'forcing_zone_thickness', 'volumetric_thickness', 'turbulence_specification', 'modified_turbulent_viscosity', 'laminar_kinetic_energy', 'intermittency', 'turbulent_kinetic_energy', 'turbulent_dissipation_rate', 'specific_dissipation_rate', 'velocity_variance_scale', 'turbulent_intensity', 'turbulent_length_scale', 'hydraulic_diameter', 'turbulent_viscosity_ratio', 'turbulent_viscosity_ratio_profile', 'reynolds_stress_specification', 'uu_reynolds_stresses', 'vv_reynolds_stresses', 'ww_reynolds_stresses', 'uv_reynolds_stresses', 'vw_reynolds_stresses', 'uw_reynolds_stresses', 'subgrid_kinetic_energy_specification', 'subgrid_kinetic_energy', 'subgrid_turbulent_intensity']
+INTRO [inlet.momentum] children: ['open_channel_wave_bc', 'segregated_velocity_inputs', 'system_coupling', 'velocity_specification_method', 'reference_frame', 'averaged_flow_specification_method', 'avg_flow_velocity', 'velocity_magnitude', 'initial_gauge_pressure', 'coordinate_system', 'velocity_components', 'swirl_angular_velocity', 'flow_direction', 'axis_direction', 'axis_origin', 'gauge_pressure', 'acoustic_wave_model', 'impedance_zero_order_term', 'real_pole_series', 'complex_pole_series', 'incoming_wave', 'moving_object_velocity_inputs', 'primary_phase_velocity_inputs', 'secondary_phase_velocity_inputs']
+INTRO [inlet.thermal] children: ['temperature', 'thermodynamic_non_equilibrium_boundary', 'vibrational_electronic_temperature']
+INTRO [outlet.momentum] children: ['system_coupling', 'backflow_reference_frame', 'pressure_spec', 'gauge_pressure', 'pressure_profile_multiplier', 'backflow_dir_spec_method', 'coordinate_system', 'flow_direction', 'backflow_pressure_spec', 'backflow_pressure_specification', 'axis_direction', 'axis_origin', 'prevent_reverse_flow', 'radial_equ_pressure_distribution', 'radial_equ_reference_position', 'radial_equ_specified_radius', 'radial_equ_specified_span', 'avg_pressure_spec', 'avg_method', 'target_mass_flow_rate', 'target_mass_flow', 'upper_limit_of_abs_pressure', 'lower_limit_of_abs_pressure', 'acoustic_wave_model', 'exit_pressure_spec', 'impedance_zero_order_term', 'real_pole_series', 'complex_pole_series', 'incoming_wave']
+INTRO [outlet.turbulence] children: ['turbulence_specification', 'backflow_modified_turbulent_viscosity', 'backflow_laminar_kinetic_energy', 'backflow_intermittency', 'backflow_turbulent_kinetic_energy', 'backflow_turbulent_dissipation_rate', 'backflow_specific_dissipation_rate', 'backflow_velocity_variance_scale', 'backflow_turbulent_intensity', 'backflow_turbulent_length_scale', 'backflow_hydraulic_diameter', 'backflow_turbulent_viscosity_ratio', 'backflow_turbulent_viscosity_ratio_profile', 'reynolds_stress_specification', 'backflow_uu_reynolds_stresses', 'backflow_vv_reynolds_stresses', 'backflow_ww_reynolds_stresses', 'backflow_uv_reynolds_stresses', 'backflow_vw_reynolds_stresses', 'backflow_uw_reynolds_stresses', 'subgrid_kinetic_energy_specification', 'subgrid_kinetic_energy', 'subgrid_turbulent_intensity']
+INTRO [outlet.thermal] children: ['backflow_total_temperature']
+INTRO [air.density] children: ['option', 'real_gas_nist', 'value', 'compressible_liquid', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'user_defined_function', 'rgp_table']
+INTRO [air.viscosity] children: ['option', 'value', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'power_law', 'blottner_curve_fit', 'gupta_curve_fit_viscosity', 'sutherland', 'cross', 'herschel_bulkley', 'carreau', 'non_newtonian_power_law', 'user_defined_function', 'rgp_table', 'real_gas_nist']
+>>> try:
+    say("air state keys: %s" % sorted(solver.setup.materials.fluid['air'].get_state().keys()))
+except Exception as e:
+    say("air get_state failed: %s" % e)
+INTRO air state keys: ['chemical_formula', 'density', 'name', 'viscosity']
+>>> try:
+    say("mesh info:")
+    solver.mesh.check()
+except Exception as e:
+    say("mesh.check failed: %s" % e)
+INTRO mesh info:
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+   minimum volume (m3): 9.051023e-11
+   maximum volume (m3): 2.859743e-08
+     total volume (m3): 7.518309e-04
+ Face area statistics:
+   minimum face area (m2): 1.357653e-08
+   maximum face area (m2): 1.744083e-05
+ Checking mesh................................
+ Done.
+>>> try:
+    with open("Logs/introspect_dump.txt", "w") as fh:
+        fh.write("\n".join(OUT))
+    say("dump written")
+except Exception as e:
+    say("dump write failed: %s" % e)
+14311
+INTRO dump written
+>>> print("INTRO-DONE")
+INTRO-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  19:35:18, 19 Sep 2026 India Standard Time 
+Total Transcript Time: 0 Minute 32 Second.
+
+Automatic transcript closed.

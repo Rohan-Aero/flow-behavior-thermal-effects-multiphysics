@@ -1,0 +1,20 @@
+{
+  "case": "../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5",
+  "data": "../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5",
+  "export_surface_allowed": [
+    "fluid_solid_interface-shadow",
+    "solid_outlet_end",
+    "solid_inlet_end",
+    "fluid_solid_interface"
+  ],
+  "surface_used": "zs_solid_domain",
+  "fluent_solid_zone_nodes.csv": [
+    "nodenumber,    x-coordinate,    y-coordinate,    z-coordinate,     temperature",
+    9600
+  ],
+  "fluent_solid_zone_cells.csv": [
+    "cellnumber,    x-coordinate,    y-coordinate,    z-coordinate,     temperature,     cell-volume",
+    9600
+  ],
+  "failures": []
+}

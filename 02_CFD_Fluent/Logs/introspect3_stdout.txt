@@ -1,0 +1,413 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\06_Fluent_CFD\\fluent-20260923-183754-14040.trn".
+Auto-Transcript Start Time:  18:37:54, 23 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:52622 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n0    <HOST>     1/12  Windows-x64  22176  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  3160   12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\06_Fluent_CFD\\cleanup-fluent-<HOST>-3160.bat
+
+<HOST> is already loaded (37.0788).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import traceback
+>>> OUT = []
+>>> def say(*a):
+    s = " ".join(str(x) for x in a)
+    OUT.append(s)
+    print("I3 " + s)
+>>> def kids(label, fn):
+    try:
+        o = fn()
+        say("%-44s children=%s" % (label, list(getattr(o, "child_names", []))))
+        cm = list(getattr(o, "command_names", []) or [])
+        if cm:
+            say("%-44s commands=%s" % (label, cm))
+        return o
+    except Exception as e:
+        say("%-44s UNAVAILABLE %s: %s" % (label, type(e).__name__, str(e)[:120]))
+>>> def state(label, fn):
+    try:
+        say("%-44s state=%s" % (label, repr(fn())[:600]))
+    except Exception as e:
+        say("%-44s state ERR %s: %s" % (label, type(e).__name__, str(e)[:120]))
+>>> def allowed(label, fn):
+    try:
+        say("%-44s allowed=%s" % (label, fn().allowed_values()))
+    except Exception as e:
+        say("%-44s allowed ERR %s" % (label, str(e)[:120]))
+>>> def args(label, fn):
+    try:
+        o = fn()
+        a = getattr(o, "argument_names", None)
+        say("%-44s args=%s" % (label, a))
+        if a:
+            for n in a:
+                try:
+                    sub = getattr(o, n)
+                    extra = ""
+                    try:
+                        extra = " allowed=%s" % sub.allowed_values()
+                    except Exception:
+                        pass
+                    say("      arg %-30s %s%s" % (n, type(sub).__name__, extra))
+                except Exception as e:
+                    say("      arg %-30s ? %s" % (n, e))
+    except Exception as e:
+        say("%-44s args ERR %s" % (label, str(e)[:120]))
+>>> solver.file.batch_options.confirm_overwrite = False
+>>> solver.file.read_case_data(file_name="Test_Run/test_150iters.cas.h5")
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Test_Run/test_150iters.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      159840 cells,     2 cell zones ...
+         116640 hexahedral cells,  zone id: 2
+          43200 hexahedral cells,  zone id: 3
+      487776 faces,     9 face zones ...
+         346464 quadrilateral interior faces,  zone id: 4
+         124800 quadrilateral interior faces,  zone id: 5
+           1296 quadrilateral velocity-inlet faces,  zone id: 6
+           1296 quadrilateral pressure-outlet faces,  zone id: 7
+           4320 quadrilateral wall faces,  zone id: 8
+           4320 quadrilateral wall faces,  zone id: 12
+           4320 quadrilateral wall faces,  zone id: 9
+            480 quadrilateral wall faces,  zone id: 10
+            480 quadrilateral wall faces,  zone id: 11
+      168163 nodes,     1 node zone  ...
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Test_Run/test_150iters.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+>>> say("read test_150iters case+data OK")
+I3 read test_150iters case+data OK
+>>> S = solver.solution
+>>> kids("methods.pseudo_time_method", lambda: S.methods.pseudo_time_method)
+I3 methods.pseudo_time_method                   children=['formulation', 'relaxation_method', 'convergence_acceleration_for_stretched_meshes']
+I3 methods.pseudo_time_method                   commands=['relaxation_bounds']
+<settings_261.pseudo_time_method object at 0x00000000B38A2020>
+>>> state("methods.pseudo_time_method", lambda: S.methods.pseudo_time_method())
+I3 methods.pseudo_time_method                   state={'formulation': {'coupled_solver': 'global-time-step'}}
+>>> kids("methods.pseudo_time_method.formulation", lambda: S.methods.pseudo_time_method.formulation)
+I3 methods.pseudo_time_method.formulation       children=['coupled_solver', 'segregated_solver', 'density_based_solver']
+<settings_261.formulation_1 object at 0x00000000B38A2650>
+>>> allowed("formulation.coupled_solver", lambda: S.methods.pseudo_time_method.formulation.coupled_solver)
+I3 formulation.coupled_solver                   allowed=['off', 'global-time-step']
+>>> kids("run_calculation.pseudo_time_settings", lambda: S.run_calculation.pseudo_time_settings)
+I3 run_calculation.pseudo_time_settings         children=['time_step_method']
+<settings_261.pseudo_time_settings object at 0x00000000B20D4F40>
+>>> state("run_calculation.pseudo_time_settings", lambda: S.run_calculation.pseudo_time_settings())
+I3 run_calculation.pseudo_time_settings         state={'time_step_method': {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 'verbosity': 0, 'auto_time_size_calc_solid_zone': True, 'time_solid_scale_factor': 1.0}}
+>>> try:
+    pts = S.run_calculation.pseudo_time_settings
+    for c in pts.child_names:
+        kids("pts." + c, lambda c=c: getattr(pts, c))
+        state("pts." + c, lambda c=c: getattr(pts, c)())
+except Exception as e:
+    say("pts walk failed %s" % e)
+I3 pts.time_step_method                         children=['time_step_method', 'pseudo_time_step_size', 'length_scale_methods', 'time_step_size_scale_factor', 'verbosity', 'length_scale', 'auto_time_size_calc_solid_zone', 'time_solid_scale_factor', 'time_step_size_for_solid_zone']
+<settings_261.time_step_method object at 0x00000000B20D5A20>
+I3 pts.time_step_method                         state={'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 'verbosity': 0, 'auto_time_size_calc_solid_zone': True, 'time_solid_scale_factor': 1.0}
+>>> kids("controls.pseudo_time_method_local_time_step", lambda: S.controls.pseudo_time_method_local_time_step)
+I3 controls.pseudo_time_method_local_time_step  children=['pseudo_time_courant_number', 'pseudo_time_step_method_solid_zone', 'time_step_size_scale_factor']
+<settings_261.pseudo_time_method_local_time_step object at 0x00000000B38F5ED0>
+>>> state("controls.pseudo_time_method_local_time_step", lambda: S.controls.pseudo_time_method_local_time_step())
+I3 controls.pseudo_time_method_local_time_step  state ERR RuntimeError: api-get-var: the object is not active
+Error Object: solution/controls/pseudo-time-method-local-time-step
+>>> kids("controls.pseudo_time_explicit_relaxation_factor", lambda: S.controls.pseudo_time_explicit_relaxation_factor)
+I3 controls.pseudo_time_explicit_relaxation_factor children=['local_dt_dualts_relax', 'global_dt_pseudo_relax']
+<settings_261.pseudo_time_explicit_relaxation_factor object at 0x00000000B38F6380>
+>>> state("controls.pseudo_time_explicit_relaxation_factor", lambda: S.controls.pseudo_time_explicit_relaxation_factor())
+I3 controls.pseudo_time_explicit_relaxation_factor state={'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-viscosity': 1.0, 'temperature': 0.75}}
+>>> state("controls.under_relaxation", lambda: S.controls.under_relaxation())
+I3 controls.under_relaxation                    state ERR RuntimeError: api-get-var: the object is not active
+Error Object: solution/controls/under-relaxation
+>>> state("controls.relaxation_factor", lambda: S.controls.relaxation_factor())
+I3 controls.relaxation_factor                   state ERR RuntimeError: api-get-var: the object is not active
+Error Object: solution/controls/relaxation-factor
+>>> state("controls.p_v_controls", lambda: S.controls.p_v_controls())
+I3 controls.p_v_controls                        state={'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+>>> kids("controls.equations", lambda: S.controls.equations)
+I3 controls.equations                           children=[]
+I3 controls.equations                           commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+<settings_261.equations object at 0x00000000B39101C0>
+>>> state("controls.equations", lambda: S.controls.equations())
+I3 controls.equations                           state={'flow': True, 'kw': True, 'temperature': True}
+>>> state("controls.limits", lambda: S.controls.limits())
+I3 controls.limits                              state={'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'min_tke': 1e-14, 'min_omega': 1e-20, 'max_turb_visc_ratio': 100000.0}
+>>> kids("controls.advanced", lambda: S.controls.advanced)
+I3 controls.advanced                            children=['multi_grid', 'multi_stage', 'expert', 'fast_transient_settings', 'energy_numerical_noise_filter', 'non_reflecting_boundary_treatment', 'alternative_wall_discretization', 'secondary_gradient_limiting', 'energy_reconstruction_gradient_limiting', 'bcd_weights_freeze', 'enhanced_skewness_correction', 'volume_flux_single_phase', 'transient_frame_motion_numerics', 'boundary_presto_treatment', 'nci_secondary_gradient', 'relaxation_method', 'correction_tolerance', 'anisotropic_solid_heat_transfer', 'continuity_transient_term_linearization', 'enthalpy_reference_temperature']
+<settings_261.advanced_4 object at 0x00000000B39114B0>
+>>> kids("monitor.residual.equations['energy']", lambda: S.monitor.residual.equations["energy"])
+I3 monitor.residual.equations['energy']         children=['monitor', 'normalization_factor', 'check_convergence', 'absolute_criteria', 'relative_criteria']
+<settings_261.equations_1_child object at 0x00000000AFD26A70>
+>>> state("monitor.residual.equations['energy']", lambda: S.monitor.residual.equations["energy"]())
+I3 monitor.residual.equations['energy']         state={'monitor': True}
+>>> state("monitor.residual.options", lambda: S.monitor.residual.options())
+I3 monitor.residual.options                     state={'criterion_type': 'none', 'n_save': 1000, 'normalize': False, 'residual_values': {'scale_residuals': True, 'compute_local_scale': False}, 'print': True, 'plot': True, 'n_display': 1000}
+>>> allowed("residual.options.criterion_type", lambda: S.monitor.residual.options.criterion_type)
+I3 residual.options.criterion_type              allowed=['absolute', 'none']
+>>> args("monitor.residual.write", lambda: S.monitor.residual.write)
+I3 monitor.residual.write                       args=['file_name']
+I3       arg file_name                      file_name_22
+>>> kids("monitor.convergence_conditions", lambda: S.monitor.convergence_conditions)
+I3 monitor.convergence_conditions               children=['convergence_reports', 'frequency', 'condition', 'check_for']
+<settings_261.convergence_conditions object at 0x00000000B208CBE0>
+>>> state("monitor.convergence_conditions", lambda: S.monitor.convergence_conditions())
+I3 monitor.convergence_conditions               state={'convergence_reports': {}, 'frequency': 1, 'condition': 'all-conditions-are-met'}
+>>> kids("file.export", lambda: solver.file.export)
+I3 file.export                                  children=['sc_def_file_settings', 'settings']
+I3 file.export                                  commands=['abaqus', 'mechanical_apdl', 'mechanical_apdl_input', 'ascii', 'avs', 'ensight', 'ensight_gold', 'ensight_gold_surface', 'ensight_dvs', 'visualize_output_options', 'visualize_output_write', 'fieldview', 'fieldview_data', 'gambit', 'cgns', 'custom_heat_flux', 'dx', 'ensight_gold_parallel_surfaces', 'ensight_gold_parallel_volume', 'icemcfd_for_icepak', 'fast_mesh', 'fast_solution', 'fast_velocity', 'taitherm', 'fieldview_unstruct', 'fieldview_unstruct_mesh', 'fieldview_unstruct_data', 'fieldview_unstruct_surfaces', 'ideas', 'nastran', 'patran_neutral', 'patran_nodal', 'vtk', 'tecplot', 'outline_view_settings']
+<settings_261.export object at 0x00000000AEAD8A00>
+>>> args("file.export.ascii", lambda: solver.file.export.ascii)
+I3 file.export.ascii                            args=['file_name', 'surface_name_list', 'delimiter', 'quantities', 'location']
+I3       arg file_name                      file_name_1
+I3       arg surface_name_list              surface_name_list allowed=['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'heated_outer_wall', 'fluid_solid_interface', 'fluid_outlet', 'fluid_inlet']
+I3       arg delimiter                      delimiter allowed=['comma', 'space']
+I3       arg quantities                     quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z-velocity', 'axial-velocity', 'radial-velocity', 'tangential-velocity', 'rel-velocity-magnitude', 'relative-x-velocity', 'relative-y-velocity', 'relative-z-velocity', 'rel-axial-velocity', 'rel-radial-velocity', 'rel-tangential-velocity', 'mesh-x-velocity', 'mesh-y-velocity', 'mesh-z-velocity', 'velocity-angle', 'relative-velocity-angle', 'vorticity-mag', 'helicity', 'x-vorticity', 'y-vorticity', 'z-vorticity', 'cell-reynolds-number', 'cell-convective-courant-number', 'q-criterion', 'raw-q-criterion', 'lambda2-criterion', 'temperature', 'total-temperature', 'enthalpy', 'rel-total-temperature', 'rothalpy', 'wall-temperature', 'wall-adjacent-temperature', 'reference-temperature-at-y+', 'wall-temp-thin', 'total-enthalpy', 'rel-total-enthalpy', 'total-enthalpy-deviation', 'entropy', 'total-energy', 'internal-energy', 'turb-kinetic-energy', 'turb-intensity', 'turb-diss-rate', 'specific-diss-rate', 'production-of-k', 'viscosity-turb', 'viscosity-eff', 'viscosity-ratio', 'thermal-conductivity-eff', 'prandtl-number-eff', 'y-star', 'y-plus', 'turb-reynolds-number-rey', 'viscosity-lam', 'thermal-conductivity-lam', 'specific-heat-cp', 'prandtl-number-lam', 'wall-shear', 'x-wall-shear', 'y-wall-shear', 'z-wall-shear', 'skin-friction-coef', 'heat-flux', 'heat-transfer-coef', 'heat-transfer-coef-wall-adj', 'heat-transfer-coef-yplus', 'heat-transfer-coef-wall', 'nusselt-number', 'stanton-number', 'cell-partition-active', 'cell-partition-stored', 'cell-id', 'cell-element-type', 'cell-type', 'cell-zone', 'partition-neighbors', 'cell-weight', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'axial-coordinate', 'angular-coordinate', 'abs-angular-coordinate', 'radial-coordinate', 'face-area-magnitude', 'x-face-area', 'y-face-area', 'z-face-area', 'cell-volume', 'orthogonal-quality', 'cell-equiangle-skew', 'cell-equivolume-skew', 'face-handedness', 'mark-poor-elements', 'interface-overlap-fraction', 'cell-wall-distance', 'aspect-ratio', 'cell-refine-level', 'smoothed-cell-refine-level', 'cell-parent-index', 'prismatic-adaption-cells', 'boundary-layer-cells', 'boundary-cell-dist', 'boundary-normal-dist', 'boundary-volume-dist', 'cell-volume-change', 'mass-imbalance', 'strain-rate-mag', 'dx-velocity-dx', 'dy-velocity-dx', 'dz-velocity-dx', 'dx-velocity-dy', 'dy-velocity-dy', 'dz-velocity-dy', 'dx-velocity-dz', 'dy-velocity-dz', 'dz-velocity-dz', 'dp-dx', 'dp-dy', 'dp-dz', 'pressure-hessian-indicator']
+I3       arg location                       location allowed=['cell-center', 'node']
+>>> args("file.export.cgns", lambda: solver.file.export.cgns)
+I3 file.export.cgns                             args=['file_name', 'scope', 'cell_zones', 'surfaces', 'cell_centered', 'format_class', 'quantities']
+I3       arg file_name                      file_name_1
+I3       arg scope                          scope_2 allowed=['full-domain', 'volume-select', 'surface-select']
+I3       arg cell_zones                     cell_zones allowed=[]
+I3       arg surfaces                       surfaces_1 allowed=[]
+I3       arg cell_centered                  cell_centered
+I3       arg format_class                   format_class allowed=['hdf5', 'adf']
+I3       arg quantities                     quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z-velocity', 'axial-velocity', 'radial-velocity', 'tangential-velocity', 'rel-velocity-magnitude', 'relative-x-velocity', 'relative-y-velocity', 'relative-z-velocity', 'rel-axial-velocity', 'rel-radial-velocity', 'rel-tangential-velocity', 'mesh-x-velocity', 'mesh-y-velocity', 'mesh-z-velocity', 'velocity-angle', 'relative-velocity-angle', 'vorticity-mag', 'helicity', 'x-vorticity', 'y-vorticity', 'z-vorticity', 'cell-reynolds-number', 'cell-convective-courant-number', 'q-criterion', 'raw-q-criterion', 'lambda2-criterion', 'temperature', 'total-temperature', 'enthalpy', 'rel-total-temperature', 'rothalpy', 'wall-temperature', 'wall-adjacent-temperature', 'reference-temperature-at-y+', 'wall-temp-thin', 'total-enthalpy', 'rel-total-enthalpy', 'total-enthalpy-deviation', 'entropy', 'total-energy', 'internal-energy', 'turb-kinetic-energy', 'turb-intensity', 'turb-diss-rate', 'specific-diss-rate', 'production-of-k', 'viscosity-turb', 'viscosity-eff', 'viscosity-ratio', 'thermal-conductivity-eff', 'prandtl-number-eff', 'y-star', 'y-plus', 'turb-reynolds-number-rey', 'viscosity-lam', 'thermal-conductivity-lam', 'specific-heat-cp', 'prandtl-number-lam', 'wall-shear', 'x-wall-shear', 'y-wall-shear', 'z-wall-shear', 'skin-friction-coef', 'heat-flux', 'heat-transfer-coef', 'heat-transfer-coef-wall-adj', 'heat-transfer-coef-yplus', 'heat-transfer-coef-wall', 'nusselt-number', 'stanton-number', 'cell-partition-active', 'cell-partition-stored', 'cell-id', 'cell-element-type', 'cell-type', 'cell-zone', 'partition-neighbors', 'cell-weight', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'axial-coordinate', 'angular-coordinate', 'abs-angular-coordinate', 'radial-coordinate', 'face-area-magnitude', 'x-face-area', 'y-face-area', 'z-face-area', 'cell-volume', 'orthogonal-quality', 'cell-equiangle-skew', 'cell-equivolume-skew', 'face-handedness', 'mark-poor-elements', 'interface-overlap-fraction', 'cell-wall-distance', 'aspect-ratio', 'cell-refine-level', 'smoothed-cell-refine-level', 'cell-parent-index', 'prismatic-adaption-cells', 'boundary-layer-cells', 'boundary-cell-dist', 'boundary-normal-dist', 'boundary-volume-dist', 'cell-volume-change', 'mass-imbalance', 'strain-rate-mag', 'dx-velocity-dx', 'dy-velocity-dx', 'dz-velocity-dx', 'dx-velocity-dy', 'dy-velocity-dy', 'dz-velocity-dy', 'dx-velocity-dz', 'dy-velocity-dz', 'dz-velocity-dz', 'dp-dx', 'dp-dy', 'dp-dz', 'pressure-hessian-indicator']
+>>> kids("results.report", lambda: solver.results.report)
+I3 results.report                               children=['simulation_reports', 'discrete_phase', 'fluxes', 'flow', 'modified_setting_options', 'population_balance', 'heat_exchanger', 'system', 'surface_integrals', 'volume_integrals', 'phasic_integrals_enabled', 'efficiency']
+I3 results.report                               commands=['aero_optical_distortions', 'forces', 'multiphase_summary', 'particle_summary', 'pathline_summary', 'projected_surface_area', 'summary', 'vbm']
+<settings_261.report_2 object at 0x00000000B1540250>
+>>> kids("results.report.fluxes", lambda: solver.results.report.fluxes)
+I3 results.report.fluxes                        children=[]
+I3 results.report.fluxes                        commands=['mass_flow', 'heat_transfer', 'heat_transfer_sensible', 'radiation_heat_transfer', 'film_mass_flow', 'film_heat_transfer', 'electric_current', 'pressure_work', 'viscous_work']
+<settings_261.fluxes object at 0x00000000B1542260>
+>>> args("report.fluxes.mass_flow", lambda: solver.results.report.fluxes.mass_flow)
+I3 report.fluxes.mass_flow                      args=['domain', 'zones', 'locations', 'write_to_file', 'file_name', 'append_data']
+I3       arg domain                         domain_2 allowed=[]
+I3       arg zones                          zones_10 allowed=['fluid_inlet', 'fluid_outlet', 'fluid_solid_interface', 'heated_outer_wall', 'solid_inlet_end', 'solid_outlet_end', 'fluid_solid_interface-shadow', 'interior-fluid', 'interior-solid']
+I3       arg locations                      locations
+I3       arg write_to_file                  write_to_file_3
+I3       arg file_name                      file_name_22
+I3       arg append_data                    append_data
+>>> kids("results.report.surface_integrals", lambda: solver.results.report.surface_integrals)
+I3 results.report.surface_integrals             children=[]
+I3 results.report.surface_integrals             commands=['area', 'area_weighted_avg', 'vector_based_flux', 'vector_flux', 'vector_weighted_average', 'facet_avg', 'facet_min', 'facet_max', 'flow_rate', 'integral', 'mass_flow_rate', 'mass_weighted_avg', 'standard_deviation', 'sum', 'uniformity_index_area_weighted', 'uniformity_index_mass_weighted', 'vertex_avg', 'vertex_min', 'vertex_max', 'volume_flow_rate']
+<settings_261.surface_integrals object at 0x00000000B158D840>
+>>> args("report.surface_integrals.area_weighted_avg",
+     lambda: solver.results.report.surface_integrals.area_weighted_avg)
+I3 report.surface_integrals.area_weighted_avg   args=['surface_names', 'locations', 'cust_vec_func', 'report_of', 'current_domain', 'write_to_file', 'file_name', 'append_data']
+I3       arg surface_names                  surface_names_4 allowed=['fluid_inlet', 'fluid_outlet', 'fluid_solid_interface', 'heated_outer_wall', 'solid_inlet_end', 'solid_outlet_end', 'fluid_solid_interface-shadow']
+I3       arg locations                      locations
+I3       arg cust_vec_func                  cust_vec_func allowed=[]
+I3       arg report_of                      report_of allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z-velocity', 'axial-velocity', 'radial-velocity', 'tangential-velocity', 'rel-velocity-magnitude', 'relative-x-velocity', 'relative-y-velocity', 'relative-z-velocity', 'rel-axial-velocity', 'rel-radial-velocity', 'rel-tangential-velocity', 'mesh-x-velocity', 'mesh-y-velocity', 'mesh-z-velocity', 'velocity-angle', 'relative-velocity-angle', 'vorticity-mag', 'helicity', 'x-vorticity', 'y-vorticity', 'z-vorticity', 'cell-reynolds-number', 'cell-convective-courant-number', 'q-criterion', 'raw-q-criterion', 'lambda2-criterion', 'temperature', 'total-temperature', 'enthalpy', 'rel-total-temperature', 'rothalpy', 'wall-temperature', 'wall-adjacent-temperature', 'reference-temperature-at-y+', 'wall-temp-thin', 'total-enthalpy', 'rel-total-enthalpy', 'total-enthalpy-deviation', 'entropy', 'total-energy', 'internal-energy', 'turb-kinetic-energy', 'turb-intensity', 'turb-diss-rate', 'specific-diss-rate', 'production-of-k', 'viscosity-turb', 'viscosity-eff', 'viscosity-ratio', 'thermal-conductivity-eff', 'prandtl-number-eff', 'y-star', 'y-plus', 'turb-reynolds-number-rey', 'viscosity-lam', 'thermal-conductivity-lam', 'specific-heat-cp', 'prandtl-number-lam', 'wall-shear', 'x-wall-shear', 'y-wall-shear', 'z-wall-shear', 'skin-friction-coef', 'heat-flux', 'heat-transfer-coef', 'heat-transfer-coef-wall-adj', 'heat-transfer-coef-yplus', 'heat-transfer-coef-wall', 'nusselt-number', 'stanton-number', 'cell-partition-active', 'cell-partition-stored', 'cell-id', 'cell-element-type', 'cell-type', 'cell-zone', 'partition-neighbors', 'cell-weight', 'x-coordinate', 'y-coordinate', 'z-coordinate', 'axial-coordinate', 'angular-coordinate', 'abs-angular-coordinate', 'radial-coordinate', 'face-area-magnitude', 'x-face-area', 'y-face-area', 'z-face-area', 'cell-volume', 'orthogonal-quality', 'cell-equiangle-skew', 'cell-equivolume-skew', 'face-handedness', 'mark-poor-elements', 'interface-overlap-fraction', 'cell-wall-distance', 'aspect-ratio', 'cell-refine-level', 'smoothed-cell-refine-level', 'cell-parent-index', 'prismatic-adaption-cells', 'boundary-layer-cells', 'boundary-cell-dist', 'boundary-normal-dist', 'boundary-volume-dist', 'cell-volume-change', 'mass-imbalance', 'strain-rate-mag', 'dx-velocity-dx', 'dy-velocity-dx', 'dz-velocity-dx', 'dx-velocity-dy', 'dy-velocity-dy', 'dz-velocity-dy', 'dx-velocity-dz', 'dy-velocity-dz', 'dz-velocity-dz', 'dp-dx', 'dp-dy', 'dp-dz', 'pressure-hessian-indicator']
+I3       arg current_domain                 current_domain allowed=[]
+I3       arg write_to_file                  write_to_file_3
+I3       arg file_name                      file_name_22
+I3       arg append_data                    append_data
+>>> kids("results.report.forces", lambda: solver.results.report.forces)
+I3 results.report.forces                        children=[]
+<settings_261.forces_1 object at 0x00000000B15CF340>
+>>> args("results.report.forces.wall_forces", lambda: solver.results.report.forces.wall_forces)
+I3 results.report.forces.wall_forces            args ERR 'super' object has no attribute 'wall_forces'
+>>> RD = S.report_definitions
+>>> try:
+    RD.force.create("probe_force")
+    kids("report_definitions.force[probe]", lambda: RD.force["probe_force"])
+    state("report_definitions.force[probe]", lambda: RD.force["probe_force"]())
+except Exception as e:
+    say("force probe failed: %s" % e)
+<settings_261.force_child object at 0x00000000AFD47D30>
+I3 report_definitions.force[probe]              children=['name', 'report_type', 'force_vector', 'reference_frame', 'zones', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'report_output_type', 'output_parameter', 'create_report_file', 'create_report_plot']
+I3 report_definitions.force[probe]              commands=['create_output_parameter']
+<settings_261.force_child object at 0x00000000AFD47D30>
+I3 report_definitions.force[probe]              state={'name': 'probe_force', 'force_vector': [1, 0, 0], 'reference_frame': 'global', 'zones': [], 'per_selection': False, 'average_over': 1, 'retain_instantaneous_values': False, 'output_parameter': False, 'create_report_file': False, 'create_report_plot': False}
+>>> try:
+    RD.surface.create("probe_field")
+    fl = RD.surface["probe_field"].field.allowed_values()
+    say("SURFACE FIELD COUNT %d" % len(fl))
+    say("SURFACE FIELDS %s" % fl)
+except Exception as e:
+    say("field probe failed: %s" % e)
+<settings_261.surface_1_child object at 0x00000000AFD3C8E0>
+I3 SURFACE FIELD COUNT 0
+I3 SURFACE FIELDS []
+>>> try:
+    RD.volume.create("probe_vfield")
+    fl = RD.volume["probe_vfield"].field.allowed_values()
+    say("VOLUME FIELD COUNT %d" % len(fl))
+    say("VOLUME FIELDS %s" % fl)
+except Exception as e:
+    say("vfield probe failed: %s" % e)
+<settings_261.volume_3_child object at 0x00000000AFD3DA20>
+I3 VOLUME FIELD COUNT 0
+I3 VOLUME FIELDS []
+>>> kids("results.surfaces.line_surface", lambda: solver.results.surfaces.line_surface)
+I3 results.surfaces.line_surface                children=[]
+I3 results.surfaces.line_surface                commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+<settings_261.line_surface object at 0x00000000B211BB50>
+>>> try:
+    solver.results.surfaces.line_surface.create("probe_line")
+    kids("line_surface[probe]", lambda: solver.results.surfaces.line_surface["probe_line"])
+    state("line_surface[probe]", lambda: solver.results.surfaces.line_surface["probe_line"]())
+except Exception as e:
+    say("line surface probe: %s" % e)
+<settings_261.line_surface_child object at 0x00000000AFD3ED70>
+I3 line_surface[probe]                          children=['name', 'p0', 'p1']
+I3 line_surface[probe]                          commands=['display']
+<settings_261.line_surface_child object at 0x00000000AFD3ED70>
+I3 line_surface[probe]                          state={'name': 'probe_line', 'p0': [0, 0, 0], 'p1': [0, 0, 0]}
+>>> try:
+    solver.results.surfaces.plane_surface.create("probe_plane")
+    kids("plane_surface[probe]", lambda: solver.results.surfaces.plane_surface["probe_plane"])
+    state("plane_surface[probe]", lambda: solver.results.surfaces.plane_surface["probe_plane"]())
+except Exception as e:
+    say("plane surface probe: %s" % e)
+<settings_261.plane_surface_child object at 0x00000000AFD3F610>
+I3 plane_surface[probe]                         children=['name', 'method', 'x', 'y', 'z', 'point', 'normal_computation_method', 'surface_aligned_normal', 'normal', 'p0', 'p1', 'p2', 'bounded', 'sample_points', 'edges']
+I3 plane_surface[probe]                         commands=['display']
+<settings_261.plane_surface_child object at 0x00000000AFD3F610>
+I3 plane_surface[probe]                         state={'name': 'probe_plane', 'method': 'yz-plane', 'x': 0}
+>>> args("cell zone create_surface", lambda: solver.setup.cell_zone_conditions.fluid["fluid_domain"].create_surface)
+I3 cell zone create_surface                     args=[]
+>>> kids("results.plot", lambda: solver.results.plot)
+I3 results.plot                                 children=['xy_plot', 'histogram', 'cumulative_plot', 'solution_plot', 'plot', 'plot_from_file', 'plot_from_file_list', 'profile_data', 'interpolated_data']
+I3 results.plot                                 commands=['circum_avg_axial', 'circum_avg_radial', 'plot_direction', 'label_alignment', 'set_boundary_val_off', 'fft']
+<settings_261.plot_4 object at 0x00000000B0109660>
+>>> kids("results.plot.xy_plot", lambda: solver.results.plot.xy_plot)
+I3 results.plot.xy_plot                         children=[]
+I3 results.plot.xy_plot                         commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy', 'display', 'add_to_graphics', 'clear_history']
+<settings_261.xy_plot object at 0x00000000B01694B0>
+>>> state("models.radiation", lambda: solver.setup.models.radiation())
+I3 models.radiation                             state={'model': 'none', 'solar_load': {'solar_model': 'none', 'sun_direction_vector_definition': {}}, 'solar_calculator': {'longitude': -1.4770719, 'latitude': 0.23823741, 'timezone': -5.0, 'mesh_orientation': {'north_direction': {'north_x': 0.0, 'north_y': 1.0, 'north_z': 0.0}, 'east_direction': {'east_x': 1.0, 'east_y': 0.0, 'east_z': 0.0}}, 'date_and_time': {'day': 21, 'month': 6, 'hour': 13, 'minute': 0}, 'calculator_method': 'fair-weather-condition', 'sunshine_factor': 1.0}, 'solar_calculator_gui': {'longitude': -1.4770719, 'latitude': 0.23823741, 'timezone': -5.0, 'mesh_orientation': {'north_d
+>>> state("models.viscous", lambda: solver.setup.models.viscous())
+I3 models.viscous                               state={'model': 'k-omega', 'k_omega_model': 'sst', 'k_omega': {'k_omega_low_re_correction': False, 'coefficients': {'a1': 0.31, 'alpha_star_inf': 1.0, 'alpha_inf': 0.52, 'beta_star_inf': 0.09, 'k_omega_regime': {'beta_i': 0.075, 'tke_prandtl_number': 1.176, 'sdr_prandtl_number': 2.0}, 'k_epsilon_regime': {'beta_i': 0.0828, 'tke_prandtl_number': 1.0, 'sdr_prandtl_number': 1.168}}}, 'near_wall_treatment': {'wall_omega_treatment': 'correlation'}, 'transition_module': 'none', 'options': {'viscous_heating': False, 'curvature_correction': {'enabled': False}, 'corner_flow_correction': {'enabled': False}, '
+>>> state("models.energy", lambda: solver.setup.models.energy())
+I3 models.energy                                state={'enabled': True, 'viscous_dissipation': False, 'pressure_work': False, 'kinetic_energy': False, 'inlet_diffusion': True}
+>>> say("solver attrs: %s" % [a for a in dir(solver) if not a.startswith("_")][:80])
+I3 solver attrs: ['chdir', 'connection_properties', 'download', 'enable_beta_features', 'events', 'execute_tui', 'exit', 'fields', 'file_exists_on_remote', 'force_exit', 'get_fluent_version', 'get_state', 'health_check', 'id', 'is_active', 'is_server_healthy', 'journal', 'monitors', 'preferences', 'read_case_lightweight', 'register_finalizer_callback', 'rp_vars', 'scheme', 'set_state', 'settings', 'switch_to_meshing', 'system_coupling', 'transcript', 'tui', 'upload', 'wait_process_finished', 'workflow']
+>>> try:
+    fd = solver.fields.field_data
+    say("solver.fields.field_data available: %s" % type(fd))
+except Exception as e:
+    say("solver.fields.field_data NOT available: %s" % e)
+I3 solver.fields.field_data available: <class 'flapi.services.field_data.FieldData'>
+>>> for p in ("solver.solution.run_calculation.iter_count",
+          "solver.rp_vars", "solver.scheme"):
+    try:
+        say("%s -> %s" % (p, eval(p)))
+    except Exception as e:
+        say("%s -> ERR %s" % (p, e))
+I3 solver.solution.run_calculation.iter_count -> <settings_261.iter_count_2_alias object at 0x00000000AFBAB910>
+I3 solver.rp_vars -> <ansys.fluent.core.rpvars.RPVars object at 0x00000000A8FFD090>
+I3 solver.scheme -> <flapi.services.scheme_eval.SchemeEval object at 0x00000000A909D870>
+>>> try:
+    say("scheme iter: %s" % solver.scheme.eval("(%iterate-count)"))
+except Exception as e:
+    say("scheme iter failed: %s" % e)
+I3 scheme iter failed: eval: unbound variable
+Error Object: %iterate-count
+>>> try:
+    say("rp iteration: %s" % solver.scheme.eval("(rpgetvar 'number-of-iterations)"))
+except Exception as e:
+    say("rp iteration failed: %s" % e)
+I3 rp iteration: 150
+>>> with open("Logs/introspect3_dump.txt", "w") as fh:
+    fh.write("\n".join(OUT))
+22195
+>>> print("I3-DONE")
+I3-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  18:38:58, 23 Sep 2026 India Standard Time 
+Total Transcript Time: 1 Minute 3 Second.
+
+Automatic transcript closed.

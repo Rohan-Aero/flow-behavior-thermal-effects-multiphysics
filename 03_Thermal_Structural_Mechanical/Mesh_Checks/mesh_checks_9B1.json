@@ -1,0 +1,384 @@
+{
+  "generator": "<PROJECT_ROOT>\\05_Meshing\\Scripts\\make_mesh.py",
+  "generator_sha256": "F2217FE03A7B56503E1D0576D44E868D5EA25C309B925794ED9E36C075B0D816",
+  "python": "3.10.19 (remotes/origin/54ee32c922d15cece27c63aab31ba27b8fb8da4e-dirty:54ee32c9, Dec  2 2) [MSC v.1942 64 bit (AMD64)]",
+  "numpy": "1.23.5",
+  "settings": {
+    "NC": 12,
+    "NR": 24,
+    "NZ": 90,
+    "H1_FLUID": 1.22e-05,
+    "H1_SOLID": 0.0005
+  },
+  "solid_layer_rule": "first layer 0.5 mm, growth <= 1.147, smallest count",
+  "wrapper_validation": {
+    "regenerated": "<PROJECT_ROOT>\\10_Parametric_Study\\Mesh_Checks\\Wrapper_Validation\\medium.msh",
+    "sha256_regenerated": "2C6FCFB31108654DB2361449127761ECF687D7446C740C33C0BB350877363479",
+    "baseline_mesh": "<PROJECT_ROOT>\\06_Fluent_CFD\\Case\\medium_mesh_used_for_baseline.msh",
+    "sha256_baseline": "2C6FCFB31108654DB2361449127761ECF687D7446C740C33C0BB350877363479",
+    "byte_identical": true,
+    "bytes": 26292846,
+    "seconds": 5.1,
+    "stats": {
+      "name": "medium",
+      "file": "<PROJECT_ROOT>\\10_Parametric_Study\\Mesh_Checks\\Wrapper_Validation\\medium.msh",
+      "file_MB": 26.29,
+      "NC": 12,
+      "Ntheta": 48,
+      "NR": 24,
+      "NRS": 10,
+      "NZ": 90,
+      "nodes": 163891,
+      "cells": 159840,
+      "fluid_cells": 116640,
+      "solid_cells": 43200,
+      "faces": 483456,
+      "faces_by_zone": {
+        "interior_fluid": 346464,
+        "interior_solid": 124800,
+        "fluid_inlet": 1296,
+        "fluid_outlet": 1296,
+        "fluid_solid_interface": 4320,
+        "heated_outer_wall": 4320,
+        "solid_inlet_end": 480,
+        "solid_outlet_end": 480
+      },
+      "min_cell_volume": 9.051023276579255e-11,
+      "max_cell_volume": 2.8597433986467908e-08,
+      "negative_cells": 0,
+      "fluid_volume": 0.00018795771679687434,
+      "solid_volume": 0.0005638731503906229,
+      "fluid_volume_exact": 0.00018849555921538757,
+      "solid_volume_exact": 0.0005654866776461628,
+      "polygon_area_ratio": 0.9971466573496368,
+      "first_layer_m": 1.22e-05,
+      "fluid_growth": 1.209076606791022,
+      "infl_18_thickness_m": 0.0017208414272629532,
+      "fluid_annulus_thickness_m": 0.0055,
+      "core_radius_m": 0.0045000000000000005,
+      "solid_first_layer_m": 0.0005,
+      "solid_growth": 1.1469127662877496,
+      "axial_cell_m": 0.006666666666666666,
+      "max_aspect_ratio_est": 546.4480874316939,
+      "cells_with_wrong_face_count": 0,
+      "all_nodes_used": true
+    },
+    "regenerated_copy_removed_after_hash_match": true
+  },
+  "cases": {
+    "T01_THIN": {
+      "counts": {
+        "cells": 155520,
+        "fluid_cells": 116640,
+        "solid_cells": 38880,
+        "faces_by_zone": {
+          "interior_fluid": 346464,
+          "interior_solid": 111888,
+          "fluid_inlet": 1296,
+          "fluid_outlet": 1296,
+          "fluid_solid_interface": 4320,
+          "heated_outer_wall": 4320,
+          "solid_inlet_end": 432,
+          "solid_outlet_end": 432
+        }
+      },
+      "closed_form": {
+        "fluid_volume": {
+          "mesh": 0.00018795771679687434,
+          "exact_polygon": 0.0001879577167968743,
+          "rel_diff": 2.220446049250313e-16
+        },
+        "solid_volume": {
+          "mesh": 0.00042102528562499837,
+          "exact_polygon": 0.00042102528562499826,
+          "rel_diff": 2.220446049250313e-16
+        },
+        "fluid_inlet": {
+          "mesh": 0.0003132628613281238,
+          "exact_polygon": 0.0003132628613281238,
+          "rel_diff": 0.0
+        },
+        "solid_inlet_end": {
+          "mesh": 0.0007017088093749971,
+          "exact_polygon": 0.0007017088093749971,
+          "rel_diff": 0.0
+        },
+        "fluid_solid_interface": {
+          "mesh": 0.0376722024365624,
+          "exact_polygon": 0.037672202436562406,
+          "rel_diff": -2.220446049250313e-16
+        },
+        "heated_outer_wall": {
+          "mesh": 0.06780996438581233,
+          "exact_polygon": 0.06780996438581233,
+          "rel_diff": 0.0
+        }
+      },
+      "circle_vs_polygon": {
+        "heated_area_circle_pi_Do_L": 0.06785840131753952,
+        "perimeter_ratio": 0.9992862058229085,
+        "area_ratio": 0.9971466573496368
+      },
+      "solid_layers": {
+        "n": 9,
+        "first_m": 0.0005000000000000004,
+        "last_m": 0.0014138325972467662,
+        "growth": 1.1387502839458286,
+        "sum_m": 0.007999999999999998,
+        "outer_radius_m": 0.018,
+        "radii_m": [
+          0.01,
+          0.0105,
+          0.011069375141972915,
+          0.011717751246566268,
+          0.012456089719775638,
+          0.013296872865790937,
+          0.014254314912052727,
+          0.015344602314095016,
+          0.016586167402753232,
+          0.018
+        ]
+      },
+      "fluid_inflation": {
+        "first_cell_m": 1.22e-05,
+        "growth": 1.209076606791022,
+        "NR": 24,
+        "core_radius_m": 0.0045000000000000005
+      },
+      "conformity": {
+        "interface_faces": 4320,
+        "expected_NT_x_NZ": 4320,
+        "interface_faces_fluid_solid_pair": 4320,
+        "interface_nodes_on_RI": true,
+        "heated_nodes_on_RO": true
+      },
+      "negative_or_zero_volume_cells": 0,
+      "min_cell_volume_m3": 9.051023276579255e-11,
+      "max_aspect_ratio_est": {
+        "fluid_first_cell": 546.4480874316939,
+        "solid_first_layer": 13.333333333333321,
+        "solid_last_layer": 4.715315433842049
+      },
+      "fluid_mesh_identical_to_P00": {
+        "fluid_node_coordinates_bitwise_equal": true,
+        "fluid_cell_connectivity_equal": true
+      },
+      "layer_rule": {
+        "t_m": 0.007999999999999998,
+        "smallest_n_meeting_rule": 9,
+        "growth_at_that_n": 1.1387502839458286,
+        "n_used": 9,
+        "rule_met": true
+      },
+      "file": {
+        "path": "<PROJECT_ROOT>\\10_Parametric_Study\\Mesh_Checks\\Mesh_T01_THIN\\T01_THIN.msh",
+        "sha256": "D2CB86B952E5BE6DBD86C0033C27538154683AC98624F844BB6ACF432861ACF8",
+        "bytes": 25554044,
+        "generate_seconds": 5.0
+      },
+      "generator_stats": {
+        "name": "T01_THIN",
+        "file": "<PROJECT_ROOT>\\10_Parametric_Study\\Mesh_Checks\\Mesh_T01_THIN\\T01_THIN.msh",
+        "file_MB": 25.55,
+        "NC": 12,
+        "Ntheta": 48,
+        "NR": 24,
+        "NRS": 9,
+        "NZ": 90,
+        "nodes": 159523,
+        "cells": 155520,
+        "fluid_cells": 116640,
+        "solid_cells": 38880,
+        "faces": 470448,
+        "faces_by_zone": {
+          "interior_fluid": 346464,
+          "interior_solid": 111888,
+          "fluid_inlet": 1296,
+          "fluid_outlet": 1296,
+          "fluid_solid_interface": 4320,
+          "heated_outer_wall": 4320,
+          "solid_inlet_end": 432,
+          "solid_outlet_end": 432
+        },
+        "min_cell_volume": 9.051023276579255e-11,
+        "max_cell_volume": 2.127535638521725e-08,
+        "negative_cells": 0,
+        "fluid_volume": 0.00018795771679687434,
+        "solid_volume": 0.00042102528562499837,
+        "fluid_volume_exact": 0.00018849555921538757,
+        "solid_volume_exact": 0.00042223005264246813,
+        "polygon_area_ratio": 0.9971466573496368,
+        "first_layer_m": 1.22e-05,
+        "fluid_growth": 1.209076606791022,
+        "infl_18_thickness_m": 0.0017208414272629532,
+        "fluid_annulus_thickness_m": 0.0055,
+        "core_radius_m": 0.0045000000000000005,
+        "solid_first_layer_m": 0.0005,
+        "solid_growth": 1.1387502839458286,
+        "axial_cell_m": 0.006666666666666666,
+        "max_aspect_ratio_est": 546.4480874316939,
+        "cells_with_wrong_face_count": 0,
+        "all_nodes_used": true
+      }
+    },
+    "T03_THICK": {
+      "counts": {
+        "cells": 168480,
+        "fluid_cells": 116640,
+        "solid_cells": 51840,
+        "faces_by_zone": {
+          "interior_fluid": 346464,
+          "interior_solid": 150624,
+          "fluid_inlet": 1296,
+          "fluid_outlet": 1296,
+          "fluid_solid_interface": 4320,
+          "heated_outer_wall": 4320,
+          "solid_inlet_end": 576,
+          "solid_outlet_end": 576
+        }
+      },
+      "closed_form": {
+        "fluid_volume": {
+          "mesh": 0.00018795771679687434,
+          "exact_polygon": 0.0001879577167968743,
+          "rel_diff": 2.220446049250313e-16
+        },
+        "solid_volume": {
+          "mesh": 0.0007217576324999971,
+          "exact_polygon": 0.0007217576324999971,
+          "rel_diff": 0.0
+        },
+        "fluid_inlet": {
+          "mesh": 0.0003132628613281238,
+          "exact_polygon": 0.0003132628613281238,
+          "rel_diff": 0.0
+        },
+        "solid_inlet_end": {
+          "mesh": 0.0012029293874999953,
+          "exact_polygon": 0.0012029293874999951,
+          "rel_diff": 2.220446049250313e-16
+        },
+        "fluid_solid_interface": {
+          "mesh": 0.0376722024365624,
+          "exact_polygon": 0.037672202436562406,
+          "rel_diff": -2.220446049250313e-16
+        },
+        "heated_outer_wall": {
+          "mesh": 0.0828788453604373,
+          "exact_polygon": 0.08287884536043728,
+          "rel_diff": 2.220446049250313e-16
+        }
+      },
+      "circle_vs_polygon": {
+        "heated_area_circle_pi_Do_L": 0.08293804605477052,
+        "perimeter_ratio": 0.9992862058229085,
+        "area_ratio": 0.9971466573496368
+      },
+      "solid_layers": {
+        "n": 12,
+        "first_m": 0.0005000000000000004,
+        "last_m": 0.0017237936948388613,
+        "growth": 1.1190900278271192,
+        "sum_m": 0.011999999999999999,
+        "outer_radius_m": 0.022,
+        "radii_m": [
+          0.01,
+          0.0105,
+          0.01105954501391356,
+          0.011685726259104611,
+          0.012386479446210285,
+          0.013170685349868316,
+          0.014048282356415172,
+          0.01503039241489269,
+          0.01612946198756359,
+          0.017359419786227806,
+          0.01873585329336113,
+          0.020276206305161137,
+          0.022
+        ]
+      },
+      "fluid_inflation": {
+        "first_cell_m": 1.22e-05,
+        "growth": 1.209076606791022,
+        "NR": 24,
+        "core_radius_m": 0.0045000000000000005
+      },
+      "conformity": {
+        "interface_faces": 4320,
+        "expected_NT_x_NZ": 4320,
+        "interface_faces_fluid_solid_pair": 4320,
+        "interface_nodes_on_RI": true,
+        "heated_nodes_on_RO": true
+      },
+      "negative_or_zero_volume_cells": 0,
+      "min_cell_volume_m3": 9.051023276579255e-11,
+      "max_aspect_ratio_est": {
+        "fluid_first_cell": 546.4480874316939,
+        "solid_first_layer": 13.333333333333321,
+        "solid_last_layer": 3.867438827875432
+      },
+      "fluid_mesh_identical_to_P00": {
+        "fluid_node_coordinates_bitwise_equal": true,
+        "fluid_cell_connectivity_equal": true
+      },
+      "layer_rule": {
+        "t_m": 0.011999999999999999,
+        "smallest_n_meeting_rule": 12,
+        "growth_at_that_n": 1.1190900278271192,
+        "n_used": 12,
+        "rule_met": true
+      },
+      "file": {
+        "path": "<PROJECT_ROOT>\\10_Parametric_Study\\Mesh_Checks\\Mesh_T03_THICK\\T03_THICK.msh",
+        "sha256": "9B6CC26C153BD4476CB27DFA5A8D1E6A53979E9ACDBC8D5F9455628056A8A9A1",
+        "bytes": 27770457,
+        "generate_seconds": 12.6
+      },
+      "generator_stats": {
+        "name": "T03_THICK",
+        "file": "<PROJECT_ROOT>\\10_Parametric_Study\\Mesh_Checks\\Mesh_T03_THICK\\T03_THICK.msh",
+        "file_MB": 27.77,
+        "NC": 12,
+        "Ntheta": 48,
+        "NR": 24,
+        "NRS": 12,
+        "NZ": 90,
+        "nodes": 172627,
+        "cells": 168480,
+        "fluid_cells": 116640,
+        "solid_cells": 51840,
+        "faces": 509472,
+        "faces_by_zone": {
+          "interior_fluid": 346464,
+          "interior_solid": 150624,
+          "fluid_inlet": 1296,
+          "fluid_outlet": 1296,
+          "fluid_solid_interface": 4320,
+          "heated_outer_wall": 4320,
+          "solid_inlet_end": 576,
+          "solid_outlet_end": 576
+        },
+        "min_cell_volume": 9.051023276579255e-11,
+        "max_cell_volume": 3.1707186740450024e-08,
+        "negative_cells": 0,
+        "fluid_volume": 0.00018795771679687434,
+        "solid_volume": 0.0007217576324999971,
+        "fluid_volume_exact": 0.00018849555921538757,
+        "solid_volume_exact": 0.0007238229473870882,
+        "polygon_area_ratio": 0.9971466573496368,
+        "first_layer_m": 1.22e-05,
+        "fluid_growth": 1.209076606791022,
+        "infl_18_thickness_m": 0.0017208414272629532,
+        "fluid_annulus_thickness_m": 0.0055,
+        "core_radius_m": 0.0045000000000000005,
+        "solid_first_layer_m": 0.0005,
+        "solid_growth": 1.1190900278271192,
+        "axial_cell_m": 0.006666666666666666,
+        "max_aspect_ratio_est": 546.4480874316939,
+        "cells_with_wrong_face_count": 0,
+        "all_nodes_used": true
+      }
+    }
+  },
+  "total_seconds": 38.0
+}

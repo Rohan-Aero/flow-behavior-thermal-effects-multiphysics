@@ -1,0 +1,28 @@
+15:29:41 analysis LC1_Free_Expansion state Solved
+15:29:41 analysis LC2_Axially_Restrained state Solved
+15:29:41 analysis LC2P_Restrained_Thermal_Plus_Pressure state Solved
+15:29:41 camera members ['Equals', 'FocalPoint', 'GetAsString', 'GetHashCode', 'GetLocation', 'GetTarget', 'GetType', 'InternalObject', 'MemberwiseClone', 'Pan', 'ReferenceEquals', 'Rotate', 'RotateView', 'SaveUndoRedoView', 'SceneHeight', 'SceneWidth', 'SetFit', 'SetSpecificViewOrientation', 'ToString', 'UpVector', 'ViewVector', 'ViewportHeight', 'ViewportWidth', 'Zoom', 'ZoomFactor', 'ZoomRectPixels', 'ZoomRectSubpixels']
+15:29:41 view attribute used: ViewVector
+15:29:44 OK   LC1_Z_inlet_Imported_Temperature (None, None, None, None, None, None, None)
+15:29:44 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Imported_Temperature.png exists True
+15:29:44 OK   LC1_Z_inlet_Equivalent_Stress (None, None, None, None, None, None, None)
+15:29:44 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Equivalent_Stress.png exists True
+15:29:44 OK   LC1_Z_inlet_Max_Principal (None, None, None, None, None, None, None)
+15:29:44 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Max_Principal.png exists True
+15:29:44 OK   LC1_Z_inlet_Hoop_Stress (None, None, None, None, None, None, None)
+15:29:44 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Hoop_Stress.png exists True
+15:29:44 OK   LC1_Z_outlet_Total_Deformation (None, None, None, None, None, None, None)
+15:29:44 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_outlet_Total_Deformation.png exists True
+15:29:45 OK   LC2_Z_inlet_Equivalent_Stress (None, None, None, None, None, None, None)
+15:29:45 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_inlet_Equivalent_Stress.png exists True
+15:29:45 OK   LC2_Z_inlet_Equivalent_Stress_UNaveraged (None, None, None, None, None, None, None)
+15:29:45 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_inlet_Equivalent_Stress_UNaveraged.png exists True
+15:29:45 OK   LC2_Z_inlet_Min_Principal (None, None, None, None, None, None, None)
+15:29:45 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_inlet_Min_Principal.png exists True
+15:29:45 OK   LC2_Z_outlet_Equivalent_Stress (None, None, None, None, None, None, None)
+15:29:45 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_outlet_Equivalent_Stress.png exists True
+15:29:46 OK   LC2_Z_outlet_Equivalent_Elastic_Strain (None, None, None, None, None, None, None)
+15:29:46 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_outlet_Equivalent_Elastic_Strain.png exists True
+15:29:46 OK   LC2P_Z_inlet_Equivalent_Stress (None, None, None, None, None, None, None)
+15:29:46 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2P_Z_inlet_Equivalent_Stress.png exists True
+15:29:46 ZOOM-IMAGES-DONE

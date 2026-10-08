@@ -1,0 +1,64 @@
+{
+ "bias": 4.0, 
+ "geometry": null, 
+ "tag": "V01_LOW", 
+ "external_data_readback": {
+  "after": [
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V01_LOW\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\V01_LOW\\fluent_solid_node_temperature.csv"
+  ], 
+  "delimiter": [
+   "Comma", 
+   ","
+  ], 
+  "master": [
+   true, 
+   false
+  ], 
+  "ok": true, 
+  "start_line": "2", 
+  "length_units": [
+   "m", 
+   "m"
+  ], 
+  "columns": [
+   [
+    "Node ID", 
+    ""
+   ], 
+   [
+    "Temperature", 
+    "K"
+   ]
+  ], 
+  "before": [
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+  ], 
+  "format": [
+   "Cdb", 
+   "Delimited"
+  ], 
+  "case": "V01_LOW"
+ }, 
+ "Di": 0.02, 
+ "L": 0.59999999999999998, 
+ "source_node_T_K": [
+  435.91555786132813, 
+  587.43304443359375
+ ], 
+ "source_T_range_K": [
+  435.26837, 
+  587.46741
+ ], 
+ "buckling": true, 
+ "cfd_case": "V01_LOW", 
+ "nc": 36, 
+ "cdb": "10_Parametric_Study/Mapping/V01_LOW/fluent_solid_mesh.cdb", 
+ "Do": 0.040000000000000001, 
+ "nr": 5, 
+ "csv": "10_Parametric_Study/Mapping/V01_LOW/fluent_solid_node_temperature.csv", 
+ "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\V01_LOW\\Project\\V01_LOW.wbpj", 
+ "na": 130, 
+ "pressure": false
+}

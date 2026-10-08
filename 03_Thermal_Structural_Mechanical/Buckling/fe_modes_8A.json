@@ -1,0 +1,254 @@
+{
+ "FE_load_factors": {
+  "LC2_Linear_Buckling": {
+   "1": 1.1080469964202,
+   "2": 1.10804714283297,
+   "3": 4.29789593912886,
+   "4": 4.29790515849435,
+   "5": 9.22481520485593,
+   "6": 9.22483203835595
+  },
+  "LC2NS_Linear_Buckling": {
+   "1": 4.2999450325566,
+   "2": 4.29994539944678,
+   "3": 8.35615275568244,
+   "4": 8.35615475632821,
+   "5": 15.4244407756752,
+   "6": 15.4244432464732
+  }
+ },
+ "modes": {
+  "LC2_Linear_Buckling": {
+   "1": {
+    "planes": 131,
+    "lateral_direction_deg": 162.6529423992019,
+    "beam_type_share_of_inplane_motion": 0.9999989662950919,
+    "max_ovalisation_over_max_lateral": 3.0278202655373054e-11,
+    "max_lobes_over_max_lateral": 1.2609317219523306e-09,
+    "perpendicular_over_main": 2.4167330463276584e-09,
+    "z_of_max_lateral_mm": 600.0,
+    "lateral_at_ends_and_mid": [
+     -0.9889529092455085,
+     1.445841850654095e-05,
+     1.0
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.9999970663895207,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.002392832773039274,
+     "pinned_n1 sin(pi z/L)": -0.0023512353418506495
+    }
+   },
+   "2": {
+    "planes": 131,
+    "lateral_direction_deg": 72.65294241871068,
+    "beam_type_share_of_inplane_motion": 0.9999989662951626,
+    "max_ovalisation_over_max_lateral": 8.318867802756084e-11,
+    "max_lobes_over_max_lateral": 1.4021299280985114e-09,
+    "perpendicular_over_main": 2.7726486117334642e-09,
+    "z_of_max_lateral_mm": 600.0,
+    "lateral_at_ends_and_mid": [
+     -0.9889529172173259,
+     1.4458404619034785e-05,
+     1.0
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.9999970663934354,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.002392831114416078,
+     "pinned_n1 sin(pi z/L)": -0.0023512337345771056
+    }
+   },
+   "3": {
+    "planes": 131,
+    "lateral_direction_deg": 111.36056472726771,
+    "beam_type_share_of_inplane_motion": 0.9999962374451689,
+    "max_ovalisation_over_max_lateral": 4.4951460851530214e-10,
+    "max_lobes_over_max_lateral": 1.2518592113035288e-09,
+    "perpendicular_over_main": 1.7695144812721132e-07,
+    "z_of_max_lateral_mm": 0.0,
+    "lateral_at_ends_and_mid": [
+     1.0,
+     0.0029471808406868845,
+     0.9957710780845304
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.010454796450257842,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.9999252992401084,
+     "pinned_n1 sin(pi z/L)": -0.9698708585277707
+    }
+   },
+   "4": {
+    "planes": 131,
+    "lateral_direction_deg": -158.6394365558762,
+    "beam_type_share_of_inplane_motion": 0.9999962374449354,
+    "max_ovalisation_over_max_lateral": 2.9324933156688487e-10,
+    "max_lobes_over_max_lateral": 1.1805112907678247e-09,
+    "perpendicular_over_main": 2.1250725897411255e-07,
+    "z_of_max_lateral_mm": 0.0,
+    "lateral_at_ends_and_mid": [
+     1.0,
+     0.0029471810779056603,
+     0.9957716344154398
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.010454651810581625,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.9999252969067469,
+     "pinned_n1 sin(pi z/L)": -0.9698708579316649
+    }
+   },
+   "5": {
+    "planes": 131,
+    "lateral_direction_deg": 156.24253659323077,
+    "beam_type_share_of_inplane_motion": 0.9999404498100127,
+    "max_ovalisation_over_max_lateral": 1.7065232463580777e-08,
+    "max_lobes_over_max_lateral": 2.924411989772567e-09,
+    "perpendicular_over_main": 2.4349666817110267e-05,
+    "z_of_max_lateral_mm": 0.0,
+    "lateral_at_ends_and_mid": [
+     1.0,
+     0.00024896214365179595,
+     -0.9498637491677762
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.3249706594351372,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.009689920817760387,
+     "pinned_n1 sin(pi z/L)": -0.007347704229415549
+    }
+   },
+   "6": {
+    "planes": 131,
+    "lateral_direction_deg": 66.24251999697229,
+    "beam_type_share_of_inplane_motion": 0.9999404498916281,
+    "max_ovalisation_over_max_lateral": 1.842889689491204e-08,
+    "max_lobes_over_max_lateral": 3.594800117369955e-09,
+    "perpendicular_over_main": 6.893246121088487e-06,
+    "z_of_max_lateral_mm": 0.0,
+    "lateral_at_ends_and_mid": [
+     1.0,
+     0.00024898144368019047,
+     -0.9498391618616328
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.32497100814785335,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": 0.009696104840450082,
+     "pinned_n1 sin(pi z/L)": -0.007353693459067438
+    }
+   }
+  },
+  "LC2NS_Linear_Buckling": {
+   "1": {
+    "planes": 131,
+    "lateral_direction_deg": 57.32179280789982,
+    "beam_type_share_of_inplane_motion": 0.9999921974254877,
+    "max_ovalisation_over_max_lateral": 1.5659043915557644e-10,
+    "max_lobes_over_max_lateral": 1.1033478664973028e-09,
+    "perpendicular_over_main": 5.615035471399608e-09,
+    "z_of_max_lateral_mm": 300.0,
+    "lateral_at_ends_and_mid": [
+     0.0015447205450147287,
+     1.0,
+     0.001587407144695267
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.005210969611564118,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.9999683892392102,
+     "pinned_n1 sin(pi z/L)": 0.969874746192823
+    }
+   },
+   "2": {
+    "planes": 131,
+    "lateral_direction_deg": 147.3217929163087,
+    "beam_type_share_of_inplane_motion": 0.9999921974252626,
+    "max_ovalisation_over_max_lateral": 1.4971362273969342e-10,
+    "max_lobes_over_max_lateral": 1.2126693203304181e-09,
+    "perpendicular_over_main": 1.9601879143219435e-08,
+    "z_of_max_lateral_mm": 300.0,
+    "lateral_at_ends_and_mid": [
+     0.001544720619141045,
+     1.0,
+     0.0015874070373425421
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.005210948022721404,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.9999683894978777,
+     "pinned_n1 sin(pi z/L)": 0.9698747457746618
+    }
+   },
+   "3": {
+    "planes": 131,
+    "lateral_direction_deg": 96.4521936137865,
+    "beam_type_share_of_inplane_motion": 0.9999634265147727,
+    "max_ovalisation_over_max_lateral": 3.632266031088955e-10,
+    "max_lobes_over_max_lateral": 1.0292555602375455e-09,
+    "perpendicular_over_main": 1.0857584552063615e-07,
+    "z_of_max_lateral_mm": 183.6736,
+    "lateral_at_ends_and_mid": [
+     0.004578746828231605,
+     0.017116696032656996,
+     -0.004702978972898558
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.65019131002335,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.008614994020539096,
+     "pinned_n1 sin(pi z/L)": 0.006836832779342877
+    }
+   },
+   "4": {
+    "planes": 131,
+    "lateral_direction_deg": -173.54780672545863,
+    "beam_type_share_of_inplane_motion": 0.9999634265144102,
+    "max_ovalisation_over_max_lateral": 3.315710229034778e-10,
+    "max_lobes_over_max_lateral": 1.376487119415349e-09,
+    "perpendicular_over_main": 6.063959033988804e-07,
+    "z_of_max_lateral_mm": 183.6736,
+    "lateral_at_ends_and_mid": [
+     0.004578747677184597,
+     0.017116195054842034,
+     -0.004702980752897583
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": 0.6501913094219841,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.00861470343860687,
+     "pinned_n1 sin(pi z/L)": 0.006836559077633052
+    }
+   },
+   "5": {
+    "planes": 131,
+    "lateral_direction_deg": 87.20001532700155,
+    "beam_type_share_of_inplane_motion": 0.9999466557991045,
+    "max_ovalisation_over_max_lateral": 7.274438824866704e-10,
+    "max_lobes_over_max_lateral": 1.5828775962277093e-09,
+    "perpendicular_over_main": 4.87289583968458e-07,
+    "z_of_max_lateral_mm": 149.4469,
+    "lateral_at_ends_and_mid": [
+     0.004734874632742382,
+     0.006601009165214862,
+     0.004828708892702563
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.0022830334595065403,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.2992970232132367,
+     "pinned_n1 sin(pi z/L)": 0.4899927194859963
+    }
+   },
+   "6": {
+    "planes": 131,
+    "lateral_direction_deg": 177.20001035875006,
+    "beam_type_share_of_inplane_motion": 0.9999466557914843,
+    "max_ovalisation_over_max_lateral": 1.0319930880409569e-08,
+    "max_lobes_over_max_lateral": 2.819815313941482e-09,
+    "perpendicular_over_main": 5.798307048315846e-07,
+    "z_of_max_lateral_mm": 149.4469,
+    "lateral_at_ends_and_mid": [
+     0.004734874548496214,
+     0.006600729081606574,
+     0.004828715052299816
+    ],
+    "correlation_with_reference_shapes": {
+     "guided_n1 cos(pi z/L)": -0.002283612164647511,
+     "guided_n2 / clamped_n1 cos(2pi z/L)": -0.2992968847217504,
+     "pinned_n1 sin(pi z/L)": 0.48999259131923345
+    }
+   }
+  }
+ }
+}

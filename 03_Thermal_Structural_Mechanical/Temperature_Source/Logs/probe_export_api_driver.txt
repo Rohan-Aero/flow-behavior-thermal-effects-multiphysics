@@ -1,0 +1,4 @@
+2026-09-25 00:42:51  fluent pid 12916 journal Journals/probe_fluent_export_api.py
+2026-09-25 00:45:09  fluent exited
+2026-09-25 00:45:12  case/data identical after run: True
+2026-09-25 00:45:12  driver done

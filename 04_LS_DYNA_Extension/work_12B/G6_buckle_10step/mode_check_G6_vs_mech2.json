@@ -1,0 +1,117 @@
+{
+ "timesteps": [
+  1.1094746294552227,
+  1.1094746295421434,
+  4.222592414225115,
+  4.222592414278454,
+  8.814079920192183,
+  8.81407992026107
+ ],
+ "n_nodes": 108252,
+ "L_m": 0.6,
+ "modes": [
+  {
+   "mode": 1,
+   "eigen_or_time": 1.1094746294552227,
+   "rigid_section_energy_fraction": 0.999998969717373,
+   "max_section_deformation_over_max_lateral": 0.0016021622904148609,
+   "max_axial_over_max_lateral": 0.10347096965543325,
+   "z_of_max_lateral_m": 0.6,
+   "midspan_over_max_lateral": 1.428512405997586e-05,
+   "cos_inlet_outlet_translation": -1.0,
+   "corr_cos_pi_z_L": 0.9999980201525521,
+   "corr_cos_2pi_z_L": 0.013884428606363334,
+   "corr_cos_3pi_z_L": 0.2947710175088706,
+   "lateral_direction_deg": 173.8835213599343
+  },
+  {
+   "mode": 2,
+   "eigen_or_time": 1.1094746295421434,
+   "rigid_section_energy_fraction": 0.999998969717373,
+   "max_section_deformation_over_max_lateral": 0.0016021622904493073,
+   "max_axial_over_max_lateral": 0.10347096965404533,
+   "z_of_max_lateral_m": 0.6,
+   "midspan_over_max_lateral": 1.4285120581034411e-05,
+   "cos_inlet_outlet_translation": -1.0000000000000002,
+   "corr_cos_pi_z_L": -0.9999980201525379,
+   "corr_cos_2pi_z_L": -0.01388442859928335,
+   "corr_cos_3pi_z_L": -0.294771017508913,
+   "lateral_direction_deg": 83.88352136050648
+  },
+  {
+   "mode": 3,
+   "eigen_or_time": 4.222592414225115,
+   "rigid_section_energy_fraction": 0.9999962478796565,
+   "max_section_deformation_over_max_lateral": 0.003042995694816849,
+   "max_axial_over_max_lateral": 0.10006701703495192,
+   "z_of_max_lateral_m": 0.0,
+   "midspan_over_max_lateral": 0.00295305865426593,
+   "cos_inlet_outlet_translation": 0.9999999999999999,
+   "corr_cos_pi_z_L": 0.024657267869810838,
+   "corr_cos_2pi_z_L": 0.9999471615850152,
+   "corr_cos_3pi_z_L": 0.014868745866863821,
+   "lateral_direction_deg": 58.52698545239867
+  },
+  {
+   "mode": 4,
+   "eigen_or_time": 4.222592414278454,
+   "rigid_section_energy_fraction": 0.9999962478796623,
+   "max_section_deformation_over_max_lateral": 0.0030429956929980827,
+   "max_axial_over_max_lateral": 0.10006701697605466,
+   "z_of_max_lateral_m": 0.0,
+   "midspan_over_max_lateral": 0.0029530592907999567,
+   "cos_inlet_outlet_translation": 1.0,
+   "corr_cos_pi_z_L": -0.02465726779758393,
+   "corr_cos_2pi_z_L": -0.9999471615856823,
+   "corr_cos_3pi_z_L": -0.014868745851411166,
+   "lateral_direction_deg": 148.5269855407166
+  },
+  {
+   "mode": 5,
+   "eigen_or_time": 8.814079920192183,
+   "rigid_section_energy_fraction": 0.9999412198872016,
+   "max_section_deformation_over_max_lateral": 0.012381184129916652,
+   "max_axial_over_max_lateral": 0.2791425428949304,
+   "z_of_max_lateral_m": 0.001062525,
+   "midspan_over_max_lateral": 0.0002378916781930529,
+   "cos_inlet_outlet_translation": -0.9999999999999998,
+   "corr_cos_pi_z_L": -0.29801696552374857,
+   "corr_cos_2pi_z_L": -0.025888997829809777,
+   "corr_cos_3pi_z_L": -0.9999231225714272,
+   "lateral_direction_deg": 70.28087503520995
+  },
+  {
+   "mode": 6,
+   "eigen_or_time": 8.81407992026107,
+   "rigid_section_energy_fraction": 0.9999412198872385,
+   "max_section_deformation_over_max_lateral": 0.012381184747859677,
+   "max_axial_over_max_lateral": 0.27914254568060165,
+   "z_of_max_lateral_m": 0.001062525,
+   "midspan_over_max_lateral": 0.00023789150268752196,
+   "cos_inlet_outlet_translation": -1.0,
+   "corr_cos_pi_z_L": 0.2980169654615468,
+   "corr_cos_2pi_z_L": 0.02588899789086608,
+   "corr_cos_3pi_z_L": 0.9999231225718291,
+   "lateral_direction_deg": 160.280875074944
+  }
+ ],
+ "mech_csv_header": [
+  "node",
+  "x_m",
+  "y_m",
+  "z_m",
+  "ux",
+  "uy",
+  "uz"
+ ],
+ "mech_csv_rows": 28296,
+ "mech_vs_LS_node_coordinate_max_abs_diff_m": 0.00010907281561362003,
+ "mech_disp_cols": [
+  "ux",
+  "uy",
+  "uz"
+ ],
+ "mech_mode1_captured_by_LS_pair": 0.9999997969525714,
+ "mac_mode1_vs_LS1": 0.03793061728239373,
+ "mac_mode1_vs_LS2": 0.9620691796663556
+}

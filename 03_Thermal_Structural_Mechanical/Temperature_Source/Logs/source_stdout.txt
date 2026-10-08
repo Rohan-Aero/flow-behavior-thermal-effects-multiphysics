@@ -1,0 +1,563 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\\fluent-20260924-195930-25096.trn".
+Auto-Transcript Start Time:  19:59:30, 24 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:61885 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  2604   12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  456    12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  16380  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  8148   12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  13028  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\07_Thermal_Analysis\\Temperature_Source\\cleanup-fluent-<HOST>-13028.bat
+
+<HOST> is already loaded (32.3744).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> """Section 7A - READ-ONLY export of the converged medium-mesh solid temperature field.
+
+Runs inside Fluent (fluent 3ddp -g -py -i ...) with the working directory
+07_Thermal_Analysis/Temperature_Source. It READS the Section 5B official case and data and never writes to
+06_Fluent_CFD (no write_case, no write_data, no iterate). The case/data SHA-256 are recorded by the driver
+before and after the run.
+
+Outputs (all in 07_Thermal_Analysis/Temperature_Source):
+  Audit/source_verification.json        read-back of the settings that define the field + Fluent's own reports
+  fluent_solid_cells.csv                every solid cell (43,200): centre x,y,z and cell temperature
+  fluent_solid_face_<zone>.csv          solid boundary faces: face-centroid x,y,z, face temperature, heat flux
+  fluent_solid_node_<zone>.csv          same boundaries, Fluent node values (validation only)
+RE-ANALYSIS 2026 - newly generated export of a newly generated CFD solution.
+"""
+"Section 7A - READ-ONLY export of the converged medium-mesh solid temperature field.\n\nRuns inside Fluent (fluent 3ddp -g -py -i ...) with the working directory\n07_Thermal_Analysis/Temperature_Source. It READS the Section 5B official case and data and never writes to\n06_Fluent_CFD (no write_case, no write_data, no iterate). The case/data SHA-256 are recorded by the driver\nbefore and after the run.\n\nOutputs (all in 07_Thermal_Analysis/Temperature_Source):\n  Audit/source_verification.json        read-back of the settings that define the field + Fluent's own reports\n  fluent_solid_cells.csv                every solid cell (43,200): centre x,y,z and cell temperature\n  fluent_solid_face_<zone>.csv          solid boundary faces: face-centroid x,y,z, face temperature, heat flux\n  fluent_solid_node_<zone>.csv          same boundaries, Fluent node values (validation only)\nRE-ANALYSIS 2026 - newly generated export of a newly generated CFD solution.\n"
+>>> import os, sys, json
+>>> sys.path.insert(0, "Journals")
+>>> from s5_common import *
+>>> from s5_common import _close
+>>> CASE = "../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5"
+>>> DATA = "../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5"
+>>> NZ, LEN, EXPECT_SOLID = 90, 0.600, 43200
+>>> FINAL_SCHEMES = {"pressure": "second-order", "mom": "second-order-upwind", "k": "second-order-upwind",
+                 "omega": "second-order-upwind", "temperature": "second-order-upwind"}
+>>> INC_T = [293.15, 373.15, 473.15, 573.15, 673.15]
+>>> INC_K = [11.5, 12.1, 13.5, 15.2, 17.1]
+>>> INC_CP = [460.0, 458.0, 468.0, 485.0, 501.0]
+>>> log("=" * 80)
+S5B ================================================================================
+>>> log("SECTION 7A - READ-ONLY EXPORT OF THE MEDIUM SOLID TEMPERATURE FIELD - RE-ANALYSIS 2026")
+S5B SECTION 7A - READ-ONLY EXPORT OF THE MEDIUM SOLID TEMPERATURE FIELD - RE-ANALYSIS 2026
+>>> log("=" * 80)
+S5B ================================================================================
+>>> solver.file.batch_options.confirm_overwrite = False
+>>> step("transcript", lambda: solver.file.start_transcript(file_name="Logs/source_transcript.trn"), critical=False)
+
+Opening input/output transcript to file "Logs/source_transcript.trn".
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  2604   12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  456    12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  16380  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  8148   12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  13028  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+S5B OK    transcript                                             
+>>> step("read case  " + CASE, lambda: solver.file.read_case(file_name=CASE))
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      159840 cells,     2 cell zones ...
+         116640 hexahedral cells,  zone id: 2
+          43200 hexahedral cells,  zone id: 3
+      487776 faces,     9 face zones ...
+         346464 quadrilateral interior faces,  zone id: 4
+         124800 quadrilateral interior faces,  zone id: 5
+           1296 quadrilateral velocity-inlet faces,  zone id: 6
+           1296 quadrilateral pressure-outlet faces,  zone id: 7
+           4320 quadrilateral wall faces,  zone id: 8
+           4320 quadrilateral wall faces,  zone id: 12
+           4320 quadrilateral wall faces,  zone id: 9
+            480 quadrilateral wall faces,  zone id: 10
+            480 quadrilateral wall faces,  zone id: 11
+      168163 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	distributing mesh
+		pairs....,
+		parts....,
+		faces....,
+		nodes....,
+		shadow nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 25341/982 = 25.8055
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+S5B OK    read case  ../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5 
+>>> step("read data  " + DATA, lambda: solver.file.read_data(file_name=DATA))
+
+Reading from <HOST>:"<PROJECT_ROOT>\07_Thermal_Analysis\Temperature_Source\../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+S5B OK    read data  ../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5 
+>>> G = solver.setup.general
+>>> M = solver.setup.models
+>>> inc = solver.setup.materials.solid["inconel-718"]
+>>> W = solver.setup.boundary_conditions.wall
+>>> S = solver.solution
+>>> ds = S.methods.spatial_discretization.discretization_scheme
+>>> ROWS = []
+>>> def chk(name, fn, expect=None, info=False):
+    try:
+        got = fn()
+        if info:
+            ok = True
+        elif isinstance(expect, float):
+            ok = _close(got, expect)
+        elif callable(expect):
+            ok = bool(expect(got))
+        else:
+            ok = (got == expect)
+    except Exception as e:
+        got, ok = "ERROR %s" % e, False
+    ROWS.append({"item": name, "value": got, "expected": "(recorded)" if info else (
+        expect if not callable(expect) else "see check"), "ok": ok})
+    log("CHECK %-4s %-46s %s" % ("ok" if ok else "FAIL", name, repr(got)[:100]))
+>>> def pw(prop):
+    return [(d["item"], d["value"]) for d in prop.piecewise_linear.data_points()]
+>>> chk("fluent version", lambda: solver.get_fluent_version(), info=True)
+S5B CHECK ok   fluent version                                 26.1.0
+>>> chk("solver time", lambda: G.solver.time(), "steady")
+S5B CHECK ok   solver time                                    'steady'
+>>> chk("energy equation", lambda: M.energy.enabled(), True)
+S5B CHECK ok   energy equation                                True
+>>> chk("viscous model", lambda: (M.viscous.model(), M.viscous.k_omega_model()), ("k-omega", "sst"))
+S5B CHECK ok   viscous model                                  ('k-omega', 'sst')
+>>> chk("solid cell zones", lambda: sorted(solver.setup.cell_zone_conditions.solid.get_object_names()), ["solid_domain"])
+S5B CHECK ok   solid cell zones                               ['solid_domain']
+>>> chk("solid zone material", lambda: solver.setup.cell_zone_conditions.solid["solid_domain"].general.material(),
+    "inconel-718")
+S5B CHECK ok   solid zone material                            'inconel-718'
+>>> chk("Inconel density [kg/m3]", lambda: (inc.density.option(), inc.density.value()), ("value", 8190.0))
+S5B CHECK ok   Inconel density [kg/m3]                        ('value', 8190.0)
+>>> chk("Inconel k piecewise-linear = VDM 4127", lambda: pw(inc.thermal_conductivity),
+    lambda g: len(g) == 5 and all(_close(a, t, 1e-9) and _close(b, v, 1e-9) for (a, b), t, v in zip(g, INC_T, INC_K)))
+S5B CHECK ok   Inconel k piecewise-linear = VDM 4127          [(293.15, 11.5), (373.15, 12.1), (473.15, 13.5), (573.15, 15.2), (673.15, 17.1)]
+>>> chk("Inconel cp piecewise-linear = VDM 4127", lambda: pw(inc.specific_heat),
+    lambda g: len(g) == 5 and all(_close(a, t, 1e-9) and _close(b, v, 1e-9) for (a, b), t, v in zip(g, INC_T, INC_CP)))
+S5B CHECK ok   Inconel cp piecewise-linear = VDM 4127         [(293.15, 460.0), (373.15, 458.0), (473.15, 468.0), (573.15, 485.0), (673.15, 501.0)]
+>>> for k, v in FINAL_SCHEMES.items():
+    chk("scheme %s (final, second order)" % k, (lambda kk=k: ds[kk]()), v)
+S5B CHECK ok   scheme pressure (final, second order)          'second-order'
+S5B CHECK ok   scheme mom (final, second order)               'second-order-upwind'
+S5B CHECK ok   scheme k (final, second order)                 'second-order-upwind'
+S5B CHECK ok   scheme omega (final, second order)             'second-order-upwind'
+S5B CHECK ok   scheme temperature (final, second order)       'second-order-upwind'
+>>> chk("heated wall", lambda: (W["heated_outer_wall"].thermal.thermal_condition(),
+                            W["heated_outer_wall"].thermal.heat_flux.value()), ("Heat Flux", 8000.0))
+S5B CHECK ok   heated wall                                    ('Heat Flux', 8000.0)
+>>> chk("interface coupling", lambda: (W["fluid_solid_interface"].thermal.thermal_condition(),
+                                   W["fluid_solid_interface-shadow"].thermal.thermal_condition()),
+    ("Coupled", "Coupled"))
+S5B CHECK ok   interface coupling                             ('Coupled', 'Coupled')
+>>> chk("solid ends adiabatic", lambda: (W["solid_inlet_end"].thermal.heat_flux.value(),
+                                     W["solid_outlet_end"].thermal.heat_flux.value()), (0.0, 0.0))
+S5B CHECK ok   solid ends adiabatic                           (0, 0)
+>>> chk("solution limits (temperature)", lambda: S.controls.limits(), info=True)
+S5B CHECK ok   solution limits (temperature)                  {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+>>> chk("equations solved", lambda: S.controls.equations(), info=True)
+S5B CHECK ok   equations solved                               {'flow': True, 'kw': True, 'temperature': True}
+>>> REP = {}
+>>> def compute_reports():
+    names = ["T_solid_max", "T_solid_min", "T_solid_mean", "T_outer_max", "T_wall_max", "T_inner_avg",
+             "T_outer_avg", "q_heated_wall", "q_interface", "q_net_all"]
+    out = S.report_definitions.compute(report_defs=names)
+    for d in out:
+        for k, v in d.items():
+            REP[k] = v
+    return REP
+>>> step("Fluent report definitions on the loaded data", compute_reports, critical=False)
+
+         T_solid_max
+ -------------------
+                             Max                 [K]
+-------------------------------- -------------------
+                    solid_domain            562.1271
+
+         T_solid_min
+ -------------------
+                             Min                 [K]
+-------------------------------- -------------------
+                    solid_domain           423.96647
+
+        T_solid_mean
+ -------------------
+                  Volume-Average                 [K]
+-------------------------------- -------------------
+                    solid_domain           525.48293
+
+         T_outer_max
+ -------------------
+                   Facet Maximum                 [K]
+-------------------------------- -------------------
+               heated_outer_wall           562.57678
+
+          T_wall_max
+ -------------------
+                   Facet Maximum                 [K]
+-------------------------------- -------------------
+           fluid_solid_interface           555.26709
+
+         T_inner_avg
+ -------------------
+           Area-Weighted Average                 [K]
+-------------------------------- -------------------
+           fluid_solid_interface           520.73994
+
+         T_outer_avg
+ -------------------
+           Area-Weighted Average                 [K]
+-------------------------------- -------------------
+               heated_outer_wall           528.46303
+
+       q_heated_wall
+ -------------------
+        Total Heat Transfer Rate                 [W]
+-------------------------------- -------------------
+               heated_outer_wall           602.75524
+
+         q_interface
+ -------------------
+        Total Heat Transfer Rate                 [W]
+-------------------------------- -------------------
+           fluid_solid_interface           602.75524
+
+           q_net_all
+ -------------------
+        Total Heat Transfer Rate                 [W]
+-------------------------------- -------------------
+                       q_net_all      -1.8553692e-10
+S5B OK    Fluent report definitions on the loaded data           {'T_solid_max': [562.1271022462935, 'K'], 'T_solid_min': [423.9664735799979, 'K'], 'T_solid_mean': [525.482934
+{'T_inner_avg': [520.7399438723266,
+                 'K'],
+ 'T_outer_avg': [528.4630291224228,
+                 'K'],
+ 'T_outer_max': [562.5767822265625,
+                 'K'],
+ 'T_solid_max': [562.1271022462935,
+                 'K'],
+ 'T_solid_mean': [525.4829345868314,
+                  'K'],
+ 'T_solid_min': [423.9664735799979,
+                 'K'],
+ 'T_wall_max': [555.26708984375,
+                'K'],
+ 'q_heated_wall': [602.7552389849993,
+                   'W'],
+ 'q_interface': [602.7552389840987,
+                 'W'],
+ 'q_net_all': [-1.855369191616774e-10,
+               'W']}
+>>> EXP = solver.file.export.ascii
+>>> ISO = solver.results.surfaces.iso_surface
+>>> dz = LEN / NZ
+>>> def make_iso(name, zval):
+    try:
+        ISO.create(name)
+    except Exception:
+        ISO[name] = {}
+    o = ISO[name]
+    o.field = "z-coordinate"
+    o.zones = ["solid_domain"]
+    o.iso_values = [zval]
+    return None
+>>> names = []
+>>> for k in range(NZ):
+    nm = "zs%02d" % k
+    if step("iso %s z=%.6f" % (nm, (k + 0.5) * dz), (lambda n=nm, z=(k + 0.5) * dz: make_iso(n, z)),
+            critical=(k == 0)) is None:
+        names.append(nm)
+S5B OK    iso zs00 z=0.003333                                    
+S5B OK    iso zs01 z=0.010000                                    
+S5B OK    iso zs02 z=0.016667                                    
+S5B OK    iso zs03 z=0.023333                                    
+S5B OK    iso zs04 z=0.030000                                    
+S5B OK    iso zs05 z=0.036667                                    
+S5B OK    iso zs06 z=0.043333                                    
+S5B OK    iso zs07 z=0.050000                                    
+S5B OK    iso zs08 z=0.056667                                    
+S5B OK    iso zs09 z=0.063333                                    
+S5B OK    iso zs10 z=0.070000                                    
+S5B OK    iso zs11 z=0.076667                                    
+S5B OK    iso zs12 z=0.083333                                    
+S5B OK    iso zs13 z=0.090000                                    
+S5B OK    iso zs14 z=0.096667                                    
+S5B OK    iso zs15 z=0.103333                                    
+S5B OK    iso zs16 z=0.110000                                    
+S5B OK    iso zs17 z=0.116667                                    
+S5B OK    iso zs18 z=0.123333                                    
+S5B OK    iso zs19 z=0.130000                                    
+S5B OK    iso zs20 z=0.136667                                    
+S5B OK    iso zs21 z=0.143333                                    
+S5B OK    iso zs22 z=0.150000                                    
+S5B OK    iso zs23 z=0.156667                                    
+S5B OK    iso zs24 z=0.163333                                    
+S5B OK    iso zs25 z=0.170000                                    
+S5B OK    iso zs26 z=0.176667                                    
+S5B OK    iso zs27 z=0.183333                                    
+S5B OK    iso zs28 z=0.190000                                    
+S5B OK    iso zs29 z=0.196667                                    
+S5B OK    iso zs30 z=0.203333                                    
+S5B OK    iso zs31 z=0.210000                                    
+S5B OK    iso zs32 z=0.216667                                    
+S5B OK    iso zs33 z=0.223333                                    
+S5B OK    iso zs34 z=0.230000                                    
+S5B OK    iso zs35 z=0.236667                                    
+S5B OK    iso zs36 z=0.243333                                    
+S5B OK    iso zs37 z=0.250000                                    
+S5B OK    iso zs38 z=0.256667                                    
+S5B OK    iso zs39 z=0.263333                                    
+S5B OK    iso zs40 z=0.270000                                    
+S5B OK    iso zs41 z=0.276667                                    
+S5B OK    iso zs42 z=0.283333                                    
+S5B OK    iso zs43 z=0.290000                                    
+S5B OK    iso zs44 z=0.296667                                    
+S5B OK    iso zs45 z=0.303333                                    
+S5B OK    iso zs46 z=0.310000                                    
+S5B OK    iso zs47 z=0.316667                                    
+S5B OK    iso zs48 z=0.323333                                    
+S5B OK    iso zs49 z=0.330000                                    
+S5B OK    iso zs50 z=0.336667                                    
+S5B OK    iso zs51 z=0.343333                                    
+S5B OK    iso zs52 z=0.350000                                    
+S5B OK    iso zs53 z=0.356667                                    
+S5B OK    iso zs54 z=0.363333                                    
+S5B OK    iso zs55 z=0.370000                                    
+S5B OK    iso zs56 z=0.376667                                    
+S5B OK    iso zs57 z=0.383333                                    
+S5B OK    iso zs58 z=0.390000                                    
+S5B OK    iso zs59 z=0.396667                                    
+S5B OK    iso zs60 z=0.403333                                    
+S5B OK    iso zs61 z=0.410000                                    
+S5B OK    iso zs62 z=0.416667                                    
+S5B OK    iso zs63 z=0.423333                                    
+S5B OK    iso zs64 z=0.430000                                    
+S5B OK    iso zs65 z=0.436667                                    
+S5B OK    iso zs66 z=0.443333                                    
+S5B OK    iso zs67 z=0.450000                                    
+S5B OK    iso zs68 z=0.456667                                    
+S5B OK    iso zs69 z=0.463333                                    
+S5B OK    iso zs70 z=0.470000                                    
+S5B OK    iso zs71 z=0.476667                                    
+S5B OK    iso zs72 z=0.483333                                    
+S5B OK    iso zs73 z=0.490000                                    
+S5B OK    iso zs74 z=0.496667                                    
+S5B OK    iso zs75 z=0.503333                                    
+S5B OK    iso zs76 z=0.510000                                    
+S5B OK    iso zs77 z=0.516667                                    
+S5B OK    iso zs78 z=0.523333                                    
+S5B OK    iso zs79 z=0.530000                                    
+S5B OK    iso zs80 z=0.536667                                    
+S5B OK    iso zs81 z=0.543333                                    
+S5B OK    iso zs82 z=0.550000                                    
+S5B OK    iso zs83 z=0.556667                                    
+S5B OK    iso zs84 z=0.563333                                    
+S5B OK    iso zs85 z=0.570000                                    
+S5B OK    iso zs86 z=0.576667                                    
+S5B OK    iso zs87 z=0.583333                                    
+S5B OK    iso zs88 z=0.590000                                    
+S5B OK    iso zs89 z=0.596667                                    
+>>> SQ = ["cell-zone", "cell-volume", "radial-coordinate", "temperature", "thermal-conductivity-lam"]
+>>> step("export solid cells", lambda: EXP(file_name="fluent_solid_cells.csv", surface_name_list=names,
+                                       delimiter="comma", quantities=SQ, location="cell-center"))
+
+Writing "fluent_solid_cells.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export solid cells                                     
+>>> FQ = ["face-area-magnitude", "radial-coordinate", "temperature", "heat-flux"]
+>>> for zone in ("heated_outer_wall", "fluid_solid_interface-shadow", "solid_inlet_end", "solid_outlet_end"):
+    step("export faces %s" % zone, (lambda z=zone: EXP(file_name="fluent_solid_face_%s.csv" % z,
+                                                        surface_name_list=[z], delimiter="comma",
+                                                        quantities=FQ, location="cell-center")))
+    step("export nodes %s" % zone, (lambda z=zone: EXP(file_name="fluent_solid_node_%s.csv" % z,
+                                                        surface_name_list=[z], delimiter="comma",
+                                                        quantities=["radial-coordinate", "temperature"],
+                                                        location="node")), critical=False)
+
+Writing "fluent_solid_face_heated_outer_wall.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export faces heated_outer_wall                         
+
+Writing "fluent_solid_node_heated_outer_wall.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export nodes heated_outer_wall                         
+
+Writing "fluent_solid_face_fluid_solid_interface-shadow.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export faces fluid_solid_interface-shadow              
+
+Writing "fluent_solid_node_fluid_solid_interface-shadow.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export nodes fluid_solid_interface-shadow              
+
+Writing "fluent_solid_face_solid_inlet_end.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export faces solid_inlet_end                           
+
+Writing "fluent_solid_node_solid_inlet_end.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export nodes solid_inlet_end                           
+
+Writing "fluent_solid_face_solid_outlet_end.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export faces solid_outlet_end                          
+
+Writing "fluent_solid_node_solid_outlet_end.csv"...
+
+Writing information to ascii file ...
+Done.
+
+S5B OK    export nodes solid_outlet_end                          
+>>> def count(path):
+    n = 0
+    with open(path) as fh:
+        fh.readline()
+        for _ in fh:
+            n += 1
+    return n
+>>> CNT = {}
+>>> for p in ["fluent_solid_cells.csv"] + ["fluent_solid_face_%s.csv" % z for z in
+                                       ("heated_outer_wall", "fluid_solid_interface-shadow",
+                                        "solid_inlet_end", "solid_outlet_end")]:
+    try:
+        CNT[p] = count(p)
+        log("ROWS %-50s %d" % (p, CNT[p]))
+    except Exception as e:
+        CNT[p] = "ERROR %s" % e
+S5B ROWS fluent_solid_cells.csv                             43200
+S5B ROWS fluent_solid_face_heated_outer_wall.csv            4320
+S5B ROWS fluent_solid_face_fluid_solid_interface-shadow.csv 4320
+S5B ROWS fluent_solid_face_solid_inlet_end.csv              480
+S5B ROWS fluent_solid_face_solid_outlet_end.csv             480
+>>> write_json("Audit/source_verification.json", {"case": CASE, "data": DATA, "checks": ROWS, "fluent_reports": REP,
+                                              "row_counts": CNT, "expected_solid_cells": EXPECT_SOLID,
+                                              "failures": FAIL})
+>>> log("CHECKS %d, failed %d; step failures %d" % (len(ROWS), sum(1 for r in ROWS if not r["ok"]), len(FAIL)))
+S5B CHECKS 19, failed 0; step failures 0
+>>> for f in FAIL:
+    log("   " + f)
+>>> flush_log("Logs/source_log.txt")
+>>> step("stop transcript", lambda: solver.file.stop_transcript(), critical=False)
+
+Transcript closed.
+S5B OK    stop transcript                                        
+>>> print("S7A-SOURCE-DONE")
+S7A-SOURCE-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  20:01:14, 24 Sep 2026 India Standard Time 
+Total Transcript Time: 1 Minute 43 Second.
+
+Automatic transcript closed.

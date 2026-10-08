@@ -1,0 +1,43 @@
+2026-09-26 11:23:25  start sway -b -np 2 -j bench_sway -i bench_sway.inp -o bench_sway.out
+2026-09-26 11:24:27  end sway exit=
+2026-09-26 11:24:27    file bench_main.inp 1762
+2026-09-26 11:24:27    file bench_reaction_inlet.txt 10251
+2026-09-26 11:24:27    file bench_sway.inp 36
+2026-09-26 11:24:27    file bench_sway.out 34962
+2026-09-26 11:24:27    file bench_sway0.err 80
+2026-09-26 11:24:27    file bench_sway0.log 90
+2026-09-26 11:24:27    file bench_sway1.err 80
+2026-09-26 11:24:27    file bench_sway1.out 14294
+2026-09-26 11:24:27    file s8a_buckle_snippet.inp 1782
+2026-09-26 11:24:27    file s8a_load_factors.csv 216
+2026-09-26 11:24:27    file s8a_mode1.csv 1158723
+2026-09-26 11:24:27    file s8a_mode2.csv 1158723
+2026-09-26 11:24:27    file s8a_mode3.csv 1158723
+2026-09-26 11:24:27    file s8a_mode4.csv 1158723
+2026-09-26 11:24:27    file s8a_mode5.csv 1158723
+2026-09-26 11:24:27    file s8a_mode6.csv 1158723
+2026-09-26 11:24:27    file s8a_set_list.txt 553
+2026-09-26 11:24:27    file stderr.txt 0
+2026-09-26 11:24:27    file stdout.txt 0
+2026-09-26 11:24:27  start nosway -b -np 2 -j bench_nosway -i bench_nosway.inp -o bench_nosway.out
+2026-09-26 11:25:23  end nosway exit=
+2026-09-26 11:25:23    file bench_main.inp 1762
+2026-09-26 11:25:23    file bench_nosway.inp 36
+2026-09-26 11:25:23    file bench_nosway.out 34381
+2026-09-26 11:25:23    file bench_nosway0.err 80
+2026-09-26 11:25:23    file bench_nosway0.log 90
+2026-09-26 11:25:23    file bench_nosway1.err 80
+2026-09-26 11:25:23    file bench_nosway1.out 14310
+2026-09-26 11:25:23    file bench_reaction_inlet.txt 10251
+2026-09-26 11:25:23    file s8a_buckle_snippet.inp 1782
+2026-09-26 11:25:23    file s8a_load_factors.csv 216
+2026-09-26 11:25:23    file s8a_mode1.csv 1158723
+2026-09-26 11:25:23    file s8a_mode2.csv 1158723
+2026-09-26 11:25:23    file s8a_mode3.csv 1158723
+2026-09-26 11:25:23    file s8a_mode4.csv 1158723
+2026-09-26 11:25:23    file s8a_mode5.csv 1158723
+2026-09-26 11:25:23    file s8a_mode6.csv 1158723
+2026-09-26 11:25:23    file s8a_set_list.txt 553
+2026-09-26 11:25:23    file stderr.txt 0
+2026-09-26 11:25:23    file stdout.txt 0
+2026-09-26 11:25:23  driver done

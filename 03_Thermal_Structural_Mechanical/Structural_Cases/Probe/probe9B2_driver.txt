@@ -1,0 +1,4 @@
+2026-09-26 22:40:58  launching runwb2 -B -R <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Probe\wb_probe_9B2.wbjn
+2026-09-26 22:40:58  pid 27324
+2026-09-26 22:43:49  runwb2 exited
+2026-09-26 22:43:49  driver done

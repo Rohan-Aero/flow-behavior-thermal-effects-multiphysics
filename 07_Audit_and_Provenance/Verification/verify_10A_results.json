@@ -1,0 +1,137 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 10A verification of 11_Final_Audit",
+ "run": "2026-09-27T23:11:25",
+ "passed": 11,
+ "total": 11,
+ "checks": [
+  {
+   "id": "V1",
+   "check": "the eight 10A deliverables exist in 11_Final_Audit",
+   "result": "PASS",
+   "detail": {
+    "missing": []
+   }
+  },
+  {
+   "id": "V2",
+   "check": "re-analysis notice at the top of every deliverable",
+   "result": "PASS",
+   "detail": {
+    "without_notice": []
+   }
+  },
+  {
+   "id": "V3",
+   "check": "no judgement words (safe / best / optimal / failure-proof) outside quoted scan-term lists",
+   "result": "PASS",
+   "detail": {
+    "hits": []
+   }
+  },
+  {
+   "id": "V4",
+   "check": "master CSV: header notice, sequential unique IDs, allowed statuses, no MISMATCH",
+   "result": "PASS",
+   "detail": {
+    "rows": 182,
+    "sequential": true,
+    "unexpected_status": [],
+    "status_counts": {
+     "INPUT": 20,
+     "DECISION": 2,
+     "VERIFIED": 124,
+     "REPORTED": 29,
+     "CROSS-CHECKED": 3,
+     "INTERPRETATION": 4
+    }
+   }
+  },
+  {
+   "id": "V5",
+   "check": "every recomputed item is in the CSV with the same status and a correctly rounded value",
+   "result": "PASS",
+   "detail": {
+    "items": 156,
+    "recomputed_status_counts": {
+     "VERIFIED": 124,
+     "REPORTED": 29,
+     "CROSS-CHECKED": 3
+    },
+    "problems": []
+   }
+  },
+  {
+   "id": "V6",
+   "check": "every file named in the 'Source file' column exists in the project",
+   "result": "PASS",
+   "detail": {
+    "paths_checked": 120,
+    "missing": [],
+    "non_file_references": [
+     "master rows S1 lambda1 and first-yield factor",
+     "master rows S2/S3 lambda1 and first-yield factor",
+     "reaction tables (7B LC2, 8A LC2NS, 9B-2 S3)",
+     "recomputed above"
+    ]
+   }
+  },
+  {
+   "id": "V7",
+   "check": "parametric tables in the synthesis and in MASTER_PROJECT_DATA.md equal the CSV cell by cell",
+   "result": "PASS",
+   "detail": {}
+  },
+  {
+   "id": "V8",
+   "check": "the brief's key numbers exist in the master data with their modelling level",
+   "result": "PASS",
+   "detail": {
+    "checked": 19,
+    "problems": []
+   }
+  },
+  {
+   "id": "V9",
+   "check": "content rules of the brief",
+   "result": "PASS",
+   "detail": {
+    "synthesis has parts 1-17 in order": true,
+    "audit inconsistency table has L-01..L-15": true,
+    "audit findings table has A..L": true,
+    "uncertainty register has 9 separate sources": true,
+    "no combined uncertainty percentage": true,
+    "supports not ranked (synthesis and audit)": true,
+    "lambda1 not called a factor of safety": true,
+    "Q03 / T01 labelled pre-buckling equilibrium": true,
+    "support values present in synthesis": true
+   }
+  },
+  {
+   "id": "V10",
+   "check": "project files unchanged since the 10A manifest except the three planned edits",
+   "result": "PASS",
+   "detail": {
+    "manifest_files": 4856,
+    "current_files": 4857,
+    "changed": [
+     "PROJECT_STATE.md",
+     "README.md"
+    ],
+    "added": [
+     "Claude outputs\\README_NOT_AUTHORITATIVE.md"
+    ],
+    "missing": [],
+    "mtime_only_same_hash": [],
+    "unexpected": []
+   }
+  },
+  {
+   "id": "V11",
+   "check": "no Python bytecode written into 11_Final_Audit",
+   "result": "PASS",
+   "detail": {
+    "pyc": []
+   }
+  }
+ ]
+}

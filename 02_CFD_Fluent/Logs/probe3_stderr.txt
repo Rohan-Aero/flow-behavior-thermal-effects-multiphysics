@@ -1,0 +1,9 @@
+
+Error: CAR: invalid argument [1]: wrong type [not a pair]
+Error Object: 250.
+
+Error: CAR: invalid argument [1]: wrong type [not a pair]
+Error Object: 250.
+
+Error: api-get-var: the object is not active
+Error Object: "solution/initialization/defaults"

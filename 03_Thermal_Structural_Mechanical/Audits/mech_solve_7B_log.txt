@@ -1,0 +1,537 @@
+15:13:54 === SECTION 7B MECHANICAL SOLVE (RE-ANALYSIS 2026) ===
+15:13:54 analyses ['LC1_Free_Expansion', 'LC2_Axially_Restrained', 'Static Structural']
+15:13:54 PASS  geometry: SOLID_DOMAIN active | expected not suppressed | found False
+15:13:54 PASS  geometry: FLUID_DOMAIN suppressed (structural model = solid only) | expected True | found True
+15:13:54 PASS  geometry: solid volume = pi(ro^2-ri^2)L (Di 20, Do 40, L 600 mm) | expected 5.654867e-04 m3 (+/-0.1%) | found 0.000565486677646
+15:13:54 PASS  material: SOLID_DOMAIN = Inconel_718_Re_analysis | expected Inconel_718_Re_analysis | found Inconel_718_Re_analysis
+15:13:54 PASS  mesh: node count | expected 108252 | found 108252
+15:13:54 PASS  mesh: element count | expected 23400 | found 23400
+15:13:54 PASS  mesh: quadratic elements | expected Quadratic | found Quadratic
+15:13:54 PASS  mesh: below measured Student MAPDL limit | expected < 128,000 nodes | found 108252
+15:13:54 PASS  mesh: no invalid elements (Jacobian ratio finite, < 40; element quality > 0) | expected JR max < 40, EQ min > 0 | found JR {'min': 1.1153, 'max': 1.2046000000000001, 'avg': 1.1534999999998823} / EQ {'min': 0.23667418368906179, 'max': 0.99120634986953271, 'avg': 0.68822512405436509}
+15:13:55 PASS  geometry: mesh extents r 10-20 mm, z 0-600 mm | expected r 0.010-0.020 m, z 0-0.600 m | found r 0.010000000-0.020000000 z 0.000000000-0.600000000 (108252 nodes)
+15:13:55 PASS  BC nodes: NS_LC1_SUPPORT_3NODES_INLET_OUTER = 7A ids at r 20 mm, z 0.0 m, 0/120/240 deg | expected [18870, 18882, 18894] | found [(18870, 0.02, 0.0, -120.0), (18882, 0.02, 0.0, 0.0), (18894, 0.02, 0.0, 120.0)]
+15:13:55 PASS  BC nodes: NS_LC2_HOOP_3NODES_MIDSPAN_OUTER = 7A ids at r 20 mm, z 0.3 m, 0/120/240 deg | expected [25862, 25874, 25886] | found [(25862, 0.02, 0.29999999999999999, -120.0), (25874, 0.02, 0.29999999999999999, 0.0), (25886, 0.02, 0.29999999999999999, 120.0)]
+15:13:55 PASS  CS_DUCT_CYL fully defined, cylindrical, origin 0,0,0 | expected FullyDefined / Cylindrical / (0,0,0) | found FullyDefined / Cylindrical / (0 [m],0 [m],0 [m])
+15:13:55 PASS  LC1: environment (stress-free reference) temperature = 300 K | expected 300 K | found 26.850000000000023 [C]
+15:13:55 LC1 imported temperature state on open: Solved
+15:13:56 PASS  LC1: mapped temperature identical to the 7A export (field unchanged) | expected byte-identical to 07_Thermal_Analysis/Mapping/Mechanical_Export/LC1_imported_body_temperature.txt | found identical
+15:13:56 PASS  LC1: imported temperature settings | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode (state on open Solved, now Solved)
+15:13:56 PASS  LC1: no unmapped nodes | expected 0 unmapped | found no unmapped-node NS created (0 unmapped)
+15:13:56 PASS  LC1: no under-defined / error objects | expected none | found []
+15:13:56 PASS  LC1: pressure objects suppressed (thermal-only case) | expected 2 pressure objects, both suppressed | found [('LC1_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC1_P_CFD_linear_fit_SUPPRESSED', True)]
+15:13:56 OK   LC1 LargeDeflection False
+15:13:56 OK   LC1 NumberOfSteps 1
+15:13:56 OK   LC1 SolverType ProgramControlled
+15:13:56 OK   LC1 WeakSprings Off
+15:13:56 OK   LC1 InertiaRelief False
+15:13:56 PASS  LC1: analysis settings (small deflection, 1 step, no inertia relief) | expected LargeDeflection off, 1 step, InertiaRelief off | found {'InertiaRelief': 'False', 'LargeDeflection': 'False', 'NumberOfSteps': '1', 'SolverType': 'ProgramControlled', 'WeakSprings': 'Off'}
+15:13:56 LC1 solution state before solve: NotSolved
+15:13:56 PASS  LC2: environment (stress-free reference) temperature = 300 K | expected 300 K | found 26.850000000000023 [C]
+15:13:56 LC2 imported temperature state on open: Solved
+15:13:57 PASS  LC2: mapped temperature identical to the 7A export (field unchanged) | expected byte-identical to 07_Thermal_Analysis/Mapping/Mechanical_Export/LC1_imported_body_temperature.txt | found identical
+15:13:57 PASS  LC2: imported temperature settings | expected Manual / BucketVolume / ShapeFunctions / NearestNode | found Manual / BucketVolume / ShapeFunctions / NearestNode (state on open Solved, now Solved)
+15:13:57 PASS  LC2: no unmapped nodes | expected 0 unmapped | found no unmapped-node NS created (0 unmapped)
+15:13:57 PASS  LC2: no under-defined / error objects | expected none | found []
+15:13:57 PASS  LC2: pressure objects suppressed (thermal-only case) | expected 2 pressure objects, both suppressed | found [('LC2_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC2_P_CFD_linear_fit_SUPPRESSED', True)]
+15:13:57 OK   LC2 LargeDeflection False
+15:13:57 OK   LC2 NumberOfSteps 1
+15:13:57 OK   LC2 SolverType ProgramControlled
+15:13:57 OK   LC2 WeakSprings Off
+15:13:57 OK   LC2 InertiaRelief False
+15:13:57 PASS  LC2: analysis settings (small deflection, 1 step, no inertia relief) | expected LargeDeflection off, 1 step, InertiaRelief off | found {'InertiaRelief': 'False', 'LargeDeflection': 'False', 'NumberOfSteps': '1', 'SolverType': 'ProgramControlled', 'WeakSprings': 'Off'}
+15:13:57 LC2 solution state before solve: NotSolved
+15:14:04 PASS  LC1 input vs 7A input: identical nblock section | expected identical | found identical
+15:14:05 PASS  LC1 input vs 7A input: identical eblock section | expected identical | found identical
+15:14:05 PASS  LC1 input vs 7A input: identical bf section | expected identical | found identical
+15:14:05 PASS  LC1 input vs 7A input: identical material section | expected identical | found identical
+15:14:05 PASS  LC1 input vs 7A input: identical resolved constraints (DOF, value, node set) | expected [('D', 'uy', 0.0, 3, 56646, 18870, 18894), ('D', 'uz', 0.0, 3, 56646, 18870, 18894), ('NROT_csys12', '', 0.0, 3, 56646, 18870, 18894)] | found [('D', 'uy', 0.0, 3, 56646, 18870, 18894), ('D', 'uz', 0.0, 3, 56646, 18870, 18894), ('NROT_csys12', '', 0.0, 3, 56646, 18870, 18894)]
+15:14:05 PASS  LC1 input: 108,252 nodes, 23,400 SOLID186, BF on all nodes | expected 108252 / 23400 / 108252 / et,1,186 | found 108252 / 23400 / 108252 / ['et,1,186']
+15:14:05 PASS  LC1 input: mapped T range 423.84-562.56 K | expected 423.84-562.56 K | found 423.837-562.558 K
+15:14:05 PASS  LC1 input: T_ref, density, E(T) table, nu 0.294 [ASSUMED], secant alpha(T) table, MPAMOD 21.11 | expected tref 26.85 C; DENS 8190; EX 204/199/193/187/180 GPa @20-400 C; NUXY 0.294; ALPX 12.8-14.8e-6 @93.33-537.78 C; MPAMOD 21.11 | found ['tref,26.85', 'MP,DENS,1,8190,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,NUXY,1, ,0.294,0.
+15:14:05 PASS  LC1 input: no weak springs | expected no wsprings | found False
+15:14:05 PASS  LC1 input: no elements other than the 23,400 SOLID186 | expected none | found []
+15:14:11 PASS  LC2 input vs 7A input: identical nblock section | expected identical | found identical
+15:14:11 PASS  LC2 input vs 7A input: identical eblock section | expected identical | found identical
+15:14:11 PASS  LC2 input vs 7A input: identical bf section | expected identical | found identical
+15:14:11 PASS  LC2 input vs 7A input: identical material section | expected identical | found identical
+15:14:11 PASS  LC2 input vs 7A input: identical resolved constraints (DOF, value, node set) | expected [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)] | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+15:14:11 PASS  LC2 input: 108,252 nodes, 23,400 SOLID186, BF on all nodes | expected 108252 / 23400 / 108252 / et,1,186 | found 108252 / 23400 / 108252 / ['et,1,186']
+15:14:11 PASS  LC2 input: mapped T range 423.84-562.56 K | expected 423.84-562.56 K | found 423.837-562.558 K
+15:14:11 PASS  LC2 input: T_ref, density, E(T) table, nu 0.294 [ASSUMED], secant alpha(T) table, MPAMOD 21.11 | expected tref 26.85 C; DENS 8190; EX 204/199/193/187/180 GPa @20-400 C; NUXY 0.294; ALPX 12.8-14.8e-6 @93.33-537.78 C; MPAMOD 21.11 | found ['tref,26.85', 'MP,DENS,1,8190,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,', 'MPTEMP,1,20', 'MPTEMP,2,100', 'MPTEMP,3,200', 'MPTEMP,4,300', 'MPTEMP,5,400', 'MPDATA,NUXY,1, ,0.294,0.
+15:14:11 PASS  LC2 input: no weak springs | expected no wsprings | found False
+15:14:11 PASS  LC2 input: no elements other than the 23,400 SOLID186 | expected none | found []
+15:14:11 PASS  LC1 constraints: 3 rotated nodes (csys 12), U_theta = 0 and U_z = 0 only | expected nrot(3, csys 12) + d uy + d uz on the same 3 nodes | found [('D', 'uy', 0.0, 3, 56646, 18870, 18894), ('D', 'uz', 0.0, 3, 56646, 18870, 18894), ('NROT_csys12', '', 0.0, 3, 56646, 18870, 18894)]
+15:14:11 PASS  LC2 constraints: U_z = 0 on 1,224 end-face nodes + 3 rotated mid-span nodes U_theta = 0 | expected d uz (1224 nodes) + nrot(3, csys 12) + d uy (3) | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+15:14:11 PASS  LC2P: External Data linked (imported load group present) | expected 1 | found 1
+15:14:24 OK   LC2P import 
+15:14:25 PASS  LC2P: mapped temperature identical to the 7A export | expected byte-identical | found identical
+15:14:26 OK   LC2P LargeDeflection False
+15:14:26 OK   LC2P NumberOfSteps 1
+15:14:26 OK   LC2P SolverType ProgramControlled
+15:14:26 OK   LC2P WeakSprings Off
+15:14:26 OK   LC2P InertiaRelief False
+15:14:26 PASS  LC2P: no under-defined / error objects | expected none | found []
+15:14:30 PASS  LC2P input vs LC2 input: identical nblock section | expected identical | found identical
+15:14:31 PASS  LC2P input vs LC2 input: identical eblock section | expected identical | found identical
+15:14:31 PASS  LC2P input vs LC2 input: identical bf section | expected identical | found identical
+15:14:31 PASS  LC2P input vs LC2 input: identical material section | expected identical | found identical
+15:14:31 PASS  LC2P input: same resolved constraints as LC2 | expected [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)] | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+15:14:31 PASS  LC2P input: pressure 443.41 Pa present | expected 443.41 in input | found ['sf,all,pres,443.41']
+15:14:31 PASS  LC2P input: pressure carried by 4,680 SURF154 elements (et,2,154) on the bore r = 10 mm only (36 x 130 faces) | expected 1 extra block, 4680 elements, all nodes at r = 0.010 m | found {'blocks': [{'header': 'eblock,21,COMPACT,,4680', 'count': 4680}], 'node_refs': 37440, 'r_min': 0.0099999999999999985, 'r_max': 0.010000000000000002}
+15:14:31 PASS  LC2 input: no pressure (thermal only) | expected no 443.41 | found False
+15:14:31 PASS  LC1 input: no pressure (thermal only) | expected no 443.41 | found False
+15:14:31 PRE-SOLVE GATE PASS (61 checks)
+15:14:31 OK   LC1 solver type -> Direct 
+15:14:31 OK   LC2 solver type -> Direct 
+15:14:31 OK   LC2P solver type -> Direct 
+15:14:31 OK   LC1 add Total_Deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000097 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:14:31 OK   LC1 add Axial_Deformation_Uz_global <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000098 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:14:31 OK   LC1 add Radial_Deformation_Ur_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000099 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:14:31 OK   LC1 add Equivalent_Stress_averaged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x000000000000009A [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:14:31 OK   LC1 add Equivalent_Stress_UNaveraged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x000000000000009B [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:14:31 OK   LC1 unaveraged 
+15:14:31 OK   LC1 add Maximum_Principal_Stress <Ansys.ACT.Automation.Mechanical.Results.StressResults.MaximumPrincipalStress object at 0x000000000000009C [Ansys.ACT.Automation.Mechanical.Results.StressResults.MaximumPrincipalStress]>
+15:14:31 OK   LC1 add Minimum_Principal_Stress <Ansys.ACT.Automation.Mechanical.Results.StressResults.MinimumPrincipalStress object at 0x000000000000009D [Ansys.ACT.Automation.Mechanical.Results.StressResults.MinimumPrincipalStress]>
+15:14:32 OK   LC1 add Axial_Stress_Sz_global <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x000000000000009E [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:32 OK   LC1 add Hoop_Stress_Stheta_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x000000000000009F [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:32 OK   LC1 add Radial_Stress_Sr_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000A0 [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:32 OK   LC1 add Equivalent_Elastic_Strain <Ansys.ACT.Automation.Mechanical.Results.StrainResults.EquivalentElasticStrain object at 0x00000000000000A1 [Ansys.ACT.Automation.Mechanical.Results.StrainResults.EquivalentElasticStrain]>
+15:14:32 OK   LC1 add Structural_Error <Ansys.ACT.Automation.Mechanical.Results.StressResults.StructuralError object at 0x00000000000000A2 [Ansys.ACT.Automation.Mechanical.Results.StressResults.StructuralError]>
+15:14:32 FAIL LC1 add Structural_Temperature: 'Solution' object has no attribute 'AddStructuralTemperature'
+15:14:32 OK   LC1 add Force_Reaction_LC1_SUPPORT_3NODES_DirectFE <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000A3 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:32 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE scoped to LC1_SUPPORT_3NODES_Utheta0_Uz0
+15:14:32 OK   LC1 add Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000A4 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:32 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE scoped to LC1_SUPPORT_3NODES_Utheta0_Uz0
+15:14:32 OK   LC1 MR summation about CS origin 
+15:14:32 OK   LC1 add APDL snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x00000000000000A5 [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+15:14:32 OK   LC1 snippet input 
+15:14:33 OK   LC2 add Total_Deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x00000000000000A6 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:14:33 OK   LC2 add Axial_Deformation_Uz_global <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x00000000000000A7 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:14:33 OK   LC2 add Radial_Deformation_Ur_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x00000000000000A8 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:14:33 OK   LC2 add Equivalent_Stress_averaged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x00000000000000A9 [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:14:33 OK   LC2 add Equivalent_Stress_UNaveraged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x00000000000000AA [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:14:33 OK   LC2 unaveraged 
+15:14:33 OK   LC2 add Maximum_Principal_Stress <Ansys.ACT.Automation.Mechanical.Results.StressResults.MaximumPrincipalStress object at 0x00000000000000AB [Ansys.ACT.Automation.Mechanical.Results.StressResults.MaximumPrincipalStress]>
+15:14:33 OK   LC2 add Minimum_Principal_Stress <Ansys.ACT.Automation.Mechanical.Results.StressResults.MinimumPrincipalStress object at 0x00000000000000AC [Ansys.ACT.Automation.Mechanical.Results.StressResults.MinimumPrincipalStress]>
+15:14:33 OK   LC2 add Axial_Stress_Sz_global <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000AD [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:33 OK   LC2 add Hoop_Stress_Stheta_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000AE [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:33 OK   LC2 add Radial_Stress_Sr_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000AF [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:33 OK   LC2 add Equivalent_Elastic_Strain <Ansys.ACT.Automation.Mechanical.Results.StrainResults.EquivalentElasticStrain object at 0x00000000000000B0 [Ansys.ACT.Automation.Mechanical.Results.StrainResults.EquivalentElasticStrain]>
+15:14:33 OK   LC2 add Structural_Error <Ansys.ACT.Automation.Mechanical.Results.StressResults.StructuralError object at 0x00000000000000B1 [Ansys.ACT.Automation.Mechanical.Results.StressResults.StructuralError]>
+15:14:33 FAIL LC2 add Structural_Temperature: 'Solution' object has no attribute 'AddStructuralTemperature'
+15:14:33 OK   LC2 add Force_Reaction_LC2_INLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000B2 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:34 OK   LC2 Force_Reaction_LC2_INLET_END scoped to LC2_INLET_END_Uz0
+15:14:34 OK   LC2 add Moment_Reaction_LC2_INLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000B3 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:34 OK   LC2 Moment_Reaction_LC2_INLET_END scoped to LC2_INLET_END_Uz0
+15:14:34 OK   LC2 MR summation about CS origin 
+15:14:34 OK   LC2 add Force_Reaction_LC2_OUTLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000B4 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:34 OK   LC2 Force_Reaction_LC2_OUTLET_END scoped to LC2_OUTLET_END_Uz0
+15:14:34 OK   LC2 add Moment_Reaction_LC2_OUTLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000B5 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:34 OK   LC2 Moment_Reaction_LC2_OUTLET_END scoped to LC2_OUTLET_END_Uz0
+15:14:34 OK   LC2 MR summation about CS origin 
+15:14:34 OK   LC2 add Force_Reaction_LC2_HOOP_3NODES_DirectFE <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000B6 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:35 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE scoped to LC2_HOOP_3NODES_MIDSPAN_Utheta0
+15:14:35 OK   LC2 add Moment_Reaction_LC2_HOOP_3NODES_DirectFE <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000B7 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:35 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE scoped to LC2_HOOP_3NODES_MIDSPAN_Utheta0
+15:14:35 OK   LC2 MR summation about CS origin 
+15:14:35 OK   LC2 add APDL snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x00000000000000B8 [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+15:14:35 OK   LC2 snippet input 
+15:14:35 OK   LC2P add Total_Deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x00000000000000B9 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:14:35 OK   LC2P add Axial_Deformation_Uz_global <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x00000000000000BA [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:14:35 OK   LC2P add Radial_Deformation_Ur_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x00000000000000BB [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:14:35 OK   LC2P add Equivalent_Stress_averaged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x00000000000000BC [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:14:35 OK   LC2P add Equivalent_Stress_UNaveraged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x00000000000000BD [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:14:35 OK   LC2P unaveraged 
+15:14:35 OK   LC2P add Maximum_Principal_Stress <Ansys.ACT.Automation.Mechanical.Results.StressResults.MaximumPrincipalStress object at 0x00000000000000BE [Ansys.ACT.Automation.Mechanical.Results.StressResults.MaximumPrincipalStress]>
+15:14:36 OK   LC2P add Minimum_Principal_Stress <Ansys.ACT.Automation.Mechanical.Results.StressResults.MinimumPrincipalStress object at 0x00000000000000BF [Ansys.ACT.Automation.Mechanical.Results.StressResults.MinimumPrincipalStress]>
+15:14:36 OK   LC2P add Axial_Stress_Sz_global <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000C0 [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:36 OK   LC2P add Hoop_Stress_Stheta_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000C1 [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:36 OK   LC2P add Radial_Stress_Sr_CS_DUCT_CYL <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x00000000000000C2 [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:14:36 OK   LC2P add Equivalent_Elastic_Strain <Ansys.ACT.Automation.Mechanical.Results.StrainResults.EquivalentElasticStrain object at 0x00000000000000C3 [Ansys.ACT.Automation.Mechanical.Results.StrainResults.EquivalentElasticStrain]>
+15:14:36 OK   LC2P add Structural_Error <Ansys.ACT.Automation.Mechanical.Results.StressResults.StructuralError object at 0x00000000000000C4 [Ansys.ACT.Automation.Mechanical.Results.StressResults.StructuralError]>
+15:14:36 FAIL LC2P add Structural_Temperature: 'Solution' object has no attribute 'AddStructuralTemperature'
+15:14:36 OK   LC2P add Force_Reaction_LC2P_INLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000C5 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:36 OK   LC2P Force_Reaction_LC2P_INLET_END scoped to LC2P_INLET_END_Uz0
+15:14:36 OK   LC2P add Moment_Reaction_LC2P_INLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000C6 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:36 OK   LC2P Moment_Reaction_LC2P_INLET_END scoped to LC2P_INLET_END_Uz0
+15:14:36 OK   LC2P MR summation about CS origin 
+15:14:37 OK   LC2P add Force_Reaction_LC2P_OUTLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000C7 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:37 OK   LC2P Force_Reaction_LC2P_OUTLET_END scoped to LC2P_OUTLET_END_Uz0
+15:14:37 OK   LC2P add Moment_Reaction_LC2P_OUTLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000C8 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:37 OK   LC2P Moment_Reaction_LC2P_OUTLET_END scoped to LC2P_OUTLET_END_Uz0
+15:14:37 OK   LC2P MR summation about CS origin 
+15:14:37 OK   LC2P add Force_Reaction_LC2P_HOOP_3NODES_DirectFE <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000C9 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:14:37 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE scoped to LC2P_HOOP_3NODES_MIDSPAN_Utheta0
+15:14:37 OK   LC2P add Moment_Reaction_LC2P_HOOP_3NODES_DirectFE <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x00000000000000CA [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:14:37 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE scoped to LC2P_HOOP_3NODES_MIDSPAN_Utheta0
+15:14:37 OK   LC2P MR summation about CS origin 
+15:14:38 OK   LC2P add APDL snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x00000000000000CB [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+15:14:38 OK   LC2P snippet input 
+15:14:40 OK   LC1 write final input 
+15:14:44 OK   LC2 write final input 
+15:14:48 OK   LC2P write final input 
+15:14:51 FAIL graphics true scale: global name 'DeformationScaling' is not defined
+15:14:51 OK   graphics scale 1 
+15:14:51 OK   graphics readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)
+15:14:51 SOLVING LC1 ...
+15:15:59 OK   LC1 solve 
+15:15:59 LC1 solved: state Solved status Done in 68 s; messages []
+15:16:00 OK   LC1 evaluate all results 
+15:16:00 OK   LC1 Total_Deformation Maximum 0.0018443073450347429 [m]
+15:16:00 OK   LC1 Total_Deformation Minimum 1.6744322956242991E-05 [m]
+15:16:00 OK   LC1 Total_Deformation Average 0.00086162231389768946 [m]
+15:16:01 OK   LC1 export Total_Deformation 
+15:16:01 OK   LC1 Axial_Deformation_Uz_global Maximum 0.0018429411575198174 [m]
+15:16:01 OK   LC1 Axial_Deformation_Uz_global Minimum -2.6448213064078629E-10 [m]
+15:16:01 OK   LC1 Axial_Deformation_Uz_global Average 0.00085841394162044734 [m]
+15:16:01 OK   LC1 export Axial_Deformation_Uz_global 
+15:16:01 OK   LC1 Radial_Deformation_Ur_CS_DUCT_CYL Maximum 7.1571758404305228E-05 [m]
+15:16:01 OK   LC1 Radial_Deformation_Ur_CS_DUCT_CYL Minimum 1.636135815759789E-05 [m]
+15:16:01 OK   LC1 Radial_Deformation_Ur_CS_DUCT_CYL Average 4.4842387310236504E-05 [m]
+15:16:02 OK   LC1 export Radial_Deformation_Ur_CS_DUCT_CYL 
+15:16:02 OK   LC1 Equivalent_Stress_averaged Maximum 24282182.951123707 [Pa]
+15:16:02 OK   LC1 Equivalent_Stress_averaged Minimum 259244.17667387432 [Pa]
+15:16:02 OK   LC1 Equivalent_Stress_averaged Average 8565857.7343567014 [Pa]
+15:16:02 OK   LC1 export Equivalent_Stress_averaged 
+15:16:02 OK   LC1 Equivalent_Stress_UNaveraged Maximum 24355971.092357233 [Pa]
+15:16:02 OK   LC1 Equivalent_Stress_UNaveraged Minimum 254375.0525165791 [Pa]
+15:16:02 OK   LC1 Equivalent_Stress_UNaveraged Average 7662450.8228437053 [Pa]
+15:16:02 OK   LC1 Maximum_Principal_Stress Maximum 27973406.565989289 [Pa]
+15:16:02 OK   LC1 Maximum_Principal_Stress Minimum -90840.128844035469 [Pa]
+15:16:02 OK   LC1 Maximum_Principal_Stress Average 5683765.234961167 [Pa]
+15:16:03 OK   LC1 export Maximum_Principal_Stress 
+15:16:03 OK   LC1 Minimum_Principal_Stress Maximum 2887404.0064737974 [Pa]
+15:16:03 OK   LC1 Minimum_Principal_Stress Minimum -20968782.209365342 [Pa]
+15:16:03 OK   LC1 Minimum_Principal_Stress Average -3387549.6091906377 [Pa]
+15:16:03 OK   LC1 export Minimum_Principal_Stress 
+15:16:03 OK   LC1 Axial_Stress_Sz_global Maximum 18580108 [Pa]
+15:16:03 OK   LC1 Axial_Stress_Sz_global Minimum -11598030.25 [Pa]
+15:16:03 OK   LC1 Axial_Stress_Sz_global Average 1736954.7642743634 [Pa]
+15:16:04 OK   LC1 export Axial_Stress_Sz_global 
+15:16:04 OK   LC1 Hoop_Stress_Stheta_CS_DUCT_CYL Maximum 27973383.38777091 [Pa]
+15:16:04 OK   LC1 Hoop_Stress_Stheta_CS_DUCT_CYL Minimum -20968769.698185217 [Pa]
+15:16:04 OK   LC1 Hoop_Stress_Stheta_CS_DUCT_CYL Average 351222.75898577907 [Pa]
+15:16:04 OK   LC1 export Hoop_Stress_Stheta_CS_DUCT_CYL 
+15:16:04 OK   LC1 Radial_Stress_Sr_CS_DUCT_CYL Maximum 4381767.5695281047 [Pa]
+15:16:04 OK   LC1 Radial_Stress_Sr_CS_DUCT_CYL Minimum -209105.67052550198 [Pa]
+15:16:04 OK   LC1 Radial_Stress_Sr_CS_DUCT_CYL Average 1446121.0482432682 [Pa]
+15:16:04 OK   LC1 export Radial_Stress_Sr_CS_DUCT_CYL 
+15:16:04 OK   LC1 Equivalent_Elastic_Strain Maximum 0.00012408641452266812 [m m^-1]
+15:16:04 OK   LC1 Equivalent_Elastic_Strain Minimum 1.3804771719797895E-06 [m m^-1]
+15:16:04 OK   LC1 Equivalent_Elastic_Strain Average 4.5020793168017613E-05 [m m^-1]
+15:16:05 OK   LC1 export Equivalent_Elastic_Strain 
+15:16:05 OK   LC1 Structural_Error Maximum 1.9057770135222754E-09 [J]
+15:16:05 OK   LC1 Structural_Error Minimum 6.2085073206268221E-11 [J]
+15:16:05 OK   LC1 Structural_Error Average 7.4415584721087024E-06 [J]
+15:16:05 OK   LC1 export Structural_Error 
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE XAxis 7.7646825726884971E-08 [N]
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE YAxis 3.866251878648087E-07 [N]
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE ZAxis 2.2809181071670181E-09 [N]
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE Total 3.9435170599906305E-07 [N]
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000D6 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE LocationMethod BoundaryCondition
+15:16:05 OK   LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE Summation Centroid
+15:16:05 FAIL LC1 Force_Reaction_LC1_SUPPORT_3NODES_DirectFE SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE XAxis -2.0457667032973247E-07 [N m]
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE YAxis 4.2409958612765459E-08 [N m]
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE ZAxis 1.7933205798119542E-08 [N m]
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE Total 2.0969458386647529E-07 [N m]
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000D6 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE LocationMethod BoundaryCondition
+15:16:05 OK   LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE Summation OrientationSystem
+15:16:05 FAIL LC1 Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:16:06 FAIL graphics true scale: global name 'DeformationScaling' is not defined
+15:16:06 OK   graphics scale 1 
+15:16:06 OK   graphics readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)
+15:16:10 OK   image LC1_00_Imported_Temperature iso (None, None, None, None)
+15:16:10 OK   image LC1_00_Imported_Temperature side (None, None, None, None)
+15:16:11 OK   image LC1_Total_Deformation iso (None, None, None, None)
+15:16:11 OK   image LC1_Total_Deformation side (None, None, None, None)
+15:16:12 OK   image LC1_Axial_Deformation_Uz_global iso (None, None, None, None)
+15:16:12 OK   image LC1_Axial_Deformation_Uz_global side (None, None, None, None)
+15:16:13 OK   image LC1_Radial_Deformation_Ur_CS_DUCT_CYL iso (None, None, None, None)
+15:16:13 OK   image LC1_Radial_Deformation_Ur_CS_DUCT_CYL side (None, None, None, None)
+15:16:13 OK   image LC1_Equivalent_Stress_averaged iso (None, None, None, None)
+15:16:14 OK   image LC1_Equivalent_Stress_averaged side (None, None, None, None)
+15:16:15 OK   image LC1_Equivalent_Stress_UNaveraged iso (None, None, None, None)
+15:16:15 OK   image LC1_Equivalent_Stress_UNaveraged side (None, None, None, None)
+15:16:15 OK   image LC1_Maximum_Principal_Stress iso (None, None, None, None)
+15:16:16 OK   image LC1_Maximum_Principal_Stress side (None, None, None, None)
+15:16:16 OK   image LC1_Minimum_Principal_Stress iso (None, None, None, None)
+15:16:16 OK   image LC1_Minimum_Principal_Stress side (None, None, None, None)
+15:16:17 OK   image LC1_Axial_Stress_Sz_global iso (None, None, None, None)
+15:16:17 OK   image LC1_Axial_Stress_Sz_global side (None, None, None, None)
+15:16:17 OK   image LC1_Hoop_Stress_Stheta_CS_DUCT_CYL iso (None, None, None, None)
+15:16:18 OK   image LC1_Hoop_Stress_Stheta_CS_DUCT_CYL side (None, None, None, None)
+15:16:18 OK   image LC1_Radial_Stress_Sr_CS_DUCT_CYL iso (None, None, None, None)
+15:16:19 OK   image LC1_Radial_Stress_Sr_CS_DUCT_CYL side (None, None, None, None)
+15:16:19 OK   image LC1_Equivalent_Elastic_Strain iso (None, None, None, None)
+15:16:19 OK   image LC1_Equivalent_Elastic_Strain side (None, None, None, None)
+15:16:20 OK   image LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE iso (None, None, None, None)
+15:16:20 OK   image LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE side (None, None, None, None)
+15:16:20 SOLVING LC2 ...
+15:17:24 OK   LC2 solve 
+15:17:24 LC2 solved: state Solved status Done in 64 s; messages []
+15:17:25 OK   LC2 evaluate all results 
+15:17:25 OK   LC2 Total_Deformation Maximum 0.0001348842790853183 [m]
+15:17:25 OK   LC2 Total_Deformation Minimum 2.6759350782612561E-05 [m]
+15:17:25 OK   LC2 Total_Deformation Average 8.7879513848026239E-05 [m]
+15:17:25 OK   LC2 export Total_Deformation 
+15:17:25 OK   LC2 Axial_Deformation_Uz_global Maximum 0 [m]
+15:17:25 OK   LC2 Axial_Deformation_Uz_global Minimum -0.00010875624866457656 [m]
+15:17:25 OK   LC2 Axial_Deformation_Uz_global Average -5.9359478614046181E-05 [m]
+15:17:26 OK   LC2 export Axial_Deformation_Uz_global 
+15:17:26 OK   LC2 Radial_Deformation_Ur_CS_DUCT_CYL Maximum 8.9734010160285162E-05 [m]
+15:17:26 OK   LC2 Radial_Deformation_Ur_CS_DUCT_CYL Minimum 2.6745319755702546E-05 [m]
+15:17:26 OK   LC2 Radial_Deformation_Ur_CS_DUCT_CYL Average 5.8356262881672141E-05 [m]
+15:17:26 OK   LC2 export Radial_Deformation_Ur_CS_DUCT_CYL 
+15:17:26 OK   LC2 Equivalent_Stress_averaged Maximum 605160873.38074636 [Pa]
+15:17:26 OK   LC2 Equivalent_Stress_averaged Minimum 561219217.69242561 [Pa]
+15:17:26 OK   LC2 Equivalent_Stress_averaged Average 581628367.48040009 [Pa]
+15:17:26 OK   LC2 export Equivalent_Stress_averaged 
+15:17:26 OK   LC2 Equivalent_Stress_UNaveraged Maximum 605185329.08066726 [Pa]
+15:17:26 OK   LC2 Equivalent_Stress_UNaveraged Minimum 561194449.98568213 [Pa]
+15:17:26 OK   LC2 Equivalent_Stress_UNaveraged Average 581713156.78565264 [Pa]
+15:17:26 OK   LC2 Maximum_Principal_Stress Maximum 48584465.809348524 [Pa]
+15:17:26 OK   LC2 Maximum_Principal_Stress Minimum -146641.88105857663 [Pa]
+15:17:26 OK   LC2 Maximum_Principal_Stress Average 5368777.51248935 [Pa]
+15:17:27 OK   LC2 export Maximum_Principal_Stress 
+15:17:27 OK   LC2 Minimum_Principal_Stress Maximum -538198865.62079906 [Pa]
+15:17:27 OK   LC2 Minimum_Principal_Stress Minimum -613496797.71015179 [Pa]
+15:17:27 OK   LC2 Minimum_Principal_Stress Average -580564763.84318531 [Pa]
+15:17:27 OK   LC2 export Minimum_Principal_Stress 
+15:17:27 OK   LC2 Axial_Stress_Sz_global Maximum -538198832 [Pa]
+15:17:27 OK   LC2 Axial_Stress_Sz_global Minimum -613496736 [Pa]
+15:17:27 OK   LC2 Axial_Stress_Sz_global Average -580564383.98462844 [Pa]
+15:17:27 OK   LC2 export Axial_Stress_Sz_global 
+15:17:27 OK   LC2 Hoop_Stress_Stheta_CS_DUCT_CYL Maximum 48584453.63203612 [Pa]
+15:17:27 OK   LC2 Hoop_Stress_Stheta_CS_DUCT_CYL Minimum -18280635.762958009 [Pa]
+15:17:27 OK   LC2 Hoop_Stress_Stheta_CS_DUCT_CYL Average 480889.24722448766 [Pa]
+15:17:27 OK   LC2 export Hoop_Stress_Stheta_CS_DUCT_CYL 
+15:17:27 OK   LC2 Radial_Stress_Sr_CS_DUCT_CYL Maximum 7559502.6530930921 [Pa]
+15:17:27 OK   LC2 Radial_Stress_Sr_CS_DUCT_CYL Minimum -146658.37500000035 [Pa]
+15:17:27 OK   LC2 Radial_Stress_Sr_CS_DUCT_CYL Average 1507066.132286886 [Pa]
+15:17:28 OK   LC2 export Radial_Stress_Sr_CS_DUCT_CYL 
+15:17:28 OK   LC2 Equivalent_Elastic_Strain Maximum 0.00313088198859073 [m m^-1]
+15:17:28 OK   LC2 Equivalent_Elastic_Strain Minimum 0.002866360431839709 [m m^-1]
+15:17:28 OK   LC2 Equivalent_Elastic_Strain Average 0.0030588097054694932 [m m^-1]
+15:17:28 OK   LC2 export Equivalent_Elastic_Strain 
+15:17:28 OK   LC2 Structural_Error Maximum 2.5356842773900687E-09 [J]
+15:17:28 OK   LC2 Structural_Error Minimum 3.780955536761454E-11 [J]
+15:17:28 OK   LC2 Structural_Error Average 7.1482439538073817E-06 [J]
+15:17:28 OK   LC2 export Structural_Error 
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END XAxis 0 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END YAxis 0 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END ZAxis 548936.61375303147 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END Total 548936.61375303147 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EA [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END LocationMethod BoundaryCondition
+15:17:28 OK   LC2 Force_Reaction_LC2_INLET_END Summation Centroid
+15:17:28 FAIL LC2 Force_Reaction_LC2_INLET_END SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END XAxis 1.6709841288431448E-09 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END YAxis -2.0749748586013084E-09 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END ZAxis 0 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END Total 2.664152514904731E-09 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EA [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END LocationMethod BoundaryCondition
+15:17:28 OK   LC2 Moment_Reaction_LC2_INLET_END Summation OrientationSystem
+15:17:28 FAIL LC2 Moment_Reaction_LC2_INLET_END SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END XAxis 0 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END YAxis 0 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END ZAxis -548936.61375305 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END Total 548936.61375305 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EB [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END LocationMethod BoundaryCondition
+15:17:28 OK   LC2 Force_Reaction_LC2_OUTLET_END Summation Centroid
+15:17:28 FAIL LC2 Force_Reaction_LC2_OUTLET_END SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END XAxis -3.77600883894047E-09 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END YAxis -1.6345573783382861E-09 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END ZAxis 0 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END Total 4.1146106225056934E-09 [N m]
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EB [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END LocationMethod BoundaryCondition
+15:17:28 OK   LC2 Moment_Reaction_LC2_OUTLET_END Summation OrientationSystem
+15:17:28 FAIL LC2 Moment_Reaction_LC2_OUTLET_END SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE XAxis 1.3478937723548877E-09 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE YAxis 9.4984197396286163E-08 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE ZAxis 0 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE Total 9.499376070373362E-08 [N]
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000EC [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE LocationMethod BoundaryCondition
+15:17:28 OK   LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE Summation Centroid
+15:17:29 FAIL LC2 Force_Reaction_LC2_HOOP_3NODES_DirectFE SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE XAxis -2.8495260351185718E-08 [N m]
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE YAxis 4.0436814777461217E-10 [N m]
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE ZAxis 2.4338097639841246E-09 [N m]
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE Total 2.8601867177652158E-08 [N m]
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000EC [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE LocationMethod BoundaryCondition
+15:17:29 OK   LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE Summation OrientationSystem
+15:17:29 FAIL LC2 Moment_Reaction_LC2_HOOP_3NODES_DirectFE SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:17:29 FAIL graphics true scale: global name 'DeformationScaling' is not defined
+15:17:29 OK   graphics scale 1 
+15:17:29 OK   graphics readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)
+15:17:30 OK   image LC2_00_Imported_Temperature iso (None, None, None, None)
+15:17:30 OK   image LC2_00_Imported_Temperature side (None, None, None, None)
+15:17:31 OK   image LC2_Total_Deformation iso (None, None, None, None)
+15:17:31 OK   image LC2_Total_Deformation side (None, None, None, None)
+15:17:32 OK   image LC2_Axial_Deformation_Uz_global iso (None, None, None, None)
+15:17:32 OK   image LC2_Axial_Deformation_Uz_global side (None, None, None, None)
+15:17:32 OK   image LC2_Radial_Deformation_Ur_CS_DUCT_CYL iso (None, None, None, None)
+15:17:33 OK   image LC2_Radial_Deformation_Ur_CS_DUCT_CYL side (None, None, None, None)
+15:17:33 OK   image LC2_Equivalent_Stress_averaged iso (None, None, None, None)
+15:17:34 OK   image LC2_Equivalent_Stress_averaged side (None, None, None, None)
+15:17:34 OK   image LC2_Equivalent_Stress_UNaveraged iso (None, None, None, None)
+15:17:35 OK   image LC2_Equivalent_Stress_UNaveraged side (None, None, None, None)
+15:17:35 OK   image LC2_Maximum_Principal_Stress iso (None, None, None, None)
+15:17:35 OK   image LC2_Maximum_Principal_Stress side (None, None, None, None)
+15:17:36 OK   image LC2_Minimum_Principal_Stress iso (None, None, None, None)
+15:17:36 OK   image LC2_Minimum_Principal_Stress side (None, None, None, None)
+15:17:37 OK   image LC2_Axial_Stress_Sz_global iso (None, None, None, None)
+15:17:37 OK   image LC2_Axial_Stress_Sz_global side (None, None, None, None)
+15:17:37 OK   image LC2_Hoop_Stress_Stheta_CS_DUCT_CYL iso (None, None, None, None)
+15:17:38 OK   image LC2_Hoop_Stress_Stheta_CS_DUCT_CYL side (None, None, None, None)
+15:17:38 OK   image LC2_Radial_Stress_Sr_CS_DUCT_CYL iso (None, None, None, None)
+15:17:39 OK   image LC2_Radial_Stress_Sr_CS_DUCT_CYL side (None, None, None, None)
+15:17:39 OK   image LC2_Equivalent_Elastic_Strain iso (None, None, None, None)
+15:17:39 OK   image LC2_Equivalent_Elastic_Strain side (None, None, None, None)
+15:17:40 OK   image LC2_Force_Reaction_LC2_INLET_END iso (None, None, None, None)
+15:17:40 OK   image LC2_Force_Reaction_LC2_INLET_END side (None, None, None, None)
+15:17:41 OK   image LC2_Force_Reaction_LC2_OUTLET_END iso (None, None, None, None)
+15:17:41 OK   image LC2_Force_Reaction_LC2_OUTLET_END side (None, None, None, None)
+15:17:42 OK   image LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE iso (None, None, None, None)
+15:17:42 OK   image LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE side (None, None, None, None)
+15:17:42 SOLVING LC2P ...
+15:18:45 OK   LC2P solve 
+15:18:45 LC2P solved: state Solved status Done in 63 s; messages []
+15:18:46 OK   LC2P evaluate all results 
+15:18:46 OK   LC2P Total_Deformation Maximum 0.00013488429663734432 [m]
+15:18:46 OK   LC2P Total_Deformation Minimum 2.6759394609122497E-05 [m]
+15:18:46 OK   LC2P Total_Deformation Average 8.7879537786334321E-05 [m]
+15:18:46 OK   LC2P export Total_Deformation 
+15:18:46 OK   LC2P Axial_Deformation_Uz_global Maximum 0 [m]
+15:18:46 OK   LC2P Axial_Deformation_Uz_global Minimum -0.00010875624866457656 [m]
+15:18:46 OK   LC2P Axial_Deformation_Uz_global Average -5.9359478612651504E-05 [m]
+15:18:47 OK   LC2P export Axial_Deformation_Uz_global 
+15:18:47 OK   LC2P Radial_Deformation_Ur_CS_DUCT_CYL Maximum 8.9734032063631716E-05 [m]
+15:18:47 OK   LC2P Radial_Deformation_Ur_CS_DUCT_CYL Minimum 2.6745363582212604E-05 [m]
+15:18:47 OK   LC2P Radial_Deformation_Ur_CS_DUCT_CYL Average 5.8356297326654117E-05 [m]
+15:18:47 OK   LC2P export Radial_Deformation_Ur_CS_DUCT_CYL 
+15:18:47 OK   LC2P Equivalent_Stress_averaged Maximum 605160918.41220629 [Pa]
+15:18:47 OK   LC2P Equivalent_Stress_averaged Minimum 561219348.74773955 [Pa]
+15:18:47 OK   LC2P Equivalent_Stress_averaged Average 581628431.49322987 [Pa]
+15:18:47 OK   LC2P export Equivalent_Stress_averaged 
+15:18:47 OK   LC2P Equivalent_Stress_UNaveraged Maximum 605185405.8463726 [Pa]
+15:18:47 OK   LC2P Equivalent_Stress_UNaveraged Minimum 561194597.1354332 [Pa]
+15:18:47 OK   LC2P Equivalent_Stress_UNaveraged Average 581713219.36672807 [Pa]
+15:18:47 OK   LC2P Maximum_Principal_Stress Maximum 48585203.56092903 [Pa]
+15:18:47 OK   LC2P Maximum_Principal_Stress Minimum -146640.31855560953 [Pa]
+15:18:47 OK   LC2P Maximum_Principal_Stress Average 5368953.2292952975 [Pa]
+15:18:47 OK   LC2P export Maximum_Principal_Stress 
+15:18:47 OK   LC2P Minimum_Principal_Stress Maximum -538198769.620828 [Pa]
+15:18:47 OK   LC2P Minimum_Principal_Stress Minimum -613496701.71016145 [Pa]
+15:18:47 OK   LC2P Minimum_Principal_Stress Average -580564676.99533439 [Pa]
+15:18:48 OK   LC2P export Minimum_Principal_Stress 
+15:18:48 OK   LC2P Axial_Stress_Sz_global Maximum -538198736 [Pa]
+15:18:48 OK   LC2P Axial_Stress_Sz_global Minimum -613496640 [Pa]
+15:18:48 OK   LC2P Axial_Stress_Sz_global Average -580564297.13660717 [Pa]
+15:18:48 OK   LC2P export Axial_Stress_Sz_global 
+15:18:48 OK   LC2P Hoop_Stress_Stheta_CS_DUCT_CYL Maximum 48585191.383945785 [Pa]
+15:18:48 OK   LC2P Hoop_Stress_Stheta_CS_DUCT_CYL Minimum -18280340.009585492 [Pa]
+15:18:48 OK   LC2P Hoop_Stress_Stheta_CS_DUCT_CYL Average 481343.51670038083 [Pa]
+15:18:48 OK   LC2P export Hoop_Stress_Stheta_CS_DUCT_CYL 
+15:18:48 OK   LC2P Radial_Stress_Sr_CS_DUCT_CYL Maximum 7559349.0866335873 [Pa]
+15:18:48 OK   LC2P Radial_Stress_Sr_CS_DUCT_CYL Minimum -146656.81250000073 [Pa]
+15:18:48 OK   LC2P Radial_Stress_Sr_CS_DUCT_CYL Average 1506907.5663877719 [Pa]
+15:18:49 OK   LC2P export Radial_Stress_Sr_CS_DUCT_CYL 
+15:18:49 OK   LC2P Equivalent_Elastic_Strain Maximum 0.0031308822859384719 [m m^-1]
+15:18:49 OK   LC2P Equivalent_Elastic_Strain Minimum 0.0028663610607215996 [m m^-1]
+15:18:49 OK   LC2P Equivalent_Elastic_Strain Average 0.0030588100414492103 [m m^-1]
+15:18:49 OK   LC2P export Equivalent_Elastic_Strain 
+15:18:49 OK   LC2P Structural_Error Maximum 2.5357173853993465E-09 [J]
+15:18:49 OK   LC2P Structural_Error Minimum 3.7785428445158404E-11 [J]
+15:18:49 OK   LC2P Structural_Error Average 7.14842698638607E-06 [J]
+15:18:49 OK   LC2P export Structural_Error 
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END XAxis 0 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END YAxis 0 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END ZAxis 548936.53184399707 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END Total 548936.53184399707 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000104 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END LocationMethod BoundaryCondition
+15:18:49 OK   LC2P Force_Reaction_LC2P_INLET_END Summation Centroid
+15:18:49 FAIL LC2P Force_Reaction_LC2P_INLET_END SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END XAxis 7.3679506940038664E-10 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END YAxis 1.321521558850236E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END ZAxis 0 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END Total 1.5130387320880714E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000104 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END LocationMethod BoundaryCondition
+15:18:49 OK   LC2P Moment_Reaction_LC2P_INLET_END Summation OrientationSystem
+15:18:49 FAIL LC2P Moment_Reaction_LC2P_INLET_END SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END XAxis 0 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END YAxis 0 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END ZAxis -548936.53184400487 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END Total 548936.53184400487 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000105 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END LocationMethod BoundaryCondition
+15:18:49 OK   LC2P Force_Reaction_LC2P_OUTLET_END Summation Centroid
+15:18:49 FAIL LC2P Force_Reaction_LC2P_OUTLET_END SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END XAxis -3.9757299674647584E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END YAxis 1.6798402668882773E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END ZAxis 0 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END Total 4.3160505206098559E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000105 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END LocationMethod BoundaryCondition
+15:18:49 OK   LC2P Moment_Reaction_LC2P_OUTLET_END Summation OrientationSystem
+15:18:49 FAIL LC2P Moment_Reaction_LC2P_OUTLET_END SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE XAxis 6.286043490546093E-09 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE YAxis 6.9444296535436933E-08 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE ZAxis 0 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE Total 6.9728219997836855E-08 [N]
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x0000000000000106 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE LocationMethod BoundaryCondition
+15:18:49 OK   LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE Summation Centroid
+15:18:49 FAIL LC2P Force_Reaction_LC2P_HOOP_3NODES_DirectFE SummationPoint: 'ForceReaction' object has no attribute 'SummationPoint'
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE XAxis -2.0833289788471612E-08 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE YAxis 1.8858131220993058E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE ZAxis 2.548115241282383E-09 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE Total 2.1073090561775056E-08 [N m]
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE BoundaryConditionSelection <Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x0000000000000106 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE LocationMethod BoundaryCondition
+15:18:49 OK   LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE Summation OrientationSystem
+15:18:49 FAIL LC2P Moment_Reaction_LC2P_HOOP_3NODES_DirectFE SummationPoint: 'MomentReaction' object has no attribute 'SummationPoint'
+15:18:50 FAIL graphics true scale: global name 'DeformationScaling' is not defined
+15:18:50 OK   graphics scale 1 
+15:18:50 OK   graphics readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)
+15:18:51 OK   image LC2P_00_Imported_Temperature iso (None, None, None, None)
+15:18:51 OK   image LC2P_00_Imported_Temperature side (None, None, None, None)
+15:18:52 OK   image LC2P_Total_Deformation iso (None, None, None, None)
+15:18:52 OK   image LC2P_Total_Deformation side (None, None, None, None)
+15:18:52 OK   image LC2P_Axial_Deformation_Uz_global iso (None, None, None, None)
+15:18:53 OK   image LC2P_Axial_Deformation_Uz_global side (None, None, None, None)
+15:18:53 OK   image LC2P_Radial_Deformation_Ur_CS_DUCT_CYL iso (None, None, None, None)
+15:18:54 OK   image LC2P_Radial_Deformation_Ur_CS_DUCT_CYL side (None, None, None, None)
+15:18:54 OK   image LC2P_Equivalent_Stress_averaged iso (None, None, None, None)
+15:18:54 OK   image LC2P_Equivalent_Stress_averaged side (None, None, None, None)
+15:18:55 OK   image LC2P_Equivalent_Stress_UNaveraged iso (None, None, None, None)
+15:18:55 OK   image LC2P_Equivalent_Stress_UNaveraged side (None, None, None, None)
+15:18:56 OK   image LC2P_Maximum_Principal_Stress iso (None, None, None, None)
+15:18:56 OK   image LC2P_Maximum_Principal_Stress side (None, None, None, None)
+15:18:56 OK   image LC2P_Minimum_Principal_Stress iso (None, None, None, None)
+15:18:57 OK   image LC2P_Minimum_Principal_Stress side (None, None, None, None)
+15:18:57 OK   image LC2P_Axial_Stress_Sz_global iso (None, None, None, None)
+15:18:57 OK   image LC2P_Axial_Stress_Sz_global side (None, None, None, None)
+15:18:58 OK   image LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL iso (None, None, None, None)
+15:18:58 OK   image LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL side (None, None, None, None)
+15:18:58 OK   image LC2P_Radial_Stress_Sr_CS_DUCT_CYL iso (None, None, None, None)
+15:18:59 OK   image LC2P_Radial_Stress_Sr_CS_DUCT_CYL side (None, None, None, None)
+15:18:59 OK   image LC2P_Equivalent_Elastic_Strain iso (None, None, None, None)
+15:19:00 OK   image LC2P_Equivalent_Elastic_Strain side (None, None, None, None)
+15:19:00 OK   image LC2P_Force_Reaction_LC2P_INLET_END iso (None, None, None, None)
+15:19:00 OK   image LC2P_Force_Reaction_LC2P_INLET_END side (None, None, None, None)
+15:19:01 OK   image LC2P_Force_Reaction_LC2P_OUTLET_END iso (None, None, None, None)
+15:19:01 OK   image LC2P_Force_Reaction_LC2P_OUTLET_END side (None, None, None, None)
+15:19:02 OK   image LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE iso (None, None, None, None)
+15:19:02 OK   image LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE side (None, None, None, None)
+15:19:02 MECH-SOLVE-7B-DONE

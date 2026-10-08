@@ -1,0 +1,791 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\06_Fluent_CFD\Mesh_Independence\Coarse\\fluent-20260923-234202-3420.trn".
+Auto-Transcript Start Time:  23:42:02, 23 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:53772 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  23988  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  21392  12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  25028  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  12372  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  9856   12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\06_Fluent_CFD\\Mesh_Independence\\Coarse\\cleanup-fluent-<HOST>-9856.bat
+
+<HOST> is already loaded (44.2703).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import os, sys, math, re, json
+>>> sys.path.insert(0, "Journals")
+>>> from s5_common import *
+>>> from s5_common import _close
+>>> TAG = os.environ.get("BASE_TAG", "coarse")
+>>> STDOUT = "Logs/%s_stdout.txt" % TAG
+>>> TRN = "Logs/%s_transcript.trn" % TAG
+>>> MON = "Monitors/coarse_monitors.out"
+>>> MED_CASE = "../../Case/baseline_medium_final.cas.h5"
+>>> MED_AUDIT = "../../Audit/setup_audit_%s.json"
+>>> MESH = "../../../05_Meshing/Mesh_Coarse/coarse.msh"
+>>> EXPECT_CELLS, EXPECT_FLUID, EXPECT_SOLID, NZ, LEN = 51840, 38400, 13440, 60, 0.600
+>>> EXPECT_ZONES = {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"],
+                "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"],
+                "wall": sorted(["fluid_solid_interface", "fluid_solid_interface-shadow", "heated_outer_wall",
+                                "solid_inlet_end", "solid_outlet_end"]),
+                # the settings API does not list interior zones; interior-fluid / interior-solid are
+                # confirmed from Fluent's own replace-mesh output ("Setting zone id of ...") instead
+                "interior": []}
+>>> FLOW_IT = 150
+>>> ENERGY_IT = 150
+>>> CHUNK = 100
+>>> MAX_STAGE3 = 3000
+>>> WINDOW = 200
+>>> P_OP, T_IN, V_IN, QPP = 101325.0, 300.0, 23.5, 8000.0
+>>> INC_RHO = 8190.0
+>>> AIR_T = [250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]
+>>> AIR_CP = [1006.0, 1007.0, 1009.0, 1014.0, 1021.0, 1030.0, 1040.0, 1051.0]
+>>> AIR_MU = [1.596e-5, 1.846e-5, 2.082e-5, 2.301e-5, 2.507e-5, 2.701e-5, 2.884e-5, 3.058e-5]
+>>> AIR_K = [0.02227, 0.02624, 0.03003, 0.03365, 0.03707, 0.04038, 0.04360, 0.04659]
+>>> INC_T = [293.15, 373.15, 473.15, 573.15, 673.15]
+>>> INC_CP = [460.0, 458.0, 468.0, 485.0, 501.0]
+>>> INC_K = [11.5, 12.1, 13.5, 15.2, 17.1]
+>>> TI = 0.16 * 29957.0 ** (-0.125)
+>>> RES_TARGET = {"continuity": 1e-4, "x-velocity": 1e-4, "y-velocity": 1e-4, "z-velocity": 1e-4,
+              "k": 1e-4, "omega": 1e-4, "energy": 1e-6}
+>>> ABS_DRIFT_K = {"T_out_bulk": 0.1, "T_solid_max": 0.1, "T_wall_max": 0.1, "T_outer_max": 0.1}
+>>> REL_DRIFT = {"dp_area": 1e-3, "q_interface": 1e-3, "mdot_out": 1e-4}
+>>> MASS_TOL = 1e-4
+>>> ENERGY_TOL = 5e-3
+>>> log("=" * 80)
+S5B ================================================================================
+>>> log("SECTION 6A COARSE-MESH SOLVE (mesh-independence point) - RE-ANALYSIS 2026")
+S5B SECTION 6A COARSE-MESH SOLVE (mesh-independence point) - RE-ANALYSIS 2026
+>>> log("=" * 80)
+S5B ================================================================================
+>>> solver.file.batch_options.confirm_overwrite = False
+>>> step("transcript", lambda: solver.file.start_transcript(file_name=TRN), critical=False)
+
+Opening input/output transcript to file "Logs/auditonly_transcript.trn".
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  23988  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  21392  12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  25028  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  12372  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  9856   12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+S5B OK    transcript                                             
+>>> step("read medium final CASE for its settings (data NOT read)", lambda: solver.file.read_case(file_name=MED_CASE))
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Mesh_Independence\Coarse\../../Case/baseline_medium_final.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+      159840 cells,     2 cell zones ...
+         116640 hexahedral cells,  zone id: 2
+          43200 hexahedral cells,  zone id: 3
+      487776 faces,     9 face zones ...
+         346464 quadrilateral interior faces,  zone id: 4
+         124800 quadrilateral interior faces,  zone id: 5
+           1296 quadrilateral velocity-inlet faces,  zone id: 6
+           1296 quadrilateral pressure-outlet faces,  zone id: 7
+           4320 quadrilateral wall faces,  zone id: 8
+           4320 quadrilateral wall faces,  zone id: 12
+           4320 quadrilateral wall faces,  zone id: 9
+            480 quadrilateral wall faces,  zone id: 10
+            480 quadrilateral wall faces,  zone id: 11
+      168163 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	distributing mesh
+		pairs....,
+		parts....,
+		faces....,
+		nodes....,
+		shadow nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 25341/982 = 25.8055
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+S5B OK    read medium final CASE for its settings (data NOT read) 
+>>> def snap():
+    return {"setup": solver.setup(), "solution": solver.solution()}
+>>> def sdiff(a, b, path=""):
+    d = []
+    if isinstance(a, dict) and isinstance(b, dict):
+        for k in sorted(set(a) | set(b)):
+            if k not in a or k not in b:
+                d.append((path + "/" + str(k), str(a.get(k, "<absent>"))[:200], str(b.get(k, "<absent>"))[:200]))
+            else:
+                d += sdiff(a[k], b[k], path + "/" + str(k))
+    elif isinstance(a, list) and isinstance(b, list) and len(a) == len(b):
+        for i, (x, y) in enumerate(zip(a, b)):
+            d += sdiff(x, y, "%s[%d]" % (path, i))
+    elif a != b:
+        d.append((path, str(a)[:200], str(b)[:200]))
+    return d
+>>> SNAP_MED = step("snapshot medium settings", snap)
+S5B OK    snapshot medium settings                               {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+>>> write_json("Audit/settings_state_medium_case.json", SNAP_MED)
+>>> step("REPLACE MESH -> coarse.msh (settings kept by Fluent)", lambda: solver.mesh.replace(file_name=MESH))
+
+Writing Settings to string...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing fluid_domain (type fluid) (mixture) ... Done.
+	writing solid_domain (type solid) (mixture) ... Done.
+	writing interior-fluid (type interior) (mixture) ... Done.
+	writing interior-solid (type interior) (mixture) ... Done.
+	writing fluid_inlet (type velocity-inlet) (mixture) ... Done.
+	writing fluid_outlet (type pressure-outlet) (mixture) ... Done.
+	writing fluid_solid_interface (type wall) (mixture) ... Done.
+	writing heated_outer_wall (type wall) (mixture) ... Done.
+	writing solid_inlet_end (type wall) (mixture) ... Done.
+	writing solid_outlet_end (type wall) (mixture) ... Done.
+	writing fluid_solid_interface-shadow (type wall) (mixture) ... Done.
+	writing zones map name-id ... Done.
+
+Reading "../../../05_Meshing/Mesh_Coarse/coarse.msh"...
+
+Buffering for file scan...
+
+   53741 nodes.
+   38400 hexahedral cells, zone 13.
+
+Changing thread id 2 to 13
+   13440 hexahedral cells, zone 14.
+
+Changing thread id 3 to 14
+  113600 quadrilateral interior faces, zone 15.
+
+Changing thread id 4 to 15
+   38176 quadrilateral interior faces, zone 16.
+
+Changing thread id 5 to 16
+     640 quadrilateral velocity-inlet faces, zone 17.
+
+Changing thread id 6 to 17
+     640 quadrilateral pressure-outlet faces, zone 18.
+
+Changing thread id 7 to 18
+    1920 quadrilateral wall faces, zone 19.
+
+Changing thread id 8 to 19
+    1920 quadrilateral wall faces, zone 20.
+
+Changing thread id 9 to 20
+     224 quadrilateral wall faces, zone 21.
+
+Changing thread id 10 to 21
+     224 quadrilateral wall faces, zone 22.
+
+Changing thread id 11 to 22
+
+Parallel variables...
+Building...
+     mesh
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 8448/471 = 17.9363
+     materials,
+     zones,
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+        creating fluid_solid_interface-shadow
+Done.
+WARNING: Surface groupings have changed. This has
+resulted in surface list selection changes
+for the following report definitions:
+area_in
+yplus_avg
+yplus_min
+T_inner_avg
+T_outer_avg
+T_outer_max
+T_in_bulk
+p_out_area
+p_in_area
+yplus_max
+v_out_max
+T_wall_max
+T_out_bulk
+p_out
+p_in
+
+Reading Settings from string...
+
+ Setting zone id of fluid_domain to 2.
+ Setting zone id of solid_domain to 3.
+ Setting zone id of fluid_solid_interface-shadow to 12.
+ Setting zone id of interior-fluid to 4.
+ Setting zone id of interior-solid to 5.
+ Setting zone id of fluid_inlet to 6.
+ Setting zone id of fluid_outlet to 7.
+ Setting zone id of fluid_solid_interface to 8.
+ Setting zone id of heated_outer_wall to 9.
+ Setting zone id of solid_inlet_end to 10.
+ Setting zone id of solid_outlet_end to 11.
+Done.
+
+Setting fluid_domain (mixture) ... Done.
+Setting solid_domain (mixture) ... Done.
+Setting interior-fluid (mixture) ... Done.
+Setting interior-solid (mixture) ... Done.
+Setting fluid_inlet (mixture) ... Done.
+Setting fluid_outlet (mixture) ... Done.
+Setting fluid_solid_interface (mixture) ... Done.
+Setting heated_outer_wall (mixture) ... Done.
+Setting solid_inlet_end (mixture) ... Done.
+Setting solid_outlet_end (mixture) ... Done.
+Setting fluid_solid_interface-shadow (mixture) ... Done.
+
+Found new zone. Assigning default settings to interior-fluid-to-be-deleted (type interior).
+Found new zone. Assigning default settings to interior-solid-to-be-deleted (type interior).
+Found new zone. Assigning default settings to fluid_inlet-to-be-deleted (type velocity-inlet).
+Found new zone. Assigning default settings to fluid_outlet-to-be-deleted (type pressure-outlet).
+Found new zone. Assigning default settings to fluid_solid_interface-to-be-deleted (type wall).
+Found new zone. Assigning default settings to heated_outer_wall-to-be-deleted (type wall).
+Found new zone. Assigning default settings to solid_inlet_end-to-be-deleted (type wall).
+Found new zone. Assigning default settings to solid_outlet_end-to-be-deleted (type wall).
+Found new zone. Assigning default settings to fluid_solid_interface-shadow-to-be-deleted (type wall).
+
+
+Deleting cell zone 27.
+Deleting cell zone 28.S5B OK    REPLACE MESH -> coarse.msh (settings kept by Fluent)   
+>>> step("mesh check", lambda: solver.mesh.check())
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+   minimum volume (m3): 2.049465e-10
+   maximum volume (m3): 1.056568e-07
+     total volume (m3): 7.491468e-04
+ Face area statistics:
+   minimum face area (m2): 2.049465e-08
+   maximum face area (m2): 3.920686e-05
+ Checking mesh..........................................
+ Done.
+S5B OK    mesh check                                             
+>>> step("mesh size_info", lambda: solver.mesh.size_info())
+
+Mesh Size
+
+Level    Cells    Faces    Nodes   Partitions
+    0    51840   159264    55629            4
+
+ 2 cell zones, 9 face zones.
+S5B OK    mesh size_info                                         
+>>> SNAP_CRS = step("snapshot coarse settings", snap)
+S5B OK    snapshot coarse settings                               {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+>>> write_json("Audit/settings_state_coarse_case.json", SNAP_CRS)
+>>> DIFF0 = sdiff(SNAP_MED, SNAP_CRS) if (SNAP_MED and SNAP_CRS) else [("snapshot", "failed", "failed")]
+>>> write_json("Audit/settings_diff_medium_vs_coarse_after_replace.json",
+           [{"path": p, "medium": x, "coarse": y} for p, x, y in DIFF0])
+>>> log("SETTINGS DIFF medium -> coarse after replace: %d differences" % len(DIFF0))
+S5B SETTINGS DIFF medium -> coarse after replace: 0 differences
+>>> for p, x, y in DIFF0[:50]:
+    log("  DIFF %s : %s -> %s" % (p, x, y))
+>>> def scan_mesh_text():
+    """Cell count and minimum cell volume, as printed by Fluent itself."""
+    cells = minvol = None
+    for path in (STDOUT, TRN):
+        if not os.path.isfile(path):
+            continue
+        txt = open(path, "r", errors="ignore").read()
+        m = re.findall(r"Level\s+Cells\s+Faces\s+Nodes\s+Partitions\s*\n\s*0\s+(\d+)\s+(\d+)\s+(\d+)", txt)
+        if m:
+            cells = int(m[-1][0])
+        v = re.findall(r"minimum volume \(m3\):\s*([-+0-9.eE]+)", txt)
+        if v:
+            minvol = float(v[-1])
+        if cells is not None and minvol is not None:
+            break
+    return {"cells": cells, "min_volume_m3": minvol}
+>>> MESHINFO = step("mesh size/volume as printed by Fluent", scan_mesh_text)
+S5B OK    mesh size/volume as printed by Fluent                  {'cells': 51840, 'min_volume_m3': 2.049465e-10}
+>>> def scan_zone_ids():
+    for path in (STDOUT, TRN):
+        if os.path.isfile(path):
+            ids = re.findall(r"Setting zone id of (\S+) to (\d+)\.", open(path, "r", errors="ignore").read())
+            if ids:
+                return {n: int(i) for n, i in ids}
+    return {}
+>>> ZONE_IDS = step("zone ids as printed by Fluent's replace", scan_zone_ids, critical=False)
+S5B OK    zone ids as printed by Fluent's replace                {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'interior-soli
+>>> ZONES = {}
+>>> for kind in ("fluid", "solid"):
+    ZONES["cell_" + kind] = sorted(getattr(solver.setup.cell_zone_conditions, kind).get_object_names())
+>>> for kind in ("velocity_inlet", "pressure_outlet", "wall", "interior"):
+    ZONES[kind] = sorted(getattr(solver.setup.boundary_conditions, kind).get_object_names())
+>>> log("ZONES " + json.dumps(ZONES))
+S5B ZONES {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"], "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"], "wall": ["fluid_solid_interface", "fluid_solid_interface-shadow", "heated_outer_wall", "solid_inlet_end", "solid_outlet_end"], "interior": []}
+>>> write_json("Audit/coarse_mesh_zones.json", {"zones": ZONES, "zone_ids_from_replace": ZONE_IDS,
+                                           "mesh": MESHINFO, "mesh_file": MESH})
+>>> G = solver.setup.general
+>>> M = solver.setup.models
+>>> air = solver.setup.materials.fluid["air"]
+>>> inc = solver.setup.materials.solid["inconel-718"]
+>>> BC = solver.setup.boundary_conditions
+>>> W = BC.wall
+>>> inl = BC.velocity_inlet["fluid_inlet"]
+>>> out = BC.pressure_outlet["fluid_outlet"]
+>>> S = solver.solution
+>>> ds = S.methods.spatial_discretization.discretization_scheme
+>>> RD = S.report_definitions
+>>> def fix_density():
+    inc.density.option = "value"
+    inc.density.value = INC_RHO
+    got_opt = inc.density.option()
+    got = inc.density.value()
+    if got_opt != "value" or not _close(got, INC_RHO):
+        raise RuntimeError("Inconel density read back as %r / %r" % (got_opt, got))
+    return {"option": got_opt, "value_kg_m3": got}
+>>> step("1A Inconel 718 density = 8190 kg/m3 (read back)", fix_density)
+S5B OK    1A Inconel 718 density = 8190 kg/m3 (read back)        {'option': 'value', 'value_kg_m3': 8190.0}
+{'option': 'value',
+ 'value_kg_m3': 8190.0}
+>>> STARTUP_SCHEMES = {"pressure": "second-order", "mom": "first-order-upwind", "k": "first-order-upwind",
+                   "omega": "first-order-upwind", "temperature": "first-order-upwind"}
+>>> FINAL_SCHEMES = {"pressure": "second-order", "mom": "second-order-upwind", "k": "second-order-upwind",
+                 "omega": "second-order-upwind", "temperature": "second-order-upwind"}
+>>> for k, v in STARTUP_SCHEMES.items():
+    step("startup scheme %-12s -> %s" % (k, v), (lambda kk=k, vv=v: set_scheme(ds, kk, vv)))
+S5B OK    startup scheme pressure     -> second-order            'second-order'
+'second-order'
+S5B OK    startup scheme mom          -> first-order-upwind      'first-order-upwind'
+'first-order-upwind'
+S5B OK    startup scheme k            -> first-order-upwind      'first-order-upwind'
+'first-order-upwind'
+S5B OK    startup scheme omega        -> first-order-upwind      'first-order-upwind'
+'first-order-upwind'
+S5B OK    startup scheme temperature  -> first-order-upwind      'first-order-upwind'
+'first-order-upwind'
+>>> OLD = ["mdot_in", "mdot_out", "mass_imbalance", "q_heated_wall", "q_interface", "q_fluid_net",
+       "p_in", "p_out", "T_out_bulk", "T_wall_max", "T_solid_max", "T_solid_mean", "v_out_max", "yplus_max"]
+>>> NEW = ["p_in_area", "p_out_area", "T_in_bulk", "T_outer_max", "T_outer_avg", "T_inner_avg", "yplus_min",
+       "yplus_avg", "area_in", "T_fluid_max", "T_fluid_min", "T_solid_min", "q_ends", "q_net_all", "F_wall_z"]
+>>> ALLDEFS = OLD + NEW
+>>> rf = S.monitor.report_files["s5a_monitors"]
+>>> step("monitor file -> %s" % MON, lambda: setattr(rf, "file_name", MON))
+S5B OK    monitor file -> Monitors/coarse_monitors.out           
+>>> step("monitor file report list (%d)" % len(ALLDEFS), lambda: setattr(rf, "report_defs", ALLDEFS))
+S5B OK    monitor file report list (29)                          
+>>> step("monitor file state", lambda: rf())
+S5B OK    monitor file state                                     {'name': 's5a_monitors', 'file_name': 'Monitors\\\\coarse_monitors.out', 'frequency_of': 'iteration', 'frequen
+{'active': True,
+ 'file_name': 'Monitors\\\\coarse_monitors.out',
+ 'frequency': 1,
+ 'frequency_of': 'iteration',
+ 'itr_index': '1',
+ 'name': 's5a_monitors',
+ 'print': True,
+ 'report_defs': ['mdot_in',
+                 'mdot_out',
+                 'mass_imbalance',
+                 'q_heated_wall',
+                 'q_interface',
+                 'q_fluid_net',
+                 'p_in',
+                 'p_out',
+                 'T_out_bulk',
+                 'T_wall_max',
+                 'T_solid_max',
+                 'T_solid_mean',
+                 'v_out_max',
+                 'yplus_max',
+                 'p_in_area',
+                 'p_out_area',
+                 'T_in_bulk',
+                 'T_outer_max',
+                 'T_outer_avg',
+                 'T_inner_avg',
+                 'yplus_min',
+                 'yplus_avg',
+                 'area_in',
+                 'T_fluid_max',
+                 'T_fluid_min',
+                 'T_solid_min',
+                 'q_ends',
+                 'q_net_all',
+                 'F_wall_z'],
+ 'run_index': '0',
+ 'write_instantaneous_values': False}
+>>> def pw_state(prop):
+    return [(d["item"], d["value"]) for d in prop.piecewise_linear.data_points()]
+>>> def curve_ok(got, T, V):
+    return len(got) == len(T) and all(_close(a, t, 1e-9) and _close(b, v, 1e-9)
+                                      for (a, b), t, v in zip(got, T, V))
+>>> def audit(label, schemes_expected):
+    rows = []
+
+    def chk(name, fn, expect=None, info=False):
+        try:
+            got = fn()
+            if info:
+                ok = True
+            elif isinstance(expect, float):
+                ok = _close(got, expect)
+            elif callable(expect):
+                ok = bool(expect(got))
+            else:
+                ok = (got == expect)
+        except Exception as e:
+            got, ok = "ERROR %s" % e, False
+        rows.append({"item": name, "value": got,
+                     "expected": ("(recorded)" if info else (expect if not callable(expect) else "see check")),
+                     "ok": ok})
+
+    chk("fluent version", lambda: solver.get_fluent_version(), info=True)
+    chk("solver type", lambda: G.solver.type(), "pressure-based")
+    chk("time", lambda: G.solver.time(), "steady")
+    chk("velocity formulation", lambda: G.solver.velocity_formulation(), "absolute")
+    chk("operating pressure [Pa]", lambda: G.operating_conditions.operating_pressure(), P_OP)
+    chk("gravity enabled", lambda: G.operating_conditions.gravity()["enable"], False)
+    chk("energy equation", lambda: M.energy.enabled(), True)
+    chk("energy: viscous dissipation", lambda: M.energy.viscous_dissipation(), info=True)
+    chk("energy: pressure work", lambda: M.energy.pressure_work(), info=True)
+    chk("energy: kinetic energy", lambda: M.energy.kinetic_energy(), info=True)
+    chk("viscous model", lambda: M.viscous.model(), "k-omega")
+    chk("k-omega variant", lambda: M.viscous.k_omega_model(), "sst")
+    chk("SST wall omega treatment", lambda: M.viscous.near_wall_treatment.wall_omega_treatment(), info=True)
+    chk("SST low-Re correction", lambda: M.viscous.k_omega.k_omega_low_re_correction(), info=True)
+    chk("radiation model", lambda: M.radiation.model(), "none")
+    chk("air density model", lambda: air.density.option(), "incompressible-ideal-gas")
+    chk("air molecular weight", lambda: air.molecular_weight.value(), 28.966)
+    chk("air cp model", lambda: air.specific_heat.option(), "piecewise-linear")
+    chk("air cp curve = Incropera A.4", lambda: curve_ok(pw_state(air.specific_heat), AIR_T, AIR_CP), True)
+    chk("air mu model", lambda: air.viscosity.option(), "piecewise-linear")
+    chk("air mu curve = Incropera A.4", lambda: curve_ok(pw_state(air.viscosity), AIR_T, AIR_MU), True)
+    chk("air k model", lambda: air.thermal_conductivity.option(), "piecewise-linear")
+    chk("air k curve = Incropera A.4", lambda: curve_ok(pw_state(air.thermal_conductivity), AIR_T, AIR_K), True)
+    chk("Inconel density option", lambda: inc.density.option(), "value")
+    chk("Inconel density [kg/m3]", lambda: inc.density.value(), INC_RHO)
+    chk("Inconel k model", lambda: inc.thermal_conductivity.option(), "piecewise-linear")
+    chk("Inconel k curve = VDM 4127", lambda: curve_ok(pw_state(inc.thermal_conductivity), INC_T, INC_K), True)
+    chk("Inconel cp model", lambda: inc.specific_heat.option(), "piecewise-linear")
+    chk("Inconel cp curve = VDM 4127", lambda: curve_ok(pw_state(inc.specific_heat), INC_T, INC_CP), True)
+    chk("fluid zone material", lambda: solver.setup.cell_zone_conditions.fluid["fluid_domain"].general.material(), "air")
+    chk("solid zone material", lambda: solver.setup.cell_zone_conditions.solid["solid_domain"].general.material(), "inconel-718")
+    chk("inlet velocity spec", lambda: inl.momentum.velocity_specification_method(), "Magnitude, Normal to Boundary")
+    chk("inlet velocity [m/s]", lambda: inl.momentum.velocity_magnitude.value(), V_IN)
+    chk("inlet temperature [K]", lambda: inl.thermal.temperature.value(), T_IN)
+    chk("inlet turbulence spec", lambda: inl.turbulence.turbulence_specification(), "Intensity and Hydraulic Diameter")
+    chk("inlet turbulent intensity [-]", lambda: readv(inl.turbulence, "turbulent_intensity"), TI)
+    chk("inlet hydraulic diameter [m]", lambda: readv(inl.turbulence, "hydraulic_diameter"), 0.02)
+    chk("outlet gauge pressure [Pa]", lambda: out.momentum.gauge_pressure.value(), 0.0)
+    # With prevent_reverse_flow on, Fluent deactivates the backflow temperature and backflow
+    # turbulence entirely (read back in the 5B probe): they cannot act unless reverse flow
+    # occurs, and reverse flow is suppressed. Audit the switch that governs them instead.
+    chk("outlet prevent reverse flow", lambda: out.momentum.prevent_reverse_flow(), True)
+    chk("outlet backflow T branch active", lambda: out.thermal.backflow_total_temperature.is_active(), info=True)
+    chk("heated wall condition", lambda: W["heated_outer_wall"].thermal.thermal_condition(), "Heat Flux")
+    chk("heated wall flux [W/m2]", lambda: W["heated_outer_wall"].thermal.heat_flux.value(), QPP)
+    chk("solid inlet end", lambda: (W["solid_inlet_end"].thermal.thermal_condition(),
+                                    W["solid_inlet_end"].thermal.heat_flux.value()), ("Heat Flux", 0))
+    chk("solid outlet end", lambda: (W["solid_outlet_end"].thermal.thermal_condition(),
+                                     W["solid_outlet_end"].thermal.heat_flux.value()), ("Heat Flux", 0))
+    chk("interface thermal coupling", lambda: W["fluid_solid_interface"].thermal.thermal_condition(), "Coupled")
+    chk("interface shadow coupling", lambda: W["fluid_solid_interface-shadow"].thermal.thermal_condition(), "Coupled")
+    chk("p-v coupling", lambda: S.methods.p_v_coupling.flow_scheme(), "Coupled")
+    chk("gradient scheme", lambda: S.methods.spatial_discretization.gradient_scheme(), "least-square-cell-based")
+    for k, v in schemes_expected.items():
+        chk("scheme %s" % k, (lambda kk=k: ds[kk]()), v)
+    chk("pseudo-time formulation", lambda: S.methods.pseudo_time_method.formulation.coupled_solver(), "global-time-step")
+    chk("pseudo-time step settings", lambda: S.run_calculation.pseudo_time_settings.time_step_method(), info=True)
+    chk("explicit pseudo relaxation", lambda: S.controls.pseudo_time_explicit_relaxation_factor(), info=True)
+    chk("explicit p/mom under-relaxation", lambda: S.controls.p_v_controls(), info=True)
+    chk("solution limits", lambda: S.controls.limits(), info=True)
+    chk("equations solved", lambda: S.controls.equations(), info=True)
+    n_common = len(rows)
+
+    # --- Section 6A additions (explicit expectations, not only recorded values)
+    chk("6A turbulence model = SST k-omega", lambda: (M.viscous.model(), M.viscous.k_omega_model()), ("k-omega", "sst"))
+    chk("6A wall omega treatment = correlation", lambda: M.viscous.near_wall_treatment.wall_omega_treatment(),
+        "correlation")
+    chk("6A low-Re correction off", lambda: M.viscous.k_omega.k_omega_low_re_correction(), False)
+    chk("6A energy extra terms off", lambda: (M.energy.viscous_dissipation(), M.energy.pressure_work(),
+                                              M.energy.kinetic_energy()), (False, False, False))
+    chk("6A mesh cells (printed by Fluent)", lambda: MESHINFO["cells"], EXPECT_CELLS)
+    chk("6A minimum cell volume > 0 [m3]", lambda: MESHINFO["min_volume_m3"], lambda v: v is not None and v > 0)
+    chk("6A zone names", lambda: ZONES, EXPECT_ZONES)
+    chk("6A zone ids (Fluent replace output)", lambda: ZONE_IDS,
+        {"fluid_domain": 2, "solid_domain": 3, "interior-fluid": 4, "interior-solid": 5, "fluid_inlet": 6,
+         "fluid_outlet": 7, "fluid_solid_interface": 8, "heated_outer_wall": 9, "solid_inlet_end": 10,
+         "solid_outlet_end": 11, "fluid_solid_interface-shadow": 12})
+    chk("6A settings diff vs medium after replace", lambda: len(DIFF0), 0)
+    chk("6A monitor file name", lambda: rf.file_name(),
+        lambda v: re.sub(r"[\\/]+", "/", v).endswith("Monitors/coarse_monitors.out"))
+    chk("6A monitor report list", lambda: list(rf.report_defs()), ALLDEFS)
+    def init_ok(d):
+        def pick(sub):
+            ks = [k for k in d if sub in k]
+            return float(d[ks[0]]) if ks else None
+        return (_close(pick("temperature"), T_IN) and _close(pick("z-velocity"), V_IN) and
+                abs(pick("x-velocity")) < 1e-12 and abs(pick("y-velocity")) < 1e-12 and abs(pick("pressure")) < 1e-9)
+
+    chk("6A init defaults (T 300 K, w 23.5 m/s, u = v = 0, p 0 Pa)",
+        lambda: {k: v for k, v in S.initialization.defaults().items() if isinstance(v, (int, float))}, init_ok)
+
+    # --- every common row must equal the medium run's own audit of the same stage
+    try:
+        med = json.load(open(MED_AUDIT % label))
+        medv = {r["item"]: r["value"] for r in med["rows"]}
+        for r in rows[:n_common]:
+            mine = json.loads(json.dumps(r["value"], default=str))
+            same = (r["item"] in medv) and (mine == medv[r["item"]] or _close(mine, medv[r["item"]], 1e-12))
+            rows.append({"item": "SAME AS MEDIUM: " + r["item"], "value": mine,
+                         "expected": medv.get(r["item"], "<not in medium audit>"), "ok": bool(same)})
+    except Exception as e:
+        rows.append({"item": "SAME AS MEDIUM: audit file", "value": "ERROR %s" % e, "expected": MED_AUDIT % label,
+                     "ok": False})
+
+    bad = [r for r in rows if not r["ok"]]
+    write_json("Audit/setup_audit_%s.json" % label, {"label": label, "n_items": len(rows),
+                                                     "n_failed": len(bad), "rows": rows})
+    with open("Audit/setup_audit_%s.txt" % label, "w") as fh:
+        fh.write("SETUP AUDIT - %s - values READ BACK from Fluent\n" % label)
+        fh.write("%d items, %d failed\n\n" % (len(rows), len(bad)))
+        for r in rows:
+            fh.write("%-4s %-52s %s%s\n" % ("ok" if r["ok"] else "FAIL", r["item"], repr(r["value"])[:150],
+                                           "" if r["ok"] else "   EXPECTED %r" % (r["expected"],)))
+    for r in rows:
+        log("AUDIT %-4s %-52s %s" % ("ok" if r["ok"] else "FAIL", r["item"], repr(r["value"])[:100]))
+    log("AUDIT %s: %d items, %d failed" % (label, len(rows), len(bad)))
+    return bad
+>>> bad = audit("1_presolve", STARTUP_SCHEMES)
+S5B AUDIT ok   fluent version                                       26.1.0
+S5B AUDIT ok   solver type                                          'pressure-based'
+S5B AUDIT ok   time                                                 'steady'
+S5B AUDIT ok   velocity formulation                                 'absolute'
+S5B AUDIT ok   operating pressure [Pa]                              101325
+S5B AUDIT ok   gravity enabled                                      False
+S5B AUDIT ok   energy equation                                      True
+S5B AUDIT ok   energy: viscous dissipation                          False
+S5B AUDIT ok   energy: pressure work                                False
+S5B AUDIT ok   energy: kinetic energy                               False
+S5B AUDIT ok   viscous model                                        'k-omega'
+S5B AUDIT ok   k-omega variant                                      'sst'
+S5B AUDIT ok   SST wall omega treatment                             'correlation'
+S5B AUDIT ok   SST low-Re correction                                False
+S5B AUDIT ok   radiation model                                      'none'
+S5B AUDIT ok   air density model                                    'incompressible-ideal-gas'
+S5B AUDIT ok   air molecular weight                                 28.966
+S5B AUDIT ok   air cp model                                         'piecewise-linear'
+S5B AUDIT ok   air cp curve = Incropera A.4                         True
+S5B AUDIT ok   air mu model                                         'piecewise-linear'
+S5B AUDIT ok   air mu curve = Incropera A.4                         True
+S5B AUDIT ok   air k model                                          'piecewise-linear'
+S5B AUDIT ok   air k curve = Incropera A.4                          True
+S5B AUDIT ok   Inconel density option                               'value'
+S5B AUDIT ok   Inconel density [kg/m3]                              8190.0
+S5B AUDIT ok   Inconel k model                                      'piecewise-linear'
+S5B AUDIT ok   Inconel k curve = VDM 4127                           True
+S5B AUDIT ok   Inconel cp model                                     'piecewise-linear'
+S5B AUDIT ok   Inconel cp curve = VDM 4127                          True
+S5B AUDIT ok   fluid zone material                                  'air'
+S5B AUDIT ok   solid zone material                                  'inconel-718'
+S5B AUDIT ok   inlet velocity spec                                  'Magnitude, Normal to Boundary'
+S5B AUDIT ok   inlet velocity [m/s]                                 23.5
+S5B AUDIT ok   inlet temperature [K]                                300
+S5B AUDIT ok   inlet turbulence spec                                'Intensity and Hydraulic Diameter'
+S5B AUDIT ok   inlet turbulent intensity [-]                        0.04411209588036475
+S5B AUDIT ok   inlet hydraulic diameter [m]                         0.02
+S5B AUDIT ok   outlet gauge pressure [Pa]                           0
+S5B AUDIT ok   outlet prevent reverse flow                          True
+S5B AUDIT ok   outlet backflow T branch active                      False
+S5B AUDIT ok   heated wall condition                                'Heat Flux'
+S5B AUDIT ok   heated wall flux [W/m2]                              8000.0
+S5B AUDIT ok   solid inlet end                                      ('Heat Flux', 0)
+S5B AUDIT ok   solid outlet end                                     ('Heat Flux', 0)
+S5B AUDIT ok   interface thermal coupling                           'Coupled'
+S5B AUDIT ok   interface shadow coupling                            'Coupled'
+S5B AUDIT ok   p-v coupling                                         'Coupled'
+S5B AUDIT ok   gradient scheme                                      'least-square-cell-based'
+S5B AUDIT ok   scheme pressure                                      'second-order'
+S5B AUDIT ok   scheme mom                                           'first-order-upwind'
+S5B AUDIT ok   scheme k                                             'first-order-upwind'
+S5B AUDIT ok   scheme omega                                         'first-order-upwind'
+S5B AUDIT ok   scheme temperature                                   'first-order-upwind'
+S5B AUDIT ok   pseudo-time formulation                              'global-time-step'
+S5B AUDIT ok   pseudo-time step settings                            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+S5B AUDIT ok   explicit pseudo relaxation                           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+S5B AUDIT ok   explicit p/mom under-relaxation                      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+S5B AUDIT ok   solution limits                                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+S5B AUDIT ok   equations solved                                     {'flow': True, 'kw': True, 'temperature': True}
+S5B AUDIT ok   6A turbulence model = SST k-omega                    ('k-omega', 'sst')
+S5B AUDIT ok   6A wall omega treatment = correlation                'correlation'
+S5B AUDIT ok   6A low-Re correction off                             False
+S5B AUDIT ok   6A energy extra terms off                            (False, False, False)
+S5B AUDIT ok   6A mesh cells (printed by Fluent)                    51840
+S5B AUDIT ok   6A minimum cell volume > 0 [m3]                      2.049465e-10
+S5B AUDIT ok   6A zone names                                        {'cell_fluid': ['fluid_domain'], 'cell_solid': ['solid_domain'], 'velocity_inlet': ['fluid_inlet'], 
+S5B AUDIT ok   6A zone ids (Fluent replace output)                  {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'int
+S5B AUDIT ok   6A settings diff vs medium after replace             0
+S5B AUDIT ok   6A monitor file name                                 'Monitors\\\\coarse_monitors.out'
+S5B AUDIT ok   6A monitor report list                               ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_
+S5B AUDIT ok   6A init defaults (T 300 K, w 23.5 m/s, u = v = 0, p 0 Pa) {'pressure': 0.0, 'x-velocity': 0, 'y-velocity': 0, 'z-velocity': 23.5, 'k': 1.611915862325738, 'ome
+S5B AUDIT ok   SAME AS MEDIUM: fluent version                       'Ansys Fluent 2026 R1'
+S5B AUDIT ok   SAME AS MEDIUM: solver type                          'pressure-based'
+S5B AUDIT ok   SAME AS MEDIUM: time                                 'steady'
+S5B AUDIT ok   SAME AS MEDIUM: velocity formulation                 'absolute'
+S5B AUDIT ok   SAME AS MEDIUM: operating pressure [Pa]              101325
+S5B AUDIT ok   SAME AS MEDIUM: gravity enabled                      False
+S5B AUDIT ok   SAME AS MEDIUM: energy equation                      True
+S5B AUDIT ok   SAME AS MEDIUM: energy: viscous dissipation          False
+S5B AUDIT ok   SAME AS MEDIUM: energy: pressure work                False
+S5B AUDIT ok   SAME AS MEDIUM: energy: kinetic energy               False
+S5B AUDIT ok   SAME AS MEDIUM: viscous model                        'k-omega'
+S5B AUDIT ok   SAME AS MEDIUM: k-omega variant                      'sst'
+S5B AUDIT ok   SAME AS MEDIUM: SST wall omega treatment             'correlation'
+S5B AUDIT ok   SAME AS MEDIUM: SST low-Re correction                False
+S5B AUDIT ok   SAME AS MEDIUM: radiation model                      'none'
+S5B AUDIT ok   SAME AS MEDIUM: air density model                    'incompressible-ideal-gas'
+S5B AUDIT ok   SAME AS MEDIUM: air molecular weight                 28.966
+S5B AUDIT ok   SAME AS MEDIUM: air cp model                         'piecewise-linear'
+S5B AUDIT ok   SAME AS MEDIUM: air cp curve = Incropera A.4         True
+S5B AUDIT ok   SAME AS MEDIUM: air mu model                         'piecewise-linear'
+S5B AUDIT ok   SAME AS MEDIUM: air mu curve = Incropera A.4         True
+S5B AUDIT ok   SAME AS MEDIUM: air k model                          'piecewise-linear'
+S5B AUDIT ok   SAME AS MEDIUM: air k curve = Incropera A.4          True
+S5B AUDIT ok   SAME AS MEDIUM: Inconel density option               'value'
+S5B AUDIT ok   SAME AS MEDIUM: Inconel density [kg/m3]              8190.0
+S5B AUDIT ok   SAME AS MEDIUM: Inconel k model                      'piecewise-linear'
+S5B AUDIT ok   SAME AS MEDIUM: Inconel k curve = VDM 4127           True
+S5B AUDIT ok   SAME AS MEDIUM: Inconel cp model                     'piecewise-linear'
+S5B AUDIT ok   SAME AS MEDIUM: Inconel cp curve = VDM 4127          True
+S5B AUDIT ok   SAME AS MEDIUM: fluid zone material                  'air'
+S5B AUDIT ok   SAME AS MEDIUM: solid zone material                  'inconel-718'
+S5B AUDIT ok   SAME AS MEDIUM: inlet velocity spec                  'Magnitude, Normal to Boundary'
+S5B AUDIT ok   SAME AS MEDIUM: inlet velocity [m/s]                 23.5
+S5B AUDIT ok   SAME AS MEDIUM: inlet temperature [K]                300
+S5B AUDIT ok   SAME AS MEDIUM: inlet turbulence spec                'Intensity and Hydraulic Diameter'
+S5B AUDIT ok   SAME AS MEDIUM: inlet turbulent intensity [-]        0.04411209588036475
+S5B AUDIT ok   SAME AS MEDIUM: inlet hydraulic diameter [m]         0.02
+S5B AUDIT ok   SAME AS MEDIUM: outlet gauge pressure [Pa]           0
+S5B AUDIT ok   SAME AS MEDIUM: outlet prevent reverse flow          True
+S5B AUDIT ok   SAME AS MEDIUM: outlet backflow T branch active      False
+S5B AUDIT ok   SAME AS MEDIUM: heated wall condition                'Heat Flux'
+S5B AUDIT ok   SAME AS MEDIUM: heated wall flux [W/m2]              8000.0
+S5B AUDIT ok   SAME AS MEDIUM: solid inlet end                      ['Heat Flux', 0]
+S5B AUDIT ok   SAME AS MEDIUM: solid outlet end                     ['Heat Flux', 0]
+S5B AUDIT ok   SAME AS MEDIUM: interface thermal coupling           'Coupled'
+S5B AUDIT ok   SAME AS MEDIUM: interface shadow coupling            'Coupled'
+S5B AUDIT ok   SAME AS MEDIUM: p-v coupling                         'Coupled'
+S5B AUDIT ok   SAME AS MEDIUM: gradient scheme                      'least-square-cell-based'
+S5B AUDIT ok   SAME AS MEDIUM: scheme pressure                      'second-order'
+S5B AUDIT ok   SAME AS MEDIUM: scheme mom                           'first-order-upwind'
+S5B AUDIT ok   SAME AS MEDIUM: scheme k                             'first-order-upwind'
+S5B AUDIT ok   SAME AS MEDIUM: scheme omega                         'first-order-upwind'
+S5B AUDIT ok   SAME AS MEDIUM: scheme temperature                   'first-order-upwind'
+S5B AUDIT ok   SAME AS MEDIUM: pseudo-time formulation              'global-time-step'
+S5B AUDIT ok   SAME AS MEDIUM: pseudo-time step settings            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_fact
+S5B AUDIT ok   SAME AS MEDIUM: explicit pseudo relaxation           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-visco
+S5B AUDIT ok   SAME AS MEDIUM: explicit p/mom under-relaxation      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+S5B AUDIT ok   SAME AS MEDIUM: solution limits                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'm
+S5B AUDIT ok   SAME AS MEDIUM: equations solved                     {'flow': True, 'kw': True, 'temperature': True}
+S5B AUDIT 1_presolve: 130 items, 0 failed
+>>> if bad or [f for f in FAIL if f.startswith("CRITICAL")]:
+    log("PRE-SOLVE AUDIT FAILED - STOPPING BEFORE ANY ITERATION")
+    for f in FAIL:
+        log("   " + f)
+    flush_log("Logs/%s_log.txt" % TAG)
+    exit()
+>>> if os.environ.get("S6A_AUDIT_ONLY", "0") == "1":
+    log("AUDIT-ONLY MODE: pre-solve audit passed, exiting without iterating")
+    flush_log("Logs/%s_log.txt" % TAG)
+    exit()
+S5B AUDIT-ONLY MODE: pre-solve audit passed, exiting without iterating
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+
+Transcript closed.
+Auto-Transcript Stop Time:  23:43:08, 23 Sep 2026 India Standard Time 
+Total Transcript Time: 1 Minute 6 Second.
+
+Automatic transcript closed.

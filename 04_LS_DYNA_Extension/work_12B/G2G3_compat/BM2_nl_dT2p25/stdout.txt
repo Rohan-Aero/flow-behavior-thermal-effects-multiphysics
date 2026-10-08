@@ -1,0 +1,278 @@
+ License option : check ansys licenses only
+
+
+ ***************************************************************
+ *            ANSYS LEGAL NOTICES                              *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2025 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+      Date: 10/02/2026      Time: 20:10:24  
+      ___________________________________________________ 
+     |                                                   |
+     |  LS-DYNA, A Program for Nonlinear Dynamic         |
+     |  Analysis of Structures in Three Dimensions       |
+     |  Date    : 07/09/2025    Time: 09:53:35           |
+     |  Version : smp d R16                              |
+     |  Revision: R16.1-180-gd50332dbe5                  |
+     |  AnLicVer: 2026 R1 (20251230+dl-79-g6933d52)      |
+     |                                                   |
+     |  Features enabled in this version:                |
+     |    Shared Memory Parallel                         |
+     |    CESE CHEMISTRY EM ICFD STOCHASTIC_PARTICLES    |
+     |    FFTW (multi-dimensional FFTW Library)          |
+     |    ARPACK (nonsymmetric eigensolver library)      |
+     |    ANSYSLIC enabled                               |
+     |                                                   |
+     |  Platform   : WINDOWS X64                         |
+     |  OS Level   : Windows 10  (Build 26200) uum       |
+     |  Compiler   : Intel Fortran Compiler 19.0 SSE2    |
+     |  Hostname   : <HOST>                               |
+     |  Precision  : Double precision (I8R8)             |
+     |                                                   |
+     |  Unauthorized use infringes Ansys Inc. copyrights |
+     |___________________________________________________|
+
+[license/error] *** ANSYS LICENSE MANAGER ERROR ***
+[license/error] Your version of the Ansys license client software is out of date. Please refer to Licensing Error Messages in the Troubleshooting section of the ANSYS, Inc. Licensing Guide. 
+[license/error]          The version of the license client 55887@<HOST> [Ansys Release 2025 R2] must be greater or equal to the client LSDYNA version [Ansys Release 2026 R1].
+ Student license active; 331 days remaning.
+
+ Executing with ANSYS license
+
+ Command line options: i=bench.k 
+                       ncpu=4 
+                       memory=20m
+
+ Input file: bench.k                                                                         
+
+ The native file format       : 64-bit small endian
+ Memory size from command line:    20000000
+
+ on UNIX computers note the following change:
+
+ ctrl-c interrupts ls-dyna and prompts for a sense  switch.
+ type the desired sense switch: sw1., sw2., etc. to continue
+ the execution.  ls-dyna will respond as explained in the users manual
+
+    type                      response
+   -----   ------------------------------------------------------------
+   quit    ls-dyna terminates.
+   stop    ls-dyna terminates.
+   sw1.    a restart file is written and ls-dyna terminates.
+   sw2.    ls-dyna responds with time and cycle numbers.    
+   sw3.    a restart file is written and ls-dyna continues calculations.
+   sw4.    a plot state is written and ls-dyna continues calculations.
+   swa.    ls-dyna flushes all output i/o buffers.
+   swb.    a dynain is written and ls-dyna continues calculations.
+   swc.    a restart and dynain are written and ls-dyna continues calculations.
+   swd.    a restart and dynain are written and ls-dyna terminates.
+   swe.    stop dynamic relaxation just as though convergence
+   endtime=time change the termination time
+   lpri    toggle implicit lin. alg. solver output on/off.
+   nlpr    toggle implicit nonlinear solver output on/off.
+   iter    toggle implicit output to d3iter database on/off.
+   prof    output timing data to messag and continue.
+   conv    force implicit nonlinear convergence for current time step.
+   ttrm    terminate implicit time step, reduce time step, retry time step.
+   rtrm    terminate implicit at end of current time step.
+
+
+ ********  notice  ********  notice  ********  notice  ********
+ *                                                            *
+ * This is the LS-DYNA Finite Element code.                   *
+ *                                                            *
+ * Neither LST nor the authors assume any responsibility for  *
+ * the validity, accuracy, or applicability of any results    *
+ * obtained from this system. Users must verify their own     *
+ * results.                                                   *
+ *                                                            *
+ * LST endeavors to make the LS-DYNA code as complete,        *
+ * accurate and easy to use as possible.                      *
+ * Suggestions and comments are welcomed.  Please report any  *
+ * errors encountered in either the documentation or results  *
+ * immediately to LST through your site focus.                *
+ *                                                            *
+ * Copyright (C) 1990-2021                                    *
+ * by Livermore Software Technology, LLC                      *
+ * All rights reserved                                        *
+ *                                                            *
+ ********  notice  ********  notice  ********  notice  ********
+
+ Beginning of keyword reader                                   10/02/26 20:10:27
+
+                                                               10/02/26 20:10:27
+ Open include file: ..\..\G4_import\model\nodes.k
+
+                                                               10/02/26 20:10:27
+ Open include file: ..\..\G4_import\model\elements_h20.k
+
+                                                               10/02/26 20:10:27
+ Open include file: ..\..\G4_import\model\sets.k
+
+                                                               10/02/26 20:10:27
+ Open include file: ..\..\G4_import\model\csys_hoop.k
+
+                                                               10/02/26 20:10:27
+ Open include file: ..\..\G4_import\model\spc_lc2.k
+
+                                                               10/02/26 20:10:27
+ Open include file: temps_uniform225.k
+
+ Memory required to process keyword     :    2121214  
+ Additional dynamic memory required     :    7336003  
+
+
+ input of data is completed
+
+ initial kinetic energy = 0.00000000E+00
+
+ termination time                  = 1.000E+00
+
+ Memory required to begin solution      :    2122K
+ Constraint dynamically allocated memory:     489K
+ Additional dynamically allocated memory:      31M
+                                   Total:      33M
+
+ initialization completed
+ ____________________________________________________________
+
+ Rate effects are turned off in constitutive models
+ since IRATE > 0 on *CONTROL_IMPLICIT_DYNAMICS card
+   No materials have acted on this flag!
+ ____________________________________________________________
+
+ calculation with mass scaling for minimum dt
+    added mass   =   0.0000E+00
+    physical mass=   4.6313E+00
+    ratio        =   0.0000E+00
+       1 t 0.0000E+00 dt 5.00E-01 flush i/o buffers            10/02/26 20:10:28
+       1 t 0.0000E+00 dt 5.00E-01 write d3plot file            10/02/26 20:10:28
+
+ BEGIN implicit statics  step      1 t= 5.0000E-01             10/02/26 20:10:28
+
+
+     ================================================
+     ==            IMPLICIT USAGE ALERT            ==
+     ================================================
+     == Memory Management for Implicit has changed ==
+     == after R10.  Please use:                    ==
+     ==       memory=     3M                       ==
+     ================================================
+
+
+          an OUT-OF-CORE solution will be performed
+ Iteration:   1     *|du|/|u| =  1.0000000E+00     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  9.8991980E-06     *Ei/E0 =  9.7995091E-11
+ Equilibrium established after     2 iterations                10/02/26 20:12:23
+    
+ estimated total cpu time          =       233 sec (       0 hrs  3 mins)
+ estimated cpu time to complete    =       115 sec (       0 hrs  1 mins)
+ estimated total clock time        =       233 sec (       0 hrs  3 mins)
+ estimated clock time to complete  =       115 sec (       0 hrs  1 mins)
+
+ BEGIN implicit statics  step      2 t= 1.0000E+00             10/02/26 20:12:23
+ Iteration:   1     *|du|/|u| =  5.0000247E-01     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  4.9496480E-06     *Ei/E0 =  9.7995091E-11
+ Equilibrium established after     2 iterations                10/02/26 20:14:31
+      10 t 1.0000E+00 dt 5.00E-01 write d3plot file            10/02/26 20:14:31
+
+ BEGIN buckling analysis
+  forming material  stiffness
+  forming geometric stiffness
+  solving buckling eigenproblem
+      12 t 1.0000E+00 dt 5.00E-01 write eigout file            10/02/26 20:17:18
+      12 t 1.0000E+00 dt 5.00E-01 write d3eigv file            10/02/26 20:17:18
+ END buckling analysis
+ 
+ *** termination time reached ***
+      12 t 1.0000E+00 dt 5.00E-01 write d3dump01 file          10/02/26 20:17:19
+
+ N o r m a l    t e r m i n a t i o n                          10/02/26 20:17:19
+
+ Memory required to complete solution   :    2122K
+ Constraint dynamically allocated memory:    3895K
+ Additional dynamically allocated memory:     728M
+                                   Total:     734M
+
+ T i m i n g   i n f o r m a t i o n
+                        CPU(seconds)   %CPU  Clock(seconds) %Clock
+  ----------------------------------------------------------------
+  Keyword Processing ... 1.0000E+00    0.24     9.4700E-01    0.23
+    KW Reading ......... 0.0000E+00    0.00     6.7300E-01    0.16
+    KW Writing ......... 0.0000E+00    0.00     3.1000E-02    0.01
+  Initialization ....... 3.0000E+00    0.72     3.2730E+00    0.79
+    Init Proc Phase 1 .. 0.0000E+00    0.00     3.3500E-01    0.08
+    Init Proc Phase 2 .. 0.0000E+00    0.00     7.9000E-02    0.02
+  Element processing ... 1.5000E+01    3.61     1.3876E+01    3.34
+    Solids ............. 1.5000E+01    3.61     1.3866E+01    3.34
+    E Other ............ 0.0000E+00    0.00     1.0000E-02    0.00
+  Binary databases ..... 0.0000E+00    0.00     1.1000E-02    0.00
+  Implicit ............. 1.0000E+00    0.24     7.8800E-01    0.19
+  Implicit Nonlinear ... 1.0000E+00    0.24     3.1500E-01    0.08
+    Imp. NL force mod .. 0.0000E+00    0.00     1.9000E-01    0.05
+  Implicit Lin. Alg. ... 3.9400E+02   94.94     3.9552E+02   95.33
+    Imp. LA Mtx Assemb . 1.0000E+00    0.24     1.9100E+00    0.46
+    Imp. LA Eigen ...... 7.6000E+01   18.31     6.9303E+01   16.70
+    Imp. LA Factor ..... 2.9700E+02   71.57     2.9935E+02   72.15
+    Imp. LA Solve ...... 2.0000E+01    4.82     2.4952E+01    6.01
+  Misc. 3 .............. 0.0000E+00    0.00     1.4600E-01    0.04
+  ----------------------------------------------------------------
+  T o t a l s            4.1500E+02  100.00     4.1488E+02  100.00
+
+ Problem time       =    1.0000E+00
+ Problem cycle      =        12
+ Total CPU time     =       415 seconds (   0 hours  6 minutes 55 seconds)
+ CPU time per zone cycle  =    1463675.214 nanoseconds
+ Clock time per zone cycle=    1462471.510 nanoseconds
+
+ Number of CPU's    4
+ NLQ used/max     192/  192
+ Start time   10/02/2026 20:10:27  
+ End time     10/02/2026 20:17:19  
+ Elapsed time     412 seconds for      12 cycles using  4 SMP threads
+             (      0 hour   6 minutes 52 seconds)
+
+ N o r m a l    t e r m i n a t i o n                          10/02/26 20:17:19
+

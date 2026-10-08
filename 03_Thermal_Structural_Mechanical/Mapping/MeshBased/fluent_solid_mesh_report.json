@@ -1,0 +1,26 @@
+{
+ "case": "<PROJECT_ROOT>/06_Fluent_CFD/Case/baseline_medium_final.cas.h5",
+ "case_sha256": "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204",
+ "solid_cell_id_range": [
+  116641,
+  159840
+ ],
+ "face_zones_used": [
+  "interior-solid",
+  "fluid_solid_interface-shadow",
+  "heated_outer_wall",
+  "solid_inlet_end",
+  "solid_outlet_end"
+ ],
+ "n_cells": 43200,
+ "n_nodes": 48048,
+ "orientation_flips": 43199,
+ "vol_min": 4.4596449008115966e-09,
+ "vol_max": 2.8597433986652578e-08,
+ "vol_sum_m3": 0.0005638731503906313,
+ "r_node_min_mm": 9.999999999999327,
+ "r_node_max_mm": 20.000000000004018,
+ "z_node_min": 0.0,
+ "z_node_max": 0.6,
+ "mapdl_input": "<OUTPUT_ROOT>/S7A/MeshBased/out/build_fluent_solid_cdb.inp"
+}

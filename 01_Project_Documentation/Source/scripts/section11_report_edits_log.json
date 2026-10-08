@@ -1,0 +1,386 @@
+[
+ [
+  "Source/preamble.tex",
+  "pdfsubject={Re-analysed CFD, conjugate heat transfer and thermo-structural analysis of a heated cylindrical ",
+  "pdfsubject={CFD, conjugate heat transfer and thermo-structural analysis of a heated cylindrical duct},",
+  1
+ ],
+ [
+  "Source/preamble.tex",
+  "thermal stress, linear buckling, re-analysis 2026}}",
+  "thermal stress, linear buckling, Eleation internship}}",
+  1
+ ],
+ [
+  "Source/preamble.tex",
+  "\\fancyhead[R]{\\sffamily\\footnotesize\\color{recon} Re-analysis 2026}",
+  "\\fancyhead[R]{\\sffamily\\footnotesize Eleation internship, February--May 2025}",
+  1
+ ],
+ [
+  "Source/preamble.tex",
+  "\\newcommand{\\provmech}{ANSYS Mechanical 2026 R1 image export",
+  "\\newcommand{\\provmech}{ANSYS Mechanical image export",
+  1
+ ],
+ [
+  "Source/preamble.tex",
+  "exported from the converged ANSYS Fluent 2026 R1 solution; not a GUI screenshot.}",
+  "exported from the converged ANSYS Fluent solution; not a GUI screenshot.}",
+  1
+ ],
+ [
+  "Source/preamble.tex",
+  "\\newcommand{\\provcad}{Rendered from the geometry exported by ANSYS SpaceClaim 2026 R1; not a GUI screenshot.}",
+  "\\newcommand{\\provcad}{Rendered from the geometry exported by ANSYS SpaceClaim; not a GUI screenshot.}",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "{\\sffamily\\Large Re-analysed CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindr",
+  "{\\sffamily\\Large CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct\\par}",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "{\\footnotesize\\itshape Physics chain of the re-analysed model (Section 3 drawing;",
+  "{\\footnotesize\\itshape Physics chain of the model (Section 3 drawing;",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "{\\normalsize Internship organisation: Eleation \\quad\\textbullet\\quad Internship period: February--May 2025\\par",
+  "{\\normalsize Eleation\\par} {\\normalsize Internship: February--May 2025\\par}",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "{\\sffamily\\small\\color{recon} Technical re-analysis prepared in 2026 with ANSYS Student 2026 R1\\par}",
+  "{\\sffamily\\small Numerical analysis using ANSYS Workbench, ANSYS Fluent and ANSYS Mechanical\\par}",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\vfill {\\small September 2026\\par} \\end{titlepage}",
+  "\\vfill \\end{titlepage}",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "Tools of the original internship & ANSYS Workbench, ANSYS Fluent, ANSYS Mechanical \\\\ Tools of this reconstruc",
+  "Tools & ANSYS Workbench (SpaceClaim), ANSYS Fluent, ANSYS Mechanical / MAPDL; Python 3.10 (bundled with ANSYS)",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "Re-analysed CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct  \\secti",
+  "CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct ",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "% ---------------------------------------------------------------- 4. declaration / re-analysis note \\chapt",
+  "% ---------------------------------------------------------------- 4. declaration / note on the analysis recor",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\recbox{\\textbf{Re-analysis note.} The original internship project files were unavailable at the time of re",
+  "\\recbox{\\textbf{Note on the analysis record.} The original internship project files were not retained. The geo",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "The project record states the governing position as follows. The original internship project files were lost; ",
+  "Only documented internship information (engineer, programme, organisation, period and tool set) is described a",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\item \\textbf{Re-analysed} -- an input value chosen in 2026 with a stated rationale",
+  "\\item \\textbf{Selected} -- an input value chosen for this study with a stated rationale",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\item \\textbf{Assumed} -- an engineering idealisation made in 2026 (for example",
+  "\\item \\textbf{Assumed} -- an engineering idealisation (for example",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\item \\textbf{Calculated 2026} -- a hand or script calculation from re-analysed inputs (the Section 2 analyt",
+  "\\item \\textbf{Calculated} -- a hand or script calculation from the selected inputs (the Section 2 analytical b",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\item \\textbf{Simulated 2026} -- the output of an ANSYS Student 2026 R1 solution of this project.",
+  "\\item \\textbf{Simulated} -- the output of an ANSYS solution of this project.",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "\\textbf{Declaration.} This report presents the re-analysed analysis as documented in the project record (the",
+  "\\textbf{Declaration.} This report presents the analysis as documented in the project record (the file",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "(\\texttt{MASTER\\_PROJECT\\_DATA.csv}). Every numerical result quoted is a 2026 calculation or simulation of the",
+  "(\\texttt{MASTER\\_PROJECT\\_DATA.csv}). Every numerical result quoted is a calculation or simulation of the anal",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "Rohan Balram Patel \\hfill September 2026",
+  "Rohan Balram Patel",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "% ---------------------------------------------------------------- 5. acknowledgement \\chapter*{Acknowledgemen",
+  "% ---------------------------------------------------------------- 5. acknowledgement \\clearpage   % keeps the",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "during which the original project on flow behaviour and thermal effects in multiphysics systems was carried ou",
+  "during which the project on flow behaviour and thermal effects in multiphysics systems was carried out,",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "The re-analysis documented here relied on the ANSYS Student 2026 R1 software and on the published data and ",
+  "The analysis documented here relied on ANSYS Workbench, Fluent and Mechanical and on the published data and co",
+  1
+ ],
+ [
+  "Source/chapters/frontmatter.tex",
+  "This report presents a technical re-analysis of the Eleation internship project \\emph{Flow Behavior and The",
+  "This report presents the Eleation internship project \\emph{Flow Behavior and Thermal Effects in Multiphysics S",
+  1
+ ],
+ [
+  "Source/chapters/ch01_introduction.tex",
+  "May 2025 with ANSYS Workbench, Fluent and Mechanical. Its files were later lost. This report documents a compl",
+  "May 2025 with ANSYS Workbench, Fluent and Mechanical. Its original files were not retained, so the analysis re",
+  1
+ ],
+ [
+  "Source/chapters/ch01_introduction.tex",
+  "The re-analysis has two purposes. The first is technical:",
+  "The study has two purposes. The first is technical:",
+  1
+ ],
+ [
+  "Source/chapters/ch01_introduction.tex",
+  "The second is documentary: to replace the lost internship record with a reproducible one whose status is state",
+  "The second is documentary: to provide a reproducible and auditable record of the internship problem, in which ",
+  1
+ ],
+ [
+  "Source/chapters/ch02_system.tex",
+  "All dimensions and loads are re-analysed class-B inputs (Chapter~\\ref{ch:params}).",
+  "All dimensions and loads are selected class-B inputs (Chapter~\\ref{ch:params}).",
+  1
+ ],
+ [
+  "Source/chapters/ch02_system.tex",
+  "\\caption[Engineering drawing of the re-analysed heated duct]{Engineering drawing of the re-analysed heated",
+  "\\caption[Engineering drawing of the heated duct]{Engineering drawing of the heated duct:",
+  1
+ ],
+ [
+  "Source/chapters/ch02_system.tex",
+  "\\src{Source: \\texttt{03\\_CAD\\_Geometry/Drawings/ENGINEERING\\_DRAWING.png}; drawing produced in 2026 for the re",
+  "\\src{Source: \\texttt{03\\_CAD\\_Geometry/Drawings/ENGINEERING\\_DRAWING.png} (project drawing of the analysed duc",
+  1
+ ],
+ [
+  "Source/chapters/ch02_system.tex",
+  "\\src{Source: \\texttt{03\\_CAD\\_Geometry/Drawings/PHYSICS\\_SCHEMATIC.png} (Section 3, 2026).}",
+  "\\src{Source: \\texttt{03\\_CAD\\_Geometry/Drawings/PHYSICS\\_SCHEMATIC.png} (Section 3).}",
+  1
+ ],
+ [
+  "Source/chapters/ch03_theory.tex",
+  "theory; what is re-analysed is the choice of relations and the parameters fed into them.",
+  "theory; what is specific to this study is the choice of relations and the parameters fed into them.",
+  1
+ ],
+ [
+  "Source/chapters/ch04_parameters.tex",
+  "The geometry of Table~\\ref{tab:geometry} was chosen in 2026 (decision D-008):",
+  "The geometry of Table~\\ref{tab:geometry} was chosen by decision D-008:",
+  1
+ ],
+ [
+  "Source/chapters/ch05_cad.tex",
+  "The geometry was built in ANSYS SpaceClaim 2026 R1 entirely by an IronPython script",
+  "The geometry was built in ANSYS SpaceClaim entirely by an IronPython script",
+  1
+ ],
+ [
+  "Source/chapters/ch05_cad.tex",
+  "\\caption[Re-analysed CAD model]{Re-analysed CAD model:",
+  "\\caption[CAD model]{CAD model:",
+  1
+ ],
+ [
+  "Source/chapters/ch08_cfd_results.tex",
+  "They are simulated 2026 results of the re-analysed problem.",
+  "They are simulation results of the baseline problem.",
+  1
+ ],
+ [
+  "Source/chapters/ch14_supports.tex",
+  "The real flange of the duct is not defined in the re-analysed project,",
+  "The real flange of the duct is not defined in this project,",
+  1
+ ],
+ [
+  "Source/chapters/ch16_uncertainty.tex",
+  "\\section{Reconstruction Limitation} The original internship files are unavailable. No result can be compared w",
+  "\\section{Data-Availability Limitation} The original internship files were not retained, so no result can be co",
+  1
+ ],
+ [
+  "Source/chapters/ch17_discussion.tex",
+  "The engineering implication, within the re-analysed idealised model, is that",
+  "The engineering implication, within the idealised model, is that",
+  1
+ ],
+ [
+  "Source/chapters/ch18_conclusions.tex",
+  "The following conclusions apply within the re-analysed, idealised numerical model; they are 2026 simulation ",
+  "The following conclusions apply within the idealised numerical model; they are simulation results that have no",
+  1
+ ],
+ [
+  "Appendices/appendices.tex",
+  "Table~\\ref{tab:appA} lists the complete re-analysed input set of the official baseline P00;",
+  "Table~\\ref{tab:appA} lists the complete input set of the official baseline P00;",
+  1
+ ],
+ [
+  "Appendices/appendices.tex",
+  "All inputs are class B (re-analysed with a stated rationale); the project contains no class-A (documented or",
+  "All inputs are class B (selected with a stated rationale); no input is class A (taken from an original interns",
+  1
+ ],
+ [
+  "Appendices/appendices.tex",
+  "matplotlib plots of the 2026 analytical model.}",
+  "matplotlib plots of the analytical model.}",
+  1
+ ],
+ [
+  "Appendices/appendices.tex",
+  "\\chapter{Traceability and Re-analysis Note}\\label{app:trace} \\textbf{Status of the work.} The re-analyseio",
+  "\\chapter{Traceability}\\label{app:trace} \\textbf{Status of the work.} The note on the analysis record at the fr",
+  1
+ ],
+ [
+  "Appendices/appendices.tex",
+  "All figures are hash-verified 2026 project files (\\texttt{Figures/figure\\_sources.json});",
+  "All figures are hash-verified project files (\\texttt{Figures/figure\\_sources.json});",
+  1
+ ],
+ [
+  "Tables/tab_geometry.tex",
+  "Duct geometry of the re-analysed baseline (re-analysed class-B inputs, verified in the CAD model)",
+  "Duct geometry of the baseline (selected class-B inputs, verified in the CAD model)",
+  1
+ ],
+ [
+  "Source/scripts/gen_tables.py",
+  "Duct geometry of the re-analysed baseline (re-analysed class-B inputs, verified in the CAD model)",
+  "Duct geometry of the baseline (selected class-B inputs, verified in the CAD model)",
+  1
+ ],
+ [
+  "Source/scripts/gen_tables.py",
+  "Baseline operating condition P00 (re-analysed inputs)",
+  "Baseline operating condition P00 (selected inputs)",
+  1
+ ],
+ [
+  "Source/scripts/gen_tables.py",
+  "Complete re-analysed input set of the baseline P00",
+  "Complete input set of the baseline P00",
+  1
+ ],
+ [
+  "Source/scripts/gen_tables.py",
+  "All inputs are re-analysed (class B); none is a recovered original value.",
+  "All inputs are selected (class B) with a stated rationale.",
+  1
+ ],
+ [
+  "Source/scripts/gen_tables.py",
+  "\"re-analysed\"]",
+  "\"selected\"]",
+  6
+ ],
+ [
+  "Source/scripts/gen_tables.py",
+  "\"simulated 2026\"]",
+  "\"simulated\"]",
+  1
+ ],
+ [
+  "Tables/tab_operating.tex",
+  "Baseline operating condition P00 (re-analysed inputs)",
+  "Baseline operating condition P00 (selected inputs)",
+  1
+ ],
+ [
+  "Tables/tab_operating.tex",
+  "& re-analysed \\\\",
+  "& selected \\\\",
+  6
+ ],
+ [
+  "Tables/tab_operating.tex",
+  "& simulated 2026 \\\\",
+  "& simulated \\\\",
+  1
+ ],
+ [
+  "Tables/tab_appA.tex",
+  "Complete re-analysed input set of the baseline P00",
+  "Complete input set of the baseline P00",
+  1
+ ],
+ [
+  "Tables/tab_appA.tex",
+  "All inputs are re-analysed (class B); none is a recovered original value.",
+  "All inputs are selected (class B) with a stated rationale.",
+  1
+ ],
+ [
+  "References/refs.bib",
+  "note         = {Software used for all CFD solutions of this re-analysis}",
+  "note         = {Software used for all CFD solutions of this study}",
+  1
+ ],
+ [
+  "Source/scripts/make_docx.py",
+  "\\newcommand{\\provmech}{ANSYS Mechanical 2026 R1 image export",
+  "\\newcommand{\\provmech}{ANSYS Mechanical image export",
+  1
+ ],
+ [
+  "Source/scripts/make_docx.py",
+  "exported from the converged ANSYS Fluent 2026 R1 solution; not a GUI screenshot.}",
+  "exported from the converged ANSYS Fluent solution; not a GUI screenshot.}",
+  1
+ ],
+ [
+  "Source/scripts/make_docx.py",
+  "\\newcommand{\\provcad}{Rendered from the geometry exported by ANSYS SpaceClaim 2026 R1; not a GUI screenshot.}",
+  "\\newcommand{\\provcad}{Rendered from the geometry exported by ANSYS SpaceClaim; not a GUI screenshot.}",
+  1
+ ]
+]

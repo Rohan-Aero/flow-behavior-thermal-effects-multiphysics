@@ -1,0 +1,2 @@
+nodes     89424. max_node     89424. constrained_nodes         3.
+SUM_RF_nodalCS_N    0.000000000000000E+00   0.518001121996292E-06   0.117220352665530E-06

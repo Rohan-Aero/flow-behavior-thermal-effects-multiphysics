@@ -1,0 +1,58 @@
+state-like globals: ['GetCellDisplayState', 'PendingStateExample', 'GetCellState', 'GetTransferForCellStateQuery', 'GetSystemComponentState', 'IsComponentInFailedState', 'GetSubComponentState', 'ReconnectPendingStateExampleComponent', 'GetAllDisplayStates', 'GetComponentState', 'GetComponentDisplayState', 'StopPendingStateExampleComponentUpdate', 'GetSystemCellState', 'GetTransferComponentState']
+OK   setup launcher /Setup/FluentLauncherSettings:RunSettings
+DIR setup launcher: ['CachePassword', 'ClusterHeadNode', 'ClusterJobTemplate', 'ClusterNodeGroup', 'ClusterProcessorUnit', 'Container', 'ConvertUNCPath', 'CreateJobSubmissionXML', 'DisplayMesh', 'DisplayText', 'EmbedGraphicsWindows', 'EnvPath', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'InitSolutionDataFile', 'Initialization', 'Interconnect', 'JobScheduler', 'JobSubmissionXmlFile', 'LSFCheckpointPeriod', 'LSFQueue', 'LSFUseAutomaticCheckpointing', 'LoadACTStartPage', 'MachineFileName', 'MachineList', 'MachineSpec', 'MpiType', 'Name', 'NumberOfProcessors', 'NumberOfProcessorsMeshing', 'PrePostOnly', 'Precision', 'RemoteFluentRootPath', 'RemoteHostName', 'RemoteRshCommand', 'RemoteRshOtherCommand', 'RemoteRunOnLinux', 'RemoteUseHost', 'RemoteUseWorkingDirectory', 'RemoteWorkingDirectory', 'RunParallel', 'SGEPE', 'SGEQMaster', 'SGEQueue', 'SGESettings', 'SGEUseSettings', 'SLURMAccount', 'SLURMPartition', 'SLURMSubmissionHost', 'SetEntityProperties', 'SetEntityProperty', 'SetupCompilationEnvironment', 'ShowLauncher', 'SimulationSetEntityProperty', 'StartWhenResourcesAvailable', 'ToString', 'Type', 'UDFPath', 'UseJobScheduler', 'UseLSFCheckpoint', 'UseLSFQueue', 'UseSharedMemory', 'UseUpstreamLauncherSettings', 'WorkbenchColorScheme']
+OK   setup launcher Set() 
+OK   setup launcher Precision 
+OK   setup launcher RunParallel 
+OK   setup launcher NumberOfProcessors 
+OK   setup launcher get Precision Double
+OK   setup launcher get RunParallel True
+OK   setup launcher get NumberOfProcessors 4
+OK   setup launcher get DisplayMesh True
+OK   setup launcher get EmbedGraphicsWindows True
+OK   setup launcher get Dimension Undefined
+OK   setup.Import CffCase 
+OK   setup files ['baseline_medium_final.cas.h5']
+saved after case import
+OK   solution settings /Solution/ComponentSolveSettingsForAddin:ComponentSolveSettingsForAddin
+DIR solution settings: ['ConfiguredQueue', 'Container', 'DisplayText', 'EnablePolling', 'ExecutionMode', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Name', 'NumberOfProcesses', 'PollingInterval', 'RsmJobName', 'RsmQueueDetails', 'RsmUserString', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'ToString', 'Type', 'UpdateOption']
+FAIL solset InitializationMethod: 'DataReference' object has no attribute 'InitializationMethod'
+OK   solset UpdateOption Foreground
+FAIL solset CaseModificationOption: 'DataReference' object has no attribute 'CaseModificationOption'
+FAIL solset ExecutionCommands: 'DataReference' object has no attribute 'ExecutionCommands'
+OK   ImportInitialData (no FileType) 
+FAIL ImportInitialData CffData: Attempting to access a non-existent member FileType from an instance of ImportInitialData.
+OK   sol launcher get Initialization ProvideInitialSolution
+OK   sol launcher get InitSolutionDataFile <PROJECT_ROOT>\06_Fluent_CFD\Data\baseline_medium_final.dat.h5
+OK   solution launcher /Solution/FluentLauncherSettings:RunSettings
+DIR solution launcher: ['CachePassword', 'ClusterHeadNode', 'ClusterJobTemplate', 'ClusterNodeGroup', 'ClusterProcessorUnit', 'Container', 'ConvertUNCPath', 'CreateJobSubmissionXML', 'DisplayMesh', 'DisplayText', 'EmbedGraphicsWindows', 'EnvPath', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'InitSolutionDataFile', 'Initialization', 'Interconnect', 'JobScheduler', 'JobSubmissionXmlFile', 'LSFCheckpointPeriod', 'LSFQueue', 'LSFUseAutomaticCheckpointing', 'LoadACTStartPage', 'MachineFileName', 'MachineList', 'MachineSpec', 'MpiType', 'Name', 'NumberOfProcessors', 'NumberOfProcessorsMeshing', 'PrePostOnly', 'Precision', 'RemoteFluentRootPath', 'RemoteHostName', 'RemoteRshCommand', 'RemoteRshOtherCommand', 'RemoteRunOnLinux', 'RemoteUseHost', 'RemoteUseWorkingDirectory', 'RemoteWorkingDirectory', 'RunParallel', 'SGEPE', 'SGEQMaster', 'SGEQueue', 'SGESettings', 'SGEUseSettings', 'SLURMAccount', 'SLURMPartition', 'SLURMSubmissionHost', 'SetEntityProperties', 'SetEntityProperty', 'SetupCompilationEnvironment', 'ShowLauncher', 'SimulationSetEntityProperty', 'StartWhenResourcesAvailable', 'ToString', 'Type', 'UDFPath', 'UseJobScheduler', 'UseLSFCheckpoint', 'UseLSFQueue', 'UseSharedMemory', 'UseUpstreamLauncherSettings', 'WorkbenchColorScheme']
+OK   solution launcher Set() 
+OK   solution launcher Precision 
+OK   solution launcher RunParallel 
+OK   solution launcher NumberOfProcessors 
+OK   solution launcher get Precision Double
+OK   solution launcher get RunParallel True
+OK   solution launcher get NumberOfProcessors 4
+OK   solution launcher get DisplayMesh True
+OK   solution launcher get EmbedGraphicsWindows True
+OK   solution launcher get Dimension ThreeD
+OK   sol launcher get Initialization (after) ProvideInitialSolution
+OK   sol launcher get InitSolutionDataFile (after) <PROJECT_ROOT>\06_Fluent_CFD\Data\baseline_medium_final.dat.h5
+OK   sol.Edit 
+OK   sol.Exit 
+OK   state before mark Setup <cell state: UpToDate: wb2qh_uptodate>
+OK   state before mark Solution <cell state: OutOfDate: wb2qh_fluent_solution>
+OK   sol.MarkUpToDate 
+saved after solution edit
+OK   solution files ['baseline_medium_final.dat.h5']
+project files: ['.\\probe7_files\\dp0\\act.dat 265640', '.\\probe7_files\\dp0\\designPoint.wbdp 23491', '.\\probe7_files\\dp0\\FLU\\Fluent\\baseline_medium_final.set 451409']
+OK   GetComponentState Setup <cell state: UpToDate: wb2qh_uptodate>
+OK   GetComponentState Solution <cell state: OutOfDate: wb2qh_fluent_solution>
+OK   fluent solution props /Solution/FluentSolutionProperties:SolutionData
+OK   link Solution -> SS Setup 
+saved with structural system
+OK   model refresh 
+mechanical opened
+mechanical script sent
+project files end: ['.\\probe7_files\\dp0\\act.dat 265640', '.\\probe7_files\\dp0\\designPoint.wbdp 122588', '.\\probe7_files\\dp0\\FLU\\Fluent\\baseline_medium_final.set 451409', '.\\probe7_files\\dp0\\Geom\\DM\\Geom.scdocx 45861', '.\\probe7_files\\dp0\\global\\MECH\\SYS.engd 28759', '.\\probe7_files\\dp0\\global\\MECH\\SYS.mechdb 8718680', '.\\probe7_files\\dp0\\SYS\\ENGD\\EngineeringData.xml 27413', '.\\probe7_files\\dp0\\SYS\\ENGD\\material.engd 28759']
+=== WB PROBE 6 DONE ===

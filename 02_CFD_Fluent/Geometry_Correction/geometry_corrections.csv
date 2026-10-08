@@ -1,0 +1,5 @@
+"# Geometric corrections to the TRUE CIRCLE. 'exact' = fixed by conservation; 'estimate' = correlation scaling, reported but NOT applied to any headline value. RE-ANALYSIS 2026."
+mesh,N,mdot_raw_gs,mdot_corr_gs,Q_raw_W,Q_corr_W,q_outer_avg_W_m2,q_inner_avg_W_m2,dT_geo_exit_K_exact,dT_geo_midspan_K_exact,T_out_raw,T_out_corr,T_max_raw,T_max_corr,dp_raw,dp_geo_acceleration_exact_Pa,dp_geo_friction_Dh_estimate_Pa,dp_geo_friction_density_estimate_Pa,dp_geoadjusted_estimate,dTwall_geo_estimate_pct,h_Nu_geo_estimate_pct
+coarse,32,8.631231,8.686942,602.2173,603.1858,8000.0000,16000.0000,0.3323,0.1676,369.1154,368.7830,565.404,565.071,437.094,0.720,1.400,0.121,434.854,-0.482,0.097
+medium,48,8.662155,8.686942,602.7552,603.1858,8000.0000,16000.0000,0.1474,0.0743,368.9324,368.7850,562.577,562.429,438.126,0.319,0.625,0.054,437.128,-0.214,0.043
+fine,72,8.675920,8.686942,602.9944,603.1858,8000.0000,16000.0000,0.0654,0.0330,368.8515,368.7861,560.831,560.765,439.121,0.142,0.279,0.024,438.676,-0.095,0.019

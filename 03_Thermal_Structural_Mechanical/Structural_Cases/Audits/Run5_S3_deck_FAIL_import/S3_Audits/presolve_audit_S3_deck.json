@@ -1,0 +1,25 @@
+{
+ "gate": "NOT RUN", 
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 S3 pre-solve audit", 
+ "mode": "deck", 
+ "checks": [
+  {
+   "check": "one new static (S3) and one buckling analysis in the copy", 
+   "expected": "1 / 1", 
+   "found": "[('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('Static Structural', 'Static'), ('Eigenvalue Buckling', 'Buckling')]", 
+   "pass": true
+  }, 
+  {
+   "check": "mesh B unchanged (108,252 nodes / 23,400 SOLID186)", 
+   "expected": "108252 / 23400", 
+   "found": "108252 / 23400", 
+   "pass": true
+  }, 
+  {
+   "check": "end faces: 612 inlet and 612 outlet nodes", 
+   "expected": "612 / 612", 
+   "found": "612 / 612", 
+   "pass": true
+  }
+ ]
+}

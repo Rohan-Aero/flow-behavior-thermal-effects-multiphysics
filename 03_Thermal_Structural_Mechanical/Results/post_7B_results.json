@@ -1,0 +1,2848 @@
+{
+ "note": "RE-ANALYSIS 2026 - computed from the 7B Mechanical/MAPDL solution files; nothing typed in by hand",
+ "gate": "PASS",
+ "n_presolve_checks": 61,
+ "stress_nodes": {
+  "corner_nodes": 28296,
+  "midside_nodes": 79956,
+  "midside_stress_all_zero": true,
+  "note": "MAPDL keeps averaged nodal stresses of SOLID186 at the 8 corner nodes only; *VGET returns 0 at midside nodes (the 'undefined entities' warning). All stress and strain statistics below use the corner nodes; displacements and temperatures are used at all nodes."
+ },
+ "temperature_check": {
+  "LC1": {
+   "T_used_min_K": 423.83737799999994,
+   "T_used_max_K": 562.557654,
+   "max_abs_diff_vs_7A_mapped_export_K": 0.005015000000014425,
+   "max_abs_diff_vs_ds.dat_BFBLOCK_K": 1.5700000005836046e-05,
+   "nodes": 108252
+  },
+  "LC2": {
+   "T_used_min_K": 423.83737799999994,
+   "T_used_max_K": 562.557654,
+   "max_abs_diff_vs_7A_mapped_export_K": 0.005015000000014425,
+   "max_abs_diff_vs_ds.dat_BFBLOCK_K": 1.5700000005836046e-05,
+   "nodes": 108252
+  },
+  "LC2P": {
+   "T_used_min_K": 423.83737799999994,
+   "T_used_max_K": 562.557654,
+   "max_abs_diff_vs_7A_mapped_export_K": 0.005015000000014425,
+   "max_abs_diff_vs_ds.dat_BFBLOCK_K": 1.5700000005836046e-05,
+   "nodes": 108252
+  },
+  "note": "T_used = PRNSOL/*VGET BFE,TEMP from the solved database: the nodal temperature MAPDL applied. The 7A export has 2 decimals (0.005 K rounding); the BFBLOCK has 10 significant digits."
+ },
+ "mesh_planes": {
+  "z_planes": 261,
+  "corner_planes": 131,
+  "first_element_axial_length_mm": 2.1276,
+  "largest_element_axial_length_mm": 8.5104
+ },
+ "section_area_check": {
+  "A_numeric_m2": 0.0009424777960769378,
+  "A_exact_m2": 0.000942477796076938,
+  "rel_err": -2.220446049250313e-16
+ },
+ "extremes": {
+  "LC1": {
+   "total_deformation_m": {
+    "max": 0.0018443072934482096,
+    "max_at": {
+     "node": 108251,
+     "x_mm": -16.383,
+     "y_mm": -11.4715,
+     "z_mm": 600.0,
+     "r_mm": 20.0,
+     "theta_deg": -145.0,
+     "T_K": 562.277,
+     "T_C": 289.127
+    },
+    "max_surface": "outer surface / outlet end face",
+    "min": 1.6744322112810337e-05,
+    "min_at": {
+     "node": 89534,
+     "x_mm": -9.9619,
+     "y_mm": -0.8716,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": -175.0,
+     "T_K": 423.872,
+     "T_C": 150.722
+    },
+    "min_surface": "bore (inner surface) / inlet end face"
+   },
+   "axial_deformation_uz_m": {
+    "max": 0.0018429411,
+    "max_at": {
+     "node": 108233,
+     "x_mm": 16.383,
+     "y_mm": 11.4715,
+     "z_mm": 600.0,
+     "r_mm": 20.0,
+     "theta_deg": 35.0,
+     "T_K": 562.277,
+     "T_C": 289.127
+    },
+    "max_surface": "outer surface / outlet end face",
+    "min": -2.64482121e-10,
+    "min_at": {
+     "node": 89462,
+     "x_mm": -19.9239,
+     "y_mm": -1.7431,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -175.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "radial_deformation_ur_m": {
+    "max": 7.1571762e-05,
+    "max_at": {
+     "node": 99249,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 587.7003,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 562.484,
+     "T_C": 289.334
+    },
+    "max_surface": "outer surface",
+    "min": 1.63613573e-05,
+    "min_at": {
+     "node": 89534,
+     "x_mm": -9.9619,
+     "y_mm": -0.8716,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": -175.0,
+     "T_K": 423.872,
+     "T_C": 150.722
+    },
+    "min_surface": "bore (inner surface) / inlet end face"
+   },
+   "von_mises_Pa": {
+    "max": 24282183.0,
+    "max_at": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "max_surface": "bore (inner surface)",
+    "min": 259244.177,
+    "min_at": {
+     "node": 23453,
+     "x_mm": -10.0,
+     "y_mm": -0.0,
+     "z_mm": 600.0,
+     "r_mm": 10.0,
+     "theta_deg": -180.0,
+     "T_K": 555.485,
+     "T_C": 282.335
+    },
+    "min_surface": "bore (inner surface) / outlet end face"
+   },
+   "max_principal_Pa": {
+    "max": 27973406.6,
+    "max_at": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -5452.88796,
+    "min_at": {
+     "node": 27995,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 8.794,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 441.754,
+     "T_C": 168.604
+    },
+    "min_surface": "outer surface"
+   },
+   "min_principal_Pa": {
+    "max": 2846001.19,
+    "max_at": {
+     "node": 17920,
+     "x_mm": 10.3923,
+     "y_mm": 6.0,
+     "z_mm": 11.1142,
+     "r_mm": 12.0,
+     "theta_deg": 30.0,
+     "T_K": 436.083,
+     "T_C": 162.933
+    },
+    "max_surface": "interior of wall",
+    "min": -20968782.2,
+    "min_at": {
+     "node": 18895,
+     "x_mm": -12.8558,
+     "y_mm": 15.3209,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": 130.0,
+     "T_K": 437.988,
+     "T_C": 164.838
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "equiv_elastic_strain": {
+    "max": 0.000124094349,
+    "max_at": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "max_surface": "bore (inner surface)",
+    "min": 1.38887651e-06,
+    "min_at": {
+     "node": 23453,
+     "x_mm": -10.0,
+     "y_mm": -0.0,
+     "z_mm": 600.0,
+     "r_mm": 10.0,
+     "theta_deg": -180.0,
+     "T_K": 555.485,
+     "T_C": 282.335
+    },
+    "min_surface": "bore (inner surface) / outlet end face"
+   },
+   "axial_stress_Pa": {
+    "max": 18580108.0,
+    "max_at": {
+     "node": 19219,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 20.9141,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 442.343,
+     "T_C": 169.193
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -11598030.2,
+    "min_at": {
+     "node": 27782,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 23.4997,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 452.469,
+     "T_C": 179.319
+    },
+    "min_surface": "outer surface"
+   },
+   "hoop_stress_Pa": {
+    "max": 27973383.4,
+    "max_at": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -20968769.7,
+    "min_at": {
+     "node": 18895,
+     "x_mm": -12.8558,
+     "y_mm": 15.3209,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": 130.0,
+     "T_K": 437.988,
+     "T_C": 164.838
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "radial_stress_Pa": {
+    "max": 4381767.57,
+    "max_at": {
+     "node": 18842,
+     "x_mm": -8.0,
+     "y_mm": -13.8564,
+     "z_mm": 0.0,
+     "r_mm": 16.0,
+     "theta_deg": -120.0,
+     "T_K": 434.807,
+     "T_C": 161.657
+    },
+    "max_surface": "inlet end face",
+    "min": -209105.671,
+    "min_at": {
+     "node": 18923,
+     "x_mm": 6.4279,
+     "y_mm": 7.6604,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": 50.0,
+     "T_K": 423.87,
+     "T_C": 150.72
+    },
+    "min_surface": "bore (inner surface) / inlet end face"
+   }
+  },
+  "LC2": {
+   "total_deformation_m": {
+    "max": 0.00013488427764164404,
+    "max_at": {
+     "node": 104046,
+     "x_mm": 16.383,
+     "y_mm": 11.4715,
+     "z_mm": 244.123,
+     "r_mm": 20.0,
+     "theta_deg": 35.0,
+     "T_K": 531.177,
+     "T_C": 258.027
+    },
+    "max_surface": "outer surface",
+    "min": 2.6759350800101474e-05,
+    "min_at": {
+     "node": 89602,
+     "x_mm": -9.9619,
+     "y_mm": 0.8716,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": 175.0,
+     "T_K": 423.872,
+     "T_C": 150.722
+    },
+    "min_surface": "bore (inner surface) / inlet end face"
+   },
+   "axial_deformation_uz_m": {
+    "max": 0.0,
+    "max_at": {
+     "node": 18577,
+     "x_mm": -11.8177,
+     "y_mm": -2.0838,
+     "z_mm": 600.0,
+     "r_mm": 12.0,
+     "theta_deg": -170.0,
+     "T_K": 557.216,
+     "T_C": 284.066
+    },
+    "max_surface": "outlet end face",
+    "min": -0.000108756251,
+    "min_at": {
+     "node": 104147,
+     "x_mm": -19.3185,
+     "y_mm": -5.1764,
+     "z_mm": 229.6536,
+     "r_mm": 20.0,
+     "theta_deg": -165.0,
+     "T_K": 528.702,
+     "T_C": 255.552
+    },
+    "min_surface": "outer surface"
+   },
+   "radial_deformation_ur_m": {
+    "max": 8.97340069e-05,
+    "max_at": {
+     "node": 99068,
+     "x_mm": 19.9239,
+     "y_mm": -1.7431,
+     "z_mm": 595.6982,
+     "r_mm": 20.0,
+     "theta_deg": -5.0,
+     "T_K": 562.462,
+     "T_C": 289.312
+    },
+    "max_surface": "outer surface",
+    "min": 2.67453196e-05,
+    "min_at": {
+     "node": 89607,
+     "x_mm": -9.9619,
+     "y_mm": -0.8716,
+     "z_mm": 2.1276,
+     "r_mm": 10.0,
+     "theta_deg": -175.0,
+     "T_K": 425.184,
+     "T_C": 152.034
+    },
+    "min_surface": "bore (inner surface)"
+   },
+   "von_mises_Pa": {
+    "max": 605160873.0,
+    "max_at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "max_surface": "outer surface / inlet end face",
+    "min": 561227928.0,
+    "min_at": {
+     "node": 18974,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 4.3018,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 426.483,
+     "T_C": 153.333
+    },
+    "min_surface": "bore (inner surface)"
+   },
+   "max_principal_Pa": {
+    "max": 48584465.8,
+    "max_at": {
+     "node": 18902,
+     "x_mm": -9.3969,
+     "y_mm": -3.4202,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": -160.0,
+     "T_K": 423.871,
+     "T_C": 150.721
+    },
+    "max_surface": "bore (inner surface) / inlet end face",
+    "min": -5835.32177,
+    "min_at": {
+     "node": 28100,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 2.1276,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 438.733,
+     "T_C": 165.583
+    },
+    "min_surface": "outer surface"
+   },
+   "min_principal_Pa": {
+    "max": -538198866.0,
+    "max_at": {
+     "node": 18939,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 2.1276,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 425.146,
+     "T_C": 151.996
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -613496798.0,
+    "min_at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "equiv_elastic_strain": {
+    "max": 0.00313088205,
+    "max_at": {
+     "node": 23935,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 576.5003,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 562.222,
+     "T_C": 289.072
+    },
+    "max_surface": "outer surface",
+    "min": 0.00286639505,
+    "min_at": {
+     "node": 18974,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 4.3018,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 426.483,
+     "T_C": 153.333
+    },
+    "min_surface": "bore (inner surface)"
+   },
+   "axial_stress_Pa": {
+    "max": -538198832.0,
+    "max_at": {
+     "node": 18939,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 2.1276,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 425.146,
+     "T_C": 151.996
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -613496736.0,
+    "min_at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "hoop_stress_Pa": {
+    "max": 48584453.6,
+    "max_at": {
+     "node": 18902,
+     "x_mm": -9.3969,
+     "y_mm": -3.4202,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": -160.0,
+     "T_K": 423.871,
+     "T_C": 150.721
+    },
+    "max_surface": "bore (inner surface) / inlet end face",
+    "min": -18280635.8,
+    "min_at": {
+     "node": 28065,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 4.3018,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 439.494,
+     "T_C": 166.344
+    },
+    "min_surface": "outer surface"
+   },
+   "radial_stress_Pa": {
+    "max": 7559502.65,
+    "max_at": {
+     "node": 18735,
+     "x_mm": -12.1244,
+     "y_mm": 7.0,
+     "z_mm": 0.0,
+     "r_mm": 14.0,
+     "theta_deg": 150.0,
+     "T_K": 432.058,
+     "T_C": 158.908
+    },
+    "max_surface": "inlet end face",
+    "min": -5865.05001,
+    "min_at": {
+     "node": 28109,
+     "x_mm": 12.8558,
+     "y_mm": -15.3209,
+     "z_mm": 2.1276,
+     "r_mm": 20.0,
+     "theta_deg": -50.0,
+     "T_K": 438.733,
+     "T_C": 165.583
+    },
+    "min_surface": "outer surface"
+   }
+  },
+  "LC2P": {
+   "total_deformation_m": {
+    "max": 0.00013488429450689786,
+    "max_at": {
+     "node": 104046,
+     "x_mm": 16.383,
+     "y_mm": 11.4715,
+     "z_mm": 244.123,
+     "r_mm": 20.0,
+     "theta_deg": 35.0,
+     "T_K": 531.177,
+     "T_C": 258.027
+    },
+    "max_surface": "outer surface",
+    "min": 2.6759393900101466e-05,
+    "min_at": {
+     "node": 89602,
+     "x_mm": -9.9619,
+     "y_mm": 0.8716,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": 175.0,
+     "T_K": 423.872,
+     "T_C": 150.722
+    },
+    "min_surface": "bore (inner surface) / inlet end face"
+   },
+   "axial_deformation_uz_m": {
+    "max": 0.0,
+    "max_at": {
+     "node": 18577,
+     "x_mm": -11.8177,
+     "y_mm": -2.0838,
+     "z_mm": 600.0,
+     "r_mm": 12.0,
+     "theta_deg": -170.0,
+     "T_K": 557.216,
+     "T_C": 284.066
+    },
+    "max_surface": "outlet end face",
+    "min": -0.000108756251,
+    "min_at": {
+     "node": 104147,
+     "x_mm": -19.3185,
+     "y_mm": -5.1764,
+     "z_mm": 229.6536,
+     "r_mm": 20.0,
+     "theta_deg": -165.0,
+     "T_K": 528.702,
+     "T_C": 255.552
+    },
+    "min_surface": "outer surface"
+   },
+   "radial_deformation_ur_m": {
+    "max": 8.97340357e-05,
+    "max_at": {
+     "node": 99068,
+     "x_mm": 19.9239,
+     "y_mm": -1.7431,
+     "z_mm": 595.6982,
+     "r_mm": 20.0,
+     "theta_deg": -5.0,
+     "T_K": 562.462,
+     "T_C": 289.312
+    },
+    "max_surface": "outer surface",
+    "min": 2.67453628e-05,
+    "min_at": {
+     "node": 89607,
+     "x_mm": -9.9619,
+     "y_mm": -0.8716,
+     "z_mm": 2.1276,
+     "r_mm": 10.0,
+     "theta_deg": -175.0,
+     "T_K": 425.184,
+     "T_C": 152.034
+    },
+    "min_surface": "bore (inner surface)"
+   },
+   "von_mises_Pa": {
+    "max": 605160918.0,
+    "max_at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "max_surface": "outer surface / inlet end face",
+    "min": 561228061.0,
+    "min_at": {
+     "node": 18974,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 4.3018,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 426.483,
+     "T_C": 153.333
+    },
+    "min_surface": "bore (inner surface)"
+   },
+   "max_principal_Pa": {
+    "max": 48585203.6,
+    "max_at": {
+     "node": 18902,
+     "x_mm": -9.3969,
+     "y_mm": -3.4202,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": -160.0,
+     "T_K": 423.871,
+     "T_C": 150.721
+    },
+    "max_surface": "bore (inner surface) / inlet end face",
+    "min": -5836.00148,
+    "min_at": {
+     "node": 28100,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 2.1276,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 438.733,
+     "T_C": 165.583
+    },
+    "min_surface": "outer surface"
+   },
+   "min_principal_Pa": {
+    "max": -538198770.0,
+    "max_at": {
+     "node": 18939,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 2.1276,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 425.146,
+     "T_C": 151.996
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -613496702.0,
+    "min_at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "equiv_elastic_strain": {
+    "max": 0.00313088228,
+    "max_at": {
+     "node": 23935,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 576.5003,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 562.222,
+     "T_C": 289.072
+    },
+    "max_surface": "outer surface",
+    "min": 0.00286639575,
+    "min_at": {
+     "node": 18974,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 4.3018,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 426.483,
+     "T_C": 153.333
+    },
+    "min_surface": "bore (inner surface)"
+   },
+   "axial_stress_Pa": {
+    "max": -538198736.0,
+    "max_at": {
+     "node": 18939,
+     "x_mm": -8.6603,
+     "y_mm": -5.0,
+     "z_mm": 2.1276,
+     "r_mm": 10.0,
+     "theta_deg": -150.0,
+     "T_K": 425.146,
+     "T_C": 151.996
+    },
+    "max_surface": "bore (inner surface)",
+    "min": -613496640.0,
+    "min_at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "min_surface": "outer surface / inlet end face"
+   },
+   "hoop_stress_Pa": {
+    "max": 48585191.4,
+    "max_at": {
+     "node": 18902,
+     "x_mm": -9.3969,
+     "y_mm": -3.4202,
+     "z_mm": 0.0,
+     "r_mm": 10.0,
+     "theta_deg": -160.0,
+     "T_K": 423.871,
+     "T_C": 150.721
+    },
+    "max_surface": "bore (inner surface) / inlet end face",
+    "min": -18280340.0,
+    "min_at": {
+     "node": 28065,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 4.3018,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 439.494,
+     "T_C": 166.344
+    },
+    "min_surface": "outer surface"
+   },
+   "radial_stress_Pa": {
+    "max": 7559349.09,
+    "max_at": {
+     "node": 18735,
+     "x_mm": -12.1244,
+     "y_mm": 7.0,
+     "z_mm": 0.0,
+     "r_mm": 14.0,
+     "theta_deg": 150.0,
+     "T_K": 432.058,
+     "T_C": 158.908
+    },
+    "max_surface": "inlet end face",
+    "min": -5865.73003,
+    "min_at": {
+     "node": 28109,
+     "x_mm": 12.8558,
+     "y_mm": -15.3209,
+     "z_mm": 2.1276,
+     "r_mm": 20.0,
+     "theta_deg": -50.0,
+     "T_K": 438.733,
+     "T_C": 165.583
+    },
+    "min_surface": "outer surface"
+   }
+  }
+ },
+ "mechanical_native": {
+  "LC1": {
+   "Maximum_Principal_Stress": {
+    "max": 27973406.56598929,
+    "min": -90840.12884403547,
+    "state": "Solved"
+   },
+   "Minimum_Principal_Stress": {
+    "max": 2887404.0064737974,
+    "min": -20968782.20936534,
+    "state": "Solved"
+   },
+   "Axial_Stress_Sz_global": {
+    "max": 18580108.0,
+    "min": -11598030.25,
+    "state": "Solved"
+   },
+   "Radial_Stress_Sr_CS_DUCT_CYL": {
+    "max": 4381767.569528105,
+    "min": -209105.67052550198,
+    "state": "Solved"
+   },
+   "Total_Deformation": {
+    "max": 0.0018443073450347429,
+    "min": 1.674432295624299e-05,
+    "state": "Solved"
+   },
+   "Equivalent_Stress_UNaveraged": {
+    "max": 24355971.092357233,
+    "min": 254375.0525165791,
+    "state": "Solved"
+   },
+   "Structural_Error": {
+    "max": 1.9057770135222754e-09,
+    "min": 6.208507320626822e-11,
+    "state": "Solved"
+   },
+   "Hoop_Stress_Stheta_CS_DUCT_CYL": {
+    "max": 27973383.38777091,
+    "min": -20968769.698185217,
+    "state": "Solved"
+   },
+   "Equivalent_Elastic_Strain": {
+    "max": 0.00012408641452266812,
+    "min": 1.3804771719797895e-06,
+    "state": "Solved"
+   },
+   "Radial_Deformation_Ur_CS_DUCT_CYL": {
+    "max": 7.157175840430523e-05,
+    "min": 1.636135815759789e-05,
+    "state": "Solved"
+   },
+   "Axial_Deformation_Uz_global": {
+    "max": 0.0018429411575198174,
+    "min": -2.644821306407863e-10,
+    "state": "Solved"
+   },
+   "Equivalent_Stress_averaged": {
+    "max": 24282182.951123707,
+    "min": 259244.17667387432,
+    "state": "Solved"
+   }
+  },
+  "LC2": {
+   "Maximum_Principal_Stress": {
+    "max": 48584465.80934852,
+    "min": -146641.88105857663,
+    "state": "Solved"
+   },
+   "Minimum_Principal_Stress": {
+    "max": -538198865.6207991,
+    "min": -613496797.7101518,
+    "state": "Solved"
+   },
+   "Axial_Stress_Sz_global": {
+    "max": -538198832.0,
+    "min": -613496736.0,
+    "state": "Solved"
+   },
+   "Radial_Stress_Sr_CS_DUCT_CYL": {
+    "max": 7559502.653093092,
+    "min": -146658.37500000035,
+    "state": "Solved"
+   },
+   "Total_Deformation": {
+    "max": 0.0001348842790853183,
+    "min": 2.675935078261256e-05,
+    "state": "Solved"
+   },
+   "Equivalent_Stress_UNaveraged": {
+    "max": 605185329.0806673,
+    "min": 561194449.9856821,
+    "state": "Solved"
+   },
+   "Structural_Error": {
+    "max": 2.5356842773900687e-09,
+    "min": 3.780955536761454e-11,
+    "state": "Solved"
+   },
+   "Hoop_Stress_Stheta_CS_DUCT_CYL": {
+    "max": 48584453.63203612,
+    "min": -18280635.76295801,
+    "state": "Solved"
+   },
+   "Equivalent_Elastic_Strain": {
+    "max": 0.00313088198859073,
+    "min": 0.002866360431839709,
+    "state": "Solved"
+   },
+   "Radial_Deformation_Ur_CS_DUCT_CYL": {
+    "max": 8.973401016028516e-05,
+    "min": 2.6745319755702546e-05,
+    "state": "Solved"
+   },
+   "Axial_Deformation_Uz_global": {
+    "max": 0.0,
+    "min": -0.00010875624866457656,
+    "state": "Solved"
+   },
+   "Equivalent_Stress_averaged": {
+    "max": 605160873.3807464,
+    "min": 561219217.6924256,
+    "state": "Solved"
+   }
+  },
+  "LC2P": {
+   "Maximum_Principal_Stress": {
+    "max": 48585203.56092903,
+    "min": -146640.31855560953,
+    "state": "Solved"
+   },
+   "Minimum_Principal_Stress": {
+    "max": -538198769.620828,
+    "min": -613496701.7101614,
+    "state": "Solved"
+   },
+   "Axial_Stress_Sz_global": {
+    "max": -538198736.0,
+    "min": -613496640.0,
+    "state": "Solved"
+   },
+   "Radial_Stress_Sr_CS_DUCT_CYL": {
+    "max": 7559349.086633587,
+    "min": -146656.81250000073,
+    "state": "Solved"
+   },
+   "Total_Deformation": {
+    "max": 0.00013488429663734432,
+    "min": 2.6759394609122497e-05,
+    "state": "Solved"
+   },
+   "Equivalent_Stress_UNaveraged": {
+    "max": 605185405.8463726,
+    "min": 561194597.1354332,
+    "state": "Solved"
+   },
+   "Structural_Error": {
+    "max": 2.5357173853993465e-09,
+    "min": 3.7785428445158404e-11,
+    "state": "Solved"
+   },
+   "Hoop_Stress_Stheta_CS_DUCT_CYL": {
+    "max": 48585191.383945785,
+    "min": -18280340.009585492,
+    "state": "Solved"
+   },
+   "Equivalent_Elastic_Strain": {
+    "max": 0.003130882285938472,
+    "min": 0.0028663610607215996,
+    "state": "Solved"
+   },
+   "Radial_Deformation_Ur_CS_DUCT_CYL": {
+    "max": 8.973403206363172e-05,
+    "min": 2.6745363582212604e-05,
+    "state": "Solved"
+   },
+   "Axial_Deformation_Uz_global": {
+    "max": 0.0,
+    "min": -0.00010875624866457656,
+    "state": "Solved"
+   },
+   "Equivalent_Stress_averaged": {
+    "max": 605160918.4122063,
+    "min": 561219348.7477396,
+    "state": "Solved"
+   }
+  }
+ },
+ "native_vs_table": {
+  "LC1": {
+   "total_def_max": {
+    "mechanical": 0.0018443073450347429,
+    "apdl_table": 0.0018443072934482096,
+    "rel_diff": 2.7970682220618434e-08
+   },
+   "uz_max": {
+    "mechanical": 0.0018429411575198174,
+    "apdl_table": 0.0018429411,
+    "rel_diff": 3.121088202505815e-08
+   },
+   "uz_min": {
+    "mechanical": -2.644821306407863e-10,
+    "apdl_table": -2.64482121e-10,
+    "rel_diff": -3.6451561566964226e-08
+   },
+   "ur_max": {
+    "mechanical": 7.157175840430523e-05,
+    "apdl_table": 7.1571762e-05,
+    "rel_diff": -5.0239014281735574e-08
+   },
+   "vm_max": {
+    "mechanical": 24282182.951123707,
+    "apdl_table": 24282183.0,
+    "rel_diff": -2.0128459209602e-09
+   },
+   "s1_max": {
+    "mechanical": 27973406.56598929,
+    "apdl_table": 27973406.6,
+    "rel_diff": -1.2158230330571203e-09
+   },
+   "s3_min": {
+    "mechanical": -20968782.20936534,
+    "apdl_table": -20968782.2,
+    "rel_diff": -4.466326402794278e-10
+   },
+   "epel_max": {
+    "mechanical": 0.00012408641452266812,
+    "apdl_table": 0.000124094349,
+    "rel_diff": -6.393907052035597e-05
+   },
+   "vm_unaveraged_max": 24355971.092357233,
+   "structural_error_max": 1.9057770135222754e-09
+  },
+  "LC2": {
+   "total_def_max": {
+    "mechanical": 0.0001348842790853183,
+    "apdl_table": 0.00013488427764164404,
+    "rel_diff": 1.0703058057020551e-08
+   },
+   "uz_max": {
+    "mechanical": 0.0,
+    "apdl_table": 0.0,
+    "rel_diff": null
+   },
+   "uz_min": {
+    "mechanical": -0.00010875624866457656,
+    "apdl_table": -0.000108756251,
+    "rel_diff": 2.1473923737247e-08
+   },
+   "ur_max": {
+    "mechanical": 8.973401016028516e-05,
+    "apdl_table": 8.97340069e-05,
+    "rel_diff": 3.6332771433420825e-08
+   },
+   "vm_max": {
+    "mechanical": 605160873.3807464,
+    "apdl_table": 605160873.0,
+    "rel_diff": 6.291655352832202e-10
+   },
+   "s1_max": {
+    "mechanical": 48584465.80934852,
+    "apdl_table": 48584465.8,
+    "rel_diff": 1.9241801763359125e-10
+   },
+   "s3_min": {
+    "mechanical": -613496797.7101518,
+    "apdl_table": -613496798.0,
+    "rel_diff": 4.72452683326685e-10
+   },
+   "epel_max": {
+    "mechanical": 0.00313088198859073,
+    "apdl_table": 0.00313088205,
+    "rel_diff": -1.9614047750593847e-08
+   },
+   "vm_unaveraged_max": 605185329.0806673,
+   "structural_error_max": 2.5356842773900687e-09
+  },
+  "LC2P": {
+   "total_def_max": {
+    "mechanical": 0.00013488429663734432,
+    "apdl_table": 0.00013488429450689786,
+    "rel_diff": 1.5794622063344792e-08
+   },
+   "uz_max": {
+    "mechanical": 0.0,
+    "apdl_table": 0.0,
+    "rel_diff": null
+   },
+   "uz_min": {
+    "mechanical": -0.00010875624866457656,
+    "apdl_table": -0.000108756251,
+    "rel_diff": 2.1473923737247e-08
+   },
+   "ur_max": {
+    "mechanical": 8.973403206363172e-05,
+    "apdl_table": 8.97340357e-05,
+    "rel_diff": -4.052384639348829e-08
+   },
+   "vm_max": {
+    "mechanical": 605160918.4122063,
+    "apdl_table": 605160918.0,
+    "rel_diff": 6.811515415018998e-10
+   },
+   "s1_max": {
+    "mechanical": 48585203.56092903,
+    "apdl_table": 48585203.6,
+    "rel_diff": -8.041742838376971e-10
+   },
+   "s3_min": {
+    "mechanical": -613496701.7101614,
+    "apdl_table": -613496702.0,
+    "rel_diff": 4.724370180476954e-10
+   },
+   "epel_max": {
+    "mechanical": 0.003130882285938472,
+    "apdl_table": 0.00313088228,
+    "rel_diff": 1.8967407284369375e-09
+   },
+   "vm_unaveraged_max": 605185405.8463726,
+   "structural_error_max": 2.5357173853993465e-09
+  }
+ },
+ "reactions": {
+  "LC1": {
+   "n_constrained_nodes": 3,
+   "sum_F_N": [
+    7.76468257317215e-08,
+    3.866251878965481e-07,
+    2.2809181072000524e-09
+   ],
+   "sum_M_about_origin_Nm": [
+    -2.0457666965241377e-07,
+    4.240995956070101e-08,
+    1.7933206068069724e-08
+   ],
+   "groups": {
+    "inlet_end_face_z0": {
+     "n": 3,
+     "Fx": 7.76468257317215e-08,
+     "Fy": 3.866251878965481e-07,
+     "Fz": 2.2809181072000524e-09,
+     "max_abs_nodal": 6.6132127285977e-06
+    },
+    "rotated_direct_FE_nodes": {
+     "n": 3,
+     "Fx": 7.76468257317215e-08,
+     "Fy": 3.866251878965481e-07,
+     "Fz": 2.2809181072000524e-09,
+     "max_abs_nodal": 6.6132127285977e-06
+    }
+   },
+   "rotated_nodes": [
+    {
+     "node": 18870,
+     "x": -0.01,
+     "y": -0.01732050808,
+     "z": 0.0,
+     "RF_nodalCS": [
+      0.0,
+      2.1484112089354e-07,
+      6.6132127285977e-06
+     ],
+     "F_global": [
+      1.8605786848290723e-07,
+      -1.0742056042671655e-07,
+      6.6132127285977e-06
+     ]
+    },
+    {
+     "node": 18882,
+     "x": 0.02,
+     "y": 1.387778781e-17,
+     "z": 0.0,
+     "RF_nodalCS": [
+      0.0,
+      5.5663689302321e-07,
+      -1.4129050126543e-06
+     ],
+     "F_global": [
+      -3.862444344296888e-22,
+      5.5663689302321e-07,
+      -1.4129050126543e-06
+     ]
+    },
+    {
+     "node": 18894,
+     "x": -0.01,
+     "y": 0.01732050808,
+     "z": 0.0,
+     "RF_nodalCS": [
+      0.0,
+      1.2518228942326e-07,
+      -5.1980267978362e-06
+     ],
+     "F_global": [
+      -1.0841104275118533e-07,
+      -6.259114469994539e-08,
+      -5.1980267978362e-06
+     ]
+    }
+   ],
+   "max_abs_nodal_reaction_N": 6.6132127285977e-06
+  },
+  "LC2": {
+   "n_constrained_nodes": 1227,
+   "sum_F_N": [
+    1.3478937724386654e-09,
+    9.498419739794366e-08,
+    -1.7811544239521027e-08
+   ],
+   "sum_M_about_origin_Nm": [
+    -3.060040398850106e-08,
+    -3.299533091194462e-09,
+    2.433809811530402e-09
+   ],
+   "groups": {
+    "inlet_end_face_z0": {
+     "n": 612,
+     "Fx": 0.0,
+     "Fy": 0.0,
+     "Fz": 548936.6137530317,
+     "max_abs_nodal": 2682.0254302881
+    },
+    "outlet_end_face_zL": {
+     "n": 612,
+     "Fx": 0.0,
+     "Fy": 0.0,
+     "Fz": -548936.6137530496,
+     "max_abs_nodal": 2612.4934176622
+    },
+    "rotated_direct_FE_nodes": {
+     "n": 3,
+     "Fx": 1.3478937724386654e-09,
+     "Fy": 9.498419739794366e-08,
+     "Fz": 0.0,
+     "max_abs_nodal": 1.0388629512192e-07
+    }
+   },
+   "rotated_nodes": [
+    {
+     "node": 25862,
+     "x": -0.01,
+     "y": -0.01732050808,
+     "z": 0.3,
+     "RF_nodalCS": [
+      0.0,
+      9.6803045579463e-09,
+      0.0
+     ],
+     "F_global": [
+      8.383389664073461e-09,
+      -4.840152278069583e-09,
+      0.0
+     ]
+    },
+    {
+     "node": 25874,
+     "x": 0.02,
+     "y": 1.387778781e-17,
+     "z": 0.3,
+     "RF_nodalCS": [
+      0.0,
+      1.0388629512192e-07,
+      0.0
+     ],
+     "F_global": [
+      -7.208559800345218e-23,
+      1.0388629512192e-07,
+      0.0
+     ]
+    },
+    {
+     "node": 25886,
+     "x": -0.01,
+     "y": 0.01732050808,
+     "z": 0.3,
+     "RF_nodalCS": [
+      0.0,
+      8.1238908933301e-09,
+      0.0
+     ],
+     "F_global": [
+      -7.035495891634723e-09,
+      -4.06194544590676e-09,
+      0.0
+     ]
+    }
+   ],
+   "max_abs_nodal_reaction_N": 2682.0254302881
+  },
+  "LC2P": {
+   "n_constrained_nodes": 1227,
+   "sum_F_N": [
+    6.286043490937225e-09,
+    6.944429653904328e-08,
+    -7.8580342233181e-09
+   ],
+   "sum_M_about_origin_Nm": [
+    -2.4090240913210437e-08,
+    4.890466698270757e-09,
+    2.548115283362791e-09
+   ],
+   "groups": {
+    "inlet_end_face_z0": {
+     "n": 612,
+     "Fx": 0.0,
+     "Fy": 0.0,
+     "Fz": 548936.5318439972,
+     "max_abs_nodal": 2682.0250488239
+    },
+    "outlet_end_face_zL": {
+     "n": 612,
+     "Fx": 0.0,
+     "Fy": 0.0,
+     "Fz": -548936.531844005,
+     "max_abs_nodal": 2612.4930337681
+    },
+    "rotated_direct_FE_nodes": {
+     "n": 3,
+     "Fx": 6.286043490937225e-09,
+     "Fy": 6.944429653904328e-08,
+     "Fz": 0.0,
+     "max_abs_nodal": 8.8764785743933e-08
+    }
+   },
+   "rotated_nodes": [
+    {
+     "node": 25862,
+     "x": -0.01,
+     "y": -0.01732050808,
+     "z": 0.3,
+     "RF_nodalCS": [
+      0.0,
+      2.2949738109901e-08,
+      0.0
+     ],
+     "F_global": [
+      1.98750562146109e-08,
+      -1.1474869052808352e-08,
+      0.0
+     ]
+    },
+    {
+     "node": 25874,
+     "x": 0.02,
+     "y": 1.387778781e-17,
+     "z": 0.3,
+     "RF_nodalCS": [
+      0.0,
+      8.8764785743933e-08,
+      0.0
+     ],
+     "F_global": [
+      -6.159294307772075e-23,
+      8.8764785743933e-08,
+      0.0
+     ]
+    },
+    {
+     "node": 25886,
+     "x": -0.01,
+     "y": 0.01732050808,
+     "z": 0.3,
+     "RF_nodalCS": [
+      0.0,
+      1.5691240307092e-08,
+      0.0
+     ],
+     "F_global": [
+      -1.3589012723673612e-08,
+      -7.845620152081365e-09,
+      0.0
+     ]
+    }
+   ],
+   "max_abs_nodal_reaction_N": 2682.0250488239
+  }
+ },
+ "section_force": {
+  "LC1": {
+   "N_min_N": -126.91733325208817,
+   "N_max_N": 4.109907930308087,
+   "N_mean_N": -115.90176507616285,
+   "N_midspan_N": -126.0209472697966
+  },
+  "LC2": {
+   "N_min_N": -549247.9003388822,
+   "N_max_N": -549046.4202895991,
+   "N_mean_N": -549064.2542702873,
+   "N_midspan_N": -549057.8121904609
+  },
+  "LC2P": {
+   "N_min_N": -549247.8221481316,
+   "N_max_N": -549046.3418754465,
+   "N_mean_N": -549064.172402781,
+   "N_midspan_N": -549057.7315422867
+  }
+ },
+ "LC1_expansion": {
+  "FE_dL_mean_face_m": 0.0018408599669426447,
+  "FE_uz_outlet_face_mean_m": 0.0018423707774845675,
+  "FE_uz_inlet_face_mean_m": 1.5108105419227207e-06,
+  "FE_uz_outlet_outer_mean_m": 0.0018429409304166666,
+  "FE_uz_outlet_bore_mean_m": 0.0018415632012500002,
+  "FE_uz_max_m": 0.0018429411,
+  "independent_integral_area_mean_m": 0.0018408491041481333,
+  "independent_integral_E_weighted_m": 0.0018408364503284928,
+  "independent_integral_direct_secant_form_m": 0.001840937561115278,
+  "simple_estimate_CFD_volume_mean_T_m": 0.001837163952801943,
+  "CFD_volume_mean_T_K": 525.5172401218493,
+  "section2_analytical_m": 0.002096,
+  "section2_basis": "alpha 13.72e-6 x 254.7 K x 0.600 m (uniform mean rise, Section 2)",
+  "FE_vs_integral_E_rel": 1.2774961158479314e-05,
+  "FE_vs_section2_rel": -0.12172711500828026,
+  "integral_vs_section2_rel": -0.12173833476694051
+ },
+ "LC1_radial": {
+  "ur_outer_midspan_m": 6.446218369444443e-05,
+  "ur_bore_midspan_m": 3.223071258333333e-05,
+  "ur_bore_simple_alphaDT_r_m": 3.153498336287193e-05,
+  "section2_bore_growth_m": 3.494e-05
+ },
+ "LC1_midspan_vs_timoshenko": {
+  "z_m": 0.3,
+  "T_bore_K": 531.6868110555556,
+  "T_outer_K": 539.2664043888888,
+  "dT_wall_K": 7.57959333333315,
+  "E_used_Pa": 189260403536.66666,
+  "alpha_used": 1.491526722370734e-05,
+  "FE_bore": {
+   "s_t": 18308767.755555555,
+   "s_z": 18387807.222222224,
+   "s_r": 151689.75230555554,
+   "vm": 18196745.6
+  },
+  "FE_outer": {
+   "s_t": -11688982.166666666,
+   "s_z": -11539148.41111111,
+   "s_r": 67424.53280277777,
+   "vm": 11682231.522222225
+  },
+  "timoshenko_bore": {
+   "s_r": 0.0,
+   "s_t": 18546986.633158363,
+   "s_z": 18546986.633158363,
+   "vm": 18546986.633158363
+  },
+  "timoshenko_outer": {
+   "s_r": 0.0,
+   "s_t": -11759249.619932119,
+   "s_z": -11759249.61993212,
+   "vm": 11759249.61993212
+  },
+  "section2": {
+   "hoop_bore_MPa": 16.31,
+   "hoop_outer_MPa": -10.34,
+   "vm_peak_MPa": 16.31,
+   "dT_wall_K": 7.28
+  }
+ },
+ "LC2_axial": {
+  "FE_section_force_N": -549064.2542702873,
+  "FE_reaction_inlet_Fz_N": 548936.6137530317,
+  "FE_reaction_outlet_Fz_N": -548936.6137530496,
+  "FE_mean_axial_stress_Pa": -582575267.6145436,
+  "analytical_CFD_field_N": -548931.395691865,
+  "analytical_CFD_field_mean_stress_Pa": -582434300.284623,
+  "FE_vs_analytical_rel": 0.00024203129838262782,
+  "section2_stress_Pa": -657200000.0,
+  "section2_basis": "-E alpha dT with E 188.1 GPa, alpha 13.72e-6, dT 254.7 K (uniform)",
+  "section2_rescaled_to_CFD_mean_rise_Pa": -581900000.8169587
+ },
+ "LC2_profile_summary": {
+  "seqv_outer_min_max_MPa": [
+   586.447189,
+   605.1575867777777
+  ],
+  "seqv_bore_min_max_MPa": [
+   561.2629125555555,
+   575.548468
+  ],
+  "midspan": {
+   "seqv_bore_Pa": 574354934.3333334,
+   "seqv_outer_Pa": 587717434.0,
+   "sz_bore_Pa": -564909781.3333334,
+   "sz_outer_Pa": -593439719.1111112,
+   "st_bore_Pa": 18308080.944444448,
+   "st_outer_Pa": -11688357.444444444,
+   "T_bore_K": 531.6868110555556,
+   "T_outer_K": 539.2664043888888
+  }
+ },
+ "zones": {
+  "LC1": {
+   "inlet_zone_z<15mm": {
+    "max_Pa": 24282183.0,
+    "at": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "surface": "bore (inner surface)"
+   },
+   "outlet_zone_z>585mm": {
+    "max_Pa": 16487618.8,
+    "at": {
+     "node": 23242,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 586.5149,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 555.133,
+     "T_C": 281.983
+    },
+    "surface": "bore (inner surface)"
+   },
+   "interior_15-585mm": {
+    "max_Pa": 20111212.6,
+    "at": {
+     "node": 19150,
+     "x_mm": -7.6604,
+     "y_mm": -6.4279,
+     "z_mm": 15.908,
+     "r_mm": 10.0,
+     "theta_deg": -140.0,
+     "T_K": 438.099,
+     "T_C": 164.949
+    },
+    "surface": "bore (inner surface)"
+   },
+   "interior_50-550mm": {
+    "max_Pa": 18234136.0,
+    "at": {
+     "node": 20757,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 209.0915,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 517.238,
+     "T_C": 244.088
+    },
+    "surface": "bore (inner surface)"
+   }
+  },
+  "LC2": {
+   "inlet_zone_z<15mm": {
+    "max_Pa": 605160873.0,
+    "at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "outlet_zone_z>585mm": {
+    "max_Pa": 587414422.0,
+    "at": {
+     "node": 23795,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 586.5149,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 562.467,
+     "T_C": 289.317
+    },
+    "surface": "outer surface"
+   },
+   "interior_15-585mm": {
+    "max_Pa": 591216253.0,
+    "at": {
+     "node": 27887,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 15.908,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 446.764,
+     "T_C": 173.614
+    },
+    "surface": "outer surface"
+   },
+   "interior_50-550mm": {
+    "max_Pa": 587740109.0,
+    "at": {
+     "node": 25510,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 377.3495,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 547.97,
+     "T_C": 274.82
+    },
+    "surface": "outer surface"
+   }
+  },
+  "LC2P": {
+   "inlet_zone_z<15mm": {
+    "max_Pa": 605160918.0,
+    "at": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "outlet_zone_z>585mm": {
+    "max_Pa": 587414486.0,
+    "at": {
+     "node": 23795,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 586.5149,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 562.467,
+     "T_C": 289.317
+    },
+    "surface": "outer surface"
+   },
+   "interior_15-585mm": {
+    "max_Pa": 591216315.0,
+    "at": {
+     "node": 27887,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 15.908,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 446.764,
+     "T_C": 173.614
+    },
+    "surface": "outer surface"
+   },
+   "interior_50-550mm": {
+    "max_Pa": 587740188.0,
+    "at": {
+     "node": 25510,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 377.3495,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 547.97,
+     "T_C": 274.82
+    },
+    "surface": "outer surface"
+   }
+  }
+ },
+ "pressure": {
+  "definition": "LC2P = LC2 + uniform 443.41 Pa gauge on the bore (CFD wall maximum; bound of p(z) = 407.36 - 681.55 z)",
+  "vm_max_LC2_Pa": 605160873.0,
+  "vm_max_LC2P_Pa": 605160918.0,
+  "vm_max_diff_Pa": 45.0,
+  "vm_max_diff_pct": 7.436039243072478e-06,
+  "same_max_node": true,
+  "nodewise_dvm_min_Pa": 14.0,
+  "nodewise_dvm_max_Pa": 161.0,
+  "usum_max_LC2_m": 0.00013488427764164404,
+  "usum_max_LC2P_m": 0.00013488429450689786,
+  "usum_max_diff_m": 1.686525382240192e-11,
+  "ur_max_LC2_m": 8.97340069e-05,
+  "ur_max_LC2P_m": 8.97340357e-05,
+  "mech_native_vm_max_LC2": 605160873.3807464,
+  "mech_native_vm_max_LC2P": 605160918.4122063,
+  "lame_check_midspan": {
+   "lame_constant_E_plane_strain": {
+    "s_t_bore": 739.0166666666667,
+    "s_r_bore": -443.41,
+    "s_t_outer": 295.6066666666667,
+    "s_r_outer": 0.0,
+    "s_z": 86.90836,
+    "u_r_bore_m": 4.4532058919163865e-11
+   },
+   "FE_LC2P_minus_LC2": {
+    "st_bore": 736.6333333336645,
+    "sr_bore": -440.1527499999963,
+    "sz_bore": 81.77777777777777,
+    "ur_bore": 4.45736111108242e-11,
+    "st_outer": 295.82222222205667,
+    "sr_outer": -0.6420055555570596,
+    "sz_outer": 92.44444444444444,
+    "ur_outer": 2.853055555482962e-11
+   },
+   "E_bore_Pa": 189487791336.66666
+  }
+ },
+ "utilisation": {
+  "LC1": {
+   "at_max_vm": {
+    "vm_Pa": 24282183.0,
+    "Sy_T_Pa": 1049067379.8,
+    "utilisation": 0.02314644747092345,
+    "margin_Sy_over_vm_minus_1": 42.203174105062956,
+    "loc": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "surface": "bore (inner surface)"
+   },
+   "max_utilisation_anywhere": {
+    "vm_Pa": 24282183.0,
+    "Sy_T_Pa": 1049067379.8,
+    "utilisation": 0.02314644747092345,
+    "margin": 42.203174105062956,
+    "loc": {
+     "node": 19007,
+     "x_mm": -9.8481,
+     "y_mm": -1.7365,
+     "z_mm": 6.5236,
+     "r_mm": 10.0,
+     "theta_deg": -170.0,
+     "T_K": 427.813,
+     "T_C": 154.663
+    },
+    "surface": "bore (inner surface)"
+   },
+   "with_scalar_1020MPa_for_reference": 0.023806061764705882,
+   "max_utilisation_interior_15-585mm": {
+    "vm_Pa": 20111212.6,
+    "Sy_T_Pa": 1047010263.0,
+    "utilisation": 0.019208228716283367,
+    "margin": 51.06102107438315,
+    "loc": {
+     "node": 19150,
+     "x_mm": -7.6604,
+     "y_mm": -6.4279,
+     "z_mm": 15.908,
+     "r_mm": 10.0,
+     "theta_deg": -140.0,
+     "T_K": 438.099,
+     "T_C": 164.949
+    },
+    "surface": "bore (inner surface)"
+   }
+  },
+  "LC2": {
+   "at_max_vm": {
+    "vm_Pa": 605160873.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779772944955913,
+    "margin_Sy_over_vm_minus_1": 0.7301717723577943,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "max_utilisation_anywhere": {
+    "vm_Pa": 605160873.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779772944955913,
+    "margin": 0.7301717723577943,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "with_scalar_1020MPa_for_reference": 0.5932949735294117,
+   "max_utilisation_interior_15-585mm": {
+    "vm_Pa": 587590460.0,
+    "Sy_T_Pa": 1022282013.0,
+    "utilisation": 0.5747831347199884,
+    "margin": 0.7397866074952952,
+    "loc": {
+     "node": 24110,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 562.6981,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 561.74,
+     "T_C": 288.59
+    },
+    "surface": "outer surface"
+   }
+  },
+  "LC2P": {
+   "at_max_vm": {
+    "vm_Pa": 605160918.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779773374742098,
+    "margin_Sy_over_vm_minus_1": 0.730171643701552,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "max_utilisation_anywhere": {
+    "vm_Pa": 605160918.0,
+    "Sy_T_Pa": 1047032260.2,
+    "utilisation": 0.5779773374742098,
+    "margin": 0.730171643701552,
+    "loc": {
+     "node": 18865,
+     "x_mm": -19.6962,
+     "y_mm": -3.473,
+     "z_mm": 0.0,
+     "r_mm": 20.0,
+     "theta_deg": -170.0,
+     "T_K": 437.989,
+     "T_C": 164.839
+    },
+    "surface": "outer surface / inlet end face"
+   },
+   "with_scalar_1020MPa_for_reference": 0.5932950176470588,
+   "max_utilisation_interior_15-585mm": {
+    "vm_Pa": 587590507.0,
+    "Sy_T_Pa": 1022282013.0,
+    "utilisation": 0.5747831806955602,
+    "margin": 0.7397864683338051,
+    "loc": {
+     "node": 24110,
+     "x_mm": -15.3209,
+     "y_mm": -12.8558,
+     "z_mm": 562.6981,
+     "r_mm": 20.0,
+     "theta_deg": -140.0,
+     "T_K": 561.74,
+     "T_C": 288.59
+    },
+    "surface": "outer surface"
+   }
+  }
+ },
+ "yield_basis": {
+  "table_C": [
+   20.0,
+   100.0,
+   200.0,
+   300.0,
+   400.0
+  ],
+  "table_MPa": [
+   1030.0,
+   1060.0,
+   1040.0,
+   1020.0,
+   1000.0
+  ],
+  "interpolation": "linear between VDM 4127 points",
+  "range_used_C": [
+   150.687378,
+   289.407654
+  ],
+  "extrapolation": "none needed"
+ },
+ "uncertainty_6B": {
+  "source": "PROJECT_STATE 12.9 (6B three-mesh study): peak solid T -5.1/+1.6 K (best estimate -4.4 K); volume-mean T -3.6/+1.0 K (best -3.1 K); through-wall dT mid-span -0.013/+0.045 K",
+  "LC1_growth": {
+   "d_dL_dTmean_m_per_K": 8.884014790395273e-06,
+   "range_m": [
+    -3.1982453245422984e-05,
+    8.884014790395273e-06
+   ],
+   "best_estimate_m": -2.7540445850225345e-05
+  },
+  "LC2_axial_stress_uniform_shift": {
+   "note": "a uniform shift dT of the whole field changes the restrained mean stress by about -E_bar alpha_tan dT",
+   "dsigma_per_K_Pa": -2815542.33835648,
+   "range_Pa": [
+    10135952.418083329,
+    -2815542.33835648
+   ],
+   "best_estimate_Pa": 8728181.248905089
+  },
+  "LC2_local_peak": {
+   "T_crit_K": 437.989,
+   "E_crit_Pa": 195109660000.0,
+   "alpha_tan_crit": 1.377322166717953e-05,
+   "note": "upper bound on the local change if the peak-temperature uncertainty applied fully at the critical point",
+   "range_Pa": [
+    -13705171.84259896,
+    4299661.75454085
+   ]
+  },
+  "LC1_through_wall": {
+   "note": "mid-span through-wall stress scales with dT_wall",
+   "rel_range": [
+    -0.001715131594571078,
+    0.0059369939812075785
+   ]
+  }
+ },
+ "mesh_sensitivity_prep": {
+  "structural_error": {
+   "LC1": {
+    "total_J": 7.441556813e-06,
+    "max_J": 1.9058e-09,
+    "mean_J": 3.180152484188034e-10,
+    "share_by_zone": {
+     "inlet z<15mm": 0.12730935794845757,
+     "outlet z>585mm": 0.030886605823995605,
+     "interior": 0.8418040362275467
+    },
+    "elements_by_zone": {
+     "inlet z<15mm": 1260,
+     "outlet z>585mm": 1260,
+     "interior": 20880
+    },
+    "top10": [
+     {
+      "element": 20410,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 20670,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 19500,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 22750,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 23010,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 19240,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 21840,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 21580,
+      "err_J": 1.9058e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 21450,
+      "err_J": 1.9054e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 19110,
+      "err_J": 1.9054e-09,
+      "z_mm": 1.064,
+      "r_mid_mm": 11.0
+     }
+    ],
+    "ring_error_first5_mm_J": [
+     [
+      1.064,
+      2.3604672e-07
+     ],
+     [
+      3.215,
+      2.2784166000000005e-07
+     ],
+     [
+      5.413,
+      1.4565451999999997e-07
+     ],
+     [
+      7.659,
+      1.403206e-07
+     ],
+     [
+      9.954,
+      9.438444000000001e-08
+     ]
+    ],
+    "ring_error_mid_J": 9.276595999999999e-08,
+    "ring_error_last3_mm_J": [
+     [
+      594.587,
+      2.1683364e-08
+     ],
+     [
+      596.785,
+      4.6316840000000006e-08
+     ],
+     [
+      598.936,
+      5.675008e-08
+     ]
+    ],
+    "strain_energy_J": 0.1539241680870641,
+    "energy_norm_error_estimate_pct": 0.6952932216261847
+   },
+   "LC2": {
+    "total_J": 7.148239672e-06,
+    "max_J": 2.5357e-09,
+    "mean_J": 3.0548032786324786e-10,
+    "share_by_zone": {
+     "inlet z<15mm": 0.12938410048319376,
+     "outlet z>585mm": 0.01943331874337299,
+     "interior": 0.8511825807734331
+    },
+    "elements_by_zone": {
+     "inlet z<15mm": 1260,
+     "outlet z>585mm": 1260,
+     "interior": 20880
+    },
+    "top10": [
+     {
+      "element": 20539,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 21709,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 22879,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 19369,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 19759,
+      "err_J": 2.5352e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 20929,
+      "err_J": 2.5352e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 22489,
+      "err_J": 2.5352e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 22099,
+      "err_J": 2.5352e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 20149,
+      "err_J": 2.5352e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 23269,
+      "err_J": 2.5352e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     }
+    ],
+    "ring_error_first5_mm_J": [
+     [
+      1.064,
+      2.1622328e-07
+     ],
+     [
+      3.215,
+      2.2315243999999997e-07
+     ],
+     [
+      5.413,
+      1.6209251999999997e-07
+     ],
+     [
+      7.659,
+      1.4866708000000002e-07
+     ],
+     [
+      9.954,
+      9.126644e-08
+     ]
+    ],
+    "ring_error_mid_J": 9.071756e-08,
+    "ring_error_last3_mm_J": [
+     [
+      594.587,
+      1.7862976e-08
+     ],
+     [
+      596.785,
+      1.2689132e-08
+     ],
+     [
+      598.936,
+      1.4297928e-08
+     ]
+    ],
+    "strain_energy_J": 505.582655274445,
+    "energy_norm_error_estimate_pct": 0.011890591697350987
+   },
+   "LC2P": {
+    "total_J": 7.148428894e-06,
+    "max_J": 2.5357e-09,
+    "mean_J": 3.054884142735043e-10,
+    "share_by_zone": {
+     "inlet z<15mm": 0.1293823386529443,
+     "outlet z>585mm": 0.01943281720499408,
+     "interior": 0.8511848441420615
+    },
+    "elements_by_zone": {
+     "inlet z<15mm": 1260,
+     "outlet z>585mm": 1260,
+     "interior": 20880
+    },
+    "top10": [
+     {
+      "element": 19369,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 20539,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 22879,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 21709,
+      "err_J": 2.5357e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 22489,
+      "err_J": 2.5353e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 21319,
+      "err_J": 2.5353e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 20929,
+      "err_J": 2.5353e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 18979,
+      "err_J": 2.5353e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 19759,
+      "err_J": 2.5353e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     },
+     {
+      "element": 23269,
+      "err_J": 2.5353e-09,
+      "z_mm": 3.215,
+      "r_mid_mm": 11.0
+     }
+    ],
+    "ring_error_first5_mm_J": [
+     [
+      1.064,
+      2.1622496e-07
+     ],
+     [
+      3.215,
+      2.2315387999999998e-07
+     ],
+     [
+      5.413,
+      1.6209636000000003e-07
+     ],
+     [
+      7.659,
+      1.486698e-07
+     ],
+     [
+      9.954,
+      9.126772000000001e-08
+     ]
+    ],
+    "ring_error_mid_J": 9.072023999999999e-08,
+    "ring_error_last3_mm_J": [
+     [
+      594.587,
+      1.7863060000000002e-08
+     ],
+     [
+      596.785,
+      1.2690268e-08
+     ],
+     [
+      598.936,
+      1.4298156e-08
+     ]
+    ],
+    "strain_energy_J": 505.58265532015605,
+    "energy_norm_error_estimate_pct": 0.011890749074484317
+   }
+  },
+  "averaged_vs_unaveraged_vm_max": {
+   "LC1": {
+    "averaged_Pa": 24282182.951123707,
+    "unaveraged_Pa": 24355971.092357233,
+    "rel_diff": 0.003038777089442446
+   },
+   "LC2": {
+    "averaged_Pa": 605160873.3807464,
+    "unaveraged_Pa": 605185329.0806673,
+    "rel_diff": 4.041189871428763e-05
+   },
+   "LC2P": {
+    "averaged_Pa": 605160918.4122063,
+    "unaveraged_Pa": 605185405.8463726,
+    "rel_diff": 4.046433505755509e-05
+   }
+  },
+  "element_sizes": {
+   "axial_first_mm": 2.1276,
+   "axial_largest_mm": 8.5104,
+   "radial_mm": 2.0,
+   "circumferential_deg": 10.0,
+   "circumferential_outer_arc_mm": 3.490658503988659
+  }
+ },
+ "near_end": {
+  "LC1_bore_inlet_vm": [
+   [
+    0.0,
+    3844834.5,
+    3822022.9650000003,
+    423.8601371111111
+   ],
+   [
+    2.1276,
+    13362497.2,
+    13335267.2,
+    425.1707521111111
+   ],
+   [
+    4.3018,
+    19807862.0,
+    19782489.655555557,
+    426.5100768888889
+   ],
+   [
+    6.5236,
+    24282183.0,
+    24258178.305555556,
+    427.7977611111112
+   ],
+   [
+    8.794,
+    23865621.2,
+    23847720.06666667,
+    430.48105133333337
+   ],
+   [
+    11.1142,
+    22347011.5,
+    22333269.186111107,
+    433.2230996666667
+   ],
+   [
+    13.4851,
+    20669577.1,
+    20659417.852777775,
+    435.97820799999994
+   ],
+   [
+    15.908,
+    20111212.6,
+    20102186.733333334,
+    438.0917163333333
+   ],
+   [
+    18.384,
+    19494953.5,
+    19487314.92222222,
+    440.25150999999994
+   ],
+   [
+    20.9141,
+    18990588.9,
+    18983827.011111107,
+    442.35981166666664
+   ],
+   [
+    23.4997,
+    18661786.7,
+    18655339.061111107,
+    444.3358182222222
+   ],
+   [
+    26.1419,
+    18335184.7,
+    18329057.53333333,
+    446.3550884444444
+   ]
+  ],
+  "LC1_outer_inlet_vm": [
+   [
+    0.0,
+    21120683.0,
+    21118460.944444444,
+    437.98234999999994
+   ],
+   [
+    2.1276,
+    16872892.3,
+    16861637.241666667,
+    438.72617866666667
+   ],
+   [
+    4.3018,
+    12840701.2,
+    12825022.950000001,
+    439.4862968888889
+   ],
+   [
+    6.5236,
+    9825824.96,
+    9813506.323333332,
+    440.21674533333334
+   ],
+   [
+    8.794,
+    9546510.14,
+    9537670.482777778,
+    441.74545233333333
+   ],
+   [
+    11.1142,
+    9861441.54,
+    9855572.902500002,
+    443.30763
+   ],
+   [
+    13.4851,
+    10510166.3,
+    10506667.758333333,
+    444.91700155555554
+   ],
+   [
+    15.908,
+    11076584.5,
+    11073660.694444442,
+    446.75558411111115
+   ],
+   [
+    18.384,
+    11434109.1,
+    11431342.033333335,
+    448.6344276666666
+   ],
+   [
+    20.9141,
+    11640639.4,
+    11637785.78611111,
+    450.53996033333334
+   ],
+   [
+    23.4997,
+    11725120.5,
+    11722082.7,
+    452.46110966666663
+   ],
+   [
+    26.1419,
+    11709624.8,
+    11706178.422222221,
+    454.4243276666667
+   ]
+  ],
+  "LC2_outer_inlet_vm": [
+   [
+    0.0,
+    605160873.0,
+    605157586.7777778,
+    437.98234999999994
+   ],
+   [
+    2.1276,
+    603207260.0,
+    603203367.6666666,
+    438.72617866666667
+   ],
+   [
+    4.3018,
+    601730708.0,
+    601725459.5555556,
+    439.4862968888889
+   ],
+   [
+    6.5236,
+    601037370.0,
+    601030770.8888888,
+    440.21674533333334
+   ],
+   [
+    8.794,
+    598060577.0,
+    598053548.0,
+    441.74545233333333
+   ],
+   [
+    11.1142,
+    595414408.0,
+    595407276.4444444,
+    443.30763
+   ],
+   [
+    13.4851,
+    593355155.0,
+    593347983.2222222,
+    444.91700155555554
+   ],
+   [
+    15.908,
+    591216253.0,
+    591208908.8888888,
+    446.75558411111115
+   ],
+   [
+    18.384,
+    589516368.0,
+    589508974.5555556,
+    448.6344276666666
+   ],
+   [
+    20.9141,
+    588287185.0,
+    588279787.0,
+    450.53996033333334
+   ],
+   [
+    23.4997,
+    587469021.0,
+    587461557.3333334,
+    452.46110966666663
+   ],
+   [
+    26.1419,
+    586841824.0,
+    586834348.3333334,
+    454.4243276666667
+   ]
+  ],
+  "LC2_bore_inlet_vm": [
+   [
+    0.0,
+    565317354.0,
+    565296337.1111112,
+    423.8601371111111
+   ],
+   [
+    2.1276,
+    562088413.0,
+    562067160.7777778,
+    425.1707521111111
+   ],
+   [
+    4.3018,
+    561281905.0,
+    561262912.5555556,
+    426.5100768888889
+   ],
+   [
+    6.5236,
+    563199388.0,
+    563180827.4444444,
+    427.7977611111112
+   ],
+   [
+    8.794,
+    562886799.0,
+    562871683.1111112,
+    430.48105133333337
+   ],
+   [
+    11.1142,
+    563534345.0,
+    563521525.7777778,
+    433.2230996666667
+   ],
+   [
+    13.4851,
+    564792037.0,
+    564781333.2222222,
+    435.97820799999994
+   ],
+   [
+    15.908,
+    567329236.0,
+    567318286.8888888,
+    438.0917163333333
+   ],
+   [
+    18.384,
+    569273243.0,
+    569262432.6666666,
+    440.25150999999994
+   ],
+   [
+    20.9141,
+    570990548.0,
+    570979870.1111112,
+    442.35981166666664
+   ],
+   [
+    23.4997,
+    572674353.0,
+    572663631.1111112,
+    444.3358182222222
+   ],
+   [
+    26.1419,
+    573697472.0,
+    573686802.6666666,
+    446.3550884444444
+   ]
+  ],
+  "LC2_outer_outlet_vm": [
+   [
+    600.0,
+    587322888.0,
+    587319546.4444444,
+    562.2723655555556
+   ],
+   [
+    597.8724,
+    587261161.0,
+    587257098.3333334,
+    562.3631958888889
+   ],
+   [
+    595.6982,
+    587275064.0,
+    587269743.3333334,
+    562.4560201111112
+   ],
+   [
+    593.4764,
+    587247629.0,
+    587241188.5555556,
+    562.5508856666667
+   ],
+   [
+    591.206,
+    587355959.0,
+    587349171.3333334,
+    562.5268682222221
+   ],
+   [
+    588.8858,
+    587404561.0,
+    587397777.7777778,
+    562.4940245555556
+   ],
+   [
+    586.5149,
+    587414422.0,
+    587407633.8888888,
+    562.460458777778
+   ],
+   [
+    584.092,
+    587464283.0,
+    587457487.8888888,
+    562.4059068888888
+   ],
+   [
+    581.616,
+    587479920.0,
+    587473102.1111112,
+    562.3513718888888
+   ],
+   [
+    579.0859,
+    587494767.0,
+    587487906.8888888,
+    562.2894213333334
+   ],
+   [
+    576.5003,
+    587527401.0,
+    587520558.4444444,
+    562.2148397777778
+   ],
+   [
+    573.8581,
+    587529408.0,
+    587522565.5555556,
+    562.1386236666666
+   ]
+  ],
+  "LC1_bore_outlet_vm": [
+   [
+    600.0,
+    278719.475,
+    272087.91094444436,
+    555.4933666666665
+   ],
+   [
+    597.8724,
+    5522238.3,
+    5510741.984999999,
+    555.4118746666666
+   ],
+   [
+    595.6982,
+    9277935.79,
+    9266570.918611113,
+    555.3285991111111
+   ],
+   [
+    593.4764,
+    12055041.4,
+    12043986.5,
+    555.2434958888889
+   ],
+   [
+    591.206,
+    14036258.7,
+    14026010.799999999,
+    555.2031074444444
+   ],
+   [
+    588.8858,
+    15462630.3,
+    15453096.211111108,
+    555.1650248888889
+   ],
+   [
+    586.5149,
+    16487618.8,
+    16478787.600000001,
+    555.1261251111113
+   ],
+   [
+    584.092,
+    17222974.1,
+    17214774.200000003,
+    555.06766
+   ],
+   [
+    581.616,
+    17707833.3,
+    17700206.72222222,
+    555.0090459999999
+   ],
+   [
+    579.0859,
+    18006965.6,
+    17999811.69166667,
+    554.9430195555556
+   ],
+   [
+    576.5003,
+    18165480.0,
+    18158677.55277778,
+    554.8645012222221
+   ],
+   [
+    573.8581,
+    18216196.6,
+    18209665.044444446,
+    554.7842671111111
+   ]
+  ],
+  "columns": [
+   "z_mm",
+   "max_over_theta_Pa",
+   "theta_mean_Pa",
+   "T_mean_K"
+  ]
+ },
+ "rings": {
+  "LC2_inlet_outer_ring": {
+   "n": 36,
+   "vm_min_Pa": 605151355.0,
+   "vm_max_Pa": 605160873.0,
+   "vm_mean_Pa": 605157586.7777778,
+   "T_min_K": 437.969794,
+   "T_max_K": 437.988699,
+   "theta_of_vm_max": -170.00000002919626,
+   "theta_of_T_max": -170.00000002919626
+  },
+  "LC2_midspan_outer_ring": {
+   "n": 36,
+   "vm_min_Pa": 587704004.0,
+   "vm_max_Pa": 587724253.0,
+   "vm_mean_Pa": 587717434.0,
+   "T_min_K": 539.2525089999999,
+   "T_max_K": 539.273383,
+   "theta_of_vm_max": -170.00000002919626,
+   "theta_of_T_max": -170.00000002919626
+  },
+  "LC1_inlet_outer_ring": {
+   "n": 36,
+   "vm_min_Pa": 21117160.0,
+   "vm_max_Pa": 21120683.0,
+   "vm_mean_Pa": 21118460.944444444,
+   "T_min_K": 437.969794,
+   "T_max_K": 437.988699,
+   "theta_of_vm_max": -60.000000034823266,
+   "theta_of_T_max": -170.00000002919626
+  },
+  "LC1_inlet_bore_plane_z6.52": {
+   "n": 36,
+   "vm_min_Pa": 24210722.6,
+   "vm_max_Pa": 24282183.0,
+   "vm_mean_Pa": 24258178.305555556,
+   "T_min_K": 427.768149,
+   "T_max_K": 427.81310099999996,
+   "theta_of_vm_max": -169.99999998108498,
+   "theta_of_T_max": -169.99999998108498
+  },
+  "LC1_support_nodes_vm_Pa": {
+   "18870": 21120681.0,
+   "18882": 21120074.5,
+   "18894": 21120683.0
+  }
+ },
+ "export_vs_table_vm": {
+  "LC1": {
+   "corner_nodes": 28296,
+   "max_rel_diff": 4.70152986080663e-05
+  },
+  "LC2": {
+   "corner_nodes": 28296,
+   "max_rel_diff": 8.70332074154323e-06
+  }
+ }
+}

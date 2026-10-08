@@ -1,0 +1,55 @@
+TEMPLATE OK {'TemplateName': 'External Data'} -> /Schematic/Template:External Data
+TEMPLATE OK {'TemplateName': 'Static Structural', 'Solver': 'ANSYS'} -> /Schematic/Template:Static Structural (ANSYS)
+geometry ok
+external data system SYS
+DIR ed (<type 'DataReference'>): ['AnalysisType', 'Container', 'Copy', 'Delete', 'DisplayText', 'Duplicate', 'GetComponent', 'GetContainer', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'GetReplaceableTemplates', 'HasAssociatedParameter', 'Move', 'Name', 'Notes', 'Physics', 'RecreateDeletedComponents', 'Refresh', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'Solver', 'ToString', 'Type', 'Update', 'UserId']
+DIR ed.setup (<type 'DataContainerReference'>): ['AddDataFile', 'GetAllParameters', 'GetExternalLoadData', 'GetExternalLoadOutput', 'GetFiles', 'InsertDataFile', 'InsertRegisteredFile', 'InsertSupportFile', 'ModifySupportFile', 'Name', 'RereadDataFiles', 'ScanForFileChanges', 'ToString', 'Type']
+DIR filedata (<type 'DataReference'>): ['Container', 'Description', 'DisplayText', 'File', 'FileDataProperty', 'GetDataProperty', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Master', 'ModifyFileData', 'Name', 'Output', 'SetAsMaster', 'SetDelimiterCharacter', 'SetDelimiterType', 'SetDummyNetData', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatType', 'SetMaterialFieldData', 'SetStartImportAtLine', 'SimulationSetEntityProperty', 'ToString', 'Type']
+DIR fileprop (<type 'DataReference'>): ['ColumnsData', 'Container', 'ConversionOption', 'CoordinateSystemType', 'DelimiterCharacter', 'DelimiterType', 'Dimensions', 'DisplayText', 'DummyNetData', 'FileIdentifier', 'FormatString', 'FormatType', 'GetColumnData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'LengthUnit', 'MaterialFieldData', 'Name', 'OriginX', 'OriginXUnit', 'OriginY', 'OriginYUnit', 'OriginZ', 'OriginZUnit', 'ScaleX', 'ScaleXToolTip', 'ScaleXValid', 'ScaleY', 'ScaleYToolTip', 'ScaleYValid', 'ScaleZ', 'ScaleZToolTip', 'ScaleZValid', 'SetColumnDataType', 'SetCoordinateSystemType', 'SetDimensionLengthUnit', 'SetDimensionType', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatString', 'SetLengthUnit', 'SimulationSetEntityProperty', 'Sliver', 'StartImportAtLine', 'SupportingFiles', 'ThetaXY', 'ThetaXYUnit', 'ThetaYZ', 'ThetaYZUnit', 'ThetaZX', 'ThetaZXUnit', 'ToString', 'Type']
+has SetStartImportAtLine: fd=True prop=False
+has SetDelimiterType: fd=True prop=False
+has SetLengthUnit: fd=False prop=True
+prop props: [('ColumnsData', ['/Setup/ExternalLoadColumnData:ExternalLoadColumnData', '/Setup/ExternalLoadColumnData:ExternalLoadColumnData 1', '/Setup/ExternalLoadColumnData:ExternalLoadColumnData 2', '/Setup/ExternalLoadColumnData:ExternalLoadColumnData 3']), ('Container', 'Setup'), ('ConversionOption', 'NoConversion'), ('CoordinateSystemType', 'Cartesian'), ('DelimiterCharacter', ','), ('DelimiterType', 'Comma'), ('Dimensions', 'Dimension3D'), ('DisplayText', 'ExternalLoadFileDataProperty'), ('DummyNetData', False), ('FileIdentifier', 'File1'), ('FormatString', ''), ('FormatType', 'Delimited'), ('LengthUnit', 'm'), ('MaterialFieldData', False), ('Name', 'ExternalLoadFileDataProperty'), ('OriginX', 0.0), ('OriginXUnit', 'm'), ('OriginY', 0.0), ('OriginYUnit', 'm'), ('OriginZ', 0.0), ('OriginZUnit', 'm'), ('ScaleX', 'x'), ('ScaleXToolTip', 'x'), ('ScaleXValid', True), ('ScaleY', 'y'), ('ScaleYToolTip', 'y'), ('ScaleYValid', True), ('ScaleZ', 'z'), ('ScaleZToolTip', 'z'), ('ScaleZValid', True), ('Sliver', 0.0), ('StartImportAtLine', 1), ('SupportingFiles', []), ('ThetaXY', 0.0), ('ThetaXYUnit', 'radian'), ('ThetaYZ', 0.0), ('ThetaYZUnit', 'radian'), ('ThetaZX', 0.0), ('ThetaZXUnit', 'radian'), ('Type', 'ExternalLoadFileDataProperty')]
+ColumnsData ['/Setup/ExternalLoadColumnData:ExternalLoadColumnData', '/Setup/ExternalLoadColumnData:ExternalLoadColumnData 1', '/Setup/ExternalLoadColumnData:ExternalLoadColumnData 2', '/Setup/ExternalLoadColumnData:ExternalLoadColumnData 3']
+DIR column (<type 'DataReference'>): ['Container', 'DataType', 'DisplayText', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Identifier', 'Name', 'QuantityType', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'ToString', 'Type', 'Unit']
+column props: [('Container', 'Setup'), ('DataType', 'Not Used'), ('DisplayText', 'ExternalLoadColumnData'), ('Identifier', ''), ('Name', 'ExternalLoadColumnData'), ('QuantityType', ''), ('Type', 'ExternalLoadColumnData'), ('Unit', '')]
+GetColumnData(ExternalLoadColumnData) -> /Setup/ExternalLoadColumnData:ExternalLoadColumnData
+GetColumnData(ExternalLoadColumnData 1) -> /Setup/ExternalLoadColumnData:ExternalLoadColumnData 1
+GetColumnData(ExternalLoadColumnData 2) -> /Setup/ExternalLoadColumnData:ExternalLoadColumnData 2
+GetColumnData(ExternalLoadColumnData 3) -> /Setup/ExternalLoadColumnData:ExternalLoadColumnData 3
+static structural SYS 1
+DIR ss (<type 'DataReference'>): ['AnalysisType', 'Container', 'Copy', 'Delete', 'DisplayText', 'Duplicate', 'GetComponent', 'GetContainer', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'GetReplaceableTemplates', 'HasAssociatedParameter', 'Move', 'Name', 'Notes', 'Physics', 'RecreateDeletedComponents', 'Refresh', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'Solver', 'ToString', 'Type', 'Update', 'UserId']
+component Engineering Data -> /Schematic/Component:Engineering Data
+component Geometry -> /Schematic/Component:Geometry 1
+component Model -> /Schematic/Component:Model
+component Setup -> /Schematic/Component:Setup 1
+component Solution -> /Schematic/Component:Solution
+component Results -> /Schematic/Component:Results
+TransferData ExternalData.Setup -> StaticStructural.Setup OK
+DIR engdata (<type 'DataContainerReference'>): ['CreateMaterial', 'GetAllParameters', 'GetFiles', 'GetMaterial', 'GetMaterials', 'Import', 'ImportMaterial', 'Name', 'ToString', 'Type']
+DIR material (<type 'DataReference'>): ['AddToFavorites', 'Container', 'ConvertTotalToPlastic', 'CreateProperty', 'Delete', 'Description', 'DisplayName', 'DisplayText', 'Duplicate', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetFieldVariableDataObject', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'IsSuppressed', 'IsValid', 'MaterialMergePropertyData', 'Name', 'Refresh', 'RemoveFromFavorites', 'SetAsDefaultFluidForModel', 'SetAsDefaultSolidForModel', 'SetColor', 'SetEntityProperties', 'SetEntityProperty', 'SetOption', 'SetSuppression', 'SimulationSetEntityProperty', 'Source', 'SourceFileReference', 'ToString', 'Type', 'Unlink']
+CreateProperty Density {} -> /Engineering Data/MaterialProperty:Density 1
+DIR prop Density (<type 'DataReference'>): ['AddTestData', 'BeginBatchUpdate', 'Behavior', 'Container', 'CreatePropertyData', 'Definition', 'Delete', 'Description', 'DisplayText', 'EndBatchUpdate', 'GetChartData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'GetPropertyData', 'HasAssociatedParameter', 'IsSuppressed', 'IsValid', 'Name', 'PropertyDataColl', 'RemoveTestData', 'SetEntityProperties', 'SetEntityProperty', 'SetSuppression', 'SimulationSetEntityProperty', 'ToString', 'Type', 'TypeName']
+   variables: n/a
+CreateProperty Elasticity {'Behavior': 'Isotropic'} -> /Engineering Data/MaterialProperty:Elasticity 1
+DIR prop Elasticity (<type 'DataReference'>): ['AddTestData', 'BeginBatchUpdate', 'Behavior', 'Container', 'CreatePropertyData', 'Definition', 'Delete', 'Description', 'DisplayText', 'EndBatchUpdate', 'GetChartData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'GetPropertyData', 'HasAssociatedParameter', 'IsSuppressed', 'IsValid', 'Name', 'PropertyDataColl', 'RemoveTestData', 'SetEntityProperties', 'SetEntityProperty', 'SetSuppression', 'SimulationSetEntityProperty', 'ToString', 'Type', 'TypeName']
+   variables: n/a
+CreateProperty Coefficient of Thermal Expansion {'Definition': 'Secant', 'Behavior': 'Isotropic'} -> /Engineering Data/MaterialProperty:Coefficient of Thermal Expansion 1
+DIR prop Coefficient of Thermal Expansion (<type 'DataReference'>): ['AddTestData', 'BeginBatchUpdate', 'Behavior', 'Container', 'CreatePropertyData', 'Definition', 'Delete', 'Description', 'DisplayText', 'EndBatchUpdate', 'GetChartData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'GetPropertyData', 'HasAssociatedParameter', 'IsSuppressed', 'IsValid', 'Name', 'PropertyDataColl', 'RemoveTestData', 'SetEntityProperties', 'SetEntityProperty', 'SetSuppression', 'SimulationSetEntityProperty', 'ToString', 'Type', 'TypeName']
+   variables: n/a
+CreateProperty Tensile Yield Strength {} -> /Engineering Data/MaterialProperty:Tensile Yield Strength 1
+DIR prop Tensile Yield Strength (<type 'DataReference'>): ['AddTestData', 'BeginBatchUpdate', 'Behavior', 'Container', 'CreatePropertyData', 'Definition', 'Delete', 'Description', 'DisplayText', 'EndBatchUpdate', 'GetChartData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'GetPropertyData', 'HasAssociatedParameter', 'IsSuppressed', 'IsValid', 'Name', 'PropertyDataColl', 'RemoveTestData', 'SetEntityProperties', 'SetEntityProperty', 'SetSuppression', 'SimulationSetEntityProperty', 'ToString', 'Type', 'TypeName']
+   variables: n/a
+CreateProperty Isotropic Thermal Conductivity failed The specified property - Isotropic Thermal Conductivity does not exist.
+saved
+model refresh failed The following components need attention before proceeding:
+Engineering Data
+Edit(Interactive=False) failed The following components need attention before proceeding:
+Engineering Data; trying Edit()
+FATAL: The following components need attention before proceeding:
+Engineering Data
+Traceback (most recent call last):
+  File "<PROJECT_ROOT>\08_Structural_Analysis\Workbench\Scripts\wb_probe.wbjn", line 119, in <module>
+    model.Edit()
+Exception: The following components need attention before proceeding:
+Engineering Data

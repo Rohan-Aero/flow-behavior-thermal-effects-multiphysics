@@ -1,0 +1,2 @@
+2026-09-26 23:33:32  launching runwb2 -B -R <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Scripts\wb_param_9B2_ALL.wbjn
+2026-09-26 23:33:32  pid 19204

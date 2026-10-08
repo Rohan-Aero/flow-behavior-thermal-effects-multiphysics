@@ -1,0 +1,74 @@
+! =====================================================================================================
+! SECTION 8A - BENCHMARK of the thermal-prestress eigen-buckling workflow on a TOY tube (RE-ANALYSIS 2026).
+! Same geometry as the duct (ri 10 mm, ro 20 mm, L 600 mm) but CONSTANT E, nu, alpha and a UNIFORM temperature
+! rise, so that the exact answer is known: restrained force N = E*alpha*dT*A; Euler (Timoshenko shear-corrected)
+! critical force for the end condition. Parameter ENDS (set by the calling file):
+!   ENDS = 1  LC2-type supports: U_z = 0 on both complete end faces (in-plane free) + 3 mid-span outer nodes U_theta = 0
+!   ENDS = 2  no-sway variant:   U_z = 0 and U_theta = 0 on both complete end faces (radial free)
+! Its numbers verify the method only. They are NOT project results.
+! =====================================================================================================
+/prep7
+et,1,186
+mp,ex,1,190e9
+mp,nuxy,1,0.294
+mp,alpx,1,13.6e-6
+mp,dens,1,8190
+tref,0
+cylind,0.010,0.020,0,0.6,0,360
+esize,0.005
+vsweep,all
+local,12,1,0,0,0
+csys,0
+allsel,all
+bfunif,temp,225
+nsel,s,loc,z,0
+nsel,a,loc,z,0.6
+*if,ends,eq,1,then
+d,all,uz,0
+allsel,all
+n1=node(0.02,0,0.3)
+n2=node(-0.01,0.017320508,0.3)
+n3=node(-0.01,-0.017320508,0.3)
+csys,12
+nrot,n1
+nrot,n2
+nrot,n3
+csys,0
+d,n1,uy,0
+d,n2,uy,0
+d,n3,uy,0
+*else
+csys,12
+nrot,all
+d,all,uy,0
+d,all,uz,0
+csys,0
+*endif
+allsel,all
+*get,b_nn,node,0,count
+*get,b_ne,elem,0,count
+finish
+/solu
+antype,static
+pstres,on
+eqsl,sparse
+outres,all,all
+solve
+finish
+/post1
+set,last
+nsel,s,loc,z,0
+/output,bench_reaction_inlet,txt
+prrsol,fz
+/output
+allsel,all
+finish
+/solu
+antype,buckle
+bucopt,lanb,6
+mxpand,6
+solve
+finish
+/input,s8a_buckle_snippet,inp
+/com,S8A-BENCH-END nodes %b_nn% elements %b_ne%
+finish

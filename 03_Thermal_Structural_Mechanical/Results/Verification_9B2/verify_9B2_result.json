@@ -1,0 +1,237 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 independent verification",
+ "checks": [
+  {
+   "check": "V1 P00_BASELINE: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 605.161 MPa, sig -582.440, util 0.5780, lam 1.10805, Pcr 608.25 kN"
+  },
+  {
+   "check": "V2 P00_BASELINE: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[150.687378, 289.407654]"
+  },
+  {
+   "check": "V3 P00_BASELINE: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 1.10805"
+  },
+  {
+   "check": "V1 C00_PIPELINE_CHECK: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 605.167 MPa, sig -582.440, util 0.5780, lam 1.10805, Pcr 608.25 kN"
+  },
+  {
+   "check": "V2 C00_PIPELINE_CHECK: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[150.687378, 289.415833]"
+  },
+  {
+   "check": "V2 C00_PIPELINE_CHECK: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 108252 nodes"
+  },
+  {
+   "check": "V3 C00_PIPELINE_CHECK: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 1.10805"
+  },
+  {
+   "check": "V1 V01_LOW: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 663.001 MPa, sig -639.053, util 0.6347, lam 1.00307, Pcr 604.14 kN"
+  },
+  {
+   "check": "V2 V01_LOW: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[162.765564, 314.304749]"
+  },
+  {
+   "check": "V2 V01_LOW: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 108252 nodes"
+  },
+  {
+   "check": "V3 V01_LOW: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 1.00307"
+  },
+  {
+   "check": "V1 V03_HIGH: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 557.544 MPa, sig -535.853, util 0.5315, lam 1.21087, Pcr 611.53 kN"
+  },
+  {
+   "check": "V2 V03_HIGH: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[140.734314, 268.938416]"
+  },
+  {
+   "check": "V2 V03_HIGH: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 108252 nodes"
+  },
+  {
+   "check": "V3 V03_HIGH: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 1.21087"
+  },
+  {
+   "check": "V1 Q01_LOW: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 538.526 MPa, sig -518.230, util 0.5129, lam 1.25464, Pcr 612.79 kN"
+  },
+  {
+   "check": "V2 Q01_LOW: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[137.446686, 261.285339]"
+  },
+  {
+   "check": "V2 Q01_LOW: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 108252 nodes"
+  },
+  {
+   "check": "V3 Q01_LOW: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 1.25464"
+  },
+  {
+   "check": "V1 Q03_HIGH: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 673.024 MPa, sig -647.830, util 0.6446, lam 0.98834, Pcr 603.45 kN"
+  },
+  {
+   "check": "V2 Q03_HIGH: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[164.129028, 317.965424]"
+  },
+  {
+   "check": "V2 Q03_HIGH: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 108252 nodes"
+  },
+  {
+   "check": "V3 Q03_HIGH: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 0.98834"
+  },
+  {
+   "check": "V1 T01_THIN: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 602.309 MPa, sig -580.048, util 0.5743, lam 0.94497, Pcr 385.73 kN"
+  },
+  {
+   "check": "V2 T01_THIN: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[144.816315, 288.79129]"
+  },
+  {
+   "check": "V2 T01_THIN: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 89424 nodes"
+  },
+  {
+   "check": "V3 T01_THIN: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 0.94497"
+  },
+  {
+   "check": "V1 T03_THICK: recomputed LC1/LC2/utilisation/lambda1/P_cr = CSV",
+   "pass": true,
+   "detail": "LC2 607.735 MPa, sig -584.750, util 0.5813, lam 1.28702, Pcr 907.89 kN"
+  },
+  {
+   "check": "V2 T03_THICK: temperatures inside the E/S_y tables (20-400 degC)",
+   "pass": true,
+   "detail": "[155.633423, 289.907959]"
+  },
+  {
+   "check": "V2 T03_THICK: gate PASS, 0 unmapped, nodes < 128,000, no FATAL",
+   "pass": true,
+   "detail": "PASS, 127080 nodes"
+  },
+  {
+   "check": "V3 T03_THICK: Part I label present when lambda1 < 1",
+   "pass": true,
+   "detail": "lambda1 1.28702"
+  },
+  {
+   "check": "V3 PARAMETRIC_STRUCTURAL_RESULTS.md carries the Part I wording",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "V4 S1: recomputed max stress and lambda1 = support CSV",
+   "pass": true,
+   "detail": "vm 605160873.0 lam 1.1080469964202"
+  },
+  {
+   "check": "V4 S2: recomputed max stress and lambda1 = support CSV",
+   "pass": true,
+   "detail": "vm 605159625.0 lam 4.2999450325566"
+  },
+  {
+   "check": "V4 S3: recomputed max stress and lambda1 = support CSV",
+   "pass": true,
+   "detail": "vm 605159689.0 lam 2.23224116786811"
+  },
+  {
+   "check": "V4 S2 re-extraction method: S1 re-extraction = 8A in-session table (all 15 columns identical)",
+   "pass": true,
+   "detail": "max |diff| 0.0"
+  },
+  {
+   "check": "V4 S2 table: |u_theta| < 1e-9 m at every NMOD-rotated end-face node (U_theta = 0 support)",
+   "pass": true,
+   "detail": "1202 nodes, max |u_theta| 1.24e-12 m"
+  },
+  {
+   "check": "V4 no 'best' / 'worst' label in the Results deliverables",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "V5 C00 vs 7B/8A: LC2 max vm, lambda1 and end reaction within 1e-5 (relative)",
+   "pass": true,
+   "detail": "vm 9.51e-06, lam -4.15e-07, F 3.33e-07"
+  },
+  {
+   "check": "V5 M01_T01_STRUCT_NR5: LC2 max vm, mean axial stress and lambda1 within 1e-4 of T01_THIN",
+   "pass": false,
+   "detail": "{'LC2 max vm': 0.0001395, 'LC2 mean axial stress': -3.9e-06, 'lambda1': -4.2e-06}"
+  },
+  {
+   "check": "V5 M02_T03_STRUCT_NR5: LC2 max vm, mean axial stress and lambda1 within 1e-4 of T03_THICK",
+   "pass": true,
+   "detail": "{'LC2 max vm': -8.47e-05, 'LC2 mean axial stress': 2.4e-06, 'lambda1': 2.5e-06}"
+  },
+  {
+   "check": "V5 B03 toy benchmark PASS before the S3 solve",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "V5 M03: all criteria PASS",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "V6 15 figures F01..F15 present, valid PNG",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "check": "V6 the six Part Y files exist",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "V7 08_Structural_Analysis unchanged (all 1927 pre-9B-2 files identical, none missing, none added)",
+   "pass": true,
+   "detail": "changed 0 [], missing 0 [], added 0 []"
+  }
+ ],
+ "n_pass": 45,
+ "n_total": 46
+}

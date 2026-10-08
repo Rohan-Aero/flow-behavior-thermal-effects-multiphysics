@@ -1,0 +1,2612 @@
+{
+  "setup": {
+    "general": {
+      "solver": {
+        "type": "pressure-based",
+        "velocity_formulation": "absolute",
+        "time": "steady"
+      },
+      "operating_conditions": {
+        "gravity": {
+          "enable": false
+        },
+        "operating_pressure": 101325,
+        "reference_pressure_location": [
+          0,
+          0,
+          0
+        ],
+        "reference_pressure_method": "Connected and disconnected fluid zones"
+      },
+      "units_settings": {
+        "units": {
+          "acceleration": {
+            "unit_name": "m/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "angle": {
+            "unit_name": "deg",
+            "scale_factor": 0.0174532925,
+            "offset": 0.0
+          },
+          "angular-velocity": {
+            "unit_name": "rad/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "area": {
+            "unit_name": "m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "area-inverse": {
+            "unit_name": "m^-2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "area-per-time": {
+            "unit_name": "m^2/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "area-temperature": {
+            "unit_name": "m^2 K",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "collision-rate": {
+            "unit_name": "m^-3 s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "nucleation-rate": {
+            "unit_name": "m^-3 s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "concentration": {
+            "unit_name": "kmol/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "contact-resistance": {
+            "unit_name": "(m^2 K)/W",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "contact-resistance-vol": {
+            "unit_name": "Ohm m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "crank-angle": {
+            "unit_name": "deg",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "crank-angular-velocity": {
+            "unit_name": "rev/min",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "current": {
+            "unit_name": "A",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "current-density": {
+            "unit_name": "A/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "current-vol-density": {
+            "unit_name": "A/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density": {
+            "unit_name": "kg/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density-gradient": {
+            "unit_name": "kg/m^4",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density-inverse": {
+            "unit_name": "m^3/kg",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density*specific-energy": {
+            "unit_name": "J/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density*specific-heat": {
+            "unit_name": "J/(m^3 K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density*time": {
+            "unit_name": "(kg s)/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "density*velocity": {
+            "unit_name": "kg/(m^2 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "depth": {
+            "unit_name": "m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-capacity": {
+            "unit_name": "Ah",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-charge": {
+            "unit_name": "A h",
+            "scale_factor": 3600.0,
+            "offset": 0.0
+          },
+          "elec-charge-density": {
+            "unit_name": "(A s)/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-charge-flux-density": {
+            "unit_name": "Ah/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-concentration": {
+            "unit_name": "mol/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-conductivity": {
+            "unit_name": "S/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-contact-resistance": {
+            "unit_name": "Ohm m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-field": {
+            "unit_name": "V/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-permittivity": {
+            "unit_name": "farad/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-resistivity": {
+            "unit_name": "Ohm m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "elec-resistance": {
+            "unit_name": "Ohm",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "energy": {
+            "unit_name": "J",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "energy-density": {
+            "unit_name": "J/m2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "force": {
+            "unit_name": "N",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "force-per-area": {
+            "unit_name": "N/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "force-per-volume": {
+            "unit_name": "N/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "force*time-per-volume": {
+            "unit_name": "(N s)/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "frequency": {
+            "unit_name": "Hz",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "gas-constant": {
+            "unit_name": "J/(kg K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "heat-flux": {
+            "unit_name": "W/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "heat-flux-resolved": {
+            "unit_name": "(m K)/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "heat-generation-rate": {
+            "unit_name": "W/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "heat-transfer-coefficient": {
+            "unit_name": "W/(m^2 K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "ignition-energy": {
+            "unit_name": "J/mol",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "kinematic-viscosity": {
+            "unit_name": "m^2/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "length": {
+            "unit_name": "m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "length-inverse": {
+            "unit_name": "m^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "length-temperature": {
+            "unit_name": "m K",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "length-time-inverse": {
+            "unit_name": "m^-1 s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "length4-per-time": {
+            "unit_name": "m^4/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mag-permeability": {
+            "unit_name": "H/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass": {
+            "unit_name": "kg",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass-diffusivity": {
+            "unit_name": "m^2/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass-flow": {
+            "unit_name": "kg/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass-flow-per-depth": {
+            "unit_name": "kg/(m s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass-flow-per-time": {
+            "unit_name": "kg/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass-flux": {
+            "unit_name": "kg/(m^2 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mass-transfer-rate": {
+            "unit_name": "kg/(m^3 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mole-transfer-rate": {
+            "unit_name": "kgmol/(m^3 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "surface-mole-transfer-rate": {
+            "unit_name": "kgmol/(m^2 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mole-specific-energy": {
+            "unit_name": "J/kgmol",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mole-specific-entropy": {
+            "unit_name": "J/(kgmol K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "molec-wt": {
+            "unit_name": "kg/kmol",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "moment": {
+            "unit_name": "N m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "moment-of-inertia": {
+            "unit_name": "kg m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "no-unit": {
+            "unit_name": "",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "number-density": {
+            "unit_name": "m^-3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "particles-conc": {
+            "unit_name": "1.e15-particles/kg",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "particles-rate": {
+            "unit_name": "1.e15 m^-3 s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "percentage": {
+            "unit_name": "%",
+            "scale_factor": 0.01,
+            "offset": 0.0
+          },
+          "power": {
+            "unit_name": "W",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "power-per-time": {
+            "unit_name": "W/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "pressure": {
+            "unit_name": "Pa",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "mole-con-henry-const": {
+            "unit_name": "(Pa m^3)/kgmol",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "pressure-gradient": {
+            "unit_name": "Pa/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "pressure-time-derivative": {
+            "unit_name": "Pa/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "pressure-time-deriv-sqr": {
+            "unit_name": "Pa^2/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "pressure-2nd-time-derivative": {
+            "unit_name": "Pa/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "resistance": {
+            "unit_name": "m^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "site-density": {
+            "unit_name": "kgmol/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-formation-constant-unit": {
+            "unit_name": "kg/(N m s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-limiting-nuclei-rate": {
+            "unit_name": "1e+15-particles/m3-s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-linear-termination": {
+            "unit_name": "m^3/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-oxidation-constant": {
+            "unit_name": "kg m kgmol^-1 K^-0.5 s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-pre-exponential-constant": {
+            "unit_name": "1.e15 kg^-1 s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-surface-growth-scale-factor": {
+            "unit_name": "(kg m)/(kgmol s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "soot-sitespecies-concentration": {
+            "unit_name": "kmol/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-elliptic-relaxation-function": {
+            "unit_name": "kg/(m^3 s^2)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-energy": {
+            "unit_name": "W/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-kinetic-energy": {
+            "unit_name": "kg/(m s^3)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-mass": {
+            "unit_name": "kg/(m^3 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-momentum": {
+            "unit_name": "N/m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-specific-dissipation-rate": {
+            "unit_name": "kg/(m^3 s^2)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-temperature-variance": {
+            "unit_name": "K^2/(m^3 s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-turbulent-dissipation-rate": {
+            "unit_name": "kg/(m s^4)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "source-turbulent-viscosity": {
+            "unit_name": "kg/(m s^2)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "specific-area": {
+            "unit_name": "m^2/kg",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "specific-energy": {
+            "unit_name": "J/kg",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "specific-heat": {
+            "unit_name": "J/(kg K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "spring-constant": {
+            "unit_name": "N/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "spring-constant-angular": {
+            "unit_name": "(N m)/rad",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "stefan-boltzmann-constant": {
+            "unit_name": "W/(m^2 K^4)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "surface-density": {
+            "unit_name": "kg/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "surface-tension": {
+            "unit_name": "N/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "surface-tension-gradient": {
+            "unit_name": "N/(m K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "temperature": {
+            "unit_name": "K",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "temperature-difference": {
+            "unit_name": "K",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "temperature-gradient": {
+            "unit_name": "K/m",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "temperature-inverse": {
+            "unit_name": "K^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "temperature-variance": {
+            "unit_name": "K^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "thermal-conductivity": {
+            "unit_name": "W/(m K)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "thermal-resistivity": {
+            "unit_name": "(m K)/W",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "thermal-resistance": {
+            "unit_name": "(m^2 K)/W",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "thermophoretic-diffusivity": {
+            "unit_name": "(kg m^2)/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "time": {
+            "unit_name": "s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "time-inverse": {
+            "unit_name": "s^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "time-inverse-squared": {
+            "unit_name": "s^-2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "time-inverse-cubed": {
+            "unit_name": "s^-3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "turb-kinetic-energy-production": {
+            "unit_name": "kg/(m s^3)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "turbulent-energy-diss-rate": {
+            "unit_name": "m^2/s^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "turbulent-energy-diss-rate-gradient": {
+            "unit_name": "m/s^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "turbulent-kinetic-energy": {
+            "unit_name": "m^2/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "turbulent-kinetic-energy-gradient": {
+            "unit_name": "m/s^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "univ-gas-constant": {
+            "unit_name": "J/(K kgmol)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "velocity": {
+            "unit_name": "m/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "viscosity": {
+            "unit_name": "kg/(m s)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "viscosity-consistency-index": {
+            "unit_name": "kg s^n-2 m^-1",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "volume": {
+            "unit_name": "m^3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "volume-flow-rate": {
+            "unit_name": "m^3/s",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "volume-flow-rate-per-depth": {
+            "unit_name": "m^3/(s m)",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "volume-inverse": {
+            "unit_name": "m^-3",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "volume-temperature": {
+            "unit_name": "m^3/K",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "voltage": {
+            "unit_name": "V",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "wave-length": {
+            "unit_name": "Angstrom",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          },
+          "youngs-modulus": {
+            "unit_name": "N/m^2",
+            "scale_factor": 1.0,
+            "offset": 0.0
+          }
+        }
+      }
+    },
+    "models": {
+      "multiphase": {
+        "model": "none"
+      },
+      "energy": {
+        "enabled": true,
+        "viscous_dissipation": false,
+        "pressure_work": false,
+        "kinetic_energy": false,
+        "inlet_diffusion": true
+      },
+      "viscous": {
+        "model": "k-omega",
+        "k_omega_model": "sst",
+        "k_omega": {
+          "k_omega_low_re_correction": false,
+          "coefficients": {
+            "a1": 0.31,
+            "alpha_star_inf": 1.0,
+            "alpha_inf": 0.52,
+            "beta_star_inf": 0.09,
+            "k_omega_regime": {
+              "beta_i": 0.075,
+              "tke_prandtl_number": 1.176,
+              "sdr_prandtl_number": 2.0
+            },
+            "k_epsilon_regime": {
+              "beta_i": 0.0828,
+              "tke_prandtl_number": 1.0,
+              "sdr_prandtl_number": 1.168
+            }
+          }
+        },
+        "near_wall_treatment": {
+          "wall_omega_treatment": "correlation"
+        },
+        "transition_module": "none",
+        "options": {
+          "viscous_heating": false,
+          "curvature_correction": {
+            "enabled": false
+          },
+          "corner_flow_correction": {
+            "enabled": false
+          },
+          "production_kato_launder_enabled": false,
+          "production_limiter": {
+            "enabled": true,
+            "clip_factor": 10.0
+          },
+          "turbulent_prandtl_numbers": {
+            "energy_prandtl_number": {
+              "option": "constant",
+              "value": 0.85
+            },
+            "wall_prandtl_number": {
+              "option": "constant",
+              "value": 0.85
+            }
+          }
+        },
+        "turbulence_expert": {
+          "turb_non_newtonian": false,
+          "thermal_p_function": true,
+          "restore_sst_v61": false
+        },
+        "user_defined_functions": {
+          "turb_visc": "none",
+          "energy_prandtl": "none",
+          "wall_prandtl": "none"
+        }
+      },
+      "acoustics": {
+        "model": "off"
+      },
+      "radiation": {
+        "model": "none",
+        "solar_load": {
+          "solar_model": "none",
+          "sun_direction_vector_definition": {}
+        },
+        "solar_calculator": {
+          "longitude": -1.4770719,
+          "latitude": 0.23823741,
+          "timezone": -5.0,
+          "mesh_orientation": {
+            "north_direction": {
+              "north_x": 0.0,
+              "north_y": 1.0,
+              "north_z": 0.0
+            },
+            "east_direction": {
+              "east_x": 1.0,
+              "east_y": 0.0,
+              "east_z": 0.0
+            }
+          },
+          "date_and_time": {
+            "day": 21,
+            "month": 6,
+            "hour": 13,
+            "minute": 0
+          },
+          "calculator_method": "fair-weather-condition",
+          "sunshine_factor": 1.0
+        },
+        "solar_calculator_gui": {
+          "longitude": -1.4770719,
+          "latitude": 0.23823741,
+          "timezone": -5.0,
+          "mesh_orientation": {
+            "north_direction": {
+              "north_x": 0.0,
+              "north_y": 1.0,
+              "north_z": 0.0
+            },
+            "east_direction": {
+              "east_x": 1.0,
+              "east_y": 0.0,
+              "east_z": 0.0
+            }
+          },
+          "date_and_time": {
+            "day": 21,
+            "month": 6,
+            "hour": 13,
+            "minute": 0
+          },
+          "calculator_method": "fair-weather-condition",
+          "sunshine_factor": 1.0
+        }
+      },
+      "species": {
+        "model": {
+          "option": "off",
+          "number_volumetric_species": false
+        },
+        "nox": {}
+      },
+      "discrete_phase": {
+        "general_settings": {
+          "interaction": {
+            "enabled": false
+          },
+          "cell_averaged_postprocessing": "none"
+        },
+        "physical_models": {
+          "particle_forces": {
+            "pressure_gradient_force": {},
+            "pressure_force_enabled": false,
+            "virtual_mass_force": {
+              "enabled": false
+            },
+            "saffman_lift_force_enabled": false,
+            "thermophoretic_force_enabled": false
+          },
+          "erosion_accretion_enabled": false,
+          "twoway_turb_coupl_enabled": false
+        },
+        "tracking": {
+          "max_num_steps": 50000,
+          "step_size_controls": {
+            "option": "step-length-factor",
+            "step_length_factor": 5
+          },
+          "advanced": {
+            "reference_frame": "relative",
+            "verbosity": 1,
+            "randomize_every_iteration": true,
+            "randomize_every_timestep": true
+          }
+        },
+        "numerics": {
+          "tracking": {
+            "accuracy_control": {
+              "enabled": true,
+              "tolerance": 1e-05,
+              "max_num_refinements": 20,
+              "step_size_fraction": 1.0
+            },
+            "option": "automatic",
+            "low_order_scheme": "implicit",
+            "high_order_scheme": "trapezoidal"
+          },
+          "heat_mass_exchange": {
+            "coupled_heat_mass_solution": {
+              "droplet_particles": false,
+              "combusting_particles": false,
+              "multicomponent_particles": false
+            },
+            "vaporization_limiting_factors": {
+              "mass": 0.3,
+              "heat": 0.1
+            }
+          },
+          "node_based_averaging": {
+            "enabled": false
+          },
+          "dynamic_interaction_range_enabled": false,
+          "high_res_tracking": {
+            "enabled": true,
+            "always_use_face_centroid_with_periodics": true,
+            "flow_interpolation": {
+              "specific_heat_enabled": false,
+              "density_enabled": false,
+              "gradients_enabled": true,
+              "viscosity_enabled": false,
+              "temperature_enabled": false,
+              "wall_zero_vel_enabled": false
+            },
+            "boundary_layer_tracking_enabled": true,
+            "subtet_validity_checking_enabled": false,
+            "auto_intersect_tol_enabled": true,
+            "barycentric_intersection_enabled": false,
+            "particle_relocation": {
+              "enhanced_method_enabled": false,
+              "support_for_std_track_data_read_enabled": false,
+              "overset_robustness_level": 1,
+              "legacy_method_enabled": false
+            },
+            "stuck_particle_removal_enabled": true,
+            "barycentric_sampling_enabled": false,
+            "quad_face_centroid_enabled": false
+          }
+        },
+        "parallel": {
+          "option": "hybrid",
+          "hybrid": {
+            "dpm_domain": {
+              "enabled": false
+            }
+          },
+          "expert": {
+            "parallel_verbosity_level": 0
+          }
+        },
+        "user_defined_functions": {
+          "scalar_update": "none",
+          "body_force": "none",
+          "output": "none",
+          "source_terms": "none",
+          "dpm_time_step_size": "none",
+          "flow_interpolation": "none",
+          "number_of_scalars": 0,
+          "max_num_udf_species": 50
+        },
+        "injections": {}
+      },
+      "virtual_blade_model": {
+        "enabled": false
+      },
+      "structure": {
+        "model": "off"
+      },
+      "echemistry": {
+        "enabled": false
+      },
+      "battery": {
+        "enabled": false
+      },
+      "system_coupling": {
+        "htc": {
+          "calculation_method": 0
+        },
+        "user_defined_coupling_variables_via_udm": [],
+        "use_face_or_element_based_data_transfer": true,
+        "flow_boundary_coupling": {
+          "activate_flow_boundary_coupling_model": false
+        }
+      },
+      "sofc": {
+        "enabled": false
+      },
+      "pemfc": {
+        "enabled": false
+      }
+    },
+    "materials": {
+      "database": {
+        "database_type": "fluent-database",
+        "list_by_type": "fluid"
+      },
+      "fluid": {
+        "air": {
+          "name": "air",
+          "chemical_formula": "",
+          "density": {
+            "option": "incompressible-ideal-gas"
+          },
+          "viscosity": {
+            "option": "piecewise-linear",
+            "piecewise_linear": {
+              "function_of": "temperature",
+              "data_points": [
+                {
+                  "item": 250.0,
+                  "value": 1.596e-05
+                },
+                {
+                  "item": 300.0,
+                  "value": 1.846e-05
+                },
+                {
+                  "item": 350.0,
+                  "value": 2.082e-05
+                },
+                {
+                  "item": 400.0,
+                  "value": 2.301e-05
+                },
+                {
+                  "item": 450.0,
+                  "value": 2.507e-05
+                },
+                {
+                  "item": 500.0,
+                  "value": 2.701e-05
+                },
+                {
+                  "item": 550.0,
+                  "value": 2.884e-05
+                },
+                {
+                  "item": 600.0,
+                  "value": 3.058e-05
+                }
+              ]
+            }
+          },
+          "specific_heat": {
+            "option": "piecewise-linear",
+            "piecewise_linear": {
+              "function_of": "temperature",
+              "data_points": [
+                {
+                  "item": 250.0,
+                  "value": 1006.0
+                },
+                {
+                  "item": 300.0,
+                  "value": 1007.0
+                },
+                {
+                  "item": 350.0,
+                  "value": 1009.0
+                },
+                {
+                  "item": 400.0,
+                  "value": 1014.0
+                },
+                {
+                  "item": 450.0,
+                  "value": 1021.0
+                },
+                {
+                  "item": 500.0,
+                  "value": 1030.0
+                },
+                {
+                  "item": 550.0,
+                  "value": 1040.0
+                },
+                {
+                  "item": 600.0,
+                  "value": 1051.0
+                }
+              ]
+            }
+          },
+          "thermal_conductivity": {
+            "option": "piecewise-linear",
+            "piecewise_linear": {
+              "function_of": "temperature",
+              "data_points": [
+                {
+                  "item": 250.0,
+                  "value": 0.02227
+                },
+                {
+                  "item": 300.0,
+                  "value": 0.02624
+                },
+                {
+                  "item": 350.0,
+                  "value": 0.03003
+                },
+                {
+                  "item": 400.0,
+                  "value": 0.03365
+                },
+                {
+                  "item": 450.0,
+                  "value": 0.03707
+                },
+                {
+                  "item": 500.0,
+                  "value": 0.04038
+                },
+                {
+                  "item": 550.0,
+                  "value": 0.0436
+                },
+                {
+                  "item": 600.0,
+                  "value": 0.04659
+                }
+              ]
+            }
+          },
+          "molecular_weight": {
+            "option": "value",
+            "value": 28.966
+          }
+        }
+      },
+      "solid": {
+        "aluminum": {
+          "name": "aluminum",
+          "chemical_formula": "al",
+          "density": {
+            "option": "value",
+            "value": 2719
+          },
+          "specific_heat": {
+            "option": "value",
+            "value": 871
+          },
+          "thermal_conductivity": {
+            "option": "value",
+            "value": 202.4
+          }
+        },
+        "inconel-718": {
+          "name": "inconel-718",
+          "chemical_formula": "al",
+          "density": {
+            "option": "value",
+            "value": 8190.0
+          },
+          "specific_heat": {
+            "option": "piecewise-linear",
+            "piecewise_linear": {
+              "function_of": "temperature",
+              "data_points": [
+                {
+                  "item": 293.15,
+                  "value": 460.0
+                },
+                {
+                  "item": 373.15,
+                  "value": 458.0
+                },
+                {
+                  "item": 473.15,
+                  "value": 468.0
+                },
+                {
+                  "item": 573.15,
+                  "value": 485.0
+                },
+                {
+                  "item": 673.15,
+                  "value": 501.0
+                }
+              ]
+            }
+          },
+          "thermal_conductivity": {
+            "option": "piecewise-linear",
+            "piecewise_linear": {
+              "function_of": "temperature",
+              "data_points": [
+                {
+                  "item": 293.15,
+                  "value": 11.5
+                },
+                {
+                  "item": 373.15,
+                  "value": 12.1
+                },
+                {
+                  "item": 473.15,
+                  "value": 13.5
+                },
+                {
+                  "item": 573.15,
+                  "value": 15.2
+                },
+                {
+                  "item": 673.15,
+                  "value": 17.1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cell_zone_conditions": {
+      "fluid": {
+        "fluid_domain": {
+          "name": "fluid_domain",
+          "general": {
+            "material": "air",
+            "laminar": false
+          },
+          "reference_frame": {
+            "frame_motion": false,
+            "reference_frame_axis_origin": [
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 0
+              }
+            ],
+            "reference_frame_axis_direction": [
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 1
+              }
+            ]
+          },
+          "mesh_motion": {
+            "enable": false
+          },
+          "zonal_models": {},
+          "porous_zone": {
+            "porous": false
+          },
+          "fan_zone": {
+            "fan_zone": false
+          },
+          "sources": {
+            "enable": false
+          },
+          "fixed_values": {
+            "enable": false
+          }
+        }
+      },
+      "solid": {
+        "solid_domain": {
+          "name": "solid_domain",
+          "general": {
+            "material": "inconel-718"
+          },
+          "reference_frame": {
+            "frame_motion": false,
+            "reference_frame_axis_origin": [
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 0
+              }
+            ],
+            "reference_frame_axis_direction": [
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 0
+              },
+              {
+                "option": "value",
+                "value": 1
+              }
+            ]
+          },
+          "mesh_motion": {
+            "enable": false
+          },
+          "solid_motion": {
+            "enable": false
+          },
+          "sources": {
+            "enable": false
+          },
+          "fixed_values": {
+            "enable": false
+          },
+          "material_orientation": {}
+        }
+      }
+    },
+    "boundary_conditions": {
+      "pressure_outlet": {
+        "fluid_outlet": {
+          "name": "fluid_outlet",
+          "momentum": {
+            "gauge_pressure": {
+              "option": "value",
+              "value": 0
+            },
+            "pressure_profile_multiplier": 1.0,
+            "prevent_reverse_flow": true,
+            "radial_equ_pressure_distribution": false,
+            "avg_pressure_spec": false,
+            "target_mass_flow_rate": false
+          },
+          "turbulence": {},
+          "thermal": {}
+        }
+      },
+      "velocity_inlet": {
+        "fluid_inlet": {
+          "name": "fluid_inlet",
+          "momentum": {
+            "velocity_specification_method": "Magnitude, Normal to Boundary",
+            "reference_frame": "Absolute",
+            "velocity_magnitude": {
+              "option": "value",
+              "value": 23.5
+            },
+            "initial_gauge_pressure": {
+              "option": "value",
+              "value": 0
+            }
+          },
+          "turbulence": {
+            "turbulence_specification": "Intensity and Hydraulic Diameter",
+            "turbulent_intensity": 0.04411209588036475,
+            "hydraulic_diameter": 0.02
+          },
+          "thermal": {
+            "temperature": {
+              "option": "value",
+              "value": 300
+            }
+          }
+        }
+      },
+      "wall": {
+        "fluid_solid_interface-shadow": {
+          "name": "fluid_solid_interface-shadow",
+          "momentum": {},
+          "turbulence": {},
+          "thermal": {
+            "thermal_condition": "Coupled",
+            "material": "aluminum",
+            "wall_thickness": {
+              "option": "value",
+              "value": 0
+            },
+            "heat_generation_rate": {
+              "option": "value",
+              "value": 0
+            },
+            "enable_shell_conduction": false,
+            "caf": {
+              "option": "value",
+              "value": 1
+            }
+          }
+        },
+        "fluid_solid_interface": {
+          "name": "fluid_solid_interface",
+          "momentum": {
+            "wall_motion": "Stationary Wall",
+            "shear_condition": "No Slip"
+          },
+          "turbulence": {
+            "roughness_model": "Standard",
+            "roughness_height": {
+              "option": "value",
+              "value": 0
+            },
+            "roughness_const": {
+              "option": "value",
+              "value": 0.5
+            }
+          },
+          "thermal": {
+            "thermal_condition": "Coupled",
+            "material": "aluminum",
+            "wall_thickness": {
+              "option": "value",
+              "value": 0
+            },
+            "heat_generation_rate": {
+              "option": "value",
+              "value": 0
+            },
+            "enable_shell_conduction": false,
+            "caf": {
+              "option": "value",
+              "value": 1
+            }
+          }
+        },
+        "heated_outer_wall": {
+          "name": "heated_outer_wall",
+          "momentum": {},
+          "turbulence": {},
+          "thermal": {
+            "thermal_condition": "Heat Flux",
+            "material": "aluminum",
+            "heat_flux": {
+              "option": "value",
+              "value": 7200.0
+            },
+            "wall_thickness": {
+              "option": "value",
+              "value": 0
+            },
+            "heat_generation_rate": {
+              "option": "value",
+              "value": 0
+            },
+            "enable_shell_conduction": false,
+            "caf": {
+              "option": "value",
+              "value": 1
+            }
+          }
+        },
+        "solid_inlet_end": {
+          "name": "solid_inlet_end",
+          "momentum": {},
+          "turbulence": {},
+          "thermal": {
+            "thermal_condition": "Heat Flux",
+            "material": "aluminum",
+            "heat_flux": {
+              "option": "value",
+              "value": 0
+            },
+            "wall_thickness": {
+              "option": "value",
+              "value": 0
+            },
+            "heat_generation_rate": {
+              "option": "value",
+              "value": 0
+            },
+            "enable_shell_conduction": false,
+            "caf": {
+              "option": "value",
+              "value": 1
+            }
+          }
+        },
+        "solid_outlet_end": {
+          "name": "solid_outlet_end",
+          "momentum": {},
+          "turbulence": {},
+          "thermal": {
+            "thermal_condition": "Heat Flux",
+            "material": "aluminum",
+            "heat_flux": {
+              "option": "value",
+              "value": 0
+            },
+            "wall_thickness": {
+              "option": "value",
+              "value": 0
+            },
+            "heat_generation_rate": {
+              "option": "value",
+              "value": 0
+            },
+            "enable_shell_conduction": false,
+            "caf": {
+              "option": "value",
+              "value": 1
+            }
+          }
+        }
+      },
+      "non_reflecting_bc": {
+        "general_nrbc": {
+          "sigma": 0.15,
+          "sigma2": 5.0
+        },
+        "turbo_specific_nrbc": {
+          "enable": false
+        }
+      },
+      "perforated_wall": {
+        "setup_method": "None",
+        "model_setup": {
+          "ninjections": 1,
+          "urf": 1,
+          "injection": [
+            {
+              "injection_thread": false,
+              "coupled": true,
+              "extraction_thread": false,
+              "uniform": "Uniform",
+              "static": "Dynamic",
+              "formulation": "Incompressible",
+              "dynamic_setup": {
+                "method": ""
+              }
+            }
+          ]
+        }
+      },
+      "settings": {
+        "mass_flow": true,
+        "pressure_outlet": {
+          "blending_factor": 0.0,
+          "bin_count": 65,
+          "average_pressure": false
+        },
+        "target_mass_flow_rate_settings": {
+          "under_relaxation_factor": 0.05,
+          "verbosity": false
+        },
+        "advanced": {
+          "delay_model_change_update": false,
+          "batch_thread_update": false
+        }
+      }
+    },
+    "mesh_interfaces": {
+      "interface": {},
+      "auto_options": {
+        "set_default_name_prefix": "intf",
+        "order_interface_lists_by_area": false,
+        "set_minimum_area": 0.0,
+        "set_minimum_area_percentage": 0.0,
+        "pairing_between_different_cell_zones_only": false,
+        "pairing_between_interface_zones_only": false
+      },
+      "verbosity": 0,
+      "enforce_continuity_after_bc": false,
+      "coupled_interfaces_inherit_bcs": false,
+      "enforce_coupled_wall_between_solids": false,
+      "enable_visualization_of_interfaces": true,
+      "non_conformal_interface_numerics": {}
+    },
+    "dynamic_mesh": {
+      "enabled": false
+    },
+    "reference_values": {
+      "area": 0.0003141592653589793,
+      "density": 1.176591490221488,
+      "enthalpy": 0,
+      "length": 0.02,
+      "pressure": 0,
+      "temperature": 300.0,
+      "yplus": 300,
+      "velocity": 23.5,
+      "viscosity": 1.846e-05,
+      "ratio_of_specific_heats": 1.4,
+      "zone": "fluid_domain"
+    },
+    "reference_frames": {
+      "global": {
+        "name": "global",
+        "motion": {
+          "motion_type": "no-motion"
+        },
+        "parent_ref_frame": "",
+        "initial_state": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "orientation": {
+            "first_axis": {
+              "axis_from": {
+                "direction_option": "axis-label",
+                "axis_label": "'x"
+              },
+              "axis_to": {
+                "direction_option": "vector",
+                "vector": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "auto_second_axis": true
+          }
+        },
+        "current_state": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "x_axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y_axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "z_axis": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "display_state": "current"
+      }
+    },
+    "named_expressions": {},
+    "turbomachinery": {
+      "models": {
+        "enabled": false,
+        "general_turbo_interface": {
+          "expert": {}
+        },
+        "generalized_forces": {
+          "enabled": false
+        }
+      },
+      "periodic_instances": {}
+    },
+    "user_defined": {
+      "auto_compile_compiled_functions": true,
+      "function_hooks": {
+        "wall_heat_flux": "none"
+      },
+      "memory": {
+        "memory_locations": 0,
+        "memory_node_locations": 0,
+        "zone_based_udm": false
+      },
+      "scalars": {
+        "inlet_diffusion": true,
+        "diffusion_long": false,
+        "scalar": []
+      }
+    },
+    "profiles": {
+      "update_interval": 1,
+      "extrapolation_tolerance_factor": 1
+    }
+  },
+  "solution": {
+    "methods": {
+      "p_v_coupling": {
+        "flow_scheme": "Coupled",
+        "flux_type": "Rhie-Chow: momentum based",
+        "flux_auto_select": true
+      },
+      "spatial_discretization": {
+        "gradient_scheme": "least-square-cell-based",
+        "discretization_scheme": {
+          "pressure": "second-order",
+          "mom": "second-order-upwind",
+          "k": "second-order-upwind",
+          "omega": "second-order-upwind",
+          "temperature": "second-order-upwind"
+        }
+      },
+      "pseudo_time_method": {
+        "formulation": {
+          "coupled_solver": "global-time-step"
+        }
+      },
+      "expert": {
+        "implicit_bodyforce_treatment": false,
+        "velocity_formulation": "absolute",
+        "physical_velocity_formulation": false,
+        "disable_rhie_chow_flux": false,
+        "presto_pressure_scheme": false,
+        "first_to_second_order_blending": 1.0
+      },
+      "high_order_term_relaxation": {
+        "enable": false,
+        "relaxation_factor": 0.25,
+        "select_variables": "flow-variables",
+        "type": "standard"
+      },
+      "warped_face_gradient_correction": {
+        "enable": false
+      },
+      "poor_mesh_numerics": {
+        "cell_quality_based": false,
+        "turbulence_production_term": true,
+        "solution_and_quality_based": false,
+        "gradient_quality_based": false,
+        "reset_poor_elements": false
+      }
+    },
+    "controls": {
+      "p_v_controls": {
+        "explicit_pressure_under_relaxation": 0.5,
+        "explicit_momentum_under_relaxation": 0.5
+      },
+      "pseudo_time_explicit_relaxation_factor": {
+        "global_dt_pseudo_relax": {
+          "density": 1.0,
+          "body-force": 1.0,
+          "k": 0.75,
+          "omega": 0.75,
+          "turb-viscosity": 1.0,
+          "temperature": 0.75
+        }
+      },
+      "equations": {
+        "flow": true,
+        "kw": true,
+        "temperature": true
+      },
+      "limits": {
+        "min_pressure": 1,
+        "max_pressure": 50000000000.0,
+        "min_temperature": 1,
+        "max_temperature": 5000,
+        "min_tke": 1e-14,
+        "min_omega": 1e-20,
+        "max_turb_visc_ratio": 100000.0
+      },
+      "advanced": {
+        "multi_grid": {
+          "mg_controls": {
+            "pressure-coupled": {
+              "cycle_type": "f-cycle",
+              "termination_criteria": 0.1,
+              "stabilization": "none"
+            },
+            "k": {
+              "cycle_type": "f-cycle",
+              "termination_criteria": 0.1,
+              "stabilization": "none"
+            },
+            "omega": {
+              "cycle_type": "f-cycle",
+              "termination_criteria": 0.1,
+              "stabilization": "none"
+            },
+            "temperature": {
+              "cycle_type": "f-cycle",
+              "termination_criteria": 0.1,
+              "stabilization": "none"
+            }
+          },
+          "amg_controls": {
+            "scalar_parameters": {
+              "fixed_cycle_parameters": {
+                "pre_sweeps": 0,
+                "post_sweeps": 3,
+                "max_cycle": 30
+              },
+              "coarsening_parameters": {
+                "max_coarse_levels": 40,
+                "coarsen_by_interval": 6,
+                "conservative_coarsening": true,
+                "aggressive_coarsening": true,
+                "laplace_coarsening": false
+              },
+              "smoother_type": "ILU"
+            },
+            "coupled_parameters": {
+              "fixed_cycle_parameters": {
+                "pre_sweeps": 0,
+                "post_sweeps": 3,
+                "max_cycle": 10
+              },
+              "coarsening_parameters": {
+                "max_coarse_levels": 40,
+                "coarsen_by_interval": 6,
+                "conservative_coarsening": true,
+                "aggressive_coarsening": true,
+                "laplace_coarsening": false
+              },
+              "smoother_type": "ILU"
+            },
+            "flexible_cycle_parameters": {
+              "sweeps": 2,
+              "max_fine_relaxations": 30,
+              "max_coarse_relaxations": 50
+            },
+            "options": {
+              "verbosity": 0
+            }
+          }
+        },
+        "expert": {
+          "spatial_discretization_limiter": {
+            "limiter_type": "default",
+            "cell_to_limiting": "cell-to-face",
+            "limiter_filter": false
+          },
+          "pseudo_time_method_usage": {
+            "k": {
+              "enable_pseudo_time_method": true,
+              "pseudo_time_scale_factor": 1.0,
+              "implicit_under_relaxation_factor": 0.8
+            },
+            "omega": {
+              "enable_pseudo_time_method": true,
+              "pseudo_time_scale_factor": 1.0,
+              "implicit_under_relaxation_factor": 0.8
+            },
+            "temperature": {
+              "enable_pseudo_time_method": true,
+              "pseudo_time_scale_factor": 1.0,
+              "implicit_under_relaxation_factor": 1.0
+            }
+          },
+          "wall_temp_alternate_formulation": false,
+          "save_cell_residuals": false,
+          "keep_temporary_memory": false,
+          "allow_all_disc_schemes": false
+        },
+        "energy_numerical_noise_filter": false,
+        "secondary_gradient_limiting": {
+          "energy": false,
+          "uds": false
+        },
+        "energy_reconstruction_gradient_limiting": false,
+        "boundary_presto_treatment": false,
+        "relaxation_method": "gauss-seidel",
+        "enthalpy_reference_temperature": 298.15
+      }
+    },
+    "report_definitions": {
+      "mesh": {},
+      "surface": {
+        "p_in": {
+          "name": "p_in",
+          "report_type": "surface-massavg",
+          "field": "pressure",
+          "surface_names": [
+            "fluid_inlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "p_out": {
+          "name": "p_out",
+          "report_type": "surface-massavg",
+          "field": "pressure",
+          "surface_names": [
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_out_bulk": {
+          "name": "T_out_bulk",
+          "report_type": "surface-massavg",
+          "field": "temperature",
+          "surface_names": [
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_wall_max": {
+          "name": "T_wall_max",
+          "report_type": "surface-facetmax",
+          "field": "temperature",
+          "surface_names": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "v_out_max": {
+          "name": "v_out_max",
+          "report_type": "surface-facetmax",
+          "field": "velocity-magnitude",
+          "surface_names": [
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "yplus_max": {
+          "name": "yplus_max",
+          "report_type": "surface-facetmax",
+          "field": "y-plus",
+          "surface_names": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "p_in_area": {
+          "name": "p_in_area",
+          "report_type": "surface-areaavg",
+          "field": "pressure",
+          "surface_names": [
+            "fluid_inlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "p_out_area": {
+          "name": "p_out_area",
+          "report_type": "surface-areaavg",
+          "field": "pressure",
+          "surface_names": [
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_in_bulk": {
+          "name": "T_in_bulk",
+          "report_type": "surface-massavg",
+          "field": "temperature",
+          "surface_names": [
+            "fluid_inlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_outer_max": {
+          "name": "T_outer_max",
+          "report_type": "surface-facetmax",
+          "field": "temperature",
+          "surface_names": [
+            "heated_outer_wall"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_outer_avg": {
+          "name": "T_outer_avg",
+          "report_type": "surface-areaavg",
+          "field": "temperature",
+          "surface_names": [
+            "heated_outer_wall"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_inner_avg": {
+          "name": "T_inner_avg",
+          "report_type": "surface-areaavg",
+          "field": "temperature",
+          "surface_names": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "yplus_min": {
+          "name": "yplus_min",
+          "report_type": "surface-facetmin",
+          "field": "y-plus",
+          "surface_names": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "yplus_avg": {
+          "name": "yplus_avg",
+          "report_type": "surface-areaavg",
+          "field": "y-plus",
+          "surface_names": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "area_in": {
+          "name": "area_in",
+          "report_type": "surface-area",
+          "surface_names": [
+            "fluid_inlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        }
+      },
+      "volume": {
+        "T_solid_max": {
+          "name": "T_solid_max",
+          "report_type": "volume-max",
+          "field": "temperature",
+          "cell_zones": [
+            "'solid_domain"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_solid_mean": {
+          "name": "T_solid_mean",
+          "report_type": "volume-average",
+          "field": "temperature",
+          "cell_zones": [
+            "'solid_domain"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_fluid_max": {
+          "name": "T_fluid_max",
+          "report_type": "volume-max",
+          "field": "temperature",
+          "cell_zones": [
+            "'fluid_domain"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_fluid_min": {
+          "name": "T_fluid_min",
+          "report_type": "volume-min",
+          "field": "temperature",
+          "cell_zones": [
+            "'fluid_domain"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "T_solid_min": {
+          "name": "T_solid_min",
+          "report_type": "volume-min",
+          "field": "temperature",
+          "cell_zones": [
+            "'solid_domain"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        }
+      },
+      "force": {
+        "F_wall_z": {
+          "name": "F_wall_z",
+          "force_vector": [
+            0,
+            0,
+            1
+          ],
+          "reference_frame": "global",
+          "zones": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        }
+      },
+      "lift": {},
+      "drag": {},
+      "moment": {},
+      "time": {},
+      "flux": {
+        "mdot_in": {
+          "name": "mdot_in",
+          "report_type": "flux-massflow",
+          "boundaries": [
+            "fluid_inlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "mdot_out": {
+          "name": "mdot_out",
+          "report_type": "flux-massflow",
+          "boundaries": [
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "mass_imbalance": {
+          "name": "mass_imbalance",
+          "report_type": "flux-massflow",
+          "boundaries": [
+            "fluid_inlet",
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "q_heated_wall": {
+          "name": "q_heated_wall",
+          "report_type": "flux-heattransfer",
+          "boundaries": [
+            "heated_outer_wall"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "q_interface": {
+          "name": "q_interface",
+          "report_type": "flux-heattransfer",
+          "boundaries": [
+            "fluid_solid_interface"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "q_fluid_net": {
+          "name": "q_fluid_net",
+          "report_type": "flux-heattransfer",
+          "boundaries": [
+            "fluid_inlet",
+            "fluid_outlet"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "q_ends": {
+          "name": "q_ends",
+          "report_type": "flux-heattransfer",
+          "boundaries": [
+            "solid_inlet_end",
+            "solid_outlet_end"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        },
+        "q_net_all": {
+          "name": "q_net_all",
+          "report_type": "flux-heattransfer",
+          "boundaries": [
+            "fluid_inlet",
+            "fluid_outlet",
+            "heated_outer_wall",
+            "solid_inlet_end",
+            "solid_outlet_end"
+          ],
+          "per_selection": false,
+          "average_over": 1,
+          "retain_instantaneous_values": false,
+          "output_parameter": false,
+          "create_report_file": true,
+          "create_report_plot": false
+        }
+      },
+      "vbm": {},
+      "user_defined": {},
+      "expression": {
+        "dp_total": {
+          "name": "dp_total",
+          "average_over": 1,
+          "expr_value": 0.0,
+          "define": " ",
+          "output_parameter": false,
+          "create_report_file": false,
+          "create_report_plot": false
+        }
+      },
+      "single_valued_expression": {}
+    },
+    "monitor": {
+      "residual": {
+        "equations": {
+          "continuity": {
+            "monitor": true
+          },
+          "x-velocity": {
+            "monitor": true
+          },
+          "y-velocity": {
+            "monitor": true
+          },
+          "z-velocity": {
+            "monitor": true
+          },
+          "energy": {
+            "monitor": true
+          },
+          "k": {
+            "monitor": true
+          },
+          "omega": {
+            "monitor": true
+          }
+        },
+        "options": {
+          "criterion_type": "none",
+          "n_save": 1000,
+          "normalize": false,
+          "residual_values": {
+            "scale_residuals": true,
+            "compute_local_scale": false
+          },
+          "print": true,
+          "plot": true,
+          "n_display": 1000
+        },
+        "axes": {
+          "x": {
+            "label": "",
+            "log_scale": false,
+            "number_format": {
+              "format_type": "float",
+              "precision": 0
+            },
+            "auto_range": {
+              "min_auto": true,
+              "max_auto": true
+            },
+            "show_major_gridlines": false,
+            "show_minor_gridlines": false
+          },
+          "y": {
+            "label": "",
+            "log_scale": true,
+            "number_format": {
+              "format_type": "exponential",
+              "precision": 0
+            },
+            "auto_range": {
+              "min_auto": true,
+              "max_auto": true
+            },
+            "show_major_gridlines": false,
+            "show_minor_gridlines": false
+          }
+        },
+        "curves": {
+          "continuity": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "monte carlo green"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "monte carlo green"
+            }
+          },
+          "energy": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "lavender gray"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "lavender gray"
+            }
+          },
+          "k": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "scarlet red"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "scarlet red"
+            }
+          },
+          "omega": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "grayish blue"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "grayish blue"
+            }
+          },
+          "x-velocity": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "flush orange"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "flush orange"
+            }
+          },
+          "y-velocity": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "lime green"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "lime green"
+            }
+          },
+          "z-velocity": {
+            "line": {
+              "pattern": "----",
+              "weight": 2,
+              "color": "classic pink"
+            },
+            "line_in_file": {
+              "pattern": ""
+            },
+            "marker": {
+              "symbol": ""
+            },
+            "marker_in_file": {
+              "symbol": "(*)",
+              "size": 0.3,
+              "color": "classic pink"
+            }
+          }
+        }
+      },
+      "report_files": {
+        "s5a_monitors": {
+          "name": "s5a_monitors",
+          "file_name": "Monitors\\\\baseline_monitors.out",
+          "frequency_of": "iteration",
+          "frequency": 1,
+          "itr_index": "1",
+          "run_index": "0",
+          "report_defs": [
+            "mdot_in",
+            "mdot_out",
+            "mass_imbalance",
+            "q_heated_wall",
+            "q_interface",
+            "q_fluid_net",
+            "p_in",
+            "p_out",
+            "T_out_bulk",
+            "T_wall_max",
+            "T_solid_max",
+            "T_solid_mean",
+            "v_out_max",
+            "yplus_max",
+            "p_in_area",
+            "p_out_area",
+            "T_in_bulk",
+            "T_outer_max",
+            "T_outer_avg",
+            "T_inner_avg",
+            "yplus_min",
+            "yplus_avg",
+            "area_in",
+            "T_fluid_max",
+            "T_fluid_min",
+            "T_solid_min",
+            "q_ends",
+            "q_net_all",
+            "F_wall_z"
+          ],
+          "print": true,
+          "active": true,
+          "write_instantaneous_values": false
+        }
+      },
+      "report_plots": {},
+      "convergence_conditions": {
+        "convergence_reports": {},
+        "frequency": 1,
+        "condition": "all-conditions-are-met"
+      }
+    },
+    "cell_registers": {},
+    "initialization": {
+      "initialization_type": "standard",
+      "reference_frame": "relative",
+      "defaults": {
+        "pressure": 0.0,
+        "x-velocity": 0,
+        "y-velocity": 0,
+        "z-velocity": 23.5,
+        "k": 1.611915862325738,
+        "omega": 1655.703327095978,
+        "temperature": 300.0
+      },
+      "enable_profile_memory_flushing": false
+    },
+    "calculation_activity": {
+      "auto_save": {
+        "case_frequency": "if-case-is-modified",
+        "data_frequency": 0,
+        "root_name": "./baseline_medium_final",
+        "retain_most_recent_files": false,
+        "append_file_name_with": {
+          "file_suffix_type": "time-step",
+          "file_decimal_digit": 6
+        }
+      },
+      "execute_commands": {},
+      "case_modification": {
+        "enable_strategy": false
+      },
+      "poor_mesh_numerics": {
+        "register_based": {}
+      }
+    },
+    "run_calculation": {
+      "parameters": {
+        "iter_count": 100,
+        "reporting_interval": 1,
+        "profile_update_interval": 1
+      },
+      "pseudo_time_settings": {
+        "time_step_method": {
+          "time_step_method": "automatic",
+          "length_scale_methods": "conservative",
+          "time_step_size_scale_factor": 1.0,
+          "verbosity": 0,
+          "auto_time_size_calc_solid_zone": true,
+          "time_solid_scale_factor": 1.0
+        }
+      },
+      "transient_controls": {
+        "type": "Fixed",
+        "method": "User-Specified"
+      },
+      "options": {},
+      "data_sampling": {
+        "enabled": false
+      },
+      "compute_resources": {}
+    }
+  }
+}
