@@ -1,0 +1,62 @@
+SETUP AUDIT - 2_final_schemes - values READ BACK from Fluent
+59 items, 0 failed
+
+ok   fluent version                     26.1.0
+ok   solver type                        'pressure-based'
+ok   time                               'steady'
+ok   velocity formulation               'absolute'
+ok   operating pressure [Pa]            101325
+ok   gravity enabled                    False
+ok   energy equation                    True
+ok   energy: viscous dissipation        False
+ok   energy: pressure work              False
+ok   energy: kinetic energy             False
+ok   viscous model                      'k-omega'
+ok   k-omega variant                    'sst'
+ok   SST wall omega treatment           'correlation'
+ok   SST low-Re correction              False
+ok   radiation model                    'none'
+ok   air density model                  'incompressible-ideal-gas'
+ok   air molecular weight               28.966
+ok   air cp model                       'piecewise-linear'
+ok   air cp curve = Incropera A.4       True
+ok   air mu model                       'piecewise-linear'
+ok   air mu curve = Incropera A.4       True
+ok   air k model                        'piecewise-linear'
+ok   air k curve = Incropera A.4        True
+ok   Inconel density option             'value'
+ok   Inconel density [kg/m3]            8190.0
+ok   Inconel k model                    'piecewise-linear'
+ok   Inconel k curve = VDM 4127         True
+ok   Inconel cp model                   'piecewise-linear'
+ok   Inconel cp curve = VDM 4127        True
+ok   fluid zone material                'air'
+ok   solid zone material                'inconel-718'
+ok   inlet velocity spec                'Magnitude, Normal to Boundary'
+ok   inlet velocity [m/s]               23.5
+ok   inlet temperature [K]              300
+ok   inlet turbulence spec              'Intensity and Hydraulic Diameter'
+ok   inlet turbulent intensity [-]      0.04411209588036475
+ok   inlet hydraulic diameter [m]       0.02
+ok   outlet gauge pressure [Pa]         0
+ok   outlet prevent reverse flow        True
+ok   outlet backflow T branch active    False
+ok   heated wall condition              'Heat Flux'
+ok   heated wall flux [W/m2]            8000.0
+ok   solid inlet end                    ('Heat Flux', 0)
+ok   solid outlet end                   ('Heat Flux', 0)
+ok   interface thermal coupling         'Coupled'
+ok   interface shadow coupling          'Coupled'
+ok   p-v coupling                       'Coupled'
+ok   gradient scheme                    'least-square-cell-based'
+ok   scheme pressure                    'second-order'
+ok   scheme mom                         'second-order-upwind'
+ok   scheme k                           'second-order-upwind'
+ok   scheme omega                       'second-order-upwind'
+ok   scheme temperature                 'second-order-upwind'
+ok   pseudo-time formulation            'global-time-step'
+ok   pseudo-time step settings          {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 'verbosity': 0, 'auto_time_size_calc_sol
+ok   explicit pseudo relaxation         {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-viscosity': 1.0, 'temperature': 0.75}}
+ok   explicit p/mom under-relaxation    {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+ok   solution limits                    {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'min_tke': 1e-14, 'min_omega': 1e-20, 'max_turb_visc
+ok   equations solved                   {'flow': True, 'kw': True, 'temperature': True}

@@ -1,0 +1,15 @@
+NS ['FLUID_DOMAIN', 'FLUID_INLET', 'FLUID_OUTLET', 'FLUID_SOLID_INTERFACE', 'FLUID_WALL', 'HEATED_OUTER_WALL', 'SOLID_DOMAIN', 'SOLID_INLET_END', 'SOLID_INNER_INTERFACE', 'SOLID_OUTLET_END', 'STRUCTURAL_SUPPORT']
+edges [(11, 'GeoCurveCircle', 0.062831999999999999), (12, 'GeoCurveCircle', 0.062831999999999999), (10, 'GeoCurveCircle', 0.125664), (9, 'GeoCurveCircle', 0.125664)]
+OK   bias type 
+OK   bias value 
+OK   generate mesh 
+OK   nodes/elements (108252, 23400)
+METRIC ElementQuality min=0.23667418368906179 max=0.99120634986953271 avg=0.6882251240543682 sd=0.21790109210754033
+METRIC AspectRatio min=1.1374 max=4.8823 avg=2.4130510769231277 sd=0.92138176921076675
+METRIC JacobianRatio min=1.1153 max=1.2046000000000001 avg=1.1534999999999767 sd=0.03164096686613057
+METRIC Skewness min=0.055555555678873811 max=0.055555555678877488 avg=0.055555555678876427 sd=0
+METRIC MaximumCornerAngle min=95 [deg] max=95 [deg] avg=95 [deg] sd=0 [deg]
+OK   env temp 300 K 
+analysis children [('Analysis Settings', 'ANSYSAnalysisSettings'), ('Solution', 'Solution')]
+NO IMPORTED LOAD GROUP - upstream link not effective
+PROBE6-DONE

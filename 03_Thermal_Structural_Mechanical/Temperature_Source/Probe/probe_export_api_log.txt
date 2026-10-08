@@ -1,0 +1,13 @@
+OK    read case                                              
+OK    read data                                              
+export children: ['sc_def_file_settings', 'settings']
+export commands: ['abaqus', 'mechanical_apdl', 'mechanical_apdl_input', 'ascii', 'avs', 'ensight', 'ensight_gold', 'ensight_gold_surface', 'ensight_dvs', 'visualize_output_options', 'visualize_output_write', 'fieldview', 'fieldview_data', 'gambit', 'cgns', 'custom_heat_flux', 'dx', 'ensight_gold_parallel_surfaces', 'ensight_gold_parallel_volume', 'icemcfd_for_icepak', 'fast_mesh', 'fast_solution', 'fast_velocity', 'taitherm', 'fieldview_unstruct', 'fieldview_unstruct_mesh', 'fieldview_unstruct_data', 'fieldview_unstruct_surfaces', 'ideas', 'nastran', 'patran_neutral', 'patran_nodal', 'vtk', 'tecplot', 'outline_view_settings']
+mechanical_apdl_input args: ['file_name', 'surface_name_list', 'structural_analysis', 'write_loads', 'loads']
+   arg file_name allowed=None
+   arg surface_name_list allowed=['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'heated_outer_wall', 'fluid_solid_interface', 'fluid_outlet', 'fluid_inlet']
+   arg structural_analysis allowed=None
+   arg write_loads allowed=None
+   arg loads allowed=[]
+mechanical_apdl args: ['file_name', 'thread_name_list']
+   arg file_name allowed=None
+   arg thread_name_list allowed=['fluid_domain', 'solid_domain']

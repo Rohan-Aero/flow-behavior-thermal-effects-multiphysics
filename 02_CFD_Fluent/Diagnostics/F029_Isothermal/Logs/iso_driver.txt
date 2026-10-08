@@ -1,0 +1,3 @@
+2026-09-24 01:00:17  launching (audit-only=0): 3ddp -g -py -t4 -i Journals/iso_diag.py
+2026-09-24 01:00:17  fluent pid 15428
+2026-09-24 01:17:09  fluent exited

@@ -1,0 +1,26 @@
+{
+ "case": "<PROJECT_ROOT>/10_Parametric_Study/CFD_Cases/Q01_LOW/Case/Q01_LOW_final.cas.h5",
+ "case_sha256": "D4472607B948DEF3D37E64D73A988CD2A0EED2E6909D640800C1445204CF8075",
+ "solid_cell_id_range": [
+  116641,
+  159840
+ ],
+ "face_zones_used": [
+  "interior-solid",
+  "fluid_solid_interface-shadow",
+  "heated_outer_wall",
+  "solid_inlet_end",
+  "solid_outlet_end"
+ ],
+ "n_cells": 43200,
+ "n_nodes": 48048,
+ "orientation_flips": 38438,
+ "vol_min": 4.459644900811596e-09,
+ "vol_max": 2.8597433986652578e-08,
+ "vol_sum_m3": 0.0005638731503906314,
+ "r_node_min_mm": 9.999999999999327,
+ "r_node_max_mm": 20.000000000004018,
+ "z_node_min": 0.0,
+ "z_node_max": 0.6,
+ "mapdl_input": "<SCRATCH_ROOT>/map/Q01_LOW/build_fluent_solid_cdb.inp"
+}

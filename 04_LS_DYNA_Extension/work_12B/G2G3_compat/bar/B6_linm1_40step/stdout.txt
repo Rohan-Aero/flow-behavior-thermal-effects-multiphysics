@@ -1,0 +1,359 @@
+ License option : check ansys licenses only
+
+
+ ***************************************************************
+ *            ANSYS LEGAL NOTICES                              *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2025 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+      Date: 10/02/2026      Time: 20:02:18  
+      ___________________________________________________ 
+     |                                                   |
+     |  LS-DYNA, A Program for Nonlinear Dynamic         |
+     |  Analysis of Structures in Three Dimensions       |
+     |  Date    : 07/09/2025    Time: 09:53:35           |
+     |  Version : smp d R16                              |
+     |  Revision: R16.1-180-gd50332dbe5                  |
+     |  AnLicVer: 2026 R1 (20251230+dl-79-g6933d52)      |
+     |                                                   |
+     |  Features enabled in this version:                |
+     |    Shared Memory Parallel                         |
+     |    CESE CHEMISTRY EM ICFD STOCHASTIC_PARTICLES    |
+     |    FFTW (multi-dimensional FFTW Library)          |
+     |    ARPACK (nonsymmetric eigensolver library)      |
+     |    ANSYSLIC enabled                               |
+     |                                                   |
+     |  Platform   : WINDOWS X64                         |
+     |  OS Level   : Windows 10  (Build 26200) uum       |
+     |  Compiler   : Intel Fortran Compiler 19.0 SSE2    |
+     |  Hostname   : <HOST>                               |
+     |  Precision  : Double precision (I8R8)             |
+     |                                                   |
+     |  Unauthorized use infringes Ansys Inc. copyrights |
+     |___________________________________________________|
+
+[license/error] *** ANSYS LICENSE MANAGER ERROR ***
+[license/error] Your version of the Ansys license client software is out of date. Please refer to Licensing Error Messages in the Troubleshooting section of the ANSYS, Inc. Licensing Guide. 
+[license/error]          The version of the license client 65226@<HOST> [Ansys Release 2025 R2] must be greater or equal to the client LSDYNA version [Ansys Release 2026 R1].
+ Student license active; 331 days remaning.
+
+ Executing with ANSYS license
+
+ Command line options: i=bar.k 
+                       ncpu=1 
+                       memory=20m
+
+ Input file: bar.k                                                                           
+
+ The native file format       : 64-bit small endian
+ Memory size from command line:    20000000
+
+ on UNIX computers note the following change:
+
+ ctrl-c interrupts ls-dyna and prompts for a sense  switch.
+ type the desired sense switch: sw1., sw2., etc. to continue
+ the execution.  ls-dyna will respond as explained in the users manual
+
+    type                      response
+   -----   ------------------------------------------------------------
+   quit    ls-dyna terminates.
+   stop    ls-dyna terminates.
+   sw1.    a restart file is written and ls-dyna terminates.
+   sw2.    ls-dyna responds with time and cycle numbers.    
+   sw3.    a restart file is written and ls-dyna continues calculations.
+   sw4.    a plot state is written and ls-dyna continues calculations.
+   swa.    ls-dyna flushes all output i/o buffers.
+   swb.    a dynain is written and ls-dyna continues calculations.
+   swc.    a restart and dynain are written and ls-dyna continues calculations.
+   swd.    a restart and dynain are written and ls-dyna terminates.
+   swe.    stop dynamic relaxation just as though convergence
+   endtime=time change the termination time
+   lpri    toggle implicit lin. alg. solver output on/off.
+   nlpr    toggle implicit nonlinear solver output on/off.
+   iter    toggle implicit output to d3iter database on/off.
+   prof    output timing data to messag and continue.
+   conv    force implicit nonlinear convergence for current time step.
+   ttrm    terminate implicit time step, reduce time step, retry time step.
+   rtrm    terminate implicit at end of current time step.
+
+
+ ********  notice  ********  notice  ********  notice  ********
+ *                                                            *
+ * This is the LS-DYNA Finite Element code.                   *
+ *                                                            *
+ * Neither LST nor the authors assume any responsibility for  *
+ * the validity, accuracy, or applicability of any results    *
+ * obtained from this system. Users must verify their own     *
+ * results.                                                   *
+ *                                                            *
+ * LST endeavors to make the LS-DYNA code as complete,        *
+ * accurate and easy to use as possible.                      *
+ * Suggestions and comments are welcomed.  Please report any  *
+ * errors encountered in either the documentation or results  *
+ * immediately to LST through your site focus.                *
+ *                                                            *
+ * Copyright (C) 1990-2021                                    *
+ * by Livermore Software Technology, LLC                      *
+ * All rights reserved                                        *
+ *                                                            *
+ ********  notice  ********  notice  ********  notice  ********
+
+ Beginning of keyword reader                                   10/02/26 20:02:21
+
+                                                               10/02/26 20:02:21
+ Open include file: mat_inconel_thermoelastic.k
+
+ Memory required to process keyword     :     191582  
+ Additional dynamic memory required     :    2123004  
+
+
+ input of data is completed
+
+ initial kinetic energy = 0.00000000E+00
+
+ termination time                  = 1.000E+00
+
+ Memory required to begin solution      :     192K
+ Constraint dynamically allocated memory:     1544
+ Additional dynamically allocated memory:    2175K
+                                   Total:    2369K
+
+ initialization completed
+ ____________________________________________________________
+
+ Rate effects are turned off in constitutive models
+ since IRATE > 0 on *CONTROL_IMPLICIT_DYNAMICS card
+   No materials have acted on this flag!
+ ____________________________________________________________
+
+ calculation with mass scaling for minimum dt
+    added mass   =   0.0000E+00
+    physical mass=   1.6380E-02
+    ratio        =   0.0000E+00
+       1 t 0.0000E+00 dt 2.50E-02 flush i/o buffers            10/02/26 20:02:21
+       1 t 0.0000E+00 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      1 t= 2.5000E-02             10/02/26 20:02:21
+
+
+     ================================================
+     ==            IMPLICIT USAGE ALERT            ==
+     ================================================
+     == Memory Management for Implicit has changed ==
+     == after R10.  Please use:                    ==
+     ==       memory=     1M                       ==
+     ================================================
+
+    
+ estimated total cpu time          =         2 sec (       0 hrs  0 mins)
+ estimated cpu time to complete    =         0 sec (       0 hrs  0 mins)
+ estimated total clock time        =         2 sec (       0 hrs  0 mins)
+ estimated clock time to complete  =         0 sec (       0 hrs  0 mins)
+       4 t 2.5000E-02 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      2 t= 5.0000E-02             10/02/26 20:02:21
+       6 t 5.0000E-02 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      3 t= 7.5000E-02             10/02/26 20:02:21
+       8 t 7.5000E-02 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      4 t= 1.0000E-01             10/02/26 20:02:21
+      10 t 1.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      5 t= 1.2500E-01             10/02/26 20:02:21
+      12 t 1.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      6 t= 1.5000E-01             10/02/26 20:02:21
+      14 t 1.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      7 t= 1.7500E-01             10/02/26 20:02:21
+      16 t 1.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      8 t= 2.0000E-01             10/02/26 20:02:21
+      18 t 2.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step      9 t= 2.2500E-01             10/02/26 20:02:21
+    
+ estimated total cpu time          =         2 sec (       0 hrs  0 mins)
+ estimated cpu time to complete    =         0 sec (       0 hrs  0 mins)
+ estimated total clock time        =         2 sec (       0 hrs  0 mins)
+ estimated clock time to complete  =         0 sec (       0 hrs  0 mins)
+      20 t 2.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     10 t= 2.5000E-01             10/02/26 20:02:21
+      22 t 2.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     11 t= 2.7500E-01             10/02/26 20:02:21
+      24 t 2.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     12 t= 3.0000E-01             10/02/26 20:02:21
+      26 t 3.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     13 t= 3.2500E-01             10/02/26 20:02:21
+      28 t 3.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     14 t= 3.5000E-01             10/02/26 20:02:21
+      30 t 3.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     15 t= 3.7500E-01             10/02/26 20:02:21
+      32 t 3.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     16 t= 4.0000E-01             10/02/26 20:02:21
+      34 t 4.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     17 t= 4.2500E-01             10/02/26 20:02:21
+      36 t 4.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     18 t= 4.5000E-01             10/02/26 20:02:21
+      38 t 4.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     19 t= 4.7500E-01             10/02/26 20:02:21
+      40 t 4.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     20 t= 5.0000E-01             10/02/26 20:02:21
+      42 t 5.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     21 t= 5.2500E-01             10/02/26 20:02:21
+      44 t 5.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     22 t= 5.5000E-01             10/02/26 20:02:21
+      46 t 5.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     23 t= 5.7500E-01             10/02/26 20:02:21
+      48 t 5.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     24 t= 6.0000E-01             10/02/26 20:02:21
+      50 t 6.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     25 t= 6.2500E-01             10/02/26 20:02:21
+      52 t 6.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     26 t= 6.5000E-01             10/02/26 20:02:21
+      54 t 6.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     27 t= 6.7500E-01             10/02/26 20:02:21
+      56 t 6.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     28 t= 7.0000E-01             10/02/26 20:02:21
+      58 t 7.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     29 t= 7.2500E-01             10/02/26 20:02:21
+      60 t 7.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     30 t= 7.5000E-01             10/02/26 20:02:21
+      62 t 7.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     31 t= 7.7500E-01             10/02/26 20:02:21
+      64 t 7.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     32 t= 8.0000E-01             10/02/26 20:02:21
+      66 t 8.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     33 t= 8.2500E-01             10/02/26 20:02:21
+      68 t 8.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     34 t= 8.5000E-01             10/02/26 20:02:21
+      70 t 8.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     35 t= 8.7500E-01             10/02/26 20:02:21
+      72 t 8.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     36 t= 9.0000E-01             10/02/26 20:02:21
+      74 t 9.0000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     37 t= 9.2500E-01             10/02/26 20:02:21
+      76 t 9.2500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     38 t= 9.5000E-01             10/02/26 20:02:21
+      78 t 9.5000E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     39 t= 9.7500E-01             10/02/26 20:02:21
+      80 t 9.7500E-01 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+
+ BEGIN implicit statics  step     40 t= 1.0000E+00             10/02/26 20:02:21
+      82 t 1.0000E+00 dt 2.50E-02 write d3plot file            10/02/26 20:02:21
+ 
+ *** termination time reached ***
+      82 t 1.0000E+00 dt 2.50E-02 write d3dump01 file          10/02/26 20:02:21
+
+ N o r m a l    t e r m i n a t i o n                          10/02/26 20:02:21
+
+ Memory required to complete solution   :     192K
+ Constraint dynamically allocated memory:      20K
+ Additional dynamically allocated memory:    2185K
+                                   Total:    2396K
+
+ T i m i n g   i n f o r m a t i o n
+                        CPU(seconds)   %CPU  Clock(seconds) %Clock
+  ----------------------------------------------------------------
+  Keyword Processing ... 0.0000E+00    0.00     2.1000E-02    0.74
+    KW Reading ......... 0.0000E+00    0.00     7.0000E-03    0.25
+    KW Writing ......... 0.0000E+00    0.00     1.1000E-02    0.39
+  Initialization ....... 2.0000E+00   66.67     2.7900E+00   97.79
+    Init Proc Phase 1 .. 0.0000E+00    0.00     2.1000E-02    0.74
+  ASCII database ....... 0.0000E+00    0.00     3.0000E-03    0.11
+  Implicit ............. 0.0000E+00    0.00     1.6000E-02    0.56
+  Implicit Lin. Alg. ... 1.0000E+00   33.33     9.0000E-03    0.32
+    Imp. LA Factor ..... 0.0000E+00    0.00     9.0000E-03    0.32
+    Imp. LA Solve ...... 1.0000E+00   33.33     0.0000E+00    0.00
+  Misc. 3 .............. 0.0000E+00    0.00     1.4000E-02    0.49
+  ----------------------------------------------------------------
+  T o t a l s            3.0000E+00  100.00     2.8530E+00  100.00
+
+ Problem time       =    1.0000E+00
+ Problem cycle      =        82
+ Total CPU time     =         3 seconds (   0 hours  0 minutes  3 seconds)
+ CPU time per zone cycle  =   12195121.951 nanoseconds
+ Clock time per zone cycle=     512195.122 nanoseconds
+
+ Number of CPU's    1
+ NLQ used/max     192/  192
+ Start time   10/02/2026 20:02:21  
+ End time     10/02/2026 20:02:21  
+ Elapsed time       0 second  for      82 cycles using  1 SMP thread 
+             (      0 hour   0 minute   0 second )
+
+ N o r m a l    t e r m i n a t i o n                          10/02/26 20:02:21
+

@@ -1,0 +1,26 @@
+# Section 7A structural material Inconel_718_Re_analysis - RE-ANALYSIS 2026 (values chosen in 2026 from public datasheets; not original internship data)
+property,temperature_C,temperature_K,value,unit,source,status,used_by_7A_model
+density,-,-,8190,kg/m3,Special Metals / High Temp Metals (Section 2),datasheet,yes (no gravity load; irrelevant to thermal stress)
+youngs_modulus,20,293.15,204,GPa,VDM Alloy 718 Data Sheet 4127 (Section 2),datasheet,yes (table)
+youngs_modulus,100,373.15,199,GPa,VDM 4127,datasheet,yes (table)
+youngs_modulus,200,473.15,193,GPa,VDM 4127,datasheet,yes (table)
+youngs_modulus,300,573.15,187,GPa,VDM 4127,datasheet,yes (table)
+youngs_modulus,400,673.15,180,GPa,VDM 4127,datasheet,yes (table)
+poissons_ratio,all,all,0.294,-,literature range 0.284-0.294 (upper end),ASSUMED - not in either datasheet,yes (constant)
+mean_CTE_from_70F,93.33,366.48,12.8,1e-6/K,Special Metals / High Temp Metals (Section 2),datasheet,yes (secant table)
+mean_CTE_from_70F,204.44,477.59,13.3,1e-6/K,Special Metals / HTM,datasheet,yes (secant table)
+mean_CTE_from_70F,315.56,588.71,13.9,1e-6/K,Special Metals / HTM,datasheet,yes (secant table)
+mean_CTE_from_70F,426.67,699.82,14.2,1e-6/K,Special Metals / HTM,datasheet,yes (secant table)
+mean_CTE_from_70F,537.78,810.93,14.8,1e-6/K,Special Metals / HTM,datasheet,yes (secant table)
+CTE_zero_strain_reference,21.11,294.26,70 F,-,datum of the mean-CTE table,datasheet definition,yes (MAPDL MPAMOD re-references to TREF)
+analysis_reference_temperature_TREF,26.85,300.00,300,K,project decision (Section 1/2 T_ref),RE-ANALYSED choice,yes
+yield_strength_0.2pct,20,293.15,1030,MPa,VDM 4127 age-hardened,datasheet,no (7B margins at local T)
+yield_strength_0.2pct,100,373.15,1060,MPa,VDM 4127,datasheet,no
+yield_strength_0.2pct,200,473.15,1040,MPa,VDM 4127,datasheet,no
+yield_strength_0.2pct,300,573.15,1020,MPa,VDM 4127,datasheet,Engineering Data scalar (lower bound over 150.7-289.4 C)
+yield_strength_0.2pct,400,673.15,1000,MPa,VDM 4127,datasheet,no
+thermal_conductivity,20,293.15,11.5,W/m K,VDM 4127 (same table as the CFD),datasheet,no (information only - no thermal solve in Mechanical)
+thermal_conductivity,100,373.15,12.1,W/m K,VDM 4127,datasheet,no
+thermal_conductivity,200,473.15,13.5,W/m K,VDM 4127,datasheet,no
+thermal_conductivity,300,573.15,15.2,W/m K,VDM 4127,datasheet,no
+thermal_conductivity,400,673.15,17.1,W/m K,VDM 4127,datasheet,no

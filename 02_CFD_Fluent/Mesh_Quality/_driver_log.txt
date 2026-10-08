@@ -1,0 +1,17 @@
+14:48:35  driver start (serial Fluent, one session per mesh)
+14:48:35  === coarse : killing stale fluent processes ===
+14:48:38  launching serial fluent 3ddp -g on coarse
+14:48:38  pid 17940
+14:49:14  exited with code 
+14:49:17  transcript copied: fluent-20260919-144843-12960.trn
+14:49:21  === medium : killing stale fluent processes ===
+14:49:24  launching serial fluent 3ddp -g on medium
+14:49:24  pid 15436
+14:50:01  exited with code 
+14:50:04  transcript copied: fluent-20260919-144929-24484.trn
+14:50:08  === fine : killing stale fluent processes ===
+14:50:11  launching serial fluent 3ddp -g on fine
+14:50:11  pid 25224
+14:50:53  exited with code 
+14:50:56  transcript copied: fluent-20260919-145016-3480.trn
+14:51:00  driver finished

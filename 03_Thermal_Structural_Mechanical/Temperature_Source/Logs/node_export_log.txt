@@ -1,0 +1,8 @@
+OK    read case  ../../06_Fluent_CFD/Case/baseline_medium_final.cas.h5 
+OK    read data  ../../06_Fluent_CFD/Data/baseline_medium_final.dat.h5 
+allowed surfaces containing 'solid': ['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'fluid_solid_interface']
+OK    zone surface of solid_domain                           
+OK    export solid-zone NODE temperatures                    
+OK    export solid-zone CELL temperatures                    
+ROWS fluent_solid_zone_nodes.csv ('nodenumber,    x-coordinate,    y-coordinate,    z-coordinate,     temperature', 9600)
+ROWS fluent_solid_zone_cells.csv ('cellnumber,    x-coordinate,    y-coordinate,    z-coordinate,     temperature,     cell-volume', 9600)

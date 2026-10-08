@@ -1,0 +1,14 @@
+{
+  "tag": "A",
+  "flow_iters": 120,
+  "energy_iters": 150,
+  "solid_factor": 1.0,
+  "peak_T_solid": 561.7842531188383,
+  "peak_iter": 270.0,
+  "final_T_solid": 561.7842531188383,
+  "final_T_wall": 554.921875,
+  "peak_q_interface": 602.7527660272555,
+  "final_q_interface": 602.7527660272555,
+  "final_T_out": 368.9295685543446,
+  "rows": 270
+}

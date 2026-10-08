@@ -1,0 +1,227 @@
+Auto-Transcript Start Time:  14:30:38, 19 Sep 2026 India Standard Time 
+Current Directory: "<PROJECT_ROOT>\05_Meshing"
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:49690 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  9568   12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  2940   12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  14992  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  23604  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  25340  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\05_Meshing\\cleanup-fluent-<HOST>-25340.bat
+
+<HOST> is already loaded (56.814).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+
+Reading journal file Scripts/mesh_check.jou...
+
+> (display "########## COARSE ##########")
+########## COARSE ##########
+
+> /file/read-case Mesh_Coarse/coarse.msh
+
+Reading "Mesh_Coarse/coarse.msh"...
+
+Buffering for file scan...
+
+   53741 nodes.
+   38400 hexahedral cells, zone  2.
+   13440 hexahedral cells, zone  3.
+  113600 quadrilateral interior faces, zone  4.
+   38176 quadrilateral interior faces, zone  5.
+     640 quadrilateral velocity-inlet faces, zone  6.
+     640 quadrilateral pressure-outlet faces, zone  7.
+    1920 quadrilateral wall faces, zone  8.
+    1920 quadrilateral wall faces, zone  9.
+     224 quadrilateral wall faces, zone 10.
+     224 quadrilateral wall faces, zone 11.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 11316/460 = 24.6
+Info: The mesh contains elements that are invalid or of poor quality.
+
+      A different numerical scheme will be applied to these elements,
+      which may affect the quality of the solution. It is recommended
+      that you consider removing the invalid and poor quality elements
+      in the mesh.
+
+      For more information on the invalid and poor quality elements,
+      please use the following TUI commands:
+
+      /mesh/check
+      /mesh/repair-improve/report-poor-elements.
+WARNING: 51840 cells with non-positive volume detected.
+     materials,
+     interface,
+     domains,
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+
+> /mesh/check
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+WARNING: 51840 cells with non-positive volume detected.
+   minimum volume (m3): -1.056568e-07
+   maximum volume (m3): -2.049465e-10
+     total volume (m3): -7.491468e-04
+ Face area statistics:
+   minimum face area (m2): 2.049465e-08
+   maximum face area (m2): 3.920686e-05
+ Checking mesh.............
+WARNING: left-handed faces detected on zone   4:     0 right-handed, 29292 left-handed.
+WARNING: left-handed faces detected on zone   5:     0 right-handed,  9187 left-handed.
+WARNING: left-handed faces detected on zone   6:     0 right-handed,   640 left-handed.
+WARNING: left-handed faces detected on zone   8:     0 right-handed,   471 left-handed.
+WARNING: left-handed faces detected on zone  12:     0 right-handed,   471 left-handed.
+WARNING: left-handed faces detected on zone   9:     0 right-handed,   469 left-handed.
+WARNING: left-handed faces detected on zone  10:     0 right-handed,   224 left-handed..
+WARNING: 58842 face(s) on cell zone   2 with wrong node order (on 0)
+WARNING: 19146 face(s) on cell zone   3 with wrong node order (on 0)...
+WARNING: Detected degenerate 51840 cells..........................
+ Done.
+
+WARNING: Mesh check failed.
+
+WARNING: left-handed faces detected on zone   4:     0 right-handed, 33617 left-handed.
+WARNING: left-handed faces detected on zone   5:     0 right-handed,  6059 left-handed.
+WARNING: left-handed faces detected on zone   8:     0 right-handed,   484 left-handed.
+WARNING: left-handed faces detected on zone  12:     0 right-handed,   484 left-handed.
+WARNING: left-handed faces detected on zone   9:     0 right-handed,   243 left-handed.
+WARNING: 65652 face(s) on cell zone   2 with wrong node order (on 1)
+WARNING: 12006 face(s) on cell zone   3 with wrong node order (on 1)
+WARNING: left-handed faces detected on zone   4:     0 right-handed, 39777 left-handed.
+WARNING: left-handed faces detected on zone   7:     0 right-handed,   383 left-handed.
+WARNING: left-handed faces detected on zone   8:     0 right-handed,   255 left-handed.
+WARNING: left-handed faces detected on zone  12:     0 right-handed,   255 left-handed.
+WARNING: 77772 face(s) on cell zone   2 with wrong node order (on 2)
+WARNING: left-handed faces detected on zone   4:     0 right-handed, 14185 left-handed.
+WARNING: left-handed faces detected on zone   5:     0 right-handed, 23685 left-handed.
+WARNING: left-handed faces detected on zone   7:     0 right-handed,   257 left-handed.
+WARNING: left-handed faces detected on zone   8:     0 right-handed,  1128 left-handed.
+WARNING: left-handed faces detected on zone  12:     0 right-handed,  1128 left-handed.
+WARNING: left-handed faces detected on zone   9:     0 right-handed,  1208 left-handed.
+WARNING: left-handed faces detected on zone  11:     0 right-handed,   224 left-handed.
+WARNING: 28134 face(s) on cell zone   2 with wrong node order (on 3)
+WARNING: 49488 face(s) on cell zone   3 with wrong node order (on 3)
+To get more detailed information about the mesh check failure
+increase the mesh check verbosity via the text command:
+/mesh/check-verbosity
+
+Fluent can also try to fix the mesh check problems via the text command:
+/mesh/repair-improve/repair
+
+> /mesh/quality
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  0.00000e+00 cell 8247 on zone 3 (ID: 51640 on partition: 3) at location (-6.47423e-03,  7.88888e-03,  5.95000e-01)
+Warning: minimum Orthogonal Quality below 0.01.
+
+
+Maximum Aspect Ratio =  9.74720e+02 cell 1465 on zone 2 (ID: 4393 on partition: 0) at location ( 7.68890e-03, -6.30999e-03,  5.00000e-03)
+
+Fluent can try to improve the mesh quality via the TUI command
+/mesh/repair-improve/improve-quality
+> /define/boundary-conditions/list-zones
+  id  name                       type                adj-zone-material     wall-material         kind
+----  -------------------------  ------------------  --------------------  --------------------  ----
+   2  fluid_domain               fluid               air                                         cell
+   3  solid_domain               solid               aluminum                                    cell
+   4  interior-fluid             interior                                                        face
+   5  interior-solid             interior                                                        face
+   6  fluid_inlet                velocity-inlet                                                  face
+   7  fluid_outlet               pressure-outlet                                                 face
+   8  fluid_solid_interface      wall                air                   aluminum              face
+   9  heated_outer_wall          wall                aluminum              aluminum              face
+  10  solid_inlet_end            wall                aluminum              aluminum              face
+  11  solid_outlet_end           wall                aluminum              aluminum              face
+  12  fluid_solid_interface-shadow  wall                aluminum              aluminum              face
+
+> (display "########## MEDIUM ##########")
+########## MEDIUM ##########
+
+> /file/read-case Mesh_Medium/medium.msh
+The current case has not been saved.
+OK to discard? [cancel] /mesh/check
+
+Error: Please answer o[k] or c[ancel].
+Error Object: /mesh/check
+
+Warning: An error or interrupt occurred while reading the journal file.
+Some commands may not have been completed.
+
+

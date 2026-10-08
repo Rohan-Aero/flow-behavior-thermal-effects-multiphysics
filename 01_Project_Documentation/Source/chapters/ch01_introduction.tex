@@ -1,0 +1,64 @@
+% ===================================================================== Chapter 1
+\chapter{Introduction}\label{ch:intro}
+
+\section{Background}
+The internship project \emph{Flow Behavior and Thermal Effects in Multiphysics Systems} was carried out at Eleation between February and
+May 2025 with ANSYS Workbench, Fluent and Mechanical. Its original files were not retained, so the analysis reported here was carried
+out again after the internship: a representative multiphysics problem was defined, solved and audited from first principles, with every
+input labelled as selected or assumed and every result traceable to a calculation or simulation in the project record. The note on the
+analysis record at the front of the report states this formally; it applies to every number in the following chapters.
+
+\section{Multiphysics Engineering Problems}
+Many aerospace and energy components are loaded by several interacting physical processes at once. A heated duct, a combustor liner or
+a heat-exchanger tube carries a flow that sets the convective boundary condition, the convective boundary condition sets the wall
+temperature, and the wall temperature sets thermal strain and, where that strain is prevented, thermal stress. Each link has its own
+governing equations and numerical methods, and the uncertainty of the final structural quantity depends on every link in the chain.
+
+\section{Importance of Coupled Flow and Thermal Analysis}
+In a conjugate problem the wall temperature is part of the solution rather than a boundary condition. Its accuracy depends on how well
+the near-wall flow is resolved, because the air-side film usually carries most of the thermal resistance. A prescribed wall temperature
+or an assumed heat-transfer coefficient would decouple the structural result from the flow physics that actually determines it.
+Conjugate heat transfer (CHT) with a wall-resolved turbulence model therefore forms the thermal basis of this study.
+
+\section{Motivation}
+The study has two purposes. The first is technical: to demonstrate a complete and auditable simulation chain from flow to
+structural stability, including verification at each step (analytical baseline, conservation checks, mesh studies, mapping checks).
+The second is documentary: to provide a reproducible and auditable record of the internship problem, in which the status of every
+value is stated explicitly.
+
+\section{Problem Statement}
+An air-cooled Inconel 718 duct is heated uniformly on its outer surface. The central question is:
+\begin{quote}
+\emph{Does thermal stress in the heated duct come mainly from the temperature gradient through the wall, or from restraint of the
+duct's overall thermal growth -- and what are the consequences of that restraint for stability?}
+\end{quote}
+Answering it requires the flow field and heat-transfer coefficient, the conjugate temperature field in the wall, the thermal stresses for
+free and restrained expansion, and the linear stability of the restrained duct, together with their sensitivity to the operating
+conditions, the wall thickness and the end supports.
+
+\section{Scope}
+The study covers a steady-state, one-way coupled chain: Fluent CFD with conjugate heat transfer, transfer of the converged solid
+temperature field to Mechanical, linear static analysis of two load cases (LC1 free expansion, LC2 axially restrained), linear
+eigenvalue buckling on the LC2 pre-stress, a one-factor-at-a-time parametric study and a support-sensitivity study. Outside the scope are:
+\begin{itemize}
+\item transient start-up and thermal cycling;
+\item radiation;
+\item two-way fluid--structure coupling;
+\item geometric or material nonlinearity and imperfection-sensitive buckling;
+\item experimental validation.
+\end{itemize}
+These exclusions are revisited as limitations in Chapter~\ref{ch:unc} and as future work in Chapter~\ref{ch:future}. An additional
+geometrically nonlinear, elastic buckling analysis with ANSYS LS-DYNA, performed as an extension of the thermo-structural analysis, is
+reported separately in Section~\ref{sec:lsdyna}; it does not change the scope or the results of the main study.
+
+\section{Objectives}
+\begin{enumerate}
+\item Define a representative heated-duct problem and an independent analytical baseline before any simulation.
+\item Solve the turbulent flow and conjugate heat transfer in ANSYS Fluent to a converged, conservative solution with a resolved wall.
+\item Quantify the CFD discretisation error with a three-mesh study and select the mesh for the structural phase.
+\item Transfer the solid temperature field to ANSYS Mechanical and verify the transfer.
+\item Compute thermal stress and deformation for free and restrained expansion and check structural mesh sensitivity.
+\item Evaluate the linear buckling behaviour of the restrained duct and its dependence on the end supports.
+\item Quantify the effect of inlet velocity, heat flux and wall thickness with actual CFD, structural and buckling solutions.
+\item Record every uncertainty separately and state which conclusions the evidence supports.
+\end{enumerate}

@@ -1,0 +1,23 @@
+2026-09-25 15:02:54  start MAPDL -b -np 1 -j s7b_toy -i snippet_test_toy.inp -o snippet_test_toy.out
+2026-09-25 15:03:17  end exit=
+2026-09-25 15:03:17  file mapdl_stderr.txt 0
+2026-09-25 15:03:17  file mapdl_stdout.txt 0
+2026-09-25 15:03:17  file run_snippet_test.ps1 1354
+2026-09-25 15:03:17  file s7b_nodal.csv 1632671
+2026-09-25 15:03:17  file s7b_post_snippet.inp 3527
+2026-09-25 15:03:17  file s7b_prrsol.txt 40181
+2026-09-25 15:03:17  file s7b_react.csv 87210
+2026-09-25 15:03:17  file s7b_totals.txt 158
+2026-09-25 15:03:17  file s7b_toy.db 3342336
+2026-09-25 15:03:17  file s7b_toy.DSP 2826
+2026-09-25 15:03:17  file s7b_toy.err 1772
+2026-09-25 15:03:17  file s7b_toy.esav 851968
+2026-09-25 15:03:17  file s7b_toy.full 17367040
+2026-09-25 15:03:17  file s7b_toy.log 90
+2026-09-25 15:03:17  file s7b_toy.mntr 875
+2026-09-25 15:03:17  file s7b_toy.rst 1900544
+2026-09-25 15:03:17  file s7b_toy.stat 169
+2026-09-25 15:03:17  file snippet_test_driver.txt 134
+2026-09-25 15:03:17  file snippet_test_toy.inp 1787
+2026-09-25 15:03:17  file snippet_test_toy.out 34207
+2026-09-25 15:03:17  driver done

@@ -1,0 +1,35 @@
+"# Section 6B FINE vs Section 5B MEDIUM, identical definitions. Raw two-mesh comparison; the three-mesh study is in 09_Mesh_Independence. RE-ANALYSIS 2026."
+quantity,units,fine,medium,fine_minus_medium,percent_of_medium,geometric_faceting_expectation_percent,note
+cells,-,500580,159840,340740,213.1757,,mesh
+polygon sides (circumferential cells),-,72,48,24,50.0000,,mesh
+axial slabs,-,135,90,45,50.0000,,mesh
+inlet mass flow (Fluent flux report),g/s,8.6759203,8.6621551,0.0137652,0.1589,0.1589,planar area of the inscribed polygon
+outlet mass flow (Fluent flux report),g/s,8.6759203,8.6621551,0.0137652,0.1589,0.1589,
+"Reynolds number, inlet (D = 20 mm)",-,29958.174,29958.174,8.10865e-07,0.0000,0.0000,G = mdot/A is unchanged by faceting
+"Reynolds number, outlet (D = 20 mm)",-,25549.1,25544.911,4.18849,0.0164,,
+"pressure drop, static, area-weighted inlet - outlet",Pa,439.12124,438.12633,0.994906,0.2271,,identical definition to Section 5B
+"  - wall shear, F_wall/A",Pa,244.27973,242.86798,1.41175,0.5813,,momentum balance
+  - 1-D acceleration,Pa,149.13386,149.30938,-0.175515,-0.1176,,
+  - profile development,Pa,45.96875,46.14613,-0.17738,-0.3844,,
+"outlet temperature, mass-weighted",K,368.85137,368.93241,-0.0810309,-0.0220,,
+outlet mixing-cup temperature (enthalpy),K,368.91014,368.99252,-0.0823784,-0.0223,,
+outlet T predicted by energy balance on the mesh's own Q and mdot,K,368.91396,368.9959,-0.0819432,-0.0222,,isolates the faceting effect on T_out
+heat-transfer rate (heated wall),W,602.99441,602.75524,0.239172,0.0397,0.0397,lateral area of the inscribed polygon
+maximum solid temperature (outer-wall facet max),K,560.83073,562.57675,-1.74602,-0.3104,,
+maximum solid temperature (cell centre),K,560.60205,562.1271,-1.52505,-0.2713,,
+peak inner-wall temperature (facet max),K,553.50403,555.2671,-1.76308,-0.3175,,
+volume-mean solid temperature,K,524.18435,525.48293,-1.29858,-0.2471,,
+"through-wall dT, MID-SPAN z = 300 mm",K,7.5966263,7.5805176,0.0161087,0.2125,,matched location (both interpolated between slab centres)
+"through-wall dT, z = 570 mm",K,7.3775562,7.3606072,0.016949,0.2303,,5B reported station
+"inner-wall T, mid-span",K,530.17255,531.67203,-1.49949,-0.2820,,
+"outer-wall T, mid-span",K,537.76917,539.25255,-1.48338,-0.2751,,
+"bulk T, mid-span",K,334.64861,334.69612,-0.0475117,-0.0142,,
+"h, mid-span",W/m2K,81.291572,80.693507,0.598065,0.7412,,
+fully developed Nu (x/D 18-29),-,54.657886,54.171831,0.486055,0.8972,,
+fully developed Darcy f (x/D 18-29),-,0.0218138,0.021626137,0.000187662,0.8678,,
+y+ minimum,-,0.2089572,0.20816019,0.000797017,0.3829,,
+y+ area mean,-,0.24267484,0.2409596,0.00171524,0.7118,,
+y+ maximum,-,0.65298614,0.58483568,0.0681505,11.6529,,
+"y+ mean, fully developed window",-,0.23076819,0.22864829,0.0021199,0.9271,,
+mass imbalance,%,3.8789701e-12,7.0092628e-13,3.17804e-12,453.4063,,|in-out|/in
+energy imbalance (net over all boundaries / Q_wall),%,-6.1915595e-11,-3.0781469e-11,-3.11341e-11,101.1457,,

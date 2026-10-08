@@ -1,0 +1,1390 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\06_Fluent_CFD\\fluent-20260919-200700-16012.trn".
+Auto-Transcript Start Time:  20:07:00, 19 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:59785 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  22380  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  4072   12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  21992  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  6104   12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  10628  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\06_Fluent_CFD\\cleanup-fluent-<HOST>-10628.bat
+
+<HOST> is already loaded (23.3616).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import os, math, json, traceback
+>>> LOG = []
+>>> FAIL = []
+>>> def log(msg):
+    LOG.append(str(msg))
+    print("S5A " + str(msg))
+>>> def step(label, fn, critical=True):
+    """Run one setup action, record what happened, never die silently."""
+    try:
+        r = fn()
+        log("OK    %-52s %s" % (label, "" if r is None else repr(r)[:90]))
+        return r
+    except Exception as e:
+        msg = "%s: %s: %s" % (label, type(e).__name__, e)
+        FAIL.append(("CRITICAL " if critical else "minor ") + msg)
+        log("%-5s %-52s %s: %s" % ("FAIL" if critical else "warn", label,
+                                   type(e).__name__, str(e)[:120]))
+        if critical:
+            log("      " + traceback.format_exc().splitlines()[-3].strip())
+        return None
+>>> def setv(parent, name, val, label=None):
+    """Set a settings leaf. Some are compound objects carrying .value, some are plain
+    reals. Try both, then verify by reading back."""
+    node = getattr(parent, name)
+    errs = []
+    for how, fn in (("value", lambda: setattr(node, "value", val)),
+                    ("direct", lambda: setattr(parent, name, val)),
+                    ("set_state", lambda: node.set_state(val))):
+        try:
+            fn()
+            got = readv(parent, name)
+            if got is None or _close(got, val):
+                return "%s <- %s (%s, read back %s)" % (name, val, how, got)
+            errs.append("%s gave %r" % (how, got))
+        except Exception as e:
+            errs.append("%s: %s" % (how, type(e).__name__))
+    raise RuntimeError("; ".join(errs))
+>>> def readv(parent, name):
+    node = getattr(parent, name)
+    for fn in (lambda: node.value(), lambda: node()):
+        try:
+            v = fn()
+            if isinstance(v, dict) and "value" in v:
+                return v["value"]
+            if isinstance(v, (int, float, str, bool)):
+                return v
+        except Exception:
+            continue
+    return None
+>>> def _close(a, b):
+    try:
+        return abs(float(a) - float(b)) <= 1e-9 + 1e-6 * abs(float(b))
+    except Exception:
+        return a == b
+>>> def first_allowed(obj, candidates, label):
+    """Pick the first candidate the build actually accepts; log the menu."""
+    try:
+        allowed = obj.allowed_values()
+    except Exception:
+        allowed = None
+    if allowed:
+        log("      %s allowed=%s" % (label, allowed))
+        for c in candidates:
+            if c in allowed:
+                return c
+        for c in candidates:
+            for a in allowed:
+                if c.lower().replace("-", "").replace(" ", "") == \
+                   a.lower().replace("-", "").replace(" ", ""):
+                    return a
+    return candidates[0]
+>>> Di, Do, L = 0.020, 0.040, 0.600
+>>> T_IN, V_IN, P_OP = 300.0, 23.5, 101325.0
+>>> P_OUT_GAUGE = 0.0
+>>> QPP_OUTER = 8000.0
+>>> A_C = math.pi * Di ** 2 / 4.0
+>>> RE_IN = 29957.0
+>>> TI = 0.16 * RE_IN ** (-0.125)
+>>> D_H = Di
+>>> AIR_T = [250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]
+>>> AIR_CP = [1006.0, 1007.0, 1009.0, 1014.0, 1021.0, 1030.0, 1040.0, 1051.0]
+>>> AIR_MU = [1.596e-5, 1.846e-5, 2.082e-5, 2.301e-5, 2.507e-5, 2.701e-5, 2.884e-5, 3.058e-5]
+>>> AIR_K = [0.02227, 0.02624, 0.03003, 0.03365, 0.03707, 0.04038, 0.04360, 0.04659]
+>>> AIR_MW = 28.966
+>>> INC_T = [293.15, 373.15, 473.15, 573.15, 673.15]
+>>> INC_CP = [460.0, 458.0, 468.0, 485.0, 501.0]
+>>> INC_K = [11.5, 12.1, 13.5, 15.2, 17.1]
+>>> INC_RHO = 8190.0
+>>> MESH = "../05_Meshing/Mesh_Medium/medium.msh"
+>>> TEST_ITERS = int(os.environ.get("S5A_ITERS", "150"))
+>>> log("=" * 78)
+S5A ==============================================================================
+>>> log("Section 5A baseline setup - RE-ANALYSIS 2026")
+S5A Section 5A baseline setup - RE-ANALYSIS 2026
+>>> log("turbulence intensity from 0.16*Re^-0.125 at Re=%.0f  ->  %.3f %%" % (RE_IN, TI * 100))
+S5A turbulence intensity from 0.16*Re^-0.125 at Re=29957  ->  4.411 %
+>>> log("=" * 78)
+S5A ==============================================================================
+>>> def no_confirm():
+    bo = solver.file.batch_options
+    names = list(getattr(bo, "child_names", []))
+    log("      file.batch_options children = %s" % names)
+    done = []
+    for n in names:
+        if "confirm" in n or "overwrite" in n or "exit" in n or "hang" in n or "question" in n:
+            try:
+                setattr(bo, n, False if "confirm" in n or "question" in n else True)
+                done.append(n)
+            except Exception as e:
+                log("      batch_options.%s -> %s" % (n, e))
+    return done
+>>> step("disable batch overwrite prompts", no_confirm, critical=False)
+S5A       file.batch_options children = ['confirm_overwrite', 'exit_on_error', 'hide_answer', 'redisplay_question']
+S5A       batch_options.redisplay_question -> api-set-var: the object is not active
+Error Object: file/batch-options/redisplay-question?
+S5A OK    disable batch overwrite prompts                      ['confirm_overwrite', 'exit_on_error']
+['confirm_overwrite', 'exit_on_error']
+>>> step("transcript", lambda: solver.file.start_transcript(
+    file_name="Logs/setup_transcript_%d.trn" % TEST_ITERS), critical=False)
+
+Opening input/output transcript to file "Logs/setup_transcript_150.trn".
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n3    <HOST>     4/12  Windows-x64  22380  12th Gen Intel(R) Core(TM) i5-12450HX    
+n2    <HOST>     3/12  Windows-x64  4072   12th Gen Intel(R) Core(TM) i5-12450HX    
+n1    <HOST>     2/12  Windows-x64  21992  12th Gen Intel(R) Core(TM) i5-12450HX    
+n0*   <HOST>     1/12  Windows-x64  6104   12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  10628  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+Selected system interconnect: default
+------------------------------------------------------------------------------------
+S5A OK    transcript                                           
+>>> step("read medium mesh", lambda: solver.file.read_case(file_name=MESH))
+
+Reading "../05_Meshing/Mesh_Medium/medium.msh"...
+
+Buffering for file scan...
+
+  163891 nodes.
+  116640 hexahedral cells, zone  2.
+   43200 hexahedral cells, zone  3.
+  346464 quadrilateral interior faces, zone  4.
+  124800 quadrilateral interior faces, zone  5.
+    1296 quadrilateral velocity-inlet faces, zone  6.
+    1296 quadrilateral pressure-outlet faces, zone  7.
+    4320 quadrilateral wall faces, zone  8.
+    4320 quadrilateral wall faces, zone  9.
+     480 quadrilateral wall faces, zone 10.
+     480 quadrilateral wall faces, zone 11.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 34511/1118 = 30.8685
+     materials,
+     interface,
+     domains,
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+S5A OK    read medium mesh                                     
+>>> step("mesh check", lambda: solver.mesh.check())
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+   minimum volume (m3): 9.051023e-11
+   maximum volume (m3): 2.859743e-08
+     total volume (m3): 7.518309e-04
+ Face area statistics:
+   minimum face area (m2): 1.357653e-08
+   maximum face area (m2): 1.744083e-05
+ Checking mesh..........................................
+ Done.
+S5A OK    mesh check                                           
+>>> step("mesh quality", lambda: solver.mesh.quality())
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  4.45829e-01 cell 26523 on zone 2 (ID: 2316 on partition: 0) at location ( 3.66949e-03, -3.66949e-03,  1.10000e-01)
+
+
+Maximum Aspect Ratio =  6.54392e+02 cell 9183 on zone 2 (ID: 33684 on partition: 0) at location (-6.57442e-03,  7.49971e-03,  1.16667e-01)
+S5A OK    mesh quality                                         
+>>> step("check before solve", lambda: setattr(solver.mesh, "check_before_solve", True), critical=False)
+S5A OK    check before solve                                   
+>>> zones = {}
+>>> for kind in ("fluid", "solid"):
+    try:
+        zones["cell_" + kind] = list(getattr(solver.setup.cell_zone_conditions, kind).get_object_names())
+    except Exception as e:
+        zones["cell_" + kind] = ["<%s>" % e]
+>>> for kind in ("velocity_inlet", "pressure_outlet", "wall", "interior"):
+    try:
+        zones[kind] = list(getattr(solver.setup.boundary_conditions, kind).get_object_names())
+    except Exception as e:
+        zones[kind] = ["<%s>" % e]
+>>> log("ZONES " + json.dumps(zones))
+S5A ZONES {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"], "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"], "wall": ["fluid_solid_interface", "heated_outer_wall", "solid_inlet_end", "solid_outlet_end", "fluid_solid_interface-shadow"], "interior": []}
+>>> gs = solver.setup.general.solver
+>>> step("solver type = pressure-based", lambda: setattr(gs, "type", "pressure-based"))
+S5A OK    solver type = pressure-based                         
+>>> step("time = steady (A-004)", lambda: setattr(gs, "time", "steady"))
+S5A OK    time = steady (A-004)                                
+>>> step("velocity formulation = absolute", lambda: setattr(gs, "velocity_formulation", "absolute"))
+S5A OK    velocity formulation = absolute                      
+>>> oc = solver.setup.general.operating_conditions
+>>> step("operating pressure = 101325 Pa", lambda: setattr(oc, "operating_pressure", P_OP))
+S5A OK    operating pressure = 101325 Pa                       
+>>> step("gravity OFF (A-007, Gr/Re2 = 4.3e-5)",
+     lambda: setattr(oc.gravity, "enable", False))
+S5A OK    gravity OFF (A-007, Gr/Re2 = 4.3e-5)                 
+>>> step("verify gravity state", lambda: oc.gravity(), critical=False)
+S5A OK    verify gravity state                                 {'enable': False}
+{'enable': False}
+>>> step("energy equation ON", lambda: setattr(solver.setup.models.energy, "enabled", True))
+S5A OK    energy equation ON                                   
+>>> vis = solver.setup.models.viscous
+>>> step("viscous model = k-omega", lambda: setattr(vis, "model", "k-omega"))
+S5A OK    viscous model = k-omega                              
+>>> step("k-omega variant = SST (D-011)", lambda: setattr(vis, "k_omega_model", "sst"))
+S5A OK    k-omega variant = SST (D-011)                        
+>>> try:
+    log("      near-wall-treatment children = %s" % list(vis.near_wall_treatment.child_names))
+    log("      wall_omega_treatment = %s" % vis.near_wall_treatment.wall_omega_treatment())
+except Exception as e:
+    log("      near-wall probe: %s" % e)
+S5A       near-wall-treatment children = ['wall_treatment', 'user_defined', 'enhanced_wall_treatment_options', 'wall_omega_treatment', 'use_second_cell_off_a_wall_quantities']
+S5A       wall_omega_treatment = correlation
+>>> air = solver.setup.materials.fluid["air"]
+>>> def pw(points_t, points_v):
+    """Fluent 2026 R1 stores piecewise-linear data as [{'item': x, 'value': y}, ...].
+    Confirmed by reading back the default state, not assumed."""
+    return [{"item": float(t), "value": float(v)} for t, v in zip(points_t, points_v)]
+>>> def set_option(o, opt):
+    """Fluent 2026 R1 sometimes raises 'api-set-var: the object is not active' on an
+    option assignment that in fact succeeded. Trust the read-back, not the exception."""
+    err = None
+    try:
+        o.option()                       # refresh the cached state first
+    except Exception:
+        pass
+    try:
+        o.option = opt
+    except Exception as e:
+        err = e
+    got = None
+    try:
+        got = o.option()
+    except Exception:
+        pass
+    if got == opt:
+        return opt
+    try:
+        o.set_state({"option": opt})
+        got = o.option()
+    except Exception as e2:
+        err = err or e2
+    if got != opt:
+        raise RuntimeError("option is %r, wanted %r (%s)" % (got, opt, err))
+    return opt
+>>> def set_prop(mat, prop, option, value=None, t=None, v=None, label=""):
+    o = getattr(mat, prop)
+    opt = first_allowed(o.option, [option], label + "." + prop)
+    set_option(o, opt)
+    if option == "piecewise-linear":
+        o.piecewise_linear.function_of = "temperature"
+        o.piecewise_linear.data_points = pw(t, v)
+        got = o.piecewise_linear.data_points()
+        if len(got) != len(t):
+            raise RuntimeError("wrote %d points, read back %d" % (len(t), len(got)))
+        for (a, b), g in zip(zip(t, v), got):
+            if abs(g["item"] - a) > 1e-9 * max(1.0, abs(a)) or \
+               abs(g["value"] - b) > 1e-9 * max(1.0, abs(b)):
+                raise RuntimeError("read-back mismatch: wrote (%g,%g) got %s" % (a, b, g))
+        return "piecewise-linear, %d points verified %g..%g K" % (len(t), t[0], t[-1])
+    elif value is not None:
+        o.value = value
+        got = readv(mat, prop)
+        if not _close(got, value):
+            raise RuntimeError("wrote %s=%s, read back %s" % (prop, value, got))
+        return "%s = %s (verified)" % (opt, got)
+    else:
+        # e.g. incompressible-ideal-gas: the option IS the model, there is no scalar
+        # value to write, and writing one raises 'the object is not active'.
+        return "%s (no scalar value)" % opt
+>>> step("air density = incompressible-ideal-gas (D-009/D-021)",
+     lambda: set_prop(air, "density", "incompressible-ideal-gas", label="air"))
+S5A       air.density allowed=['value', 'ideal-gas', 'incompressible-ideal-gas', 'rgp-table', 'real-gas-soave-redlich-kwong', 'real-gas-peng-robinson', 'real-gas-aungier-redlich-kwong', 'real-gas-redlich-kwong', 'real-gas-nist', 'boussinesq', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'compressible-liquid']
+S5A OK    air density = incompressible-ideal-gas (D-009/D-021) 'incompressible-ideal-gas (no scalar value)'
+'incompressible-ideal-gas (no scalar value)'
+>>> step("air molecular weight = %.3f" % AIR_MW,
+     lambda: setattr(air.molecular_weight, "value", AIR_MW))
+S5A OK    air molecular weight = 28.966                        
+>>> step("air cp = piecewise-linear (Incropera A.4)",
+     lambda: set_prop(air, "specific_heat", "piecewise-linear", t=AIR_T, v=AIR_CP, label="air"))
+S5A       air.specific_heat allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'nasa-9-piecewise-polynomial', 'kinetic-theory']
+S5A OK    air cp = piecewise-linear (Incropera A.4)            'piecewise-linear, 8 points verified 250..600 K'
+'piecewise-linear, 8 points verified 250..600 K'
+>>> step("air mu = piecewise-linear (Incropera A.4)",
+     lambda: set_prop(air, "viscosity", "piecewise-linear", t=AIR_T, v=AIR_MU, label="air"))
+S5A       air.viscosity allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'power-law', 'sutherland', 'kinetic-theory']
+S5A OK    air mu = piecewise-linear (Incropera A.4)            'piecewise-linear, 8 points verified 250..600 K'
+'piecewise-linear, 8 points verified 250..600 K'
+>>> step("air k = piecewise-linear (Incropera A.4)",
+     lambda: set_prop(air, "thermal_conductivity", "piecewise-linear", t=AIR_T, v=AIR_K, label="air"))
+S5A       air.thermal_conductivity allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'kinetic-theory']
+S5A OK    air k = piecewise-linear (Incropera A.4)             'piecewise-linear, 8 points verified 250..600 K'
+'piecewise-linear, 8 points verified 250..600 K'
+>>> def make_inconel():
+    sol = solver.setup.materials.solid
+    try:
+        sol["inconel-718"] = {}
+    except Exception:
+        sol.create("inconel-718")
+    return list(sol.get_object_names())
+>>> step("create solid material inconel-718", make_inconel)
+S5A OK    create solid material inconel-718                    ['inconel-718', 'aluminum']
+['inconel-718', 'aluminum']
+>>> inc = None
+>>> try:
+    inc = solver.setup.materials.solid["inconel-718"]
+except Exception as e:
+    log("FAIL  cannot access inconel-718: %s" % e)
+>>> if inc is not None:
+    step("inconel rho = 8190 kg/m3",
+         lambda: set_prop(inc, "density", "value", value=INC_RHO, label="inconel"))
+    step("inconel cp = piecewise-linear (VDM 4127)",
+         lambda: set_prop(inc, "specific_heat", "piecewise-linear", t=INC_T, v=INC_CP, label="inconel"))
+    step("inconel k = piecewise-linear (VDM 4127)",
+         lambda: set_prop(inc, "thermal_conductivity", "piecewise-linear", t=INC_T, v=INC_K,
+                          label="inconel"))
+S5A       inconel.density allowed=['value']
+S5A OK    inconel rho = 8190 kg/m3                             'value = 8190.0 (verified)'
+'value = 8190.0 (verified)'
+S5A       inconel.specific_heat allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'nasa-9-piecewise-polynomial']
+S5A OK    inconel cp = piecewise-linear (VDM 4127)             'piecewise-linear, 5 points verified 293.15..673.15 K'
+'piecewise-linear, 5 points verified 293.15..673.15 K'
+S5A       inconel.thermal_conductivity allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'cyl-orthotropic', 'orthotropic', 'anisotropic', 'biaxial', 'principal-axes-values']
+S5A OK    inconel k = piecewise-linear (VDM 4127)              'piecewise-linear, 5 points verified 293.15..673.15 K'
+'piecewise-linear, 5 points verified 293.15..673.15 K'
+>>> step("FLUID_DOMAIN -> air",
+     lambda: setattr(solver.setup.cell_zone_conditions.fluid["fluid_domain"].general,
+                     "material", "air"))
+S5A OK    FLUID_DOMAIN -> air                                  
+>>> step("SOLID_DOMAIN -> inconel-718",
+     lambda: setattr(solver.setup.cell_zone_conditions.solid["solid_domain"].general,
+                     "material", "inconel-718"))
+S5A OK    SOLID_DOMAIN -> inconel-718                          
+>>> inl = solver.setup.boundary_conditions.velocity_inlet["fluid_inlet"]
+>>> step("inlet velocity spec = normal to boundary",
+     lambda: setattr(inl.momentum, "velocity_specification_method",
+                     first_allowed(inl.momentum.velocity_specification_method,
+                                   ["Magnitude, Normal to Boundary"], "inlet.vspec")))
+S5A       inlet.vspec allowed=['Magnitude and Direction', 'Components', 'Magnitude, Normal to Boundary']
+S5A OK    inlet velocity spec = normal to boundary             
+>>> step("inlet velocity = 23.5 m/s", lambda: setattr(inl.momentum.velocity_magnitude, "value", V_IN))
+S5A OK    inlet velocity = 23.5 m/s                            
+>>> step("inlet temperature = 300 K", lambda: setattr(inl.thermal.temperature, "value", T_IN))
+S5A OK    inlet temperature = 300 K                            
+>>> step("inlet turbulence spec = I and Dh",
+     lambda: setattr(inl.turbulence, "turbulence_specification",
+                     first_allowed(inl.turbulence.turbulence_specification,
+                                   ["Intensity and Hydraulic Diameter"], "inlet.tspec")))
+S5A       inlet.tspec allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+S5A OK    inlet turbulence spec = I and Dh                     
+>>> TI_DEFAULT = readv(inl.turbulence, "turbulent_intensity")
+>>> TI_IS_PERCENT = (TI_DEFAULT is not None and float(TI_DEFAULT) > 1.0)
+>>> TI_SET = TI * 100.0 if TI_IS_PERCENT else TI
+>>> log("      turbulent_intensity default = %s -> treating as %s, writing %.6g"
+    % (TI_DEFAULT, "PERCENT" if TI_IS_PERCENT else "FRACTION", TI_SET))
+S5A       turbulent_intensity default = 0.05 -> treating as FRACTION, writing 0.0441121
+>>> step("inlet I = %.3f %% (written as %.6g)" % (TI * 100, TI_SET),
+     lambda: setv(inl.turbulence, "turbulent_intensity", TI_SET))
+S5A OK    inlet I = 4.411 % (written as 0.0441121)             'turbulent_intensity <- 0.04411209588036475 (direct, read back 0.04411209588036475)'
+'turbulent_intensity <- 0.04411209588036475 (direct, read back 0.04411209588036475)'
+>>> step("inlet Dh = 0.020 m",
+     lambda: setv(inl.turbulence, "hydraulic_diameter", D_H))
+S5A OK    inlet Dh = 0.020 m                                   'hydraulic_diameter <- 0.02 (direct, read back 0.02)'
+'hydraulic_diameter <- 0.02 (direct, read back 0.02)'
+>>> out = solver.setup.boundary_conditions.pressure_outlet["fluid_outlet"]
+>>> step("outlet gauge pressure = 0 Pa", lambda: setattr(out.momentum.gauge_pressure, "value", P_OUT_GAUGE))
+S5A OK    outlet gauge pressure = 0 Pa                         
+>>> step("outlet backflow total temperature = 300 K",
+     lambda: setattr(out.thermal.backflow_total_temperature, "value", T_IN))
+S5A OK    outlet backflow total temperature = 300 K            
+>>> step("outlet backflow turbulence spec = I and Dh",
+     lambda: setattr(out.turbulence, "turbulence_specification",
+                     first_allowed(out.turbulence.turbulence_specification,
+                                   ["Intensity and Hydraulic Diameter"], "outlet.tspec")))
+S5A       outlet.tspec allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+S5A OK    outlet backflow turbulence spec = I and Dh           
+>>> step("outlet backflow I",
+     lambda: setv(out.turbulence, "backflow_turbulent_intensity", TI_SET), critical=False)
+S5A OK    outlet backflow I                                    'backflow_turbulent_intensity <- 0.04411209588036475 (direct, read back 0.0441120958803647
+'backflow_turbulent_intensity <- 0.04411209588036475 (direct, read back 0.04411209588036475)'
+>>> step("outlet backflow Dh",
+     lambda: setv(out.turbulence, "backflow_hydraulic_diameter", D_H), critical=False)
+S5A OK    outlet backflow Dh                                   'backflow_hydraulic_diameter <- 0.02 (direct, read back 0.02)'
+'backflow_hydraulic_diameter <- 0.02 (direct, read back 0.02)'
+>>> step("outlet prevent reverse flow = on",
+     lambda: setattr(out.momentum, "prevent_reverse_flow", True), critical=False)
+S5A OK    outlet prevent reverse flow = on                     
+>>> W = solver.setup.boundary_conditions.wall
+>>> def wall_thermal(zone, condition, flux=None):
+    t = W[zone].thermal
+    cond = first_allowed(t.thermal_condition, [condition], zone + ".thermal_condition")
+    t.thermal_condition = cond
+    if flux is not None:
+        t.heat_flux.value = flux
+    return "%s -> %s%s" % (zone, cond, "" if flux is None else " q=%g W/m2" % flux)
+>>> step("HEATED_OUTER_WALL: heat flux 8000 W/m2",
+     lambda: wall_thermal("heated_outer_wall", "Heat Flux", QPP_OUTER))
+S5A       heated_outer_wall.thermal_condition allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+S5A OK    HEATED_OUTER_WALL: heat flux 8000 W/m2               'heated_outer_wall -> Heat Flux q=8000 W/m2'
+'heated_outer_wall -> Heat Flux q=8000 W/m2'
+>>> step("SOLID_INLET_END: adiabatic (A-011)",
+     lambda: wall_thermal("solid_inlet_end", "Heat Flux", 0.0))
+S5A       solid_inlet_end.thermal_condition allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+S5A OK    SOLID_INLET_END: adiabatic (A-011)                   'solid_inlet_end -> Heat Flux q=0 W/m2'
+'solid_inlet_end -> Heat Flux q=0 W/m2'
+>>> step("SOLID_OUTLET_END: adiabatic (A-011)",
+     lambda: wall_thermal("solid_outlet_end", "Heat Flux", 0.0))
+S5A       solid_outlet_end.thermal_condition allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+S5A OK    SOLID_OUTLET_END: adiabatic (A-011)                  'solid_outlet_end -> Heat Flux q=0 W/m2'
+'solid_outlet_end -> Heat Flux q=0 W/m2'
+>>> for z in ("fluid_solid_interface", "fluid_solid_interface-shadow"):
+    try:
+        log("      %s thermal_condition = %s" % (z, W[z].thermal.thermal_condition()))
+    except Exception as e:
+        log("      %s thermal_condition unreadable: %s" % (z, e))
+S5A       fluid_solid_interface thermal_condition = Coupled
+S5A       fluid_solid_interface-shadow thermal_condition = Coupled
+>>> rv = solver.setup.reference_values
+>>> RHO_IN = P_OP / (287.058 * T_IN)
+>>> for nm, val in (("area", A_C), ("length", D_H), ("temperature", T_IN),
+                ("velocity", V_IN), ("density", RHO_IN), ("pressure", 0.0),
+                ("viscosity", 1.846e-5)):
+    step("reference %-12s = %-12.6g" % (nm, val),
+         (lambda n=nm, x=val: setv(rv, n, x)), critical=False)
+S5A OK    reference area         = 0.000314159                 'area <- 0.0003141592653589793 (direct, read back 0.0003141592653589793)'
+'area <- 0.0003141592653589793 (direct, read back 0.0003141592653589793)'
+S5A OK    reference length       = 0.02                        'length <- 0.02 (direct, read back 0.02)'
+'length <- 0.02 (direct, read back 0.02)'
+S5A OK    reference temperature  = 300                         'temperature <- 300.0 (direct, read back 300.0)'
+'temperature <- 300.0 (direct, read back 300.0)'
+S5A OK    reference velocity     = 23.5                        'velocity <- 23.5 (direct, read back 23.5)'
+'velocity <- 23.5 (direct, read back 23.5)'
+S5A OK    reference density      = 1.17659                     'density <- 1.1765914902214885 (direct, read back 1.1765914902214885)'
+'density <- 1.1765914902214885 (direct, read back 1.1765914902214885)'
+S5A OK    reference pressure     = 0                           'pressure <- 0.0 (direct, read back 0)'
+'pressure <- 0.0 (direct, read back 0)'
+S5A OK    reference viscosity    = 1.846e-05                   'viscosity <- 1.846e-05 (direct, read back 1.846e-05)'
+'viscosity <- 1.846e-05 (direct, read back 1.846e-05)'
+>>> me = solver.solution.methods
+>>> step("p-v coupling = Coupled",
+     lambda: setattr(me.p_v_coupling, "flow_scheme",
+                     first_allowed(me.p_v_coupling.flow_scheme, ["Coupled"], "flow_scheme")))
+S5A       flow_scheme allowed=['SIMPLE', 'SIMPLEC', 'PISO', 'Coupled']
+S5A OK    p-v coupling = Coupled                               
+>>> step("gradient = least-squares cell based",
+     lambda: setattr(me.spatial_discretization, "gradient_scheme",
+                     first_allowed(me.spatial_discretization.gradient_scheme,
+                                   ["least-square-cell-based"], "gradient")))
+S5A       gradient allowed=['green-gauss-node-based', 'green-gauss-cell-based', 'least-square-cell-based']
+S5A OK    gradient = least-squares cell based                  
+>>> ds = me.spatial_discretization.discretization_scheme
+>>> try:
+    log("      discretization_scheme keys = %s" % list(ds.get_object_names()))
+except Exception:
+    try:
+        log("      discretization_scheme state = %s" % ds())
+    except Exception as e:
+        log("      discretization_scheme unreadable: %s" % e)
+S5A       discretization_scheme keys = ['pressure', 'mom', 'k', 'omega', 'temperature']
+>>> STARTUP = {"pressure": ["second-order", "standard"],
+           "mom": ["first-order-upwind"],
+           "k": ["first-order-upwind"],
+           "omega": ["first-order-upwind"],
+           "temperature": ["first-order-upwind"]}
+>>> def set_scheme(key, cands):
+    o = ds[key]
+    val = first_allowed(o, cands, "scheme." + key)
+    ds[key] = val
+    return val
+>>> try:
+    keys = list(ds.get_object_names())
+except Exception:
+    keys = []
+>>> for k, cands in STARTUP.items():
+    match = [kk for kk in keys if kk.lower() == k or kk.lower().startswith(k)]
+    target = match[0] if match else k
+    step("startup scheme %-12s" % target, (lambda t=target, c=cands: set_scheme(t, c)),
+         critical=False)
+S5A       scheme.pressure allowed=['second-order', 'standard', 'presto!', 'linear', 'body-force-weighted']
+S5A OK    startup scheme pressure                              'second-order'
+'second-order'
+S5A       scheme.mom allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+S5A OK    startup scheme mom                                   'first-order-upwind'
+'first-order-upwind'
+S5A       scheme.k allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+S5A OK    startup scheme k                                     'first-order-upwind'
+'first-order-upwind'
+S5A       scheme.omega allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+S5A OK    startup scheme omega                                 'first-order-upwind'
+'first-order-upwind'
+S5A       scheme.temperature allowed=['first-order-upwind', 'second-order-upwind', 'quick', 'third-order-muscl']
+S5A OK    startup scheme temperature                           'first-order-upwind'
+'first-order-upwind'
+>>> ct = solver.solution.controls
+>>> step("log pseudo-time method state",
+     lambda: me.pseudo_time_method(), critical=False)
+S5A OK    log pseudo-time method state                         {'formulation': {'coupled_solver': 'global-time-step'}}
+{'formulation': {'coupled_solver': 'global-time-step'}}
+>>> step("log pseudo-time children",
+     lambda: list(me.pseudo_time_method.child_names), critical=False)
+S5A OK    log pseudo-time children                             ['formulation', 'relaxation_method', 'convergence_acceleration_for_stretched_meshes']
+['formulation', 'relaxation_method', 'convergence_acceleration_for_stretched_meshes']
+>>> step("log run_calculation pseudo-time settings",
+     lambda: solver.solution.run_calculation.pseudo_time_settings(), critical=False)
+S5A OK    log run_calculation pseudo-time settings             {'time_step_method': {'time_step_method': 'automatic', 'length_scale_methods': 'conservati
+{'time_step_method': {'auto_time_size_calc_solid_zone': True,
+                      'length_scale_methods': 'conservative',
+                      'time_solid_scale_factor': 1.0,
+                      'time_step_method': 'automatic',
+                      'time_step_size_scale_factor': 1.0,
+                      'verbosity': 0}}
+>>> step("courant number (inactive under pseudo-time - expected)",
+     lambda: setv(ct, "courant_number", 50.0), critical=False)
+S5A warn  courant number (inactive under pseudo-time - expected) RuntimeError: value: AttributeError; direct: RuntimeError; set_state: RuntimeError
+>>> def relax_conservative():
+    """Conservative explicit relaxation for the coupled/pseudo-time startup."""
+    out_ = {}
+    for holder in ("pseudo_time_explicit_relaxation_factor", "under_relaxation",
+                   "relaxation_factor"):
+        try:
+            h = getattr(ct, holder)
+            keys = list(h.get_object_names())
+            out_[holder] = keys
+        except Exception as e:
+            out_[holder] = "n/a (%s)" % type(e).__name__
+    return out_
+>>> step("log relaxation containers", relax_conservative, critical=False)
+S5A OK    log relaxation containers                            {'pseudo_time_explicit_relaxation_factor': 'n/a (AttributeError)', 'under_relaxation': ['d
+{'pseudo_time_explicit_relaxation_factor': 'n/a '
+                                           '(AttributeError)',
+ 'relaxation_factor': [],
+ 'under_relaxation': ['density',
+                      'body-force',
+                      'k',
+                      'omega',
+                      'turb-viscosity',
+                      'temperature']}
+>>> RD = solver.solution.report_definitions
+>>> made = []
+>>> def mk(container, name, rtype_cands, **kw):
+    c = getattr(RD, container)
+    try:
+        c.create(name)
+    except Exception:
+        c[name] = {}
+    o = c[name]
+    rt = first_allowed(o.report_type, rtype_cands, name + ".report_type")
+    o.report_type = rt
+    for k, v in kw.items():
+        setattr(o, k, v)
+    made.append(name)
+    return "%s (%s)" % (name, rt)
+>>> step("rep mdot_in", lambda: mk("flux", "mdot_in", ["flux-massflow"], boundaries=["fluid_inlet"]))
+S5A       mdot_in.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+S5A OK    rep mdot_in                                          'mdot_in (flux-massflow)'
+'mdot_in (flux-massflow)'
+>>> step("rep mdot_out", lambda: mk("flux", "mdot_out", ["flux-massflow"], boundaries=["fluid_outlet"]))
+S5A       mdot_out.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+S5A OK    rep mdot_out                                         'mdot_out (flux-massflow)'
+'mdot_out (flux-massflow)'
+>>> step("rep mass_imbalance", lambda: mk("flux", "mass_imbalance", ["flux-massflow"],
+                                      boundaries=["fluid_inlet", "fluid_outlet"]))
+S5A       mass_imbalance.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+S5A OK    rep mass_imbalance                                   'mass_imbalance (flux-massflow)'
+'mass_imbalance (flux-massflow)'
+>>> step("rep q_heated_wall", lambda: mk("flux", "q_heated_wall", ["flux-heattransfer"],
+                                     boundaries=["heated_outer_wall"]))
+S5A       q_heated_wall.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+S5A OK    rep q_heated_wall                                    'q_heated_wall (flux-heattransfer)'
+'q_heated_wall (flux-heattransfer)'
+>>> step("rep q_interface", lambda: mk("flux", "q_interface", ["flux-heattransfer"],
+                                   boundaries=["fluid_solid_interface"]))
+S5A       q_interface.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+S5A OK    rep q_interface                                      'q_interface (flux-heattransfer)'
+'q_interface (flux-heattransfer)'
+>>> step("rep q_fluid_net", lambda: mk("flux", "q_fluid_net", ["flux-heattransfer"],
+                                   boundaries=["fluid_inlet", "fluid_outlet"]))
+S5A       q_fluid_net.report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+S5A OK    rep q_fluid_net                                      'q_fluid_net (flux-heattransfer)'
+'q_fluid_net (flux-heattransfer)'
+>>> step("rep p_in", lambda: mk("surface", "p_in", ["surface-massavg"],
+                            field="pressure", surface_names=["fluid_inlet"]))
+S5A       p_in.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+S5A OK    rep p_in                                             'p_in (surface-massavg)'
+'p_in (surface-massavg)'
+>>> step("rep p_out", lambda: mk("surface", "p_out", ["surface-massavg"],
+                             field="pressure", surface_names=["fluid_outlet"]))
+S5A       p_out.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+S5A OK    rep p_out                                            'p_out (surface-massavg)'
+'p_out (surface-massavg)'
+>>> step("rep T_out_bulk", lambda: mk("surface", "T_out_bulk", ["surface-massavg"],
+                                  field="temperature", surface_names=["fluid_outlet"]))
+S5A       T_out_bulk.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+S5A OK    rep T_out_bulk                                       'T_out_bulk (surface-massavg)'
+'T_out_bulk (surface-massavg)'
+>>> step("rep T_wall_max", lambda: mk("surface", "T_wall_max", ["surface-facetmax"],
+                                  field="temperature", surface_names=["fluid_solid_interface"]))
+S5A       T_wall_max.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+S5A OK    rep T_wall_max                                       'T_wall_max (surface-facetmax)'
+'T_wall_max (surface-facetmax)'
+>>> step("rep T_solid_max", lambda: mk("volume", "T_solid_max", ["volume-max"],
+                                   field="temperature", cell_zones=["solid_domain"]))
+S5A       T_solid_max.report_type allowed=['volume-mass', 'volume-massavg', 'volume-massintegral', 'volume-max', 'volume-min', 'volume-zonevol', 'volume-average', 'volume-integral', 'volume-sum']
+S5A OK    rep T_solid_max                                      'T_solid_max (volume-max)'
+'T_solid_max (volume-max)'
+>>> step("rep T_solid_mean", lambda: mk("volume", "T_solid_mean", ["volume-average"],
+                                    field="temperature", cell_zones=["solid_domain"]))
+S5A       T_solid_mean.report_type allowed=['volume-mass', 'volume-massavg', 'volume-massintegral', 'volume-max', 'volume-min', 'volume-zonevol', 'volume-average', 'volume-integral', 'volume-sum']
+S5A OK    rep T_solid_mean                                     'T_solid_mean (volume-average)'
+'T_solid_mean (volume-average)'
+>>> step("rep v_out_max", lambda: mk("surface", "v_out_max", ["surface-facetmax"],
+                                 field="velocity-magnitude", surface_names=["fluid_outlet"]),
+     critical=False)
+S5A       v_out_max.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+S5A OK    rep v_out_max                                        'v_out_max (surface-facetmax)'
+'v_out_max (surface-facetmax)'
+>>> for yf in ("y-plus", "yplus", "wall-yplus"):
+    r = step("rep yplus_max (field=%s)" % yf,
+             (lambda f=yf: mk("surface", "yplus_max", ["surface-facetmax"],
+                              field=f, surface_names=["fluid_solid_interface"])),
+             critical=False)
+    if r:
+        break
+S5A       yplus_max.report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+S5A OK    rep yplus_max (field=y-plus)                         'yplus_max (surface-facetmax)'
+>>> def mk_expr(name, definition):
+    c = RD.expression
+    try:
+        c.create(name)
+    except Exception:
+        c[name] = {}
+    o = c[name]
+    kids = list(getattr(o, "child_names", []))
+    log("      expression report children = %s" % kids)
+    for cand in ("definition", "define", "expression", "expr", "report_type"):
+        if cand in kids and cand != "report_type":
+            setattr(o, cand, definition)
+            made.append(name)
+            return "%s = %s" % (cand, definition)
+    raise RuntimeError("no definition-like child among %s" % kids)
+>>> step("rep dp_total (expression)",
+     lambda: mk_expr("dp_total",
+                     "MassAvg(AbsolutePressure,['fluid_inlet']) - "
+                     "MassAvg(AbsolutePressure,['fluid_outlet'])"),
+     critical=False)
+S5A       expression report children = ['name', 'average_over', 'expr_value', 'define', 'output_parameter', 'create_report_file', 'create_report_plot']
+S5A OK    rep dp_total (expression)                            "define = MassAvg(AbsolutePressure,['fluid_inlet']) - MassAvg(AbsolutePressure,['fluid_out
+"define = MassAvg(AbsolutePressure,['fluid_inlet']) - MassAvg(AbsolutePressure,['fluid_outlet'])"
+>>> log("REPORT DEFINITIONS CREATED: %s" % made)
+S5A REPORT DEFINITIONS CREATED: ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_out', 'T_out_bulk', 'T_wall_max', 'T_solid_max', 'T_solid_mean', 'v_out_max', 'yplus_max', 'dp_total']
+>>> FILE_DEFS = [m for m in made if m != "dp_total"]
+>>> def make_report_file():
+    rf = solver.solution.monitor.report_files
+    try:
+        rf.create("s5a_monitors")
+    except Exception:
+        rf["s5a_monitors"] = {}
+    o = rf["s5a_monitors"]
+    log("      report_files children = %s" % list(getattr(o, "child_names", [])))
+    for k, v in (("report_defs", FILE_DEFS),
+                 ("file_name", "Test_Run/s5a_monitors.out"),
+                 ("frequency_of", "iteration"),
+                 ("frequency", 1),
+                 ("print", True),
+                 ("active", True)):
+        try:
+            setattr(o, k, v)
+        except Exception as e:
+            log("      report_files.%s <- %r failed: %s" % (k, v, e))
+    st = o()
+    log("      report_files state = %s" % st)
+    return st
+>>> step("per-iteration monitor file", make_report_file, critical=False)
+S5A       report_files children = ['name', 'file_name', 'frequency_of', 'frequency', 'flow_frequency', 'itr_index', 'run_index', 'report_defs', 'print', 'active', 'write_instantaneous_values']
+S5A       report_files state = {'name': 's5a_monitors', 'file_name': 'Test_Run\\\\s5a_monitors.out', 'frequency_of': 'iteration', 'frequency': 1, 'itr_index': '1', 'run_index': '0', 'report_defs': ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_out', 'T_out_bulk', 'T_wall_max', 'T_solid_max', 'T_solid_mean', 'v_out_max', 'yplus_max'], 'print': True, 'active': True, 'write_instantaneous_values': False}
+S5A OK    per-iteration monitor file                           {'name': 's5a_monitors', 'file_name': 'Test_Run\\\\s5a_monitors.out', 'frequency_of': 'ite
+{'active': True,
+ 'file_name': 'Test_Run\\\\s5a_monitors.out',
+ 'frequency': 1,
+ 'frequency_of': 'iteration',
+ 'itr_index': '1',
+ 'name': 's5a_monitors',
+ 'print': True,
+ 'report_defs': ['mdot_in',
+                 'mdot_out',
+                 'mass_imbalance',
+                 'q_heated_wall',
+                 'q_interface',
+                 'q_fluid_net',
+                 'p_in',
+                 'p_out',
+                 'T_out_bulk',
+                 'T_wall_max',
+                 'T_solid_max',
+                 'T_solid_mean',
+                 'v_out_max',
+                 'yplus_max'],
+ 'run_index': '0',
+ 'write_instantaneous_values': False}
+>>> step("residual: do not use for convergence (NR-04)",
+     lambda: setattr(solver.solution.monitor.residual.options, "criterion_type", "none"),
+     critical=False)
+S5A OK    residual: do not use for convergence (NR-04)         
+>>> try:
+    log("      residual equations now = %s" %
+        list(solver.solution.monitor.residual.equations.get_object_names()))
+except Exception as e:
+    log("      residual equations unreadable: %s" % e)
+S5A       residual equations now = ['continuity', 'x-velocity', 'y-velocity', 'z-velocity', 'energy', 'k', 'omega']
+>>> log("-" * 78)
+S5A ------------------------------------------------------------------------------
+>>> log("VERIFICATION - values read back from Fluent, not from this script")
+S5A VERIFICATION - values read back from Fluent, not from this script
+>>> CHECKS = [
+    ("solver type", lambda: gs.type(), "pressure-based"),
+    ("time", lambda: gs.time(), "steady"),
+    ("velocity formulation", lambda: gs.velocity_formulation(), "absolute"),
+    ("operating pressure", lambda: oc.operating_pressure(), P_OP),
+    ("gravity", lambda: oc.gravity()["enable"], False),
+    ("energy enabled", lambda: solver.setup.models.energy.enabled(), True),
+    ("viscous model", lambda: vis.model(), "k-omega"),
+    ("k-omega variant", lambda: vis.k_omega_model(), "sst"),
+    ("air density option", lambda: air.density.option(), "incompressible-ideal-gas"),
+    ("fluid zone material",
+     lambda: solver.setup.cell_zone_conditions.fluid["fluid_domain"].general.material(), "air"),
+    ("solid zone material",
+     lambda: solver.setup.cell_zone_conditions.solid["solid_domain"].general.material(),
+     "inconel-718"),
+    ("inlet velocity", lambda: inl.momentum.velocity_magnitude.value(), V_IN),
+    ("inlet temperature", lambda: inl.thermal.temperature.value(), T_IN),
+    ("inlet intensity", lambda: readv(inl.turbulence, "turbulent_intensity"), TI_SET),
+    ("inlet Dh", lambda: readv(inl.turbulence, "hydraulic_diameter"), D_H),
+    ("inlet turb spec", lambda: inl.turbulence.turbulence_specification(),
+     "Intensity and Hydraulic Diameter"),
+    ("air cp is piecewise", lambda: air.specific_heat.option(), "piecewise-linear"),
+    ("air mu is piecewise", lambda: air.viscosity.option(), "piecewise-linear"),
+    ("air k is piecewise", lambda: air.thermal_conductivity.option(), "piecewise-linear"),
+    ("inconel k is piecewise",
+     lambda: solver.setup.materials.solid["inconel-718"].thermal_conductivity.option(),
+     "piecewise-linear"),
+    ("inconel density", lambda: readv(solver.setup.materials.solid["inconel-718"],
+                                      "density"), INC_RHO),
+    ("outlet gauge pressure", lambda: out.momentum.gauge_pressure.value(), P_OUT_GAUGE),
+    ("heated wall condition", lambda: W["heated_outer_wall"].thermal.thermal_condition(),
+     "Heat Flux"),
+    ("heated wall flux", lambda: W["heated_outer_wall"].thermal.heat_flux.value(), QPP_OUTER),
+    ("solid inlet end flux", lambda: W["solid_inlet_end"].thermal.heat_flux.value(), 0.0),
+    ("solid outlet end flux", lambda: W["solid_outlet_end"].thermal.heat_flux.value(), 0.0),
+    ("INTERFACE is coupled", lambda: W["fluid_solid_interface"].thermal.thermal_condition(),
+     "Coupled"),
+    ("INTERFACE shadow coupled",
+     lambda: W["fluid_solid_interface-shadow"].thermal.thermal_condition(), "Coupled"),
+]
+>>> VERIFY = {}
+>>> for name, fn, expect in CHECKS:
+    try:
+        got = fn()
+        ok = (got == expect) if not isinstance(expect, float) else \
+             (abs(float(got) - expect) <= 1e-9 + 1e-9 * abs(expect))
+        VERIFY[name] = {"got": got, "expected": expect, "ok": bool(ok)}
+        log("%-5s %-28s got=%-26s expected=%s" % ("VER" if ok else "MISMATCH", name,
+                                                  repr(got)[:26], repr(expect)))
+        if not ok:
+            FAIL.append("VERIFY MISMATCH %s: got %r expected %r" % (name, got, expect))
+    except Exception as e:
+        VERIFY[name] = {"error": str(e)}
+        FAIL.append("VERIFY ERROR %s: %s" % (name, e))
+        log("VERR  %-28s %s" % (name, e))
+S5A VER   solver type                  got='pressure-based'           expected='pressure-based'
+S5A VER   time                         got='steady'                   expected='steady'
+S5A VER   velocity formulation         got='absolute'                 expected='absolute'
+S5A VER   operating pressure           got=101325                     expected=101325.0
+S5A VER   gravity                      got=False                      expected=False
+S5A VER   energy enabled               got=True                       expected=True
+S5A VER   viscous model                got='k-omega'                  expected='k-omega'
+S5A VER   k-omega variant              got='sst'                      expected='sst'
+S5A VER   air density option           got='incompressible-ideal-gas' expected='incompressible-ideal-gas'
+S5A VER   fluid zone material          got='air'                      expected='air'
+S5A VER   solid zone material          got='inconel-718'              expected='inconel-718'
+S5A VER   inlet velocity               got=23.5                       expected=23.5
+S5A VER   inlet temperature            got=300                        expected=300.0
+S5A VER   inlet intensity              got=0.04411209588036475        expected=0.04411209588036475
+S5A VER   inlet Dh                     got=0.02                       expected=0.02
+S5A VER   inlet turb spec              got='Intensity and Hydraulic D expected='Intensity and Hydraulic Diameter'
+S5A VER   air cp is piecewise          got='piecewise-linear'         expected='piecewise-linear'
+S5A VER   air mu is piecewise          got='piecewise-linear'         expected='piecewise-linear'
+S5A VER   air k is piecewise           got='piecewise-linear'         expected='piecewise-linear'
+S5A VER   inconel k is piecewise       got='piecewise-linear'         expected='piecewise-linear'
+S5A VER   inconel density              got=8190.0                     expected=8190.0
+S5A VER   outlet gauge pressure        got=0                          expected=0.0
+S5A VER   heated wall condition        got='Heat Flux'                expected='Heat Flux'
+S5A VER   heated wall flux             got=8000.0                     expected=8000.0
+S5A VER   solid inlet end flux         got=0                          expected=0.0
+S5A VER   solid outlet end flux        got=0                          expected=0.0
+S5A VER   INTERFACE is coupled         got='Coupled'                  expected='Coupled'
+S5A VER   INTERFACE shadow coupled     got='Coupled'                  expected='Coupled'
+>>> for z in ("fluid_solid_interface", "fluid_solid_interface-shadow", "solid_inlet_end",
+          "solid_outlet_end"):
+    try:
+        cond = W[z].thermal.thermal_condition()
+        q = W[z].thermal.heat_flux.value() if cond == "Heat Flux" else None
+        log("HEAT-PATH %-32s condition=%-10s flux=%s" % (z, cond, q))
+        if cond == "Heat Flux" and q not in (0.0, 0):
+            FAIL.append("DOUBLE HEAT INPUT: %s carries %g W/m2" % (z, q))
+    except Exception as e:
+        log("HEAT-PATH %-32s unreadable: %s" % (z, e))
+S5A HEAT-PATH fluid_solid_interface            condition=Coupled    flux=None
+S5A HEAT-PATH fluid_solid_interface-shadow     condition=Coupled    flux=None
+S5A HEAT-PATH solid_inlet_end                  condition=Heat Flux  flux=0
+S5A HEAT-PATH solid_outlet_end                 condition=Heat Flux  flux=0
+>>> log("-" * 78)
+S5A ------------------------------------------------------------------------------
+>>> ini = solver.solution.initialization
+>>> step("initialization type = standard", lambda: setattr(ini, "initialization_type", "standard"))
+S5A OK    initialization type = standard                       
+>>> step("compute defaults from fluid_inlet",
+     lambda: ini.compute_defaults(from_zone_name="fluid_inlet", from_zone_type="velocity-inlet"),
+     critical=False)
+S5A OK    compute defaults from fluid_inlet                    
+>>> step("list defaults", lambda: ini.list_defaults(), critical=False)
+     phase: mixture
+                     Gauge Pressure: 0 (Pa)
+                         X Velocity: 0 (m/s)
+                         Y Velocity: 0 (m/s)
+                         Z Velocity: 23.5 (m/s)
+           Turbulent Kinetic Energy: 1.6119159 (m^2/s^2)
+          Specific Dissipation Rate: 1655.7033 (s^-1)
+                        Temperature: 300 (K)
+S5A OK    list defaults                                        
+>>> def force_defaults():
+    d = ini.defaults
+    out = {}
+    for key, val in (("temperature", T_IN), ("x-velocity", 0.0), ("y-velocity", 0.0),
+                     ("z-velocity", V_IN), ("gauge-pressure", 0.0)):
+        try:
+            d[key] = val
+            out[key] = val
+        except Exception as e:
+            out[key] = "skip(%s)" % type(e).__name__
+    return out
+>>> step("force sensible init values", force_defaults, critical=False)
+S5A OK    force sensible init values                           {'temperature': 300.0, 'x-velocity': 0.0, 'y-velocity': 0.0, 'z-velocity': 23.5, 'gauge-pr
+{'gauge-pressure': 'skip(RuntimeError)',
+ 'temperature': 300.0,
+ 'x-velocity': 0.0,
+ 'y-velocity': 0.0,
+ 'z-velocity': 23.5}
+>>> step("standard initialize", lambda: ini.standard_initialize())
+S5A OK    standard initialize                                  
+>>> step("write setup case",
+     lambda: solver.file.write_case(file_name="Baseline_Setup/baseline_setup.cas.h5"))
+Fast-loading "C:\PROGRA~1\ANSYSI~1\ANSYSS~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Writing to <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Baseline_Setup/baseline_setup.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+      159840 cells,     2 zones ...
+      487776 faces,     9 zones ...
+      168163 nodes,     1 zone  ...
+  Done.
+Done.
+S5A OK    write setup case                                     
+>>> log("-" * 78)
+S5A ------------------------------------------------------------------------------
+>>> if TEST_ITERS > 0:
+    log("STARTING SHORT DIAGNOSTIC SOLVE: %d iterations. This is NOT a converged run." % TEST_ITERS)
+    log("-" * 78)
+    step("iterate %d" % TEST_ITERS,
+         lambda: solver.solution.run_calculation.iterate(iter_count=TEST_ITERS))
+else:
+    log("DRY RUN: S5A_ITERS=0, setup only, no iterations performed.")
+    log("-" * 78)
+S5A STARTING SHORT DIAGNOSTIC SOLVE: 150 iterations. This is NOT a converged run.
+S5A ------------------------------------------------------------------------------
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+   minimum volume (m3): 9.051023e-11
+   maximum volume (m3): 2.859743e-08
+     total volume (m3): 7.518309e-04
+ Face area statistics:
+   minimum face area (m2): 1.357653e-08
+   maximum face area (m2): 1.744083e-05
+ Checking mesh..........................................
+ Done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+     1  7.1437e-17  8.9070e-19  9.0370e-19  7.4807e-04  3.1132e-05  1.0393e+00  1.1236e+03  3.0213e+00  2.4461e+01  3.1440e+02  3.1713e+02  3.1062e+02  3.0000e+02  0.0000e+00  8.4299e+02  6.2271e-01  2.9847e-13  6.0276e+02  3.3427e-04 -8.3279e-03  8.6622e-03  0:02:25  149
+     2  1.0000e+00  1.6210e-05  1.5944e-05  1.1878e-02  1.0721e-04  9.5926e-01  4.8947e-01  2.9253e+00  2.5063e+01  3.6716e+02  3.7203e+02  3.6393e+02  3.0112e+02  0.0000e+00  9.3093e+02 -9.9519e+00  4.3279e+02  6.0276e+02 -6.1208e-05 -8.7234e-03  8.6622e-03  0:02:18  148
+     3  9.0986e-01  1.0479e-05  1.0258e-05  8.2028e-03  1.0156e-04  9.3502e-01  4.7910e-01  1.9548e+00  2.5550e+01  4.0241e+02  4.0906e+02  4.0087e+02  3.0169e+02  0.0000e+00  8.3516e+02 -1.5283e+01  5.9693e+02  6.0276e+02 -1.4886e-04 -8.8110e-03  8.6622e-03  0:02:17  147
+     4  8.6733e-01  8.6062e-06  8.4562e-06  5.3631e-03  8.9428e-05  8.8314e-01  4.5476e-01  1.3991e+00  2.5933e+01  4.2943e+02  4.3738e+02  4.2943e+02  3.0228e+02  0.0000e+00  6.8849e+02 -2.0647e+01  6.0689e+02  6.0276e+02 -1.7339e-04 -8.8355e-03  8.6622e-03  0:02:35  146
+     5  8.1508e-01  7.0821e-06  6.9060e-06  3.4352e-03  7.8633e-05  7.5716e-01  4.0675e-01  1.0612e+00  2.6300e+01  4.5123e+02  4.6063e+02  4.5296e+02  3.0292e+02  0.0000e+00  6.0100e+02 -2.6614e+01  5.9641e+02  6.0276e+02 -2.3590e-04 -8.8981e-03  8.6622e-03  0:02:31  145
+     6  8.6175e-01  6.0433e-06  5.6111e-06  2.2764e-03  7.0365e-05  4.9121e-01  3.3675e-01  8.5516e-01  2.6604e+01  4.7116e+02  4.8175e+02  4.7427e+02  3.0358e+02  0.0000e+00  5.2032e+02 -3.2679e+01  5.8435e+02  6.0276e+02 -2.5825e-04 -8.9204e-03  8.6622e-03  0:02:27  144
+     7  8.7418e-01  5.4951e-06  4.8668e-06  1.5660e-03  6.4359e-05  2.0460e-01  2.3304e-01  7.3183e-01  2.6728e+01  4.8789e+02  4.9985e+02  4.9255e+02  3.0424e+02  0.0000e+00  3.9377e+02 -3.8063e+01  5.8498e+02  6.0276e+02 -1.5927e-04 -8.8214e-03  8.6622e-03  0:02:35  143
+     8  7.2807e-01  4.5887e-06  4.1889e-06  1.0487e-03  5.9443e-05  7.0600e-02  1.4006e-01  6.6041e-01  2.6838e+01  5.0365e+02  5.1663e+02  5.0949e+02  3.0495e+02  0.0000e+00  3.1887e+02 -4.4169e+01  5.7809e+02  6.0276e+02 -1.3230e-04 -8.7945e-03  8.6622e-03  0:02:32  142
+     9  6.4249e-01  3.6160e-06  3.5542e-06  7.4839e-04  5.5520e-05  3.0965e-02  8.9022e-02  6.1848e-01  2.6934e+01  5.1837e+02  5.3254e+02  5.2554e+02  3.0568e+02  0.0000e+00  2.7933e+02 -5.0472e+01  5.7801e+02  6.0276e+02 -1.0747e-04 -8.7696e-03  8.6622e-03  0:02:33  141
+    10  5.6394e-01  2.9012e-06  2.8317e-06  5.7878e-04  5.1971e-05  1.9909e-02  6.4456e-02  5.9336e-01  2.7006e+01  5.3100e+02  5.4613e+02  5.3928e+02  3.0643e+02  0.0000e+00  2.4204e+02 -5.6787e+01  5.7887e+02  6.0276e+02 -6.8002e-05 -8.7302e-03  8.6622e-03  0:02:33  140
+    11  4.8297e-01  2.6215e-06  2.5443e-06  4.5811e-04  4.8799e-05  1.6143e-02  4.9811e-02  5.7842e-01  2.7073e+01  5.4310e+02  5.5907e+02  5.5235e+02  3.0720e+02  0.0000e+00  2.2364e+02 -6.3311e+01  5.7228e+02  6.0276e+02 -3.4352e-05 -8.6965e-03  8.6622e-03  0:02:28  139
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    12  4.1220e-01  2.5703e-06  2.4117e-06  3.8676e-04  4.6127e-05  1.4339e-02  4.3899e-02  5.6863e-01  2.7151e+01  5.5473e+02  5.7168e+02  5.6507e+02  3.0801e+02  0.0000e+00  2.2033e+02 -7.0170e+01  5.7024e+02  6.0276e+02 -1.1311e-05 -8.6735e-03  8.6622e-03  0:02:19  138
+    13  3.5789e-01  2.5058e-06  2.3053e-06  3.4712e-04  4.3726e-05  1.3177e-02  4.0237e-02  5.6198e-01  2.7239e+01  5.6589e+02  5.8476e+02  5.7806e+02  3.0884e+02  0.0000e+00  2.2308e+02 -7.7269e+01  5.6984e+02  6.0276e+02  9.2485e-06 -8.6529e-03  8.6622e-03  0:02:11  137
+    14  3.1388e-01  2.4571e-06  2.2225e-06  3.2161e-04  4.1635e-05  1.2312e-02  3.7576e-02  5.5698e-01  2.7350e+01  5.7651e+02  5.9741e+02  5.9080e+02  3.0971e+02  0.0000e+00  2.3364e+02 -8.4822e+01  5.7060e+02  6.0276e+02  1.6797e-05 -8.6454e-03  8.6622e-03  0:02:09  136
+    15  2.7828e-01  2.3041e-06  2.0733e-06  3.0799e-04  3.9705e-05  1.1720e-02  3.5270e-02  5.5343e-01  2.7481e+01  5.8661e+02  6.0931e+02  6.0281e+02  3.1061e+02  0.0000e+00  2.4846e+02 -9.2719e+01  5.7128e+02  6.0276e+02  1.8024e-05 -8.6441e-03  8.6622e-03  0:02:09  135
+    16  2.5530e-01  2.1150e-06  1.9103e-06  3.0085e-04  3.7896e-05  1.1498e-02  3.3116e-02  5.5084e-01  2.7626e+01  5.9627e+02  6.2129e+02  6.1487e+02  3.1154e+02  0.0000e+00  2.6298e+02 -1.0081e+02  5.7179e+02  6.0276e+02  1.9270e-05 -8.6429e-03  8.6622e-03  0:02:07  134
+    17  2.4445e-01  1.9045e-06  1.7302e-06  2.9481e-04  3.6217e-05  1.1730e-02  2.5124e-02  5.4870e-01  2.7776e+01  6.0550e+02  6.3299e+02  6.2667e+02  3.1248e+02  0.0000e+00  2.7560e+02 -1.0906e+02  5.6855e+02  6.0276e+02  2.2060e-05 -8.6401e-03  8.6622e-03  0:02:07  133
+    18  2.3667e-01  1.6808e-06  1.5424e-06  2.8773e-04  3.4781e-05  1.2451e-02  2.0290e-02  5.4698e-01  2.7944e+01  6.1436e+02  6.4428e+02  6.3804e+02  3.1347e+02  0.0000e+00  2.8969e+02 -1.1786e+02  5.6775e+02  6.0276e+02  1.3784e-05 -8.6484e-03  8.6622e-03  0:02:06  132
+    19  2.2725e-01  1.5087e-06  1.4054e-06  2.8232e-04  3.3471e-05  1.3722e-02  1.7992e-02  5.4556e-01  2.8116e+01  6.2289e+02  6.5555e+02  6.4939e+02  3.1447e+02  0.0000e+00  3.0121e+02 -1.2675e+02  5.6831e+02  6.0276e+02  9.1970e-06 -8.6530e-03  8.6622e-03  0:02:06  131
+    20  2.2016e-01  1.3455e-06  1.2788e-06  2.7482e-04  3.2298e-05  1.5576e-02  1.6522e-02  5.4447e-01  2.8286e+01  6.2987e+02  6.6537e+02  6.5930e+02  3.1549e+02  0.0000e+00  3.0816e+02 -1.3572e+02  5.6969e+02  6.0276e+02  8.9099e-06 -8.6532e-03  8.6622e-03  0:02:05  130
+    21  2.1944e-01  1.2172e-06  1.1666e-06  2.6362e-04  3.1370e-05  1.8002e-02  1.3697e-02  5.4389e-01  2.8457e+01  6.3647e+02  6.7496e+02  6.6897e+02  3.1653e+02  0.0000e+00  3.1520e+02 -1.4492e+02  5.6600e+02  6.0276e+02  5.8262e-06 -8.6563e-03  8.6622e-03  0:01:58  129
+    22  2.2320e-01  1.1363e-06  1.1062e-06  2.5404e-04  3.0653e-05  2.0943e-02  1.2276e-02  5.4351e-01  2.8629e+01  6.4272e+02  6.8431e+02  6.7839e+02  3.1759e+02  0.0000e+00  3.2112e+02 -1.5435e+02  5.6427e+02  6.0276e+02  2.7194e-06 -8.6594e-03  8.6622e-03  0:01:51  128
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    23  2.2972e-01  1.0805e-06  1.0668e-06  2.4467e-04  2.9916e-05  2.4264e-02  1.1304e-02  5.4333e-01  2.8799e+01  6.4863e+02  6.9369e+02  6.8780e+02  3.1868e+02  0.0000e+00  3.2626e+02 -1.6396e+02  5.6402e+02  6.0276e+02  1.5230e-06 -8.6606e-03  8.6622e-03  0:01:45  127
+    24  2.4084e-01  1.0444e-06  1.0353e-06  2.3597e-04  2.9554e-05  2.7762e-02  1.0575e-02  5.4333e-01  2.8968e+01  6.5396e+02  7.0285e+02  6.9697e+02  3.1981e+02  0.0000e+00  3.3200e+02 -1.7397e+02  5.6499e+02  6.0276e+02 -1.3541e-07 -8.6623e-03  8.6622e-03  0:01:40  126
+    25  2.5472e-01  1.0227e-06  1.0144e-06  2.2929e-04  2.9458e-05  3.1230e-02  9.6982e-03  5.4347e-01  2.9136e+01  6.5887e+02  7.1201e+02  7.0614e+02  3.2099e+02  0.0000e+00  3.3789e+02 -1.8439e+02  5.6628e+02  6.0276e+02 -2.5743e-07 -8.6624e-03  8.6622e-03  0:01:38  125
+    26  2.7025e-01  1.0074e-06  9.9829e-07  2.2500e-04  2.9475e-05  3.4449e-02  9.0048e-03  5.4376e-01  2.9301e+01  6.6316e+02  7.2043e+02  7.1455e+02  3.2225e+02  0.0000e+00  3.4337e+02 -1.9538e+02  5.6925e+02  6.0276e+02  2.0278e-06 -8.6601e-03  8.6622e-03  0:01:36  124
+    27  2.8501e-01  9.8854e-07  9.7742e-07  2.2508e-04  2.9629e-05  3.7092e-02  8.1567e-03  5.4419e-01  2.9468e+01  6.6682e+02  7.2834e+02  7.2246e+02  3.2361e+02  0.0000e+00  3.5076e+02 -2.0732e+02  5.7316e+02  6.0276e+02  3.8003e-06 -8.6584e-03  8.6622e-03  0:01:33  123
+    28  2.9866e-01  9.8090e-07  9.6914e-07  2.3035e-04  2.9982e-05  3.8827e-02  7.3112e-03  5.4476e-01  2.9638e+01  6.6981e+02  7.3553e+02  7.2965e+02  3.2511e+02  0.0000e+00  3.5897e+02 -2.2050e+02  5.7834e+02  6.0276e+02  5.9462e-06 -8.6562e-03  8.6622e-03  0:01:31  122
+    29  3.1271e-01  9.7563e-07  9.6588e-07  2.3646e-04  3.0658e-05  3.9295e-02  6.4486e-03  5.4544e-01  2.9815e+01  6.7204e+02  7.4180e+02  7.3591e+02  3.2681e+02  0.0000e+00  3.6928e+02 -2.3536e+02  5.8466e+02  6.0276e+02  7.5447e-06 -8.6546e-03  8.6622e-03  0:01:32  121
+    30  3.2634e-01  9.7346e-07  9.6619e-07  2.4293e-04  3.1687e-05  3.8218e-02  5.6374e-03  5.4623e-01  3.0003e+01  6.7352e+02  7.4707e+02  7.4119e+02  3.2873e+02  0.0000e+00  3.8145e+02 -2.5224e+02  5.9202e+02  6.0276e+02  9.5026e-06 -8.6527e-03  8.6622e-03  0:01:34  120
+    31  3.3567e-01  9.6320e-07  9.5989e-07  2.4450e-04  3.2511e-05  3.5185e-02  4.9081e-03  5.4710e-01  3.0205e+01  6.7435e+02  7.5151e+02  7.4562e+02  3.3093e+02  0.0000e+00  3.9359e+02 -2.7148e+02  6.0042e+02  6.0276e+02  1.0907e-05 -8.6512e-03  8.6622e-03  0:01:36  119
+    32  3.4507e-01  9.6070e-07  9.5646e-07  2.3973e-04  3.2461e-05  3.0436e-02  4.3415e-03  5.4805e-01  3.0415e+01  6.7464e+02  7.5503e+02  7.4912e+02  3.3338e+02  0.0000e+00  4.0274e+02 -2.9261e+02  6.1005e+02  6.0276e+02  1.9486e-05 -8.6427e-03  8.6622e-03  0:01:37  118
+    33  3.5738e-01  9.3876e-07  9.2952e-07  2.3134e-04  3.1879e-05  2.5747e-02  3.9756e-03  5.4906e-01  3.0660e+01  6.7351e+02  7.5790e+02  7.5192e+02  3.3611e+02  0.0000e+00  4.1960e+02 -3.1691e+02  6.2072e+02  6.0276e+02  1.0524e-05 -8.6516e-03  8.6622e-03  0:01:38  117
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    34  3.5619e-01  9.4872e-07  9.4614e-07  2.2959e-04  3.0762e-05  2.2010e-02  4.4879e-03  5.5082e-01  3.0919e+01  6.7178e+02  7.5984e+02  7.5382e+02  3.3900e+02  0.0000e+00  4.3244e+02 -3.4224e+02  6.2790e+02  6.0276e+02  1.0159e-05 -8.6520e-03  8.6622e-03  0:01:38  116
+    35  3.5670e-01  9.2651e-07  9.2385e-07  2.2360e-04  3.0281e-05  1.9088e-02  4.4972e-03  5.5268e-01  3.1194e+01  6.6955e+02  7.6105e+02  7.5501e+02  3.4203e+02  0.0000e+00  4.4589e+02 -3.6887e+02  6.3504e+02  6.0276e+02  7.4496e-06 -8.6547e-03  8.6622e-03  0:01:38  115
+    36  3.5302e-01  8.9083e-07  8.8944e-07  2.1835e-04  2.9867e-05  1.6843e-02  4.5986e-03  5.5455e-01  3.1478e+01  6.6579e+02  7.6031e+02  7.5426e+02  3.4512e+02  0.0000e+00  4.5487e+02 -3.9591e+02  6.4152e+02  6.0276e+02  8.6259e-06 -8.6535e-03  8.6622e-03  0:01:44  114
+    37  3.5281e-01  8.5080e-07  8.4754e-07  2.1029e-04  2.9334e-05  1.5017e-02  6.1126e-03  5.5696e-01  3.1769e+01  6.6178e+02  7.5872e+02  7.5266e+02  3.4825e+02  0.0000e+00  4.6202e+02 -4.2334e+02  6.4072e+02  6.0276e+02  8.1922e-06 -8.6540e-03  8.6622e-03  0:01:39  113
+    38  3.5149e-01  8.1208e-07  8.0856e-07  2.0185e-04  2.8669e-05  1.3539e-02  7.0415e-03  5.5927e-01  3.2061e+01  6.5662e+02  7.5535e+02  7.4930e+02  3.5136e+02  0.0000e+00  4.6555e+02 -4.5043e+02  6.4153e+02  6.0276e+02  1.1098e-05 -8.6511e-03  8.6622e-03  0:01:33  112
+    39  3.5164e-01  7.6461e-07  7.6217e-07  1.9052e-04  2.7912e-05  1.2255e-02  8.7774e-03  5.6182e-01  3.2360e+01  6.5154e+02  7.5151e+02  7.4547e+02  3.5444e+02  0.0000e+00  4.7071e+02 -4.7761e+02  6.3683e+02  6.0276e+02  7.6050e-06 -8.6546e-03  8.6622e-03  0:01:29  111
+    40  3.4735e-01  7.2795e-07  7.2519e-07  1.8188e-04  2.7032e-05  1.1187e-02  9.2431e-03  5.6415e-01  3.2658e+01  6.4646e+02  7.4746e+02  7.4143e+02  3.5744e+02  0.0000e+00  4.7447e+02 -5.0395e+02  6.3490e+02  6.0276e+02  5.9733e-06 -8.6562e-03  8.6622e-03  0:01:25  110
+    41  3.4134e-01  6.8607e-07  6.8406e-07  1.7204e-04  2.6096e-05  1.0264e-02  9.4450e-03  5.6629e-01  3.2954e+01  6.4142e+02  7.4310e+02  7.3707e+02  3.6033e+02  0.0000e+00  4.7741e+02 -5.2948e+02  6.3359e+02  6.0276e+02  3.1507e-06 -8.6590e-03  8.6622e-03  0:01:20  109
+    42  3.3210e-01  6.4675e-07  6.4489e-07  1.6202e-04  2.5146e-05  9.4540e-03  9.5165e-03  5.6824e-01  3.3244e+01  6.3648e+02  7.3855e+02  7.3252e+02  3.6309e+02  0.0000e+00  4.7899e+02 -5.5376e+02  6.3260e+02  6.0276e+02  1.7446e-06 -8.6604e-03  8.6622e-03  0:01:16  108
+    43  3.2013e-01  6.0408e-07  6.0227e-07  1.5085e-04  2.4214e-05  8.7487e-03  9.4993e-03  5.7003e-01  3.3527e+01  6.3157e+02  7.3376e+02  7.2774e+02  3.6571e+02  0.0000e+00  4.8012e+02 -5.7691e+02  6.3185e+02  6.0276e+02 -1.2875e-06 -8.6634e-03  8.6622e-03  0:01:12  107
+    44  3.0775e-01  5.6940e-07  5.6783e-07  1.4058e-04  2.3326e-05  8.0986e-03  9.5302e-03  5.7164e-01  3.3800e+01  6.2672e+02  7.2866e+02  7.2266e+02  3.6817e+02  0.0000e+00  4.8097e+02 -5.9864e+02  6.3081e+02  6.0276e+02 -3.9178e-06 -8.6661e-03  8.6622e-03  0:01:08  106
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    45  2.9400e-01  5.3892e-07  5.3720e-07  1.3065e-04  2.2501e-05  7.4895e-03  9.5529e-03  5.7313e-01  3.4061e+01  6.2194e+02  7.2351e+02  7.1752e+02  3.7046e+02  0.0000e+00  4.8148e+02 -6.1874e+02  6.2957e+02  6.0276e+02 -5.2094e-06 -8.6674e-03  8.6622e-03  0:01:06  105
+    46  2.7956e-01  5.0470e-07  5.0093e-07  1.2069e-04  2.1748e-05  6.9480e-03  9.5414e-03  5.7450e-01  3.4310e+01  6.1731e+02  7.1839e+02  7.1240e+02  3.7257e+02  0.0000e+00  4.8168e+02 -6.3740e+02  6.2831e+02  6.0276e+02 -7.7349e-06 -8.6699e-03  8.6622e-03  0:01:05  104
+    47  2.6537e-01  4.7718e-07  4.7318e-07  1.1101e-04  2.1069e-05  6.4529e-03  9.4360e-03  5.7577e-01  3.4541e+01  6.1281e+02  7.1326e+02  7.0728e+02  3.7449e+02  0.0000e+00  4.8044e+02 -6.5413e+02  6.2729e+02  6.0276e+02 -6.9486e-06 -8.6691e-03  8.6622e-03  0:01:07  103
+    48  2.5415e-01  4.5045e-07  4.4538e-07  1.0078e-04  2.0447e-05  5.9964e-03  9.3193e-03  5.7693e-01  3.4757e+01  6.0841e+02  7.0806e+02  7.0210e+02  3.7622e+02  0.0000e+00  4.7807e+02 -6.6931e+02  6.2637e+02  6.0276e+02 -6.5279e-06 -8.6687e-03  8.6622e-03  0:01:08  102
+    49  2.4340e-01  4.2320e-07  4.1884e-07  9.1415e-05  1.9872e-05  5.5702e-03  9.2401e-03  5.7801e-01  3.4961e+01  6.0414e+02  7.0264e+02  6.9669e+02  3.7779e+02  0.0000e+00  4.7661e+02 -6.8319e+02  6.2524e+02  6.0276e+02 -8.8819e-06 -8.6710e-03  8.6622e-03  0:01:08  101
+    50  2.3181e-01  3.9323e-07  3.8732e-07  8.4362e-05  1.9369e-05  5.1821e-03  9.1260e-03  5.7900e-01  3.5143e+01  6.0000e+02  6.9713e+02  6.9119e+02  3.7916e+02  0.0000e+00  4.7310e+02 -6.9487e+02  6.2412e+02  6.0276e+02 -5.2129e-06 -8.6674e-03  8.6622e-03  0:01:11  100
+    51  2.2089e-01  3.7280e-07  3.6921e-07  7.6468e-05  1.8869e-05  4.8065e-03  8.9931e-03  5.7992e-01  3.5315e+01  5.9601e+02  6.9162e+02  6.8569e+02  3.8038e+02  0.0000e+00  4.7102e+02 -7.0558e+02  6.2306e+02  6.0276e+02 -6.8253e-06 -8.6690e-03  8.6622e-03  0:01:11   99
+    52  2.0888e-01  3.5289e-07  3.4965e-07  7.1061e-05  1.8405e-05  4.4598e-03  8.8294e-03  5.8077e-01  3.5472e+01  5.9216e+02  6.8618e+02  6.8026e+02  3.8142e+02  0.0000e+00  4.6964e+02 -7.1473e+02  6.2204e+02  6.0276e+02 -7.7812e-06 -8.6699e-03  8.6622e-03  0:01:10   98
+    53  1.9786e-01  3.3882e-07  3.3594e-07  6.6281e-05  1.7986e-05  4.1338e-03  8.6381e-03  5.8157e-01  3.5611e+01  5.8849e+02  6.8086e+02  6.7495e+02  3.8229e+02  0.0000e+00  4.6698e+02 -7.2215e+02  6.2111e+02  6.0276e+02 -5.9612e-06 -8.6681e-03  8.6622e-03  0:01:12   97
+    54  1.8656e-01  3.3064e-07  3.2885e-07  6.1813e-05  1.7557e-05  3.8239e-03  8.4008e-03  5.8231e-01  3.5735e+01  5.8495e+02  6.7557e+02  6.6967e+02  3.8302e+02  0.0000e+00  4.6496e+02 -7.2837e+02  6.2040e+02  6.0276e+02 -5.4531e-06 -8.6676e-03  8.6622e-03  0:01:11   96
+    55  1.7603e-01  3.2479e-07  3.2340e-07  5.8163e-05  1.7124e-05  3.5319e-03  8.2214e-03  5.8299e-01  3.5848e+01  5.8154e+02  6.7033e+02  6.6443e+02  3.8360e+02  0.0000e+00  4.6364e+02 -7.3346e+02  6.1954e+02  6.0276e+02 -6.4931e-06 -8.6686e-03  8.6622e-03  0:01:09   95
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    56  1.6640e-01  3.1988e-07  3.1883e-07  5.5399e-05  1.6702e-05  3.2597e-03  8.0386e-03  5.8363e-01  3.5947e+01  5.7827e+02  6.6519e+02  6.5926e+02  3.8404e+02  0.0000e+00  4.6233e+02 -7.3729e+02  6.1866e+02  6.0276e+02 -7.2189e-06 -8.6694e-03  8.6622e-03  0:01:07   94
+    57  1.5746e-01  3.1669e-07  3.1622e-07  5.3168e-05  1.6266e-05  3.0048e-03  7.8460e-03  5.8422e-01  3.6031e+01  5.7515e+02  6.6019e+02  6.5424e+02  3.8434e+02  0.0000e+00  4.6049e+02 -7.3981e+02  6.1784e+02  6.0276e+02 -6.4517e-06 -8.6686e-03  8.6622e-03  0:01:08   93
+    58  1.4899e-01  3.1699e-07  3.1672e-07  5.1399e-05  1.5809e-05  2.7648e-03  7.6599e-03  5.8476e-01  3.6101e+01  5.7216e+02  6.5525e+02  6.4926e+02  3.8453e+02  0.0000e+00  4.5889e+02 -7.4133e+02  6.1704e+02  6.0276e+02 -6.2558e-06 -8.6684e-03  8.6622e-03  0:01:08   92
+    59  1.4139e-01  3.1941e-07  3.1912e-07  4.9987e-05  1.5350e-05  2.5417e-03  7.4818e-03  5.8527e-01  3.6159e+01  5.6963e+02  6.5094e+02  6.4492e+02  3.8460e+02  0.0000e+00  4.5706e+02 -7.4178e+02  6.1622e+02  6.0276e+02 -5.2967e-06 -8.6675e-03  8.6622e-03  0:01:08   91
+    60  1.3409e-01  3.2464e-07  3.2430e-07  4.8896e-05  1.4822e-05  2.3379e-03  6.7165e-03  5.8569e-01  3.6202e+01  5.6682e+02  6.4609e+02  6.4004e+02  3.8457e+02  0.0000e+00  4.5482e+02 -7.4133e+02  6.1768e+02  6.0276e+02 -3.7362e-06 -8.6659e-03  8.6622e-03  0:01:06   90
+    61  1.2712e-01  3.3249e-07  3.3242e-07  4.8515e-05  1.4367e-05  2.1381e-03  7.0792e-03  5.8613e-01  3.6238e+01  5.6449e+02  6.4196e+02  6.3587e+02  3.8445e+02  0.0000e+00  4.5384e+02 -7.4035e+02  6.1568e+02  6.0276e+02 -5.0640e-06 -8.6672e-03  8.6622e-03  0:01:03   89
+    62  1.2136e-01  3.3034e-07  3.2990e-07  4.7614e-05  1.3812e-05  1.9615e-03  6.4161e-03  5.8649e-01  3.6264e+01  5.6192e+02  6.3734e+02  6.3123e+02  3.8426e+02  0.0000e+00  4.5254e+02 -7.3855e+02  6.1658e+02  6.0276e+02 -5.0800e-06 -8.6672e-03  8.6622e-03  0:01:01   88
+    63  1.1653e-01  3.2960e-07  3.2904e-07  4.7077e-05  1.3334e-05  1.7899e-03  6.7384e-03  5.8687e-01  3.6279e+01  5.5980e+02  6.3338e+02  6.2723e+02  3.8399e+02  0.0000e+00  4.5126e+02 -7.3607e+02  6.1453e+02  6.0276e+02 -4.8044e-06 -8.6670e-03  8.6622e-03  0:01:00   87
+    64  1.1243e-01  3.2921e-07  3.2845e-07  4.6373e-05  1.2766e-05  1.6428e-03  6.0623e-03  5.8718e-01  3.6285e+01  5.5749e+02  6.2911e+02  6.2293e+02  3.8366e+02  0.0000e+00  4.5018e+02 -7.3308e+02  6.1529e+02  6.0276e+02 -4.6109e-06 -8.6668e-03  8.6622e-03  0:00:58   86
+    65  1.0897e-01  3.2773e-07  3.2696e-07  4.5609e-05  1.2281e-05  1.4963e-03  6.3413e-03  5.8752e-01  3.6283e+01  5.5558e+02  6.2549e+02  6.1927e+02  3.8327e+02  0.0000e+00  4.4909e+02 -7.2962e+02  6.1341e+02  6.0276e+02 -4.5038e-06 -8.6667e-03  8.6622e-03  0:00:56   85
+    66  1.0547e-01  3.2476e-07  3.2407e-07  4.4684e-05  1.1725e-05  1.3715e-03  5.7250e-03  5.8779e-01  3.6272e+01  5.5350e+02  6.2157e+02  6.1532e+02  3.8284e+02  0.0000e+00  4.4763e+02 -7.2571e+02  6.1400e+02  6.0276e+02 -3.4094e-06 -8.6656e-03  8.6622e-03  0:00:55   84
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    67  1.0169e-01  3.2223e-07  3.2168e-07  4.4048e-05  1.1233e-05  1.2496e-03  5.9954e-03  5.8808e-01  3.6254e+01  5.5179e+02  6.1826e+02  6.1197e+02  3.8238e+02  0.0000e+00  4.4640e+02 -7.2154e+02  6.1220e+02  6.0276e+02 -2.8543e-06 -8.6650e-03  8.6622e-03  0:00:54   83
+    68  9.7767e-02  3.1740e-07  3.1660e-07  4.3058e-05  1.0676e-05  1.1480e-03  5.4158e-03  5.8831e-01  3.6230e+01  5.4993e+02  6.1467e+02  6.0836e+02  3.8189e+02  0.0000e+00  4.4520e+02 -7.1713e+02  6.1268e+02  6.0276e+02 -2.1535e-06 -8.6643e-03  8.6622e-03  0:00:58   82
+    69  9.3851e-02  3.1004e-07  3.0879e-07  4.2067e-05  1.0186e-05  1.0493e-03  5.6804e-03  5.8856e-01  3.6201e+01  5.4841e+02  6.1165e+02  6.0530e+02  3.8138e+02  0.0000e+00  4.4418e+02 -7.1254e+02  6.1101e+02  6.0276e+02 -1.4499e-06 -8.6636e-03  8.6622e-03  0:00:55   81
+    70  8.9856e-02  3.0113e-07  2.9976e-07  4.0780e-05  9.6441e-06  9.6983e-04  5.1527e-03  5.8876e-01  3.6168e+01  5.4695e+02  6.0875e+02  6.0237e+02  3.8086e+02  0.0000e+00  4.4322e+02 -7.0787e+02  6.1142e+02  6.0276e+02 -9.3981e-07 -8.6631e-03  8.6622e-03  0:00:53   80
+    71  8.5933e-02  2.9015e-07  2.8918e-07  3.9413e-05  9.1368e-06  8.9352e-04  4.9794e-03  5.8895e-01  3.6130e+01  5.4537e+02  6.0563e+02  5.9923e+02  3.8033e+02  0.0000e+00  4.4239e+02 -7.0314e+02  6.1128e+02  6.0276e+02 -3.1916e-07 -8.6625e-03  8.6622e-03  0:00:51   79
+    72  8.2100e-02  2.7850e-07  2.7757e-07  3.8005e-05  8.6845e-06  8.2178e-04  5.3264e-03  5.8916e-01  3.6090e+01  5.4409e+02  6.0300e+02  5.9657e+02  3.7980e+02  0.0000e+00  4.4162e+02 -6.9836e+02  6.0957e+02  6.0276e+02  3.9349e-07 -8.6618e-03  8.6622e-03  0:00:49   78
+    73  7.8084e-02  2.6687e-07  2.6593e-07  3.6497e-05  8.1900e-06  7.6487e-04  4.7237e-03  5.8932e-01  3.6047e+01  5.4271e+02  6.0021e+02  5.9375e+02  3.7926e+02  0.0000e+00  4.4104e+02 -6.9365e+02  6.0989e+02  6.0276e+02  7.5382e-07 -8.6614e-03  8.6622e-03  0:00:47   77
+    74  7.4290e-02  2.5400e-07  2.5325e-07  3.4954e-05  7.7591e-06  7.0666e-04  4.8021e-03  5.8950e-01  3.6002e+01  5.4159e+02  5.9788e+02  5.9140e+02  3.7874e+02  0.0000e+00  4.4056e+02 -6.8896e+02  6.0859e+02  6.0276e+02  1.1025e-06 -8.6611e-03  8.6622e-03  0:00:46   76
+    75  7.0615e-02  2.4102e-07  2.4052e-07  3.3312e-05  7.2973e-06  6.5891e-04  4.1911e-03  5.8964e-01  3.5957e+01  5.4051e+02  5.9563e+02  5.8913e+02  3.7822e+02  0.0000e+00  4.4015e+02 -6.8437e+02  6.0896e+02  6.0276e+02  1.4357e-06 -8.6607e-03  8.6622e-03  0:00:45   75
+    76  6.7003e-02  2.2796e-07  2.2760e-07  3.1678e-05  6.8709e-06  6.1037e-04  3.8994e-03  5.8977e-01  3.5910e+01  5.3936e+02  5.9327e+02  5.8674e+02  3.7771e+02  0.0000e+00  4.3980e+02 -6.7989e+02  6.0889e+02  6.0276e+02  1.7518e-06 -8.6604e-03  8.6622e-03  0:00:44   74
+    77  6.3706e-02  2.1539e-07  2.1512e-07  3.0100e-05  6.4888e-06  5.6385e-04  3.9944e-03  5.8991e-01  3.5864e+01  5.3843e+02  5.9129e+02  5.8474e+02  3.7722e+02  0.0000e+00  4.3956e+02 -6.7553e+02  6.0770e+02  6.0276e+02  1.9371e-06 -8.6602e-03  8.6622e-03  0:00:44   73
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    78  6.0610e-02  2.0336e-07  2.0321e-07  2.8448e-05  6.0818e-06  5.2652e-04  3.4959e-03  5.9003e-01  3.5817e+01  5.3754e+02  5.8941e+02  5.8284e+02  3.7675e+02  0.0000e+00  4.3937e+02 -6.7133e+02  6.0792e+02  6.0276e+02  1.9175e-06 -8.6602e-03  8.6622e-03  0:00:44   72
+    79  5.7484e-02  1.9162e-07  1.9159e-07  2.6837e-05  5.7071e-06  4.8815e-04  3.2355e-03  5.9013e-01  3.5772e+01  5.3660e+02  5.8741e+02  5.8083e+02  3.7629e+02  0.0000e+00  4.3925e+02 -6.6729e+02  6.0782e+02  6.0276e+02  1.9763e-06 -8.6602e-03  8.6622e-03  0:00:43   71
+    80  5.4653e-02  1.7984e-07  1.7992e-07  2.5285e-05  5.3715e-06  4.5103e-04  3.3002e-03  5.9025e-01  3.5727e+01  5.3583e+02  5.8576e+02  5.7915e+02  3.7585e+02  0.0000e+00  4.3917e+02 -6.6340e+02  6.0682e+02  6.0276e+02  1.9721e-06 -8.6602e-03  8.6622e-03  0:00:44   70
+    81  5.1927e-02  1.6840e-07  1.6854e-07  2.3720e-05  5.0187e-06  4.2143e-04  2.8685e-03  5.9034e-01  3.5683e+01  5.3511e+02  5.8419e+02  5.7756e+02  3.7542e+02  0.0000e+00  4.3919e+02 -6.5970e+02  6.0701e+02  6.0276e+02  1.7481e-06 -8.6604e-03  8.6622e-03  0:00:44   69
+    82  4.9216e-02  1.5692e-07  1.5711e-07  2.2174e-05  4.6966e-06  3.9056e-04  2.6474e-03  5.9043e-01  3.5641e+01  5.3434e+02  5.8254e+02  5.7589e+02  3.7502e+02  0.0000e+00  4.3917e+02 -6.5614e+02  6.0693e+02  6.0276e+02  1.8356e-06 -8.6603e-03  8.6622e-03  0:00:43   68
+    83  4.6633e-02  1.4639e-07  1.4651e-07  2.0774e-05  4.4075e-06  3.6098e-04  2.7018e-03  5.9052e-01  3.5600e+01  5.3372e+02  5.8118e+02  5.7452e+02  3.7464e+02  0.0000e+00  4.3919e+02 -6.5278e+02  6.0609e+02  6.0276e+02  1.5809e-06 -8.6606e-03  8.6622e-03  0:00:43   67
+    84  4.4051e-02  1.3619e-07  1.3631e-07  1.9367e-05  4.1098e-06  3.3684e-04  2.3495e-03  5.9059e-01  3.5560e+01  5.3314e+02  5.7988e+02  5.7321e+02  3.7427e+02  0.0000e+00  4.3917e+02 -6.4956e+02  6.0622e+02  6.0276e+02  1.6266e-06 -8.6605e-03  8.6622e-03  0:00:42   66
+    85  4.1512e-02  1.2703e-07  1.2712e-07  1.8090e-05  3.8374e-06  3.1232e-04  2.1601e-03  5.9066e-01  3.5522e+01  5.3251e+02  5.7853e+02  5.7185e+02  3.7393e+02  0.0000e+00  4.3917e+02 -6.4652e+02  6.0616e+02  6.0276e+02  1.6162e-06 -8.6605e-03  8.6622e-03  0:00:41   65
+    86  3.8885e-02  1.1873e-07  1.1910e-07  1.6892e-05  3.5941e-06  2.8858e-04  2.1972e-03  5.9074e-01  3.5486e+01  5.3201e+02  5.7742e+02  5.7072e+02  3.7360e+02  0.0000e+00  4.3913e+02 -6.4365e+02  6.0548e+02  6.0276e+02  1.5253e-06 -8.6606e-03  8.6622e-03  0:00:40   64
+    87  3.6471e-02  1.1059e-07  1.1086e-07  1.5759e-05  3.3438e-06  2.6948e-04  1.9049e-03  5.9079e-01  3.5451e+01  5.3147e+02  5.7626e+02  5.6955e+02  3.7329e+02  0.0000e+00  4.3908e+02 -6.4094e+02  6.0558e+02  6.0276e+02  1.4515e-06 -8.6607e-03  8.6622e-03  0:00:39   63
+    88  3.4198e-02  1.0256e-07  1.0269e-07  1.4740e-05  3.1250e-06  2.4915e-04  1.9041e-03  5.9086e-01  3.5418e+01  5.3104e+02  5.7530e+02  5.6857e+02  3.7300e+02  0.0000e+00  4.3904e+02 -6.3839e+02  6.0506e+02  6.0276e+02  1.2616e-06 -8.6609e-03  8.6622e-03  0:00:39   62
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+    89  3.1945e-02  9.4731e-08  9.4688e-08  1.3752e-05  2.9041e-06  2.3220e-04  1.6443e-03  5.9091e-01  3.5387e+01  5.3064e+02  5.7437e+02  5.6764e+02  3.7272e+02  0.0000e+00  4.3898e+02 -6.3598e+02  6.0517e+02  6.0276e+02  1.2582e-06 -8.6609e-03  8.6622e-03  0:00:38   61
+    90  2.9893e-02  8.7716e-08  8.7651e-08  1.2846e-05  2.7019e-06  2.1498e-04  1.5103e-03  5.9095e-01  3.5357e+01  5.3020e+02  5.7341e+02  5.6667e+02  3.7247e+02  0.0000e+00  4.3894e+02 -6.3373e+02  6.0513e+02  6.0276e+02  1.1163e-06 -8.6610e-03  8.6622e-03  0:00:39   60
+    91  2.7919e-02  8.0933e-08  8.0761e-08  1.2005e-05  2.5235e-06  1.9811e-04  1.5339e-03  5.9100e-01  3.5329e+01  5.2985e+02  5.7262e+02  5.6587e+02  3.7222e+02  0.0000e+00  4.3889e+02 -6.3159e+02  6.0465e+02  6.0276e+02  1.1114e-06 -8.6610e-03  8.6622e-03  0:00:38   59
+    92  2.6112e-02  7.5012e-08  7.4865e-08  1.1203e-05  2.3409e-06  1.8481e-04  1.3264e-03  5.9104e-01  3.5303e+01  5.2948e+02  5.7180e+02  5.6504e+02  3.7200e+02  0.0000e+00  4.3886e+02 -6.2961e+02  6.0473e+02  6.0276e+02  9.9099e-07 -8.6612e-03  8.6622e-03  0:00:37   58
+    93  2.4375e-02  6.9279e-08  6.9068e-08  1.0460e-05  2.1828e-06  1.7055e-04  1.3236e-03  5.9108e-01  3.5279e+01  5.2918e+02  5.7111e+02  5.6435e+02  3.7178e+02  0.0000e+00  4.3884e+02 -6.2774e+02  6.0436e+02  6.0276e+02  9.1832e-07 -8.6612e-03  8.6622e-03  0:00:37   57
+    94  2.2740e-02  6.4125e-08  6.3892e-08  9.7415e-06  2.0236e-06  1.5890e-04  1.1420e-03  5.9112e-01  3.5255e+01  5.2890e+02  5.7047e+02  5.6370e+02  3.7158e+02  0.0000e+00  4.3882e+02 -6.2599e+02  6.0444e+02  6.0276e+02  8.6273e-07 -8.6613e-03  8.6622e-03  0:00:37   56
+    95  2.1198e-02  5.9328e-08  5.9093e-08  9.0704e-06  1.8794e-06  1.4690e-04  1.0481e-03  5.9115e-01  3.5234e+01  5.2860e+02  5.6981e+02  5.6303e+02  3.7140e+02  0.0000e+00  4.3881e+02 -6.2436e+02  6.0440e+02  6.0276e+02  8.1666e-07 -8.6613e-03  8.6622e-03  0:00:37   55
+    96  1.9767e-02  5.4871e-08  5.4646e-08  8.4553e-06  1.7517e-06  1.3538e-04  1.0631e-03  5.9118e-01  3.5213e+01  5.2836e+02  5.6926e+02  5.6247e+02  3.7122e+02  0.0000e+00  4.3880e+02 -6.2283e+02  6.0407e+02  6.0276e+02  7.6541e-07 -8.6614e-03  8.6622e-03  0:00:36   54
+    97  1.8416e-02  5.0773e-08  5.0566e-08  7.8635e-06  1.6225e-06  1.2627e-04  9.1561e-04  5.9121e-01  3.5194e+01  5.2811e+02  5.6868e+02  5.6189e+02  3.7106e+02  0.0000e+00  4.3879e+02 -6.2141e+02  6.0413e+02  6.0276e+02  7.2711e-07 -8.6614e-03  8.6622e-03  0:00:36   53
+    98  1.7164e-02  4.6952e-08  4.6760e-08  7.3236e-06  1.5106e-06  1.1658e-04  9.1411e-04  5.9124e-01  3.5177e+01  5.2790e+02  5.6821e+02  5.6142e+02  3.7091e+02  0.0000e+00  4.3879e+02 -6.2008e+02  6.0387e+02  6.0276e+02  6.8438e-07 -8.6615e-03  8.6622e-03  0:00:35   52
+    99  1.5967e-02  4.3454e-08  4.3298e-08  6.8048e-06  1.3983e-06  1.0870e-04  7.8683e-04  5.9126e-01  3.5160e+01  5.2768e+02  5.6772e+02  5.6091e+02  3.7077e+02  0.0000e+00  4.3878e+02 -6.1884e+02  6.0393e+02  6.0276e+02  6.5209e-07 -8.6615e-03  8.6622e-03  0:00:35   51
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+   100  1.4866e-02  4.0167e-08  4.0023e-08  6.3331e-06  1.3010e-06  1.0032e-04  7.8525e-04  5.9129e-01  3.5145e+01  5.2751e+02  5.6731e+02  5.6050e+02  3.7064e+02  0.0000e+00  4.3878e+02 -6.1768e+02  6.0371e+02  6.0276e+02  6.1518e-07 -8.6615e-03  8.6622e-03  0:00:34   50
+   101  1.3827e-02  3.7140e-08  3.7004e-08  5.8818e-06  1.2036e-06  9.3496e-05  6.7544e-04  5.9131e-01  3.5130e+01  5.2732e+02  5.6688e+02  5.6007e+02  3.7051e+02  0.0000e+00  4.3878e+02 -6.1660e+02  6.0376e+02  6.0276e+02  5.8686e-07 -8.6616e-03  8.6622e-03  0:00:37   49
+   102  1.2864e-02  3.4318e-08  3.4188e-08  5.4703e-06  1.1193e-06  8.6244e-05  6.7331e-04  5.9133e-01  3.5117e+01  5.2717e+02  5.6654e+02  5.5972e+02  3.7040e+02  0.0000e+00  4.3878e+02 -6.1560e+02  6.0358e+02  6.0276e+02  5.5443e-07 -8.6616e-03  8.6622e-03  0:00:35   48
+   103  1.1958e-02  3.1728e-08  3.1604e-08  5.0765e-06  1.0349e-06  8.0363e-05  5.7947e-04  5.9134e-01  3.5104e+01  5.2701e+02  5.6617e+02  5.5935e+02  3.7029e+02  0.0000e+00  4.3879e+02 -6.1467e+02  6.0362e+02  6.0276e+02  4.9641e-07 -8.6617e-03  8.6622e-03  0:00:35   47
+   104  1.1105e-02  2.9273e-08  2.9127e-08  4.7105e-06  9.6220e-07  7.4079e-05  5.7894e-04  5.9136e-01  3.5093e+01  5.2688e+02  5.6587e+02  5.5905e+02  3.7019e+02  0.0000e+00  4.3880e+02 -6.1380e+02  6.0346e+02  6.0276e+02  4.8329e-07 -8.6617e-03  8.6622e-03  0:00:33   46
+   105  1.0317e-02  2.7091e-08  2.6971e-08  4.3668e-06  8.8931e-07  6.9028e-05  4.9794e-04  5.9138e-01  3.5082e+01  5.2674e+02  5.6556e+02  5.5873e+02  3.7010e+02  0.0000e+00  4.3881e+02 -6.1300e+02  6.0350e+02  6.0276e+02  4.3154e-07 -8.6617e-03  8.6622e-03  0:00:33   45
+   106  9.5781e-03  2.4995e-08  2.4864e-08  4.0485e-06  8.2637e-07  6.3658e-05  4.9651e-04  5.9139e-01  3.5072e+01  5.2663e+02  5.6530e+02  5.5847e+02  3.7002e+02  0.0000e+00  4.3882e+02 -6.1225e+02  6.0336e+02  6.0276e+02  3.9330e-07 -8.6618e-03  8.6622e-03  0:00:32   44
+   107  8.8850e-03  2.3096e-08  2.2968e-08  3.7454e-06  7.6390e-07  5.9278e-05  4.2789e-04  5.9141e-01  3.5063e+01  5.2651e+02  5.6503e+02  5.5820e+02  3.6994e+02  0.0000e+00  4.3883e+02 -6.1155e+02  6.0339e+02  6.0276e+02  3.8485e-07 -8.6618e-03  8.6622e-03  0:00:31   43
+   108  8.2528e-03  2.1361e-08  2.1256e-08  3.4762e-06  7.0955e-07  5.4687e-05  4.2703e-04  5.9142e-01  3.5055e+01  5.2641e+02  5.6480e+02  5.5797e+02  3.6986e+02  0.0000e+00  4.3884e+02 -6.1091e+02  6.0328e+02  6.0276e+02  3.3895e-07 -8.6618e-03  8.6622e-03  0:00:30   42
+   109  7.6513e-03  1.9707e-08  1.9597e-08  3.2163e-06  6.5573e-07  5.0934e-05  3.6757e-04  5.9143e-01  3.5047e+01  5.2631e+02  5.6457e+02  5.5774e+02  3.6980e+02  0.0000e+00  4.3884e+02 -6.1031e+02  6.0330e+02  6.0276e+02  3.3172e-07 -8.6618e-03  8.6622e-03  0:00:29   41
+   110  7.1036e-03  1.8229e-08  1.8133e-08  2.9854e-06  6.0892e-07  4.6991e-05  3.6663e-04  5.9144e-01  3.5039e+01  5.2623e+02  5.6438e+02  5.5754e+02  3.6973e+02  0.0000e+00  4.3885e+02 -6.0975e+02  6.0320e+02  6.0276e+02  2.9236e-07 -8.6619e-03  8.6622e-03  0:00:29   40
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+   111  6.5824e-03  1.6817e-08  1.6717e-08  2.7623e-06  5.6250e-07  4.3778e-05  3.1554e-04  5.9145e-01  3.5033e+01  5.2614e+02  5.6418e+02  5.5734e+02  3.6967e+02  0.0000e+00  4.3886e+02 -6.0924e+02  6.0323e+02  6.0276e+02  2.6890e-07 -8.6619e-03  8.6622e-03  0:00:28   39
+   112  6.1031e-03  1.5529e-08  1.5429e-08  2.5601e-06  5.2247e-07  4.0366e-05  3.1497e-04  5.9146e-01  3.5026e+01  5.2607e+02  5.6401e+02  5.5717e+02  3.6962e+02  0.0000e+00  4.3886e+02 -6.0875e+02  6.0314e+02  6.0276e+02  2.6084e-07 -8.6619e-03  8.6622e-03  0:00:27   38
+   113  5.6603e-03  1.4377e-08  1.4291e-08  2.3718e-06  4.8247e-07  3.7620e-05  2.7113e-04  5.9147e-01  3.5020e+01  5.2600e+02  5.6384e+02  5.5700e+02  3.6957e+02  0.0000e+00  4.3887e+02 -6.0831e+02  6.0316e+02  6.0276e+02  2.3252e-07 -8.6619e-03  8.6622e-03  0:00:26   37
+   114  5.2461e-03  1.3259e-08  1.3170e-08  2.1985e-06  4.4804e-07  3.4693e-05  2.7028e-04  5.9148e-01  3.5015e+01  5.2594e+02  5.6370e+02  5.5686e+02  3.6952e+02  0.0000e+00  4.3887e+02 -6.0790e+02  6.0309e+02  6.0276e+02  2.2619e-07 -8.6619e-03  8.6622e-03  0:00:25   36
+   115  4.8638e-03  1.2278e-08  1.2200e-08  2.0368e-06  4.1367e-07  3.2332e-05  2.3258e-04  5.9148e-01  3.5010e+01  5.2587e+02  5.6355e+02  5.5671e+02  3.6948e+02  0.0000e+00  4.3887e+02 -6.0752e+02  6.0310e+02  6.0276e+02  2.0220e-07 -8.6620e-03  8.6622e-03  0:00:25   35
+   116  4.5068e-03  1.1325e-08  1.1246e-08  1.8878e-06  3.8403e-07  2.9822e-05  2.3198e-04  5.9149e-01  3.5005e+01  5.2582e+02  5.6343e+02  5.5659e+02  3.6944e+02  0.0000e+00  4.3888e+02 -6.0716e+02  6.0304e+02  6.0276e+02  1.8501e-07 -8.6620e-03  8.6622e-03  0:00:25   34
+   117  4.1734e-03  1.0469e-08  1.0392e-08  1.7459e-06  3.5459e-07  2.7785e-05  1.9959e-04  5.9149e-01  3.5001e+01  5.2576e+02  5.6330e+02  5.5646e+02  3.6940e+02  0.0000e+00  4.3888e+02 -6.0684e+02  6.0305e+02  6.0276e+02  1.7096e-07 -8.6620e-03  8.6622e-03  0:00:24   33
+   118  3.8667e-03  9.6746e-09  9.6016e-09  1.6174e-06  3.2922e-07  2.5622e-05  1.9903e-04  5.9150e-01  3.4997e+01  5.2572e+02  5.6320e+02  5.5635e+02  3.6936e+02  0.0000e+00  4.3888e+02 -6.0653e+02  6.0300e+02  6.0276e+02  1.6664e-07 -8.6620e-03  8.6622e-03  0:00:23   32
+   119  3.5835e-03  8.9646e-09  8.9014e-09  1.4979e-06  3.0391e-07  2.3876e-05  1.7126e-04  5.9151e-01  3.4994e+01  5.2567e+02  5.6309e+02  5.5624e+02  3.6933e+02  0.0000e+00  4.3889e+02 -6.0625e+02  6.0301e+02  6.0276e+02  1.4925e-07 -8.6620e-03  8.6622e-03  0:00:22   31
+   120  3.3196e-03  8.2713e-09  8.2091e-09  1.3878e-06  2.8208e-07  2.2023e-05  1.7079e-04  5.9151e-01  3.4990e+01  5.2563e+02  5.6300e+02  5.5615e+02  3.6930e+02  0.0000e+00  4.3889e+02 -6.0599e+02  6.0296e+02  6.0276e+02  1.3681e-07 -8.6620e-03  8.6622e-03  0:00:21   30
+   121  3.0730e-03  7.6487e-09  7.5898e-09  1.2832e-06  2.6041e-07  2.0517e-05  1.4674e-04  5.9151e-01  3.4987e+01  5.2559e+02  5.6291e+02  5.5605e+02  3.6928e+02  0.0000e+00  4.3890e+02 -6.0575e+02  6.0297e+02  6.0276e+02  1.2667e-07 -8.6620e-03  8.6622e-03  0:00:21   29
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+   122  2.8469e-03  7.0706e-09  7.0149e-09  1.1885e-06  2.4175e-07  1.8916e-05  1.4652e-04  5.9152e-01  3.4984e+01  5.2556e+02  5.6283e+02  5.5598e+02  3.6925e+02  0.0000e+00  4.3890e+02 -6.0553e+02  6.0293e+02  6.0276e+02  1.2366e-07 -8.6620e-03  8.6622e-03  0:00:20   28
+   123  2.6380e-03  6.5562e-09  6.5074e-09  1.1004e-06  2.2313e-07  1.7627e-05  1.2608e-04  5.9152e-01  3.4982e+01  5.2553e+02  5.6275e+02  5.5589e+02  3.6923e+02  0.0000e+00  4.3890e+02 -6.0532e+02  6.0294e+02  6.0276e+02  1.1087e-07 -8.6620e-03  8.6622e-03  0:00:19   27
+   124  2.4432e-03  6.0522e-09  6.0047e-09  1.0193e-06  2.0708e-07  1.6258e-05  1.2570e-04  5.9153e-01  3.4979e+01  5.2550e+02  5.6268e+02  5.5583e+02  3.6920e+02  0.0000e+00  4.3890e+02 -6.0513e+02  6.0291e+02  6.0276e+02  1.0170e-07 -8.6621e-03  8.6622e-03  0:00:18   26
+   125  2.2613e-03  5.5995e-09  5.5548e-09  9.4214e-07  1.9114e-07  1.5145e-05  1.0800e-04  5.9153e-01  3.4977e+01  5.2547e+02  5.6261e+02  5.5576e+02  3.6918e+02  0.0000e+00  4.3891e+02 -6.0495e+02  6.0292e+02  6.0276e+02  9.4169e-08 -8.6621e-03  8.6622e-03  0:00:18   25
+   126  2.0941e-03  5.1791e-09  5.1368e-09  8.7234e-07  1.7739e-07  1.3965e-05  1.0767e-04  5.9153e-01  3.4975e+01  5.2544e+02  5.6256e+02  5.5570e+02  3.6917e+02  0.0000e+00  4.3891e+02 -6.0479e+02  6.0289e+02  6.0276e+02  8.6278e-08 -8.6621e-03  8.6622e-03  0:00:18   24
+   127  1.9378e-03  4.7929e-09  4.7535e-09  8.0619e-07  1.6374e-07  1.3007e-05  9.2571e-05  5.9154e-01  3.4973e+01  5.2542e+02  5.6250e+02  5.5564e+02  3.6915e+02  0.0000e+00  4.3891e+02 -6.0464e+02  6.0289e+02  6.0276e+02  7.9821e-08 -8.6621e-03  8.6622e-03  0:00:18   23
+   128  1.7941e-03  4.4328e-09  4.3957e-09  7.4645e-07  1.5199e-07  1.1991e-05  9.2257e-05  5.9154e-01  3.4971e+01  5.2540e+02  5.6245e+02  5.5559e+02  3.6913e+02  0.0000e+00  4.3891e+02 -6.0449e+02  6.0287e+02  6.0276e+02  7.7911e-08 -8.6621e-03  8.6622e-03  0:00:17   22
+   129  1.6614e-03  4.1117e-09  4.0785e-09  6.9101e-07  1.4028e-07  1.1170e-05  7.9399e-05  5.9154e-01  3.4969e+01  5.2538e+02  5.6240e+02  5.5554e+02  3.6912e+02  0.0000e+00  4.3892e+02 -6.0437e+02  6.0287e+02  6.0276e+02  6.9846e-08 -8.6621e-03  8.6622e-03  0:00:16   21
+   130  1.5380e-03  3.7973e-09  3.7656e-09  6.3999e-07  1.3019e-07  1.0300e-05  7.9142e-05  5.9154e-01  3.4968e+01  5.2536e+02  5.6235e+02  5.5550e+02  3.6910e+02  0.0000e+00  4.3892e+02 -6.0424e+02  6.0285e+02  6.0276e+02  6.4082e-08 -8.6621e-03  8.6622e-03  0:00:15   20
+   131  1.4228e-03  3.5145e-09  3.4848e-09  5.9155e-07  1.2018e-07  9.5922e-06  6.8073e-05  5.9155e-01  3.4966e+01  5.2534e+02  5.6231e+02  5.5545e+02  3.6909e+02  0.0000e+00  4.3892e+02 -6.0413e+02  6.0286e+02  6.0276e+02  5.9338e-08 -8.6621e-03  8.6622e-03  0:00:15   19
+   132  1.3172e-03  3.2519e-09  3.2238e-09  5.4770e-07  1.1154e-07  8.8442e-06  6.7823e-05  5.9155e-01  3.4965e+01  5.2532e+02  5.6228e+02  5.5542e+02  3.6908e+02  0.0000e+00  4.3892e+02 -6.0403e+02  6.0284e+02  6.0276e+02  5.4370e-08 -8.6621e-03  8.6622e-03  0:00:14   18
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+   133  1.2186e-03  3.0108e-09  2.9846e-09  5.0615e-07  1.0297e-07  8.2359e-06  5.8330e-05  5.9155e-01  3.4964e+01  5.2531e+02  5.6224e+02  5.5538e+02  3.6907e+02  0.0000e+00  4.3892e+02 -6.0394e+02  6.0284e+02  6.0276e+02  5.0294e-08 -8.6621e-03  8.6622e-03  0:00:14   17
+   134  1.1281e-03  2.7859e-09  2.7613e-09  4.6864e-07  9.5569e-08  7.5928e-06  5.8175e-05  5.9155e-01  3.4963e+01  5.2530e+02  5.6221e+02  5.5535e+02  3.6906e+02  0.0000e+00  4.3892e+02 -6.0385e+02  6.0283e+02  6.0276e+02  4.6042e-08 -8.6621e-03  8.6622e-03  0:00:13   16
+   135  1.0436e-03  2.5792e-09  2.5564e-09  4.3313e-07  8.8226e-08  7.0704e-06  5.0004e-05  5.9155e-01  3.4962e+01  5.2528e+02  5.6217e+02  5.5532e+02  3.6905e+02  0.0000e+00  4.3893e+02 -6.0377e+02  6.0283e+02  6.0276e+02  4.2587e-08 -8.6621e-03  8.6622e-03  0:00:12   15
+   136  9.6610e-04  2.3863e-09  2.3650e-09  4.0110e-07  8.1909e-08  6.5165e-06  4.9890e-05  5.9155e-01  3.4961e+01  5.2527e+02  5.6215e+02  5.5529e+02  3.6904e+02  0.0000e+00  4.3893e+02 -6.0369e+02  6.0282e+02  6.0276e+02  4.1564e-08 -8.6621e-03  8.6622e-03  0:00:11   14
+   137  8.9456e-04  2.2150e-09  2.1958e-09  3.7137e-07  7.5605e-08  6.0691e-06  4.2891e-05  5.9155e-01  3.4960e+01  5.2526e+02  5.6212e+02  5.5526e+02  3.6903e+02  0.0000e+00  4.3893e+02 -6.0362e+02  6.0282e+02  6.0276e+02  3.7269e-08 -8.6621e-03  8.6622e-03  0:00:10   13
+   138  8.2810e-04  2.0455e-09  2.0274e-09  3.4403e-07  7.0178e-08  5.5948e-06  4.2795e-05  5.9156e-01  3.4959e+01  5.2525e+02  5.6210e+02  5.5524e+02  3.6902e+02  0.0000e+00  4.3893e+02 -6.0356e+02  6.0281e+02  6.0276e+02  3.4200e-08 -8.6621e-03  8.6622e-03  0:00:09   12
+   139  7.6612e-04  1.8937e-09  1.8769e-09  3.1805e-07  6.4791e-08  5.2094e-06  3.6784e-05  5.9156e-01  3.4958e+01  5.2524e+02  5.6207e+02  5.5522e+02  3.6902e+02  0.0000e+00  4.3893e+02 -6.0350e+02  6.0281e+02  6.0276e+02  3.1689e-08 -8.6621e-03  8.6622e-03  0:00:09   11
+   140  7.0929e-04  1.7529e-09  1.7372e-09  2.9455e-07  6.0145e-08  4.8016e-06  3.6732e-05  5.9156e-01  3.4957e+01  5.2523e+02  5.6206e+02  5.5520e+02  3.6901e+02  0.0000e+00  4.3893e+02 -6.0344e+02  6.0280e+02  6.0276e+02  2.9035e-08 -8.6621e-03  8.6622e-03  0:00:08   10
+   141  6.5626e-04  1.6238e-09  1.6093e-09  2.7226e-07  5.5528e-08  4.4710e-06  3.1555e-05  5.9156e-01  3.4957e+01  5.2522e+02  5.6203e+02  5.5517e+02  3.6901e+02  0.0000e+00  4.3893e+02 -6.0339e+02  6.0280e+02  6.0276e+02  2.6866e-08 -8.6621e-03  8.6622e-03  0:00:07    9
+   142  6.0763e-04  1.5034e-09  1.4898e-09  2.5214e-07  5.1557e-08  4.1202e-06  3.1477e-05  5.9156e-01  3.4956e+01  5.2521e+02  5.6202e+02  5.5516e+02  3.6900e+02  0.0000e+00  4.3893e+02 -6.0334e+02  6.0279e+02  6.0276e+02  2.6213e-08 -8.6621e-03  8.6622e-03  0:00:06    8
+   143  5.6275e-04  1.3963e-09  1.3840e-09  2.3343e-07  4.7593e-08  3.8368e-06  2.7053e-05  5.9156e-01  3.4956e+01  5.2521e+02  5.6200e+02  5.5514e+02  3.6900e+02  0.0000e+00  4.3893e+02 -6.0330e+02  6.0280e+02  6.0276e+02  2.3488e-08 -8.6621e-03  8.6622e-03  0:00:06    7
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega   yplus_max   v_out_max  T_solid_me  T_solid_ma  T_wall_max  T_out_bulk       p_out        p_in  q_fluid_ne  q_interfac  q_heated_w  mass_imbal    mdot_out     mdot_in     time/iter
+   144  5.2103e-04  1.2902e-09  1.2788e-09  2.1623e-07  4.4179e-08  3.5364e-06  2.6972e-05  5.9156e-01  3.4955e+01  5.2520e+02  5.6199e+02  5.5513e+02  3.6899e+02  0.0000e+00  4.3893e+02 -6.0326e+02  6.0279e+02  6.0276e+02  2.1533e-08 -8.6621e-03  8.6622e-03  0:00:05    6
+   145  4.8212e-04  1.1951e-09  1.1845e-09  1.9989e-07  4.0789e-08  3.2922e-06  2.3178e-05  5.9156e-01  3.4955e+01  5.2519e+02  5.6197e+02  5.5511e+02  3.6899e+02  0.0000e+00  4.3893e+02 -6.0322e+02  6.0279e+02  6.0276e+02  1.9926e-08 -8.6621e-03  8.6622e-03  0:00:04    5
+   146  4.4641e-04  1.1067e-09  1.0968e-09  1.8511e-07  3.7865e-08  3.0340e-06  2.3113e-05  5.9156e-01  3.4954e+01  5.2519e+02  5.6196e+02  5.5510e+02  3.6898e+02  0.0000e+00  4.3893e+02 -6.0319e+02  6.0278e+02  6.0276e+02  1.8238e-08 -8.6621e-03  8.6622e-03  0:00:03    4
+   147  4.1308e-04  1.0255e-09  1.0164e-09  1.7109e-07  3.4960e-08  2.8242e-06  1.9860e-05  5.9156e-01  3.4954e+01  5.2518e+02  5.6195e+02  5.5509e+02  3.6898e+02  0.0000e+00  4.3893e+02 -6.0315e+02  6.0279e+02  6.0276e+02  1.6858e-08 -8.6621e-03  8.6622e-03  0:00:02    3
+   148  3.8247e-04  9.4973e-10  9.4115e-10  1.5845e-07  3.2462e-08  2.6020e-06  1.9813e-05  5.9156e-01  3.4953e+01  5.2518e+02  5.6194e+02  5.5507e+02  3.6898e+02  0.0000e+00  4.3893e+02 -6.0312e+02  6.0278e+02  6.0276e+02  1.6432e-08 -8.6621e-03  8.6622e-03  0:00:02    2
+   149  3.5421e-04  8.8221e-10  8.7447e-10  1.4670e-07  2.9968e-08  2.4224e-06  1.7032e-05  5.9156e-01  3.4953e+01  5.2517e+02  5.6192e+02  5.5506e+02  3.6897e+02  0.0000e+00  4.3893e+02 -6.0310e+02  6.0278e+02  6.0276e+02  1.4712e-08 -8.6621e-03  8.6622e-03  0:00:01    1
+   150  3.2794e-04  8.1527e-10  8.0805e-10  1.3589e-07  2.7820e-08  2.2323e-06  1.6984e-05  5.9157e-01  3.4953e+01  5.2517e+02  5.6191e+02  5.5505e+02  3.6897e+02  0.0000e+00  4.3893e+02 -6.0307e+02  6.0278e+02  6.0276e+02  1.3478e-08 -8.6621e-03  8.6622e-03  0:00:00    0
+S5A OK    iterate 150                                          
+>>> results = {}
+>>> for nm in made:
+    try:
+        v = RD.compute(report_defs=[nm])
+        results[nm] = v
+        log("MONITOR %-16s = %s" % (nm, v))
+    except Exception as e:
+        results[nm] = "ERROR %s" % e
+        log("MONITOR %-16s ERROR %s" % (nm, e))
+
+             mdot_in
+ -------------------
+                  Mass Flow Rate              [kg/s]
+-------------------------------- -------------------
+                     fluid_inlet        0.0086621551
+S5A MONITOR mdot_in          = [{'mdot_in': [0.008662155126142544, 'kg/s']}]
+
+            mdot_out
+ -------------------
+                  Mass Flow Rate              [kg/s]
+-------------------------------- -------------------
+                    fluid_outlet       -0.0086621416
+S5A MONITOR mdot_out         = [{'mdot_out': [-0.008662141648102173, 'kg/s']}]
+
+      mass_imbalance
+ -------------------
+                  Mass Flow Rate              [kg/s]
+-------------------------------- -------------------
+                  mass_imbalance        1.347804e-08
+S5A MONITOR mass_imbalance   = [{'mass_imbalance': [1.347804037127309e-08, 'kg/s']}]
+
+       q_heated_wall
+ -------------------
+        Total Heat Transfer Rate                 [W]
+-------------------------------- -------------------
+               heated_outer_wall           602.75524
+S5A MONITOR q_heated_wall    = [{'q_heated_wall': [602.7552389850018, 'W']}]
+
+         q_interface
+ -------------------
+        Total Heat Transfer Rate                 [W]
+-------------------------------- -------------------
+           fluid_solid_interface           602.77617
+S5A MONITOR q_interface      = [{'q_interface': [602.7761682844996, 'W']}]
+
+         q_fluid_net
+ -------------------
+        Total Heat Transfer Rate                 [W]
+-------------------------------- -------------------
+                     q_fluid_net          -603.07175
+S5A MONITOR q_fluid_net      = [{'q_fluid_net': [-603.0717546905746, 'W']}]
+
+                p_in
+ -------------------
+           Mass-Weighted Average                [Pa]
+-------------------------------- -------------------
+                     fluid_inlet           438.93487
+S5A MONITOR p_in             = [{'p_in': [438.9348699364398, 'Pa']}]
+
+               p_out
+ -------------------
+           Mass-Weighted Average                [Pa]
+-------------------------------- -------------------
+                    fluid_outlet                   0
+S5A MONITOR p_out            = [{'p_out': [0.0, 'Pa']}]
+
+          T_out_bulk
+ -------------------
+           Mass-Weighted Average                 [K]
+-------------------------------- -------------------
+                    fluid_outlet           368.96917
+S5A MONITOR T_out_bulk       = [{'T_out_bulk': [368.9691728933993, 'K']}]
+
+          T_wall_max
+ -------------------
+                   Facet Maximum                 [K]
+-------------------------------- -------------------
+           fluid_solid_interface           555.05365
+S5A MONITOR T_wall_max       = [{'T_wall_max': [555.0536499023438, 'K']}]
+
+         T_solid_max
+ -------------------
+                             Max                 [K]
+-------------------------------- -------------------
+                    solid_domain            561.9147
+S5A MONITOR T_solid_max      = [{'T_solid_max': [561.9147030682, 'K']}]
+
+        T_solid_mean
+ -------------------
+                  Volume-Average                 [K]
+-------------------------------- -------------------
+                    solid_domain           525.17069
+S5A MONITOR T_solid_mean     = [{'T_solid_mean': [525.1706877159221, 'K']}]
+
+           v_out_max
+ -------------------
+                   Facet Maximum               [m/s]
+-------------------------------- -------------------
+                    fluid_outlet           34.952641
+S5A MONITOR v_out_max        = [{'v_out_max': [34.95264053344727, 'm/s']}]
+
+           yplus_max
+ -------------------
+                   Facet Maximum                    
+-------------------------------- -------------------
+           fluid_solid_interface          0.59156531
+S5A MONITOR yplus_max        = [{'yplus_max': [0.5915653109550476, '']}]
+
+            dp_total
+ -------------------
+                      Expression                    
+-------------------------------- -------------------
+                        dp_total  Unable to evaluate
+S5A MONITOR dp_total         = [[]]
+>>> def dp_from_monitors():
+    def val(nm):
+        r = RD.compute(report_defs=[nm])
+        return float(r[0][nm][0])
+    pi, po = val("p_in"), val("p_out")
+    d = pi - po
+    log("DERIVED dp_total = p_in - p_out = %.4f - %.4f = %.4f Pa" % (pi, po, d))
+    results["dp_total_derived_Pa"] = d
+    return d
+>>> step("derive dp from p_in - p_out", dp_from_monitors, critical=False)
+
+                p_in
+ -------------------
+           Mass-Weighted Average                [Pa]
+-------------------------------- -------------------
+                     fluid_inlet           438.93487
+
+               p_out
+ -------------------
+           Mass-Weighted Average                [Pa]
+-------------------------------- -------------------
+                    fluid_outlet                   0
+S5A DERIVED dp_total = p_in - p_out = 438.9349 - 0.0000 = 438.9349 Pa
+S5A OK    derive dp from p_in - p_out                          438.9348699364398
+438.9348699364398
+>>> def check_monitor_file():
+    pth = "Test_Run/s5a_monitors.out"
+    if not os.path.isfile(pth):
+        raise RuntimeError("monitor file was NOT written to %s" % pth)
+    n = sum(1 for _ in open(pth))
+    return "%s exists, %d lines" % (pth, n)
+>>> step("verify monitor file written", check_monitor_file, critical=False)
+S5A OK    verify monitor file written                          'Test_Run/s5a_monitors.out exists, 153 lines'
+'Test_Run/s5a_monitors.out exists, 153 lines'
+>>> step("flux balance mass", lambda: solver.results.report.fluxes.mass_flow(write_to_file=False), critical=False)
+
+                  Mass Flow Rate               [kg/s]
+-------------------------------- --------------------
+                ---------------- --------------------
+                             Net                    0
+S5A OK    flux balance mass                                    
+>>> step("flux balance heat", lambda: solver.results.report.fluxes.heat_transfer(write_to_file=False), critical=False)
+
+        Total Heat Transfer Rate                  [W]
+-------------------------------- --------------------
+                ---------------- --------------------
+                             Net                    0
+S5A OK    flux balance heat                                    
+>>> if TEST_ITERS > 0:
+    step("write test case+data",
+         lambda: solver.file.write_case_data(file_name="Test_Run/test_%diters.cas.h5" % TEST_ITERS))
+
+Writing to <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Test_Run/test_150iters.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+      159840 cells,     2 zones ...
+      487776 faces,     9 zones ...
+      168163 nodes,     1 zone  ...
+  Done.
+Done.
+
+Additional data file quantities are not supported when writing in the default CFF format (.dat.h5 files).
+
+
+Writing to <HOST>:"<PROJECT_ROOT>\06_Fluent_CFD\Test_Run/test_150iters.dat.h5" in NODE0 mode and compression level 1 ...
+  Writing results.
+Done.
+S5A OK    write test case+data                                 
+>>> summary = dict(mesh=MESH, iterations=TEST_ITERS, zones=zones,
+               turbulent_intensity=TI, ti_written=TI_SET, verification=VERIFY,
+               monitors=results, failures=FAIL)
+>>> try:
+    with open("Logs/setup_summary_%d.json" % TEST_ITERS, "w") as fh:
+        json.dump(summary, fh, indent=2, default=str)
+    log("summary written")
+except Exception as e:
+    log("summary write failed: %s" % e)
+S5A summary written
+>>> try:
+    with open("Logs/setup_log_%d.txt" % TEST_ITERS, "w") as fh:
+        fh.write("\n".join(LOG))
+except Exception:
+    pass
+20890
+>>> log("=" * 78)
+S5A ==============================================================================
+>>> log("FAILURES (%d):" % len(FAIL))
+S5A FAILURES (1):
+>>> for f in FAIL:
+    log("   " + f)
+S5A    minor courant number (inactive under pseudo-time - expected): RuntimeError: value: AttributeError; direct: RuntimeError; set_state: RuntimeError
+>>> log("=" * 78)
+S5A ==============================================================================
+>>> print("S5A-DONE")
+S5A-DONE
+>>> step("stop transcript", lambda: solver.file.stop_transcript(), critical=False)
+
+Transcript closed.
+S5A OK    stop transcript                                      
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  20:09:46, 19 Sep 2026 India Standard Time 
+Total Transcript Time: 2 Minute 46 Second.
+
+Automatic transcript closed.

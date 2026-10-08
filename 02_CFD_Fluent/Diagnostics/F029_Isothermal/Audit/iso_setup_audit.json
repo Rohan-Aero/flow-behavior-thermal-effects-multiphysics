@@ -1,0 +1,61 @@
+{
+  "viscous model": {
+    "value": [
+      "k-omega",
+      "sst"
+    ],
+    "expected": [
+      "k-omega",
+      "sst"
+    ],
+    "ok": true
+  },
+  "wall omega treatment": {
+    "value": "correlation",
+    "expected": "correlation",
+    "ok": true
+  },
+  "inlet velocity [m/s]": {
+    "value": 23.5,
+    "expected": 23.5,
+    "ok": true
+  },
+  "inlet temperature [K]": {
+    "value": 300,
+    "expected": 300.0,
+    "ok": true
+  },
+  "inlet intensity [-]": {
+    "value": 0.04411209588036475,
+    "expected": 0.04411209588036475,
+    "ok": true
+  },
+  "outlet gauge pressure [Pa]": {
+    "value": 0,
+    "expected": 0.0,
+    "ok": true
+  },
+  "equations solved": {
+    "value": {
+      "flow": true,
+      "kw": true,
+      "temperature": false
+    },
+    "expected": {
+      "flow": true,
+      "kw": true,
+      "temperature": false
+    },
+    "ok": true
+  },
+  "p-v coupling": {
+    "value": "Coupled",
+    "expected": "Coupled",
+    "ok": true
+  },
+  "scheme mom (startup)": {
+    "value": "first-order-upwind",
+    "expected": "first-order-upwind",
+    "ok": true
+  }
+}

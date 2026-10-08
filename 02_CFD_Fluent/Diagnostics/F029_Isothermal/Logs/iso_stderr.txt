@@ -1,0 +1,5 @@
+ Error in the fluent (fl) process : connection reset
+
+Error: ()
+Error Object: #f
+Error Object: ("flapi.execfile(\"Journals/iso_diag.py\", globals(), locals())")

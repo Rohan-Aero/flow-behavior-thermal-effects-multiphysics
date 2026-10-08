@@ -1,0 +1,26 @@
+mesh 108252 23400
+OK   T1_abs0.1mm_Nearest outside 
+OK   T1_abs0.1mm_Nearest tol check on 
+OK   T1_abs0.1mm_Nearest tol key 
+OK   T1_abs0.1mm_Nearest tol value 
+FAIL T1_abs0.1mm_Nearest import: Object reference not set to an instance of an object.
+T1_abs0.1mm_Nearest state=NotSolved alg=BucketVolume wt=ShapeFunctions out=NearestNode tolcheck=On key=AbsoluteGap val=0.0001 [m]
+T1_abs0.1mm_Nearest NS []
+OK   T1_abs0.1mm_Nearest write input 
+OK   T2_abs0.1mm_Ignore outside 
+OK   T2_abs0.1mm_Ignore tol check on 
+OK   T2_abs0.1mm_Ignore tol key 
+OK   T2_abs0.1mm_Ignore tol value 
+FAIL T2_abs0.1mm_Ignore import: Object reference not set to an instance of an object.
+T2_abs0.1mm_Ignore state=NotSolved alg=BucketVolume wt=ShapeFunctions out=Ignore tolcheck=On key=AbsoluteGap val=0.0001 [m]
+T2_abs0.1mm_Ignore NS []
+OK   T2_abs0.1mm_Ignore write input 
+OK   T3_rel0.1_Ignore outside 
+OK   T3_rel0.1_Ignore tol check on 
+OK   T3_rel0.1_Ignore tol key 
+FAIL T3_rel0.1_Ignore tol value (relative): Unable to convert from unit [] to unit [m].
+FAIL T3_rel0.1_Ignore import: Object reference not set to an instance of an object.
+T3_rel0.1_Ignore state=NotSolved alg=BucketVolume wt=ShapeFunctions out=Ignore tolcheck=On key=RelativeGap val=0 [m]
+T3_rel0.1_Ignore NS []
+OK   T3_rel0.1_Ignore write input 
+PROBE10-DONE

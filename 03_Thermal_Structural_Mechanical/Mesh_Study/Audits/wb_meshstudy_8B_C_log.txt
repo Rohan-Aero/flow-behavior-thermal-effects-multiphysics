@@ -1,0 +1,39 @@
+=== SECTION 8B WB MESH STUDY C (RE-ANALYSIS 2026) ===
+---- variant FC {'nc': 42, 'bias': 4.0, 'pressure': True, 'buckling': True, 'na': 130, 'tag': 'FC', 'nr': 5}
+saved as <PROJECT_ROOT>\08_Structural_Analysis\Mesh_Study\Projects\MS8B_FC.wbpj (7B project not written)
+OK   rename LC2 Linear Buckling FC 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved FC
+OK   state FC Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state FC Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state FC Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state FC LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Linear Buckling FC/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Linear Buckling FC/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Linear Buckling FC/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Linear Buckling FC/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Linear Buckling FC/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2 Linear Buckling FC/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2P Restrained Thermal + Pressure/Setup 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2P Restrained Thermal + Pressure/Solution 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC LC2P Restrained Thermal + Pressure/Results 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state FC CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB MESH STUDY B DONE ===

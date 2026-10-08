@@ -1,0 +1,25 @@
+{
+  "case": "M03_T03_CFD_SOLID18",
+  "intended": {
+    "QPP": 7272.727272727273,
+    "DO": 0.044,
+    "T_WALL": 0.012
+  },
+  "allowed_patterns": [
+    "^/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux(/value)?$"
+  ],
+  "diff_after_replace": 0,
+  "diff_after_change": [
+    {
+      "path": "/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux/value",
+      "P00": "8000.0",
+      "case": "7272.727272727273"
+    }
+  ],
+  "unexpected": [],
+  "intended_but_absent": [],
+  "applied_read_back": {
+    "QPP": 7272.727272727273
+  },
+  "passed": true
+}

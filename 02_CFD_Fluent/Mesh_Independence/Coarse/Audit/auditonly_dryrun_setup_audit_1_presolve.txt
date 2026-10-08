@@ -1,0 +1,133 @@
+SETUP AUDIT - 1_presolve - values READ BACK from Fluent
+130 items, 0 failed
+
+ok   fluent version                                       26.1.0
+ok   solver type                                          'pressure-based'
+ok   time                                                 'steady'
+ok   velocity formulation                                 'absolute'
+ok   operating pressure [Pa]                              101325
+ok   gravity enabled                                      False
+ok   energy equation                                      True
+ok   energy: viscous dissipation                          False
+ok   energy: pressure work                                False
+ok   energy: kinetic energy                               False
+ok   viscous model                                        'k-omega'
+ok   k-omega variant                                      'sst'
+ok   SST wall omega treatment                             'correlation'
+ok   SST low-Re correction                                False
+ok   radiation model                                      'none'
+ok   air density model                                    'incompressible-ideal-gas'
+ok   air molecular weight                                 28.966
+ok   air cp model                                         'piecewise-linear'
+ok   air cp curve = Incropera A.4                         True
+ok   air mu model                                         'piecewise-linear'
+ok   air mu curve = Incropera A.4                         True
+ok   air k model                                          'piecewise-linear'
+ok   air k curve = Incropera A.4                          True
+ok   Inconel density option                               'value'
+ok   Inconel density [kg/m3]                              8190.0
+ok   Inconel k model                                      'piecewise-linear'
+ok   Inconel k curve = VDM 4127                           True
+ok   Inconel cp model                                     'piecewise-linear'
+ok   Inconel cp curve = VDM 4127                          True
+ok   fluid zone material                                  'air'
+ok   solid zone material                                  'inconel-718'
+ok   inlet velocity spec                                  'Magnitude, Normal to Boundary'
+ok   inlet velocity [m/s]                                 23.5
+ok   inlet temperature [K]                                300
+ok   inlet turbulence spec                                'Intensity and Hydraulic Diameter'
+ok   inlet turbulent intensity [-]                        0.04411209588036475
+ok   inlet hydraulic diameter [m]                         0.02
+ok   outlet gauge pressure [Pa]                           0
+ok   outlet prevent reverse flow                          True
+ok   outlet backflow T branch active                      False
+ok   heated wall condition                                'Heat Flux'
+ok   heated wall flux [W/m2]                              8000.0
+ok   solid inlet end                                      ('Heat Flux', 0)
+ok   solid outlet end                                     ('Heat Flux', 0)
+ok   interface thermal coupling                           'Coupled'
+ok   interface shadow coupling                            'Coupled'
+ok   p-v coupling                                         'Coupled'
+ok   gradient scheme                                      'least-square-cell-based'
+ok   scheme pressure                                      'second-order'
+ok   scheme mom                                           'first-order-upwind'
+ok   scheme k                                             'first-order-upwind'
+ok   scheme omega                                         'first-order-upwind'
+ok   scheme temperature                                   'first-order-upwind'
+ok   pseudo-time formulation                              'global-time-step'
+ok   pseudo-time step settings                            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 'verbosity': 0, 'auto_time_size_calc_sol
+ok   explicit pseudo relaxation                           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-viscosity': 1.0, 'temperature': 0.75}}
+ok   explicit p/mom under-relaxation                      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+ok   solution limits                                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'min_tke': 1e-14, 'min_omega': 1e-20, 'max_turb_visc
+ok   equations solved                                     {'flow': True, 'kw': True, 'temperature': True}
+ok   6A turbulence model = SST k-omega                    ('k-omega', 'sst')
+ok   6A wall omega treatment = correlation                'correlation'
+ok   6A low-Re correction off                             False
+ok   6A energy extra terms off                            (False, False, False)
+ok   6A mesh cells (printed by Fluent)                    51840
+ok   6A minimum cell volume > 0 [m3]                      2.049465e-10
+ok   6A zone names                                        {'cell_fluid': ['fluid_domain'], 'cell_solid': ['solid_domain'], 'velocity_inlet': ['fluid_inlet'], 'pressure_outlet': ['fluid_outlet'], 'wall': ['flu
+ok   6A zone ids (Fluent replace output)                  {'fluid_domain': 2, 'solid_domain': 3, 'fluid_solid_interface-shadow': 12, 'interior-fluid': 4, 'interior-solid': 5, 'fluid_inlet': 6, 'fluid_outlet':
+ok   6A settings diff vs medium after replace             0
+ok   6A monitor file name                                 'Monitors\\\\coarse_monitors.out'
+ok   6A monitor report list                               ['mdot_in', 'mdot_out', 'mass_imbalance', 'q_heated_wall', 'q_interface', 'q_fluid_net', 'p_in', 'p_out', 'T_out_bulk', 'T_wall_max', 'T_solid_max', '
+ok   6A init defaults (T 300 K, w 23.5 m/s, u = v = 0, p 0 Pa) {'pressure': 0.0, 'x-velocity': 0, 'y-velocity': 0, 'z-velocity': 23.5, 'k': 1.611915862325738, 'omega': 1655.703327095978, 'temperature': 300.0}
+ok   SAME AS MEDIUM: fluent version                       'Ansys Fluent 2026 R1'
+ok   SAME AS MEDIUM: solver type                          'pressure-based'
+ok   SAME AS MEDIUM: time                                 'steady'
+ok   SAME AS MEDIUM: velocity formulation                 'absolute'
+ok   SAME AS MEDIUM: operating pressure [Pa]              101325
+ok   SAME AS MEDIUM: gravity enabled                      False
+ok   SAME AS MEDIUM: energy equation                      True
+ok   SAME AS MEDIUM: energy: viscous dissipation          False
+ok   SAME AS MEDIUM: energy: pressure work                False
+ok   SAME AS MEDIUM: energy: kinetic energy               False
+ok   SAME AS MEDIUM: viscous model                        'k-omega'
+ok   SAME AS MEDIUM: k-omega variant                      'sst'
+ok   SAME AS MEDIUM: SST wall omega treatment             'correlation'
+ok   SAME AS MEDIUM: SST low-Re correction                False
+ok   SAME AS MEDIUM: radiation model                      'none'
+ok   SAME AS MEDIUM: air density model                    'incompressible-ideal-gas'
+ok   SAME AS MEDIUM: air molecular weight                 28.966
+ok   SAME AS MEDIUM: air cp model                         'piecewise-linear'
+ok   SAME AS MEDIUM: air cp curve = Incropera A.4         True
+ok   SAME AS MEDIUM: air mu model                         'piecewise-linear'
+ok   SAME AS MEDIUM: air mu curve = Incropera A.4         True
+ok   SAME AS MEDIUM: air k model                          'piecewise-linear'
+ok   SAME AS MEDIUM: air k curve = Incropera A.4          True
+ok   SAME AS MEDIUM: Inconel density option               'value'
+ok   SAME AS MEDIUM: Inconel density [kg/m3]              8190.0
+ok   SAME AS MEDIUM: Inconel k model                      'piecewise-linear'
+ok   SAME AS MEDIUM: Inconel k curve = VDM 4127           True
+ok   SAME AS MEDIUM: Inconel cp model                     'piecewise-linear'
+ok   SAME AS MEDIUM: Inconel cp curve = VDM 4127          True
+ok   SAME AS MEDIUM: fluid zone material                  'air'
+ok   SAME AS MEDIUM: solid zone material                  'inconel-718'
+ok   SAME AS MEDIUM: inlet velocity spec                  'Magnitude, Normal to Boundary'
+ok   SAME AS MEDIUM: inlet velocity [m/s]                 23.5
+ok   SAME AS MEDIUM: inlet temperature [K]                300
+ok   SAME AS MEDIUM: inlet turbulence spec                'Intensity and Hydraulic Diameter'
+ok   SAME AS MEDIUM: inlet turbulent intensity [-]        0.04411209588036475
+ok   SAME AS MEDIUM: inlet hydraulic diameter [m]         0.02
+ok   SAME AS MEDIUM: outlet gauge pressure [Pa]           0
+ok   SAME AS MEDIUM: outlet prevent reverse flow          True
+ok   SAME AS MEDIUM: outlet backflow T branch active      False
+ok   SAME AS MEDIUM: heated wall condition                'Heat Flux'
+ok   SAME AS MEDIUM: heated wall flux [W/m2]              8000.0
+ok   SAME AS MEDIUM: solid inlet end                      ['Heat Flux', 0]
+ok   SAME AS MEDIUM: solid outlet end                     ['Heat Flux', 0]
+ok   SAME AS MEDIUM: interface thermal coupling           'Coupled'
+ok   SAME AS MEDIUM: interface shadow coupling            'Coupled'
+ok   SAME AS MEDIUM: p-v coupling                         'Coupled'
+ok   SAME AS MEDIUM: gradient scheme                      'least-square-cell-based'
+ok   SAME AS MEDIUM: scheme pressure                      'second-order'
+ok   SAME AS MEDIUM: scheme mom                           'first-order-upwind'
+ok   SAME AS MEDIUM: scheme k                             'first-order-upwind'
+ok   SAME AS MEDIUM: scheme omega                         'first-order-upwind'
+ok   SAME AS MEDIUM: scheme temperature                   'first-order-upwind'
+ok   SAME AS MEDIUM: pseudo-time formulation              'global-time-step'
+ok   SAME AS MEDIUM: pseudo-time step settings            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 'verbosity': 0, 'auto_time_size_calc_sol
+ok   SAME AS MEDIUM: explicit pseudo relaxation           {'global_dt_pseudo_relax': {'density': 1.0, 'body-force': 1.0, 'k': 0.75, 'omega': 0.75, 'turb-viscosity': 1.0, 'temperature': 0.75}}
+ok   SAME AS MEDIUM: explicit p/mom under-relaxation      {'explicit_pressure_under_relaxation': 0.5, 'explicit_momentum_under_relaxation': 0.5}
+ok   SAME AS MEDIUM: solution limits                      {'min_pressure': 1, 'max_pressure': 50000000000.0, 'min_temperature': 1, 'max_temperature': 5000, 'min_tke': 1e-14, 'min_omega': 1e-20, 'max_turb_visc
+ok   SAME AS MEDIUM: equations solved                     {'flow': True, 'kw': True, 'temperature': True}

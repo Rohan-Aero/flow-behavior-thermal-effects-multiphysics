@@ -1,0 +1,74 @@
+=== SECTION 7A WB BUILD (RE-ANALYSIS 2026) ===
+opened Section 4 project <PROJECT_ROOT>\05_Meshing\Workbench\Flow_Behavior_Thermal_Effects_Multiphysics.wbpj
+SAVED AS <PROJECT_ROOT>\08_Structural_Analysis\Workbench\Flow_Behavior_Thermal_Effects_Structural.wbpj - only this copy is modified from here on
+existing system Geom | Geometry
+existing system SYS | Mesh
+existing system FLU | Fluent
+OK   geometry file ['Geom.scdocx']
+OK   ED rename 
+OK   cdb FormatType Cdb
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   cdb master True
+OK   csv FormatType Delimited
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   columns [('Node ID', '', ''), ('Temperature', 'K', 'Temperature1')]
+OK   ED update 
+OK   ED state <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+OK   LC1 rename 
+OK   ED -> LC1 Setup 
+OK   LC2 rename 
+OK   ED -> LC2 Setup 
+OK   material description 
+OK   density 
+OK   elasticity one-call table
+OK   elasticity readback Temperature ['293.15 [K]', '373.15 [K]', '473.15 [K]', '573.15 [K]', '673.15 [K]']
+OK   elasticity readback Young's Modulus ['204000000000 [Pa]', '199000000000 [Pa]', '193000000000 [Pa]', '187000000000 [Pa]', '180000000000 [Pa]']
+OK   elasticity readback Poisson's Ratio ['0.294', '0.294', '0.294', '0.294', '0.294']
+OK   CTE one-call table
+OK   CTE readback Temperature ['366.48 [K]', '477.59 [K]', '588.71 [K]', '699.82 [K]', '810.93 [K]']
+OK   CTE readback Coefficient of Thermal Expansion ['1.28E-05 [K^-1]', '1.33E-05 [K^-1]', '1.39E-05 [K^-1]', '1.42E-05 [K^-1]', '1.48E-05 [K^-1]']
+OK   CTE zero-strain reference 70 F 
+OK   CTE ref readback 294.26 [K]
+OK   yield scalar (lower bound over mapped range) 
+OK   yield readback 1020000000 [Pa]
+OK   k create /Engineering Data/MaterialProperty:Thermal Conductivity 1
+OK   conductivity one-call table
+OK   conductivity readback Temperature ['293.15 [K]', '373.15 [K]', '473.15 [K]', '573.15 [K]', '673.15 [K]']
+OK   conductivity readback Thermal Conductivity ['11.5 [W m^-1 K^-1]', '12.1 [W m^-1 K^-1]', '13.5 [W m^-1 K^-1]', '15.2 [W m^-1 K^-1]', '17.1 [W m^-1 K^-1]']
+OK   material valid True
+OK   ED update 
+saved (schematic + engineering data)
+system now Geom | Geometry
+system now SYS | Mesh
+system now FLU | Fluent
+system now SYS 2 | LC1 Free Expansion
+system now SYS 3 | LC2 Axially Restrained
+system now SYS 1 | CFD solid T (baseline_medium_final)
+OK   model refresh 
+mechanical opened
+mechanical script sent
+OK   state Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC1 Free Expansion/Model <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC1 Free Expansion/Setup 2 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC1 Free Expansion/Solution 1 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC1 Free Expansion/Results <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state LC2 Axially Restrained/Model 1 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC2 Axially Restrained/Setup 3 <cell state: EditRequired: wb2qh_mech_attnreqd>
+OK   state LC2 Axially Restrained/Solution 2 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state LC2 Axially Restrained/Results 1 <cell state: Incomplete: wb2qh_Mech_ur>
+OK   state CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB BUILD 7A DONE (no solve) ===

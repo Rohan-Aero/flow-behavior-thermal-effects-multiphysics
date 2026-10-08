@@ -1,0 +1,95 @@
+15:13:52 === SECTION 9B-2 S3 SUPPORT SENSITIVITY, MODE solve (RE-ANALYSIS 2026) ===
+15:13:52 PASS  one new static (S3) and one buckling analysis in the copy | expected 1 / 1 | found [('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('S3_LC2_Intermediate_Clamped_Pinned', 'Static'), ('S3_Linear_Buckling', 'Buckling')]
+15:13:52 PASS  mesh B unchanged (108,252 nodes / 23,400 SOLID186) | expected 108252 / 23400 | found 108252 / 23400
+15:13:52 PASS  end faces: 612 inlet and 612 outlet nodes | expected 612 / 612 | found 612 / 612
+15:13:52 OK   inlet scope SOLID_INLET_END
+15:13:52 OK   outlet scope SOLID_OUTLET_END
+15:13:52 OK   XComponent Discrete
+15:13:52 OK   YComponent Discrete
+15:13:52 OK   ZComponent Discrete
+15:13:52 OK   RotationX Free
+15:13:52 OK   RotationY Free
+15:13:52 OK   RotationZ Free
+15:13:52 support definition {'inlet': {'cs': 'CS_DUCT_CYL', 'X_radial': 'Free', 'scope': 'SOLID_INLET_END', 'name': 'S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'Y_theta': 'Discrete', 'Z_axial': 'Discrete'}, 'outlet': {'behavior': 'Deformable', 'pilot_xyz_m': [0.0, 0.0, 0.59999999999999998], 'scope': 'SOLID_OUTLET_END', 'name': 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE', 'components': {'RotationX': 'Free', 'RotationY': 'Free', 'RotationZ': 'Free', 'YComponent': 'Discrete', 'XComponent': 'Discrete', 'ZComponent': 'Discrete'}}}
+15:13:52 PASS  S3 outlet: deformable remote displacement, pilot (0, 0, 0.6) m, Ux = Uy = Uz = 0, rotations free | expected as defined in 9A | found {'behavior': 'Deformable', 'pilot_xyz_m': [0.0, 0.0, 0.59999999999999998], 'scope': 'SOLID_OUTLET_END', 'name': 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE', 'components': {'RotationX': 'Free', 'RotationY': 'Free', 'RotationZ': 'Free', 'YComponent': 'Discrete', 'XComponent': 'Discrete', 'ZCompo
+15:13:52 PASS  S3 inlet: displacement on SOLID_INLET_END in CS_DUCT_CYL, U_theta = U_z = 0, radial free | expected CS_DUCT_CYL; X free, Y = Z = 0 | found {'cs': 'CS_DUCT_CYL', 'X_radial': 'Free', 'scope': 'SOLID_INLET_END', 'name': 'S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'Y_theta': 'Discrete', 'Z_axial': 'Discrete'}
+15:13:52 PASS  S3: no mid-span hoop nodes, no other supports | expected ['S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE'] | found ['S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE']
+15:13:52 PASS  S3: environment (reference) temperature 300 K | expected 300 K | found 26.850000000000023 [C]
+15:13:52 PASS  S3: import settings = 7A (Manual / BucketVolume / ShapeFunctions / NearestNode) | expected ('Manual', 'BucketVolume', 'ShapeFunctions', 'NearestNode') | found Manual / BucketVolume / ShapeFunctions / NearestNode
+15:13:52 NOTE object ImportLoad failed (Object reference not set to an instance of an object.); importing through the parent Imported Load group
+15:13:53 OK   S3 import (group) 
+15:13:53 S3 imported body temperature state Solved
+15:13:53 PASS  S3: mapped temperature identical to the LC2 (S1) mapping | expected identical | found identical
+15:13:53 PASS  S3: no under-defined / error objects | expected none | found []
+15:13:53 PASS  S3_BUCKLING: no under-defined / error objects | expected none | found []
+15:13:53 PASS  buckling: pre-stress environment = S3 static | expected S3_LC2_Intermediate_Clamped_Pinned | found ['S3_LC2_Intermediate_Clamped_Pinned']
+15:13:53 PASS  buckling: no loads or supports of its own | expected none | found []
+15:13:56 PASS  S3 input: SOLID186 element block identical to the 7B LC2 input | expected identical | found identical
+15:13:56 PASS  S3 input: all 7B mesh nodes present unchanged (a pilot node may be added) | expected 7B NBLOCK subset, +0/1 node | found 108253 vs 108252 lines
+15:13:56 PASS  S3 input: nodal temperatures identical to the 7B LC2 input | expected identical | found identical
+15:13:56 PASS  S3 input: every 7B material line present, in order (E(T), alpha(T), nu, TREF) | expected 7B material lines in order | found 35 vs 35 lines
+15:13:56 PASS  S3 input: MPC key options = bonded always (12,5), force-distributed / deformable (4,1), MPC (2,2); pilot not fixed (2,1), 6-DOF set | expected 5 key options | found ['keyo,1,2,1', 'keyo,tid,2,1', 'keyo,tid,4,111111', 'keyo,cid,12,5', 'keyo,cid,4,1', 'keyo,cid,2,2']
+15:13:56 PASS  S3 input: pilot node carries U_x = U_y = U_z = 0 only (rotations free) | expected d,108253,ux/uy/uz,0. | found ['d,108253,ux,0.', 'd,108253,uy,0.', 'd,108253,uz,0.']
+15:13:56 PASS  S3 input: sparse direct solver | expected eqsl,sparse | found ['eqsl,sparse,,,,,1']
+15:13:56 PASS  S3 input: remote point written as MPC contact pair (TARGE170 pilot + CONTA174/175 surface elements) | expected et,..,170 and et,..,174/175 | found ['et,1,186', 'et,cid,174', 'et,tid,170']
+15:13:56 PASS  S3 input: identical to the deck written (and used for the B03 benchmark) in deck mode | expected identical | found identical
+15:13:56 PRE-SOLVE GATE PASS (22 checks)
+15:13:56 SOLVING S3_STATIC ...
+15:14:55 OK   S3_STATIC solve 
+15:14:55 S3_STATIC: state Solved status Done 59 s
+15:14:56 OK   S3_STATIC evaluate 
+15:14:56 OK   S3_STATIC S3_Equivalent_Stress_averaged Maximum 605159688.62696838 [Pa]
+15:14:56 OK   S3_STATIC S3_Equivalent_Stress_averaged Minimum 561220719.796129 [Pa]
+15:14:56 OK   S3_STATIC S3_Total_Deformation Maximum 0.00013488434579484319 [m]
+15:14:57 OK   S3_STATIC S3_Total_Deformation Minimum 2.6759340471471656E-05 [m]
+15:14:57 OK   S3_STATIC S3_Axial_Deformation_Uz_global Maximum 5.5159716794150881E-07 [m]
+15:14:57 OK   S3_STATIC S3_Axial_Deformation_Uz_global Minimum -0.00010875633597606793 [m]
+15:14:57 OK   S3_STATIC S3_Lateral_Deformation_Ux_global Maximum 8.980158600024879E-05 [m]
+15:14:57 OK   S3_STATIC S3_Lateral_Deformation_Ux_global Minimum -8.980158600024879E-05 [m]
+15:14:57 OK   S3_STATIC S3_Lateral_Deformation_Uy_global Maximum 8.980158600024879E-05 [m]
+15:14:57 OK   S3_STATIC S3_Lateral_Deformation_Uy_global Minimum -8.980158600024879E-05 [m]
+15:14:57 OK   S3_STATIC S3_Axial_Stress_Sz_global Maximum -538199728 [Pa]
+15:14:57 OK   S3_STATIC S3_Axial_Stress_Sz_global Minimum -613501024 [Pa]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_INLET_END XAxis 5.7609704732369815E-09 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_INLET_END YAxis 5.2680235923530105E-08 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_INLET_END ZAxis 548936.68132198765 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_INLET_END Total 548936.68132198765 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_OUTLET_PILOT XAxis 2.3226431257485586E-08 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_OUTLET_PILOT YAxis 4.479742883345755E-09 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_OUTLET_PILOT ZAxis -548936.68132198986 [N]
+15:14:57 OK   S3_STATIC S3_Force_Reaction_OUTLET_PILOT Total 548936.68132198986 [N]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_INLET_END XAxis -6.4814933420365151E-09 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_INLET_END YAxis 8.3165682662311724E-05 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_INLET_END ZAxis 2.3138921653297756E-09 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_INLET_END Total 8.3165682947067721E-05 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_OUTLET_PILOT XAxis 0 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_OUTLET_PILOT YAxis 0 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_OUTLET_PILOT ZAxis 0 [N m]
+15:14:57 OK   S3_STATIC S3_Moment_Reaction_OUTLET_PILOT Total 0 [N m]
+15:14:58 S3 axial reactions inlet 548936.681322 pilot -548936.681322 (S1 548936.6138)
+15:14:58 SOLVING S3_BUCKLING ...
+15:18:26 OK   S3_BUCKLING solve 
+15:18:26 S3_BUCKLING: state Solved status Done 209 s
+15:18:28 OK   S3_BUCKLING evaluate 
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_1_Total_Deformation Maximum 1.1976243609577206 [m]
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_1_Total_Deformation Minimum 5.6906377722043537E-05 [m]
+15:18:28 OK   LM S3_BK_Mode_1_Total_Deformation 2.23224116787
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_2_Total_Deformation Maximum 1.1976243609576684 [m]
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_2_Total_Deformation Minimum 5.69063595321495E-05 [m]
+15:18:28 OK   LM S3_BK_Mode_2_Total_Deformation 2.23224167114
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_3_Total_Deformation Maximum 1.0671133011819964 [m]
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_3_Total_Deformation Minimum 3.5453344025881961E-05 [m]
+15:18:28 OK   LM S3_BK_Mode_3_Total_Deformation 6.34316155616
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_4_Total_Deformation Maximum 1.0671133533136299 [m]
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_4_Total_Deformation Minimum 3.5453689633868635E-05 [m]
+15:18:28 OK   LM S3_BK_Mode_4_Total_Deformation 6.34316300777
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_5_Total_Deformation Maximum 1.1447396405243417 [m]
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_5_Total_Deformation Minimum 9.5056529971770929E-05 [m]
+15:18:28 OK   LM S3_BK_Mode_5_Total_Deformation 11.9521972545
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_6_Total_Deformation Maximum 1.1447396696525971 [m]
+15:18:28 OK   S3_BUCKLING S3_BK_Mode_6_Total_Deformation Minimum 9.505360503681004E-05 [m]
+15:18:28 OK   LM S3_BK_Mode_6_Total_Deformation 11.9522014291
+15:18:34 OK   image S3_Equivalent_Stress_iso (None, None, None, None)
+15:18:34 OK   image S3_BK_Mode_1_iso (None, None, None, None)
+15:18:34 OK   image S3_BK_Mode_1_side_YZ (None, None, None, None)
+15:18:34 MECH-S3-SOLVE-DONE

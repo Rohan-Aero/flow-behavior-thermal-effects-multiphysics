@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Area-Weighted Average
+                  Total Pressure                 [Pa]
+-------------------------------- --------------------
+                     fluid_inlet            756.03652
+                    fluid_outlet             426.6699
+                ---------------- --------------------
+                             Net            591.35321

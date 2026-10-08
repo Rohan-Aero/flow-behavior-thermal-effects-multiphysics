@@ -1,0 +1,71 @@
+% ===================================================================== Chapter 12
+\chapter{Structural Mesh Sensitivity}\label{ch:smesh}
+
+\section{Method}
+The structural discretisation error was estimated separately from the CFD error: the same mapped temperature field was solved for LC1, LC2,
+LC2P and linear buckling on seven structural meshes. A uniform refinement of mesh B is impossible under the 128,000-node limit (the smallest
+uniform refinement that adds one through-wall element needs 151,359~nodes). The study therefore combines three elements:
+\begin{itemize}
+\item a coarsening family XC $\rightarrow$ C $\rightarrow$ B with a constant ratio $r$ = 1.303 and the baseline as the finest level, which permits
+      a three-level Richardson/GCI estimate \cite{celik2008};
+\item one licence-limited refinement per direction: FR (through-wall), FA (axial) and FC (circumferential), each at 98.7--99.3\,\% of the limit;
+\item a local check IL with a stronger axial bias at the inlet (first element 1.36~mm instead of 2.13~mm).
+\end{itemize}
+Every mesh passed a pre-solve gate; the temperature mapping was repeated on each mesh with the same result (0 unmapped nodes, error (A)
+$\le$ 0.09~K).
+
+\section{Structural Mesh Levels}
+Table~\ref{tab:smesh} lists the meshes and their governing results; Figure~\ref{fig:smfam} shows the end faces and node counts. Mesh B was
+re-meshed through the study pipeline and reproduced the official Section 7B solution bit-identically, which confirms that the study compares
+like with like.
+
+\input{../Tables/tab_smesh}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.86\linewidth]{F8B_01_structural_mesh_comparison.png}
+\caption[Structural mesh family]{Structural mesh family: end-face meshes exported from Mechanical (top) and node counts against the 128,000-node Student limit (bottom).}
+\label{fig:smfam}
+\src{\provdata}
+\end{figure}
+
+\section{LC1 Sensitivity}
+The LC1 deformation and free growth change by at most $3\times10^{-5}$ between meshes. The mid-span bore hoop stress is the only quantity with a
+visible trend: on mesh B it is 18.309~MPa against a one-dimensional generalised-plane-strain exact value of 18.698~MPa
+for the same imposed temperatures, $-$2.1\,\% ($-$1.5\,\% on FR). The interpolated temperature reproduces the exact solution within 0.1\,\%, so
+the bias comes from surface-stress recovery on 2~mm quadratic elements; it is small in absolute terms (0.39~MPa) and its sign is known
+(under-prediction). The LC1 inlet peak changes by +1.1\,\% (FR, FA), +0.9\,\% (IL) and $-$0.3\,\% (FC), far inside the $\pm$9.8~MPa
+temperature-transfer bound.
+
+
+\section{LC2 Sensitivity}
+The governing LC2 results are converged. The peak von Mises stress is 605.161~MPa on B and changes by +0.0098\,\% (FR), $-$0.0035\,\% (FA),
++0.0015\,\% (FC) and $-$0.0045\,\% (IL); the coarsening family is monotonic and extrapolates to 605.187~MPa with a GCI of $5\times10^{-5}$. The
+mean axial stress stays at $-$582.440~MPa within $7\times10^{-6}$ (Figure~\ref{fig:smlc2}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{F8B_02_LC2_stress_vs_mesh.png}
+\caption[LC2 stresses against relative element size]{LC2 stresses against relative element size: peak von Mises at the inlet-face outer edge, mean axial stress and interior maximum.}
+\label{fig:smlc2}
+\src{\provdata}
+\end{figure}
+
+\section{Peak-Stress Behavior}
+The LC2 peak sits at a physical location, the outer edge of the inlet face, and is identical on every mesh. It is not a singularity: the
+difference between unaveraged and averaged nodal stresses there is $4\times10^{-5}$, and the peak is stable under every refinement to within
+0.01\,\%. The symmetry-type face support $U_z = 0$ does not create an artificial stress concentration because it
+restrains only the axial displacement of a plane face.
+
+
+\section{Result Stability}
+Across all seven meshes the largest change of the LC2 peak against mesh B is $4.9\times10^{-4}$ (on the coarsest mesh XC) and the largest
+change of $\lambda_1$ is $5.4\times10^{-5}$; between the fine meshes and B, $\lambda_1$ changes by at most $6\times10^{-6}$ (Chapter~\ref{ch:buckling}).
+The structural discretisation error is therefore one to two orders of magnitude smaller than the effect of the CFD mesh on the same quantities
+(Chapter~\ref{ch:mi}) and several orders smaller than the effect of the supports (Chapter~\ref{ch:supports}).
+
+\section{Final Structural Mesh}
+Mesh B was retained for all further structural work (decision D-056). It is not the finest mesh, but the governing LC2 and buckling results are
+converged on it; the fine meshes improve only the LC1 surface stresses, which drive no conclusion, while using 99\,\% of the licence. The
+thickness cases use meshes with the same 2.0~mm radial element size (four and six elements through the 8 and 12~mm walls); check meshes with five
+through-wall elements changed their LC2 mean stress and $\lambda_1$ by at most $4.2\times10^{-6}$ and their LC2 peak by at most $1.4\times10^{-4}$.

@@ -1,0 +1,81 @@
+{
+ "result": "DECK WRITTEN - NOT SOLVED (B03 toy benchmark next)", 
+ "deck": {
+  "file": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\Presolve_Inputs\\S3_presolve_ds.dat", 
+  "nblock_lines": 108253, 
+  "eblocks": [
+   [
+    "eblock,21,COMPACT,,23400", 
+    23400
+   ], 
+   [
+    "eblock,21,COMPACT,,180", 
+    180
+   ]
+  ], 
+  "commands_file": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\S3_deck_commands_deck.txt", 
+  "bf_lines": 108252, 
+  "remote_point_keyopts": [
+   "keyo,1,2,1", 
+   "keyo,tid,2,1", 
+   "keyo,tid,4,111111", 
+   "keyo,cid,12,5", 
+   "keyo,cid,4,1", 
+   "keyo,cid,2,2"
+  ]
+ }, 
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 S3 support sensitivity (not recovered)", 
+ "mode": "deck", 
+ "cases": {}, 
+ "analyses": [
+  [
+   "LC1_Free_Expansion", 
+   "Static"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Static"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Static"
+  ], 
+  [
+   "Static Structural", 
+   "Static"
+  ], 
+  [
+   "Eigenvalue Buckling", 
+   "Buckling"
+  ]
+ ], 
+ "support_definition": {
+  "inlet": {
+   "cs": "CS_DUCT_CYL", 
+   "X_radial": "Free", 
+   "scope": "SOLID_INLET_END", 
+   "name": "S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL", 
+   "Y_theta": "Discrete", 
+   "Z_axial": "Discrete"
+  }, 
+  "outlet": {
+   "behavior": "Deformable", 
+   "pilot_xyz_m": [
+    0.0, 
+    0.0, 
+    0.59999999999999998
+   ], 
+   "scope": "SOLID_OUTLET_END", 
+   "name": "S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE", 
+   "components": {
+    "RotationX": "Free", 
+    "RotationY": "Free", 
+    "RotationZ": "Free", 
+    "YComponent": "Discrete", 
+    "XComponent": "Discrete", 
+    "ZComponent": "Discrete"
+   }
+  }
+ }, 
+ "import_route": "ImportedLoadGroup.ImportLoad (object call raised NullReferenceException)"
+}

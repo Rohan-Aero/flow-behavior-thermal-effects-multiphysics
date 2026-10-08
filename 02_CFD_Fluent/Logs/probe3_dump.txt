@@ -1,0 +1,47 @@
+energy on, sst on
+gravity children: ['enable', 'components', 'gravity_mrf_behavior']
+gravity state: {'enable': False}
+PASS  gravity.enable=False                           -> None
+PASS  gravity.set_state({'enable':False})            -> None
+gravity state after: {'enable': False}
+air state keys: ['chemical_formula', 'density', 'name', 'specific_heat', 'thermal_conductivity', 'viscosity']
+air.density state: {'option': 'value', 'value': 1.225}
+air.density.option state: value
+air.density.option is_active: True
+PASS  air.density.option = 'incompressible-ideal-gas' -> None
+air.density state now: {'option': 'incompressible-ideal-gas'}
+cp children: ['option', 'value', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'nasa_9_piecewise_polynomial', 'user_defined_function', 'rgp_table', 'real_gas_nist']
+cp state: {'option': 'value', 'value': 1006.43}
+PASS  cp.option='piecewise-linear'                   -> None
+cp.piecewise_linear children: ['function_of', 'data_points']
+cp.piecewise_linear state: {'function_of': 'temperature', 'data_points': [{'item': 300, 'value': 0}, {'item': 5000, 'value': 0}]}
+data_points type: <class 'settings_261.data_points'>
+data_points state: [{'item': 300, 'value': 0}, {'item': 5000, 'value': 0}]
+data_points children: []
+data_points child_object_type children: ['item', 'value']
+fail  pwl list of dict t/v                           -> RuntimeError: Key 't' is invalid
+fail  pwl list of dict x/y                           -> RuntimeError: Key 'x' is invalid
+fail  pwl list of pairs                              -> RuntimeError: CAR: invalid argument [1]: wrong type [not a pair]
+Error Object: 250
+fail  pwl list of tuples                             -> RuntimeError: CAR: invalid argument [1]: wrong type [not a pair]
+Error Object: 250
+PASS  pwl flat list                                  -> None
+      -> resulting state: {'function_of': 'temperature', 'data_points': [{'item': 300, 'value': 250.0}, {'item': 5000, 'value': 1006.0}, {'item': 0, 'value': 300.0}, {'item': 0, 'value': 1007.0}, {'item': 0, 'value': 350.0}, {'item': 0, 'value': 1009.0}, {'item': 0, 'value': 400.0}, {'item': 0, 'value': 1014.0}]}
+solid objects: ['aluminum']
+PASS  sol['inconel-718'] = {}                        -> None
+solid objects now: ['inconel-718', 'aluminum']
+heated_outer_wall thermal_condition = Heat Flux  allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+fluid_solid_interface thermal_condition = Coupled  allowed=['Temperature', 'Heat Flux', 'Coupled']
+fluid_solid_interface-shadow thermal_condition = Coupled  allowed=['Temperature', 'Heat Flux', 'Coupled']
+solid_inlet_end thermal_condition = Heat Flux  allowed=['Temperature', 'Heat Flux', 'Convection', 'Radiation', 'Mixed', 'via System Coupling', 'via Mapped Interface']
+flux report_type allowed=['flux-massflow', 'flux-heattransfer', 'flux-radheattransfer', 'flux-viscouswork']
+surface report_type allowed=['surface-area', 'surface-areaavg', 'surface-vectbasedflux', 'surface-vectflux', 'surface-vectwtavg', 'surface-facetavg', 'surface-facetmax', 'surface-facetmin', 'surface-flowrate', 'surface-integral', 'surface-massflowrate', 'surface-massavg', 'surface-stddev', 'surface-sum', 'surface-areawtui', 'surface-masswtui', 'surface-vertexavg', 'surface-vertexmax', 'surface-vertexmin', 'surface-volumeflowrate']
+volume report_type allowed=['volume-mass', 'volume-massavg', 'volume-massintegral', 'volume-max', 'volume-min', 'volume-zonevol', 'volume-average', 'volume-integral', 'volume-sum']
+ds state: {'pressure': 'second-order', 'mom': 'second-order-upwind', 'k': 'second-order-upwind', 'omega': 'second-order-upwind', 'temperature': 'second-order-upwind'}
+ds object names: ['pressure', 'mom', 'k', 'omega', 'temperature']
+ds['pressure'] allowed=['second-order', 'standard', 'presto!', 'linear', 'body-force-weighted']
+PASS  compute_defaults(from_zone_name=...)           -> None
+init defaults objects: ['pressure', 'x-velocity', 'y-velocity', 'z-velocity', 'k', 'omega', 'temperature']
+init defaults state failed: api-get-var: the object is not active
+Error Object: solution/initialization/defaults
+residual.options children: ['criterion_type', 'n_save', 'normalize', 'n_maximize_norms', 'enhanced_continuity_residual', 'residual_values', 'print', 'plot', 'n_display']

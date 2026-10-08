@@ -1,0 +1,30 @@
+=== SECTION 9B-2 WB PARAMETRIC MECHANICAL T01 (RE-ANALYSIS 2026) ===
+---- case T01_THIN {'bias': 4.0, 'geometry': '10_Parametric_Study/Geometry_Checks/T01_THIN/T01_THIN.scdocx', 'tag': 'T01_THIN', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [417.96627807617188, 561.92694091796875], 'source_T_range_K': [417.36783, 561.96619], 'buckling': True, 'cfd_case': 'T01_THIN', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/T01_THIN/fluent_solid_mesh.cdb', 'Do': 0.035999999999999997, 'nr': 4, 'csv': '10_Parametric_Study/Mapping/T01_THIN/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\T01_THIN\Project\T01_THIN.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/T01_THIN/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/T01_THIN/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T01_THIN\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T01_THIN\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'T01_THIN'}
+OK   ED update 
+OK   geometry SetFile -> <PROJECT_ROOT>\10_Parametric_Study/Geometry_Checks/T01_THIN/T01_THIN.scdocx 
+OK   geometry update 
+OK   geometry file read-back <PROJECT_ROOT>\10_Parametric_Study\Geometry_Checks\T01_THIN\T01_THIN.scdocx
+OK   rename LC2 Linear Buckling T01_THIN 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved T01_THIN
+STOP: case T01_THIN FATAL: PRE-SOLVE GATE FAILED - nothing solved: ['LC1: Mechanical reads the T01_THIN node temperatures (source min/max = case CSV 417.966 / 561.927 K)', 'LC2: Mechanical reads the T01_THIN node temperatures (source min/max = case CSV 417.966 / 561.927 K)']
+=== WB PARAMETRIC MECHANICAL T01 DONE ===

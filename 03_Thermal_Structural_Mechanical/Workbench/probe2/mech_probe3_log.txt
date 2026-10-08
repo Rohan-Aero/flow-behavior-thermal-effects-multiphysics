@@ -1,0 +1,70 @@
+NAMES <type 'BiasType'>: ['ooooo_ooo_o_o', 'o_o_ooo_ooooo', 'o_ooo_ooooo_ooo_o', 'ooooo_ooo_o_ooo_ooooo', 'NoBias']
+VALUES <type 'BiasType'>: [0, 1, 2, 3, 4]
+NAMES <type 'BiasOptionType'>: ['Factor', 'SmoothTransition']
+VALUES <type 'BiasOptionType'>: [0, 1]
+NAMES <type 'MeshMetricType'>: ['None', 'ElementQuality', 'AspectRatio', 'JacobianRatio', 'WarpingFactor', 'ParallelDeviation', 'MaximumCornerAngle', 'Skewness', 'OrthogonalAngle', 'CharacteristicLength', 'JacobianRatioCornerNodes', 'JacobianRatioGaussPoints', 'Hydrodynamics', 'MinTriAngle', 'MaxTriAngle', 'MinQuadAngle', 'MaxQuadAngle', 'WarpingAngle', 'TetCollapse', 'AspectRatioEXD', 'MinEdgeLength', 'MaxEdgeLength', 'CharacteristicLengthLSD']
+VALUES <type 'MeshMetricType'>: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+edges: [(11, Ansys.ACT.Interfaces.Geometry.GeoCurveTypeEnum.GeoCurveCircle, 0.062831999999999999, [-0.0, -0.0, 0.59999999999999998]), (12, Ansys.ACT.Interfaces.Geometry.GeoCurveTypeEnum.GeoCurveCircle, 0.062831999999999999, [-0.0, -0.0, 0.0]), (10, Ansys.ACT.Interfaces.Geometry.GeoCurveTypeEnum.GeoCurveCircle, 0.125664, [0.0, 0.0, 0.0]), (9, Ansys.ACT.Interfaces.Geometry.GeoCurveTypeEnum.GeoCurveCircle, 0.125664, [0.0, 0.0, 0.59999999999999998])]
+sweep attrs: ['CartSweepSpacingOption', 'MZSweepNumberDivisions', 'SourceLocation', 'SourceTargetSelection', 'SweepBiasType', 'SweepBiasValue', 'SweepESizeType', 'SweepEdges', 'SweepElementSize', 'SweepNumberDivisions', 'SweepSizeBehavior', 'SweepThickness', 'TargetLocation']
+OK   sweep divisions 100 
+OK   mapped 
+OK   internal divisions 5 
+OK   generate mesh 
+OK   mesh nodes/elements (111216, 24000)
+METRIC ElementQuality min=0.32879906501378076 max=0.49383772008655424 avg=0.41631854469915236 sd=0.0585250929324743
+METRIC AspectRatio min=3 max=4.5869 avg=3.5371400000000084 sd=0.60472632127844739
+METRIC JacobianRatio min=1.1135000000000002 max=1.2026000000000001 avg=1.1516000000000124 sd=0.031584514652869468
+METRIC Skewness min=0.041666666791797743 max=0.04166666679180326 avg=0.041666666791798389 sd=0
+metric OrthogonalQuality failed 'type' object has no attribute 'OrthogonalQuality'
+METRIC MaximumCornerAngle min=93.75 [deg] max=93.75 [deg] avg=93.75 [deg] sd=0 [deg]
+OK   env temp 300 K 
+OK   mapping control manual 
+OK   weighting triangulation 
+OK   outside projection 
+OK   create NS outside 
+OK   create NS unmapped 
+FAIL row source: System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL has been returned from a call to a COM component.
+   at Ansys.Common.Interop.AnsCoreObjects.IAnsWorksheetItf.OnChange(Int32 row, Int32 col, Object vData)
+   at Ansys.ACT.Automation.Mechanical.WorksheetRow.set_Item(String key, Object value)
+   at Microsoft.Scripting.Interpreter.ActionCallInstruction`3.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run5[T0,T1,T2,T3,T4,TRet](T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at Microsoft.Scripting.Interpreter.FuncCallInstruction`7.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run5[T0,T1,T2,T3,T4,TRet](T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+   at IronPython.Compiler.Ast.CallExpression.Invoke2Instruction.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run1[T0,TRet](T0 arg0)
+   at Microsoft.Scripting.Interpreter.FuncCallInstruction`3.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run3[T0,T1,T2,TRet](T0 arg0, T1 arg1, T2 arg2)
+   at Microsoft.Scripting.Interpreter.DynamicInstruction`3.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+FAIL row step: System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL has been returned from a call to a COM component.
+   at Ansys.Common.Interop.AnsCoreObjects.IAnsWorksheetItf.OnChange(Int32 row, Int32 col, Object vData)
+   at Ansys.ACT.Automation.Mechanical.WorksheetRow.set_Item(String key, Object value)
+   at Microsoft.Scripting.Interpreter.ActionCallInstruction`3.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run5[T0,T1,T2,T3,T4,TRet](T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+   at Microsoft.Scripting.Interpreter.FuncCallInstruction`7.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run5[T0,T1,T2,T3,T4,TRet](T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+   at IronPython.Compiler.Ast.CallExpression.Invoke2Instruction.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run1[T0,TRet](T0 arg0)
+   at Microsoft.Scripting.Interpreter.FuncCallInstruction`3.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.LightLambda.Run3[T0,T1,T2,TRet](T0 arg0, T1 arg1, T2 arg2)
+   at Microsoft.Scripting.Interpreter.DynamicInstruction`3.Run(InterpretedFrame frame)
+   at Microsoft.Scripting.Interpreter.Interpreter.Run(InterpretedFrame frame)
+row now: None None 1.0 0.0
+OK   import 
+ibt state Solved; props: Algorithm=BucketVolume Method=PointElement Weighting=Triangulation Outside=Projection
+OK   SourceMinimum 150.06114890000003 [C]
+OK   SourceMaximum 289.42675280000003 [C]
+OK   export mapped 
+OK   NS after import [('FLUID_DOMAIN', 1), ('SOLID_DOMAIN', 1), ('FLUID_INLET', 1), ('FLUID_OUTLET', 1), ('FLUID_WALL', 1), ('FLUID_SOLID_INTERFACE', 1), ('SOLID_INNER_INTERFACE', 1), ('HEATED_OUTER_WALL', 1), ('SOLID_INLET_END', 1), ('SOLID_OUTLET_END', 1), ('STRUCTURAL_SUPPORT', 1), ('Unmapped Nodes', 28080), ('Outside Nodes', 78192)]
+OK   write input file 
+PROBE3-DONE

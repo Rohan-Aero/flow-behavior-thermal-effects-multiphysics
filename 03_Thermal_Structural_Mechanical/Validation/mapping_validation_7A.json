@@ -1,0 +1,372 @@
+{
+ "fluent_source": {
+  "cell_min": 423.9664736,
+  "cell_max": 562.1271022,
+  "face_min": 423.2111489,
+  "face_max": 562.5767528,
+  "node_min": 423.837341,
+  "node_max": 562.54364,
+  "vol_mean": 525.4829345871723,
+  "volume_m3": 0.0005638731504323199,
+  "midspan_node": {
+   "T_inner": [
+    531.6720325833334,
+    48
+   ],
+   "T_outer": [
+    539.252548,
+    48
+   ]
+  },
+  "midspan_face": {
+   "T_inner": 531.6720316833333,
+   "T_outer": 539.2525492583334
+  },
+  "ends_node": {
+   "inlet_inner": [
+    423.8382466666667,
+    48
+   ],
+   "inlet_outer": [
+    437.9698665,
+    48
+   ],
+   "outlet_inner": [
+    555.4854685,
+    48
+   ],
+   "outlet_outer": [
+    562.2632602499999,
+    48
+   ]
+  }
+ },
+ "reference": {
+  "r_grid_mm": [
+   9.97859,
+   10.2281,
+   10.7636,
+   11.3779,
+   12.0824,
+   12.8904,
+   13.8171,
+   14.88,
+   16.099,
+   17.4971,
+   19.1006,
+   19.95718
+  ],
+  "n_z": 92,
+  "circ_ptp_max_K": 0.005344500000035168,
+  "inner_face_r_mm": 9.978589245115423,
+  "outer_face_r_mm": 19.957178488642555
+ },
+ "LC1_Free_Expansion": {
+  "ds": "<SCRATCH_ROOT>/prodroot/08_Structural_Analysis/Mechanical_Setup/Input_Files/LC1_Free_Expansion_ds.dat",
+  "nodes": 108252,
+  "elements": 23400,
+  "corner_nodes": 28296,
+  "midside_nodes": 79956,
+  "tref_degC": 26.85,
+  "mapped": 108252,
+  "unmapped": 0,
+  "components": {
+   "FLUID_WALL": 14112,
+   "FLUID_SOLID_INTERFACE": 14112,
+   "SOLID_INNER_INTERFACE": 14112,
+   "HEATED_OUTER_WALL": 14112,
+   "SOLID_INLET_END": 612,
+   "SOLID_OUTLET_END": 612,
+   "STRUCTURAL_SUPPORT": 612,
+   "NS_LC1_SUPPORT_3NODES_INLET_OUTE": 3,
+   "NS_LC2_HOOP_3NODES_MIDSPAN_OUTER": 3,
+   "_CM77": 3,
+   "_CM78U": 3
+  },
+  "T_min": 423.83737199999996,
+  "T_max": 562.5576398999999,
+  "nodes_outside_source_mesh": 12544,
+  "outside_max_local_coord_excess": 0.044433436640887836,
+  "A_vs_shape_function_eval": {
+   "max": 0.09212697862449204,
+   "mean": 0.002170350780744765,
+   "max_inside": 0.08141046548564645,
+   "max_outside": 0.09212697862449204
+  },
+  "B_vs_FV_reference": {
+   "max": 2.5747584109090553,
+   "mean": 0.0386142037025443,
+   "rms": 0.14208936355651672,
+   "p99": 0.7383614186846899,
+   "mean_signed": 0.01799635252489942,
+   "ref_lin_cub_spread_max": 0.6622635195447515
+  },
+  "volume_m3": 0.0005654855855241962,
+  "vol_mean_T": 525.5198862813073,
+  "min_detJ": 9.480599859735785e-10,
+  "error_by_axial_band": {
+   "0-7 mm": {
+    "n": 3096,
+    "maxB": 2.5747584109090553,
+    "meanB": 0.5785251449443205,
+    "maxA": 0.08141046548564645
+   },
+   "7-14 mm": {
+    "n": 2484,
+    "maxB": 0.7992420861202163,
+    "meanB": 0.13748033800737794,
+    "maxA": 0.024897504759962885
+   },
+   "14-30 mm": {
+    "n": 4968,
+    "maxB": 0.24591216557740836,
+    "meanB": 0.035791231236709166,
+    "maxA": 0.023502164073249787
+   },
+   "30-100 mm": {
+    "n": 16776,
+    "maxB": 0.0920669268596157,
+    "meanB": 0.02202382462902826,
+    "maxA": 0.09212697862449204
+   },
+   "100-300 mm": {
+    "n": 26496,
+    "maxB": 0.055906522302677786,
+    "meanB": 0.01701122954800355,
+    "maxA": 0.059699393650817
+   },
+   "300-500 mm": {
+    "n": 27108,
+    "maxB": 0.040426361773711506,
+    "meanB": 0.017897542032928867,
+    "maxA": 0.030884200000059536
+   },
+   "500-586 mm": {
+    "n": 21744,
+    "maxB": 0.03996077472413617,
+    "meanB": 0.017122723578420238,
+    "maxA": 0.020667093723886865
+   },
+   "586-593.4 mm": {
+    "n": 2484,
+    "maxB": 0.03972002270529629,
+    "meanB": 0.016376055571837776,
+    "maxA": 0.021401282910574082
+   },
+   "593.4-600.1 mm": {
+    "n": 3096,
+    "maxB": 0.3866931980854815,
+    "meanB": 0.048861925396375974,
+    "maxA": 0.02005705074782327
+   }
+  },
+  "B_nodes_above_0.1K": {
+   "n": 4204,
+   "z_max_mm": 600.0,
+   "z_min_mm": 0.0
+  },
+  "B_nodes_above_0.25K": {
+   "n": 2420,
+   "z_max_mm": 600.0,
+   "z_min_mm": 0.0
+  },
+  "B_nodes_above_0.5K": {
+   "n": 1764,
+   "z_max_mm": 11.11418239,
+   "z_min_mm": 0.0
+  },
+  "B_nodes_above_1K": {
+   "n": 576,
+   "z_max_mm": 4.301782546999999,
+   "z_min_mm": 1.063798559
+  },
+  "B_nodes_above_2K": {
+   "n": 36,
+   "z_max_mm": 3.214689833,
+   "z_min_mm": 3.214689833
+  },
+  "midspan": {
+   "T_inner": [
+    531.6868058666665,
+    72
+   ],
+   "T_outer": [
+    539.2663957777778,
+    72
+   ]
+  },
+  "ends": {
+   "inlet_inner": [
+    423.86013977777776,
+    72
+   ],
+   "inlet_outer": [
+    437.9823494,
+    72
+   ],
+   "outlet_inner": [
+    555.4933660777778,
+    72
+   ],
+   "outlet_outer": [
+    562.2723608222223,
+    72
+   ]
+  }
+ },
+ "LC2_Axially_Restrained": {
+  "ds": "<SCRATCH_ROOT>/prodroot/08_Structural_Analysis/Mechanical_Setup/Input_Files/LC2_Axially_Restrained_ds.dat",
+  "nodes": 108252,
+  "elements": 23400,
+  "corner_nodes": 28296,
+  "midside_nodes": 79956,
+  "tref_degC": 26.85,
+  "mapped": 108252,
+  "unmapped": 0,
+  "components": {
+   "FLUID_WALL": 14112,
+   "FLUID_SOLID_INTERFACE": 14112,
+   "SOLID_INNER_INTERFACE": 14112,
+   "HEATED_OUTER_WALL": 14112,
+   "SOLID_INLET_END": 612,
+   "SOLID_OUTLET_END": 612,
+   "STRUCTURAL_SUPPORT": 612,
+   "NS_LC1_SUPPORT_3NODES_INLET_OUTE": 3,
+   "NS_LC2_HOOP_3NODES_MIDSPAN_OUTER": 3,
+   "_CM92": 3,
+   "_DISPZEROUZ": 1224,
+   "_CM93U": 3
+  },
+  "T_min": 423.83737199999996,
+  "T_max": 562.5576398999999,
+  "nodes_outside_source_mesh": 12544,
+  "outside_max_local_coord_excess": 0.044433436640887836,
+  "A_vs_shape_function_eval": {
+   "max": 0.09212697862449204,
+   "mean": 0.002170350780744765,
+   "max_inside": 0.08141046548564645,
+   "max_outside": 0.09212697862449204
+  },
+  "B_vs_FV_reference": {
+   "max": 2.5747584109090553,
+   "mean": 0.0386142037025443,
+   "rms": 0.14208936355651672,
+   "p99": 0.7383614186846899,
+   "mean_signed": 0.01799635252489942,
+   "ref_lin_cub_spread_max": 0.6622635195447515
+  },
+  "volume_m3": 0.0005654855855241962,
+  "vol_mean_T": 525.5198862813073,
+  "min_detJ": 9.480599859735785e-10,
+  "error_by_axial_band": {
+   "0-7 mm": {
+    "n": 3096,
+    "maxB": 2.5747584109090553,
+    "meanB": 0.5785251449443205,
+    "maxA": 0.08141046548564645
+   },
+   "7-14 mm": {
+    "n": 2484,
+    "maxB": 0.7992420861202163,
+    "meanB": 0.13748033800737794,
+    "maxA": 0.024897504759962885
+   },
+   "14-30 mm": {
+    "n": 4968,
+    "maxB": 0.24591216557740836,
+    "meanB": 0.035791231236709166,
+    "maxA": 0.023502164073249787
+   },
+   "30-100 mm": {
+    "n": 16776,
+    "maxB": 0.0920669268596157,
+    "meanB": 0.02202382462902826,
+    "maxA": 0.09212697862449204
+   },
+   "100-300 mm": {
+    "n": 26496,
+    "maxB": 0.055906522302677786,
+    "meanB": 0.01701122954800355,
+    "maxA": 0.059699393650817
+   },
+   "300-500 mm": {
+    "n": 27108,
+    "maxB": 0.040426361773711506,
+    "meanB": 0.017897542032928867,
+    "maxA": 0.030884200000059536
+   },
+   "500-586 mm": {
+    "n": 21744,
+    "maxB": 0.03996077472413617,
+    "meanB": 0.017122723578420238,
+    "maxA": 0.020667093723886865
+   },
+   "586-593.4 mm": {
+    "n": 2484,
+    "maxB": 0.03972002270529629,
+    "meanB": 0.016376055571837776,
+    "maxA": 0.021401282910574082
+   },
+   "593.4-600.1 mm": {
+    "n": 3096,
+    "maxB": 0.3866931980854815,
+    "meanB": 0.048861925396375974,
+    "maxA": 0.02005705074782327
+   }
+  },
+  "B_nodes_above_0.1K": {
+   "n": 4204,
+   "z_max_mm": 600.0,
+   "z_min_mm": 0.0
+  },
+  "B_nodes_above_0.25K": {
+   "n": 2420,
+   "z_max_mm": 600.0,
+   "z_min_mm": 0.0
+  },
+  "B_nodes_above_0.5K": {
+   "n": 1764,
+   "z_max_mm": 11.11418239,
+   "z_min_mm": 0.0
+  },
+  "B_nodes_above_1K": {
+   "n": 576,
+   "z_max_mm": 4.301782546999999,
+   "z_min_mm": 1.063798559
+  },
+  "B_nodes_above_2K": {
+   "n": 36,
+   "z_max_mm": 3.214689833,
+   "z_min_mm": 3.214689833
+  },
+  "midspan": {
+   "T_inner": [
+    531.6868058666665,
+    72
+   ],
+   "T_outer": [
+    539.2663957777778,
+    72
+   ]
+  },
+  "ends": {
+   "inlet_inner": [
+    423.86013977777776,
+    72
+   ],
+   "inlet_outer": [
+    437.9823494,
+    72
+   ],
+   "outlet_inner": [
+    555.4933660777778,
+    72
+   ],
+   "outlet_outer": [
+    562.2723608222223,
+    72
+   ]
+  }
+ },
+ "comparison_table_md": "| Quantity | Fluent Source | Mechanical Mapped | Difference (mapped - Fluent node basis) |\n|---|---|---|---|\n| Solid T minimum [K] | 423.837 (node) / 423.211 (face) | 423.837 | +3.1e-05 |\n| Solid T maximum [K] | 562.544 (node) / 562.127 (cell) | 562.558 | +0.014 |\n| Mid-span inner wall T, z = 300 mm [K] | 531.672 (node) / 531.672 (face) | 531.687 | +0.01477 |\n| Mid-span outer wall T, z = 300 mm [K] | 539.253 (node) / 539.253 (face) | 539.266 | +0.01385 |\n| Mid-span through-wall dT (outer - inner) [K] | 7.581 (node) / 7.581 (face) | 7.57959 | -0.0009255 |\n| Inlet end, inner edge T [K] | 423.838 (node) | 423.86 | +0.02189 |\n| Outlet end, outer edge T [K] | 562.263 (node) | 562.272 | +0.009101 |\n| Volume-mean solid T [K] | 525.483 (cell-volume weighted) | 525.52 | +0.03695 |\n| Solid volume [m3] | 5.638732e-04 (48-gon) | 0.000565486 | +1.612e-06 |"
+}

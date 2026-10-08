@@ -1,0 +1,159 @@
+% ===================================================================== front matter
+% ---------------------------------------------------------------- 1. cover page
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{8mm}
+{\sffamily\large INTERNSHIP ENGINEERING REPORT\par}
+\vspace{18mm}
+{\sffamily\bfseries\Huge FLOW BEHAVIOR AND THERMAL EFFECTS IN MULTIPHYSICS SYSTEMS\par}
+\vspace{10mm}
+{\sffamily\Large CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct\par}
+\vspace{16mm}
+\includegraphics[width=0.78\linewidth]{PHYSICS_SCHEMATIC.png}\par
+{\footnotesize\itshape Physics chain of the model (Section 3 drawing; values printed in the process boxes are Section 2 analytical estimates).\par}
+\vspace{14mm}
+{\large Rohan Balram Patel\par}
+{\normalsize B.Tech Aerospace Engineering, Dayananda Sagar University, Bengaluru\par}
+\vspace{6mm}
+{\normalsize Eleation\par}
+{\normalsize Internship: February--May 2025\par}
+\vspace{10mm}
+{\sffamily\small Numerical analysis using ANSYS Workbench, ANSYS Fluent and ANSYS Mechanical\par}
+\vfill
+\end{titlepage}
+\pagenumbering{roman}
+
+% ---------------------------------------------------------------- 2./3. internship information and project title
+\chapter*{Internship Information}
+\addcontentsline{toc}{chapter}{Internship Information}
+\begin{tabular}{@{}>{\bfseries}p{0.30\linewidth}p{0.64\linewidth}@{}}
+Engineer & Rohan Balram Patel \\
+Programme & B.Tech Aerospace Engineering, Dayananda Sagar University, Bengaluru \\
+Organisation & Eleation \\
+Internship period & February 2025 -- May 2025 \\
+Tools & ANSYS Workbench (SpaceClaim), ANSYS Fluent, ANSYS Mechanical / MAPDL; Python 3.10 (bundled with ANSYS) for calculations and post-processing \\
+Report status & Final internship engineering report
+\end{tabular}
+
+\section*{Project Title}
+\textbf{Flow Behavior and Thermal Effects in Multiphysics Systems}\\
+CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct
+
+% ---------------------------------------------------------------- 4. declaration / note on the analysis record
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+\recbox{\textbf{Note on the analysis record.} The original internship project files were not retained. The geometry, operating
+parameters, simulation set-up and numerical results presented in this report therefore come from a complete re-analysis of the
+internship problem, carried out after the internship with ANSYS Workbench, Fluent and Mechanical and based on the documented project
+scope. They are not copies of the original internship analysis.}
+
+Only documented internship information (engineer, programme, organisation, period and tool set) is described as historical fact.
+Every other value in this report is labelled with one of the following terms:
+
+\begin{itemize}
+\item \textbf{Selected} -- an input value chosen for this study with a stated rationale (for example $D_i$ = 20~mm, $V_{in}$ = 23.5~m/s, $q''$ = 8000~W/m$^2$, Inconel 718);
+\item \textbf{Assumed} -- an engineering idealisation (for example steady state, uniform heat flux, $\nu$ = 0.294, idealised supports);
+\item \textbf{Calculated} -- a hand or script calculation from the selected inputs (the Section 2 analytical baseline);
+\item \textbf{Simulated} -- the output of an ANSYS solution of this project.
+\end{itemize}
+
+No experimental or measured data exist for this project, and none has been created. Verification is against analytical theory,
+published correlations and internal consistency checks; the results are therefore verified but not experimentally validated.
+
+\textbf{Declaration.} This report presents the analysis as documented in the project record (the file
+\texttt{PROJECT\_STATE.md}, Sections 0--10A) and in the audited master dataset of Section 10A
+(\texttt{MASTER\_PROJECT\_DATA.csv}). Every numerical result quoted is a
+calculation or simulation of the analysed problem and is traceable to a project file. No original company procedure, supervisor
+comment or original screenshot is reproduced or implied.
+
+\vspace{6mm}
+Rohan Balram Patel
+
+% ---------------------------------------------------------------- 5. acknowledgement
+\clearpage   % keeps the original page break (Acknowledgement and Abstract on page ii)
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+I thank Eleation for the internship opportunity between February and May 2025, during which the project on flow behaviour and
+thermal effects in multiphysics systems was carried out, and the Department of Aerospace Engineering of Dayananda Sagar University,
+Bengaluru, for the academic framework of the internship. The analysis documented here relied on ANSYS Workbench, Fluent and Mechanical
+and on the published data and correlations listed in the references.
+
+% ---------------------------------------------------------------- 6. abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This report presents the Eleation internship project \emph{Flow Behavior and Thermal Effects in Multiphysics Systems}
+(February--May 2025): a numerical analysis using ANSYS Workbench, ANSYS Fluent and ANSYS Mechanical. The system is an air-cooled,
+externally heated Inconel 718 duct (20/40~mm inner/outer diameter, 600~mm long).
+
+An analytical baseline preceded all simulations. Turbulent internal flow and conjugate heat transfer were solved in ANSYS Fluent (steady,
+$k$--$\omega$ SST, wall-resolved) at 23.5~m/s and 300~K inlet with an outer-wall heat flux of 8000~W/m$^2$. On the 159,840-cell
+medium mesh the converged solution gives a pressure drop of 438.13~Pa, an outlet bulk temperature of 368.93~K and a maximum
+solid temperature of 562.58~K, with only 7.58~K across the wall at mid-span. A three-mesh study shows approximately convergent behaviour
+(fine mesh 560.83~K; extrapolated 558.13~K).
+
+The solid temperature field was transferred one-way to ANSYS Mechanical (mapping error $\le$ 0.081~K). Free expansion gives 1.84~mm
+growth and a 24.28~MPa peak von Mises stress. Full axial restraint gives a 548.94~kN end force, a mean axial stress of $-$582.44~MPa and
+a local peak of 605.16~MPa, 57.8\,\% of the local yield strength; structural mesh effects are below
+$5\times10^{-4}$. Linear eigenvalue buckling under the baseline S1 support gives $\lambda_1$ = 1.108, below the first-yield factor of 1.730,
+while alternative idealised supports give 2.232 (S3) and 4.300 (S2). A one-factor parametric study (velocity and heat flux $\pm$10\,\%,
+wall thickness 8 and 12~mm), with full solutions of every case, shows that velocity acts mainly on cooling and pressure drop,
+heat flux drives temperature and stress, and thickness drives stiffness and buckling capacity; $\lambda_1$ falls below 1 for +10\,\% heat
+flux and the 8~mm wall. An additional geometrically nonlinear analysis with ANSYS LS-DYNA, performed as an extension with mode-shaped
+numerical imperfections of 0.1, 0.6 and 1.2~mm, gives Southwell characteristic-load estimates of 607.7--612.3~kN, close to the linear
+critical load of 608.25~kN, while lateral deflection and stress grow strongly with the imperfection amplitude.
+
+The results are not validated against measurement. The real end restraint, measured geometric imperfections and
+inelastic behaviour, the dominant open uncertainties, were not modelled. The study therefore characterises the thermal-stress mechanism and its sensitivities, not the
+structural adequacy of a real component.
+
+% ---------------------------------------------------------------- 7.-9. contents and lists
+\cleardoublepage
+\chapter*{Contents}
+\addcontentsline{toc}{chapter}{Contents}
+{\small\makeatletter\setlength{\columnsep}{8mm}\begin{multicols}{2}\@starttoc{toc}\end{multicols}\makeatother}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+{\sffamily\bfseries\LARGE List of Figures\par}\vspace{2pt}\hrule\vspace{8pt}
+{\makeatletter\let\origaddvspace\addvspace\renewcommand{\addvspace}[1]{\origaddvspace{2pt}}\@starttoc{lof}\makeatother}
+\vspace{14pt}
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+{\sffamily\bfseries\LARGE List of Tables\par}\vspace{2pt}\hrule\vspace{8pt}
+{\makeatletter\let\origaddvspace\addvspace\renewcommand{\addvspace}[1]{\origaddvspace{2pt}}\@starttoc{lot}\makeatother}
+
+% ---------------------------------------------------------------- 10. abbreviations
+\vspace{10pt}
+\noindent\begin{minipage}{\linewidth}
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Abbreviations and Symbols}
+{\sffamily\bfseries\LARGE List of Abbreviations and Symbols\par}\vspace{2pt}\hrule\vspace{6pt}
+{\footnotesize
+\begin{tabular}{@{}p{0.10\linewidth}p{0.32\linewidth}p{0.12\linewidth}p{0.38\linewidth}@{}}
+\toprule
+\multicolumn{2}{@{}l}{\textbf{Abbreviations}} & \multicolumn{2}{l}{\textbf{Symbols}} \\
+\midrule
+CAD & computer-aided design & $A$, $I$ & section area [m$^2$]; second moment of area [m$^4$] \\
+CFD & computational fluid dynamics & $c_p$ & specific heat [J/(kg\,K)] \\
+CHT & conjugate heat transfer & $D_i$, $D_o$, $D_h$ & inner, outer, hydraulic diameter [m] \\
+FE, FV & finite element, finite volume & $E$, $\nu$ & Young's modulus [Pa]; Poisson's ratio [--] \\
+GCI & grid convergence index & $f$ & Darcy friction factor [--] \\
+LC1 & load case 1, free expansion & $h$ & heat-transfer coefficient [W/(m$^2$\,K)] \\
+LC2 & load case 2, axially restrained (S1) & $k$, $k_s$ & conductivity of air, of the solid [W/(m\,K)] \\
+LC2P & LC2 with bore pressure & $K$, $L$ & effective-length factor [--]; length [m] \\
+MAPDL & Mechanical APDL solver & $\dot m$, $N$ & mass flow rate [kg/s]; axial end force [N] \\
+OQ & orthogonal quality & $Nu$, $Pr$, $Re$ & Nusselt, Prandtl, Reynolds numbers \\
+P00 & official baseline case & $P_{cr}$ & critical buckling load [N] \\
+RANS & Reynolds-averaged Navier--Stokes & $q''$, $Q$ & heat flux [W/m$^2$]; heat-transfer rate [W] \\
+SST & shear-stress transport & $r$, $t$ & radius, radius of gyration [m]; wall thickness [m] \\
+S1--S3 & support scenarios (Table~\ref{tab:supports}) & $S_y$ & 0.2\,\% proof (yield) strength [Pa] \\
+TI & turbulence intensity & $T$, $T_{ref}$ & temperature, stress-free reference [K] \\
+VM & von Mises (equivalent) stress & $y^+$ & dimensionless wall distance [--] \\
+V01, V03 & velocity cases & $\alpha$ & thermal expansion coefficient [1/K] \\
+Q01, Q03 & heat-flux cases & $\lambda_1$ & first linear buckling load factor [--] \\
+T01, T03 & wall-thickness cases & $\mu$, $\rho$ & dynamic viscosity [Pa\,s]; density [kg/m$^3$] \\
+1-D & one-dimensional & $\sigma_{vM}$, $\bar\sigma_z$ & von Mises stress; mean axial stress [Pa] \\
+\bottomrule
+\end{tabular}}
+\end{minipage}

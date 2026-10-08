@@ -1,0 +1,75 @@
+! =====================================================================================================
+! SECTION 9B-2 Part K - RE-EXTRACTION of the existing S2 (8A "LC2NS No-Sway Static") solution. RE-ANALYSIS 2026.
+! Nothing is solved. MAPDL reads a COPY of the 8A result file (the 8A project folder is only read, never written) and
+! writes the same nodal table as the 7B snippet (s7b_post_snippet.inp): node, x, y, z, u_r, u_theta, u_z, s_r,
+! s_theta, s_z, s1, s3, s_eqv, epel_eqv, T_used (RSYS 12 = cylindrical CS about the duct axis), plus the axial reaction
+! of each end face (RF FZ summed by location, global axes; the S2 end-face nodes are rotated in CS_DUCT_CYL, whose z
+! axis is the global z axis, so FZ is unaffected by the rotation).
+! 8A extracted only the maximum von Mises stress and the inlet reaction of S2; this table adds the deformation, the
+! stress location and the temperature at it. Validation: the same file is run on the COPY of the 8A LC2 re-solve
+! result (S1), whose table was written by the 7B snippet in 8A, and the two tables must agree.
+! Parameter TAG (set by the calling file) = output prefix.
+! =====================================================================================================
+/post1
+file,%rstname%,rst
+set,last
+local,12,1,0,0,0
+csys,0
+allsel,all
+*get,xs_nmx,node,0,num,max
+*get,xs_ncnt,node,0,count
+rsys,12
+*del,xs_m,,nopr
+*del,xs_a,,nopr
+*dim,xs_m,array,xs_nmx
+*dim,xs_a,array,xs_nmx,15
+*vget,xs_m(1),node,1,nsel
+*vfill,xs_a(1,1),ramp,1,1
+*vget,xs_a(1,2),node,1,loc,x
+*vget,xs_a(1,3),node,1,loc,y
+*vget,xs_a(1,4),node,1,loc,z
+*vget,xs_a(1,5),node,1,u,x
+*vget,xs_a(1,6),node,1,u,y
+*vget,xs_a(1,7),node,1,u,z
+*vget,xs_a(1,8),node,1,s,x
+*vget,xs_a(1,9),node,1,s,y
+*vget,xs_a(1,10),node,1,s,z
+*vget,xs_a(1,11),node,1,s,1
+*vget,xs_a(1,12),node,1,s,3
+*vget,xs_a(1,13),node,1,s,eqv
+*vget,xs_a(1,14),node,1,epel,eqv
+*vget,xs_a(1,15),node,1,bfe,temp
+*cfopen,%tag%_nodal,csv
+*vwrite
+('node,x_m,y_m,z_m,u_r_m,u_t_m,u_z_m,s_r_Pa,s_t_Pa,s_z_Pa,s1_Pa,s3_Pa,seqv_Pa,epel_eqv,T_used_C')
+*vmask,xs_m(1)
+*vwrite,xs_a(1,1),xs_a(1,2),xs_a(1,3),xs_a(1,4),xs_a(1,5),xs_a(1,6),xs_a(1,7),xs_a(1,8),xs_a(1,9),xs_a(1,10),xs_a(1,11),xs_a(1,12),xs_a(1,13),xs_a(1,14),xs_a(1,15)
+(F10.0,14(',',E17.9))
+*cfclos
+rsys,0
+! axial reaction of each end face
+nsel,s,loc,z,0
+fsum_in=0
+*get,xs_nin,node,0,count
+*del,xs_r,,nopr
+*dim,xs_r,array,xs_nmx
+*vget,xs_m(1),node,1,nsel
+*vget,xs_r(1),node,1,rf,fz
+*vmask,xs_m(1)
+*vscfun,xs_fin,sum,xs_r(1)
+nsel,s,loc,z,0.6
+*get,xs_nout,node,0,count
+*vget,xs_m(1),node,1,nsel
+*vget,xs_r(1),node,1,rf,fz
+*vmask,xs_m(1)
+*vscfun,xs_fout,sum,xs_r(1)
+allsel,all
+*cfopen,%tag%_totals,txt
+*vwrite,xs_ncnt,xs_nmx
+('nodes ',F10.0,' max_node ',F10.0)
+*vwrite,xs_nin,xs_fin
+('inlet_face_nodes ',F10.0,' sum_RF_FZ_N ',E24.15)
+*vwrite,xs_nout,xs_fout
+('outlet_face_nodes ',F10.0,' sum_RF_FZ_N ',E24.15)
+*cfclos
+finish

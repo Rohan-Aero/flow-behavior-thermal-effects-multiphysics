@@ -1,0 +1,106 @@
+=== SECTION 8B WB MESH STUDY A (RE-ANALYSIS 2026) ===
+---- variant XC {'nc': 21, 'bias': 4.0, 'pressure': True, 'buckling': True, 'na': 76, 'tag': 'XC', 'nr': 3}
+saved as <PROJECT_ROOT>\08_Structural_Analysis\Mesh_Study\Projects\MS8B_XC.wbpj (7B project not written)
+OK   rename LC2 Linear Buckling XC 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved XC
+OK   state XC Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state XC Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state XC Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state XC LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Linear Buckling XC/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Linear Buckling XC/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Linear Buckling XC/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Linear Buckling XC/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Linear Buckling XC/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2 Linear Buckling XC/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2P Restrained Thermal + Pressure/Setup 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2P Restrained Thermal + Pressure/Solution 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC LC2P Restrained Thermal + Pressure/Results 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state XC CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+---- variant C {'nc': 27, 'bias': 4.0, 'pressure': True, 'buckling': True, 'na': 98, 'tag': 'C', 'nr': 4}
+saved as <PROJECT_ROOT>\08_Structural_Analysis\Mesh_Study\Projects\MS8B_C.wbpj (7B project not written)
+OK   rename LC2 Linear Buckling C 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved C
+OK   state C Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state C Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state C Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state C Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state C LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Linear Buckling C/Engineering Data 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Linear Buckling C/Geometry 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Linear Buckling C/Model 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Linear Buckling C/Setup 5 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Linear Buckling C/Solution 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2 Linear Buckling C/Results 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2P Restrained Thermal + Pressure/Setup 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2P Restrained Thermal + Pressure/Solution 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C LC2P Restrained Thermal + Pressure/Results 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state C CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+---- variant IL {'nc': 36, 'bias': 8.0, 'pressure': False, 'buckling': False, 'na': 130, 'tag': 'IL', 'nr': 5}
+saved as <PROJECT_ROOT>\08_Structural_Analysis\Mesh_Study\Projects\MS8B_IL.wbpj (7B project not written)
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved IL
+OK   state IL Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+OK   state IL Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+OK   state IL Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+OK   state IL LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC1 Free Expansion/Model <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC1 Free Expansion/Setup 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC1 Free Expansion/Solution 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC1 Free Expansion/Results <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2 Axially Restrained/Model 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2 Axially Restrained/Setup 3 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2 Axially Restrained/Solution 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2 Axially Restrained/Results 1 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2P Restrained Thermal + Pressure/Engineering Data 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2P Restrained Thermal + Pressure/Geometry 4 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2P Restrained Thermal + Pressure/Model 2 <cell state: UpToDate: wb2qh_uptodate>
+OK   state IL LC2P Restrained Thermal + Pressure/Setup 4 <cell state: Modified: wb2qh_Mech_ur>
+OK   state IL LC2P Restrained Thermal + Pressure/Solution 3 <cell state: Modified: wb2qh_Mech_ur>
+OK   state IL LC2P Restrained Thermal + Pressure/Results 2 <cell state: Modified: wb2qh_Mech_ur>
+OK   state IL CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+=== WB MESH STUDY A DONE ===

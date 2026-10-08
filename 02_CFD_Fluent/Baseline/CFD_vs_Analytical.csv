@@ -1,0 +1,16 @@
+"# Section 2 ANALYTICAL baseline vs Section 5B CFD (medium mesh, converged). RE-ANALYSIS 2026."
+quantity,analytical_section2,cfd_section5B,units,absolute_difference,percent_difference,basis
+"Reynolds number, inlet",29956.6,29958.2,-,1.61973,0.005,CFD from Fluent mass flux G = mdot/A_poly and mu(T_in) from the same Incropera table; nominal D = 20 mm
+"Reynolds number, outlet",25547.7,25544.9,-,-2.75141,-0.011,mu at the CFD mass-weighted outlet temperature
+"Pressure drop, inlet-to-outlet static (CFD-comparable)",441.528,438.126,Pa,-3.40178,-0.770,"area-weighted static pressure, inlet face minus outlet face; analytical = friction + acceleration + entry"
+Outlet bulk temperature,368.852,368.932,K,0.0799527,0.022,mass-weighted static temperature over the outlet faces (Fluent's standard bulk measure)
+Outlet mixing-cup temperature,368.852,368.993,K,0.140064,0.038,"additional: from Fluent's enthalpy, mass-flux weighted and inverted with the same cp table - the like-for-like counterpart of the 1-D energy march"
+Heat-transfer rate,603.186,602.755,W,-0.430551,-0.071,Fluent heat flux through HEATED_OUTER_WALL; equals the heat carried out by the air to the stated imbalance
+Maximum solid temperature,581.713,562.577,K,-19.1358,-3.290,analytical = outer-wall temperature at the exit station (1-D); CFD = maximum facet temperature of HEATED_OUTER_WALL (outlet end); the maximum cell-centre value is 562.127 K
+Through-wall temperature difference,7.28465,7.36061,K,0.0759578,1.043,"analytical = Section 2 headline value (exit; k = 15.22 W/m.K at the 574.4 K inner wall); CFD: outer minus inner wall, circumferential average, at z = 570 mm (x/D = 28.5, clear of the adiabatic end)"
+Through-wall temperature difference at z = 570 mm (station-matched),7.30632,7.36061,K,0.0542864,0.743,additional: analytical from the Section 2 axial march at the same station (k at the local inner-wall temperature)
+Peak inner-wall temperature (PR-06),574.428,555.267,K,-19.1608,-3.336,additional: analytical peak is at the exit; CFD = maximum facet temperature of the fluid-solid interface (outlet end)
+Inner-wall temperature at z = 570 mm (station-matched),571.922,554.643,K,-17.2793,-3.021,additional: circumferential average; analytical = property-corrected march at the same station
+Heat-transfer coefficient at z = 570 mm (station-matched),77.4801,83.6368,W/m2K,6.15677,7.946,"additional: CFD h = q_inner / (T_inner_wall - T_bulk,mass) per slab; analytical = property-corrected Gnielinski"
+Fully developed Nusselt number (x/D 18-29),49.5815,54.1718,-,4.59037,9.258,additional (PR-03): CFD mean over the window vs property-corrected Gnielinski at exit
+Darcy friction factor (x/D 18-29),0.0241333,0.0216261,-,-0.00250713,-10.389,"additional (PR-04): CFD from wall shear, f = 8 tau_w rho_b / G^2"

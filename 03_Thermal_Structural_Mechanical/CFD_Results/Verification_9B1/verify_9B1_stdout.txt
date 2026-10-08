@@ -1,0 +1,310 @@
+PASS C00_PIPELINE_CHECK run status CONVERGED  CONVERGED
+PASS C00_PIPELINE_CHECK settings diff = intended paths only  []
+PASS C00_PIPELINE_CHECK inlet velocity read back  23.5
+PASS C00_PIPELINE_CHECK turbulence intensity = 0.16 Re^-1/8  0.04411209588036475
+PASS C00_PIPELINE_CHECK heat flux read back  8000.0
+PASS C00_PIPELINE_CHECK heat flux on every outer face = set value  (8000.0, 8000.0)
+PASS C00_PIPELINE_CHECK audit 1_presolve: 0 failed of 133  []
+PASS C00_PIPELINE_CHECK audit 2_final_schemes: 0 failed of 133  []
+PASS C00_PIPELINE_CHECK audit 3_final: 0 failed of 133  []
+PASS C00_PIPELINE_CHECK converged and confirmed (final evaluation)  confirmation+400
+PASS C00_PIPELINE_CHECK plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  7.06e-06 K
+PASS C00_PIPELINE_CHECK mass and energy balance  7.0e-15 / 3.1e-13
+PASS C00_PIPELINE_CHECK air 250-600 K at every iteration  300.00-555.27 K
+PASS C00_PIPELINE_CHECK Inconel 293.15-673.15 K at every iteration  300.00-562.58 K
+PASS C00_PIPELINE_CHECK no limiter / reversed-flow / divergence message in the solver output  0
+PASS C00_PIPELINE_CHECK dp: face-export route = Fluent report  438 vs 438 (err 1.1e-08)
+PASS C00_PIPELINE_CHECK T_out: face-export route = Fluent report  369 vs 369 (err 4.5e-05)
+PASS C00_PIPELINE_CHECK Q: face-export route = Fluent report  603 vs 603 (err 1.8e-09)
+PASS C00_PIPELINE_CHECK Tmax_solid: face-export route = Fluent report  563 vs 563 (err 2.7e-05)
+PASS C00_PIPELINE_CHECK yplus_max: face-export route = Fluent report  0.585 vs 0.585 (err 5.2e-08)
+PASS C00_PIPELINE_CHECK yplus_mean: face-export route = Fluent report  0.241 vs 0.241 (err 1.3e-08)
+PASS C00_PIPELINE_CHECK Re_in: face-export route = Fluent report  3e+04 vs 3e+04 (err 4.2e-09)
+PASS C00_PIPELINE_CHECK A_heated: face-export route = Fluent report  0.0753 vs 0.0753 (err 1.8e-09)
+PASS C00_PIPELINE_CHECK y+ policy (max <= 1, mean <= 0.5)  0.5848 / 0.2410
+PASS C00_PIPELINE_CHECK Q = q'' x Fluent heated area  602.755240 W
+PASS C00_PIPELINE_CHECK cells printed by Fluent = expected  159840
+PASS C00_PIPELINE_CHECK Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS C00_PIPELINE_CHECK mesh = P00 medium mesh (SHA-256)  
+PASS C00_PIPELINE_CHECK EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS C00_PIPELINE_CHECK CSV dp_Pa = recomputed  438.12633
+PASS C00_PIPELINE_CHECK CSV T_out_K = recomputed  368.93236
+PASS C00_PIPELINE_CHECK CSV Q_heated_wall_W = recomputed  602.75524
+PASS C00_PIPELINE_CHECK CSV T_solid_max_K = recomputed  562.57678
+PASS C00_PIPELINE_CHECK CSV Re_in = recomputed  29958.1745
+PASS C00_PIPELINE_CHECK CSV yplus_max = recomputed  0.58483571
+PASS C00_PIPELINE_CHECK CSV dp_Pa_pct = recomputed change from P00  0.0000
+PASS C00_PIPELINE_CHECK CSV T_out_K_dK = recomputed change from P00  0.0000
+PASS C00_PIPELINE_CHECK CSV T_solid_max_K_dK = recomputed change from P00  0.0000
+PASS C00_PIPELINE_CHECK CSV Q_heated_wall_W_pct = recomputed change from P00  0.0000
+PASS C00_PIPELINE_CHECK CSV Re_in_pct = recomputed change from P00  0.0000
+PASS C00_PIPELINE_CHECK table row shows the recomputed dp, T_out, Tmax, Q  | C00_PIPELINE_CHECK | none (pipeline control) | identical to P00  | 159840 | 438.13 | 368.93 | 562.58 | 602.76 | 29958 
+PASS V01_LOW run status CONVERGED  CONVERGED
+PASS V01_LOW settings diff = intended paths only  ['/setup/boundary_conditions/velocity_inlet/fluid_inlet/momentum/velocity_magnitude/value', '/setup/boundary_conditions/velocity_inlet/fluid_inlet/turbulence/turbulent_intensity']
+PASS V01_LOW inlet velocity read back  21.15
+PASS V01_LOW turbulence intensity = 0.16 Re^-1/8  0.04469689751121414
+PASS V01_LOW heat flux read back  8000.0
+PASS V01_LOW heat flux on every outer face = set value  (8000.0, 8000.0)
+PASS V01_LOW audit 1_presolve: 0 failed of 133  []
+PASS V01_LOW audit 2_final_schemes: 0 failed of 133  []
+PASS V01_LOW audit 3_final: 0 failed of 133  []
+PASS V01_LOW converged and confirmed (final evaluation)  confirmation+400
+PASS V01_LOW plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  6.10e-05 K
+PASS V01_LOW mass and energy balance  7.6e-15 / 1.3e-12
+PASS V01_LOW air 250-600 K at every iteration  300.00-580.40 K
+PASS V01_LOW Inconel 293.15-673.15 K at every iteration  300.00-587.49 K
+PASS V01_LOW no limiter / reversed-flow / divergence message in the solver output  0
+PASS V01_LOW dp: face-export route = Fluent report  380 vs 380 (err 1.1e-08)
+PASS V01_LOW T_out: face-export route = Fluent report  377 vs 377 (err 5.7e-06)
+PASS V01_LOW Q: face-export route = Fluent report  603 vs 603 (err 1.8e-09)
+PASS V01_LOW Tmax_solid: face-export route = Fluent report  587 vs 587 (err 2.7e-05)
+PASS V01_LOW yplus_max: face-export route = Fluent report  0.524 vs 0.524 (err 7.6e-09)
+PASS V01_LOW yplus_mean: face-export route = Fluent report  0.211 vs 0.211 (err 3.5e-09)
+PASS V01_LOW Re_in: face-export route = Fluent report  2.7e+04 vs 2.7e+04 (err 4.2e-09)
+PASS V01_LOW A_heated: face-export route = Fluent report  0.0753 vs 0.0753 (err 1.8e-09)
+PASS V01_LOW y+ policy (max <= 1, mean <= 0.5)  0.5243 / 0.2108
+PASS V01_LOW Q = q'' x Fluent heated area  602.755240 W
+PASS V01_LOW cells printed by Fluent = expected  159840
+PASS V01_LOW Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS V01_LOW mesh = P00 medium mesh (SHA-256)  
+PASS V01_LOW EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS V01_LOW CSV dp_Pa = recomputed  379.93272
+PASS V01_LOW CSV T_out_K = recomputed  376.5566
+PASS V01_LOW CSV Q_heated_wall_W = recomputed  602.75524
+PASS V01_LOW CSV T_solid_max_K = recomputed  587.46741
+PASS V01_LOW CSV Re_in = recomputed  26962.35708
+PASS V01_LOW CSV yplus_max = recomputed  0.52427334
+PASS V01_LOW CSV dp_Pa_pct = recomputed change from P00  -13.2824
+PASS V01_LOW CSV T_out_K_dK = recomputed change from P00  7.6242
+PASS V01_LOW CSV T_solid_max_K_dK = recomputed change from P00  24.8906
+PASS V01_LOW CSV Q_heated_wall_W_pct = recomputed change from P00  0.0000
+PASS V01_LOW CSV Re_in_pct = recomputed change from P00  -10.0000
+PASS V01_LOW table row shows the recomputed dp, T_out, Tmax, Q  | V01_LOW | inlet velocity | 21.15 m/s | 159840 | 379.93 | 376.56 | 587.47 | 602.76 | 26962 | 0.5243 | 7.6e-15 | 1.3e-12
+PASS V03_HIGH run status CONVERGED  CONVERGED
+PASS V03_HIGH settings diff = intended paths only  ['/setup/boundary_conditions/velocity_inlet/fluid_inlet/momentum/velocity_magnitude/value', '/setup/boundary_conditions/velocity_inlet/fluid_inlet/turbulence/turbulent_intensity']
+PASS V03_HIGH inlet velocity read back  25.85
+PASS V03_HIGH turbulence intensity = 0.16 Re^-1/8  0.04358967260195817
+PASS V03_HIGH heat flux read back  8000.0
+PASS V03_HIGH heat flux on every outer face = set value  (8000.0, 8000.0)
+PASS V03_HIGH audit 1_presolve: 0 failed of 133  []
+PASS V03_HIGH audit 2_final_schemes: 0 failed of 133  []
+PASS V03_HIGH audit 3_final: 0 failed of 133  []
+PASS V03_HIGH converged and confirmed (final evaluation)  confirmation+400
+PASS V03_HIGH plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  6.10e-05 K
+PASS V03_HIGH mass and energy balance  5.5e-16 / 2.3e-14
+PASS V03_HIGH air 250-600 K at every iteration  300.00-534.61 K
+PASS V03_HIGH Inconel 293.15-673.15 K at every iteration  300.00-542.10 K
+PASS V03_HIGH no limiter / reversed-flow / divergence message in the solver output  0
+PASS V03_HIGH dp: face-export route = Fluent report  500 vs 500 (err 4.6e-10)
+PASS V03_HIGH T_out: face-export route = Fluent report  363 vs 363 (err 8.1e-05)
+PASS V03_HIGH Q: face-export route = Fluent report  603 vs 603 (err 1.8e-09)
+PASS V03_HIGH Tmax_solid: face-export route = Fluent report  542 vs 542 (err 2.4e-05)
+PASS V03_HIGH yplus_max: face-export route = Fluent report  0.645 vs 0.645 (err 3.6e-08)
+PASS V03_HIGH yplus_mean: face-export route = Fluent report  0.272 vs 0.272 (err 9.2e-09)
+PASS V03_HIGH Re_in: face-export route = Fluent report  3.3e+04 vs 3.3e+04 (err 4.2e-09)
+PASS V03_HIGH A_heated: face-export route = Fluent report  0.0753 vs 0.0753 (err 1.8e-09)
+PASS V03_HIGH y+ policy (max <= 1, mean <= 0.5)  0.6445 / 0.2717
+PASS V03_HIGH Q = q'' x Fluent heated area  602.755240 W
+PASS V03_HIGH cells printed by Fluent = expected  159840
+PASS V03_HIGH Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS V03_HIGH mesh = P00 medium mesh (SHA-256)  
+PASS V03_HIGH EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS V03_HIGH CSV dp_Pa = recomputed  499.68721
+PASS V03_HIGH CSV T_out_K = recomputed  362.68712
+PASS V03_HIGH CSV Q_heated_wall_W = recomputed  602.75524
+PASS V03_HIGH CSV T_solid_max_K = recomputed  542.09778
+PASS V03_HIGH CSV Re_in = recomputed  32953.99191
+PASS V03_HIGH CSV yplus_max = recomputed  0.64453852
+PASS V03_HIGH CSV dp_Pa_pct = recomputed change from P00  14.0509
+PASS V03_HIGH CSV T_out_K_dK = recomputed change from P00  -6.2452
+PASS V03_HIGH CSV T_solid_max_K_dK = recomputed change from P00  -20.4790
+PASS V03_HIGH CSV Q_heated_wall_W_pct = recomputed change from P00  0.0000
+PASS V03_HIGH CSV Re_in_pct = recomputed change from P00  10.0000
+PASS V03_HIGH table row shows the recomputed dp, T_out, Tmax, Q  | V03_HIGH | inlet velocity | 25.85 m/s | 159840 | 499.69 | 362.69 | 542.10 | 602.76 | 32954 | 0.6445 | 5.5e-16 | 2.3e-1
+PASS Q01_LOW run status CONVERGED  CONVERGED
+PASS Q01_LOW settings diff = intended paths only  ['/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux/value']
+PASS Q01_LOW inlet velocity read back  23.5
+PASS Q01_LOW turbulence intensity = 0.16 Re^-1/8  0.04411209588036475
+PASS Q01_LOW heat flux read back  7200.0
+PASS Q01_LOW heat flux on every outer face = set value  (7200.0, 7200.0)
+PASS Q01_LOW audit 1_presolve: 0 failed of 133  []
+PASS Q01_LOW audit 2_final_schemes: 0 failed of 133  []
+PASS Q01_LOW audit 3_final: 0 failed of 133  []
+PASS Q01_LOW converged and confirmed (final evaluation)  confirmation+400
+PASS Q01_LOW plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  4.14e-06 K
+PASS Q01_LOW mass and energy balance  1.2e-14 / 6.8e-14
+PASS Q01_LOW air 250-600 K at every iteration  300.00-527.66 K
+PASS Q01_LOW Inconel 293.15-673.15 K at every iteration  300.00-534.45 K
+PASS Q01_LOW no limiter / reversed-flow / divergence message in the solver output  0
+PASS Q01_LOW dp: face-export route = Fluent report  420 vs 420 (err 7.6e-09)
+PASS Q01_LOW T_out: face-export route = Fluent report  362 vs 362 (err 3.3e-05)
+PASS Q01_LOW Q: face-export route = Fluent report  542 vs 542 (err 9.1e-09)
+PASS Q01_LOW Tmax_solid: face-export route = Fluent report  534 vs 534 (err 2.2e-05)
+PASS Q01_LOW yplus_max: face-export route = Fluent report  0.605 vs 0.605 (err 2.7e-08)
+PASS Q01_LOW yplus_mean: face-export route = Fluent report  0.254 vs 0.254 (err 7.9e-09)
+PASS Q01_LOW Re_in: face-export route = Fluent report  3e+04 vs 3e+04 (err 4.2e-09)
+PASS Q01_LOW A_heated: face-export route = Fluent report  0.0753 vs 0.0753 (err 1.8e-09)
+PASS Q01_LOW y+ policy (max <= 1, mean <= 0.5)  0.6046 / 0.2541
+PASS Q01_LOW Q = q'' x Fluent heated area  542.479720 W
+PASS Q01_LOW cells printed by Fluent = expected  159840
+PASS Q01_LOW Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS Q01_LOW mesh = P00 medium mesh (SHA-256)  
+PASS Q01_LOW EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS Q01_LOW CSV dp_Pa = recomputed  419.73641
+PASS Q01_LOW CSV T_out_K = recomputed  362.06322
+PASS Q01_LOW CSV Q_heated_wall_W = recomputed  542.47972
+PASS Q01_LOW CSV T_solid_max_K = recomputed  534.44556
+PASS Q01_LOW CSV Re_in = recomputed  29958.1745
+PASS Q01_LOW CSV yplus_max = recomputed  0.60462058
+PASS Q01_LOW CSV dp_Pa_pct = recomputed change from P00  -4.1974
+PASS Q01_LOW CSV T_out_K_dK = recomputed change from P00  -6.8691
+PASS Q01_LOW CSV T_solid_max_K_dK = recomputed change from P00  -28.1312
+PASS Q01_LOW CSV Q_heated_wall_W_pct = recomputed change from P00  -10.0000
+PASS Q01_LOW CSV Re_in_pct = recomputed change from P00  0.0000
+PASS Q01_LOW table row shows the recomputed dp, T_out, Tmax, Q  | Q01_LOW | outer-wall heat flux | 7200.0 W/m2 | 159840 | 419.74 | 362.06 | 534.45 | 542.48 | 29958 | 0.6046 | 1.2e-14 |
+PASS Q03_HIGH run status CONVERGED  CONVERGED
+PASS Q03_HIGH settings diff = intended paths only  ['/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux/value']
+PASS Q03_HIGH inlet velocity read back  23.5
+PASS Q03_HIGH turbulence intensity = 0.16 Re^-1/8  0.04411209588036475
+PASS Q03_HIGH heat flux read back  8800.0
+PASS Q03_HIGH heat flux on every outer face = set value  (8800.0, 8800.0)
+PASS Q03_HIGH audit 1_presolve: 0 failed of 133  []
+PASS Q03_HIGH audit 2_final_schemes: 0 failed of 133  []
+PASS Q03_HIGH audit 3_final: 0 failed of 133  []
+PASS Q03_HIGH converged and confirmed (final evaluation)  confirmation+400
+PASS Q03_HIGH plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  1.16e-05 K
+PASS Q03_HIGH mass and energy balance  4.2e-14 / 3.1e-13
+PASS Q03_HIGH air 250-600 K at every iteration  300.00-583.36 K
+PASS Q03_HIGH Inconel 293.15-673.15 K at every iteration  300.00-591.14 K
+PASS Q03_HIGH no limiter / reversed-flow / divergence message in the solver output  0
+PASS Q03_HIGH dp: face-export route = Fluent report  457 vs 457 (err 1.5e-09)
+PASS Q03_HIGH T_out: face-export route = Fluent report  376 vs 376 (err 8.1e-05)
+PASS Q03_HIGH Q: face-export route = Fluent report  663 vs 663 (err 4.3e-09)
+PASS Q03_HIGH Tmax_solid: face-export route = Fluent report  591 vs 591 (err 3.0e-07)
+PASS Q03_HIGH yplus_max: face-export route = Fluent report  0.566 vs 0.566 (err 3.6e-08)
+PASS Q03_HIGH yplus_mean: face-export route = Fluent report  0.229 vs 0.229 (err 1.9e-08)
+PASS Q03_HIGH Re_in: face-export route = Fluent report  3e+04 vs 3e+04 (err 4.2e-09)
+PASS Q03_HIGH A_heated: face-export route = Fluent report  0.0753 vs 0.0753 (err 1.8e-09)
+PASS Q03_HIGH y+ policy (max <= 1, mean <= 0.5)  0.5659 / 0.2290
+PASS Q03_HIGH Q = q'' x Fluent heated area  663.030760 W
+PASS Q03_HIGH cells printed by Fluent = expected  159840
+PASS Q03_HIGH Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS Q03_HIGH mesh = P00 medium mesh (SHA-256)  
+PASS Q03_HIGH EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS Q03_HIGH CSV dp_Pa = recomputed  456.63526
+PASS Q03_HIGH CSV T_out_K = recomputed  375.79302
+PASS Q03_HIGH CSV Q_heated_wall_W = recomputed  663.03076
+PASS Q03_HIGH CSV T_solid_max_K = recomputed  591.12708
+PASS Q03_HIGH CSV Re_in = recomputed  29958.1745
+PASS Q03_HIGH CSV yplus_max = recomputed  0.56589866
+PASS Q03_HIGH CSV dp_Pa_pct = recomputed change from P00  4.2246
+PASS Q03_HIGH CSV T_out_K_dK = recomputed change from P00  6.8607
+PASS Q03_HIGH CSV T_solid_max_K_dK = recomputed change from P00  28.5503
+PASS Q03_HIGH CSV Q_heated_wall_W_pct = recomputed change from P00  10.0000
+PASS Q03_HIGH CSV Re_in_pct = recomputed change from P00  0.0000
+PASS Q03_HIGH table row shows the recomputed dp, T_out, Tmax, Q  | Q03_HIGH | outer-wall heat flux | 8800.0 W/m2 | 159840 | 456.64 | 375.79 | 591.13 | 663.03 | 29958 | 0.5659 | 4.2e-14 
+PASS T01_THIN run status CONVERGED  CONVERGED
+PASS T01_THIN settings diff = intended paths only  ['/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux/value']
+PASS T01_THIN inlet velocity read back  23.5
+PASS T01_THIN turbulence intensity = 0.16 Re^-1/8  0.04411209588036475
+PASS T01_THIN heat flux read back  8888.888888888889
+PASS T01_THIN heat flux on every outer face = set value  (8888.888889, 8888.888889)
+PASS T01_THIN audit 1_presolve: 0 failed of 133  []
+PASS T01_THIN audit 2_final_schemes: 0 failed of 133  []
+PASS T01_THIN audit 3_final: 0 failed of 133  []
+PASS T01_THIN converged and confirmed (final evaluation)  confirmation+400
+PASS T01_THIN plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  5.95e-06 K
+PASS T01_THIN mass and energy balance  8.8e-15 / 7.6e-14
+PASS T01_THIN air 250-600 K at every iteration  300.00-555.76 K
+PASS T01_THIN Inconel 293.15-673.15 K at every iteration  300.00-561.97 K
+PASS T01_THIN no limiter / reversed-flow / divergence message in the solver output  0
+PASS T01_THIN dp: face-export route = Fluent report  438 vs 438 (err 5.8e-09)
+PASS T01_THIN T_out: face-export route = Fluent report  369 vs 369 (err 4.6e-05)
+PASS T01_THIN Q: face-export route = Fluent report  603 vs 603 (err 1.4e-09)
+PASS T01_THIN Tmax_solid: face-export route = Fluent report  562 vs 562 (err 2.2e-05)
+PASS T01_THIN yplus_max: face-export route = Fluent report  0.593 vs 0.593 (err 3.7e-08)
+PASS T01_THIN yplus_mean: face-export route = Fluent report  0.241 vs 0.241 (err 2.0e-08)
+PASS T01_THIN Re_in: face-export route = Fluent report  3e+04 vs 3e+04 (err 4.2e-09)
+PASS T01_THIN A_heated: face-export route = Fluent report  0.0678 vs 0.0678 (err 6.0e-09)
+PASS T01_THIN y+ policy (max <= 1, mean <= 0.5)  0.5935 / 0.2412
+PASS T01_THIN Q = q'' x Fluent heated area  602.755240 W
+PASS T01_THIN cells printed by Fluent = expected  155520
+PASS T01_THIN Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS T01_THIN mesh file = generated mesh (SHA-256)  D2CB86B952E5BE6D
+PASS T01_THIN Fluent heated area = 48-facet area of Do  6.780996400e-02
+PASS T01_THIN total heat input = P00 (Q held)  602.755240 vs 602.755240 W
+PASS T01_THIN EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS T01_THIN CSV dp_Pa = recomputed  438.11047
+PASS T01_THIN CSV T_out_K = recomputed  368.93236
+PASS T01_THIN CSV Q_heated_wall_W = recomputed  602.75524
+PASS T01_THIN CSV T_solid_max_K = recomputed  561.96619
+PASS T01_THIN CSV Re_in = recomputed  29958.1745
+PASS T01_THIN CSV yplus_max = recomputed  0.59345645
+PASS T01_THIN CSV dp_Pa_pct = recomputed change from P00  -0.0036
+PASS T01_THIN CSV T_out_K_dK = recomputed change from P00  0.0000
+PASS T01_THIN CSV T_solid_max_K_dK = recomputed change from P00  -0.6106
+PASS T01_THIN CSV Q_heated_wall_W_pct = recomputed change from P00  0.0000
+PASS T01_THIN CSV Re_in_pct = recomputed change from P00  0.0000
+PASS T01_THIN table row shows the recomputed dp, T_out, Tmax, Q  | T01_THIN | wall thickness (Q held constant) | 8.0 mm | 155520 | 438.11 | 368.93 | 561.97 | 602.76 | 29958 | 0.5935 | 8
+PASS T03_THICK run status CONVERGED  CONVERGED
+PASS T03_THICK settings diff = intended paths only  ['/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux/value']
+PASS T03_THICK inlet velocity read back  23.5
+PASS T03_THICK turbulence intensity = 0.16 Re^-1/8  0.04411209588036475
+PASS T03_THICK heat flux read back  7272.727272727273
+PASS T03_THICK heat flux on every outer face = set value  (7272.727273, 7272.727273)
+PASS T03_THICK audit 1_presolve: 0 failed of 133  []
+PASS T03_THICK audit 2_final_schemes: 0 failed of 133  []
+PASS T03_THICK audit 3_final: 0 failed of 133  []
+PASS T03_THICK converged and confirmed (final evaluation)  confirmation+400
+PASS T03_THICK plateau recomputed: T drift < 0.1 K, dp drift < 0.1 %  7.86e-06 K
+PASS T03_THICK mass and energy balance  2.2e-14 / 1.9e-13
+PASS T03_THICK air 250-600 K at every iteration  300.00-554.78 K
+PASS T03_THICK Inconel 293.15-673.15 K at every iteration  300.00-563.08 K
+PASS T03_THICK no limiter / reversed-flow / divergence message in the solver output  0
+PASS T03_THICK dp: face-export route = Fluent report  438 vs 438 (err 8.8e-09)
+PASS T03_THICK T_out: face-export route = Fluent report  369 vs 369 (err 4.4e-05)
+PASS T03_THICK Q: face-export route = Fluent report  603 vs 603 (err 1.5e-09)
+PASS T03_THICK Tmax_solid: face-export route = Fluent report  563 vs 563 (err 3.0e-05)
+PASS T03_THICK yplus_max: face-export route = Fluent report  0.578 vs 0.578 (err 1.6e-08)
+PASS T03_THICK yplus_mean: face-export route = Fluent report  0.241 vs 0.241 (err 1.0e-08)
+PASS T03_THICK Re_in: face-export route = Fluent report  3e+04 vs 3e+04 (err 4.2e-09)
+PASS T03_THICK A_heated: face-export route = Fluent report  0.0829 vs 0.0829 (err 4.5e-09)
+PASS T03_THICK y+ policy (max <= 1, mean <= 0.5)  0.5777 / 0.2408
+PASS T03_THICK Q = q'' x Fluent heated area  602.755240 W
+PASS T03_THICK cells printed by Fluent = expected  168480
+PASS T03_THICK Fluent min orthogonal quality > 0.1, no mesh warnings  0.445829
+PASS T03_THICK mesh file = generated mesh (SHA-256)  9B6CC26C153BD447
+PASS T03_THICK Fluent heated area = 48-facet area of Do  8.287884500e-02
+PASS T03_THICK total heat input = P00 (Q held)  602.755240 vs 602.755240 W
+PASS T03_THICK EnSight solid temperature export present  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS T03_THICK CSV dp_Pa = recomputed  438.14279
+PASS T03_THICK CSV T_out_K = recomputed  368.9324
+PASS T03_THICK CSV Q_heated_wall_W = recomputed  602.75524
+PASS T03_THICK CSV T_solid_max_K = recomputed  563.07239
+PASS T03_THICK CSV Re_in = recomputed  29958.1745
+PASS T03_THICK CSV yplus_max = recomputed  0.57774127
+PASS T03_THICK CSV dp_Pa_pct = recomputed change from P00  0.0038
+PASS T03_THICK CSV T_out_K_dK = recomputed change from P00  0.0000
+PASS T03_THICK CSV T_solid_max_K_dK = recomputed change from P00  0.4956
+PASS T03_THICK CSV Q_heated_wall_W_pct = recomputed change from P00  0.0000
+PASS T03_THICK CSV Re_in_pct = recomputed change from P00  0.0000
+PASS T03_THICK table row shows the recomputed dp, T_out, Tmax, Q  | T03_THICK | wall thickness (Q held constant) | 12.0 mm | 168480 | 438.14 | 368.93 | 563.07 | 602.76 | 29958 | 0.5777 |
+PASS C00 monitor history bit-identical to P00 (all monitors, all iterations)  700 rows
+PASS C00 EnSight export byte-identical to the 7A mapping source  ['solid_domain_T.encas', 'solid_domain_T.geo', 'solid_domain_T.scl1', 'solid_domain_T.vel', 'solid_domain_T.xml']
+PASS T01_THIN CAD = analytical (Do, Di, L, heated area, volumes, end areas)  max rel 4.4e-16
+PASS T01_THIN derived q'' = Q_P00 / A_heated(CAD)  8888.888889
+PASS T03_THICK CAD = analytical (Do, Di, L, heated area, volumes, end areas)  max rel 2.2e-16
+PASS T03_THICK derived q'' = Q_P00 / A_heated(CAD)  7272.727273
+PASS 03_CAD_Geometry not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 618635 s before
+PASS 06_Fluent_CFD\Case not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 254202 s before
+PASS 06_Fluent_CFD\Data not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 254200 s before
+PASS 06_Fluent_CFD\Audit not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 253996 s before
+PASS 06_Fluent_CFD\Monitors not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 251856 s before
+PASS 06_Fluent_CFD\Exports not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 253996 s before
+PASS 07_Thermal_Analysis\Temperature_Source\EnSight not modified by 9B-1 (newest file older than the first 9B-1 file)  newest 146637 s before
+PASS T01_THIN solid layers = smallest n with growth <= 1.147 (P00 1.1469)  n 9 g 1.1388; n-1 g 1.1917
+PASS T01_THIN fluid mesh identical to P00 (node coords + connectivity)  {'fluid_node_coordinates_bitwise_equal': True, 'fluid_cell_connectivity_equal': True}
+PASS T03_THICK solid layers = smallest n with growth <= 1.147 (P00 1.1469)  n 12 g 1.1191; n-1 g 1.1474
+PASS T03_THICK fluid mesh identical to P00 (node coords + connectivity)  {'fluid_node_coordinates_bitwise_equal': True, 'fluid_cell_connectivity_equal': True}
+PASS mesh wrapper regenerated the P00 medium mesh byte-identically  2C6FCFB31108654D
+VERIFY 9B-1: 309/309 PASS

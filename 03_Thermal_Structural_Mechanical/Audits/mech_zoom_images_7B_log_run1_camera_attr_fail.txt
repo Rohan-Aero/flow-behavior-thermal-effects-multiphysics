@@ -1,0 +1,26 @@
+15:26:10 analysis LC1_Free_Expansion state Solved
+15:26:10 analysis LC2_Axially_Restrained state Solved
+15:26:10 analysis LC2P_Restrained_Thermal_Plus_Pressure state Solved
+15:26:10 FAIL LC1_Z_inlet_Imported_Temperature: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Imported_Temperature.png exists False
+15:26:10 FAIL LC1_Z_inlet_Equivalent_Stress: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Equivalent_Stress.png exists False
+15:26:10 FAIL LC1_Z_inlet_Max_Principal: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Max_Principal.png exists False
+15:26:10 FAIL LC1_Z_inlet_Hoop_Stress: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_inlet_Hoop_Stress.png exists False
+15:26:10 FAIL LC1_Z_outlet_Total_Deformation: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC1_Z_outlet_Total_Deformation.png exists False
+15:26:10 FAIL LC2_Z_inlet_Equivalent_Stress: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_inlet_Equivalent_Stress.png exists False
+15:26:10 FAIL LC2_Z_inlet_Equivalent_Stress_UNaveraged: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_inlet_Equivalent_Stress_UNaveraged.png exists False
+15:26:10 FAIL LC2_Z_inlet_Min_Principal: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_inlet_Min_Principal.png exists False
+15:26:10 FAIL LC2_Z_outlet_Equivalent_Stress: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_outlet_Equivalent_Stress.png exists False
+15:26:10 FAIL LC2_Z_outlet_Equivalent_Elastic_Strain: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2_Z_outlet_Equivalent_Elastic_Strain.png exists False
+15:26:10 FAIL LC2P_Z_inlet_Equivalent_Stress: 'MechanicalCameraWrapper' object has no attribute 'ViewDirection'
+15:26:10 <PROJECT_ROOT>\08_Structural_Analysis\Figures\Mechanical\Zoom\LC2P_Z_inlet_Equivalent_Stress.png exists False
+15:26:10 ZOOM-IMAGES-DONE

@@ -1,0 +1,19 @@
+
+ _____________________________________________________
+ |                                                   |
+ |     Livermore Software Technology Corporation     |
+ |                                                   |
+ |                L S - P R E P O S T                |
+ |                                                   |
+ |    Advanced Pre- and Post-Processor for LS-DYNA   |
+ |                                                   |
+ |    LS-PrePost(R) 2025 R1 (v4.12.6) - 14May2025    |
+ |                                                   |
+ |           Ansys Copyright (C) 1999-2025           |
+ |                All Rights Reserved                |
+ |___________________________________________________|
+
+ OpenGL version 1.1.0
+ d3plot files are 64-bit ieee format
+ Total number of states = 2
+ Total no. of active parts    = 1

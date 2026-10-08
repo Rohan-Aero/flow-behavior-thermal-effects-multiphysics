@@ -1,0 +1,11 @@
+Quantity,Source,Value [kN],Ratio to Mechanical P_cr,Difference to Mechanical P_cr [%],Note
+Linear eigenvalue critical load P_cr = lambda1 x 548.94 kN (lambda1 = 1.10805),Original project: Mechanical 8A (unchanged),608.25,1.0000,+0.00,reference value of the original project
+Linear eigenvalue critical load (lambda1 = 1.109475),LS-DYNA 12B G6 (extension),609.03,1.0013,+0.13,"linear buckling cross-check; +0.13 % raw, -0.64 % kinematics-corrected"
+"LC2 applied axial compression (Mechanical reaction, lambda = 1)",Original project: Mechanical (unchanged),548.94,0.9025,-9.75,"lambda1 = P_cr / 548.94 kN = 1.108 is a load multiplier, not a factor of safety"
+"Axial compression at lambda = 1, perfect geometry",LS-DYNA 12C C0 (reference),553.25,0.9096,-9.04,equals 12B G5 (553.247 kN); +0.79 % vs Mechanical = large-deformation kinematics (12B D-105)
+"Maximum attained axial compression, A = 0.1 mm",LS-DYNA 12C nonlinear (extension),601.00,0.9881,-1.19,at lambda = 1.185; interior maximum
+"Southwell estimate of the critical load, A = 0.1 mm",LS-DYNA 12C nonlinear (extension),612.32,1.0067,+0.67,"fit over N in [0.5, 0.95] N_max, R2 = 0.99997, w0 estimate 0.181 mm vs imposed 0.2 mm"
+"Maximum attained axial compression, A = 0.6 mm",LS-DYNA 12C nonlinear (extension),572.41,0.9411,-5.89,at lambda = 1.300; still rising at lambda = 1.3 (end of analysis)
+"Southwell estimate of the critical load, A = 0.6 mm",LS-DYNA 12C nonlinear (extension),611.06,1.0046,+0.46,"fit over N in [0.5, 0.95] N_max, R2 = 1.00000, w0 estimate 1.111 mm vs imposed 1.2 mm"
+"Maximum attained axial compression, A = 1.2 mm",LS-DYNA 12C nonlinear (extension),545.32,0.8965,-10.35,at lambda = 1.300; still rising at lambda = 1.3 (end of analysis)
+"Southwell estimate of the critical load, A = 1.2 mm",LS-DYNA 12C nonlinear (extension),607.66,0.9990,-0.10,"fit over N in [0.5, 0.95] N_max, R2 = 1.00000, w0 estimate 2.196 mm vs imposed 2.4 mm"

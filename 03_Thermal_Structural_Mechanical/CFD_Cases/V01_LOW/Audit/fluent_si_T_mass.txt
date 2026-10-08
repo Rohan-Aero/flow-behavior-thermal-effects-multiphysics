@@ -1,0 +1,9 @@
+                         "Surface Integral Report"
+
+           Mass-Weighted Average
+              Static Temperature                  [K]
+-------------------------------- --------------------
+                     fluid_inlet                  300
+                    fluid_outlet             376.5566
+                ---------------- --------------------
+                             Net             338.2783

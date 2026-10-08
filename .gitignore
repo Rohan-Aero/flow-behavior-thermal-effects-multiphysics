@@ -1,0 +1,65 @@
+# Solver binaries and scratch (excluded from this copy; kept in the master archive)
+*.lfct
+*.063
+*.rst
+*.r001
+*.rdb
+*.mechdb
+*.mshdb
+*.h5
+*.kdata
+*.snind
+*.ldhi
+*.lsda
+*.dat
+*.full
+*.esav
+*.trn
+*.binout
+d3plot*
+d3dump*
+d3hsp*
+nodout*
+eloutdet*
+binout*
+disk.*
+
+# LaTeX and office build artefacts
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.out
+*.log
+*.tmp
+*.bak
+~$*
+
+# Caches and environments
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+venv/
+.env
+.env.*
+.vscode/
+.idea/
+
+# Credentials and licence material
+*.pem
+*.key
+*.pfx
+*.p12
+*.ppk
+*.pvk
+*.lic
+*.kdb
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,51 @@
+! =====================================================================================================
+! SECTION 8A - post-processing command snippet for LINEAR (EIGENVALUE) BUCKLING (RE-ANALYSIS 2026).
+! Placed as a Solution-level "Commands (APDL)" object in the buckling analysis; MAPDL runs it in POST1 after the
+! eigen-solution. It READS results only. Files written in the solver working directory:
+!   s8a_set_list.txt      SET,LIST (the TIME/FREQ column of a buckling run = load factor)
+!   s8a_load_factors.csv  mode, load factor (full precision)
+!   s8a_mode<i>.csv       node, x, y, z, ux, uy, uz (global Cartesian) of mode i at the element CORNER nodes
+!                         (eigenvector: arbitrary scale, mass/stiffness normalised by MAPDL; only its shape is meaningful)
+! =====================================================================================================
+/post1
+*get,s8a_ns,active,0,set,nset
+/output,s8a_set_list,txt
+set,list
+/output
+*cfopen,s8a_load_factors,csv
+*vwrite
+('mode,load_factor')
+*cfclos
+allsel,all
+esel,all
+nsle,s,corner
+*get,s8a_nmx,node,0,num,max
+*del,s8a_m,,nopr
+*del,s8a_u,,nopr
+*dim,s8a_m,array,s8a_nmx
+*dim,s8a_u,array,s8a_nmx,7
+*vget,s8a_m(1),node,1,nsel
+*vfill,s8a_u(1,1),ramp,1,1
+*vget,s8a_u(1,2),node,1,loc,x
+*vget,s8a_u(1,3),node,1,loc,y
+*vget,s8a_u(1,4),node,1,loc,z
+rsys,0
+*do,s8a_i,1,s8a_ns
+set,1,s8a_i
+*get,s8a_lf,active,0,set,freq
+*cfopen,s8a_load_factors,csv,,append
+*vwrite,s8a_i,s8a_lf
+(F6.0,',',E24.15)
+*cfclos
+*vget,s8a_u(1,5),node,1,u,x
+*vget,s8a_u(1,6),node,1,u,y
+*vget,s8a_u(1,7),node,1,u,z
+*cfopen,s8a_mode%s8a_i%,csv
+*vwrite
+('node,x_m,y_m,z_m,ux,uy,uz')
+*vmask,s8a_m(1)
+*vwrite,s8a_u(1,1),s8a_u(1,2),s8a_u(1,3),s8a_u(1,4),s8a_u(1,5),s8a_u(1,6),s8a_u(1,7)
+(F10.0,6(',',E16.8))
+*cfclos
+*enddo
+allsel,all

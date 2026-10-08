@@ -1,0 +1,7 @@
+C00_PIPELINE_CHECK {"unmapped": 0, "T": [423.837, 562.566], "A_max": 0.0961, "outside": 12544, "mid dT map/src": [7.5796, 7.5805], "mid mean map/src": [536.3633, 536.3577], "B outer/bore max": [0.782, 2.642], "PASS": true}
+V01_LOW {"unmapped": 0, "T": [435.916, 587.455], "A_max": 0.103, "outside": 12544, "mid dT map/src": [7.378, 7.3789], "mid mean map/src": [559.1403, 559.1348], "B outer/bore max": [0.851, 2.794], "PASS": true}
+V03_HIGH {"unmapped": 0, "T": [413.884, 542.088], "A_max": 0.0905, "outside": 12544, "mid dT map/src": [7.754, 7.755], "mid mean map/src": [517.5963, 517.5906], "B outer/bore max": [0.723, 2.507], "PASS": true}
+Q01_LOW {"unmapped": 0, "T": [410.597, 534.435], "A_max": 0.086, "outside": 12544, "mid dT map/src": [7.0344, 7.0353], "mid mean map/src": [510.6147, 510.6095], "B outer/bore max": [0.692, 2.355], "PASS": true}
+Q03_HIGH {"unmapped": 0, "T": [437.279, 591.115], "A_max": 0.1062, "outside": 12544, "mid dT map/src": [8.0885, 8.0895], "mid mean map/src": [562.5669, 562.5609], "B outer/bore max": [0.874, 2.932], "PASS": true}
+T01_THIN {"unmapped": 0, "T": [417.966, 561.941], "A_max": 0.1541, "outside": 11496, "mid dT map/src": [6.4356, 6.4366], "mid mean map/src": [535.8374, 535.83], "B outer/bore max": [1.104, 2.723], "PASS": true}
+T03_THICK {"unmapped": 0, "T": [428.783, 563.058], "A_max": 0.1049, "outside": 10980, "mid dT map/src": [8.607, 8.608], "mid mean map/src": [536.8375, 536.8295], "B outer/bore max": [0.583, 2.613], "PASS": true}

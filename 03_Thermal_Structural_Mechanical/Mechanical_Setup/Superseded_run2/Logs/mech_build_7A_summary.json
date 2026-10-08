@@ -1,0 +1,140 @@
+{
+ "mesh": {
+  "edges": [
+   [
+    11, 
+    "GeoCurveCircle", 
+    0.062831853071795868
+   ], 
+   [
+    12, 
+    "GeoCurveCircle", 
+    0.062831853071795868
+   ], 
+   [
+    10, 
+    "GeoCurveCircle", 
+    0.12566370614359174
+   ], 
+   [
+    9, 
+    "GeoCurveCircle", 
+    0.12566370614359174
+   ]
+  ], 
+  "order": "Quadratic", 
+  "elements": 23400, 
+  "metrics": {
+   "ParallelDeviation": {
+    "min": "10", 
+    "sd": "0", 
+    "max": "10", 
+    "avg": "10"
+   }, 
+   "MaximumCornerAngle": {
+    "min": "95 [deg]", 
+    "sd": "0 [deg]", 
+    "max": "95 [deg]", 
+    "avg": "95 [deg]"
+   }, 
+   "JacobianRatio": {
+    "min": "1.1153", 
+    "sd": "0.031640966869650164", 
+    "max": "1.2046000000000001", 
+    "avg": "1.1534999999999329"
+   }, 
+   "OrthogonalQuality": "n/a 'type' object has no attribute 'OrthogonalQuality'", 
+   "ElementQuality": {
+    "min": "0.23667418368906179", 
+    "sd": "0.21790109210754757", 
+    "max": "0.99120634986953271", 
+    "avg": "0.68822512405436864"
+   }, 
+   "WarpingFactor": {
+    "min": "0", 
+    "sd": "0", 
+    "max": "1.3707E-13", 
+    "avg": "1.4806164365752057E-14"
+   }, 
+   "Skewness": {
+    "min": "0.055555555678873811", 
+    "sd": "0", 
+    "max": "0.055555555678877488", 
+    "avg": "0.05555555567887447"
+   }, 
+   "AspectRatio": {
+    "min": "1.1374", 
+    "sd": "0.92138176921084525", 
+    "max": "4.8823", 
+    "avg": "2.4130510769230744"
+   }
+  }, 
+  "nodes": 108252
+ }, 
+ "unit_system": "StandardMKS", 
+ "analyses": {}, 
+ "solid_body": {
+  "fluid_suppressed": true, 
+  "StiffnessBehavior": "Flexible", 
+  "ReferenceTemperature": "False", 
+  "ReferenceTemperatureType": "None", 
+  "material": "Inconel_718_Re_analysis", 
+  "Volume": "0.00056548667764616284 [m m m]", 
+  "Mass": "4.6313358899220738 [kg]"
+ }, 
+ "FATAL": "cannot access protected member BaseObject without a python subclass of MappingValidation", 
+ "support_nodes_LC1": {
+  "ring_nodes": 72, 
+  "named_selection": "NS_LC1_SUPPORT_3NODES_INLET_OUTER", 
+  "nodes": [
+   {
+    "z": 0.0, 
+    "theta_deg": 3.9756933518293961e-14, 
+    "id": 18882, 
+    "x": 0.02, 
+    "y": 1.3877787807814457e-17
+   }, 
+   {
+    "z": 0.0, 
+    "theta_deg": 120.00000000000009, 
+    "id": 18894, 
+    "x": -0.010000000000000026, 
+    "y": 0.017320508075688759
+   }, 
+   {
+    "z": 0.0, 
+    "theta_deg": -120.00000000000001, 
+    "id": 18870, 
+    "x": -0.010000000000000005, 
+    "y": -0.017320508075688773
+   }
+  ]
+ }, 
+ "support_nodes_LC2": {
+  "ring_nodes": 72, 
+  "named_selection": "NS_LC2_HOOP_3NODES_MIDSPAN_OUTER", 
+  "nodes": [
+   {
+    "z": 0.30000000000000016, 
+    "theta_deg": 3.9756933518293961e-14, 
+    "id": 25874, 
+    "x": 0.02, 
+    "y": 1.3877787807814457e-17
+   }, 
+   {
+    "z": 0.3000000000000001, 
+    "theta_deg": 120.00000000000009, 
+    "id": 25886, 
+    "x": -0.010000000000000026, 
+    "y": 0.017320508075688759
+   }, 
+   {
+    "z": 0.3000000000000001, 
+    "theta_deg": -120.00000000000001, 
+    "id": 25862, 
+    "x": -0.010000000000000005, 
+    "y": -0.017320508075688773
+   }
+  ]
+ }
+}

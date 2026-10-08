@@ -1,0 +1,628 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 9B-2 mapping audit (Part D)",
+ "cases": {
+  "C00_PIPELINE_CHECK": {
+   "family": "baseline geometry (mesh B)",
+   "ds": "C00_PIPELINE_CHECK_LC2_presolve_ds.dat",
+   "nodes": 108252,
+   "elements": 23400,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "C00_PIPELINE_CHECK_final.cas.h5",
+    "source_nodes": 48048,
+    "source_cells": 43200,
+    "source_radial_layers": 10,
+    "node_T_min_K": 423.837341,
+    "node_T_max_K": 562.54364
+   },
+   "mapped": 108252,
+   "unmapped": 0,
+   "T_min_K": 423.83737199999996,
+   "T_max_K": 562.5658217,
+   "extrapolation_above_source_max_K": 0.022181700000032833,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 12544,
+   "outside_max_local_coord_excess": 0.04443343664088739,
+   "A_vs_source_node_field": {
+    "max_K": 0.09610654624333392,
+    "mean_abs_K": 0.0019634223808116754,
+    "rms_K": 0.006560370525715772,
+    "max_inside_K": 0.04724857054719678,
+    "max_outside_K": 0.09610654624333392,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 5580,
+      "A_max_K": 0.04724857054719678
+     },
+     "14-586 mm": {
+      "n": 97092,
+      "A_max_K": 0.09610654624333392
+     },
+     "586-600.1 mm": {
+      "n": 5580,
+      "A_max_K": 0.028239750747729886
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 0.7819712833332915,
+     "mean_K": 0.010089750555247985,
+     "rms_K": 0.08309663276526234,
+     "max_abs_14_586mm_K": 0.06074592688520397,
+     "fluent_face_theta_ptp_max_K": 0.0007663000000093234
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.641718399999945,
+     "mean_K": 0.03444309877477339,
+     "rms_K": 0.26585950082961246,
+     "max_abs_14_586mm_K": 0.22117485964662364,
+     "fluent_face_theta_ptp_max_K": 0.005921499999999469
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 7.57958991111127,
+     "mean_K": 536.3633032697777,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.020957899999984875,
+     "theta_ptp_inner_K": 0.023460300000010648
+    },
+    "source_nodes": {
+     "dT_K": 7.580515416666685,
+     "mean_K": 536.3577063860619,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.000183999999990192,
+     "theta_ptp_inner_K": 0.0013420000000223808
+    },
+    "dT_diff_K": -0.0009255055554149294,
+    "mean_diff_K": 0.005596883715838885
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": 0.004106546243333925
+  },
+  "V01_LOW": {
+   "family": "baseline geometry (mesh B)",
+   "ds": "V01_LOW_LC2_presolve_ds.dat",
+   "nodes": 108252,
+   "elements": 23400,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "V01_LOW_final.cas.h5",
+    "source_nodes": 48048,
+    "source_cells": 43200,
+    "source_radial_layers": 10,
+    "node_T_min_K": 435.915558,
+    "node_T_max_K": 587.433044
+   },
+   "mapped": 108252,
+   "unmapped": 0,
+   "T_min_K": 435.915558,
+   "T_max_K": 587.454758,
+   "extrapolation_above_source_max_K": 0.021713999999974476,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 12544,
+   "outside_max_local_coord_excess": 0.04443343664088739,
+   "A_vs_source_node_field": {
+    "max_K": 0.1029575999999679,
+    "mean_abs_K": 0.0019275680872590088,
+    "rms_K": 0.006464204548551579,
+    "max_inside_K": 0.04878852556578295,
+    "max_outside_K": 0.1029575999999679,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 5580,
+      "A_max_K": 0.04878852556578295
+     },
+     "14-586 mm": {
+      "n": 97092,
+      "A_max_K": 0.1029575999999679
+     },
+     "586-600.1 mm": {
+      "n": 5580,
+      "A_max_K": 0.027506945056643417
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 0.8505635333333998,
+     "mean_K": 0.010496445856950707,
+     "rms_K": 0.08839359484838796,
+     "max_abs_14_586mm_K": 0.0631222086951766,
+     "fluent_face_theta_ptp_max_K": 0.0006511999999929685
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.7935843166666814,
+     "mean_K": 0.03493635252927522,
+     "rms_K": 0.27998881897879035,
+     "max_abs_14_586mm_K": 0.23272978598288319,
+     "fluent_face_theta_ptp_max_K": 0.004944499999965046
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 7.3780214333334015,
+     "mean_K": 559.140304610074,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.020683400000052643,
+     "theta_ptp_inner_K": 0.024941300000023148
+    },
+    "source_nodes": {
+     "dT_K": 7.37890091666668,
+     "mean_K": 559.1348476401486,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.00048800000001847366,
+     "theta_ptp_inner_K": 0.003601000000003296
+    },
+    "dT_diff_K": -0.0008794833332785856,
+    "mean_diff_K": 0.00545696992548983
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": 0.010957599999967899
+  },
+  "V03_HIGH": {
+   "family": "baseline geometry (mesh B)",
+   "ds": "V03_HIGH_LC2_presolve_ds.dat",
+   "nodes": 108252,
+   "elements": 23400,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "V03_HIGH_final.cas.h5",
+    "source_nodes": 48048,
+    "source_cells": 43200,
+    "source_radial_layers": 10,
+    "node_T_min_K": 413.884308,
+    "node_T_max_K": 542.065796
+   },
+   "mapped": 108252,
+   "unmapped": 0,
+   "T_min_K": 413.884308,
+   "T_max_K": 542.0884281,
+   "extrapolation_above_source_max_K": 0.022632100000009814,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 12544,
+   "outside_max_local_coord_excess": 0.04443343664088739,
+   "A_vs_source_node_field": {
+    "max_K": 0.09048799365081095,
+    "mean_abs_K": 0.001992963063808204,
+    "rms_K": 0.006643867262431644,
+    "max_inside_K": 0.045712729542401576,
+    "max_outside_K": 0.09048799365081095,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 5580,
+      "A_max_K": 0.045712729542401576
+     },
+     "14-586 mm": {
+      "n": 97092,
+      "A_max_K": 0.09048799365081095
+     },
+     "586-600.1 mm": {
+      "n": 5580,
+      "A_max_K": 0.02883258743679562
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 0.7227983666665523,
+     "mean_K": 0.009752211072480178,
+     "rms_K": 0.078742506666139,
+     "max_abs_14_586mm_K": 0.05832532171444882,
+     "fluent_face_theta_ptp_max_K": 0.0008149000000230444
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.5072744666666154,
+     "mean_K": 0.03401445918124914,
+     "rms_K": 0.2533828491088606,
+     "max_abs_14_586mm_K": 0.2100377940014937,
+     "fluent_face_theta_ptp_max_K": 0.006476399999996829
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 7.7539928000001055,
+     "mean_K": 517.5963190366667,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.021687400000018897,
+     "theta_ptp_inner_K": 0.025943699999970704
+    },
+    "source_nodes": {
+     "dT_K": 7.7549540833333594,
+     "mean_K": 517.5906031916801,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.0004890000000159489,
+     "theta_ptp_inner_K": 0.003478999999970256
+    },
+    "dT_diff_K": -0.0009612833332539594,
+    "mean_diff_K": 0.00571584498663924
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": -0.001512006349189049
+  },
+  "Q01_LOW": {
+   "family": "baseline geometry (mesh B)",
+   "ds": "Q01_LOW_LC2_presolve_ds.dat",
+   "nodes": 108252,
+   "elements": 23400,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "Q01_LOW_final.cas.h5",
+    "source_nodes": 48048,
+    "source_cells": 43200,
+    "source_radial_layers": 10,
+    "node_T_min_K": 410.59668,
+    "node_T_max_K": 534.414734
+   },
+   "mapped": 108252,
+   "unmapped": 0,
+   "T_min_K": 410.59668,
+   "T_max_K": 534.4353473,
+   "extrapolation_above_source_max_K": 0.02061330000003636,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 12544,
+   "outside_max_local_coord_excess": 0.04443343664088739,
+   "A_vs_source_node_field": {
+    "max_K": 0.08602449248678568,
+    "mean_abs_K": 0.0018121189509345086,
+    "rms_K": 0.0060467722693808455,
+    "max_inside_K": 0.042147608873335685,
+    "max_outside_K": 0.08602449248678568,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 5580,
+      "A_max_K": 0.042147608873335685
+     },
+     "14-586 mm": {
+      "n": 97092,
+      "A_max_K": 0.08602449248678568
+     },
+     "586-600.1 mm": {
+      "n": 5580,
+      "A_max_K": 0.026248335574337034
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 0.6921771499998499,
+     "mean_K": 0.009141186650682562,
+     "rms_K": 0.07438799437378947,
+     "max_abs_14_586mm_K": 0.05450715974581044,
+     "fluent_face_theta_ptp_max_K": 0.0007494999999835272
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.3551704999999856,
+     "mean_K": 0.03134599798613401,
+     "rms_K": 0.23728775738237867,
+     "max_abs_14_586mm_K": 0.19751210209676628,
+     "fluent_face_theta_ptp_max_K": 0.007167299999991883
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 7.034410011111163,
+     "mean_K": 510.6147297237037,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.019340199999987817,
+     "theta_ptp_inner_K": 0.021193799999991825
+    },
+    "source_nodes": {
+     "dT_K": 7.035268583333277,
+     "mean_K": 510.60953517529634,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 6.100000007336348e-05,
+     "theta_ptp_inner_K": 0.0006710000000111904
+    },
+    "dT_diff_K": -0.0008585722221141623,
+    "mean_diff_K": 0.005194548407359889
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": -0.005975507513214323
+  },
+  "Q03_HIGH": {
+   "family": "baseline geometry (mesh B)",
+   "ds": "Q03_HIGH_LC2_presolve_ds.dat",
+   "nodes": 108252,
+   "elements": 23400,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "Q03_HIGH_final.cas.h5",
+    "source_nodes": 48048,
+    "source_cells": 43200,
+    "source_radial_layers": 10,
+    "node_T_min_K": 437.278992,
+    "node_T_max_K": 591.091797
+   },
+   "mapped": 108252,
+   "unmapped": 0,
+   "T_min_K": 437.27902199999994,
+   "T_max_K": 591.1154316,
+   "extrapolation_above_source_max_K": 0.02363459999992301,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 12544,
+   "outside_max_local_coord_excess": 0.04443343664088739,
+   "A_vs_source_node_field": {
+    "max_K": 0.10618130634912859,
+    "mean_abs_K": 0.002104745681029061,
+    "rms_K": 0.007043771742393966,
+    "max_inside_K": 0.052394012583420135,
+    "max_outside_K": 0.10618130634912859,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 5580,
+      "A_max_K": 0.052394012583420135
+     },
+     "14-586 mm": {
+      "n": 97092,
+      "A_max_K": 0.10618130634912859
+     },
+     "586-600.1 mm": {
+      "n": 5580,
+      "A_max_K": 0.030028867593387076
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 0.8742608166666059,
+     "mean_K": 0.011026804062412672,
+     "rms_K": 0.09193588295007102,
+     "max_abs_14_586mm_K": 0.06778057971814633,
+     "fluent_face_theta_ptp_max_K": 0.0008824000000231536
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.932451933333425,
+     "mean_K": 0.03746931715557723,
+     "rms_K": 0.2948240583696896,
+     "max_abs_14_586mm_K": 0.24403714006837163,
+     "fluent_face_theta_ptp_max_K": 0.007206900000028327
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 8.088518266666824,
+     "mean_K": 562.5668549311112,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.0227401000000782,
+     "theta_ptp_inner_K": 0.028256000000055792
+    },
+    "source_nodes": {
+     "dT_K": 8.089502916666675,
+     "mean_K": 562.5608811750086,
+     "n_radii": 11,
+     "theta_ptp_outer_K": 0.0006109999999353022,
+     "theta_ptp_inner_K": 0.004699999999957072
+    },
+    "dT_diff_K": -0.0009846499998502622,
+    "mean_diff_K": 0.0059737561025485775
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": 0.014181306349128592
+  },
+  "T01_THIN": {
+   "family": "T01 thin wall (36 x 4 x 130)",
+   "ds": "T01_THIN_LC2_presolve_ds.dat",
+   "nodes": 89424,
+   "elements": 18720,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "T01_THIN_final.cas.h5",
+    "source_nodes": 43680,
+    "source_cells": 38880,
+    "source_radial_layers": 9,
+    "node_T_min_K": 417.966278,
+    "node_T_max_K": 561.926941
+   },
+   "mapped": 89424,
+   "unmapped": 0,
+   "T_min_K": 417.96630899999997,
+   "T_max_K": 561.9412895,
+   "extrapolation_above_source_max_K": 0.014348499999982778,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 11496,
+   "outside_max_local_coord_excess": 0.04856214992695351,
+   "A_vs_source_node_field": {
+    "max_K": 0.15409805375657015,
+    "mean_abs_K": 0.002355394703889883,
+    "rms_K": 0.007463710247814256,
+    "max_inside_K": 0.04235472721870792,
+    "max_outside_K": 0.15409805375657015,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 4608,
+      "A_max_K": 0.15409805375657015
+     },
+     "14-586 mm": {
+      "n": 80208,
+      "A_max_K": 0.10101408613741114
+     },
+     "586-600.1 mm": {
+      "n": 4608,
+      "A_max_K": 0.021359935763484827
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 1.104119150000031,
+     "mean_K": 0.011235469798784347,
+     "rms_K": 0.1068948400532881,
+     "max_abs_14_586mm_K": 0.09949335327081599,
+     "fluent_face_theta_ptp_max_K": 0.001170899999976882
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.7225749833333452,
+     "mean_K": 0.03462767627270744,
+     "rms_K": 0.27009985342814546,
+     "max_abs_14_586mm_K": 0.22208694994571943,
+     "fluent_face_theta_ptp_max_K": 0.006071299999973689
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 6.435580300000083,
+     "mean_K": 535.8373900819445,
+     "n_radii": 9,
+     "theta_ptp_outer_K": 0.020810999999866908,
+     "theta_ptp_inner_K": 0.023554099999955724
+    },
+    "source_nodes": {
+     "dT_K": 6.436635083333385,
+     "mean_K": 535.8300263964942,
+     "n_radii": 10,
+     "theta_ptp_outer_K": 0.0002439999999523934,
+     "theta_ptp_inner_K": 0.0014039999999795327
+    },
+    "dT_diff_K": -0.0010547833333021117,
+    "mean_diff_K": 0.007363685450286539
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": 0.062098053756570154
+  },
+  "T03_THICK": {
+   "family": "T03 thick wall (36 x 6 x 130)",
+   "ds": "T03_THICK_LC2_presolve_ds.dat",
+   "nodes": 127080,
+   "elements": 28080,
+   "tref_degC": 26.85,
+   "source": {
+    "case_file": "T03_THICK_final.cas.h5",
+    "source_nodes": 56784,
+    "source_cells": 51840,
+    "source_radial_layers": 12,
+    "node_T_min_K": 428.783386,
+    "node_T_max_K": 563.043518
+   },
+   "mapped": 127080,
+   "unmapped": 0,
+   "T_min_K": 428.783417,
+   "T_max_K": 563.0579604,
+   "extrapolation_above_source_max_K": 0.014442400000007183,
+   "extrapolation_below_source_min_K": 0.0,
+   "nodes_outside_source_mesh": 10980,
+   "outside_max_local_coord_excess": 0.04868114313711769,
+   "A_vs_source_node_field": {
+    "max_K": 0.10488839365081049,
+    "mean_abs_K": 0.0017455334781753442,
+    "rms_K": 0.006256259705184653,
+    "max_inside_K": 0.05221397927215321,
+    "max_outside_K": 0.10488839365081049,
+    "by_axial_band": {
+     "0-14 mm": {
+      "n": 6552,
+      "A_max_K": 0.10488839365081049
+     },
+     "14-586 mm": {
+      "n": 113976,
+      "A_max_K": 0.09090284740744892
+     },
+     "586-600.1 mm": {
+      "n": 6552,
+      "A_max_K": 0.021096128689805482
+     }
+    }
+   },
+   "B_vs_fluent_wall_faces": {
+    "outer": {
+     "nodes": 14112,
+     "max_abs_K": 0.5831223333332787,
+     "mean_K": 0.010267776410604012,
+     "rms_K": 0.06757498099798115,
+     "max_abs_14_586mm_K": 0.06185519339970824,
+     "fluent_face_theta_ptp_max_K": 0.0005323999999973239
+    },
+    "bore": {
+     "nodes": 14112,
+     "max_abs_K": 2.6132052333333036,
+     "mean_K": 0.03436653138187846,
+     "rms_K": 0.2662203876644858,
+     "max_abs_14_586mm_K": 0.23418334431516996,
+     "fluent_face_theta_ptp_max_K": 0.006049400000051719
+    }
+   },
+   "midspan": {
+    "mapped": {
+     "dT_K": 8.606981366666673,
+     "mean_K": 536.8374828378327,
+     "n_radii": 13,
+     "theta_ptp_outer_K": 0.020620100000087405,
+     "theta_ptp_inner_K": 0.023426399999948444
+    },
+    "source_nodes": {
+     "dT_K": 8.608027166666716,
+     "mean_K": 536.8295378409665,
+     "n_radii": 13,
+     "theta_ptp_outer_K": 6.099999995967664e-05,
+     "theta_ptp_inner_K": 0.001343000000019856
+    },
+    "dT_diff_K": -0.0010458000000426182,
+    "mean_diff_K": 0.007944996866172005
+   },
+   "checks": {
+    "no unmapped nodes": true,
+    "mapping error (A) max <= 0.25 K": true,
+    "no extrapolation beyond the source node range > 0.05 K": true,
+    "mid-span through-wall dT preserved within 0.05 K": true,
+    "mid-span section mean preserved within 0.05 K": true
+   },
+   "ALL_PASS": true,
+   "A_max_minus_7A_baseline_0.092K": 0.012888393650810487
+  }
+ }
+}

@@ -1,0 +1,4 @@
+2026-09-27 14:40:12  launching runwb2 -B -R <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\Scripts\wb_s3_9B2_deck.wbjn
+2026-09-27 14:40:12  pid 4420
+2026-09-27 14:41:22  runwb2 exited
+2026-09-27 14:41:22  driver done

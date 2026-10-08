@@ -1,0 +1,3488 @@
+{
+ "deck": "Flow_Behavior_Thermal_Effects_Multiphysics_Presentation.pptx",
+ "deck_sha256": "54DD1C9ED3DAC633136CE5591DE5167084B433569569E64C1A5702F29029AE6A",
+ "master_sha256": "727ADD0A71BE79011A96DCE517274B26BBC511E835154B30C0CB45FFF10722D3",
+ "corpus_files_scanned": 861,
+ "numbers": {
+  "total": 328,
+  "by_class": {
+   "master": 283,
+   "document-exact": 45
+  },
+  "by_class_3plus_sig": {
+   "master": 172,
+   "document-exact": 35
+  },
+  "untraced": [],
+  "document_rounded": [],
+  "all": [
+   {
+    "slide": 1,
+    "where": "slide",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "eClaim CAD: air passage (blue) inside the Inconel 718 duct, Ø20 / Ø40 × 600 mm"
+   },
+   {
+    "slide": 1,
+    "where": "slide",
+    "number": "20",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": " air passage (blue) inside the Inconel 718 duct, Ø20 / Ø40 × 600 mm"
+   },
+   {
+    "slide": 1,
+    "where": "slide",
+    "number": "40",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M024",
+    "context": "assage (blue) inside the Inconel 718 duct, Ø20 / Ø40 × 600 mm"
+   },
+   {
+    "slide": 1,
+    "where": "slide",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "e (blue) inside the Inconel 718 duct, Ø20 / Ø40 × 600 mm"
+   },
+   {
+    "slide": 1,
+    "where": "notes",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "m. The picture is the system itself — an Inconel 718 duct, 600 mm long, cooled by "
+   },
+   {
+    "slide": 1,
+    "where": "notes",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "cture is the system itself — an Inconel 718 duct, 600 mm long, cooled by air inside"
+   },
+   {
+    "slide": 2,
+    "where": "notes",
+    "number": "128000",
+    "sig_digits": 6,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "he re-analysis ran on ANSYS Student , whose 128000-node structural limit matters"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": "q″ = 8000 W/m on the outer wall"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "300",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M002",
+    "context": "Air in: 300 K, 23.5 m/s"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": "Air in: 300 K, 23.5 m/s"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "Inconel 718 wall, t = 10 mm"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "Inconel 718 wall, t = 10 mm"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "1"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "2",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "2"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "4",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "4"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "5",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "5"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "6",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M011",
+    "context": "6"
+   },
+   {
+    "slide": 3,
+    "where": "slide",
+    "number": "7",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M017",
+    "context": "7"
+   },
+   {
+    "slide": 3,
+    "where": "notes",
+    "number": "300",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M002",
+    "context": "d the schematic from left to right. Air enters at 300 K and 23.5 m/s. The outer sur"
+   },
+   {
+    "slide": 3,
+    "where": "notes",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": "matic from left to right. Air enters at 300 K and 23.5 m/s. The outer surface receiv"
+   },
+   {
+    "slide": 3,
+    "where": "notes",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": "nd 23.5 m/s. The outer surface receives a uniform 8000 W/m . That heat conducts thro"
+   },
+   {
+    "slide": 3,
+    "where": "notes",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "uniform 8000 W/m . That heat conducts through the 10 mm Inconel wall, is convected"
+   },
+   {
+    "slide": 4,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "1"
+   },
+   {
+    "slide": 4,
+    "where": "slide",
+    "number": "2",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "2"
+   },
+   {
+    "slide": 4,
+    "where": "slide",
+    "number": "3",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M019",
+    "context": "3"
+   },
+   {
+    "slide": 4,
+    "where": "slide",
+    "number": "5",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "5"
+   },
+   {
+    "slide": 4,
+    "where": "slide",
+    "number": "6",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M011",
+    "context": "6"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "Two bodies — air passage and Inconel 718 wall — sharing one conformal "
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "Solid domain — Inconel 718 annulus"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": "Heated outer wall — q″ = 8000 W/m ; end faces adiabatic"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "20",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": "Fluid – solid interface — Ø20, shared (conformal) topology"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "0",
+    "sig_digits": 0,
+    "class": "master",
+    "traced_to": "M005",
+    "context": "Flow direction — inlet z = 0 → outlet z = 600 mm"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "Flow direction — inlet z = 0 → outlet z = 600 mm"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "20",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": "20 mm"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "40",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M024",
+    "context": "40 mm"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "10 mm"
+   },
+   {
+    "slide": 5,
+    "where": "slide",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "600 mm"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "20",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": "ing is the longitudinal section: a straight duct, 20 mm bore, 40 mm outside diamet"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "40",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M024",
+    "context": "ongitudinal section: a straight duct, 20 mm bore, 40 mm outside diameter — so a 10"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "t duct, 20 mm bore, 40 mm outside diameter — so a 10 mm wall — and 600 mm long. I"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "e, 40 mm outside diameter — so a 10 mm wall — and 600 mm long. It is modelled as t"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "main, air, in blue, and the solid domain, Inconel 718, in grey. Because the interfa"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "0",
+    "sig_digits": 0,
+    "class": "master",
+    "traced_to": "M005",
+    "context": " end faces are adiabatic. Flow runs from z equals 0 to 600 mm. The end face on th"
+   },
+   {
+    "slide": 5,
+    "where": "notes",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "faces are adiabatic. Flow runs from z equals 0 to 600 mm. The end face on the right"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "2",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "SpaceClaim: 2 bodies, shared interface"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "flow → energy → second-order schemes Converged at 600, confirmed at 700 iterations"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "700",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M049",
+    "context": "cond-order schemes Converged at 600, confirmed at 700 iterations"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "0.585",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M046",
+    "context": "Turbulence: k – ω SST Wall-resolved: y⁺ ≤ 0.585, no wall functions Air: ideal"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "718",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M007",
+    "context": "eal gas, temperature-dependent properties Inconel 718: k(T), cₚ(T)"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": "Inlet: 23.5 m/s, 300 K Outlet: 0 Pa gauge"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "300",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M002",
+    "context": "Inlet: 23.5 m/s, 300 K Outlet: 0 Pa gauge Outer wa"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "0",
+    "sig_digits": 0,
+    "class": "master",
+    "traced_to": "M005",
+    "context": "Inlet: 23.5 m/s, 300 K Outlet: 0 Pa gauge Outer wall: q″ = 800"
+   },
+   {
+    "slide": 6,
+    "where": "slide",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": ".5 m/s, 300 K Outlet: 0 Pa gauge Outer wall: q″ = 8000 W/m ; ends adiabatic Interfac"
+   },
+   {
+    "slide": 6,
+    "where": "notes",
+    "number": "0.585",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M046",
+    "context": " sits inside the viscous sublayer, y-plus at most 0.585, so no wall functions are use"
+   },
+   {
+    "slide": 6,
+    "where": "notes",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": "lution. The boundary conditions are the baseline: 23.5 m/s and 300 K at the inlet, z"
+   },
+   {
+    "slide": 6,
+    "where": "notes",
+    "number": "300",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M002",
+    "context": "oundary conditions are the baseline: 23.5 m/s and 300 K at the inlet, zero gauge pr"
+   },
+   {
+    "slide": 6,
+    "where": "notes",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": " at the inlet, zero gauge pressure at the outlet, 8000 W/m on the outer wall, adiab"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "51840",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M058",
+    "context": "Coarse 51840 cells"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "159840",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M033",
+    "context": "Medium — baseline 159840 cells"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "500580",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M050",
+    "context": "Fine — reference 500580 cells"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "0.23",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M018 x100",
+    "context": "Medium → fine: Δp +0.23 %, maximum solid temperature "
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "1.75",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "um → fine: Δp +0.23 %, maximum solid temperature -1.75 K Medium is 4.4 K above the R"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "4.4",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": "23 %, maximum solid temperature -1.75 K Medium is 4.4 K above the Richardson-extrap"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "558.13",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M066",
+    "context": "Medium is 4.4 K above the Richardson-extrapolated 558.13 K: small and conservative App"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "1.2",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M141",
+    "context": "ervative Approximately convergent (apparent order 1.2 – 1.6); strict mesh independe"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "1.6",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "ve Approximately convergent (apparent order 1.2 – 1.6); strict mesh independence no"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "157",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "h independence not claimed Fine solid would need ≈157 k structural nodes, beyond th"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "128000",
+    "sig_digits": 6,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "id would need ≈157 k structural nodes, beyond the 128000-node licence limit"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": "Baseline run converged iteration 600, confirmed at 700 mass imbala"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "700",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M049",
+    "context": "aseline run converged iteration 600, confirmed at 700 mass imbalance 7.0e-13 % en"
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "7.0e-13",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M047",
+    "context": "d iteration 600, confirmed at 700 mass imbalance 7.0e-13 % energy imbalance 3.1e-11 "
+   },
+   {
+    "slide": 7,
+    "where": "slide",
+    "number": "3.1e-11",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M048",
+    "context": " 700 mass imbalance 7.0e-13 % energy imbalance 3.1e-11 %"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "51840",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M058",
+    "context": "hes built from the same scripted topology: coarse 51840 cells, medium 159840, fine 50"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "159840",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M033",
+    "context": "ame scripted topology: coarse 51840 cells, medium 159840, fine 500580. The number tha"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "500580",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M050",
+    "context": "topology: coarse 51840 cells, medium 159840, fine 500580. The number that matters: fr"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "0.23",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M018 x100",
+    "context": "from medium to fine, the pressure drop changes by 0.23 % and the maximum solid tempe"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "1.75",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "es by 0.23 % and the maximum solid temperature by 1.75 K. Richardson extrapolation p"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "4.4",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": " K. Richardson extrapolation puts the medium mesh 4.4 K above the extrapolated 558."
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "558.13",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M066",
+    "context": "puts the medium mesh 4.4 K above the extrapolated 558.13 K, so its error is small and "
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "1.2",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M141",
+    "context": " hotter, conservative side. The observed order is 1.2 to 1.6, so I call this approx"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "1.6",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M181",
+    "context": ", conservative side. The observed order is 1.2 to 1.6, so I call this approximately"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "157",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "practical reason: the fine solid would need about 157 thousand structural nodes, ab"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "128000",
+    "sig_digits": 6,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "ed about 157 thousand structural nodes, above the 128000-node limit. On the right, th"
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "600",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M001",
+    "context": " On the right, the residual history: converged at 600, confirmed at 700, with mass "
+   },
+   {
+    "slide": 7,
+    "where": "notes",
+    "number": "700",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M049",
+    "context": " residual history: converged at 600, confirmed at 700, with mass and energy imbalan"
+   },
+   {
+    "slide": 8,
+    "where": "slide",
+    "number": "438.13",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M036",
+    "context": "438.13 Pa"
+   },
+   {
+    "slide": 8,
+    "where": "slide",
+    "number": "368.93",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M037",
+    "context": "368.93 K"
+   },
+   {
+    "slide": 8,
+    "where": "slide",
+    "number": "602.755",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M038",
+    "context": "602.755 W"
+   },
+   {
+    "slide": 8,
+    "where": "slide",
+    "number": "562.58",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M039",
+    "context": "562.58 K"
+   },
+   {
+    "slide": 8,
+    "where": "notes",
+    "number": "438.13",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M036",
+    "context": "e baseline, all on the medium mesh: pressure drop 438.13 Pa, outlet bulk temperature 3"
+   },
+   {
+    "slide": 8,
+    "where": "notes",
+    "number": "368.93",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M037",
+    "context": " pressure drop 438.13 Pa, outlet bulk temperature 368.93 K, 602.755 W into the air, an"
+   },
+   {
+    "slide": 8,
+    "where": "notes",
+    "number": "602.755",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M038",
+    "context": "drop 438.13 Pa, outlet bulk temperature 368.93 K, 602.755 W into the air, and a maximum"
+   },
+   {
+    "slide": 8,
+    "where": "notes",
+    "number": "562.58",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M039",
+    "context": " into the air, and a maximum solid temperature of 562.58 K on the outer wall at the ou"
+   },
+   {
+    "slide": 8,
+    "where": "notes",
+    "number": "7.58",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M041",
+    "context": "ner and outer wall curves: at mid-span it is only 7.58 K. The metal conducts well; t"
+   },
+   {
+    "slide": 9,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "axial heat flow in the wall, absent in 1-D"
+   },
+   {
+    "slide": 9,
+    "where": "slide",
+    "number": "48",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "48-sided CFD section vs true cir"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "29957",
+    "sig_digits": 5,
+    "class": "document-exact",
+    "traced_to": "06_Fluent_CFD/FLUENT_SETUP_NOTES.md",
+    "context": "29957"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "29958",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M034",
+    "context": "29958"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "0.01",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018 x1e3",
+    "context": "< 0.01 %"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "441.53",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M073",
+    "context": "441.53"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "438.13",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M036",
+    "context": "438.13"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "0.77",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "-0.77 %"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "368.85",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M052",
+    "context": "368.85"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "368.93",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M037",
+    "context": "368.93"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "0.08",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M031",
+    "context": "+0.08 K"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "48",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "faceting of the 48-sided CFD section"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "603.186",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M071",
+    "context": "603.186"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "602.755",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M038",
+    "context": "602.755"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "0.071",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "-0.071 %"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "48",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "exactly the 48-gon lateral-area ratio"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "581.71",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M074",
+    "context": "581.71"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "562.58",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M039",
+    "context": "562.58"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "19.1",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "-19.1 K"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "15.0",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M011",
+    "context": "higher film coefficient in developing flow (-15.0 K); axial wall conduction (-4"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "number": "4.2",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M143 x100",
+    "context": "eveloping flow (-15.0 K); axial wall conduction (-4.2 K)"
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "number": "0.071",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "fixed by the mass flux. The heat input differs by 0.071 %, which is exactly the area "
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "number": "48",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "y 0.071 %, which is exactly the area ratio of the 48-sided CFD cross-section: a ge"
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "number": "0.77",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": " modelling error. The pressure drop agrees within 0.77 %, but for partly compensatin"
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "number": "19.1",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "gest difference is the maximum solid temperature: 19.1 K lower in the CFD — 15.0 K f"
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "number": "15.0",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M011",
+    "context": "imum solid temperature: 19.1 K lower in the CFD — 15.0 K from the higher heat-transf"
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "number": "4.2",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M143 x100",
+    "context": "t-transfer coefficient in the developing flow and 4.2 K from axial conduction in th"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "300",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M002",
+    "context": "Mechanical model · T_ref = 300 K"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "Wall temperature, r = 10 – 20 mm (radial scale exagger"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "20",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": "Wall temperature, r = 10 – 20 mm (radial scale exaggerated)"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "108252",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M081",
+    "context": "108252 / 108252"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "108252",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M081",
+    "context": "108252 / 108252"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "423.84",
+    "sig_digits": 5,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "423.84 – 562.56 K"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "562.56",
+    "sig_digits": 5,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "423.84 – 562.56 K"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "423.84",
+    "sig_digits": 5,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "mapped range (source 423.84 – 562.54 K)"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "562.54",
+    "sig_digits": 5,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "mapped range (source 423.84 – 562.54 K)"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "0.081",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "≤ 0.081 K"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "number": "0.70",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M057",
+    "context": "he wall deformation changes the flow area by only 0.70 %, so no feedback to the flow"
+   },
+   {
+    "slide": 10,
+    "where": "notes",
+    "number": "300",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M002",
+    "context": "the Mechanical model, with zero thermal strain at 300 K. The coupling is one-way: "
+   },
+   {
+    "slide": 10,
+    "where": "notes",
+    "number": "0.70",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M057",
+    "context": "he wall deformation changes the flow area by only 0.70 % — this is not a two-way FSI"
+   },
+   {
+    "slide": 10,
+    "where": "notes",
+    "number": "108252",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M081",
+    "context": "ot a two-way FSI model. The quality numbers: all 108252 structural nodes received a t"
+   },
+   {
+    "slide": 10,
+    "where": "notes",
+    "number": "0.081",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "ct shape-function evaluation the error is at most 0.081 K inside the source mesh. The"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "1.844",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M084",
+    "context": "1.844 mm"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "24.28",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M086",
+    "context": "24.28 MPa"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "0.135",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M089",
+    "context": "0.135 mm"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "605.16 MPa"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "548.94",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M091 x1e3",
+    "context": "548.94 kN"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "582.44",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M092",
+    "context": "end force; mean axial -582.44 MPa"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "32",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "ough-wall gradient, dominates the thermal stress: 32× the free-expansion stress at"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "number": "57.8",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M095 x0.01",
+    "context": " free-expansion stress at mid-span. The peak is 57.8 % of the local yield strength"
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "1.844",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M084",
+    "context": "p rigid-body motion, so it expands freely — about 1.844 mm — and the only stress come"
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "24.28",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M086",
+    "context": "s comes from the temperature gradients: a peak of 24.28 MPa. Right, : both end face"
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "548.94",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M091 x1e3",
+    "context": "th is now prevented. That creates an end force of 548.94 kN, a mean axial stress of mi"
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "582.44",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M092",
+    "context": " force of 548.94 kN, a mean axial stress of minus 582.44 MPa, and a local peak von Mis"
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": " 582.44 MPa, and a local peak von Mises stress of 605.16 MPa at the outer edge of the "
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "32",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": " the stress; at mid-span the restrained stress is 32 times the free one. The peak "
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "number": "57.8",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M095 x0.01",
+    "context": "ined stress is 32 times the free one. The peak is 57.8 % of the local yield strength"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "number": "548.94",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M091 x1e3",
+    "context": " thermal compression, N = 548.94 kN"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "Mode 1, side view: whole-duct sidewa"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "λ = 1.108"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "number": "608.25",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M099",
+    "context": "Critical load P_cr = λ × N = 608.25 kN First-yield factor 1.730 >"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "number": "1.730",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M096",
+    "context": "oad P_cr = λ × N = 608.25 kN First-yield factor 1.730 > λ : in the idealised mode"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "548.94",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M091 x1e3",
+    "context": " A tube carrying 548.94 kN of compression must be che"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "re-stress. For support the first eigenvalue is 1.108: the idealised model bifurcat"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "value is 1.108: the idealised model bifurcates at 1.108 times the thermal load — a cr"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "608.25",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M099",
+    "context": "1.108 times the thermal load — a critical load of 608.25 kN. The picture is mode 1 fro"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "a critical load of 608.25 kN. The picture is mode 1 from the side: a whole-duct s"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "1.730",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M096",
+    "context": " meaning. Compare with the first-yield factor of 1.730: in this idealised model elas"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": " close to instability. Just as important is what 1.108 is not. It belongs to a perfe"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "guided: ends sway, rotation held · K = 1"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "λ = 1.108"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "608.25",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M099",
+    "context": "P_cr = 608.25 kN · bifurcation before fir"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "r = 608.25 kN · bifurcation before first yield (1.108 < 1.730)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1.730",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M096",
+    "context": "25 kN · bifurcation before first yield (1.108 < 1.730)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "0.699",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M022",
+    "context": "clamped – pinned · K = 0.699"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "2.232",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "λ = 2.232"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1225.36",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M105",
+    "context": "P_cr = 1225.36 kN · first yield before bif"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1.730",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M096",
+    "context": " = 1225.36 kN · first yield before bifurcation (1.730 < 2.232)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "2.232",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "36 kN · first yield before bifurcation (1.730 < 2.232)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "0.5",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "clamped – clamped · K = 0.5"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "4.300",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M107",
+    "context": "λ = 4.300"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "2360.40",
+    "sig_digits": 6,
+    "class": "master",
+    "traced_to": "M102",
+    "context": "P_cr = 2360.40 kN · first yield before bif"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "1.730",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M096",
+    "context": " = 2360.40 kN · first yield before bifurcation (1.730 < 4.300)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "4.300",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M107",
+    "context": "40 kN · first yield before bifurcation (1.730 < 4.300)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "3.9",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M169 x100",
+    "context": "λ changes by a factor of 3.9 at an identical 605.16 MPa st"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "λ changes by a factor of 3.9 at an identical 605.16 MPa static peak. The real sup"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "restraint. , the baseline, lets the ends sway: λ1 = 1.108. clamps one end and"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "raint. , the baseline, lets the ends sway: λ1 = 1.108. clamps one end and pins th"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "number": "2.232",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M181",
+    "context": " λ1 = 1.108. clamps one end and pins the other: 2.232. clamps both ends: 4.300. "
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "number": "4.300",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M107",
+    "context": "nd and pins the other: 2.232. clamps both ends: 4.300. The static peak stress is i"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "he static peak stress is identical in all three — 605.16 MPa. Only the stability chang"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "number": "3.9",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M169 x100",
+    "context": "6 MPa. Only the stability changes, by a factor of 3.9. The governing mechanism chan"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "21.15",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "21.15 m/s"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "25.85",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "25.85 m/s"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "7200",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "7200 W/m "
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "8800",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "8800 W/m "
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "8",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M063",
+    "context": "8 mm"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "12",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "12 mm"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": " baseline 23.5 m/s 8000 W/m · 10 mm"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": " baseline 23.5 m/s 8000 W/m · 10 mm"
+   },
+   {
+    "slide": 14,
+    "where": "slide",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": " baseline 23.5 m/s 8000 W/m · 10 mm"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "21.15",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "21.15 / 23.5 / 25.85 m/s (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": "21.15 / 23.5 / 25.85 m/s (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "25.85",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "21.15 / 23.5 / 25.85 m/s (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "21.15 / 23.5 / 25.85 m/s (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "7200",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "7200 / 8000 / 8800 W/m (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": "7200 / 8000 / 8800 W/m (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "8800",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "7200 / 8000 / 8800 W/m (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "7200 / 8000 / 8800 W/m (∓10 %)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "8",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M063",
+    "context": "8 / 10 / 12 mm (Dₒ 36 / 40 / 44"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "8 / 10 / 12 mm (Dₒ 36 / 40 / 44 mm)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "12",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "8 / 10 / 12 mm (Dₒ 36 / 40 / 44 mm)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "36",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "8 / 10 / 12 mm (Dₒ 36 / 40 / 44 mm)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "40",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M024",
+    "context": "8 / 10 / 12 mm (Dₒ 36 / 40 / 44 mm)"
+   },
+   {
+    "slide": 14,
+    "where": "table",
+    "number": "44",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "8 / 10 / 12 mm (Dₒ 36 / 40 / 44 mm)"
+   },
+   {
+    "slide": 14,
+    "where": "notes",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "und the baseline : inlet velocity plus and minus 10 %, outer-wall heat flux plus "
+   },
+   {
+    "slide": 14,
+    "where": "notes",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "d minus 10 %, outer-wall heat flux plus and minus 10 %, and wall thickness 8 and 1"
+   },
+   {
+    "slide": 14,
+    "where": "notes",
+    "number": "8",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M063",
+    "context": "heat flux plus and minus 10 %, and wall thickness 8 and 12 mm. For thickness the"
+   },
+   {
+    "slide": 14,
+    "where": "notes",
+    "number": "12",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "lux plus and minus 10 %, and wall thickness 8 and 12 mm. For thickness the total "
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "21.15",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "Inlet velocity 21.15 · 23.5 · 25.85 m/s"
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "23.5",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M003",
+    "context": "Inlet velocity 21.15 · 23.5 · 25.85 m/s"
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "25.85",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "Inlet velocity 21.15 · 23.5 · 25.85 m/s"
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "7200",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "Wall heat flux 7200 · 8000 · 8800 W/m "
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "8000",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M006",
+    "context": "Wall heat flux 7200 · 8000 · 8800 W/m "
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "8800",
+    "sig_digits": 4,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "Wall heat flux 7200 · 8000 · 8800 W/m "
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "8",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M063",
+    "context": "Wall thickness 8 · 10 · 12 mm (Q constant)"
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "Wall thickness 8 · 10 · 12 mm (Q constant)"
+   },
+   {
+    "slide": 15,
+    "where": "slide",
+    "number": "12",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "Wall thickness 8 · 10 · 12 mm (Q constant)"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "379.9",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M125",
+    "context": "379.9"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "438.1",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M161",
+    "context": "438.1"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "499.7",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M134",
+    "context": "499.7"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "376.6",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M126",
+    "context": "376.6"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "368.9",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M052",
+    "context": "368.9"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "362.7",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M135",
+    "context": "362.7"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.003",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M132",
+    "context": "1.003"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "1.108"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.211",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M141",
+    "context": "1.211"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "λ = 1"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "534.5",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M145",
+    "context": "534.5"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "562.6",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M039",
+    "context": "562.6"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "591.1",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M154",
+    "context": "591.1"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "538.5",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M148",
+    "context": "538.5"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "605.2",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "605.2"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "673.0",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M009",
+    "context": "673.0"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.255",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M150",
+    "context": "1.255"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "1.108"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "0.988",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M159",
+    "context": "0.988"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "λ = 1"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.836",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M164",
+    "context": "1.836"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.844",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M084",
+    "context": "1.844"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.853",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M173",
+    "context": "1.853"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "386",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M169",
+    "context": "386"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "608",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M175",
+    "context": "608"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "908",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M178",
+    "context": "908"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "0.945",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M168",
+    "context": "0.945"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "1.108"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1.287",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M177",
+    "context": "1.287"
+   },
+   {
+    "slide": 15,
+    "where": "chart",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "λ = 1"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "ainly on the cooling and the pressure drop. Minus 10 % velocity lowers the pressur"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "13.3",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": ". Minus 10 % velocity lowers the pressure drop by 13.3 % and the air leaves hotter; "
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "essure drop by 13.3 % and the air leaves hotter; λ1 follows the wall temperature "
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "1.003",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M132",
+    "context": "ter; λ1 follows the wall temperature and falls to 1.003. Middle row, heat flux: this"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "28",
+    "sig_digits": 2,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "elf. The maximum solid temperature moves by about 28 K each way, the stress by m"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "11.0",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M013 x100",
+    "context": "ves by about 28 K each way, the stress by minus 11.0 and plus 11.2 %, and at plus "
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "11.2",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "8 K each way, the stress by minus 11.0 and plus 11.2 %, and at plus 10 % flux λ1 d"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "stress by minus 11.0 and plus 11.2 %, and at plus 10 % flux λ1 drops below 1, to 0"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "inus 11.0 and plus 11.2 %, and at plus 10 % flux λ1 drops below 1, to 0.988. Bot"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "plus 11.2 %, and at plus 10 % flux λ1 drops below 1, to 0.988. Bottom row, thick"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "0.988",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M159",
+    "context": "1.2 %, and at plus 10 % flux λ1 drops below 1, to 0.988. Bottom row, thickness at co"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "36.6",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "a percent, but the critical load changes by minus 36.6 and plus 49.3 %, and the 8 mm"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "49.3",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": " the critical load changes by minus 36.6 and plus 49.3 %, and the 8 mm wall has λ1 ="
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "8",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M063",
+    "context": "ad changes by minus 36.6 and plus 49.3 %, and the 8 mm wall has λ1 = 0.945. For "
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "inus 36.6 and plus 49.3 %, and the 8 mm wall has λ1 = 0.945. For the two cases b"
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "0.945",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M168",
+    "context": " 36.6 and plus 49.3 %, and the 8 mm wall has λ1 = 0.945. For the two cases below 1, "
+   },
+   {
+    "slide": 15,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": " mm wall has λ1 = 0.945. For the two cases below 1, the static stresses are pre-"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "1"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "548.94",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M091 x1e3",
+    "context": " : 548.94 kN end force, -582.44 MPa mea"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "582.44",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M092",
+    "context": " : 548.94 kN end force, -582.44 MPa mean axial stress, 605.16"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "8.94 kN end force, -582.44 MPa mean axial stress, 605.16 MPa peak — vs 24.28 MPa for f"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "24.28",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M086",
+    "context": "82.44 MPa mean axial stress, 605.16 MPa peak — vs 24.28 MPa for free expansion"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "2",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "2"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "λ = 1.108 is below the first-yield fact"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "1.730",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M096",
+    "context": "λ = 1.108 is below the first-yield factor 1.730: bifurcation comes first, clo"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "3",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M019",
+    "context": "3"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "λ = 1.108 ( ) · 2.232 ( ) · 4.300 ( ) a"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "2.232",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "λ = 1.108 ( ) · 2.232 ( ) · 4.300 ( ) at an identic"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "4.300",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M107",
+    "context": "λ = 1.108 ( ) · 2.232 ( ) · 4.300 ( ) at an identical static st"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "4",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "4"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "10",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M025",
+    "context": "±10 % q″: T_max -28.1 / +28.6 K, "
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "28.1",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "±10 % q″: T_max -28.1 / +28.6 K, stress -11.0 / +"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "28.6",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "±10 % q″: T_max -28.1 / +28.6 K, stress -11.0 / +11.2 %, "
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "11.0",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M013 x100",
+    "context": "±10 % q″: T_max -28.1 / +28.6 K, stress -11.0 / +11.2 %, λ 1.255 / 0.988"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "11.2",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "10 % q″: T_max -28.1 / +28.6 K, stress -11.0 / +11.2 %, λ 1.255 / 0.988"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "1.255",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M150",
+    "context": "max -28.1 / +28.6 K, stress -11.0 / +11.2 %, λ 1.255 / 0.988"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "0.988",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M159",
+    "context": "1 / +28.6 K, stress -11.0 / +11.2 %, λ 1.255 / 0.988"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "5",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "5"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "8",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M063",
+    "context": "8 / 12 mm at constant Q: P_cr -"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "12",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M032",
+    "context": "8 / 12 mm at constant Q: P_cr -36.6 "
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "36.6",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "8 / 12 mm at constant Q: P_cr -36.6 / +49.3 %, T_max -0.61 / +0.5"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "49.3",
+    "sig_digits": 3,
+    "class": "document-exact",
+    "traced_to": "PROJECT_STATE.md",
+    "context": "8 / 12 mm at constant Q: P_cr -36.6 / +49.3 %, T_max -0.61 / +0.50 K, λ "
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "0.61",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M106",
+    "context": "12 mm at constant Q: P_cr -36.6 / +49.3 %, T_max -0.61 / +0.50 K, λ 0.945 / 1.287"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "0.50",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M021",
+    "context": " constant Q: P_cr -36.6 / +49.3 %, T_max -0.61 / +0.50 K, λ 0.945 / 1.287"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "0.945",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M168",
+    "context": ": P_cr -36.6 / +49.3 %, T_max -0.61 / +0.50 K, λ 0.945 / 1.287"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "1.287",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M177",
+    "context": "36.6 / +49.3 %, T_max -0.61 / +0.50 K, λ 0.945 / 1.287"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "6",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M011",
+    "context": "6"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "4.4",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": "CFD mesh 4.4 K on T_max, structural mesh ≤"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "number": "4.9e-4",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M124",
+    "context": "CFD mesh 4.4 K on T_max, structural mesh ≤ 4.9e-4 , pressure load negligible — "
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "o: the idealised baseline is stability-limited — λ1 of 1.108 sits below the first"
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "e idealised baseline is stability-limited — λ1 of 1.108 sits below the first-yield fa"
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "Three: the end support controls that conclusion — 1.108 to 4.300 at the same stress. "
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "4.300",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M107",
+    "context": "e end support controls that conclusion — 1.108 to 4.300 at the same stress. Four: hea"
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "4.4",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M004",
+    "context": " with the modelling uncertainty. Mesh effects are 4.4 K on the CFD side and below "
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "5e-4",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M124",
+    "context": "Mesh effects are 4.4 K on the CFD side and below 5e-4 on the structural side, and "
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "egligible — while the support definition changes λ1 by a factor of 3.9. Transiti"
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "number": "3.9",
+    "sig_digits": 2,
+    "class": "master",
+    "traced_to": "M169 x100",
+    "context": " the support definition changes λ1 by a factor of 3.9. Transition: the limits of t"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "number": "0.294",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M012",
+    "context": "ic stress – strain model Poisson's ratio assumed (0.294) One-factor-at-a-time paramet"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "1"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "number": "2",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "2"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "number": "3",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M019",
+    "context": "3"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "number": "4",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "4"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "number": "5",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M018",
+    "context": "5"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "1"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "562.58",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M039",
+    "context": "onjugate heat transfer; maximum solid temperature 562.58 K on the medium mesh"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "2",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M181",
+    "context": "2"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "605.16 MPa local peak, 57.8 % of the"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "57.8",
+    "sig_digits": 3,
+    "class": "master",
+    "traced_to": "M095 x0.01",
+    "context": "605.16 MPa local peak, 57.8 % of the local yield strength"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "3",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M019",
+    "context": "3"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "λ = 1.108 — and the end restraint contr"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "— and the end restraint controls that conclusion (1.108 to 4.300)"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "number": "4.300",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M107",
+    "context": " end restraint controls that conclusion (1.108 to 4.300)"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "number": "562.58",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M039",
+    "context": "and verified, with a maximum solid temperature of 562.58 K. Restraint turns thermal gr"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "number": "605.16",
+    "sig_digits": 5,
+    "class": "master",
+    "traced_to": "M108",
+    "context": "f 562.58 K. Restraint turns thermal growth into a 605.16 MPa local peak stress. The id"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "number": "1",
+    "sig_digits": 1,
+    "class": "master",
+    "traced_to": "M021",
+    "context": "ss. The idealised duct is stability-limited at λ1 = 1.108, and the end restrain"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "number": "1.108",
+    "sig_digits": 4,
+    "class": "master",
+    "traced_to": "M112",
+    "context": "The idealised duct is stability-limited at λ1 = 1.108, and the end restraint contro"
+   }
+  ]
+ },
+ "chart_series": {
+  "parametric_series_equal_master": true,
+  "profile_series_equal_project_csv": true,
+  "series": 18
+ },
+ "wording": {
+  "occurrences": 17,
+  "not_negated": [
+   {
+    "slide": 17,
+    "where": "slide",
+    "word": "validat",
+    "negated": false,
+    "sentence": "Experimental validation"
+   }
+  ],
+  "all": [
+   {
+    "slide": 9,
+    "where": "slide",
+    "word": "validat",
+    "negated": true,
+    "sentence": "This is verification against an independent model and conservation checks — not experimental validation: no measurements exist"
+   },
+   {
+    "slide": 9,
+    "where": "notes",
+    "word": "validat",
+    "negated": true,
+    "sentence": "Neither model was adjusted to match the other — and this is verification, not experimental validation: there are no measurements"
+   },
+   {
+    "slide": 10,
+    "where": "slide",
+    "word": "FSI",
+    "negated": true,
+    "sentence": "Not a two-way FSI model: the wall deformation changes the flow area by only 0.70 %, so no feedback to the flow is needed"
+   },
+   {
+    "slide": 10,
+    "where": "notes",
+    "word": "FSI",
+    "negated": true,
+    "sentence": "That is justified because the wall deformation changes the flow area by only 0.70 % — this is not a two-way FSI model"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "word": "safe",
+    "negated": true,
+    "sentence": "perfectly straight tube, idealised supports No geometric imperfections, no plasticity, no nonlinear post-buckling Not a collapse load and not a factor of safety"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "word": "factor of safety",
+    "negated": true,
+    "sentence": "perfectly straight tube, idealised supports No geometric imperfections, no plasticity, no nonlinear post-buckling Not a collapse load and not a factor of safety"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "word": "collapse",
+    "negated": true,
+    "sentence": "perfectly straight tube, idealised supports No geometric imperfections, no plasticity, no nonlinear post-buckling Not a collapse load and not a factor of safety"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "word": "safe",
+    "negated": true,
+    "sentence": "So it is not a collapse load and not a factor of safety"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "word": "factor of safety",
+    "negated": true,
+    "sentence": "So it is not a collapse load and not a factor of safety"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "word": "collapse",
+    "negated": true,
+    "sentence": "So it is not a collapse load and not a factor of safety"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "word": "validat",
+    "negated": true,
+    "sentence": "original internship files unavailable No experimental validation — verified, not validated Idealised end supports (S1 / S2 / S3) No geometric imperfections No nonlinear (post-)buckling analysis No temperature-dependent inelastic stress–strain model Poisson's ratio assumed (0.294) One-factor-at-a-tim"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "word": "validat",
+    "negated": true,
+    "sentence": "original internship files unavailable No experimental validation — verified, not validated Idealised end supports (S1 / S2 / S3) No geometric imperfections No nonlinear (post-)buckling analysis No temperature-dependent inelastic stress–strain model Poisson's ratio assumed (0.294) One-factor-at-a-tim"
+   },
+   {
+    "slide": 17,
+    "where": "slide",
+    "word": "validat",
+    "negated": false,
+    "sentence": "Experimental validation"
+   },
+   {
+    "slide": 17,
+    "where": "notes",
+    "word": "validat",
+    "negated": true,
+    "sentence": "This is a re-analysis with no experimental data, so the model is verified, not validated"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "word": "validat",
+    "negated": true,
+    "sentence": "Within a re-analysed, idealised numerical model that has not been validated against measurement"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "word": "adequa",
+    "negated": true,
+    "sentence": "The results characterise the mechanism and its sensitivities; they do not show that a real component is structurally adequate"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "word": "adequa",
+    "negated": true,
+    "sentence": "What the work does not show is that a real component is structurally adequate — that would need the real supports, imperfections, inelastic behaviour and measurements"
+   }
+  ]
+ },
+ "re_analysis_note_verbatim_on_slide": [
+  2
+ ],
+ "modelling_levels": {
+  "occurrences": 27,
+  "by_label": {
+   "same text box / sentence": 23,
+   "same slide (card label, column or table header)": 4
+  },
+  "unlabelled": [],
+  "all": [
+   {
+    "slide": 8,
+    "where": "slide",
+    "value": "562.58",
+    "label": "same slide (card label, column or table header)"
+   },
+   {
+    "slide": 8,
+    "where": "notes",
+    "value": "562.58",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "value": "562.58",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 9,
+    "where": "table",
+    "value": "581.71",
+    "label": "same slide (card label, column or table header)"
+   },
+   {
+    "slide": 11,
+    "where": "slide",
+    "value": "605.16",
+    "label": "same slide (card label, column or table header)"
+   },
+   {
+    "slide": 11,
+    "where": "notes",
+    "value": "605.16",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 12,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 12,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same slide (card label, column or table header)"
+   },
+   {
+    "slide": 13,
+    "where": "slide",
+    "value": "605.16",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "value": "605.16",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 13,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "value": "605.16",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 16,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 16,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "value": "562.58",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "value": "605.16",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "slide",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "value": "562.58",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "value": "605.16",
+    "label": "same text box / sentence"
+   },
+   {
+    "slide": 18,
+    "where": "notes",
+    "value": "1.108",
+    "label": "same text box / sentence"
+   }
+  ]
+ },
+ "figures": {
+  "pictures_in_deck": 15,
+  "distinct_images": 15,
+  "all_from_Figures_folder": true,
+  "all_project_verified": true,
+  "unknown_pictures": [],
+  "per_slide": {
+   "1": [
+    "cad_3d_interface.png"
+   ],
+   "2": [],
+   "3": [],
+   "4": [],
+   "5": [
+    "drawing_longitudinal.png",
+    "cad_cross_section.png"
+   ],
+   "6": [],
+   "7": [
+    "mesh_family.png",
+    "convergence_residuals.png"
+   ],
+   "8": [],
+   "9": [],
+   "10": [
+    "mech_imported_temperature.png",
+    "mapping_fluent_vs_mechanical.png"
+   ],
+   "11": [
+    "mech_LC1_deformation.png",
+    "mech_LC1_vonmises.png",
+    "mech_LC2_deformation.png",
+    "mech_LC2_vonmises.png"
+   ],
+   "12": [
+    "mech_S1_mode1_side.png"
+   ],
+   "13": [
+    "mech_S1_mode1_iso.png",
+    "mech_S3_mode1_iso.png",
+    "mech_S2_mode1_iso.png"
+   ],
+   "14": [],
+   "15": [],
+   "16": [],
+   "17": [],
+   "18": []
+  }
+ },
+ "layout": {
+  "slides": 18,
+  "slide_number_field_on": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "out_of_bounds": [],
+  "runs_below_10pt": [
+   {
+    "slide": 2,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 3,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 4,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 5,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 6,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 7,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 8,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 9,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 10,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 11,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 12,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 13,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 14,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 15,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 16,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   },
+   {
+    "slide": 17,
+    "pt": 9.0,
+    "text": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  "
+   }
+  ],
+  "chart_font_min_pt": 10.0,
+  "text_fit_flags": []
+ },
+ "notes": {
+  "slides_with_notes": 18,
+  "words": {
+   "1": 112,
+   "2": 93,
+   "3": 147,
+   "4": 102,
+   "5": 125,
+   "6": 134,
+   "7": 136,
+   "8": 138,
+   "9": 162,
+   "10": 133,
+   "11": 153,
+   "12": 168,
+   "13": 121,
+   "14": 132,
+   "15": 157,
+   "16": 126,
+   "17": 125,
+   "18": 99
+  },
+  "planned_seconds": {
+   "1": 40,
+   "2": 35,
+   "3": 55,
+   "4": 35,
+   "5": 40,
+   "6": 50,
+   "7": 55,
+   "8": 55,
+   "9": 60,
+   "10": 50,
+   "11": 55,
+   "12": 65,
+   "13": 50,
+   "14": 45,
+   "15": 60,
+   "16": 50,
+   "17": 45,
+   "18": 35
+  },
+  "planned_total_min": 14.7,
+  "all_between_30_and_90_s": true
+ }
+}

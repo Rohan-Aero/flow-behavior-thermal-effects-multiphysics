@@ -1,0 +1,5 @@
+2026-09-26 19:47:22  launching case T03_THICK (audit-only=0): 3ddp -g -py -t4 -i ../Journals/solve_param.py
+2026-09-26 19:47:22  fluent pid 26064
+2026-09-26 20:04:15  fluent exited
+2026-09-26 20:04:18  wall clock 1013.4 s; journal status CONVERGED
+2026-09-26 20:04:18  driver done

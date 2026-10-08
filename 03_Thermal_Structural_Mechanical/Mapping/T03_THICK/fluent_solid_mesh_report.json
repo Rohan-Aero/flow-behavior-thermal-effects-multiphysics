@@ -1,0 +1,26 @@
+{
+ "case": "<PROJECT_ROOT>/10_Parametric_Study/CFD_Cases/T03_THICK/Case/T03_THICK_final.cas.h5",
+ "case_sha256": "58B5BF09A0F8399A7A2CE14371171E18E0B4D42F9D9035F38E3379CD002E36EC",
+ "solid_cell_id_range": [
+  116641,
+  168480
+ ],
+ "face_zones_used": [
+  "interior-solid",
+  "fluid_solid_interface-shadow",
+  "heated_outer_wall",
+  "solid_inlet_end",
+  "solid_outlet_end"
+ ],
+ "n_cells": 51840,
+ "n_nodes": 56784,
+ "orientation_flips": 41582,
+ "vol_min": 4.459644900811596e-09,
+ "vol_max": 3.1707186740704233e-08,
+ "vol_sum_m3": 0.0007217576324999796,
+ "r_node_min_mm": 9.999999999999327,
+ "r_node_max_mm": 22.000000000002036,
+ "z_node_min": 0.0,
+ "z_node_max": 0.6,
+ "mapdl_input": "<SCRATCH_ROOT>/map/T03_THICK/build_fluent_solid_cdb.inp"
+}

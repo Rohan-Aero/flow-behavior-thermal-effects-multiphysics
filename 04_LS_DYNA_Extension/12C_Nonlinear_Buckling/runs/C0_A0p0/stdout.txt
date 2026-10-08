@@ -1,0 +1,1016 @@
+ License option : check ansys licenses only
+
+
+ ***************************************************************
+ *            ANSYS LEGAL NOTICES                              *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2025 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+      Date: 10/07/2026      Time: 15:08:07  
+      ___________________________________________________ 
+     |                                                   |
+     |  LS-DYNA, A Program for Nonlinear Dynamic         |
+     |  Analysis of Structures in Three Dimensions       |
+     |  Date    : 07/09/2025    Time: 09:53:35           |
+     |  Version : smp d R16                              |
+     |  Revision: R16.1-180-gd50332dbe5                  |
+     |  AnLicVer: 2026 R1 (20251230+dl-79-g6933d52)      |
+     |                                                   |
+     |  Features enabled in this version:                |
+     |    Shared Memory Parallel                         |
+     |    CESE CHEMISTRY EM ICFD STOCHASTIC_PARTICLES    |
+     |    FFTW (multi-dimensional FFTW Library)          |
+     |    ARPACK (nonsymmetric eigensolver library)      |
+     |    ANSYSLIC enabled                               |
+     |                                                   |
+     |  Platform   : WINDOWS X64                         |
+     |  OS Level   : Windows 10  (Build 26300) uum       |
+     |  Compiler   : Intel Fortran Compiler 19.0 SSE2    |
+     |  Hostname   : <HOST>                               |
+     |  Precision  : Double precision (I8R8)             |
+     |                                                   |
+     |  Unauthorized use infringes Ansys Inc. copyrights |
+     |___________________________________________________|
+
+[license/error] *** ANSYS LICENSE MANAGER ERROR ***
+[license/error] Your version of the Ansys license client software is out of date. Please refer to Licensing Error Messages in the Troubleshooting section of the ANSYS, Inc. Licensing Guide. 
+[license/error]          The version of the license client 60916@<HOST> [Ansys Release 2025 R2] must be greater or equal to the client LSDYNA version [Ansys Release 2026 R1].
+ Student license active; 326 days remaning.
+
+ Executing with ANSYS license
+
+ Command line options: i=case.k 
+                       ncpu=4 
+                       memory=20m
+
+ Input file: case.k                                                                          
+
+ The native file format       : 64-bit small endian
+ Memory size from command line:    20000000
+
+ on UNIX computers note the following change:
+
+ ctrl-c interrupts ls-dyna and prompts for a sense  switch.
+ type the desired sense switch: sw1., sw2., etc. to continue
+ the execution.  ls-dyna will respond as explained in the users manual
+
+    type                      response
+   -----   ------------------------------------------------------------
+   quit    ls-dyna terminates.
+   stop    ls-dyna terminates.
+   sw1.    a restart file is written and ls-dyna terminates.
+   sw2.    ls-dyna responds with time and cycle numbers.    
+   sw3.    a restart file is written and ls-dyna continues calculations.
+   sw4.    a plot state is written and ls-dyna continues calculations.
+   swa.    ls-dyna flushes all output i/o buffers.
+   swb.    a dynain is written and ls-dyna continues calculations.
+   swc.    a restart and dynain are written and ls-dyna continues calculations.
+   swd.    a restart and dynain are written and ls-dyna terminates.
+   swe.    stop dynamic relaxation just as though convergence
+   endtime=time change the termination time
+   lpri    toggle implicit lin. alg. solver output on/off.
+   nlpr    toggle implicit nonlinear solver output on/off.
+   iter    toggle implicit output to d3iter database on/off.
+   prof    output timing data to messag and continue.
+   conv    force implicit nonlinear convergence for current time step.
+   ttrm    terminate implicit time step, reduce time step, retry time step.
+   rtrm    terminate implicit at end of current time step.
+
+
+ ********  notice  ********  notice  ********  notice  ********
+ *                                                            *
+ * This is the LS-DYNA Finite Element code.                   *
+ *                                                            *
+ * Neither LST nor the authors assume any responsibility for  *
+ * the validity, accuracy, or applicability of any results    *
+ * obtained from this system. Users must verify their own     *
+ * results.                                                   *
+ *                                                            *
+ * LST endeavors to make the LS-DYNA code as complete,        *
+ * accurate and easy to use as possible.                      *
+ * Suggestions and comments are welcomed.  Please report any  *
+ * errors encountered in either the documentation or results  *
+ * immediately to LST through your site focus.                *
+ *                                                            *
+ * Copyright (C) 1990-2021                                    *
+ * by Livermore Software Technology, LLC                      *
+ * All rights reserved                                        *
+ *                                                            *
+ ********  notice  ********  notice  ********  notice  ********
+
+ Beginning of keyword reader                                   10/07/26 15:08:16
+
+                                                               10/07/26 15:08:16
+ Open include file: ..\..\model\mat_inconel_thermoelastic.k
+
+                                                               10/07/26 15:08:16
+ Open include file: ..\..\model\nodes.k
+
+                                                               10/07/26 15:08:17
+ Open include file: ..\..\model\elements_h20.k
+
+                                                               10/07/26 15:08:17
+ Open include file: ..\..\model\sets.k
+
+                                                               10/07/26 15:08:17
+ Open include file: ..\..\model\csys_hoop.k
+
+                                                               10/07/26 15:08:17
+ Open include file: ..\..\model\spc_lc2.k
+
+                                                               10/07/26 15:08:17
+ Open include file: ..\..\model\temps_lc2.k
+
+                                                               10/07/26 15:08:17
+ Open include file: ..\..\model\monitor_sets_12C.k
+
+ Memory required to process keyword     :    2218860  
+ Additional dynamic memory required     :    7342413  
+
+
+ input of data is completed
+
+ initial kinetic energy = 0.00000000E+00
+
+ termination time                  = 9.000E-01
+
+ Memory required to begin solution      :    2219K
+ Constraint dynamically allocated memory:     489K
+ Additional dynamically allocated memory:      32M
+                                   Total:      35M
+
+ initialization completed
+ ____________________________________________________________
+
+ Rate effects are turned off in constitutive models
+ since IRATE > 0 on *CONTROL_IMPLICIT_DYNAMICS card
+   No materials have acted on this flag!
+ ____________________________________________________________
+
+ calculation with mass scaling for minimum dt
+    added mass   =   0.0000E+00
+    physical mass=   4.6313E+00
+    ratio        =   0.0000E+00
+       1 t 0.0000E+00 dt 1.00E-02 flush i/o buffers            10/07/26 15:08:19
+       1 t 0.0000E+00 dt 1.00E-02 write d3plot file            10/07/26 15:08:19
+
+ BEGIN implicit statics  step      1 t= 1.0000E-02             10/07/26 15:08:19
+ ============================================================
+                time =  1.00000E-02
+   current step size =  1.00000E-02
+
+
+     ================================================
+     ==            IMPLICIT USAGE ALERT            ==
+     ================================================
+     == Memory Management for Implicit has changed ==
+     == after R10.  Please use:                    ==
+     ==       memory=     3M                       ==
+     ================================================
+
+ Iteration:   1     *|du|/|u| =  1.0000000E+00     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.0988735E-04     *Ei/E0 =  2.3528230E-09
+ Equilibrium established after     2 iterations                10/07/26 15:09:09
+    
+ estimated total cpu time          =      4600 sec (       1 hrs 16 mins)
+ estimated cpu time to complete    =      4539 sec (       1 hrs 15 mins)
+ estimated total clock time        =      4672 sec (       1 hrs 17 mins)
+ estimated clock time to complete  =      4610 sec (       1 hrs 16 mins)
+
+ BEGIN implicit statics  step      2 t= 2.0000E-02             10/07/26 15:09:11
+ ============================================================
+                time =  2.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.9951497E-01     *Ei/E0 =  9.9837405E-01
+ Iteration:   2     *|du|/|u| =  1.0815420E-04     *Ei/E0 =  2.5483151E-09
+ Equilibrium established after     2 iterations                10/07/26 15:09:58
+
+ BEGIN implicit statics  step      3 t= 3.0000E-02             10/07/26 15:09:59
+ ============================================================
+                time =  3.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.3268687E-01     *Ei/E0 =  9.9674747E-01
+ Iteration:   2     *|du|/|u| =  1.0821640E-04     *Ei/E0 =  2.8794167E-09
+ Equilibrium established after     2 iterations                10/07/26 15:10:46
+
+ BEGIN implicit statics  step      4 t= 4.0000E-02             10/07/26 15:10:47
+ ============================================================
+                time =  4.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  2.4927184E-01     *Ei/E0 =  9.9512023E-01
+ Iteration:   2     *|du|/|u| =  1.0843783E-04     *Ei/E0 =  3.3461931E-09
+ Equilibrium established after     2 iterations                10/07/26 15:11:35
+
+ BEGIN implicit statics  step      5 t= 5.0000E-02             10/07/26 15:11:36
+ ============================================================
+                time =  5.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  1.9922185E-01     *Ei/E0 =  9.9349235E-01
+ Iteration:   2     *|du|/|u| =  1.0867635E-04     *Ei/E0 =  3.9487121E-09
+ Equilibrium established after     2 iterations                10/07/26 15:12:23
+      22 t 5.0000E-02 dt 1.00E-02 write d3plot file            10/07/26 15:12:23
+
+ BEGIN implicit statics  step      6 t= 6.0000E-02             10/07/26 15:12:23
+ ============================================================
+                time =  6.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  1.6585433E-01     *Ei/E0 =  9.9186382E-01
+ Iteration:   2     *|du|/|u| =  1.0891079E-04     *Ei/E0 =  4.6870439E-09
+ Equilibrium established after     2 iterations                10/07/26 15:13:10
+
+ BEGIN implicit statics  step      7 t= 7.0000E-02             10/07/26 15:13:11
+ ============================================================
+                time =  7.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  1.4201963E-01     *Ei/E0 =  9.9023465E-01
+ Iteration:   2     *|du|/|u| =  1.0913852E-04     *Ei/E0 =  5.5612617E-09
+ Equilibrium established after     2 iterations                10/07/26 15:13:57
+
+ BEGIN implicit statics  step      8 t= 8.0000E-02             10/07/26 15:13:58
+ ============================================================
+                time =  8.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  1.2414293E-01     *Ei/E0 =  9.8860483E-01
+ Iteration:   2     *|du|/|u| =  1.0936035E-04     *Ei/E0 =  6.5714412E-09
+ Equilibrium established after     2 iterations                10/07/26 15:14:44
+
+ BEGIN implicit statics  step      9 t= 9.0000E-02             10/07/26 15:14:45
+ ============================================================
+                time =  9.00000E-02
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  1.1023822E-01     *Ei/E0 =  9.8697437E-01
+ Iteration:   2     *|du|/|u| =  1.0957754E-04     *Ei/E0 =  7.7176608E-09
+ Equilibrium established after     2 iterations                10/07/26 15:15:28
+    
+ estimated total cpu time          =      4300 sec (       1 hrs 11 mins)
+ estimated cpu time to complete    =      3861 sec (       1 hrs  4 mins)
+ estimated total clock time        =      4305 sec (       1 hrs 11 mins)
+ estimated clock time to complete  =      3866 sec (       1 hrs  4 mins)
+
+ BEGIN implicit statics  step     10 t= 1.0000E-01             10/07/26 15:15:29
+ ============================================================
+                time =  1.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  9.9113907E-02     *Ei/E0 =  9.8534326E-01
+ Iteration:   2     *|du|/|u| =  1.0979125E-04     *Ei/E0 =  9.0000017E-09
+ Equilibrium established after     2 iterations                10/07/26 15:16:11
+
+ BEGIN implicit statics  step     11 t= 1.1000E-01             10/07/26 15:16:12
+ ============================================================
+                time =  1.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  9.2874157E-02     *Ei/E0 =  9.9749409E-01
+ Iteration:   2     *|du|/|u| =  1.1572342E-04     *Ei/E0 =  1.1210999E-08
+ Equilibrium established after     2 iterations                10/07/26 15:16:54
+      46 t 1.1000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:16:54
+
+ BEGIN implicit statics  step     12 t= 1.2000E-01             10/07/26 15:16:54
+ ============================================================
+                time =  1.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  8.7193129E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2037380E-04     *Ei/E0 =  1.3721121E-08
+ Equilibrium established after     2 iterations                10/07/26 15:17:36
+
+ BEGIN implicit statics  step     13 t= 1.3000E-01             10/07/26 15:17:37
+ ============================================================
+                time =  1.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  8.0513490E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2066619E-04     *Ei/E0 =  1.5859595E-08
+ Equilibrium established after     2 iterations                10/07/26 15:18:18
+
+ BEGIN implicit statics  step     14 t= 1.4000E-01             10/07/26 15:18:19
+ ============================================================
+                time =  1.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.4557859E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2063967E-04     *Ei/E0 =  1.8069820E-08
+ Equilibrium established after     2 iterations                10/07/26 15:19:01
+
+ BEGIN implicit statics  step     15 t= 1.5000E-01             10/07/26 15:19:02
+ ============================================================
+                time =  1.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  6.9439935E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2080103E-04     *Ei/E0 =  2.0448443E-08
+ Equilibrium established after     2 iterations                10/07/26 15:19:44
+
+ BEGIN implicit statics  step     16 t= 1.6000E-01             10/07/26 15:19:45
+ ============================================================
+                time =  1.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  6.5009770E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2111796E-04     *Ei/E0 =  2.3005350E-08
+ Equilibrium established after     2 iterations                10/07/26 15:20:27
+      66 t 1.6000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:20:28
+
+ BEGIN implicit statics  step     17 t= 1.7000E-01             10/07/26 15:20:28
+ ============================================================
+                time =  1.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  6.1133159E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2153530E-04     *Ei/E0 =  2.5742053E-08
+ Equilibrium established after     2 iterations                10/07/26 15:21:09
+
+ BEGIN implicit statics  step     18 t= 1.8000E-01             10/07/26 15:21:10
+ ============================================================
+                time =  1.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.7721501E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2206854E-04     *Ei/E0 =  2.8684593E-08
+ Equilibrium established after     2 iterations                10/07/26 15:21:49
+
+ BEGIN implicit statics  step     19 t= 1.9000E-01             10/07/26 15:21:49
+ ============================================================
+                time =  1.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.4689441E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2267400E-04     *Ei/E0 =  3.1828694E-08
+ Equilibrium established after     2 iterations                10/07/26 15:22:28
+
+ BEGIN implicit statics  step     20 t= 2.0000E-01             10/07/26 15:22:28
+ ============================================================
+                time =  2.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.1964107E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2328682E-04     *Ei/E0 =  3.5136687E-08
+ Equilibrium established after     2 iterations                10/07/26 15:23:08
+      82 t 2.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:23:08
+
+ BEGIN implicit statics  step     21 t= 2.1000E-01             10/07/26 15:23:08
+ ============================================================
+                time =  2.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.9538313E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2407428E-04     *Ei/E0 =  3.8777690E-08
+ Equilibrium established after     2 iterations                10/07/26 15:23:47
+
+ BEGIN implicit statics  step     22 t= 2.2000E-01             10/07/26 15:23:48
+ ============================================================
+                time =  2.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.7357660E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2498047E-04     *Ei/E0 =  4.2747451E-08
+ Equilibrium established after     2 iterations                10/07/26 15:24:28
+
+ BEGIN implicit statics  step     23 t= 2.3000E-01             10/07/26 15:24:28
+ ============================================================
+                time =  2.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.5373754E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2591296E-04     *Ei/E0 =  4.6987090E-08
+ Equilibrium established after     2 iterations                10/07/26 15:25:09
+
+ BEGIN implicit statics  step     24 t= 2.4000E-01             10/07/26 15:25:10
+ ============================================================
+                time =  2.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.3555681E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2684455E-04     *Ei/E0 =  5.1479043E-08
+ Equilibrium established after     2 iterations                10/07/26 15:25:49
+
+ BEGIN implicit statics  step     25 t= 2.5000E-01             10/07/26 15:25:50
+ ============================================================
+                time =  2.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.1882642E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2777655E-04     *Ei/E0 =  5.6230340E-08
+ Equilibrium established after     2 iterations                10/07/26 15:26:30
+     102 t 2.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:26:30
+
+ BEGIN implicit statics  step     26 t= 2.6000E-01             10/07/26 15:26:30
+ ============================================================
+                time =  2.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.0337479E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2870971E-04     *Ei/E0 =  6.1247799E-08
+ Equilibrium established after     2 iterations                10/07/26 15:27:11
+
+ BEGIN implicit statics  step     27 t= 2.7000E-01             10/07/26 15:27:12
+ ============================================================
+                time =  2.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.8905977E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.2964409E-04     *Ei/E0 =  6.6537607E-08
+ Equilibrium established after     2 iterations                10/07/26 15:27:51
+
+ BEGIN implicit statics  step     28 t= 2.8000E-01             10/07/26 15:27:52
+ ============================================================
+                time =  2.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.7782339E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3164849E-04     *Ei/E0 =  7.2840468E-08
+ Equilibrium established after     2 iterations                10/07/26 15:28:31
+
+ BEGIN implicit statics  step     29 t= 2.9000E-01             10/07/26 15:28:31
+ ============================================================
+                time =  2.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.6984301E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3494791E-04     *Ei/E0 =  8.0615839E-08
+ Equilibrium established after     2 iterations                10/07/26 15:29:14
+
+ BEGIN implicit statics  step     30 t= 3.0000E-01             10/07/26 15:29:14
+ ============================================================
+                time =  3.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.5967357E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3679700E-04     *Ei/E0 =  8.7909538E-08
+ Equilibrium established after     2 iterations                10/07/26 15:29:57
+     122 t 3.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:29:58
+
+ BEGIN implicit statics  step     31 t= 3.1000E-01             10/07/26 15:29:58
+ ============================================================
+                time =  3.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.4916439E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3809009E-04     *Ei/E0 =  9.5136057E-08
+ Equilibrium established after     2 iterations                10/07/26 15:30:42
+
+ BEGIN implicit statics  step     32 t= 3.2000E-01             10/07/26 15:30:43
+ ============================================================
+                time =  3.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.3889685E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.3914427E-04     *Ei/E0 =  1.0246688E-07
+ Equilibrium established after     2 iterations                10/07/26 15:31:30
+
+ BEGIN implicit statics  step     33 t= 3.3000E-01             10/07/26 15:31:30
+ ============================================================
+                time =  3.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.2907595E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4010047E-04     *Ei/E0 =  1.1001310E-07
+ Equilibrium established after     2 iterations                10/07/26 15:32:17
+
+ BEGIN implicit statics  step     34 t= 3.4000E-01             10/07/26 15:32:17
+ ============================================================
+                time =  3.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.1971907E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4098826E-04     *Ei/E0 =  1.1779163E-07
+ Equilibrium established after     2 iterations                10/07/26 15:33:01
+
+ BEGIN implicit statics  step     35 t= 3.5000E-01             10/07/26 15:33:02
+ ============================================================
+                time =  3.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.1089822E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4188997E-04     *Ei/E0 =  1.2590085E-07
+ Equilibrium established after     2 iterations                10/07/26 15:33:46
+     142 t 3.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:33:47
+
+ BEGIN implicit statics  step     36 t= 3.6000E-01             10/07/26 15:33:47
+ ============================================================
+                time =  3.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.0252961E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4277005E-04     *Ei/E0 =  1.3429385E-07
+ Equilibrium established after     2 iterations                10/07/26 15:34:32
+
+ BEGIN implicit statics  step     37 t= 3.7000E-01             10/07/26 15:34:33
+ ============================================================
+                time =  3.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  2.9466807E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4370180E-04     *Ei/E0 =  1.4309608E-07
+ Equilibrium established after     2 iterations                10/07/26 15:35:17
+
+ BEGIN implicit statics  step     38 t= 3.8000E-01             10/07/26 15:35:18
+ ============================================================
+                time =  3.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  2.8720578E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4462776E-04     *Ei/E0 =  1.5222264E-07
+ Equilibrium established after     2 iterations                10/07/26 15:36:04
+
+ BEGIN implicit statics  step     39 t= 3.9000E-01             10/07/26 15:36:05
+ ============================================================
+                time =  3.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  2.8011833E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4555307E-04     *Ei/E0 =  1.6168399E-07
+ Equilibrium established after     2 iterations                10/07/26 15:36:56
+
+ BEGIN implicit statics  step     40 t= 4.0000E-01             10/07/26 15:36:57
+ ============================================================
+                time =  4.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  2.7339792E-02     *Ei/E0 =  1.0000000E+00
+ Iteration:   2     *|du|/|u| =  1.4649507E-04     *Ei/E0 =  1.7152459E-07
+ Equilibrium established after     2 iterations                10/07/26 15:37:38
+     162 t 4.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:37:39
+
+ BEGIN implicit statics  step     41 t= 4.1000E-01             10/07/26 15:37:39
+ ============================================================
+                time =  4.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.4497061E-03     *Ei/E0 =  4.0202852E-02
+ Iteration:   2     *|du|/|u| =  2.9432953E-05     *Ei/E0 =  6.8772391E-09
+ Equilibrium established after     2 iterations                10/07/26 15:38:21
+
+ BEGIN implicit statics  step     42 t= 4.2000E-01             10/07/26 15:38:22
+ ============================================================
+                time =  4.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.4237316E-03     *Ei/E0 =  4.0260286E-02
+ Iteration:   2     *|du|/|u| =  2.9467938E-05     *Ei/E0 =  6.9671622E-09
+ Equilibrium established after     2 iterations                10/07/26 15:39:04
+
+ BEGIN implicit statics  step     43 t= 4.3000E-01             10/07/26 15:39:04
+ ============================================================
+                time =  4.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.3984808E-03     *Ei/E0 =  4.0316356E-02
+ Iteration:   2     *|du|/|u| =  2.9509074E-05     *Ei/E0 =  7.0606910E-09
+ Equilibrium established after     2 iterations                10/07/26 15:39:46
+
+ BEGIN implicit statics  step     44 t= 4.4000E-01             10/07/26 15:39:47
+ ============================================================
+                time =  4.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.3728509E-03     *Ei/E0 =  4.0373658E-02
+ Iteration:   2     *|du|/|u| =  2.9544657E-05     *Ei/E0 =  7.1524467E-09
+ Equilibrium established after     2 iterations                10/07/26 15:40:30
+
+ BEGIN implicit statics  step     45 t= 4.5000E-01             10/07/26 15:40:31
+ ============================================================
+                time =  4.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.3480718E-03     *Ei/E0 =  4.0429777E-02
+ Iteration:   2     *|du|/|u| =  2.9585684E-05     *Ei/E0 =  7.2475961E-09
+ Equilibrium established after     2 iterations                10/07/26 15:41:13
+     182 t 4.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:41:13
+
+ BEGIN implicit statics  step     46 t= 4.6000E-01             10/07/26 15:41:13
+ ============================================================
+                time =  4.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.3232120E-03     *Ei/E0 =  4.0486560E-02
+ Iteration:   2     *|du|/|u| =  2.9623817E-05     *Ei/E0 =  7.3422413E-09
+ Equilibrium established after     2 iterations                10/07/26 15:41:55
+
+ BEGIN implicit statics  step     47 t= 4.7000E-01             10/07/26 15:41:56
+ ============================================================
+                time =  4.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.2986300E-03     *Ei/E0 =  4.0543188E-02
+ Iteration:   2     *|du|/|u| =  2.9662424E-05     *Ei/E0 =  7.4378278E-09
+ Equilibrium established after     2 iterations                10/07/26 15:42:38
+
+ BEGIN implicit statics  step     48 t= 4.8000E-01             10/07/26 15:42:39
+ ============================================================
+                time =  4.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.2742447E-03     *Ei/E0 =  4.0599962E-02
+ Iteration:   2     *|du|/|u| =  2.9700633E-05     *Ei/E0 =  7.5341490E-09
+ Equilibrium established after     2 iterations                10/07/26 15:43:21
+
+ BEGIN implicit statics  step     49 t= 4.9000E-01             10/07/26 15:43:22
+ ============================================================
+                time =  4.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.2487114E-03     *Ei/E0 =  4.0655908E-02
+ Iteration:   2     *|du|/|u| =  2.9746570E-05     *Ei/E0 =  7.6346684E-09
+ Equilibrium established after     2 iterations                10/07/26 15:44:09
+
+ BEGIN implicit statics  step     50 t= 5.0000E-01             10/07/26 15:44:09
+ ============================================================
+                time =  5.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.2170129E-03     *Ei/E0 =  4.0711989E-02
+ Iteration:   2     *|du|/|u| =  2.9804955E-05     *Ei/E0 =  7.7402202E-09
+ Equilibrium established after     2 iterations                10/07/26 15:44:56
+     202 t 5.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:44:57
+
+ BEGIN implicit statics  step     51 t= 5.1000E-01             10/07/26 15:44:57
+ ============================================================
+                time =  5.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.1834475E-03     *Ei/E0 =  4.0767678E-02
+ Iteration:   2     *|du|/|u| =  2.9870491E-05     *Ei/E0 =  7.8496708E-09
+ Equilibrium established after     2 iterations                10/07/26 15:45:44
+
+ BEGIN implicit statics  step     52 t= 5.2000E-01             10/07/26 15:45:45
+ ============================================================
+                time =  5.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.1495579E-03     *Ei/E0 =  4.0822746E-02
+ Iteration:   2     *|du|/|u| =  2.9941395E-05     *Ei/E0 =  7.9626622E-09
+ Equilibrium established after     2 iterations                10/07/26 15:46:32
+
+ BEGIN implicit statics  step     53 t= 5.3000E-01             10/07/26 15:46:32
+ ============================================================
+                time =  5.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.1150741E-03     *Ei/E0 =  4.0878275E-02
+ Iteration:   2     *|du|/|u| =  3.0011781E-05     *Ei/E0 =  8.0761784E-09
+ Equilibrium established after     2 iterations                10/07/26 15:47:20
+
+ BEGIN implicit statics  step     54 t= 5.4000E-01             10/07/26 15:47:20
+ ============================================================
+                time =  5.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.0815620E-03     *Ei/E0 =  4.0933458E-02
+ Iteration:   2     *|du|/|u| =  3.0082656E-05     *Ei/E0 =  8.1911682E-09
+ Equilibrium established after     2 iterations                10/07/26 15:48:07
+
+ BEGIN implicit statics  step     55 t= 5.5000E-01             10/07/26 15:48:08
+ ============================================================
+                time =  5.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.0489058E-03     *Ei/E0 =  4.0988569E-02
+ Iteration:   2     *|du|/|u| =  3.0152859E-05     *Ei/E0 =  8.3072023E-09
+ Equilibrium established after     2 iterations                10/07/26 15:48:55
+     222 t 5.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:48:56
+
+ BEGIN implicit statics  step     56 t= 5.6000E-01             10/07/26 15:48:56
+ ============================================================
+                time =  5.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  5.0184104E-03     *Ei/E0 =  4.1043732E-02
+ Iteration:   2     *|du|/|u| =  3.0217791E-05     *Ei/E0 =  8.4221572E-09
+ Equilibrium established after     2 iterations                10/07/26 15:49:42
+
+ BEGIN implicit statics  step     57 t= 5.7000E-01             10/07/26 15:49:43
+ ============================================================
+                time =  5.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.9893991E-03     *Ei/E0 =  4.1098520E-02
+ Iteration:   2     *|du|/|u| =  3.0282085E-05     *Ei/E0 =  8.5383586E-09
+ Equilibrium established after     2 iterations                10/07/26 15:51:09
+
+ BEGIN implicit statics  step     58 t= 5.8000E-01             10/07/26 15:51:09
+ ============================================================
+                time =  5.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.9612246E-03     *Ei/E0 =  4.1153817E-02
+ Iteration:   2     *|du|/|u| =  3.0341521E-05     *Ei/E0 =  8.6531839E-09
+ Equilibrium established after     2 iterations                10/07/26 15:51:42
+
+ BEGIN implicit statics  step     59 t= 5.9000E-01             10/07/26 15:51:43
+ ============================================================
+                time =  5.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.9343052E-03     *Ei/E0 =  4.1208521E-02
+ Iteration:   2     *|du|/|u| =  3.0402215E-05     *Ei/E0 =  8.7702513E-09
+ Equilibrium established after     2 iterations                10/07/26 15:52:12
+
+ BEGIN implicit statics  step     60 t= 6.0000E-01             10/07/26 15:52:12
+ ============================================================
+                time =  6.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.9079353E-03     *Ei/E0 =  4.1263797E-02
+ Iteration:   2     *|du|/|u| =  3.0457986E-05     *Ei/E0 =  8.8855628E-09
+ Equilibrium established after     2 iterations                10/07/26 15:52:50
+     242 t 6.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:52:51
+
+ BEGIN implicit statics  step     61 t= 6.1000E-01             10/07/26 15:52:51
+ ============================================================
+                time =  6.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.8703543E-03     *Ei/E0 =  4.1281173E-02
+ Iteration:   2     *|du|/|u| =  3.0409959E-05     *Ei/E0 =  8.9603339E-09
+ Equilibrium established after     2 iterations                10/07/26 15:53:33
+
+ BEGIN implicit statics  step     62 t= 6.2000E-01             10/07/26 15:53:33
+ ============================================================
+                time =  6.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.8092415E-03     *Ei/E0 =  4.1217021E-02
+ Iteration:   2     *|du|/|u| =  3.0145672E-05     *Ei/E0 =  8.9431824E-09
+ Equilibrium established after     2 iterations                10/07/26 15:54:15
+
+ BEGIN implicit statics  step     63 t= 6.3000E-01             10/07/26 15:54:16
+ ============================================================
+                time =  6.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.7465429E-03     *Ei/E0 =  4.1140535E-02
+ Iteration:   2     *|du|/|u| =  2.9855063E-05     *Ei/E0 =  8.9119319E-09
+ Equilibrium established after     2 iterations                10/07/26 15:54:58
+
+ BEGIN implicit statics  step     64 t= 6.4000E-01             10/07/26 15:54:58
+ ============================================================
+                time =  6.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.6755174E-03     *Ei/E0 =  4.1027736E-02
+ Iteration:   2     *|du|/|u| =  2.9485005E-05     *Ei/E0 =  8.8487623E-09
+ Equilibrium established after     2 iterations                10/07/26 15:55:40
+
+ BEGIN implicit statics  step     65 t= 6.5000E-01             10/07/26 15:55:41
+ ============================================================
+                time =  6.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.6024331E-03     *Ei/E0 =  4.0899531E-02
+ Iteration:   2     *|du|/|u| =  2.9089646E-05     *Ei/E0 =  8.7734367E-09
+ Equilibrium established after     2 iterations                10/07/26 15:56:24
+     262 t 6.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 15:56:25
+
+ BEGIN implicit statics  step     66 t= 6.6000E-01             10/07/26 15:56:25
+ ============================================================
+                time =  6.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.5348797E-03     *Ei/E0 =  4.0778629E-02
+ Iteration:   2     *|du|/|u| =  2.8729774E-05     *Ei/E0 =  8.7051682E-09
+ Equilibrium established after     2 iterations                10/07/26 15:57:08
+
+ BEGIN implicit statics  step     67 t= 6.7000E-01             10/07/26 15:57:09
+ ============================================================
+                time =  6.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.4691892E-03     *Ei/E0 =  4.0654053E-02
+ Iteration:   2     *|du|/|u| =  2.8377627E-05     *Ei/E0 =  8.6383654E-09
+ Equilibrium established after     2 iterations                10/07/26 15:57:52
+
+ BEGIN implicit statics  step     68 t= 6.8000E-01             10/07/26 15:57:53
+ ============================================================
+                time =  6.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.4139961E-03     *Ei/E0 =  4.0557998E-02
+ Iteration:   2     *|du|/|u| =  2.8105835E-05     *Ei/E0 =  8.5983004E-09
+ Equilibrium established after     2 iterations                10/07/26 15:58:35
+
+ BEGIN implicit statics  step     69 t= 6.9000E-01             10/07/26 15:58:36
+ ============================================================
+                time =  6.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.3630255E-03     *Ei/E0 =  4.0463180E-02
+ Iteration:   2     *|du|/|u| =  2.7863058E-05     *Ei/E0 =  8.5628358E-09
+ Equilibrium established after     2 iterations                10/07/26 15:59:17
+
+ BEGIN implicit statics  step     70 t= 7.0000E-01             10/07/26 15:59:18
+ ============================================================
+                time =  7.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.3155157E-03     *Ei/E0 =  4.0373319E-02
+ Iteration:   2     *|du|/|u| =  2.7644317E-05     *Ei/E0 =  8.5339788E-09
+ Equilibrium established after     2 iterations                10/07/26 16:00:00
+     282 t 7.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 16:00:01
+
+ BEGIN implicit statics  step     71 t= 7.1000E-01             10/07/26 16:00:01
+ ============================================================
+                time =  7.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.2736916E-03     *Ei/E0 =  4.0302477E-02
+ Iteration:   2     *|du|/|u| =  2.7471879E-05     *Ei/E0 =  8.5227637E-09
+ Equilibrium established after     2 iterations                10/07/26 16:00:42
+
+ BEGIN implicit statics  step     72 t= 7.2000E-01             10/07/26 16:00:43
+ ============================================================
+                time =  7.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.2344510E-03     *Ei/E0 =  4.0233267E-02
+ Iteration:   2     *|du|/|u| =  2.7317905E-05     *Ei/E0 =  8.5152060E-09
+ Equilibrium established after     2 iterations                10/07/26 16:01:25
+
+ BEGIN implicit statics  step     73 t= 7.3000E-01             10/07/26 16:01:26
+ ============================================================
+                time =  7.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.1982497E-03     *Ei/E0 =  4.0168562E-02
+ Iteration:   2     *|du|/|u| =  2.7187469E-05     *Ei/E0 =  8.5140517E-09
+ Equilibrium established after     2 iterations                10/07/26 16:02:08
+
+ BEGIN implicit statics  step     74 t= 7.4000E-01             10/07/26 16:02:08
+ ============================================================
+                time =  7.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.1652207E-03     *Ei/E0 =  4.0120622E-02
+ Iteration:   2     *|du|/|u| =  2.7083226E-05     *Ei/E0 =  8.5301602E-09
+ Equilibrium established after     2 iterations                10/07/26 16:02:50
+
+ BEGIN implicit statics  step     75 t= 7.5000E-01             10/07/26 16:02:51
+ ============================================================
+                time =  7.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.1308513E-03     *Ei/E0 =  4.0047769E-02
+ Iteration:   2     *|du|/|u| =  2.6962189E-05     *Ei/E0 =  8.5248017E-09
+ Equilibrium established after     2 iterations                10/07/26 16:03:33
+     302 t 7.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 16:03:34
+
+ BEGIN implicit statics  step     76 t= 7.6000E-01             10/07/26 16:03:34
+ ============================================================
+                time =  7.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.1015750E-03     *Ei/E0 =  4.0004402E-02
+ Iteration:   2     *|du|/|u| =  2.6885420E-05     *Ei/E0 =  8.5483625E-09
+ Equilibrium established after     2 iterations                10/07/26 16:04:16
+
+ BEGIN implicit statics  step     77 t= 7.7000E-01             10/07/26 16:04:16
+ ============================================================
+                time =  7.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.0718105E-03     *Ei/E0 =  3.9946554E-02
+ Iteration:   2     *|du|/|u| =  2.6801388E-05     *Ei/E0 =  8.5622515E-09
+ Equilibrium established after     2 iterations                10/07/26 16:04:58
+
+ BEGIN implicit statics  step     78 t= 7.8000E-01             10/07/26 16:04:59
+ ============================================================
+                time =  7.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.0464497E-03     *Ei/E0 =  3.9911180E-02
+ Iteration:   2     *|du|/|u| =  2.6754958E-05     *Ei/E0 =  8.5919043E-09
+ Equilibrium established after     2 iterations                10/07/26 16:05:41
+
+ BEGIN implicit statics  step     79 t= 7.9000E-01             10/07/26 16:05:42
+ ============================================================
+                time =  7.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  4.0186905E-03     *Ei/E0 =  3.9849697E-02
+ Iteration:   2     *|du|/|u| =  2.6685442E-05     *Ei/E0 =  8.6069519E-09
+ Equilibrium established after     2 iterations                10/07/26 16:06:24
+
+ BEGIN implicit statics  step     80 t= 8.0000E-01             10/07/26 16:06:25
+ ============================================================
+                time =  8.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  3.9950207E-03     *Ei/E0 =  3.9816587E-02
+ Iteration:   2     *|du|/|u| =  2.6650047E-05     *Ei/E0 =  8.6436224E-09
+ Equilibrium established after     2 iterations                10/07/26 16:07:07
+     322 t 8.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 16:07:08
+
+ BEGIN implicit statics  step     81 t= 8.1000E-01             10/07/26 16:07:08
+ ============================================================
+                time =  8.10000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.9043511E-03     *Ei/E0 =  1.5897587E-01
+ Iteration:   2     *|du|/|u| =  5.3203856E-05     *Ei/E0 =  3.4982901E-08
+ Equilibrium established after     2 iterations                10/07/26 16:07:49
+
+ BEGIN implicit statics  step     82 t= 8.2000E-01             10/07/26 16:07:50
+ ============================================================
+                time =  8.20000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.8208135E-03     *Ei/E0 =  1.5871387E-01
+ Iteration:   2     *|du|/|u| =  5.3143644E-05     *Ei/E0 =  3.5325909E-08
+ Equilibrium established after     2 iterations                10/07/26 16:08:32
+
+ BEGIN implicit statics  step     83 t= 8.3000E-01             10/07/26 16:08:33
+ ============================================================
+                time =  8.30000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.7440515E-03     *Ei/E0 =  1.5849942E-01
+ Iteration:   2     *|du|/|u| =  5.3131021E-05     *Ei/E0 =  3.5722917E-08
+ Equilibrium established after     2 iterations                10/07/26 16:09:15
+
+ BEGIN implicit statics  step     84 t= 8.4000E-01             10/07/26 16:09:15
+ ============================================================
+                time =  8.40000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.6721155E-03     *Ei/E0 =  1.5835347E-01
+ Iteration:   2     *|du|/|u| =  5.3149335E-05     *Ei/E0 =  3.6192024E-08
+ Equilibrium established after     2 iterations                10/07/26 16:10:02
+
+ BEGIN implicit statics  step     85 t= 8.5000E-01             10/07/26 16:10:02
+ ============================================================
+                time =  8.50000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.6048997E-03     *Ei/E0 =  1.5814371E-01
+ Iteration:   2     *|du|/|u| =  5.3213550E-05     *Ei/E0 =  3.6662436E-08
+ Equilibrium established after     2 iterations                10/07/26 16:10:47
+     342 t 8.5000E-01 dt 1.00E-02 write d3plot file            10/07/26 16:10:48
+
+ BEGIN implicit statics  step     86 t= 8.6000E-01             10/07/26 16:10:48
+ ============================================================
+                time =  8.60000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.5412780E-03     *Ei/E0 =  1.5809824E-01
+ Iteration:   2     *|du|/|u| =  5.3282193E-05     *Ei/E0 =  3.7208300E-08
+ Equilibrium established after     2 iterations                10/07/26 16:11:29
+
+ BEGIN implicit statics  step     87 t= 8.7000E-01             10/07/26 16:11:30
+ ============================================================
+                time =  8.70000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.4824163E-03     *Ei/E0 =  1.5789441E-01
+ Iteration:   2     *|du|/|u| =  5.3414297E-05     *Ei/E0 =  3.7761209E-08
+ Equilibrium established after     2 iterations                10/07/26 16:12:12
+
+ BEGIN implicit statics  step     88 t= 8.8000E-01             10/07/26 16:12:13
+ ============================================================
+                time =  8.80000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.4241688E-03     *Ei/E0 =  1.5788274E-01
+ Iteration:   2     *|du|/|u| =  5.3517977E-05     *Ei/E0 =  3.8359999E-08
+ Equilibrium established after     2 iterations                10/07/26 16:12:55
+
+ BEGIN implicit statics  step     89 t= 8.9000E-01             10/07/26 16:12:56
+ ============================================================
+                time =  8.90000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.3706117E-03     *Ei/E0 =  1.5773053E-01
+ Iteration:   2     *|du|/|u| =  5.3684830E-05     *Ei/E0 =  3.8958971E-08
+ Equilibrium established after     2 iterations                10/07/26 16:13:38
+
+ ------------------------------------------------------------
+           automatic time step size DECREASE:
+   dt(old) =  1.00000E-02      dt(new) =  1.00000E-02
+ ------------------------------------------------------------
+
+
+ BEGIN implicit statics  step     90 t= 9.0000E-01             10/07/26 16:13:39
+ ============================================================
+                time =  9.00000E-01
+   current step size =  1.00000E-02
+ Iteration:   1     *|du|/|u| =  7.3175185E-03     *Ei/E0 =  1.5771089E-01
+ Iteration:   2     *|du|/|u| =  5.3829542E-05     *Ei/E0 =  3.9617305E-08
+ Equilibrium established after     2 iterations                10/07/26 16:14:21
+     362 t 9.0000E-01 dt 1.00E-02 write d3plot file            10/07/26 16:14:22
+ 
+ *** termination time reached ***
+     362 t 9.0000E-01 dt 1.00E-02 write d3dump01 file          10/07/26 16:14:22
+
+ N o r m a l    t e r m i n a t i o n                          10/07/26 16:14:22
+
+ Memory required to complete solution   :    2228K
+ Constraint dynamically allocated memory:      68M
+ Additional dynamically allocated memory:     900M
+                                   Total:     970M
+
+ T i m i n g   i n f o r m a t i o n
+                        CPU(seconds)   %CPU  Clock(seconds) %Clock
+  ----------------------------------------------------------------
+  Keyword Processing ... 2.0000E+00    0.05     1.5450E+00    0.04
+    KW Reading ......... 1.0000E+00    0.03     9.5800E-01    0.02
+    KW Writing ......... 0.0000E+00    0.00     6.3000E-02    0.00
+  Initialization ....... 1.0000E+01    0.25     1.0231E+01    0.26
+    Init Proc Phase 1 .. 0.0000E+00    0.00     5.9000E-01    0.01
+    Init Proc Phase 2 .. 1.0000E+00    0.03     3.3400E-01    0.01
+  Element processing ... 7.7600E+02   19.52     7.7388E+02   19.47
+    Solids ............. 7.7500E+02   19.50     7.7335E+02   19.45
+    E Other ............ 1.0000E+00    0.03     5.3500E-01    0.01
+  Binary databases ..... 0.0000E+00    0.00     3.0200E-01    0.01
+  ASCII database ....... 4.0000E+00    0.10     3.4300E+00    0.09
+  Implicit ............. 1.0000E+01    0.25     1.1348E+01    0.29
+  Implicit Nonlinear ... 3.4000E+01    0.86     3.1341E+01    0.79
+    Imp. NL force mod .. 2.2000E+01    0.55     2.1634E+01    0.54
+  Implicit Lin. Alg. ... 3.1380E+03   78.94     3.1423E+03   79.04
+    Imp. LA Mtx Assemb . 1.2900E+02    3.25     1.3451E+02    3.38
+    Imp. LA Factor ..... 2.9450E+03   74.09     2.9470E+03   74.13
+    Imp. LA Solve ...... 6.4000E+01    1.61     6.0808E+01    1.53
+  Misc. 1 .............. 0.0000E+00    0.00     2.1300E-01    0.01
+    Scale Masses ....... 0.0000E+00    0.00     5.0000E-02    0.00
+  Misc. 3 .............. 0.0000E+00    0.00     3.6100E-01    0.01
+  Misc. 4 .............. 1.0000E+00    0.03     4.7300E-01    0.01
+    Timestep Init ...... 0.0000E+00    0.00     3.1700E-01    0.01
+  ----------------------------------------------------------------
+  T o t a l s            3.9750E+03  100.00     3.9755E+03  100.00
+
+ Problem time       =    9.0000E-01
+ Problem cycle      =       362
+ Total CPU time     =      3975 seconds (   1 hours  6 minutes 15 seconds)
+ CPU time per zone cycle  =     467842.471 nanoseconds
+ Clock time per zone cycle=     467926.878 nanoseconds
+
+ Number of CPU's    4
+ NLQ used/max     192/  192
+ Start time   10/07/2026 15:08:16  
+ End time     10/07/2026 16:14:22  
+ Elapsed time    3966 seconds for     362 cycles using  4 SMP threads
+             (      1 hour   6 minutes  6 seconds)
+
+ N o r m a l    t e r m i n a t i o n                          10/07/26 16:14:22
+

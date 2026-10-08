@@ -1,0 +1,18 @@
+startup trial A: flow-only 120 it, then energy 150 it, time_solid_scale_factor=1
+OK    read setup case                                        
+OK    Inconel density read-back                              8190.0
+OK    pseudo-time settings before                            {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 
+OK    pseudo-time settings in force                          {'time_step_method': 'automatic', 'length_scale_methods': 'conservative', 'time_step_size_scale_factor': 1.0, 
+OK    redirect monitor file                                  
+OK    standard initialize                                    
+OK    energy equation OFF for flow-only startup              
+OK    equations state                                        {'flow': True, 'kw': True, 'temperature': False}
+OK    iterate flow-only 120                                  
+OK    energy equation ON                                     
+OK    equations state                                        {'flow': True, 'kw': True, 'temperature': True}
+OK    iterate with energy 150                                
+TRIAL A RESULT peak T_solid_max = 561.78 K at iter 270; final 561.78 K; overshoot 0.00 K; peak q_interface 602.8 W; final T_out 368.930 K
+OK    create cell-zone surface fluid                         
+OK    create cell-zone surface solid                         
+OK    ascii export surfaces now                              ['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'heated_outer_wall', 'fluid_solid_inte
+OK    residual.write probe                                   

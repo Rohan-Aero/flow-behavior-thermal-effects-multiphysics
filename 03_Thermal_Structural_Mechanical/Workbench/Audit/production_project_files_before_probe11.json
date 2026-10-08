@@ -1,0 +1,127 @@
+﻿{
+    "root":  "<PROJECT_ROOT>\\08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_files",
+    "taken":  "2026-09-25T10:53:49",
+    "count":  20,
+    "files":  [
+                  {
+                      "file":  ".project_cache",
+                      "bytes":  981,
+                      "mtime":  "2026-09-25T10:18:49",
+                      "sha256":  "4CA7BB04CB4ADFC6D6ED895CB4865B5BB6D7D9627034290CEE0DA4A52CA9AA31"
+                  },
+                  {
+                      "file":  "dp0\\act.dat",
+                      "bytes":  265640,
+                      "mtime":  "2026-09-25T10:18:42",
+                      "sha256":  "04A87A0DDDEED982B6DF4C75606ECC290067B5013AB3271DEBC09A53827B7465"
+                  },
+                  {
+                      "file":  "dp0\\designPoint.wbdp",
+                      "bytes":  198485,
+                      "mtime":  "2026-09-25T10:18:43",
+                      "sha256":  "3C19F67CC44579DC5B4E067F344337EA713E7769FCB693222F150E5B01E99C60"
+                  },
+                  {
+                      "file":  "dp0\\Geom\\DM\\Geom.scdocx",
+                      "bytes":  45861,
+                      "mtime":  "2026-09-18T19:13:22",
+                      "sha256":  "6E34B470A60397278D3D0EE0ED1674CC191A6C85566BF02781CC7915F0528B3F"
+                  },
+                  {
+                      "file":  "dp0\\global\\MECH\\SYS.mshdb",
+                      "bytes":  3179144,
+                      "mtime":  "2026-09-19T14:17:39",
+                      "sha256":  "957EBFAC7D8C3D4E3AC0DF7D0C5EEF61FB64A11C62F9C4EC99B574797B582843"
+                  },
+                  {
+                      "file":  "dp0\\global\\MECH\\SYS-2.engd",
+                      "bytes":  40362,
+                      "mtime":  "2026-09-25T10:17:25",
+                      "sha256":  "5AA9D821C35694C17E76907897C64FE99B65906CA867560C4474C3B7B6B49C5B"
+                  },
+                  {
+                      "file":  "dp0\\global\\MECH\\SYS-2.mechdb",
+                      "bytes":  9505112,
+                      "mtime":  "2026-09-25T10:18:39",
+                      "sha256":  "13F399F10E1E6CCD85EC28992CB04ED077D9996312FE102C8CBCB11F4EB0203C"
+                  },
+                  {
+                      "file":  "dp0\\SYS-1\\ELD\\external_load_data.xml",
+                      "bytes":  2148,
+                      "mtime":  "2026-09-25T10:17:22",
+                      "sha256":  "D6E7FB0355BD55250DE0D4318DD568226EBCDECD8C8F71D5359FCA3600268A80"
+                  },
+                  {
+                      "file":  "dp0\\SYS-1\\ELD\\external_load_material_field_data.xml",
+                      "bytes":  134,
+                      "mtime":  "2026-09-25T10:17:22",
+                      "sha256":  "DF9188FDCF143D19DE4D29F5A996FF9C8ED13D90165D3C451D98A17F64575C52"
+                  },
+                  {
+                      "file":  "dp0\\SYS-1\\ELD\\external_load_trace_data.xml",
+                      "bytes":  134,
+                      "mtime":  "2026-09-25T10:17:22",
+                      "sha256":  "DF9188FDCF143D19DE4D29F5A996FF9C8ED13D90165D3C451D98A17F64575C52"
+                  },
+                  {
+                      "file":  "dp0\\SYS-2\\ENGD\\EngineeringData.xml",
+                      "bytes":  40165,
+                      "mtime":  "2026-09-25T10:18:43",
+                      "sha256":  "448991F3D0616C986CD3398D06ADAAB600217A0FE7D69AFEE44198C94D9C998C"
+                  },
+                  {
+                      "file":  "dp0\\SYS-2\\ENGD\\material.engd",
+                      "bytes":  40362,
+                      "mtime":  "2026-09-25T10:17:25",
+                      "sha256":  "5AA9D821C35694C17E76907897C64FE99B65906CA867560C4474C3B7B6B49C5B"
+                  },
+                  {
+                      "file":  "dp0\\SYS-2\\MECH\\CAERep.xml",
+                      "bytes":  18823,
+                      "mtime":  "2026-09-25T10:18:36",
+                      "sha256":  "4CE0F71B985D13E9B1147CD6883734CEC36CA19ED200649D120CC7D0B6633BB5"
+                  },
+                  {
+                      "file":  "dp0\\SYS-2\\MECH\\MatML.xml",
+                      "bytes":  16385,
+                      "mtime":  "2026-09-25T10:18:36",
+                      "sha256":  "97E2A9319BBB7EB5FE25A86B204EDAD7C0CAA0F87DD2F7C18787AEB55179BA75"
+                  },
+                  {
+                      "file":  "dp0\\SYS-2\\MECH\\Setup 1\\external_load_data.xml",
+                      "bytes":  2148,
+                      "mtime":  "2026-09-25T10:17:22",
+                      "sha256":  "D6E7FB0355BD55250DE0D4318DD568226EBCDECD8C8F71D5359FCA3600268A80"
+                  },
+                  {
+                      "file":  "dp0\\SYS-3\\MECH\\CAERep.xml",
+                      "bytes":  20410,
+                      "mtime":  "2026-09-25T10:18:38",
+                      "sha256":  "F7935E47F2C7F527477FCD5558FF123EB29A51F35EFE8ADE76F8DFE75B2D7795"
+                  },
+                  {
+                      "file":  "dp0\\SYS-3\\MECH\\MatML.xml",
+                      "bytes":  16385,
+                      "mtime":  "2026-09-25T10:18:38",
+                      "sha256":  "97E2A9319BBB7EB5FE25A86B204EDAD7C0CAA0F87DD2F7C18787AEB55179BA75"
+                  },
+                  {
+                      "file":  "dp0\\SYS-3\\MECH\\Setup 1\\external_load_data.xml",
+                      "bytes":  2148,
+                      "mtime":  "2026-09-25T10:17:22",
+                      "sha256":  "D6E7FB0355BD55250DE0D4318DD568226EBCDECD8C8F71D5359FCA3600268A80"
+                  },
+                  {
+                      "file":  "session_files\\journal1.wbjn",
+                      "bytes":  1601,
+                      "mtime":  "2026-09-19T14:20:01",
+                      "sha256":  "6A310C286AF0554F78C629657725A041E9F081B32BDFF2ECEB8EC556C741EBE3"
+                  },
+                  {
+                      "file":  "session_files\\journal2.wbjn",
+                      "bytes":  5815,
+                      "mtime":  "2026-09-25T10:18:42",
+                      "sha256":  "82D57D24162330C41632BA4DFFB752411501882F66B7627968E098AE562D5CE5"
+                  }
+              ]
+}

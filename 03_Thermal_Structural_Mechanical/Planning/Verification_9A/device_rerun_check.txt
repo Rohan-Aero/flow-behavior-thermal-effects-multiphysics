@@ -1,0 +1,9 @@
+SECTION 9A - reproducibility check on the device (RE-ANALYSIS 2026)
+Date: 2026-09-26
+Interpreter: C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\python.exe (ANSYS-bundled CPython 3.10, D-005)
+Command: parametric_screening.py <project>\02_Engineering_Calculations\baseline_parameters.json <TEMP>\s9a_check
+Input JSON SHA-256 (first 12): f70600d61be4 (identical to the copy used in the cloud workspace)
+Result: SELF-CHECK vs Section 2: PASS
+        maximum relative difference of every numeric matrix field, device run vs committed screening_results.json: 0.0
+        lambda1(S1) screening: P00 1.108, V01 0.9978, V03 1.2165, Q01 1.2645, Q03 0.981, T01 0.9419, T03 1.2914; all cases valid
+The committed screening outputs were not overwritten (the check wrote to a temporary folder).

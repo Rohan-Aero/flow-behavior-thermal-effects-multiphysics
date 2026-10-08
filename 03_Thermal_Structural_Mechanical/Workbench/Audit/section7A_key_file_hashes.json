@@ -1,0 +1,134 @@
+﻿[
+    {
+        "file":  "06_Fluent_CFD\\Case\\baseline_medium_final.cas.h5",
+        "bytes":  5000324,
+        "mtime":  "2026-09-23T19:10:58",
+        "sha256":  "84D6511B66C3B553BA9555A7115B21E9C41B3F7194D697D01A211466E8AE8204"
+    },
+    {
+        "file":  "06_Fluent_CFD\\Data\\baseline_medium_final.dat.h5",
+        "bytes":  8546549,
+        "mtime":  "2026-09-23T19:11:00",
+        "sha256":  "F05837C5C27E022FC7974E7F04469098FD34A8500F111E4E2D782C4B705A352F"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\EnSight\\solid_domain_T.geo",
+        "bytes":  2427848,
+        "mtime":  "2026-09-25T01:03:42",
+        "sha256":  "D63380FFE45C13E2730304D4622AED79F223916A105D22B9C7D57FF12F59DDFA"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\EnSight\\solid_domain_T.scl1",
+        "bytes":  260792,
+        "mtime":  "2026-09-25T01:03:43",
+        "sha256":  "2496D2EBE7DB475062C2007ED2275580FB58AC42C4701222C6DF4CBFB190C4BF"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\fluent_solid_cells.csv",
+        "bytes":  6350556,
+        "mtime":  "2026-09-24T20:01:02",
+        "sha256":  "4B809C4E3A3D3B4AAD58D10EDEF3C33154ABDD6A9CC106B4CF7B964FB701A904"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\fluent_interface_wall_pressure.csv",
+        "bytes":  414819,
+        "mtime":  "2026-09-25T01:13:26",
+        "sha256":  "73E7083C64237028EDA572B2181B96A975C05B2004B2F0688E9EF8DD265D79F0"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Mapping\\MeshBased\\build_fluent_solid_cdb.inp",
+        "bytes":  11803313,
+        "mtime":  "2026-09-25T01:05:12",
+        "sha256":  "C10C61ECEB2C6A026E4AC64F705A27C9A7CFC429B142A60E93CE05E44EC7D5C8"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb",
+        "bytes":  12705453,
+        "mtime":  "2026-09-25T01:05:33",
+        "sha256":  "0C453094BBC9D04C3ABEB4AADB802D7E962946C537C7FF5BD3507FB5B3263700"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv",
+        "bytes":  829110,
+        "mtime":  "2026-09-25T01:05:15",
+        "sha256":  "CB4F3BABB38FCEB80502A5E9D894ED50B8657AAD27FD76EA6D4F2729455E997D"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Mapping\\Mechanical_Export\\LC1_imported_body_temperature.txt",
+        "bytes":  1608128,
+        "mtime":  "2026-09-25T11:06:51",
+        "sha256":  "DA7B7AF5E72FB8549F26F5E9E4D45850B219C4F87DB74C2078B92C86CB8D09D0"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Mapping\\Mechanical_Export\\LC2_imported_body_temperature.txt",
+        "bytes":  1608128,
+        "mtime":  "2026-09-25T11:07:05",
+        "sha256":  "DA7B7AF5E72FB8549F26F5E9E4D45850B219C4F87DB74C2078B92C86CB8D09D0"
+    },
+    {
+        "file":  "08_Structural_Analysis\\Mechanical_Setup\\Input_Files\\LC1_Free_Expansion_ds.dat",
+        "bytes":  15522487,
+        "mtime":  "2026-09-25T11:07:11",
+        "sha256":  "895A8430E2444F6C202E831A5F70824354CEC3E40862B98D9B8171445841E1DC"
+    },
+    {
+        "file":  "08_Structural_Analysis\\Mechanical_Setup\\Input_Files\\LC2_Axially_Restrained_ds.dat",
+        "bytes":  15523558,
+        "mtime":  "2026-09-25T11:07:12",
+        "sha256":  "F285A626B42188349CC54CF143E5D46EA065E232664A30A35010F9F3EB9F2F76"
+    },
+    {
+        "file":  "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural.wbpj",
+        "bytes":  78116,
+        "mtime":  "2026-09-25T11:07:21",
+        "sha256":  "3352652BD4F45630838DF13209A7EC5F9F0AAB7425B3FEFE1C9FB73189B83553"
+    },
+    {
+        "file":  "08_Structural_Analysis\\Workbench\\Scripts\\wb_build_7A.wbjn",
+        "bytes":  11853,
+        "mtime":  "2026-09-25T10:09:56",
+        "sha256":  "5AF4FC5F902C9ADF18247219E189D8B68E1E1D2BBFD97B9E45F9C65A1AEE6D4C"
+    },
+    {
+        "file":  "08_Structural_Analysis\\Workbench\\Scripts\\mech_build_7A.py",
+        "bytes":  16450,
+        "mtime":  "2026-09-25T11:03:46",
+        "sha256":  "17F801DC4DE4FF0AC652029B8D5C67B4709B812D087D226A7517D29CF5892B17"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\Journals\\export_solid_ensight.py",
+        "bytes":  2180,
+        "mtime":  "2026-09-25T01:02:54",
+        "sha256":  "C031A1EA5D7BFA055AD7EBC03978D0682B441365A7D1B3EF483427AECC834B99"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\Journals\\export_solid_temperature.py",
+        "bytes":  8397,
+        "mtime":  "2026-09-24T19:58:51",
+        "sha256":  "70C7D55184D40628E7364E3185A67A93F708DB5A89D6695F4BBA0C4AAD164818"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Temperature_Source\\Journals\\export_wall_pressure.py",
+        "bytes":  1756,
+        "mtime":  "2026-09-25T01:12:51",
+        "sha256":  "69804A4858B3723F1187C4CAEDD759F0AB535662E1EB7637A5563E61B08BCFFF"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Validation\\validate_mapping_7A.py",
+        "bytes":  22108,
+        "mtime":  "2026-09-25T10:33:36",
+        "sha256":  "5EDB24B4F64DAFE871F2B352D5184BF988C182237D265B6838AB8998BBC98A03"
+    },
+    {
+        "file":  "07_Thermal_Analysis\\Validation\\mapping_validation_7A.json",
+        "bytes":  8928,
+        "mtime":  "2026-09-25T10:33:39",
+        "sha256":  "DF3CF63BB4C051AFEB37283F7220B0246147BBEB572E40D73DD8F3B703D82F0E"
+    },
+    {
+        "file":  "PROJECT_STATE.md",
+        "bytes":  86616,
+        "mtime":  "2026-09-25T11:11:28",
+        "sha256":  "FA6822AD9642F44D264754EC96F2DEB1C51E0B5C84975BE086D520A8398CB27A"
+    }
+]

@@ -1,0 +1,2128 @@
+
+ PRINT REACTION SOLUTIONS PER NODE
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.109
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23221                             647.05     
+   23222                             746.23     
+   23223                             846.33     
+   23224                             947.17     
+   23225                             1048.0     
+   23226                             647.05     
+   23227                             746.23     
+   23228                             846.33     
+   23229                             947.17     
+   23230                             1048.0     
+   23231                             647.09     
+   23232                             746.28     
+   23233                             846.39     
+   23234                             947.23     
+   23235                             1048.1     
+   23236                             647.05     
+   23237                             746.23     
+   23238                             846.33     
+   23239                             947.17     
+   23240                             1048.0     
+   23241                             647.05     
+   23242                             746.23     
+   23243                             846.33     
+   23244                             947.17     
+   23245                             1048.0     
+   23246                             647.09     
+   23247                             746.28     
+   23248                             846.39     
+   23249                             947.23     
+   23250                             1048.1     
+   23251                             647.05     
+   23252                             746.23     
+   23253                             846.33     
+   23254                             947.17     
+   23255                             1048.0     
+   23256                             647.05     
+   23257                             746.23     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.109
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23258                             846.33     
+   23259                             947.17     
+   23260                             1048.0     
+   23261                             647.09     
+   23262                             746.28     
+   23263                             846.39     
+   23264                             947.23     
+   23265                             1048.1     
+   23266                             647.05     
+   23267                             746.23     
+   23268                             846.33     
+   23269                             947.17     
+   23270                             1048.0     
+   23271                             647.05     
+   23272                             746.23     
+   23273                             846.33     
+   23274                             947.17     
+   23275                             1048.0     
+   23276                             647.09     
+   23277                             746.28     
+   23278                             846.39     
+   23279                             947.23     
+   23280                             1048.1     
+   23281                             647.05     
+   23282                             746.23     
+   23283                             846.33     
+   23284                             947.17     
+   23285                             1048.0     
+   23286                             647.05     
+   23287                             746.23     
+   23288                             846.33     
+   23289                             947.17     
+   23290                             1048.0     
+   23291                             647.09     
+   23292                             746.28     
+   23293                             846.39     
+   23294                             947.23     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.110
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23295                             1048.1     
+   23296                             647.05     
+   23297                             746.23     
+   23298                             846.33     
+   23299                             947.17     
+   23300                             1048.0     
+   23301                             647.05     
+   23302                             746.23     
+   23303                             846.33     
+   23304                             947.17     
+   23305                             1048.0     
+   23306                             647.09     
+   23307                             746.28     
+   23308                             846.39     
+   23309                             947.23     
+   23310                             1048.1     
+   23311                             647.05     
+   23312                             746.23     
+   23313                             846.33     
+   23314                             947.17     
+   23315                             1048.0     
+   23316                             647.05     
+   23317                             746.23     
+   23318                             846.33     
+   23319                             947.17     
+   23320                             1048.0     
+   23321                             647.09     
+   23322                             746.28     
+   23323                             846.39     
+   23324                             947.23     
+   23325                             1048.1     
+   23326                             647.05     
+   23327                             746.23     
+   23328                             846.33     
+   23329                             947.17     
+   23330                             1048.0     
+   23331                             647.05     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.110
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23332                             746.23     
+   23333                             846.33     
+   23334                             947.17     
+   23335                             1048.0     
+   23336                             647.09     
+   23337                             746.28     
+   23338                             846.39     
+   23339                             947.23     
+   23340                             1048.1     
+   23341                             647.05     
+   23342                             746.23     
+   23343                             846.33     
+   23344                             947.17     
+   23345                             1048.0     
+   23346                             647.05     
+   23347                             746.23     
+   23348                             846.33     
+   23349                             947.17     
+   23350                             1048.0     
+   23351                             647.09     
+   23352                             746.28     
+   23353                             846.39     
+   23354                             947.23     
+   23355                             1048.1     
+   23356                             647.05     
+   23357                             746.23     
+   23358                             846.33     
+   23359                             947.17     
+   23360                             1048.0     
+   23361                             647.05     
+   23362                             746.23     
+   23363                             846.33     
+   23364                             947.17     
+   23365                             1048.0     
+   23366                             647.09     
+   23367                             746.28     
+   23368                             846.39     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.110
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23369                             947.23     
+   23370                             1048.1     
+   23371                             647.05     
+   23372                             746.23     
+   23373                             846.33     
+   23374                             947.17     
+   23375                             1048.0     
+   23376                             647.05     
+   23377                             746.23     
+   23378                             846.33     
+   23379                             947.17     
+   23380                             1048.0     
+   23381                             647.09     
+   23382                             746.28     
+   23383                             846.39     
+   23384                             947.23     
+   23385                             1048.1     
+   23386                             647.05     
+   23387                             746.23     
+   23388                             846.33     
+   23389                             947.17     
+   23390                             1048.0     
+   23391                             647.05     
+   23392                             746.23     
+   23393                             846.33     
+   23394                             947.17     
+   23395                             1048.0     
+   23396                             647.09     
+   23397                             746.28     
+   23398                             846.39     
+   23399                             947.23     
+   23400                             1048.1     
+   23401                            -1071.3     
+   23402                            -956.25     
+   23403                            -843.98     
+   23404                            -734.18     
+   23405                            -626.94     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.110
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23406                            -1071.2     
+   23407                            -956.16     
+   23408                            -843.88     
+   23409                            -734.08     
+   23410                            -626.84     
+   23411                            -1071.2     
+   23412                            -956.15     
+   23413                            -843.88     
+   23414                            -734.08     
+   23415                            -626.84     
+   23416                            -1071.3     
+   23417                            -956.25     
+   23418                            -843.98     
+   23419                            -734.17     
+   23420                            -626.94     
+   23421                            -1071.2     
+   23422                            -956.15     
+   23423                            -843.87     
+   23424                            -734.08     
+   23425                            -626.84     
+   23426                            -1071.2     
+   23427                            -956.15     
+   23428                            -843.87     
+   23429                            -734.08     
+   23430                            -626.84     
+   23431                            -1071.3     
+   23432                            -956.25     
+   23433                            -843.98     
+   23434                            -734.17     
+   23435                            -626.94     
+   23436                            -1071.2     
+   23437                            -956.15     
+   23438                            -843.88     
+   23439                            -734.08     
+   23440                            -626.84     
+   23441                            -1071.2     
+   23442                            -956.16     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.110
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23443                            -843.88     
+   23444                            -734.08     
+   23445                            -626.84     
+   23446                            -1071.3     
+   23447                            -956.25     
+   23448                            -843.98     
+   23449                            -734.18     
+   23450                            -626.94     
+   23451                            -1071.2     
+   23452                            -956.16     
+   23453                            -843.88     
+   23454                            -734.08     
+   23455                            -626.84     
+   23456                            -1071.2     
+   23457                            -956.15     
+   23458                            -843.88     
+   23459                            -734.08     
+   23460                            -626.84     
+   23461                            -1071.3     
+   23462                            -956.25     
+   23463                            -843.98     
+   23464                            -734.17     
+   23465                            -626.94     
+   23466                            -1071.2     
+   23467                            -956.15     
+   23468                            -843.87     
+   23469                            -734.08     
+   23470                            -626.84     
+   23471                            -1071.2     
+   23472                            -956.15     
+   23473                            -843.87     
+   23474                            -734.08     
+   23475                            -626.84     
+   23476                            -1071.3     
+   23477                            -956.25     
+   23478                            -843.98     
+   23479                            -734.17     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.110
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23480                            -626.94     
+   23481                            -1071.2     
+   23482                            -956.15     
+   23483                            -843.88     
+   23484                            -734.08     
+   23485                            -626.84     
+   23486                            -1071.2     
+   23487                            -956.16     
+   23488                            -843.88     
+   23489                            -734.08     
+   23490                            -626.84     
+   23491                            -1071.3     
+   23492                            -956.25     
+   23493                            -843.98     
+   23494                            -734.18     
+   23495                            -626.94     
+   23496                            -1071.2     
+   23497                            -956.16     
+   23498                            -843.88     
+   23499                            -734.08     
+   23500                            -626.84     
+   23501                            -1071.2     
+   23502                            -956.15     
+   23503                            -843.88     
+   23504                            -734.08     
+   23505                            -626.84     
+   23506                            -1071.3     
+   23507                            -956.25     
+   23508                            -843.98     
+   23509                            -734.17     
+   23510                            -626.94     
+   23511                            -1071.2     
+   23512                            -956.15     
+   23513                            -843.87     
+   23514                            -734.08     
+   23515                            -626.84     
+   23516                            -1071.2     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.111
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23517                            -956.15     
+   23518                            -843.87     
+   23519                            -734.08     
+   23520                            -626.84     
+   23521                            -1071.3     
+   23522                            -956.25     
+   23523                            -843.98     
+   23524                            -734.17     
+   23525                            -626.94     
+   23526                            -1071.2     
+   23527                            -956.15     
+   23528                            -843.88     
+   23529                            -734.08     
+   23530                            -626.84     
+   23531                            -1071.2     
+   23532                            -956.16     
+   23533                            -843.88     
+   23534                            -734.08     
+   23535                            -626.84     
+   23536                            -1071.3     
+   23537                            -956.25     
+   23538                            -843.98     
+   23539                            -734.18     
+   23540                            -626.94     
+   23541                            -1071.2     
+   23542                            -956.16     
+   23543                            -843.88     
+   23544                            -734.08     
+   23545                            -626.84     
+   23546                            -1071.2     
+   23547                            -956.15     
+   23548                            -843.88     
+   23549                            -734.08     
+   23550                            -626.84     
+   23551                            -1071.3     
+   23552                            -956.25     
+   23553                            -843.98     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.111
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23554                            -734.17     
+   23555                            -626.94     
+   23556                            -1071.2     
+   23557                            -956.15     
+   23558                            -843.87     
+   23559                            -734.08     
+   23560                            -626.84     
+   23561                            -1071.2     
+   23562                            -956.15     
+   23563                            -843.87     
+   23564                            -734.08     
+   23565                            -626.84     
+   23566                            -1071.3     
+   23567                            -956.25     
+   23568                            -843.98     
+   23569                            -734.17     
+   23570                            -626.94     
+   23571                            -1071.2     
+   23572                            -956.15     
+   23573                            -843.88     
+   23574                            -734.08     
+   23575                            -626.84     
+   23576                            -1071.2     
+   23577                            -956.16     
+   23578                            -843.88     
+   23579                            -734.08     
+   23580                            -626.84     
+   23581                            -554.53     
+   23582                            -554.53     
+   23583                            -554.55     
+   23584                            -554.53     
+   23585                            -554.53     
+   23586                            -554.55     
+   23587                            -554.53     
+   23588                            -554.53     
+   23589                            -554.56     
+   23590                            -554.53     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.111
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23591                            -554.53     
+   23592                            -554.55     
+   23593                            -554.53     
+   23594                            -554.53     
+   23595                            -554.55     
+   23596                            -554.53     
+   23597                            -554.53     
+   23598                            -554.56     
+   23599                            -554.53     
+   23600                            -554.53     
+   23601                            -554.55     
+   23602                            -554.53     
+   23603                            -554.53     
+   23604                            -554.55     
+   23605                            -554.53     
+   23606                            -554.53     
+   23607                            -554.56     
+   23608                            -554.53     
+   23609                            -554.53     
+   23610                            -554.55     
+   23611                            -554.53     
+   23612                            -554.53     
+   23613                            -554.55     
+   23614                            -554.53     
+   23615                            -554.56     
+   23616                            -554.53     
+   23617                            -295.09     
+   23618                            -295.09     
+   23619                            -295.12     
+   23620                            -295.09     
+   23621                            -295.09     
+   23622                            -295.12     
+   23623                            -295.09     
+   23624                            -295.09     
+   23625                            -295.12     
+   23626                            -295.09     
+   23627                            -295.09     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.111
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   23628                            -295.12     
+   23629                            -295.09     
+   23630                            -295.09     
+   23631                            -295.12     
+   23632                            -295.09     
+   23633                            -295.09     
+   23634                            -295.12     
+   23635                            -295.09     
+   23636                            -295.09     
+   23637                            -295.12     
+   23638                            -295.09     
+   23639                            -295.09     
+   23640                            -295.12     
+   23641                            -295.09     
+   23642                            -295.09     
+   23643                            -295.12     
+   23644                            -295.09     
+   23645                            -295.09     
+   23646                            -295.12     
+   23647                            -295.09     
+   23648                            -295.09     
+   23649                            -295.12     
+   23650                            -295.09     
+   23651                            -295.12     
+   23652                            -295.09     
+   28168                             306.91     
+   28169                             306.92     
+   28299                             306.91     
+   28300                             306.91     
+   28301                             306.92     
+   28302                             306.91     
+   28303                             306.91     
+   28304                             306.92     
+   28305                             306.91     
+   28306                             306.91     
+   28307                             306.92     
+   28308                             306.91     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.111
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   28309                             306.91     
+   28310                             306.92     
+   28311                             306.91     
+   28312                             306.91     
+   28313                             306.92     
+   28314                             306.91     
+   28315                             306.91     
+   28316                             306.92     
+   28317                             306.91     
+   28318                             306.91     
+   28319                             306.92     
+   28320                             306.91     
+   28321                             306.91     
+   28322                             306.92     
+   28323                             306.91     
+   28324                             306.91     
+   28325                             306.92     
+   28326                             306.91     
+   28327                             306.91     
+   28328                             306.92     
+   28329                             306.91     
+   28330                             306.91     
+   28331                             306.92     
+   28332                             306.91     
+   30578  0.34690E-007-0.20028E-007  0.0000     
+   30590               0.84518E-007
+   30602  0.77762E-009 0.44896E-009  0.0000     
+   32848                             540.92     
+   32849                             540.94     
+   32979                             540.92     
+   32980                             540.92     
+   32981                             540.94     
+   32982                             540.93     
+   32983                             540.93     
+   32984                             540.94     
+   32985                             540.92     
+   32986                             540.92     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.111
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   32987                             540.94     
+   32988                             540.92     
+   32989                             540.92     
+   32990                             540.94     
+   32991                             540.93     
+   32992                             540.93     
+   32993                             540.94     
+   32994                             540.92     
+   32995                             540.92     
+   32996                             540.94     
+   32997                             540.92     
+   32998                             540.92     
+   32999                             540.94     
+   33000                             540.93     
+   33001                             540.93     
+   33002                             540.94     
+   33003                             540.92     
+   33004                             540.92     
+   33005                             540.94     
+   33006                             540.92     
+   33007                             540.92     
+   33008                             540.94     
+   33009                             540.93     
+   33010                             540.93     
+   33011                             540.94     
+   33012                             540.92     
+  107497                            -1392.6     
+  107498                            -1293.5     
+  107499                            -1293.6     
+  107500                            -1195.1     
+  107501                            -1592.1     
+  107502                            -1492.2     
+  107503                            -1492.3     
+  107504                            -1793.1     
+  107505                            -1692.4     
+  107506                            -1692.5     
+  107507                            -1995.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.112
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107508                            -1894.1     
+  107509                            -1894.2     
+  107510                            -2096.5     
+  107511                            -2096.6     
+  107512                            -2197.2     
+  107513                            -1392.6     
+  107514                            -1293.6     
+  107515                            -1195.1     
+  107516                            -1592.1     
+  107517                            -1492.3     
+  107518                            -1793.1     
+  107519                            -1692.5     
+  107520                            -1995.5     
+  107521                            -1894.2     
+  107522                            -2096.6     
+  107523                            -2197.2     
+  107524                            -1392.7     
+  107525                            -1293.6     
+  107526                            -1195.0     
+  107527                            -1592.1     
+  107528                            -1492.3     
+  107529                            -1793.1     
+  107530                            -1692.5     
+  107531                            -1995.5     
+  107532                            -1894.2     
+  107533                            -2096.6     
+  107534                            -2197.2     
+  107535                            -1392.6     
+  107536                            -1293.5     
+  107537                            -1195.1     
+  107538                            -1592.1     
+  107539                            -1492.2     
+  107540                            -1793.1     
+  107541                            -1692.4     
+  107542                            -1995.5     
+  107543                            -1894.1     
+  107544                            -2096.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.112
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107545                            -2197.2     
+  107546                            -1392.6     
+  107547                            -1293.6     
+  107548                            -1195.1     
+  107549                            -1592.1     
+  107550                            -1492.3     
+  107551                            -1793.1     
+  107552                            -1692.5     
+  107553                            -1995.5     
+  107554                            -1894.2     
+  107555                            -2096.6     
+  107556                            -2197.2     
+  107557                            -1392.7     
+  107558                            -1293.6     
+  107559                            -1195.0     
+  107560                            -1592.1     
+  107561                            -1492.3     
+  107562                            -1793.1     
+  107563                            -1692.5     
+  107564                            -1995.5     
+  107565                            -1894.2     
+  107566                            -2096.6     
+  107567                            -2197.2     
+  107568                            -1392.6     
+  107569                            -1293.5     
+  107570                            -1195.1     
+  107571                            -1592.1     
+  107572                            -1492.2     
+  107573                            -1793.1     
+  107574                            -1692.4     
+  107575                            -1995.5     
+  107576                            -1894.1     
+  107577                            -2096.5     
+  107578                            -2197.2     
+  107579                            -1392.6     
+  107580                            -1293.6     
+  107581                            -1195.1     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.112
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107582                            -1592.1     
+  107583                            -1492.3     
+  107584                            -1793.1     
+  107585                            -1692.5     
+  107586                            -1995.5     
+  107587                            -1894.2     
+  107588                            -2096.6     
+  107589                            -2197.2     
+  107590                            -1392.6     
+  107591                            -1293.6     
+  107592                            -1195.0     
+  107593                            -1592.1     
+  107594                            -1492.3     
+  107595                            -1793.1     
+  107596                            -1692.5     
+  107597                            -1995.5     
+  107598                            -1894.2     
+  107599                            -2096.6     
+  107600                            -2197.2     
+  107601                            -1392.6     
+  107602                            -1293.5     
+  107603                            -1195.1     
+  107604                            -1592.1     
+  107605                            -1492.2     
+  107606                            -1793.1     
+  107607                            -1692.4     
+  107608                            -1995.5     
+  107609                            -1894.1     
+  107610                            -2096.5     
+  107611                            -2197.2     
+  107612                            -1392.6     
+  107613                            -1293.6     
+  107614                            -1195.1     
+  107615                            -1592.1     
+  107616                            -1492.3     
+  107617                            -1793.1     
+  107618                            -1692.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.112
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107619                            -1995.5     
+  107620                            -1894.2     
+  107621                            -2096.6     
+  107622                            -2197.2     
+  107623                            -1392.7     
+  107624                            -1293.6     
+  107625                            -1195.0     
+  107626                            -1592.1     
+  107627                            -1492.3     
+  107628                            -1793.1     
+  107629                            -1692.5     
+  107630                            -1995.5     
+  107631                            -1894.2     
+  107632                            -2096.6     
+  107633                            -2197.2     
+  107634                            -1392.6     
+  107635                            -1293.5     
+  107636                            -1195.1     
+  107637                            -1592.1     
+  107638                            -1492.2     
+  107639                            -1793.1     
+  107640                            -1692.4     
+  107641                            -1995.5     
+  107642                            -1894.1     
+  107643                            -2096.5     
+  107644                            -2197.2     
+  107645                            -1392.6     
+  107646                            -1293.6     
+  107647                            -1195.1     
+  107648                            -1592.1     
+  107649                            -1492.3     
+  107650                            -1793.1     
+  107651                            -1692.5     
+  107652                            -1995.5     
+  107653                            -1894.2     
+  107654                            -2096.6     
+  107655                            -2197.2     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.112
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107656                            -1392.7     
+  107657                            -1293.6     
+  107658                            -1195.0     
+  107659                            -1592.1     
+  107660                            -1492.3     
+  107661                            -1793.1     
+  107662                            -1692.5     
+  107663                            -1995.5     
+  107664                            -1894.2     
+  107665                            -2096.6     
+  107666                            -2197.2     
+  107667                            -1392.6     
+  107668                            -1293.5     
+  107669                            -1195.1     
+  107670                            -1592.1     
+  107671                            -1492.2     
+  107672                            -1793.1     
+  107673                            -1692.4     
+  107674                            -1995.5     
+  107675                            -1894.1     
+  107676                            -2096.5     
+  107677                            -2197.2     
+  107678                            -1392.6     
+  107679                            -1293.6     
+  107680                            -1195.1     
+  107681                            -1592.1     
+  107682                            -1492.3     
+  107683                            -1793.1     
+  107684                            -1692.5     
+  107685                            -1995.5     
+  107686                            -1894.2     
+  107687                            -2096.6     
+  107688                            -2197.2     
+  107689                            -1392.6     
+  107690                            -1293.6     
+  107691                            -1195.0     
+  107692                            -1592.1     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.112
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107693                            -1492.3     
+  107694                            -1793.1     
+  107695                            -1692.5     
+  107696                            -1995.5     
+  107697                            -1894.2     
+  107698                            -2096.6     
+  107699                            -2197.2     
+  107700                            -1392.6     
+  107701                            -1293.5     
+  107702                            -1195.1     
+  107703                            -1592.1     
+  107704                            -1492.2     
+  107705                            -1793.1     
+  107706                            -1692.4     
+  107707                            -1995.5     
+  107708                            -1894.1     
+  107709                            -2096.5     
+  107710                            -2197.2     
+  107711                            -1392.6     
+  107712                            -1293.6     
+  107713                            -1195.1     
+  107714                            -1592.1     
+  107715                            -1492.3     
+  107716                            -1793.1     
+  107717                            -1692.5     
+  107718                            -1995.5     
+  107719                            -1894.2     
+  107720                            -2096.6     
+  107721                            -2197.2     
+  107722                            -1392.7     
+  107723                            -1293.6     
+  107724                            -1195.0     
+  107725                            -1592.1     
+  107726                            -1492.3     
+  107727                            -1793.1     
+  107728                            -1692.5     
+  107729                            -1995.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.113
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107730                            -1894.2     
+  107731                            -2096.6     
+  107732                            -2197.2     
+  107733                            -1392.6     
+  107734                            -1293.5     
+  107735                            -1195.1     
+  107736                            -1592.1     
+  107737                            -1492.2     
+  107738                            -1793.1     
+  107739                            -1692.4     
+  107740                            -1995.5     
+  107741                            -1894.1     
+  107742                            -2096.5     
+  107743                            -2197.2     
+  107744                            -1392.6     
+  107745                            -1293.6     
+  107746                            -1195.1     
+  107747                            -1592.1     
+  107748                            -1492.3     
+  107749                            -1793.1     
+  107750                            -1692.5     
+  107751                            -1995.5     
+  107752                            -1894.2     
+  107753                            -2096.6     
+  107754                            -2197.2     
+  107755                            -1392.7     
+  107756                            -1293.6     
+  107757                            -1195.0     
+  107758                            -1592.1     
+  107759                            -1492.3     
+  107760                            -1793.1     
+  107761                            -1692.5     
+  107762                            -1995.5     
+  107763                            -1894.2     
+  107764                            -2096.6     
+  107765                            -2197.2     
+  107766                            -1392.6     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.113
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107767                            -1293.5     
+  107768                            -1195.1     
+  107769                            -1592.1     
+  107770                            -1492.2     
+  107771                            -1793.1     
+  107772                            -1692.4     
+  107773                            -1995.5     
+  107774                            -1894.1     
+  107775                            -2096.5     
+  107776                            -2197.2     
+  107777                            -1392.6     
+  107778                            -1293.6     
+  107779                            -1195.1     
+  107780                            -1592.1     
+  107781                            -1492.3     
+  107782                            -1793.1     
+  107783                            -1692.5     
+  107784                            -1995.5     
+  107785                            -1894.2     
+  107786                            -2096.6     
+  107787                            -2197.2     
+  107788                            -1392.6     
+  107789                            -1293.6     
+  107790                            -1195.0     
+  107791                            -1592.1     
+  107792                            -1492.3     
+  107793                            -1793.1     
+  107794                            -1692.5     
+  107795                            -1995.5     
+  107796                            -1894.2     
+  107797                            -2096.6     
+  107798                            -2197.2     
+  107799                            -1392.6     
+  107800                            -1293.5     
+  107801                            -1195.1     
+  107802                            -1592.1     
+  107803                            -1492.2     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.113
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107804                            -1793.1     
+  107805                            -1692.4     
+  107806                            -1995.5     
+  107807                            -1894.1     
+  107808                            -2096.5     
+  107809                            -2197.2     
+  107810                            -1392.6     
+  107811                            -1293.6     
+  107812                            -1195.1     
+  107813                            -1592.1     
+  107814                            -1492.3     
+  107815                            -1793.1     
+  107816                            -1692.5     
+  107817                            -1995.5     
+  107818                            -1894.2     
+  107819                            -2096.6     
+  107820                            -2197.2     
+  107821                            -1392.7     
+  107822                            -1293.6     
+  107823                            -1195.0     
+  107824                            -1592.1     
+  107825                            -1492.3     
+  107826                            -1793.1     
+  107827                            -1692.5     
+  107828                            -1995.5     
+  107829                            -1894.2     
+  107830                            -2096.6     
+  107831                            -2197.2     
+  107832                            -1392.6     
+  107833                            -1293.5     
+  107834                            -1195.1     
+  107835                            -1592.1     
+  107836                            -1492.2     
+  107837                            -1793.1     
+  107838                            -1692.4     
+  107839                            -1995.5     
+  107840                            -1894.1     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.113
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107841                            -2096.5     
+  107842                            -2197.2     
+  107843                            -1392.6     
+  107844                            -1293.6     
+  107845                            -1195.1     
+  107846                            -1592.1     
+  107847                            -1492.3     
+  107848                            -1793.1     
+  107849                            -1692.5     
+  107850                            -1995.5     
+  107851                            -1894.2     
+  107852                            -2096.6     
+  107853                            -2197.2     
+  107854                            -1392.7     
+  107855                            -1293.6     
+  107856                            -1195.0     
+  107857                            -1592.1     
+  107858                            -1492.3     
+  107859                            -1793.1     
+  107860                            -1692.5     
+  107861                            -1995.5     
+  107862                            -1894.2     
+  107863                            -2096.6     
+  107864                            -2197.2     
+  107865                            -1392.6     
+  107866                            -1293.5     
+  107867                            -1195.1     
+  107868                            -1592.1     
+  107869                            -1492.2     
+  107870                            -1793.1     
+  107871                            -1692.4     
+  107872                            -1995.5     
+  107873                            -1894.1     
+  107874                            -2096.5     
+  107875                            -2197.2     
+  107876                            -1392.6     
+  107877                            -1293.6     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.113
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107878                            -1195.1     
+  107879                            -1592.1     
+  107880                            -1492.3     
+  107881                            -1793.1     
+  107882                            -1692.5     
+  107883                            -1995.5     
+  107884                            -1894.2     
+  107885                            -2096.6     
+  107886                            -2197.2     
+  107887                            -1392.6     
+  107888                            -1195.0     
+  107889                            -1592.1     
+  107890                            -1793.1     
+  107891                            -1995.5     
+  107892                            -2197.2     
+  107893                             2025.5     
+  107894                             2141.5     
+  107895                             2141.5     
+  107896                             2258.5     
+  107897                             1798.3     
+  107898                             1911.4     
+  107899                             1911.4     
+  107900                             1576.5     
+  107901                             1687.0     
+  107902                             1687.0     
+  107903                             1359.2     
+  107904                             1467.6     
+  107905                             1467.6     
+  107906                             1252.3     
+  107907                             1252.3     
+  107908                             1146.7     
+  107909                             2025.5     
+  107910                             2141.4     
+  107911                             2258.5     
+  107912                             1798.2     
+  107913                             1911.2     
+  107914                             1576.6     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107915                             1686.8     
+  107916                             1359.2     
+  107917                             1467.4     
+  107918                             1252.1     
+  107919                             1146.8     
+  107920                             2025.5     
+  107921                             2141.5     
+  107922                             2258.5     
+  107923                             1798.2     
+  107924                             1911.4     
+  107925                             1576.6     
+  107926                             1687.0     
+  107927                             1359.2     
+  107928                             1467.6     
+  107929                             1252.3     
+  107930                             1146.8     
+  107931                             2025.5     
+  107932                             2141.5     
+  107933                             2258.5     
+  107934                             1798.2     
+  107935                             1911.4     
+  107936                             1576.5     
+  107937                             1687.0     
+  107938                             1359.2     
+  107939                             1467.6     
+  107940                             1252.3     
+  107941                             1146.7     
+  107942                             2025.5     
+  107943                             2141.4     
+  107944                             2258.5     
+  107945                             1798.2     
+  107946                             1911.2     
+  107947                             1576.6     
+  107948                             1686.8     
+  107949                             1359.2     
+  107950                             1467.4     
+  107951                             1252.1     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107952                             1146.8     
+  107953                             2025.5     
+  107954                             2141.5     
+  107955                             2258.5     
+  107956                             1798.2     
+  107957                             1911.4     
+  107958                             1576.6     
+  107959                             1687.0     
+  107960                             1359.2     
+  107961                             1467.6     
+  107962                             1252.3     
+  107963                             1146.8     
+  107964                             2025.5     
+  107965                             2141.5     
+  107966                             2258.5     
+  107967                             1798.2     
+  107968                             1911.4     
+  107969                             1576.5     
+  107970                             1687.0     
+  107971                             1359.2     
+  107972                             1467.6     
+  107973                             1252.3     
+  107974                             1146.7     
+  107975                             2025.5     
+  107976                             2141.4     
+  107977                             2258.5     
+  107978                             1798.2     
+  107979                             1911.2     
+  107980                             1576.6     
+  107981                             1686.8     
+  107982                             1359.2     
+  107983                             1467.4     
+  107984                             1252.1     
+  107985                             1146.8     
+  107986                             2025.5     
+  107987                             2141.5     
+  107988                             2258.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  107989                             1798.2     
+  107990                             1911.4     
+  107991                             1576.6     
+  107992                             1687.0     
+  107993                             1359.2     
+  107994                             1467.6     
+  107995                             1252.3     
+  107996                             1146.8     
+  107997                             2025.5     
+  107998                             2141.5     
+  107999                             2258.5     
+  108000                             1798.3     
+  108001                             1911.4     
+  108002                             1576.5     
+  108003                             1687.0     
+  108004                             1359.2     
+  108005                             1467.6     
+  108006                             1252.3     
+  108007                             1146.7     
+  108008                             2025.5     
+  108009                             2141.4     
+  108010                             2258.5     
+  108011                             1798.2     
+  108012                             1911.2     
+  108013                             1576.6     
+  108014                             1686.8     
+  108015                             1359.2     
+  108016                             1467.4     
+  108017                             1252.1     
+  108018                             1146.8     
+  108019                             2025.5     
+  108020                             2141.5     
+  108021                             2258.5     
+  108022                             1798.2     
+  108023                             1911.4     
+  108024                             1576.6     
+  108025                             1687.0     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108026                             1359.2     
+  108027                             1467.6     
+  108028                             1252.3     
+  108029                             1146.8     
+  108030                             2025.5     
+  108031                             2141.5     
+  108032                             2258.5     
+  108033                             1798.2     
+  108034                             1911.4     
+  108035                             1576.5     
+  108036                             1687.0     
+  108037                             1359.2     
+  108038                             1467.6     
+  108039                             1252.3     
+  108040                             1146.7     
+  108041                             2025.5     
+  108042                             2141.4     
+  108043                             2258.5     
+  108044                             1798.2     
+  108045                             1911.2     
+  108046                             1576.6     
+  108047                             1686.8     
+  108048                             1359.2     
+  108049                             1467.4     
+  108050                             1252.1     
+  108051                             1146.8     
+  108052                             2025.5     
+  108053                             2141.5     
+  108054                             2258.5     
+  108055                             1798.2     
+  108056                             1911.4     
+  108057                             1576.6     
+  108058                             1687.0     
+  108059                             1359.2     
+  108060                             1467.6     
+  108061                             1252.3     
+  108062                             1146.8     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108063                             2025.5     
+  108064                             2141.5     
+  108065                             2258.5     
+  108066                             1798.2     
+  108067                             1911.4     
+  108068                             1576.5     
+  108069                             1687.0     
+  108070                             1359.2     
+  108071                             1467.6     
+  108072                             1252.3     
+  108073                             1146.7     
+  108074                             2025.5     
+  108075                             2141.4     
+  108076                             2258.5     
+  108077                             1798.2     
+  108078                             1911.2     
+  108079                             1576.6     
+  108080                             1686.8     
+  108081                             1359.2     
+  108082                             1467.4     
+  108083                             1252.1     
+  108084                             1146.8     
+  108085                             2025.5     
+  108086                             2141.5     
+  108087                             2258.5     
+  108088                             1798.2     
+  108089                             1911.4     
+  108090                             1576.6     
+  108091                             1687.0     
+  108092                             1359.2     
+  108093                             1467.6     
+  108094                             1252.3     
+  108095                             1146.8     
+  108096                             2025.5     
+  108097                             2141.5     
+  108098                             2258.5     
+  108099                             1798.3     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108100                             1911.4     
+  108101                             1576.5     
+  108102                             1687.0     
+  108103                             1359.2     
+  108104                             1467.6     
+  108105                             1252.3     
+  108106                             1146.7     
+  108107                             2025.5     
+  108108                             2141.4     
+  108109                             2258.5     
+  108110                             1798.2     
+  108111                             1911.2     
+  108112                             1576.6     
+  108113                             1686.8     
+  108114                             1359.2     
+  108115                             1467.4     
+  108116                             1252.1     
+  108117                             1146.8     
+  108118                             2025.5     
+  108119                             2141.5     
+  108120                             2258.5     
+  108121                             1798.2     
+  108122                             1911.4     
+  108123                             1576.6     
+  108124                             1687.0     
+  108125                             1359.2     
+  108126                             1467.6     
+  108127                             1252.3     
+  108128                             1146.8     
+  108129                             2025.5     
+  108130                             2141.5     
+  108131                             2258.5     
+  108132                             1798.2     
+  108133                             1911.4     
+  108134                             1576.5     
+  108135                             1687.0     
+  108136                             1359.2     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108137                             1467.6     
+  108138                             1252.3     
+  108139                             1146.7     
+  108140                             2025.5     
+  108141                             2141.4     
+  108142                             2258.5     
+  108143                             1798.2     
+  108144                             1911.2     
+  108145                             1576.6     
+  108146                             1686.8     
+  108147                             1359.2     
+  108148                             1467.4     
+  108149                             1252.1     
+  108150                             1146.8     
+  108151                             2025.5     
+  108152                             2141.5     
+  108153                             2258.5     
+  108154                             1798.2     
+  108155                             1911.4     
+  108156                             1576.6     
+  108157                             1687.0     
+  108158                             1359.2     
+  108159                             1467.6     
+  108160                             1252.3     
+  108161                             1146.8     
+  108162                             2025.5     
+  108163                             2141.5     
+  108164                             2258.5     
+  108165                             1798.2     
+  108166                             1911.4     
+  108167                             1576.5     
+  108168                             1687.0     
+  108169                             1359.2     
+  108170                             1467.6     
+  108171                             1252.3     
+  108172                             1146.7     
+  108173                             2025.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108174                             2141.4     
+  108175                             2258.5     
+  108176                             1798.2     
+  108177                             1911.2     
+  108178                             1576.6     
+  108179                             1686.8     
+  108180                             1359.2     
+  108181                             1467.4     
+  108182                             1252.1     
+  108183                             1146.8     
+  108184                             2025.5     
+  108185                             2141.5     
+  108186                             2258.5     
+  108187                             1798.2     
+  108188                             1911.4     
+  108189                             1576.6     
+  108190                             1687.0     
+  108191                             1359.2     
+  108192                             1467.6     
+  108193                             1252.3     
+  108194                             1146.8     
+  108195                             2025.5     
+  108196                             2141.5     
+  108197                             2258.5     
+  108198                             1798.3     
+  108199                             1911.4     
+  108200                             1576.5     
+  108201                             1687.0     
+  108202                             1359.2     
+  108203                             1467.6     
+  108204                             1252.3     
+  108205                             1146.7     
+  108206                             2025.5     
+  108207                             2141.4     
+  108208                             2258.5     
+  108209                             1798.2     
+  108210                             1911.2     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108211                             1576.6     
+  108212                             1686.8     
+  108213                             1359.2     
+  108214                             1467.4     
+  108215                             1252.1     
+  108216                             1146.8     
+  108217                             2025.5     
+  108218                             2141.5     
+  108219                             2258.5     
+  108220                             1798.2     
+  108221                             1911.4     
+  108222                             1576.6     
+  108223                             1687.0     
+  108224                             1359.2     
+  108225                             1467.6     
+  108226                             1252.3     
+  108227                             1146.8     
+  108228                             2025.5     
+  108229                             2141.5     
+  108230                             2258.5     
+  108231                             1798.2     
+  108232                             1911.4     
+  108233                             1576.5     
+  108234                             1687.0     
+  108235                             1359.2     
+  108236                             1467.6     
+  108237                             1252.3     
+  108238                             1146.7     
+  108239                             2025.5     
+  108240                             2141.4     
+  108241                             2258.5     
+  108242                             1798.2     
+  108243                             1911.2     
+  108244                             1576.6     
+  108245                             1686.8     
+  108246                             1359.2     
+  108247                             1467.4     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108248                             1252.1     
+  108249                             1146.8     
+  108250                             2025.5     
+  108251                             2141.5     
+  108252                             2258.5     
+  108253                             1798.2     
+  108254                             1911.4     
+  108255                             1576.6     
+  108256                             1687.0     
+  108257                             1359.2     
+  108258                             1467.6     
+  108259                             1252.3     
+  108260                             1146.8     
+  108261                             2025.5     
+  108262                             2141.5     
+  108263                             2258.5     
+  108264                             1798.2     
+  108265                             1911.4     
+  108266                             1576.5     
+  108267                             1687.0     
+  108268                             1359.2     
+  108269                             1467.6     
+  108270                             1252.3     
+  108271                             1146.7     
+  108272                             2025.5     
+  108273                             2141.4     
+  108274                             2258.5     
+  108275                             1798.2     
+  108276                             1911.2     
+  108277                             1576.6     
+  108278                             1686.8     
+  108279                             1359.2     
+  108280                             1467.4     
+  108281                             1252.1     
+  108282                             1146.8     
+  108283                             2025.5     
+  108284                             2258.5     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.114
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108285                             1798.2     
+  108286                             1576.6     
+  108287                             1359.2     
+  108288                             1146.8     
+  108289                             1149.4     
+  108290                             1149.4     
+  108292                             1149.4     
+  108294                             1149.4     
+  108296                             1149.3     
+  108298                             1149.4     
+  108300                             1149.4     
+  108302                             1149.4     
+  108304                             1149.4     
+  108306                             1149.4     
+  108308                             1149.4     
+  108310                             1149.4     
+  108312                             1149.4     
+  108314                             1149.3     
+  108316                             1149.4     
+  108318                             1149.4     
+  108320                             1149.4     
+  108322                             1149.4     
+  108324                             1149.4     
+  108326                             1149.4     
+  108328                             1149.4     
+  108330                             1149.4     
+  108332                             1149.3     
+  108334                             1149.4     
+  108336                             1149.4     
+  108338                             1149.4     
+  108340                             1149.4     
+  108342                             1149.4     
+  108344                             1149.4     
+  108346                             1149.4     
+  108348                             1149.4     
+  108350                             1149.3     
+  108352                             1149.4     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.115
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108354                             1149.4     
+  108356                             1149.4     
+  108358                             1149.4     
+  108361                             556.52     
+  108362                             556.58     
+  108364                             556.57     
+  108366                             556.57     
+  108368                             556.52     
+  108370                             556.57     
+  108372                             556.57     
+  108374                             556.52     
+  108376                             556.58     
+  108378                             556.58     
+  108380                             556.52     
+  108382                             556.57     
+  108384                             556.57     
+  108386                             556.52     
+  108388                             556.57     
+  108390                             556.57     
+  108392                             556.52     
+  108394                             556.58     
+  108396                             556.58     
+  108398                             556.52     
+  108400                             556.57     
+  108402                             556.57     
+  108404                             556.52     
+  108406                             556.57     
+  108408                             556.57     
+  108410                             556.52     
+  108412                             556.58     
+  108414                             556.58     
+  108416                             556.52     
+  108418                             556.57     
+  108420                             556.57     
+  108422                             556.52     
+  108424                             556.57     
+  108426                             556.57     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.115
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  108428                             556.52     
+  108430                             556.58     
+  117592                            -581.23     
+  117593                            -581.21     
+  117595                            -581.23     
+  117724                            -581.21     
+  117725                            -581.23     
+  117726                            -581.23     
+  117727                            -581.21     
+  117728                            -581.23     
+  117729                            -581.23     
+  117730                            -581.21     
+  117731                            -581.23     
+  117732                            -581.23     
+  117733                            -581.21     
+  117734                            -581.23     
+  117735                            -581.23     
+  117736                            -581.21     
+  117737                            -581.23     
+  117738                            -581.23     
+  117739                            -581.21     
+  117740                            -581.23     
+  117741                            -581.23     
+  117742                            -581.21     
+  117743                            -581.23     
+  117744                            -581.23     
+  117745                            -581.21     
+  117746                            -581.23     
+  117747                            -581.23     
+  117748                            -581.21     
+  117749                            -581.23     
+  117750                            -581.23     
+  117751                            -581.21     
+  117752                            -581.23     
+  117753                            -581.23     
+  117754                            -581.21     
+  117755                            -581.23     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.115
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+  117756                            -581.23     
+  126916                            -1115.3     
+  126917                            -1115.3     
+  126919                            -1115.3     
+  127048                            -1115.3     
+  127049                            -1115.3     
+  127050                            -1115.3     
+  127051                            -1115.3     
+  127052                            -1115.3     
+  127053                            -1115.3     
+  127054                            -1115.3     
+  127055                            -1115.3     
+  127056                            -1115.3     
+  127057                            -1115.3     
+  127058                            -1115.3     
+  127059                            -1115.3     
+  127060                            -1115.3     
+  127061                            -1115.3     
+  127062                            -1115.3     
+  127063                            -1115.3     
+  127064                            -1115.3     
+  127065                            -1115.3     
+  127066                            -1115.3     
+  127067                            -1115.3     
+  127068                            -1115.3     
+  127069                            -1115.3     
+  127070                            -1115.3     
+  127071                            -1115.3     
+  127072                            -1115.3     
+  127073                            -1115.3     
+  127074                            -1115.3     
+  127075                            -1115.3     
+  127076                            -1115.3     
+  127077                            -1115.3     
+  127078                            -1115.3     
+  127079                            -1115.3     
+  127080                            -1115.3     
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:49:34  SEP 26, 2026 Elapsed Time=     64.115
+
+ MS8B_FR--LC2_Axially_Restrained                                               
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+
+ TOTAL VALUES
+ VALUE   0.35468E-007 0.64939E-007-0.39836E-009

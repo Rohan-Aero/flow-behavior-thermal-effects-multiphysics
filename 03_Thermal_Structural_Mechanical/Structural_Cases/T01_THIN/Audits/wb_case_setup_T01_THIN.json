@@ -1,0 +1,65 @@
+{
+ "bias": 4.0, 
+ "geometry": "10_Parametric_Study/Geometry_Checks/T01_THIN/T01_THIN.scdocx", 
+ "tag": "T01_THIN", 
+ "external_data_readback": {
+  "after": [
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T01_THIN\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\T01_THIN\\fluent_solid_node_temperature.csv"
+  ], 
+  "delimiter": [
+   "Comma", 
+   ","
+  ], 
+  "master": [
+   true, 
+   false
+  ], 
+  "ok": true, 
+  "start_line": "2", 
+  "length_units": [
+   "m", 
+   "m"
+  ], 
+  "columns": [
+   [
+    "Node ID", 
+    ""
+   ], 
+   [
+    "Temperature", 
+    "K"
+   ]
+  ], 
+  "before": [
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb", 
+   "<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv"
+  ], 
+  "format": [
+   "Cdb", 
+   "Delimited"
+  ], 
+  "geometry_file": "<PROJECT_ROOT>\\10_Parametric_Study\\Geometry_Checks\\T01_THIN\\T01_THIN.scdocx", 
+  "case": "T01_THIN"
+ }, 
+ "Di": 0.02, 
+ "L": 0.59999999999999998, 
+ "source_node_T_K": [
+  417.96627807617188, 
+  561.92694091796875
+ ], 
+ "source_T_range_K": [
+  417.36783, 
+  561.96619
+ ], 
+ "buckling": true, 
+ "cfd_case": "T01_THIN", 
+ "nc": 36, 
+ "cdb": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_mesh.cdb", 
+ "Do": 0.035999999999999997, 
+ "nr": 4, 
+ "csv": "10_Parametric_Study/Mapping/T01_THIN/fluent_solid_node_temperature.csv", 
+ "project": "<PROJECT_ROOT>\\10_Parametric_Study\\Structural_Cases\\T01_THIN\\Project\\T01_THIN.wbpj", 
+ "na": 130, 
+ "pressure": false
+}

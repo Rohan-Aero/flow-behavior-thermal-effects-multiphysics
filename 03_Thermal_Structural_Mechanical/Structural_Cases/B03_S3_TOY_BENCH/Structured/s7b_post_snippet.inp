@@ -1,0 +1,92 @@
+! =====================================================================================================
+! SECTION 7B - post-processing command snippet (RE-ANALYSIS 2026, newly written).
+! Inserted by mech_solve_7B.py as a Solution-level "Commands (APDL)" object in LC1, LC2 and LC2P, so MAPDL
+! runs it in POST1 immediately after the solve, in the same session (the database still holds the D constraints).
+! It READS results only: no load, constraint, material or temperature is changed.
+! Files written in the solver working directory:
+!   s7b_prrsol.txt     PRRSOL: reaction of every constrained node (nodal coordinate systems)
+!   s7b_react.csv      node, x, y, z, RFX, RFY, RFZ (nodal CS; the Direct FE nodes are rotated to CS_DUCT_CYL)
+!   s7b_nodal.csv      node, x, y, z, u_r, u_theta, u_z, s_r, s_theta, s_z, s1, s3, s_eqv, epel_eqv, T_used
+!                      (RSYS 12 = CS_DUCT_CYL, local 12 in the input file; averaged nodal values; SI units, T in degC)
+!   s7b_totals.txt     node counts and the sums of the constrained-node reactions (nodal CS) at full precision
+! (FSUM is not used: Mechanical's OUTRES does not store element nodal forces - toy test, 7B.
+!  Force/moment balance is computed from s7b_react.csv, with the Direct FE nodes transformed from CS_DUCT_CYL.)
+! =====================================================================================================
+/post1
+set,last
+allsel,all
+rsys,0
+*get,s7b_nmx,node,0,num,max
+*get,s7b_ncnt,node,0,count
+! ---------------- constrained nodes and reactions ----------------
+nsel,s,d,ux
+nsel,a,d,uy
+nsel,a,d,uz
+*get,s7b_nrc,node,0,count
+/output,s7b_prrsol,txt
+prrsol
+/output
+nsel,s,d,ux
+nsel,a,d,uy
+nsel,a,d,uz
+*del,s7b_m,,nopr
+*del,s7b_r,,nopr
+*dim,s7b_m,array,s7b_nmx
+*dim,s7b_r,array,s7b_nmx,7
+*vget,s7b_m(1),node,1,nsel
+*vfill,s7b_r(1,1),ramp,1,1
+*vget,s7b_r(1,2),node,1,loc,x
+*vget,s7b_r(1,3),node,1,loc,y
+*vget,s7b_r(1,4),node,1,loc,z
+*vget,s7b_r(1,5),node,1,rf,fx
+*vget,s7b_r(1,6),node,1,rf,fy
+*vget,s7b_r(1,7),node,1,rf,fz
+*cfopen,s7b_react,csv
+*vwrite
+('node,x_m,y_m,z_m,RFX_nodalCS_N,RFY_nodalCS_N,RFZ_nodalCS_N')
+*vmask,s7b_m(1)
+*vwrite,s7b_r(1,1),s7b_r(1,2),s7b_r(1,3),s7b_r(1,4),s7b_r(1,5),s7b_r(1,6),s7b_r(1,7)
+(F10.0,6(',',E22.14))
+*cfclos
+*vmask,s7b_m(1)
+*vscfun,s7b_fx,sum,s7b_r(1,5)
+*vmask,s7b_m(1)
+*vscfun,s7b_fy,sum,s7b_r(1,6)
+*vmask,s7b_m(1)
+*vscfun,s7b_fz,sum,s7b_r(1,7)
+! ---------------- full nodal table in CS_DUCT_CYL ----------------
+allsel,all
+rsys,12
+*del,s7b_a,,nopr
+*dim,s7b_a,array,s7b_nmx,15
+*vget,s7b_m(1),node,1,nsel
+*vfill,s7b_a(1,1),ramp,1,1
+*vget,s7b_a(1,2),node,1,loc,x
+*vget,s7b_a(1,3),node,1,loc,y
+*vget,s7b_a(1,4),node,1,loc,z
+*vget,s7b_a(1,5),node,1,u,x
+*vget,s7b_a(1,6),node,1,u,y
+*vget,s7b_a(1,7),node,1,u,z
+*vget,s7b_a(1,8),node,1,s,x
+*vget,s7b_a(1,9),node,1,s,y
+*vget,s7b_a(1,10),node,1,s,z
+*vget,s7b_a(1,11),node,1,s,1
+*vget,s7b_a(1,12),node,1,s,3
+*vget,s7b_a(1,13),node,1,s,eqv
+*vget,s7b_a(1,14),node,1,epel,eqv
+*vget,s7b_a(1,15),node,1,bfe,temp
+*cfopen,s7b_nodal,csv
+*vwrite
+('node,x_m,y_m,z_m,u_r_m,u_t_m,u_z_m,s_r_Pa,s_t_Pa,s_z_Pa,s1_Pa,s3_Pa,seqv_Pa,epel_eqv,T_used_C')
+*vmask,s7b_m(1)
+*vwrite,s7b_a(1,1),s7b_a(1,2),s7b_a(1,3),s7b_a(1,4),s7b_a(1,5),s7b_a(1,6),s7b_a(1,7),s7b_a(1,8),s7b_a(1,9),s7b_a(1,10),s7b_a(1,11),s7b_a(1,12),s7b_a(1,13),s7b_a(1,14),s7b_a(1,15)
+(F10.0,14(',',E17.9))
+*cfclos
+*cfopen,s7b_totals,txt
+*vwrite,s7b_ncnt,s7b_nmx,s7b_nrc
+('nodes ',F10.0,' max_node ',F10.0,' constrained_nodes ',F10.0)
+*vwrite,s7b_fx,s7b_fy,s7b_fz
+('SUM_RF_nodalCS_N ',3E24.15)
+*cfclos
+rsys,0
+allsel,all

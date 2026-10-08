@@ -1,0 +1,52 @@
+11:32:41 === SECTION 8A MECHANICAL LINEAR BUCKLING (RE-ANALYSIS 2026) ===
+11:32:41 analyses [('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('Eigenvalue Buckling', 'Buckling'), ('Static Structural', 'Static'), ('Eigenvalue Buckling 2', 'Buckling')]
+11:32:41 new analyses: buckling ['Eigenvalue Buckling', 'Eigenvalue Buckling 2'] static ['Static Structural']
+11:32:41 prestress links {'LC2NS_Linear_Buckling': [('PreStressICEnvironment', 'LC2NS_NoSway_Static_SENSITIVITY'), ('ic_name', 'Pre-Stress (LC2NS_NoSway_Static_SENSITIVITY)')], 'LC2_Linear_Buckling': [('PreStressICEnvironment', 'LC2_Axially_Restrained'), ('ic_name', 'Pre-Stress (LC2_Axially_Restrained)')]}
+11:32:41 PASS  mesh: 108,252 nodes / 23,400 elements (unchanged since 7A) | expected 108252 / 23400 | found 108252 / 23400
+11:32:41 PASS  licence: below the measured Student MAPDL limit (128,000 nodes) | expected < 128,000 | found 108252
+11:32:42 PASS  CS_DUCT_CYL fully defined, cylindrical, origin 0,0,0 | expected FullyDefined / Cylindrical / (0,0,0) | found FullyDefined / Cylindrical
+11:32:42 PASS  LC2 hoop nodes = 7A ids 25862/25874/25886 at r 20 mm, z 0.3 m | expected [25862, 25874, 25886] | found [(25862, 0.02, 0.29999999999999999), (25874, 0.02, 0.29999999999999999), (25886, 0.02, 0.29999999999999999)]
+11:32:43 PASS  LC2: mapped temperature identical to the 7A export (thermal field unchanged) | expected byte-identical | found identical
+11:32:43 PASS  LC2: environment (stress-free reference) temperature 300 K | expected 300 K | found 26.850000000000023 [C]
+11:32:43 PASS  LC2: no under-defined / error objects | expected none | found []
+11:32:43 PASS  LC2: pressure objects suppressed (thermal-only pre-stress) | expected all suppressed | found [('LC2_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC2_P_CFD_linear_fit_SUPPRESSED', True)]
+11:32:43 OK   LC2 LargeDeflection False
+11:32:43 OK   LC2 SolverType Direct
+11:32:43 OK   LC2 WeakSprings Off
+11:32:43 OK   LC2 InertiaRelief False
+11:32:43 OK   LC2 FutureAnalysis PrestressedAnalysis
+11:32:43 PASS  LC2: small deflection, direct solver (as solved in 7B) | expected LargeDeflection off, Direct | found {'InertiaRelief': 'False', 'LargeDeflection': 'False', 'SolverType': 'Direct', 'WeakSprings': 'Off', 'FutureAnalysis': 'PrestressedAnalysis'}
+11:32:51 PASS  LC2 input vs 7B solved LC2 input: identical nblock section | expected identical | found identical
+11:32:51 PASS  LC2 input vs 7B solved LC2 input: identical eblock section | expected identical | found identical
+11:32:51 PASS  LC2 input vs 7B solved LC2 input: identical bf section | expected identical | found identical
+11:32:51 PASS  LC2 input vs 7B solved LC2 input: identical material section | expected identical | found identical
+11:32:51 PASS  LC2 input vs 7B solved LC2 input: identical resolved constraints | expected [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)] | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+11:32:51 PASS  LC2 input: U_z = 0 on 1,224 end-face nodes + 3 rotated mid-span nodes U_theta = 0, nothing else | expected d uz (1224) + nrot csys12 (3) + d uy (3) | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+11:32:51 PASS  LC2 input: no weak springs, no extra elements, no pressure | expected none | found (False, [], False)
+11:32:51 OK   LC2 buckling: 6 modes 
+11:32:51 FAIL LC2 buckling: exclude negative load multipliers: global name 'IncludeNegativeLoadMultiplier' is not defined
+11:32:51 OK   LC2 buckling MaximumModesToFind 6
+11:32:51 OK   LC2 buckling IncludeNegativeLoadMultiplier ProgramControlled
+11:32:51 OK   LC2 buckling SolverType ProgramControlled
+11:32:51 OK   LC2 buckling KeepPreStressLoadPattern True
+11:32:51 PASS  LC2 buckling: no loads or supports of its own (it inherits the LC2 pre-stress state and supports) | expected none | found []
+11:32:51 PASS  LC2 buckling: pre-stress environment = LC2_Axially_Restrained | expected LC2 | found [('PreStressICEnvironment', 'LC2_Axially_Restrained'), ('ic_name', 'Pre-Stress (LC2_Axially_Restrained)')]
+11:32:51 PASS  LC2 buckling: no under-defined / error objects | expected none | found []
+11:32:51 PASS  LC2NS: External Data linked | expected 1 | found 1
+11:33:06 OK   LC2NS import 
+11:33:06 PASS  LC2NS: mapped temperature identical to the 7A export | expected byte-identical | found identical
+11:33:07 OK   LC2NS solver type -> Direct 
+11:33:07 PASS  LC2NS: no under-defined / error objects | expected none | found []
+11:33:10 PASS  LC2NS input vs LC2 input: identical nblock section | expected identical | found identical
+11:33:10 PASS  LC2NS input vs LC2 input: identical eblock section | expected identical | found identical
+11:33:10 PASS  LC2NS input vs LC2 input: identical bf section | expected identical | found identical
+11:33:10 PASS  LC2NS input vs LC2 input: identical material section | expected identical | found identical
+11:33:10 **FAIL**  LC2NS input: the 1,224 end-face nodes rotated to csys 12 with U_theta = 0 and U_z = 0; nothing else | expected uy, uz, nrot each on the 1224 LC2 end-face nodes (id sum 80282530) | found [('D', 'uy', 0.0, 1224, 80282530, 18577, 108252), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252)]
+11:33:10 OK   LC2NS buckling: 6 modes 
+11:33:10 FAIL LC2NS buckling: exclude negative load multipliers: global name 'IncludeNegativeLoadMultiplier' is not defined
+11:33:10 PASS  LC2NS buckling: pre-stress environment = LC2NS | expected LC2NS | found [('PreStressICEnvironment', 'LC2NS_NoSway_Static_SENSITIVITY'), ('ic_name', 'Pre-Stress (LC2NS_NoSway_Static_SENSITIVITY)')]
+11:33:11 FATAL PRE-SOLVE GATE FAILED - nothing solved: ['LC2NS input: the 1,224 end-face nodes rotated to csys 12 with U_theta = 0 and U_z = 0; nothing else']
+11:33:11 Traceback (most recent call last):
+  File "<PROJECT_ROOT>\08_Structural_Analysis\Buckling\Workbench\Scripts\mech_buckling_8A.py", line 458, in <module>
+    raise Exception("PRE-SOLVE GATE FAILED - nothing solved: %s" % [x["check"] for x in failed])
+Exception: PRE-SOLVE GATE FAILED - nothing solved: ['LC2NS input: the 1,224 end-face nodes rotated to csys 12 with U_theta = 0 and U_z = 0; nothing else']

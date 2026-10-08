@@ -1,0 +1,83 @@
+% ===================================================================== Appendices A-H
+% RE-ANALYSIS 2026
+\titleformat{\chapter}[hang]{\sffamily\bfseries\LARGE}{Appendix \thechapter}{0.8em}{}[\vspace{2pt}\titlerule]
+\chapter{Baseline Parameters}\label{app:params}
+Table~\ref{tab:appA} lists the complete input set of the official baseline P00; the geometry is in Table~\ref{tab:geometry},
+the operating point in Table~\ref{tab:operating} and the material data in Tables~\ref{tab:air} and~\ref{tab:inconel}. All inputs are class B
+(selected with a stated rationale); no input is class A (taken from an original internship document).
+
+\input{../Tables/tab_appA}
+
+\chapter{Analytical Calculations}\label{app:analytical}
+The Section 2 analytical baseline was computed by a self-testing Python script before any mesh existed (\texttt{baseline\_calculations.py},
+18 sanity checks passed, energy balance closed to 0.0005\,\%). Its main results are listed in Table~\ref{tab:appB}; Figure~\ref{fig:anplots}
+shows three of its plots. Worked examples of the key relations:
+
+\begin{itemize}
+\item Heat input: $Q = q''_o\,\pi D_o L = 8000 \times \pi \times 0.040 \times 0.600 = 603.19$ W.
+\item Bulk temperature rise: $\Delta T_b = Q/(\dot m\,\bar c_p) = 603.19/(8.686\times10^{-3} \times 1008.5) = 68.85$ K, with $\bar c_p$ the mean
+      specific heat over the bulk temperature range, giving $T_{out}$ = 368.85~K.
+\item Inlet Reynolds number: $Re = G D_h/\mu = 27.650 \times 0.020/(1.846\times10^{-5}) = 29{,}957$.
+\item Restrained stress: $\sigma_z = -E\alpha\Delta\bar T = -188.1\times10^{9} \times 13.72\times10^{-6} \times 254.7 = -657.2$ MPa, and free growth
+      $\Delta L = \alpha\Delta\bar T L = 3.494\times10^{-3} \times 600 = 2.096$ mm.
+\item Critical load from the FE eigenvalue: $P_{cr} = \lambda_1 N = 1.10805 \times 548{,}936.6 = 608.25$ kN; mean axial stress
+      $N/A = 548{,}936.6/942.48 = 582.44$ MPa.
+\end{itemize}
+
+\input{../Tables/tab_appB}
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.34\linewidth}\centering\includegraphics[width=\linewidth]{01_axial_temperatures.png}\caption{Axial temperature development}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\linewidth}\centering\includegraphics[width=\linewidth]{03_radial_wall_temperature.png}\caption{Radial wall temperature}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\linewidth}\centering\includegraphics[width=\linewidth]{05_pressure_breakdown.png}\caption{Pressure-drop breakdown [Pa]}\end{subfigure}
+\caption{Section 2 analytical baseline plots (ANALYTICAL level, produced before any CFD run).}
+\label{fig:anplots}
+\src{Source: \texttt{02\_Engineering\_Calculations/calculation\_plots/}; matplotlib plots of the analytical model.}
+\end{figure}
+
+\chapter{Mesh Tables}\label{app:mesh}
+The CFD mesh family is defined in Tables~\ref{tab:meshfam} and~\ref{tab:meshq} and the structural mesh variants in Table~\ref{tab:smesh}.
+On the coarse, medium and fine CFD meshes $y^+_{max}$ is 0.522, 0.585 and 0.653, always in the first slab, with 100\,\% of the wall at $y^+ \le 1$.
+
+\chapter{CFD Monitor and Convergence Data}\label{app:conv}
+The convergence criteria and final residuals are in Table~\ref{tab:convcrit} and the history in Figure~\ref{fig:conv}. The evaluation at
+iteration 400 was not possible (too few second-order iterations), 500 was refused (scheme-switch transient), 600 met every criterion and
+700 confirmed it. The fluid stayed within 299.998--553.42~K and the solid within 300.0--562.133~K throughout, inside both property tables,
+with no limiter, divergence or reversed-flow message. All other CFD cases used the same staging and criteria.
+
+\chapter{Structural Results}\label{app:struct}
+The main static results are in Table~\ref{tab:lcres} and the first-yield assessment in Table~\ref{tab:yield}. Table~\ref{tab:appE} adds the
+equilibrium and consistency checks. Stress singularities were checked on mesh B: averaged and unaveraged peaks differ by 0.30\,\% (LC1) and
+0.004\,\% (LC2), and the energy-norm error is concentrated in the first 15~mm. An independent verification script re-derived the static results
+from the raw MAPDL tables.
+
+\input{../Tables/tab_appE}
+
+\chapter{Buckling Results}\label{app:buckling}
+The hand estimates are in Table~\ref{tab:section}, the FE baseline results in Table~\ref{tab:buckling} and the support scenarios in
+Table~\ref{tab:support}. Table~\ref{tab:appF} lists the first eigenvalue on every structural mesh. The workflow was benchmarked on a
+constant-property toy tube: the Section 8A benchmark reproduced the closed-form Euler loads for the guided and no-sway end conditions, and
+benchmark B03 gave a $\lambda_1$ between the plain and shear-corrected fixed--pinned values for the S3 remote-point formulation.
+
+\input{../Tables/tab_appF}
+
+\chapter{Parametric Tables}\label{app:param}
+The parametric results are in Tables~\ref{tab:pcfd}, \ref{tab:pstruct}, \ref{tab:pbk} and~\ref{tab:psens}; the changes from P00 are discussed in
+Chapter~\ref{ch:param}, and the machine-readable tables are in the project folder \texttt{10\_Parametric\_Study}. The independent verification
+\texttt{verify\_9B2.py} passed 45 of 46 checks; the single failure is the thickness check-mesh tolerance noted in Chapter~\ref{ch:unc},
+reported rather than relaxed.
+
+\chapter{Traceability}\label{app:trace}
+\textbf{Status of the work.} The note on the analysis record at the front of the report applies to every value; only the engineer,
+programme, organisation, period and tool set are documented internship facts.
+
+\textbf{Numbers.} Every result value in the tables is read by \texttt{gen\_tables.py} from the Section 10A master dataset
+\texttt{11\_Final\_Audit/MASTER\_PROJECT\_DATA.csv}: of its 182 rows, 124 are VERIFIED (recomputed from the raw solver or report file),
+3 CROSS-CHECKED, 29 REPORTED (post-processing quantities from the section result files), 20 INPUT, 2 DECISION and 4 INTERPRETATION, and none
+is a MISMATCH. Other values (solver settings, mesh controls, property tables) are quoted from the section documents named in each table note.
+\texttt{qc\_10B.py} traces every number of the report to the master dataset or a project document (\texttt{Final\_Report/REPORT\_QC\_CHECKLIST.md}).
+
+\textbf{Modelling levels and figures.} 581.7~K (analytical), 562.58~K (CFD medium) and 560.83~K (CFD fine), or $-$657.2~MPa (analytical
+restrained stress) and 605.16~MPa (FE peak von Mises), belong to different modelling levels: they are different models or quantities, not
+contradictions. All figures are hash-verified project files (\texttt{Figures/figure\_sources.json}); none is an ANSYS GUI screenshot.

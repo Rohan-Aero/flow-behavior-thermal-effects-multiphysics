@@ -1,0 +1,68 @@
+% ===================================================================== Chapter 17
+\chapter{Engineering Discussion}\label{ch:discussion}
+
+\section{Flow Behavior}
+The flow is a developing turbulent pipe flow with strong heating. Two features distinguish it from a textbook isothermal case. First, the
+air density falls by about a fifth along the duct, so the flow accelerates and a third of the static pressure drop (149~Pa of 438~Pa) goes into
+acceleration rather than friction. Second, heating lowers the wall friction relative to the constant-property correlation by about 9\,\%. The
+second effect explains why the friction factor misses the Petukhov value by slightly more than 10\,\%, and it is a property of the physics, not
+of the mesh. For the structural question, the flow matters mainly through the heat-transfer coefficient it produces.
+
+\section{Thermal Behavior}
+The thermal behaviour is controlled by the air-side film. The metal carries only a few percent of the thermal resistance, so the wall is
+almost isothermal through its thickness (7.6~K across 10~mm at mid-span) but runs about 186~K above the bulk air near the outlet. Along the duct
+the wall temperature follows the bulk temperature plus the film temperature difference, modified at both ends by conduction: the inlet end is
+cooled by the high heat-transfer coefficient of the thermal entrance, which draws heat axially through the wall, and the outlet end is
+warmed by the adiabatic end face. This is why the CFD maximum is 19~K below the one-dimensional estimate and why the mean temperature rise, which
+drives the structural loads, is about 11\,\% lower than in the analytical model. The conjugate CFD was therefore necessary: the one-dimensional
+model overestimates the structural loads because it cannot represent the entrance and end effects.
+
+\section{Structural Behavior}
+The structural behaviour is governed by restraint rather than by the gradient. Free expansion produces a growth of 1.84~mm but only 24~MPa of
+stress, confined to the inlet end; restrained expansion stores the same strain as a nearly uniform compression of 582~MPa. The thermal
+problem therefore translates into a restraint problem: the stress level depends on how much of the growth the mounting prevents, not on
+the temperature distribution within the wall. The static state is elastic in every case, with the peak at the inlet-face edge where the
+compression and the inlet gradient combine.
+
+\section{Buckling Behavior}
+The restrained duct is a stocky column carrying a thermal, displacement-controlled load close to its idealised Euler load. Under S1 the first
+bifurcation appears at 1.108 times the applied load, before first yield. Two points qualify this result. The load is thermal, so a small
+change in mean temperature (about 24~K) changes the load factor by the full 10.8\,\%; the stability statement is therefore as uncertain as the
+mean wall temperature, which itself differs by 30~K between the analytical and CFD models. And the linear eigenvalue is an upper-bound-type
+indicator for a perfect column; imperfections and inelastic behaviour act only to lower the real capacity. The additional LS-DYNA
+analysis (Section~\ref{sec:lsdyna}) is consistent with this: with mode-shaped imperfections the lateral deflection and stress grow well below
+$\lambda_1$, while the Southwell characteristic-load estimates stay within 1\,\% of the linear critical load.
+
+\section{Effect of Velocity}
+Velocity primarily affects cooling, Reynolds number and pressure drop. It changes the heat-transfer coefficient and the air temperature rise,
+and through them the wall temperature; the structural response then follows the temperature. A 10\,\% lower velocity raises the wall
+temperatures by about 25~K, the restrained force by 9.7\,\% and lowers $\lambda_1$ to 1.003, while the critical load itself hardly changes. The
+pressure-drop penalty of higher velocity (+14.1\,\% for +10\,\% velocity) is the price of the cooler wall.
+
+\section{Effect of Heat Flux}
+Heat flux directly drives temperature and thermal stress. It acts on the wall temperature rise almost in proportion (slightly more than
+proportionally), and every thermal-structural response follows: $\pm$10\,\% flux gives about $\pm$11\,\% restrained force and LC2 stress and moves
+$\lambda_1$ from 1.255 to 0.988. It is the variable to which $\lambda_1$ is most sensitive. The pressure drop changes only through the gas
+temperature.
+
+\section{Effect of Wall Thickness}
+Wall thickness strongly affects stiffness and buckling capacity while having relatively little thermal effect under the constant-total-heat-input
+definition. Temperatures change by less than 1~K and the stress level by less than 0.5\,\%, but the end force scales with the area and the
+critical load with the bending stiffness. A thicker wall carries a larger force but gains more capacity, because the radius of gyration
+grows; a thinner wall loses capacity faster than it loses force. Thickness is therefore a structural design variable, not a thermal one, in
+this range. With the heat flux held constant instead of the total heat input, the thermal effect would differ; that alternative was not studied.
+
+\section{Effect of Support Condition}
+The support condition dominates the idealised buckling factor. With identical static stress, the three idealised supports change $\lambda_1$ by
+a factor of 3.9, far more than any operating or design variable in the study, and they decide whether bifurcation or first yield is reached
+first. The mesh resolution, by comparison, changes $\lambda_1$ by less than $10^{-4}$ on the structural side and by up to about 2\,\% through the
+CFD temperature field. The mesh is not the dominant uncertainty; the boundary condition is.
+
+\section{Physical Interpretation}
+Taken together, the results describe a chain in which each link amplifies the importance of the next. The air film sets the wall
+temperature; the restraint converts that temperature into a large compressive force; and the end fixity decides whether that force is
+stable. Pressure loading is negligible throughout ($7.4\times10^{-6}$\,\% of the peak stress). The engineering implication, within the
+idealised model, is that the design question for such a duct is less about reducing the through-wall gradient than about how
+much axial growth the mounting prevents and how the ends are restrained laterally and rotationally. Allowing controlled axial growth, or
+providing defined lateral end restraint, are the two routes the model identifies; neither was analysed as a design and both would need the
+real mounting to be defined.

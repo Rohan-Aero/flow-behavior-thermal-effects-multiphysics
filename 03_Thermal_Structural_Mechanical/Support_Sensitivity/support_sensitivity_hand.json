@@ -1,0 +1,146 @@
+{
+ "note": "PLANNING ESTIMATE - hand/beam theory calibrated to the 8A FE; not a finite-element result",
+ "N_N": 548936.6137530407,
+ "EI_calibrated_Nm2": 22186.210875599918,
+ "P_S1_FE_kN": 608.2475680592154,
+ "P_S2_FE_kN": 2360.3999923073875,
+ "first_yield_factor": 1.7301038062283738,
+ "scenarios": [
+  {
+   "end_condition": "guided (S1)",
+   "K": 1.0,
+   "lambda_FE_8A": 1.108047,
+   "lambda_euler_Ez": 1.11938,
+   "lambda_euler_shear": 1.10359,
+   "lambda_johnson_conventional": 1.058,
+   "elastic_bifurcation_before_first_yield": true
+  },
+  {
+   "end_condition": "pinned-pinned",
+   "K": 1.0,
+   "lambda_FE_8A": null,
+   "lambda_euler_Ez": 1.11424,
+   "lambda_euler_shear": 1.09852,
+   "lambda_johnson_conventional": 1.058,
+   "elastic_bifurcation_before_first_yield": true
+  },
+  {
+   "end_condition": "fixed-pinned, cold end fixed (S3)",
+   "K": 0.6992,
+   "lambda_FE_8A": null,
+   "lambda_euler_Ez": 2.2858,
+   "lambda_euler_shear": 2.22079,
+   "lambda_johnson_conventional": 1.414,
+   "elastic_bifurcation_before_first_yield": false
+  },
+  {
+   "end_condition": "fixed-fixed, no sway (S2)",
+   "K": 0.5,
+   "lambda_FE_8A": 4.29995,
+   "lambda_euler_Ez": 4.47113,
+   "lambda_euler_shear": 4.22903,
+   "lambda_johnson_conventional": 1.581,
+   "elastic_bifurcation_before_first_yield": false
+  },
+  {
+   "end_condition": "one end rotation-free, sway free (K = 2) - conceptual only",
+   "K": 2.0,
+   "lambda_FE_8A": null,
+   "lambda_euler_Ez": 0.279845,
+   "lambda_euler_shear": null,
+   "lambda_johnson_conventional": null,
+   "elastic_bifurcation_before_first_yield": true
+  },
+  {
+   "end_condition": "imperfect guided, AISC design K = 1.2 - information only",
+   "K": 1.2,
+   "lambda_FE_8A": null,
+   "lambda_euler_Ez": 0.7773472222222223,
+   "lambda_euler_shear": null,
+   "lambda_johnson_conventional": null,
+   "elastic_bifurcation_before_first_yield": true
+  }
+ ],
+ "required_lateral_stiffness": [
+  {
+   "target_lambda1": 1.2,
+   "k_N_per_mm": 103.9297655156229
+  },
+  {
+   "target_lambda1": 1.5,
+   "k_N_per_mm": 445.0714445989029
+  },
+  {
+   "target_lambda1": 1.7301038062283738,
+   "k_N_per_mm": 709.0429321624541
+  },
+  {
+   "target_lambda1": 2.0,
+   "k_N_per_mm": 1021.4882203438567
+  },
+  {
+   "target_lambda1": 2.5,
+   "k_N_per_mm": 1609.5088615626091
+  },
+  {
+   "target_lambda1": 3.0,
+   "k_N_per_mm": 2211.8076248484576
+  }
+ ],
+ "k_switch_to_no_sway_N_per_mm": 3874.819369454267,
+ "k_euler_threshold_4pi2EI_L3_N_per_mm": 4054.9837870614365,
+ "lambda_vs_k": [
+  {
+   "k_N_per_mm": 10.0,
+   "lambda1": 1.1169055501061254
+  },
+  {
+   "k_N_per_mm": 17.78279410038923,
+   "lambda1": 1.1237983758274572
+  },
+  {
+   "k_N_per_mm": 31.622776601683793,
+   "lambda1": 1.1360522747985762
+  },
+  {
+   "k_N_per_mm": 56.23413251903491,
+   "lambda1": 1.1578321157275684
+  },
+  {
+   "k_N_per_mm": 100.0,
+   "lambda1": 1.1965277055828927
+  },
+  {
+   "k_N_per_mm": 177.82794100389228,
+   "lambda1": 1.265227182020572
+  },
+  {
+   "k_N_per_mm": 316.2277660168379,
+   "lambda1": 1.3870324170352644
+  },
+  {
+   "k_N_per_mm": 562.341325190349,
+   "lambda1": 1.6024508937464916
+  },
+  {
+   "k_N_per_mm": 1000.0,
+   "lambda1": 1.981527342114787
+  },
+  {
+   "k_N_per_mm": 1778.2794100389228,
+   "lambda1": 2.6414206225353465
+  },
+  {
+   "k_N_per_mm": 3162.2776601683795,
+   "lambda1": 3.7593011366429825
+  },
+  {
+   "k_N_per_mm": 5623.413251903491,
+   "lambda1": 4.29995
+  },
+  {
+   "k_N_per_mm": 10000.0,
+   "lambda1": 4.29995
+  }
+ ]
+}

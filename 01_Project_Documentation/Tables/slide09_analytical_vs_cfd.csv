@@ -1,0 +1,6 @@
+quantity,units,analytical_section2,cfd_medium,difference,reason,source
+Inlet Reynolds number,-,"29,957","29,958",+0.00 %,same mass flux and inlet properties,"M071-M074, M034-M039; Re_an from baseline_results.csv"
+Pressure drop,Pa,441.53,438.13,-0.77 %,"friction lower (gas heating), flow-development term higher","M071-M074, M034-M039; Re_an from baseline_results.csv"
+Outlet bulk temperature,K,368.85,368.93,+0.08 K,48-facet CFD section (faceting),"M071-M074, M034-M039; Re_an from baseline_results.csv"
+Heat-transfer rate,W,603.186,602.755,-0.071 %,exactly the 48-gon lateral-area ratio,"M071-M074, M034-M039; Re_an from baseline_results.csv"
+Maximum solid temperature,K,581.71,562.58,-19.13 K,higher CFD film coefficient in developing flow; axial conduction,"M071-M074, M034-M039; Re_an from baseline_results.csv"

@@ -1,0 +1,988 @@
+{
+ "note": "RE-ANALYSIS 2026 - Section 10A integrity comparison",
+ "manifest_files": 4856,
+ "manifest_bytes": 14637453694,
+ "records": [
+  {
+   "record": "6B frozen medium/coarse/mesh/state files",
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Fine\\Audit\\frozen_solutions_hashes_after.json",
+   "n": 24,
+   "identical": 23,
+   "changed": [
+    {
+     "path": "PROJECT_STATE.md",
+     "record": "B3D300C68EC0D35A",
+     "now": "F178580C82AB4066",
+     "mtime_now": "2026-09-27T22:16:13"
+    }
+   ],
+   "missing": []
+  },
+  {
+   "record": "6A medium baseline files",
+   "file": "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Audit\\medium_baseline_hashes_after.json",
+   "n": 21,
+   "identical": 20,
+   "changed": [
+    {
+     "path": "06_Fluent_CFD\\..\\PROJECT_STATE.md",
+     "record": "01D0B2DD3CCD6E48",
+     "now": "F178580C82AB4066",
+     "mtime_now": "2026-09-27T22:16:13"
+    }
+   ],
+   "missing": []
+  },
+  {
+   "record": "7A CFD source case/data",
+   "file": "07_Thermal_Analysis\\Temperature_Source\\Audit\\source_case_data_hashes.json",
+   "n": 2,
+   "identical": 2,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "7B solved project files (post-7B)",
+   "file": "08_Structural_Analysis\\Audits\\post7B_solve_7B_project_files_hashes.json",
+   "n": 57,
+   "identical": 57,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "7A project files (post-7B)",
+   "file": "08_Structural_Analysis\\Audits\\post7B_7A_project_files_hashes.json",
+   "n": 20,
+   "identical": 20,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "baseline CFD case files (7A)",
+   "file": "08_Structural_Analysis\\Workbench\\Audit\\cfd_case_hashes_after.json",
+   "n": 3,
+   "identical": 3,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "baseline CFD data files (7A)",
+   "file": "08_Structural_Analysis\\Workbench\\Audit\\cfd_data_hashes_after.json",
+   "n": 2,
+   "identical": 2,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "Section 4 Workbench project (7A)",
+   "file": "08_Structural_Analysis\\Workbench\\Audit\\section4_project_hashes_after.json",
+   "n": 7,
+   "identical": 7,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "7A key files",
+   "file": "08_Structural_Analysis\\Workbench\\Audit\\section7A_key_file_hashes.json",
+   "n": 22,
+   "identical": 21,
+   "changed": [
+    {
+     "path": "PROJECT_STATE.md",
+     "record": "FA6822AD9642F44D",
+     "now": "F178580C82AB4066",
+     "mtime_now": "2026-09-27T22:16:13"
+    }
+   ],
+   "missing": []
+  },
+  {
+   "record": "pre-7B key files",
+   "file": "08_Structural_Analysis\\Audits\\pre7B_key_file_hashes.txt",
+   "n": 5,
+   "identical": 5,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "7B project (post-8A)",
+   "file": "08_Structural_Analysis\\Buckling\\Audits\\post8A_7B_project_hashes.json",
+   "n": 58,
+   "identical": 58,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "7B project (post-8B)",
+   "file": "08_Structural_Analysis\\Mesh_Study\\Audits\\post8B_7B_project_hashes.json",
+   "n": 58,
+   "identical": 58,
+   "changed": [],
+   "missing": []
+  },
+  {
+   "record": "08_Structural_Analysis, all files (pre-9B-2)",
+   "file": "10_Parametric_Study\\Structural_Cases\\Audits\\pre9B2_08_Structural_Analysis_hashes.csv",
+   "n": 1927,
+   "identical": 1927,
+   "changed": [],
+   "missing": []
+  }
+ ],
+ "added_to_08_since_pre9B2": [],
+ "cfd_parametric_case_mtimes": {
+  "c00_pipeline_check": {
+   "files": 63,
+   "first": "2026-09-26T17:51:18",
+   "last": "2026-09-26T20:11:30"
+  },
+  "journals": {
+   "files": 13,
+   "first": "2026-09-26T17:47:33",
+   "last": "2026-09-26T22:38:34"
+  },
+  "m03_t03_cfd_solid18": {
+   "files": 56,
+   "first": "2026-09-26T22:38:09",
+   "last": "2026-09-26T22:49:50"
+  },
+  "q01_low": {
+   "files": 58,
+   "first": "2026-09-26T18:55:22",
+   "last": "2026-09-26T20:06:02"
+  },
+  "q03_high": {
+   "files": 58,
+   "first": "2026-09-26T19:12:36",
+   "last": "2026-09-26T20:06:02"
+  },
+  "t01_thin": {
+   "files": 58,
+   "first": "2026-09-26T19:30:00",
+   "last": "2026-09-26T20:06:02"
+  },
+  "t03_thick": {
+   "files": 58,
+   "first": "2026-09-26T19:47:22",
+   "last": "2026-09-26T20:06:02"
+  },
+  "v01_low": {
+   "files": 58,
+   "first": "2026-09-26T18:21:43",
+   "last": "2026-09-26T20:06:02"
+  },
+  "v03_high": {
+   "files": 58,
+   "first": "2026-09-26T18:37:39",
+   "last": "2026-09-26T20:06:02"
+  }
+ },
+ "newest_file_per_top_folder": {
+  "00_admin": [
+   "2026-09-18T14:11:37",
+   "00_admin\\license_check\\fluent_transcript.txt"
+  ],
+  "01_Requirements": [
+   "2026-09-18T14:39:05",
+   "01_Requirements\\PARAMETERS.xlsx"
+  ],
+  "02_Engineering_Calculations": [
+   "2026-09-18T18:50:26",
+   "02_Engineering_Calculations\\calculation_plots\\06_exponent_sensitivity.png"
+  ],
+  "03_CAD_Geometry": [
+   "2026-09-19T13:57:04",
+   "03_CAD_Geometry\\Screenshots\\stl_parse_check.json"
+  ],
+  "05_Meshing": [
+   "2026-09-25T11:04:32",
+   "05_Meshing\\Workbench\\Flow_Behavior_Thermal_Effects_Multiphysics_files\\.project_cache"
+  ],
+  "06_Fluent_CFD": [
+   "2026-09-24T19:44:56",
+   "06_Fluent_CFD\\Mesh_Independence\\Fine\\Audit\\project_state_append_check.json"
+  ],
+  "07_Thermal_Analysis": [
+   "2026-09-25T11:11:28",
+   "07_Thermal_Analysis\\THERMAL_MAPPING_NOTES.md"
+  ],
+  "08_Structural_Analysis": [
+   "2026-09-27T15:00:48",
+   "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\.project_cache"
+  ],
+  "09_Mesh_Independence": [
+   "2026-09-24T19:44:57",
+   "09_Mesh_Independence\\Mesh_Independence_Report.md"
+  ],
+  "10_Parametric_Study": [
+   "2026-09-27T22:17:34",
+   "10_Parametric_Study\\PARAMETRIC_STUDY_NOTES.md"
+  ],
+  "CFD_TO_MECHANICAL_MAPPING_AUDIT.md": [
+   "2026-09-25T11:11:29",
+   "CFD_TO_MECHANICAL_MAPPING_AUDIT.md"
+  ],
+  "Claude outputs": [
+   "2026-09-24T01:15:54",
+   "Claude outputs\\FINE_CFD_RESULTS.md"
+  ],
+  "PROJECT_STATE.md": [
+   "2026-09-27T22:16:13",
+   "PROJECT_STATE.md"
+  ],
+  "README.md": [
+   "2026-09-18T13:54:29",
+   "README.md"
+  ]
+ },
+ "duplicates": {
+  "groups": 437,
+  "redundant_bytes": 3346993074,
+  "largest": [
+   {
+    "n": 18,
+    "bytes": 28578623,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_B_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_IL_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\B\\Solver_Output\\LC2P\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Pressure_Check\\Solver_Output\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Project\\M01_T01_STRUCT_NR5_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Project\\M02_T03_STRUCT_NR5_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Probe\\PROBE_9B2_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Project\\Q01_LOW_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Project\\Q03_HIGH_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Project\\T01_THIN_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Project\\T03_THICK_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Project\\V01_LOW_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 11,
+    "bytes": 28578623,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_prestress_resolve\\Solver_Output\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\LC2_Restrained\\Solver_Output\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_B_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\B\\Solver_Output\\LC2\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run2_C00_before_setup_refresh\\C00_Solver_Output\\LC2\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Probe\\PROBE_9B2_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\S2_REEXTRACT\\s1x_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 9,
+    "bytes": 28578623,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\LC1_Free_Expansion\\Solver_Output\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_B_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\B\\Solver_Output\\LC1\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run2_C00_before_setup_refresh\\C00_Solver_Output\\LC1\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Probe\\PROBE_9B2_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 9,
+    "bytes": 15916100,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Project\\Q01_LOW_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Project\\Q03_HIGH_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Project\\V01_LOW_files\\dp0\\SYS-4\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-4\\MECH\\ds.dat"
+    ]
+   },
+   {
+    "n": 4,
+    "bytes": 33030144,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-4\\MECH\\file.rst",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-4\\MECH\\file.rst",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-4\\MECH\\file.rst",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-4\\MECH\\file.rst"
+    ]
+   },
+   {
+    "n": 4,
+    "bytes": 31719424,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-2\\MECH\\file.rst",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-2\\MECH\\file.rst",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-2\\MECH\\file.rst",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-2\\MECH\\file.rst"
+    ]
+   },
+   {
+    "n": 23,
+    "bytes": 3179144,
+    "paths": [
+     "05_Meshing\\Workbench\\Flow_Behavior_Thermal_Effects_Multiphysics_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_B_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_C_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FA_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FC_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FR_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_IL_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_XC_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Project\\M01_T01_STRUCT_NR5_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Project\\M02_T03_STRUCT_NR5_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\Probe\\PROBE_9B2_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Project\\Q01_LOW_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Project\\Q03_HIGH_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Project\\T01_THIN_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Project\\T03_THICK_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Project\\V01_LOW_files\\dp0\\global\\MECH\\SYS.mshdb",
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\global\\MECH\\SYS.mshdb"
+    ]
+   },
+   {
+    "n": 3,
+    "bytes": 31784960,
+    "paths": [
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-3\\MECH\\file.rst",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-3\\MECH\\file.rst",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-3\\MECH\\file.rst"
+    ]
+   },
+   {
+    "n": 33,
+    "bytes": 1608128,
+    "paths": [
+     "07_Thermal_Analysis\\Mapping\\Mechanical_Export\\LC1_imported_body_temperature.txt",
+     "07_Thermal_Analysis\\Mapping\\Mechanical_Export\\LC2_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Audits\\presolve_LC1_imported_body_temperature_7B.txt",
+     "08_Structural_Analysis\\Audits\\presolve_LC2P_imported_body_temperature_7B.txt",
+     "08_Structural_Analysis\\Audits\\presolve_LC2_imported_body_temperature_7B.txt",
+     "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL\\presolve_LC1_imported_body_temperature_7B.txt",
+     "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL\\presolve_LC2P_imported_body_temperature_7B.txt",
+     "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL\\presolve_LC2_imported_body_temperature_7B.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\presolve_LC2NS_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\presolve_LC2_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run1_FAIL\\presolve_LC2NS_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run1_FAIL\\presolve_LC2_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run2_FAIL\\presolve_LC2NS_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run2_FAIL\\presolve_LC2_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\Run3_STOPPED_at_images\\presolve_LC2NS_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Buckling\\Audits\\Run3_STOPPED_at_images\\presolve_LC2_imported_body_temperature_8A.txt",
+     "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run1\\Mechanical_Export\\LC1_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run1\\Mechanical_Export\\LC2_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run2\\Mechanical_Export\\LC1_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run3\\Mechanical_Export\\LC1_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run3\\Mechanical_Export\\LC2_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\B\\Audits\\B_LC1_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\B\\Audits\\B_LC2P_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\B\\Audits\\B_LC2_imported_body_temperature.txt",
+     "08_Structural_Analysis\\Workbench\\probe9\\probe9_P2_Bucket_ShapeFn_Nearest_mapped.txt",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run2_C00_before_setup_refresh\\C00_Audits\\C00_PIPELINE_CHECK_LC1_imported_body_temperature.txt",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run2_C00_before_setup_refresh\\C00_Audits\\C00_PIPELINE_CHECK_LC2_imported_body_temperature.txt",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run6_S3_deck_FAIL_gate_CONTA174\\S3_Audits\\LC2_imported_body_temperature_in_S3_copy_deck.txt",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run6_S3_deck_FAIL_gate_CONTA174\\S3_Audits\\S3_imported_body_temperature_deck.txt",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\LC2_imported_body_temperature_in_S3_copy_deck.txt",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\LC2_imported_body_temperature_in_S3_copy_solve.txt",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\S3_imported_body_temperature_deck.txt",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\S3_imported_body_temperature_solve.txt"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 46889703,
+    "paths": [
+     "06_Fluent_CFD\\Exports\\cells_fluid.csv",
+     "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\Exports\\cells_fluid.csv"
+    ]
+   },
+   {
+    "n": 4,
+    "bytes": 15560771,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run1_FAIL\\Presolve_Inputs\\LC2NS_presolve_8A_ds.dat",
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run2_FAIL\\Presolve_Inputs\\LC2NS_presolve_8A_ds.dat",
+     "08_Structural_Analysis\\Buckling\\Audits\\Presolve_Inputs\\LC2NS_presolve_8A_ds.dat",
+     "08_Structural_Analysis\\Buckling\\Audits\\Run3_STOPPED_at_images\\Presolve_Inputs\\LC2NS_presolve_8A_ds.dat"
+    ]
+   },
+   {
+    "n": 4,
+    "bytes": 15528213,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run1_FAIL\\Presolve_Inputs\\LC2_presolve_8A_ds.dat",
+     "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run2_FAIL\\Presolve_Inputs\\LC2_presolve_8A_ds.dat",
+     "08_Structural_Analysis\\Buckling\\Audits\\Presolve_Inputs\\LC2_presolve_8A_ds.dat",
+     "08_Structural_Analysis\\Buckling\\Audits\\Run3_STOPPED_at_images\\Presolve_Inputs\\LC2_presolve_8A_ds.dat"
+    ]
+   },
+   {
+    "n": 4,
+    "bytes": 15526122,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-2\\MECH\\ds.dat",
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-2\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-2\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-2\\MECH\\ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33549215,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FR_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FR\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33549215,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FR_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FR\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33549215,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FR_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FR\\Solver_Output\\LC2P\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33549215,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Project\\T03_THICK_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33549215,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Project\\T03_THICK_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33387647,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FA_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FA\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33387647,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FA_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FA\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33387647,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FA_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FA\\Solver_Output\\LC2P\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33341711,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FC_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FC\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33341711,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FC_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FC\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 33341711,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_FC_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\FC\\Solver_Output\\LC2P\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 3,
+    "bytes": 15561923,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run6_S3_deck_FAIL_gate_CONTA174\\S3_Audits\\Presolve_Inputs\\S3_presolve_ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\Presolve_Inputs\\S3_presolve_ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Audits\\Presolve_Inputs\\S3_presolve_ds_solve_mode.dat"
+    ]
+   },
+   {
+    "n": 3,
+    "bytes": 15527193,
+    "paths": [
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-3\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\T03_THICK_files\\dp0\\SYS-3\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-3\\MECH\\ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578887,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-5\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Solver_Output\\S3_STATIC\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_IL_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\IL\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_IL_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\IL\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Project\\C00_PIPELINE_CHECK_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Project\\M01_T01_STRUCT_NR5_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Project\\M01_T01_STRUCT_NR5_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Project\\M02_T03_STRUCT_NR5_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Project\\M02_T03_STRUCT_NR5_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Project\\Q01_LOW_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Project\\Q01_LOW_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Project\\Q03_HIGH_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Project\\Q03_HIGH_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\S2_REEXTRACT\\s2x_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\S2_REEXTRACT\\Run1_shared_session\\s2x_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Project\\V01_LOW_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Project\\V01_LOW_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 28578623,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Project\\V03_HIGH_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 26292846,
+    "paths": [
+     "05_Meshing\\Mesh_Medium\\medium.msh",
+     "06_Fluent_CFD\\Case\\medium_mesh_used_for_baseline.msh"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 23608031,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Project\\T01_THIN_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 23608031,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Project\\T01_THIN_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 20253016,
+    "paths": [
+     "08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\global\\MECH\\SYS-2.mechdb",
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown\\T03_THICK_partial_not_solved\\Project\\.T03_THICK_files.backup\\dp0\\global\\MECH\\SYS-2.mechdb"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15912480,
+    "paths": [
+     "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL\\Presolve_Inputs\\LC2P_presolve_ds.dat",
+     "08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC2P_presolve_ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15561906,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Project\\S3_LC2_INTERMEDIATE_files\\dp0\\SYS-5\\MECH\\ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Solver_Output\\S3_STATIC\\ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15560732,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Mechanical\\LC2NS_NoSway_Static\\Solver_Output\\ds.dat",
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-6\\MECH\\ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15528186,
+    "paths": [
+     "10_Parametric_Study\\Structural_Cases\\Audits\\Run3_C00_FAIL_bitwise_criterion\\C00_Audits\\Presolve_Inputs\\C00_PIPELINE_CHECK_LC2_presolve_ds.dat",
+     "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Audits\\Presolve_Inputs\\C00_PIPELINE_CHECK_LC2_presolve_ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15528174,
+    "paths": [
+     "08_Structural_Analysis\\Buckling\\Mechanical\\LC2_prestress_resolve\\Solver_Output\\ds.dat",
+     "08_Structural_Analysis\\Buckling\\Workbench\\Flow_Behavior_Thermal_Effects_Buckling_8A_files\\dp0\\SYS-3\\MECH\\ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15523573,
+    "paths": [
+     "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL\\Presolve_Inputs\\LC2_presolve_ds.dat",
+     "08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC2_presolve_ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15522502,
+    "paths": [
+     "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL\\Presolve_Inputs\\LC1_presolve_ds.dat",
+     "08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC1_presolve_ds.dat"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 15521153,
+    "paths": [
+     "08_Structural_Analysis\\Workbench\\probe9\\probe10_T3_rel0.1_Ignore_ds.dat",
+     "08_Structural_Analysis\\Workbench\\probe9\\probe9_P2_Bucket_ShapeFn_Nearest_ds.dat"
+    ]
+   },
+   {
+    "n": 7,
+    "bytes": 2427848,
+    "paths": [
+     "07_Thermal_Analysis\\Temperature_Source\\EnSight\\solid_domain_T.geo",
+     "07_Thermal_Analysis\\Temperature_Source\\Probe\\probe_solid_ensight_gold.geo",
+     "10_Parametric_Study\\CFD_Cases\\C00_PIPELINE_CHECK\\EnSight\\solid_domain_T.geo",
+     "10_Parametric_Study\\CFD_Cases\\Q01_LOW\\EnSight\\solid_domain_T.geo",
+     "10_Parametric_Study\\CFD_Cases\\Q03_HIGH\\EnSight\\solid_domain_T.geo",
+     "10_Parametric_Study\\CFD_Cases\\V01_LOW\\EnSight\\solid_domain_T.geo",
+     "10_Parametric_Study\\CFD_Cases\\V03_HIGH\\EnSight\\solid_domain_T.geo"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 13372223,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_C_files\\dp0\\SYS-2\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\C\\Solver_Output\\LC1\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 13372223,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_C_files\\dp0\\SYS-3\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\C\\Solver_Output\\LC2\\s7b_nodal.csv"
+    ]
+   },
+   {
+    "n": 2,
+    "bytes": 13372223,
+    "paths": [
+     "08_Structural_Analysis\\Mesh_Study\\Projects\\MS8B_C_files\\dp0\\SYS-4\\MECH\\s7b_nodal.csv",
+     "08_Structural_Analysis\\Mesh_Study\\Variants\\C\\Solver_Output\\LC2P\\s7b_nodal.csv"
+    ]
+   }
+  ]
+ },
+ "superseded_or_archived": {
+  "02_Engineering_Calculations\\section1_sizing": 6,
+  "03_CAD_Geometry\\Geometry_Check\\probe.txt": 1,
+  "03_CAD_Geometry\\Scripts\\probe.py": 1,
+  "05_Meshing\\Mesh_Quality\\SUPERSEDED_preflip_fluent_check.txt": 1,
+  "06_Fluent_CFD\\Journals\\probe3.py": 1,
+  "06_Fluent_CFD\\Journals\\probe_backflow.py": 1,
+  "06_Fluent_CFD\\Journals\\probe_py.py": 1,
+  "06_Fluent_CFD\\Journals\\run_probe.ps1": 1,
+  "06_Fluent_CFD\\Logs\\probe3_driver.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe3_dump.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe3_stderr.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe3_stdout.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe_bf_driver.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe_bf_stderr.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe_bf_stdout.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe_py_stderr.txt": 1,
+  "06_Fluent_CFD\\Logs\\probe_py_stdout.txt": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Audit\\probe_state_after_replace.json": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Audit\\probe_state_diff.json": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Audit\\probe_state_medium_case.json": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Audit\\probe_zones.json": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Journals\\probe_replace.py": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Logs\\probe_driver.txt": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Logs\\probe_log.txt": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Logs\\probe_stderr.txt": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Logs\\probe_stdout.txt": 1,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Logs\\probe_transcript.trn": 1,
+  "07_Thermal_Analysis\\Mapping\\fluent_solid_temperature_pointcloud.csv": 1,
+  "07_Thermal_Analysis\\Mapping\\pointcloud_source_tags.csv": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Journals\\probe_fluent_export_api.py": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Journals\\probe_fluent_mapdl_export.py": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Journals\\probe_fluent_volume_export.py": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_export_api_driver.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_export_api_stderr.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_export_api_stdout.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_mapdl_export_driver.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_mapdl_export_stderr.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_mapdl_export_stdout.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_volume_export_driver.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_volume_export_stderr.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Logs\\probe_volume_export_stdout.txt": 1,
+  "07_Thermal_Analysis\\Temperature_Source\\Probe": 9,
+  "07_Thermal_Analysis\\Validation\\rejected_methods_evidence.json": 1,
+  "07_Thermal_Analysis\\Validation\\rejected_methods_evidence.py": 1,
+  "08_Structural_Analysis\\Audits\\Gate_Run1_FAIL": 15,
+  "08_Structural_Analysis\\Audits\\mech_zoom_images_7B_log_run1_camera_attr_fail.txt": 1,
+  "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run1_FAIL": 12,
+  "08_Structural_Analysis\\Buckling\\Audits\\Gate_Run2_FAIL": 12,
+  "08_Structural_Analysis\\Buckling\\Audits\\Run3_STOPPED_at_images": 33,
+  "08_Structural_Analysis\\Licence_Check\\aborted_cube_probe_186_30": 22,
+  "08_Structural_Analysis\\Licence_Check\\launch_licence_probe.ps1": 1,
+  "08_Structural_Analysis\\Licence_Check\\licence_probe.inp": 1,
+  "08_Structural_Analysis\\Licence_Check\\probe_186_4x1290": 22,
+  "08_Structural_Analysis\\Licence_Check\\probe_186_4x1421": 22,
+  "08_Structural_Analysis\\Licence_Check\\probe_186_4x1422": 8,
+  "08_Structural_Analysis\\Licence_Check\\probe_186_4x1555": 8,
+  "08_Structural_Analysis\\Licence_Check\\probe_285_4x1500": 11,
+  "08_Structural_Analysis\\Licence_Check\\probe_driver.txt": 1,
+  "08_Structural_Analysis\\Licence_Check\\run_licence_probe.ps1": 1,
+  "08_Structural_Analysis\\Licence_Check\\tetprobe_285_4x400": 8,
+  "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run1": 6,
+  "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run2": 3,
+  "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run3": 6,
+  "08_Structural_Analysis\\Mechanical_Setup\\Superseded_run4": 2,
+  "08_Structural_Analysis\\Mesh_Study\\Post\\doc_src\\BUCKLING_MESH_COMPARISON.src.md": 1,
+  "08_Structural_Analysis\\Mesh_Study\\Post\\doc_src\\STRUCTURAL_MESH_COMPARISON.src.md": 1,
+  "08_Structural_Analysis\\Workbench\\Audit\\production_project_files_before_probe11.json": 1,
+  "08_Structural_Analysis\\Workbench\\Logs\\Superseded_run1": 4,
+  "08_Structural_Analysis\\Workbench\\Logs\\Superseded_run2": 4,
+  "08_Structural_Analysis\\Workbench\\Logs\\Superseded_run3": 4,
+  "08_Structural_Analysis\\Workbench\\Logs\\Superseded_run4": 4,
+  "08_Structural_Analysis\\Workbench\\Logs\\mech_probe11_states_log.txt": 1,
+  "08_Structural_Analysis\\Workbench\\Logs\\wb_probe11_driver.txt": 1,
+  "08_Structural_Analysis\\Workbench\\Logs\\wb_probe11_states_log.txt": 1,
+  "08_Structural_Analysis\\Workbench\\Logs\\wb_probe11_stderr.txt": 1,
+  "08_Structural_Analysis\\Workbench\\Logs\\wb_probe11_stdout.txt": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe10.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe11_states.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe2.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe3.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe4.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe6.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe7.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe8.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\mech_probe9.py": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe10.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe11_states.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe2.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe3.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe4.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe5.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe6.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe7.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe8.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\Scripts\\wb_probe9.wbjn": 1,
+  "08_Structural_Analysis\\Workbench\\probe": 11,
+  "08_Structural_Analysis\\Workbench\\probe2": 49,
+  "08_Structural_Analysis\\Workbench\\probe5": 10,
+  "08_Structural_Analysis\\Workbench\\probe6": 18,
+  "08_Structural_Analysis\\Workbench\\probe7": 16,
+  "08_Structural_Analysis\\Workbench\\probe9": 35,
+  "10_Parametric_Study\\CFD_Cases\\Journals\\Archive": 6,
+  "10_Parametric_Study\\Results\\Verification_9B2\\Moved_from_08": 2,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run1_C00_FAIL_json": 7,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run1_S3_deck_FAIL_import": 9,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run1_T01_FAIL_stale_ED": 14,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run2_C00_before_setup_refresh": 37,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run2_S3_deck_FAIL_import": 9,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run3_C00_FAIL_bitwise_criterion": 13,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run3_S3_deck_FAIL_import": 9,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_ALL_interrupted_by_shutdown": 74,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run4_S3_deck_FAIL_import": 9,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run5_S3_deck_FAIL_import": 9,
+  "10_Parametric_Study\\Structural_Cases\\Audits\\Run6_S3_deck_FAIL_gate_CONTA174": 13,
+  "10_Parametric_Study\\Structural_Cases\\Probe": 46,
+  "10_Parametric_Study\\Structural_Cases\\S2_REEXTRACT\\Run1_shared_session": 14,
+  "Claude outputs": 12
+ },
+ "images_per_folder": {
+  "01_Requirements": 1,
+  "02_Engineering_Calculations\\calculation_plots": 6,
+  "03_CAD_Geometry\\Drawings": 2,
+  "03_CAD_Geometry\\Screenshots": 9,
+  "05_Meshing\\Mesh_Independence\\Coarse": 2,
+  "05_Meshing\\Screenshots": 12,
+  "06_Fluent_CFD\\Diagnostics\\F029_Isothermal\\Figures": 1,
+  "06_Fluent_CFD\\Figures": 17,
+  "06_Fluent_CFD\\Mesh_Independence\\Coarse\\Figures": 10,
+  "06_Fluent_CFD\\Mesh_Independence\\Fine\\Figures": 10,
+  "06_Fluent_CFD\\Test_Run": 2,
+  "07_Thermal_Analysis\\Figures": 5,
+  "08_Structural_Analysis\\Buckling\\figures": 4,
+  "08_Structural_Analysis\\Buckling\\figures\\Mechanical": 32,
+  "08_Structural_Analysis\\Figures": 6,
+  "08_Structural_Analysis\\Figures\\Mechanical": 86,
+  "08_Structural_Analysis\\Figures\\Mechanical\\Zoom": 11,
+  "08_Structural_Analysis\\Mesh_Study\\figures": 9,
+  "08_Structural_Analysis\\Mesh_Study\\figures\\Mechanical": 40,
+  "09_Mesh_Independence\\Plots": 11,
+  "10_Parametric_Study\\Results\\Figures": 15,
+  "10_Parametric_Study\\Structural_Cases\\C00_PIPELINE_CHECK\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\M01_T01_STRUCT_NR5\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\M02_T03_STRUCT_NR5\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\Q01_LOW\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\Q03_HIGH\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\S3_LC2_INTERMEDIATE\\Figures": 3,
+  "10_Parametric_Study\\Structural_Cases\\T01_THIN\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\T03_THICK\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\V01_LOW\\Figures": 6,
+  "10_Parametric_Study\\Structural_Cases\\V03_HIGH\\Figures": 6,
+  "Claude outputs": 5
+ },
+ "files_named_screenshot": []
+}

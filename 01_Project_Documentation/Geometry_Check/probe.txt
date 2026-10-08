@@ -1,0 +1,22 @@
+SCRIPT STARTED OK
+API helper MM(10) = 0.01
+GetRootPart OK, bodies=0
+ViewHelper             YES
+SketchCircle           YES
+ExtrudeFaces           YES
+Body                   YES
+Frame                  YES
+CurveSegment           YES
+NamedSelection         YES
+DocumentSave           YES
+Selection              YES
+FaceSelection          YES
+BodySelection          YES
+ComponentHelper        YES
+Point2D                YES
+Plane                  YES
+InteractionMode        YES
+ExtrudeFaceOptions     YES
+ExtrudeType            YES
+Window                 YES
+WindowExportFormat     not-in-globals

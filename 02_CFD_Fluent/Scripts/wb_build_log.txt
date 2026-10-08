@@ -1,0 +1,10 @@
+Geometry system 'Geom' created and refreshed
+Mesh system 'SYS' created with shared geometry
+mesh component refreshed
+FLUENT system 'FLU' linked from Mesh
+project saved: True
+--- opening Meshing to verify transferred entities ---
+meshing editor opened
+SendCommand issued
+editor closed; ns_dump written: True
+=== WB BUILD DONE ===

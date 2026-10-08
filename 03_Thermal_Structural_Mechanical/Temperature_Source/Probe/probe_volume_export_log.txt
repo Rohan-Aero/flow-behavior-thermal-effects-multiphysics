@@ -1,0 +1,38 @@
+OK    read case                                              
+OK    read data                                              
+tecplot args: ['file_name', 'surfaces', 'quantities']
+   arg file_name allowed=None
+   arg surfaces allowed=['fluid_solid_interface-shadow', 'solid_outlet_end', 'solid_inlet_end', 'heated_outer_wall', 'fluid_solid_interface', 'fluid_outlet', 'fluid_inlet']
+   arg quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z
+tecplot call kwargs {'file_name': 'Probe/probe_solid_tecplot', 'quantities': ['temperature']}
+OK    export tecplot                                         
+vtk args: ['file_name', 'scope', 'cell_zones', 'surfaces', 'cell_centered', 'binary_format', 'point_cloud', 'quantities']
+   arg file_name allowed=None
+   arg scope allowed=['volume-select', 'surface-select']
+   arg cell_zones allowed=[]
+   arg surfaces allowed=[]
+   arg cell_centered allowed=None
+   arg binary_format allowed=None
+   arg point_cloud allowed=None
+   arg quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z
+vtk call kwargs {'file_name': 'Probe/probe_solid_vtk', 'quantities': ['temperature']}
+warn  export vtk                                             RuntimeError: No cell zones selected to export.
+
+Error Object: #f
+ensight_gold args: ['file_name', 'quantities', 'binary_format', 'cellzones', 'interior_zone_surfaces', 'cell_centered']
+   arg file_name allowed=None
+   arg quantities allowed=['pressure', 'pressure-coefficient', 'dynamic-pressure', 'absolute-pressure', 'total-pressure', 'rel-total-pressure', 'density', 'density-all', 'schlieren', 'rescaled-schlieren', 'rescaled-streamwise-schlieren', 'logarithmic-streamwise-schlieren', 'velocity-magnitude', 'x-velocity', 'y-velocity', 'z
+   arg binary_format allowed=None
+   arg cellzones allowed=['fluid_domain', 'solid_domain']
+   arg interior_zone_surfaces allowed=None
+   arg cell_centered allowed=None
+ensight_gold call kwargs {'file_name': 'Probe/probe_solid_ensight_gold', 'quantities': ['temperature'], 'cellzones': ['solid_domain']}
+OK    export ensight_gold                                    
+Probe file probe_export_api_log.txt 1392
+Probe file probe_mapdl_export_log.txt 321
+Probe file probe_solid_ensight_gold.encas 327
+Probe file probe_solid_ensight_gold.geo 2427848
+Probe file probe_solid_ensight_gold.scl1 260792
+Probe file probe_solid_ensight_gold.vel 779592
+Probe file probe_solid_ensight_gold.xml 882
+Probe file probe_solid_tecplot.plt 7808028

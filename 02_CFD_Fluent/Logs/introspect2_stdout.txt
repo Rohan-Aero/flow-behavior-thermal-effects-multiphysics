@@ -1,0 +1,881 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\06_Fluent_CFD\\fluent-20260919-193630-5380.trn".
+Auto-Transcript Start Time:  19:36:30, 19 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:59390 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n0    <HOST>     1/12  Windows-x64  9120   12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  13144  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\06_Fluent_CFD\\cleanup-fluent-<HOST>-13144.bat
+
+<HOST> is already loaded (49.58).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+>>> import traceback
+>>> OUT = []
+>>> def say(*a):
+    s = " ".join(str(x) for x in a)
+    OUT.append(s)
+    print("INTRO2 " + s)
+>>> def av(path):
+    try:
+        o = eval(path)
+    except Exception as e:
+        say("%-62s UNAVAILABLE %s" % (path, e))
+        return
+    try:
+        say("%-62s allowed=%s" % (path, o.allowed_values()))
+    except Exception:
+        try:
+            say("%-62s children=%s" % (path, list(getattr(o, "child_names", []))))
+        except Exception as e:
+            say("%-62s no allowed/children (%s)" % (path, e))
+>>> def kids(path):
+    try:
+        o = eval(path)
+        say("%-62s children=%s" % (path, list(getattr(o, "child_names", []))))
+        cm = list(getattr(o, "command_names", []) or [])
+        if cm:
+            say("%-62s commands=%s" % (path, cm))
+    except Exception as e:
+        say("%-62s UNAVAILABLE %s" % (path, e))
+>>> solver.file.read_case(file_name="../05_Meshing/Mesh_Medium/medium.msh")
+
+Reading "../05_Meshing/Mesh_Medium/medium.msh"...
+
+Buffering for file scan...
+
+  163891 nodes.
+  116640 hexahedral cells, zone  2.
+   43200 hexahedral cells, zone  3.
+  346464 quadrilateral interior faces, zone  4.
+  124800 quadrilateral interior faces, zone  5.
+    1296 quadrilateral velocity-inlet faces, zone  6.
+    1296 quadrilateral pressure-outlet faces, zone  7.
+    4320 quadrilateral wall faces, zone  8.
+    4320 quadrilateral wall faces, zone  9.
+     480 quadrilateral wall faces, zone 10.
+     480 quadrilateral wall faces, zone 11.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+>>> say("mesh read")
+INTRO2 mesh read
+>>> for p in [
+    "solver.setup.general.solver.type",
+    "solver.setup.general.solver.time",
+    "solver.setup.general.solver.velocity_formulation",
+    "solver.setup.models.viscous.model",
+    "solver.setup.models.viscous.k_omega_model",
+    "solver.setup.models.viscous.near_wall_treatment",
+    "solver.setup.materials.fluid['air'].density.option",
+    "solver.setup.materials.fluid['air'].viscosity.option",
+    "solver.setup.materials.fluid['air'].specific_heat.option",
+    "solver.setup.materials.fluid['air'].thermal_conductivity.option",
+    "solver.setup.boundary_conditions.wall['heated_outer_wall'].thermal.thermal_condition",
+    "solver.setup.boundary_conditions.wall['fluid_solid_interface'].thermal.thermal_condition",
+    "solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].turbulence.turbulence_specification",
+    "solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].momentum.velocity_specification_method",
+    "solver.setup.boundary_conditions.pressure_outlet['fluid_outlet'].turbulence.turbulence_specification",
+    "solver.setup.cell_zone_conditions.fluid['fluid_domain'].general",
+    "solver.setup.cell_zone_conditions.solid['solid_domain'].general",
+]:
+    av(p)
+INTRO2 solver.setup.general.solver.type                               allowed=['pressure-based', 'density-based-implicit', 'density-based-explicit']
+INTRO2 solver.setup.general.solver.time                               allowed=['steady', 'transient']
+INTRO2 solver.setup.general.solver.velocity_formulation               allowed=['absolute', 'relative']
+INTRO2 solver.setup.models.viscous.model                              allowed=['inviscid', 'laminar', 'k-epsilon', 'k-omega', 'mixing-length', 'spalart-allmaras', 'k-kl-w', 'transition-sst', 'reynolds-stress', 'scale-adaptive-simulation', 'detached-eddy-simulation', 'large-eddy-simulation']
+INTRO2 solver.setup.models.viscous.k_omega_model                      allowed=['standard', 'geko', 'bsl', 'sst', 'wj-bsl-earsm']
+INTRO2 solver.setup.models.viscous.near_wall_treatment                children=['wall_treatment', 'user_defined', 'enhanced_wall_treatment_options', 'wall_omega_treatment', 'use_second_cell_off_a_wall_quantities']
+INTRO2 solver.setup.materials.fluid['air'].density.option             allowed=['value', 'ideal-gas', 'incompressible-ideal-gas', 'rgp-table', 'real-gas-soave-redlich-kwong', 'real-gas-peng-robinson', 'real-gas-aungier-redlich-kwong', 'real-gas-redlich-kwong', 'real-gas-nist', 'boussinesq', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'compressible-liquid']
+INTRO2 solver.setup.materials.fluid['air'].viscosity.option           allowed=['value', 'piecewise-linear', 'piecewise-polynomial', 'polynomial', 'power-law', 'sutherland', 'kinetic-theory']
+INTRO2 solver.setup.materials.fluid['air'].specific_heat.option       UNAVAILABLE '<session>.settings.setup.materials.fluid["air"].specific_heat' is currently inactive.
+INTRO2 solver.setup.materials.fluid['air'].thermal_conductivity.option UNAVAILABLE '<session>.settings.setup.materials.fluid["air"].thermal_conductivity' is currently inactive.
+INTRO2 solver.setup.boundary_conditions.wall['heated_outer_wall'].thermal.thermal_condition UNAVAILABLE '<session>.settings.setup.boundary_conditions.wall["heated_outer_wall"].thermal' is currently inactive.
+INTRO2 solver.setup.boundary_conditions.wall['fluid_solid_interface'].thermal.thermal_condition UNAVAILABLE '<session>.settings.setup.boundary_conditions.wall["fluid_solid_interface"].thermal' is currently inactive.
+INTRO2 solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].turbulence.turbulence_specification allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+INTRO2 solver.setup.boundary_conditions.velocity_inlet['fluid_inlet'].momentum.velocity_specification_method allowed=['Magnitude and Direction', 'Components', 'Magnitude, Normal to Boundary']
+INTRO2 solver.setup.boundary_conditions.pressure_outlet['fluid_outlet'].turbulence.turbulence_specification allowed=['K and Omega', 'Intensity and Length Scale', 'Intensity and Viscosity Ratio', 'Intensity and Hydraulic Diameter']
+INTRO2 solver.setup.cell_zone_conditions.fluid['fluid_domain'].general children=['material', 'participates_in_radiation', 'glass', 'laminar', 'vapor_phase_realgas', 'contact_property']
+INTRO2 solver.setup.cell_zone_conditions.solid['solid_domain'].general children=['material', 'participates_in_radiation']
+>>> for p in [
+    "solver.setup.cell_zone_conditions.fluid['fluid_domain'].general",
+    "solver.setup.cell_zone_conditions.solid['solid_domain'].general",
+    "solver.setup.materials.fluid['air'].specific_heat",
+    "solver.setup.materials.fluid['air'].thermal_conductivity",
+    "solver.setup.materials.fluid['air'].density.piecewise_linear",
+    "solver.setup.solution" if False else "solver.solution.methods.p_v_coupling",
+    "solver.solution.methods.spatial_discretization",
+    "solver.solution.monitor.residual",
+    "solver.solution.monitor.report_files",
+    "solver.solution.monitor.report_plots",
+    "solver.solution.report_definitions.surface",
+    "solver.solution.report_definitions.volume",
+    "solver.solution.report_definitions.flux",
+    "solver.solution.initialization.defaults",
+    "solver.solution.run_calculation.parameters",
+    "solver.results.surfaces",
+    "solver.file",
+    "solver.mesh",
+    "solver.setup.reference_values",
+]:
+    kids(p)
+INTRO2 solver.setup.cell_zone_conditions.fluid['fluid_domain'].general children=['material', 'participates_in_radiation', 'glass', 'laminar', 'vapor_phase_realgas', 'contact_property']
+INTRO2 solver.setup.cell_zone_conditions.solid['solid_domain'].general children=['material', 'participates_in_radiation']
+INTRO2 solver.setup.materials.fluid['air'].specific_heat              children=['option', 'value', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'nasa_9_piecewise_polynomial', 'user_defined_function', 'rgp_table', 'real_gas_nist']
+INTRO2 solver.setup.materials.fluid['air'].thermal_conductivity       children=['option', 'value', 'piecewise_linear', 'piecewise_polynomial', 'polynomial', 'gupta_curve_fit_conductivity', 'user_defined_function', 'rgp_table', 'real_gas_nist']
+INTRO2 solver.setup.materials.fluid['air'].density.piecewise_linear   children=['function_of', 'data_points']
+INTRO2 solver.solution.methods.p_v_coupling                           children=['flow_scheme', 'skewness_correction_itr_count', 'neighbor_correction_itr_count', 'skewness_neighbor_coupling', 'coupled_form', 'solve_n_phase', 'flux_type', 'flux_auto_select']
+INTRO2 solver.solution.methods.spatial_discretization                 children=['gradient_scheme', 'discretization_scheme']
+INTRO2 solver.solution.monitor.residual                               children=['equations', 'options', 'axes', 'curves']
+INTRO2 solver.solution.monitor.residual                               commands=['reset', 'renormalize', 'plot', 'write']
+INTRO2 solver.solution.monitor.report_files                           children=[]
+INTRO2 solver.solution.monitor.report_files                           commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy', 'delete_all', 'clear_data']
+INTRO2 solver.solution.monitor.report_plots                           children=[]
+INTRO2 solver.solution.monitor.report_plots                           commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy', 'delete_all']
+INTRO2 solver.solution.report_definitions.surface                     children=[]
+INTRO2 solver.solution.report_definitions.surface                     commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+INTRO2 solver.solution.report_definitions.volume                      children=[]
+INTRO2 solver.solution.report_definitions.volume                      commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+INTRO2 solver.solution.report_definitions.flux                        children=[]
+INTRO2 solver.solution.report_definitions.flux                        commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+INTRO2 solver.solution.initialization.defaults                        children=[]
+INTRO2 solver.solution.initialization.defaults                        commands=['create', 'delete', 'rename', 'list_1', 'list_properties_1', 'make_a_copy']
+INTRO2 solver.solution.run_calculation.parameters                     children=['period', 'frequency', 'time_steps_per_period', 'time_step_count', 'error_tolerance', 'incremental_time', 'total_time_step_count', 'total_time', 'time_step_size', 'total_periods', 'global_courant_number', 'courant_number', 'fixed_time_step_size', 'initial_time_step_size', 'iter_count', 'max_iter_per_time_step', 'reporting_interval', 'profile_update_interval', 'update_interval', 'adaptive_time_stepping']
+INTRO2 solver.results.surfaces                                        children=['point_surface', 'line_surface', 'rake_surface', 'plane_surface', 'iso_surface', 'iso_clip', 'zone_surface', 'partition_surface', 'transform_surface', 'imprint_surface', 'plane_slice', 'sphere_slice', 'quadric_surface', 'surface_cells', 'expression_volume', 'group_surface']
+INTRO2 solver.results.surfaces                                        commands=['delete', 'create_multiple_zone_surfaces', 'create_multiple_iso_surfaces', 'create_multiple_plane_surfaces', 'create_group_surfaces', 'ungroup_surfaces', 'set_rendering_priority', 'reset_zone_surfaces', 'split_surface', 'external_surface']
+INTRO2 solver.file                                                    children=['single_precision_coordinates', 'binary_legacy_files', 'cff_files', 'auto_merge_zones', 'convert_hanging_nodes_during_read', 'async_optimize', 'write_pdat', 'export', 'import_', 'parametric_project', 'cffio_options', 'batch_options', 'interpolate', 'table_file_manager']
+INTRO2 solver.file                                                    commands=['define_macro', 'execute_macro', 'read_macros', 'read', 'read_case', 'read_case_data', 'read_case_lightweight', 'read_data', 'read_mesh', 'read_surface_mesh', 'read_journal', 'start_journal', 'start_python_journal', 'stop_journal', 'replace_mesh', 'write', 'write_case', 'write_data', 'write_case_data', 'read_settings', 'read_field_functions', 'read_injections', 'read_profile', 'read_pdf', 'read_isat_table', 'show_configuration', 'stop_macro', 'start_transcript', 'stop_transcript', 'data_file_options', 'beta_settings']
+INTRO2 solver.mesh                                                    children=['adapt', 'geometry', 'anisotropic_adaption', 'check_before_solve', 'check_verbosity', 'enhanced_orthogonal_quality', 'matching_tolerance', 'modify_zones', 'show_periodic_shadow_zones', 'reorder', 'repair_improve', 'surface_mesh', 'polyhedra', 'wall_distance_method']
+INTRO2 solver.mesh                                                    commands=['adjacency', 'check', 'memory_usage', 'mesh_info', 'quality', 'rotate', 'scale', 'size_info', 'redistribute_boundary_layer', 'swap_mesh_faces', 'smooth_mesh', 'replace', 'translate']
+INTRO2 solver.setup.reference_values                                  children=['area', 'depth', 'density', 'enthalpy', 'length', 'pressure', 'temperature', 'yplus', 'velocity', 'viscosity', 'ratio_of_specific_heats', 'zone', 'volume']
+INTRO2 solver.setup.reference_values                                  commands=['compute', 'list_values']
+>>> for p in [
+    "solver.solution.methods.p_v_coupling.flow_scheme",
+    "solver.solution.methods.spatial_discretization.gradient_scheme",
+    "solver.solution.methods.spatial_discretization.pressure_scheme",
+    "solver.solution.methods.spatial_discretization.mom_scheme",
+    "solver.solution.methods.spatial_discretization.energy_scheme",
+    "solver.solution.methods.spatial_discretization.k_scheme",
+    "solver.solution.methods.spatial_discretization.omega_scheme",
+    "solver.solution.initialization.initialization_type",
+]:
+    av(p)
+INTRO2 solver.solution.methods.p_v_coupling.flow_scheme               allowed=['SIMPLE', 'SIMPLEC', 'PISO', 'Coupled']
+INTRO2 solver.solution.methods.spatial_discretization.gradient_scheme allowed=['green-gauss-node-based', 'green-gauss-cell-based', 'least-square-cell-based']
+INTRO2 solver.solution.methods.spatial_discretization.pressure_scheme UNAVAILABLE 'spatial_discretization' object has no attribute 'pressure_scheme'.
+The most similar names are: gradient_scheme
+INTRO2 solver.solution.methods.spatial_discretization.mom_scheme      UNAVAILABLE 'spatial_discretization' object has no attribute 'mom_scheme'.
+The most similar names are: gradient_scheme
+INTRO2 solver.solution.methods.spatial_discretization.energy_scheme   UNAVAILABLE 'spatial_discretization' object has no attribute 'energy_scheme'.
+The most similar names are: gradient_scheme
+INTRO2 solver.solution.methods.spatial_discretization.k_scheme        UNAVAILABLE 'spatial_discretization' object has no attribute 'k_scheme'.
+The most similar names are: gradient_scheme
+INTRO2 solver.solution.methods.spatial_discretization.omega_scheme    UNAVAILABLE 'spatial_discretization' object has no attribute 'omega_scheme'.
+The most similar names are: gradient_scheme
+INTRO2 solver.solution.initialization.initialization_type             allowed=['standard', 'hybrid']
+>>> try:
+    say("residual children: %s" % list(solver.solution.monitor.residual.child_names))
+    say("residual equations: %s" % list(solver.solution.monitor.residual.equations.get_object_names()))
+except Exception:
+    say("residual probe:\n" + traceback.format_exc())
+INTRO2 residual children: ['equations', 'options', 'axes', 'curves']
+INTRO2 residual equations: ['continuity', 'x-velocity', 'y-velocity', 'z-velocity', 'k', 'omega']
+>>> try:
+    say("flux report children: %s" % list(solver.solution.report_definitions.flux.child_object_type.child_names))
+except Exception as e:
+    say("flux child_object_type failed: %s" % e)
+INTRO2 flux report children: ['name', 'report_type', 'boundaries', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'phase', 'output_parameter', 'create_report_file', 'create_report_plot']
+>>> try:
+    say("surface report children: %s" % list(solver.solution.report_definitions.surface.child_object_type.child_names))
+except Exception as e:
+    say("surface child_object_type failed: %s" % e)
+INTRO2 surface report children: ['name', 'report_type', 'field', 'surface_names', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'custom_vector', 'phase', 'output_parameter', 'create_report_file', 'create_report_plot']
+>>> try:
+    say("volume report children: %s" % list(solver.solution.report_definitions.volume.child_object_type.child_names))
+except Exception as e:
+    say("volume child_object_type failed: %s" % e)
+INTRO2 volume report children: ['name', 'report_type', 'field', 'cell_zones', 'locations', 'per_selection', 'average_over', 'retain_instantaneous_values', 'phase', 'output_parameter', 'create_report_file', 'create_report_plot']
+>>> try:
+    say("report_files children: %s" % list(solver.solution.monitor.report_files.child_object_type.child_names))
+except Exception as e:
+    say("report_files child_object_type failed: %s" % e)
+INTRO2 report_files children: ['name', 'file_name', 'frequency_of', 'frequency', 'flow_frequency', 'itr_index', 'run_index', 'report_defs', 'print', 'active', 'write_instantaneous_values']
+>>> try:
+    say("air MW = %s" % solver.setup.materials.fluid['air'].molecular_weight.value())
+except Exception as e:
+    say("MW read failed: %s" % e)
+INTRO2 MW read failed: '<session>.settings.setup.materials.fluid["air"].molecular_weight' is currently inactive.
+>>> try:
+    say("database list (solid, inconel search):")
+    say(str(solver.setup.materials.database.list_materials(type="solid")))
+except Exception as e:
+    say("db list failed: %s" % e)
+INTRO2 database list (solid, inconel search):
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\PyFluentCore\ansys\fluent\core\solver\flobject.py:1735: PyFluentUserWarning: Unknown keyword 'type' for command '<session>.settings.setup.materials.database.list_materials'. It will be ignored.
+  warnings.warn(
+Listing "fluid" materials from database "fluent-database"...
+acetone (c3h6o)
+acetylene (c2h2)
+air
+aluminum-trihydride-dimer (al2h6)
+trimethyl-aluminum-dimer (al2me6)
+aluminum-arsenide (alas)
+aluminum-hydride (alh)
+aluminum-dihydride (alh2)
+aluminum-trihydride (alh3)
+methyl-aluminum (alme)
+dimethyl-aluminum (alme2)
+trimethyl-aluminum (alme3)
+ammonia-liquid (nh3<l>)
+ammonia-vapor (nh3)
+anthracite-volatiles (an_vol)
+argon+ (ar+)
+argon (ar)
+argon-liquid (ar<l>)
+ammelide-solid (ammd_c3h4n4o2<s>)
+ammelide-vapor (ammd_c3h4n4o2)
+aluminum-solid (al<s>)
+arsenic (as)
+diarsenic (as2)
+triarsenic (as3)
+tetraarsenic (as4)
+arsenic-methyl-aluminum (asalme)
+arsenic-dimethyl-aluminum (asalme2)
+arsenic-hydride (ash)
+arsenic-dihydride (ash2)
+arsenic-trihydride (ash3)
+methyl-gallium-arsenide (asgame)
+dimethyl-gallium-arsenide (asgame2)
+methyl-gallium-arsenide-hydride (asgameh)
+methyl-arsenic (asme)
+dimethyl-arsenic (asme2)
+trimethyl-arsenic (asme3)
+atomic-hydrogen (h)
+atomic-oxygen (o)
+benzene-liquid (c6h6<l>)
+benzene-vapor (c6h6)
+calcium-carbonate (caco3)
+calcium-oxide (cao)
+calcium-sulfide (cas)
+calcium-sulfate (caso4)
+carbon+ (c+)
+carbon- (c-)
+dicarbon (c2)
+dicarbon+ (c2+)
+dicarbon- (c2-)
+dicarbon-trichloride (c2cl3)
+pentachloro-ethyl (c2cl5)
+hexachloro-ethane (c2cl6)
+hexafluoro-ethane (c2f6)
+ethynyl-radical (c2h)
+vinyl-radical (c2h3)
+ethyl-radical (c2h5)
+chloro-acetylene (c2hcl)
+pentachloro-ethane (c2hcl5)
+biuret-liquid (biu_c2h5n3o2<l>)
+biuret-solid (biu_c2h5n3o2<s>)
+cyano-methylidene (c2n)
+cyanogen (c2n2)
+dicarbon-monoxide (c2o)
+carbon-trimer (c3)
+cyclopropenylidene (c3h2)
+propargyl-radical (c3h3)
+cyanuric-acid-solid (cya_c3h3n3o3<s>)
+allene (c3h4)
+cyclopropene (c3h4c)
+propyne (c3h4p)
+carbon-suboxide (c3o2)
+tetracarbon (c4)
+butadiynyl-radical (c4h)
+diacetylene (c4h2)
+c4h6-2-butyne (c4h6)
+c4h8-1-butene (c4h8)
+carbon-pentamer (c5)
+c5h (c5h)
+c5h2 (c5h2)
+c5h3 (c5h3)
+cyclopentadiene (c5h6)
+hexatriynyl-radical (c6h)
+cyclohexene (c6h10)
+c6h3 (c6h3)
+phenyl-radical (c6h5)
+phenoxy-radical (c6h5o)
+phenol (c6h5oh)
+cyclohexadienyl-radical (c6h7)
+n-heptyl-radical (c7h15)
+octatetraynyl-radical (c8h)
+octatetrayne (c8h2)
+carbon (c)
+carbon-solid (c<s>)
+carbon-dioxide (co2)
+carbon-disulfide-vapor (cs2)
+carbon-monoxide (co)
+carbon-monoxide+ (co+)
+carbonyl-sulfide (cos)
+trioxy-methylene (<ch2o>3)
+dimethyl-silene (<ch3>2sich2)
+chloro-methylidene (ccl)
+dichloro-methylene (ccl2)
+trichloro-acetyl-radical (ccl2cclo)
+trichloro-acetic-acid (ccl2ccloh)
+trichloro-methyl-radical (ccl3)
+tetrachloro-athanal (ccl3cclo)
+trichloro-ethanal (ccl3cho)
+carbon-tetrachloride (ccl4)
+cclh2oo-1-chloro-peroxymethyl-radical (cclh2oo)
+methylidene-radical (ch)
+methylidene+ (ch+)
+triplet-methylene-radical (ch2)
+singlet-methylene-radical (ch2<s>)
+vinyl-chloride-radical (ch2ccl)
+vinylidene-chloride (ch2ccl2)
+ch2ccloh-2-chloro-ethyl-alcohol (ch2ccloh)
+vinyl-acetylene (ch2chcch)
+allyl-radical (ch2chch2)
+chloro-ethylene (ch2chcl)
+chloro-methyl-radical (ch2cl)
+methylene-chloride (ch2cl2)
+chloro-ethyl-radical (ch2clch2)
+chloro-acetaldehyde (ch2clcho)
+ketene (ch2co)
+difluoro-methane (ch2f2)
+vinoxy-radical (ch2hco)
+formaldehyde (ch2o)
+hydroxymethyl-radical (ch2oh)
+ch2ohccl2 (ch2ohccl2)
+ch2ohchcl (ch2ohchcl)
+chloro-silenyl-radical (ch2sicl)
+methylene-trichloro-silane (ch2sicl3)
+methylene-chloro-silane (ch2sih2cl)
+methylene-dichloro-silane (ch2sihcl2)
+methyl-radical (ch3)
+acetyl-chloride (ch3c<o>cl)
+ch3cc-1-propyn-1-yl-radical (ch3cc)
+ch3ccch2-2-butyn-3-yl-radical (ch3ccch2)
+ch3cch2-1-propen-2-yl-radical (ch3cch2)
+methyl-chloro-carbene (ch3ccl)
+acetyl-chloride (ch3cclo)
+ch3ch2cch-1-butyne (ch3ch2cch)
+chloro-ethane (ch3ch2cl)
+ethyl-oxide-radical (ch3ch2o)
+ch3chch-1-propen-1-yl-radical (ch3chch)
+ethylidene-chloride-radical (ch3chcl)
+ethylidene-chloride (ch3chcl2)
+ch3choh-1-hydroxy-ethyl-radical (ch3choh)
+methyl-chloride (ch3cl)
+vinoxy-radical (ch3co)
+methyl-fluoride (ch3f)
+acetaldehyde (ch3hco)
+nitroso-methyl (ch3no)
+nitro-methane (ch3no2)
+methoxy-radical (ch3o)
+dimethyl-ether (ch3och3)
+chloro-methanol (ch3ocl)
+methyl-nitrite (ch3ono)
+methyl-nitrate (ch3ono2)
+methyl-chloro-silylene (ch3sicl)
+methyl-silylidene-silane (ch3sih2sih)
+methyl-dichloro-silane (ch3sihcl2)
+chloro-methylene (chcl)
+dichloro-methyl-radical (chcl2)
+dichloro-methyl-chloroformate-radical (chcl2cclo)
+chloro-vinyl-radical (chclch)
+chclchoh-1-chloro-ethenol (chclchoh)
+chloro-hydroxy-methyl-radical (chcloh)
+chclohch2 (chclohch2)
+chclohchcl (chclohchcl)
+fluoro-methylene (chf)
+trifluoro-methane (chf3)
+chloro-silyne (chsicl)
+dichloro-methylidene-silene (chsicl2)
+trichloro-methylidene-silane (chsicl3)
+chloro-methylidene-silane (chsih2cl)
+chloro-methylidene-silene (chsihcl)
+dichloro-methylidene-silane (chsihcl2)
+chlorine (cl2)
+chloroform (chcl3)
+atomic-chlorine (cl)
+chloro-methyl-silene (cl<ch3>sich2)
+tetrachloro-ethylene (cl2cccl2)
+dichloro-acetyl-radical (cl2ccho)
+phosgene (cl2co)
+dichloro-hydroxy-methyl-radical (cl2coh)
+dichloro-methoxy-radical (cl2hco)
+dimethyl-dichloro-silane (cl2si<ch3>2)
+dichloro-methyl-methylidene-silane (cl2si<ch3>ch2)
+dichloro-silene (cl2sich2)
+dichloro-methyl-silyl-radical (cl2sich3)
+dichloro-disilane (cl2sisi)
+trichloro-disilenyl-radical (cl2sisicl)
+tetrachloro-disilene (cl2sisicl2)
+trichloro-methoxy-radical (cl3co)
+trichloro-methanol (cl3coh)
+methyl-trichloro-silane (cl3sich3)
+disilicon-trichloride (cl3sisi)
+trichloro-silylidene-silane (cl3sisicl)
+dichloro-acetylene (clcccl)
+chloro-ketyl-radical (clcco)
+chloro-methanol (clch2oh)
+carbonyl-chloride (clco)
+chloro-hydroxy-methylene (clcoh)
+dichloro-methoxy-radical (clh2co)
+formyl-chloride (clhco)
+chlorine-oxide (clo)
+dichlorine-monoxide (clocl)
+chlorine-dioxide (cloo)
+dimethyl-chloro-silyl-radical (clsi<ch3>2)
+dimethyl-methylidene-chloro-silane (clsi<ch3>2ch2)
+trimethyl-chloro-silane (clsi<ch3>3)
+methyl-chloro-silylene (clsich3)
+disilicon-chloride (clsisi)
+dichloro-silyne (clsisicl)
+cyanid-radical (cn)
+cyanide-radical+ (cn+)
+cyanide-radical- (cn-)
+methane-tetraylbis-amidogen (cn2)
+cnn (cnn)
+isocyanato-radical (cno)
+carbon-dioxide- (co2-)
+coal-hv-volatiles (hv_vol)
+coal-lv-volatiles (lv_vol)
+coal-mv-volatiles (mv_vol)
+carbon-sulfide (cs)
+chloro-silynyl-radical (csicl)
+dichloro-carbene-silene (csicl2)
+trichloro-carbyne-silane (csicl3)
+chloro-carbene-silane (csih2cl)
+chloro-carbene-silene (csihcl)
+dichloro-carbyne-silane (csihcl2)
+dioxane (dioxane)
+disilane (h3sisih3)
+disilicon-dihydride (si2h2)
+disilicon-trihydride (si2h3)
+diesel-1-fuel (c13h24<l>)
+diesel-liquid (c10h22<l>)
+diesel-vapor (c10h22)
+electron (e)
+engine-oil
+ethane (c2h6)
+ethylene (c2h4)
+ethyl-acetate (c4h8o2)
+ethyl-alcohol-liquid (c2h5oh<l>)
+ethyl-alcohol-vapor (c2h5oh)
+ethylene-glycol (c2h6o2)
+atomic-fluorine (f)
+difluoro-nitro-silane (f2sinh)
+trifluoro-nitro-silane (f3sin)
+fluorine (f2)
+dinitrogen-difluoride (fnnf)
+fluorine-nitrate (fno3)
+oxygen-monofluoride (fo)
+dioxygen-monofluoride (fo2)
+freon-12 (ccl2f2)
+fuel-oil-liquid (c19h30<l>)
+fluoro-silicon-nitride (fsin)
+fuel-oil-vapor (c19h30)
+gallium (ga)
+digallium-hexahydride (ga2h6)
+gallium-arsenide (gaas)
+gallium-arsenide-trimer-solid (gaas<3c>)
+gallium-arsenide-trimer-liquid (gaas<3l>)
+gallium-arsenide-pentamer-solid (gaas<5c>)
+gallium-arsenide-pentamer-liquid (gaas<5l>)
+ethyl-gallium (gaet)
+diethyl-gallium (gaet2)
+triethyl-gallium (gaet3)
+gallium-hudride (gah)
+gallium-dihydride (gah2)
+gallium-trihydride (gah3)
+methyl-gallium (game)
+dimethyl-gallium (game2)
+trimethyl-gallium (game3)
+gasoil-liquid (c16h29<l>)
+gasoil-vapor (c16h29)
+glycerin (c3h8o3)
+methyl-methylene-silane (h<ch3>sich2)
+atomic-hydrogen+ (h+)
+atomic-hydrogen- (h-)
+methyl-aluminum-dihydride (h2alme)
+methyl-arsenic-dihydride (h2asme)
+h2c4o (h2c4o)
+h2cccch-1-buten-3-yne-2-yl-radical (h2cccch)
+butatriene (h2cccch2)
+propargyl-radical (h2ccch)
+acetic-chloryl (h2ccclo)
+vinyl-dichloro-silane (h2cch<sicl2h>)
+hydroxy-ethyl-radical (h2cch2oh)
+h2ccho (h2ccho)
+vinyl-silylidene (h2cchsi)
+dichloro-vinyl-silane (h2cchsicl2h)
+vinyl-silylidene (h2cchsih)
+vinyl-silylene (h2cchsih2)
+vinyl-silane (h2cchsih3)
+methyl-chloro-silane (h2clsich3)
+n-methanyminyl (h2cn)
+h2cnch2 (h2cnch2)
+h2cnch2o (h2cnch2o)
+methyl-isocyanate (h2cncho)
+h2cnh (h2cnh)
+h2cnnho (h2cnnho)
+nitroso-methanimynyl (h2cnno)
+nitro-methanimynyl (h2cnno2)
+nitroso-methyl-radical (h2cno)
+nitro-methylene (h2cno2)
+h2cono (h2cono)
+ethyl-gallium-dihydride (h2gaet)
+methyl-gallium-dihydride (h2game)
+fluoride-nitride-dihydride (h2nf)
+nitrosamide (h2nno)
+h2no (h2no)
+hydroxylamine (h2noh)
+ice (h2o<s>)
+dimethyl-silane (h2si<ch3>2)
+methyl-methylene-silane (h2si<ch3>ch2)
+diamino-silane (h2si<nh2>2)
+carbene-silene (h2sic)
+athynyl-silenyl-radical (h2sicch)
+methylidene-silene (h2sich)
+methylene-silane (h2sich2)
+methyl-silyl-radical (h2sich3)
+silylene-amidogen (h2sin)
+silylene-aminine (h2sinh)
+amino-silylene (h2sinh2)
+h2sinh3 (h2sinh3)
+diselene (h2sisih2)
+triethyl-gallium-arsenic-trihydride (h3asgaet3)
+trimethyl-gallium-arsenic-trihydride (h3asgame3)
+h3conho (h3conho)
+carbene-silane (h3sic)
+ethynyl-silane (h3sicch)
+methylidene-silane (h3sich)
+methylene-silane (h3sich2)
+methyl-silane (h3sich3)
+nitro-silane (h3sin)
+nitrene-silane (h3sinh)
+silyl-silane (h3sisih)
+methyl-aluminum-hydride (halme)
+dimethyl-aluminum-hydride (halme2)
+methyl-aluminum-arsenic-hydride (hasalme)
+ethyl-gallium-arsenic-hydride (hasgaet)
+methylgallium-arsenic-hydride (hasgame)
+methylarsenic-hydride (hasme)
+dimethylarsenic-hydride (hasme2)
+hcccl (hcccl)
+hcchcch-1-butyn-3-enyl-radical (hcchcch)
+ketyl-radical (hcco)
+methanoic-acid (hccoh)
+dichloro-ethynyl-silane (hccsicl2h)
+hydrogen-chloride (hcl)
+dichloro-methyl-silane (hcl2sich3)
+chloro-acetic-chloryl (hclccclo)
+hclccho (hclccho)
+dimethyl-chloro-silane (hclsi<ch3>2)
+methyl-methylene-chloro-silane (hclsi<ch3>ch2)
+chloro-silene (hclsich2)
+chloro-methyl-silyl-radical (hclsich3)
+hclsisi (hclsisi)
+hydrogen-cyanide (hcn)
+hcnh (hcnh)
+hcno (hcno)
+formyl-radical (hco)
+formyl-radical+ (hco+)
+formic-acid (hcooh)
+helium+ (he+)
+helium (he)
+helium-liquid (he<l>)
+ethyl-gallium-hydride (hgaet)
+diethyl-gallium-hydride (hgaet2)
+methyl-gallium-hydride (hgame)
+dimethyl-gallium-hydride (hgame2)
+ethyl-methyl-gallium-hydride (hmegaet)
+hn<oh>2 (hn<oh>2)
+hydrogen-azide (hn3)
+cyanamidyl-radical (hncn)
+carbodiimid (hncnh)
+isocyanic-acid-liquid (hnco<l>)
+isocyanic-acid-vapor (hnco)
+difluoro-amine-radical (hnf)
+difluoro-amine (hnf2)
+nitrosoamide (hnnho)
+hnno (hnno)
+hnnono (hnnono)
+nitrosyl-hydride (hno)
+hno2 (hno2)
+nitric-acid (hno3)
+hydroxylamine-radical (hnoh)
+methanediol (hoch2oh)
+hypochlorous-acid (hocl)
+cyanic-acid (hocn)
+hydrocarboxyl-radical (hoco)
+nitrous-acid (hono)
+hydrogen-nitrate (hono2)
+dimethyl-silyl-radical (hsi<ch3>2)
+dimethyl-methylene-silane (hsi<ch3>2ch2)
+trimethyl-silane (hsi<ch3>3)
+diaminosilyl-radical (hsi<nh2>2)
+triamino-silane (hsi<nh2>3)
+silicon-carbide-hydride (hsic)
+vinyl-silylene (hsicch)
+methylene-silylene (hsich2)
+methyl-silylene (hsich3)
+chloro-silylene (hsicl)
+silicon-nitride-hydride (hsin)
+nitrene-silylidene-radical (hsinh)
+amino-silylidene (hsinh2)
+disilicon-chloride-hydride (hsisicl)
+hydrogen (h2)
+hydrogen-liquid (h2<l>)
+hydrogen-fluoride (hf)
+hydrogen-peroxide (h2o2)
+hydrogen-peroxide-liquid (h2o2<l>)
+hydrogen-sulfide (h2s)
+hydroperoxyl (ho2)
+hydroxyl (oh)
+isopropyl-radical (i*c3h7)
+isobutyl-alcohol (c4h10o)
+jet-a<g> (jet-a<g>)
+jet-a1-fuel (c12h23<l>)
+kerosene-liquid (c12h23<l>)
+kerosene-vapor (c12h23)
+lignite-volatiles (lig_vol)
+liquid-solid
+dimethyl-ethyl-gallium (me2gaet)
+methyl-ethyl-gallium (megaet)
+diethyl-methyl-gallium (megaet2)
+mercury (hg)
+methane (ch4)
+methyl-alcohol-liquid (ch3oh<l>)
+methyl-alcohol-vapor (ch3oh)
+atomic-nitrogen (n)
+n-propyl (n*c3h7)
+dinitrogen-dihydride (n2h2)
+hydrazine-radical (n2h3)
+hydrazine (n2h4)
+hydrazine-liquid (n2h4<l>)
+nitrous-oxide (n2o)
+nitrous-oxide+ (n2o+)
+dinitrogen-tetroxide (n2o4)
+dinitrogen-tetroxide-liquid (n2o4<l>)
+trinitrogen (n3)
+n-butane (c4h10)
+n-heptane-liquid (c7h16<l>)
+n-heptane-vapor (c7h16)
+n-hexane-liquid (c6h14<l>)
+n-hexane-vapor (c6h14)
+n-octane-liquid (c8h18<l>)
+n-octane-vapor (c8h18)
+n-pentane-liquid (c5h12<l>)
+n-pentane-vapor (c5h12)
+carbon-dinitride (ncn)
+carbon-oxide-nitride (nco)
+nitrogen-fluoride (nf)
+nitrogen-oxide-monofluoride (nfo)
+nitrogen-dioxygen-monofluoride (nfo2)
+nitrogen-hydride (nh)
+nitrogen-dihydride (nh2)
+nitrogen (n2)
+nitrogen+ (n2+)
+nitrogen-liquid (n2<l>)
+dinitrogen-hydride (nnh)
+nitrogen-oxide (no)
+nitrogen-oxide+ (no+)
+nitrogen-dioxide (no2)
+nitrogen-dioxide- (no2-)
+nitrogen-trioxide (no3)
+atomic-oxygen+ (o+)
+atomic-oxygen- (o-)
+atomic-nitrogen+ (n+)
+dioxygen- (o2-)
+ozone (o3)
+oc<oh>2 (oc<oh>2)
+ethanedial (ochcho)
+ochnnho (ochnnho)
+hydroxyl+ (oh+)
+hydroxyl- (oh-)
+onhnho (onhnho)
+onhnoh (onhnoh)
+oxygen (o2)
+oxygen+ (o2+)
+oxygen-liquid (o2<l>)
+peat-volatiles (peat_vol)
+propane (c3h8)
+propylene (c3h6)
+sulfur (s)
+sulfur-liquid (s<l>)
+sulfur+ (s+)
+sulfur-triazine (s-triazine)
+sulfur-hydride (sh)
+silicon (si)
+dimethyl-silylene (si<ch3>2)
+trimethyl-silyl-radical (si<ch3>3)
+trimethyl-methylene-silane (si<ch3>3ch2)
+tetramethyl-silane (si<ch3>4)
+silicon-liquid (si<l>)
+triamino-silane (si<nh2>3)
+tetramino-silane (si<nh2>4)
+disilicon (si2)
+disilicon-carbide (si2c)
+disilicon-pentachloride (si2cl5)
+disilicon-pentachloride-hydride (si2cl5h)
+disilicon-hexachloride (si2cl6)
+disilicon-hexafluoride (si2f6)
+disilicon-pentahydride (si2h5)
+trisilicon (si3)
+trisilicon-octahydride (si3h8)
+trisilicon-tetranitride (si3n4<a>)
+silicon-bicarbide (sic2)
+ethynel-silylynyl (sicch)
+silynyl-radical (sich)
+methylene-silylene (sich2)
+methyl-silylidine (sich3)
+silicon-chloride (sicl)
+silicon-dichloride (sicl2)
+dichlorosilane (sicl2h2)
+silicon-trichloride (sicl3)
+vinyl-trichlorosilane (sicl3ch2ch)
+trichloro-silane (sicl3h)
+silicon-tetrachloride (sicl4)
+chloro-silane (siclh3)
+silicon-fluoride (sif)
+diamino-fluoro-silane (sif<nh2>2)
+triamino-fluoro-silane (sif<nh2>3)
+silicon-difluoride (sif2)
+diamino-difluoro-silane (sif2<nh2>2)
+silicon-difluoride-nitride (sif2n)
+difluoro-aminosilyl-radical (sif2nh2)
+silicon-trifluoride (sif3)
+trifluoro-silane-nitrene (sif3nh)
+trifluoro-amino-silane (sif3nh2)
+trifluorosilyl-silyl-nitrene (sif3nhsih3)
+trifluorosilyl-silyl-nitryne (sif3nsih3)
+silicon-tetrafluoride (sif4)
+fluoro-silane (sifh3)
+fluoro-amino-silylidene (sifnh)
+fluoro-aminosilane (sifnh2)
+silicon-hydride (sih)
+chloro-silyl-radical (sih2cl)
+fluoro-silyl-radical (sih2f)
+difluoro-dichloro-silane (sih2f2)
+silyl-radical (sih3)
+amino-silane (sih3nh2)
+disilyl-nitrene (sih3nhsih3)
+disilyl-carbyne (sih3nsih3)
+sih3sih2ch3-2-methyl-disilane (sih3sih2ch3)
+dichloro-silyl-radical (sihcl2)
+fluoro-silylene (sihf)
+difluoro-silyl-radical (sihf2)
+trifluoro-silane (sihf3)
+silicon-nitride (sin)
+silicon-nitride-hydride (sinh)
+silicon-nitride-dihydride (sinh2)
+silane (sih4)
+silicon-solid (si<s>)
+silicon-carbide (sic)
+silylene (sih2)
+sodium-sulfide (na2s)
+sulfur-nitride (sn)
+sulfur-oxide (so)
+sulfur-trioxide (so3)
+sodium-sulfate (na2so4)
+sulfur-solid (s<s>)
+sulfur-dioxide (so2)
+sulfur-vapor (s2)
+toluene-liquid (c7h8<l>)
+toluene-vapor (c7h8)
+triuret-solid (triu_c3h6n4o3<s>)
+tungsten-hexafluoride (wf6)
+turpentine (c10h16)
+urea-solid (co<nh2>2<s>)
+urea-liquid (co<nh2>2<l>)
+urea-vapor (co<nh2>2)
+water-liquid (h2o<l>)
+water-vapor (h2o)
+wood-volatiles (wood_vol)
+gasoline-vapor (c8h18<iso>)
+INTRO2 None
+>>> with open("Logs/introspect2_dump.txt", "w") as fh:
+    fh.write("\n".join(OUT))
+11461
+>>> print("INTRO2-DONE")
+INTRO2-DONE
+>>> exit()
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  19:37:06, 19 Sep 2026 India Standard Time 
+Total Transcript Time: 0 Minute 35 Second.
+
+Automatic transcript closed.

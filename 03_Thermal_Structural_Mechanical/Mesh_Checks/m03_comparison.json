@@ -1,0 +1,224 @@
+{
+  "note": "RE-ANALYSIS 2026 - M03 CFD mesh-adequacy check of T03 (9B-2 Part A)",
+  "reports": [
+    {
+      "quantity": "dp_Pa",
+      "T03_12_layers": 438.14279,
+      "M03_18_layers": 438.14283,
+      "difference": 4.0000000012696546e-05,
+      "relative": 9.129443853839647e-08,
+      "kind": "rel"
+    },
+    {
+      "quantity": "T_out_K",
+      "T03_12_layers": 368.9324,
+      "M03_18_layers": 368.9324,
+      "difference": 0.0,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "Q_heated_wall_W",
+      "T03_12_layers": 602.75524,
+      "M03_18_layers": 602.75524,
+      "difference": 0.0,
+      "relative": 0.0,
+      "kind": "rel"
+    },
+    {
+      "quantity": "Q_interface_W",
+      "T03_12_layers": 602.75524,
+      "M03_18_layers": 602.75524,
+      "difference": 0.0,
+      "relative": 0.0,
+      "kind": "rel"
+    },
+    {
+      "quantity": "T_solid_max_K",
+      "T03_12_layers": 563.07239,
+      "M03_18_layers": 563.06696,
+      "difference": -0.005430000000046675,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_solid_cell_max_K",
+      "T03_12_layers": 562.6616271094838,
+      "M03_18_layers": 562.7900980969285,
+      "difference": 0.12847098744475716,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_interface_max_K",
+      "T03_12_layers": 554.77527,
+      "M03_18_layers": 554.77515,
+      "difference": -0.0001199999999244028,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_fluid_max_K",
+      "T03_12_layers": 552.9253130250977,
+      "M03_18_layers": 552.9251658802601,
+      "difference": -0.00014714483756961272,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_outer_avg_K",
+      "T03_12_layers": 529.64741,
+      "M03_18_layers": 529.6415,
+      "difference": -0.005910000000085347,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_interface_avg_K",
+      "T03_12_layers": 520.86992,
+      "M03_18_layers": 520.8697,
+      "difference": -0.00022000000001298758,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_solid_mean_K",
+      "T03_12_layers": 526.3839842555983,
+      "M03_18_layers": 526.3752557073049,
+      "difference": -0.008728548293447602,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_solid_cell_min_K",
+      "T03_12_layers": 428.9172854353505,
+      "M03_18_layers": 428.6723669527374,
+      "difference": -0.24491848261311588,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_outer_min_K",
+      "T03_12_layers": 445.66495,
+      "M03_18_layers": 445.66394,
+      "difference": -0.0010099999999511056,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "T_interface_min_K",
+      "T03_12_layers": 428.13391,
+      "M03_18_layers": 428.15128,
+      "difference": 0.017369999999971242,
+      "relative": null,
+      "kind": "abs"
+    },
+    {
+      "quantity": "yplus_min",
+      "T03_12_layers": 0.20828216,
+      "M03_18_layers": 0.20828216,
+      "difference": 0.0,
+      "relative": 0.0,
+      "kind": "rel"
+    },
+    {
+      "quantity": "yplus_mean",
+      "T03_12_layers": 0.24076353,
+      "M03_18_layers": 0.24076353,
+      "difference": 0.0,
+      "relative": 0.0,
+      "kind": "rel"
+    },
+    {
+      "quantity": "yplus_max",
+      "T03_12_layers": 0.57774127,
+      "M03_18_layers": 0.57771671,
+      "difference": -2.4559999999951287e-05,
+      "relative": -4.251037839126723e-05,
+      "kind": "rel"
+    },
+    {
+      "quantity": "mass_error_monitor",
+      "T03_12_layers": 2.2429640947324274e-14,
+      "M03_18_layers": 4.365769398675617e-14,
+      "difference": 2.12280530394319e-14,
+      "relative": null,
+      "kind": "info"
+    },
+    {
+      "quantity": "energy_error_monitor",
+      "T03_12_layers": 1.8842333262029458e-13,
+      "M03_18_layers": 1.6801552021837682e-12,
+      "difference": 1.4917318695634736e-12,
+      "relative": null,
+      "kind": "info"
+    },
+    {
+      "quantity": "iterations",
+      "T03_12_layers": 700,
+      "M03_18_layers": 700,
+      "difference": 0,
+      "relative": null,
+      "kind": "info"
+    }
+  ],
+  "node_field": {
+    "nodes_compared": 82992,
+    "max_abs_K": 0.197357177734375,
+    "mean_K": 0.0027827483018356717,
+    "rms_K": 0.011087639753988155,
+    "worst": {
+      "dT_K": -0.197357177734375,
+      "theta_deg": 22.5,
+      "z_m": 0.0,
+      "r_mm": 10.000000024411909,
+      "T_M03_K": 428.5865783691406,
+      "T_T03_interp_K": 428.783935546875
+    },
+    "node_T_range_T03": [
+      428.78338623046875,
+      563.0435180664062
+    ],
+    "node_T_range_M03": [
+      428.5860290527344,
+      563.0381469726562
+    ]
+  },
+  "sections": {
+    "inlet_z0": {
+      "through_wall_dT_T03_K": 16.558448791503906,
+      "through_wall_dT_M03_K": 16.854715983072918,
+      "dT_change_K": 0.2962671915690116,
+      "section_mean_T03_K": 440.2930080092197,
+      "section_mean_M03_K": 440.2982795061341,
+      "mean_change_K": 0.005271496914417639
+    },
+    "midspan_z0.3": {
+      "through_wall_dT_T03_K": 8.608027140299479,
+      "through_wall_dT_M03_K": 8.602483113606771,
+      "dT_change_K": -0.005544026692707149,
+      "section_mean_T03_K": 536.8295426159228,
+      "section_mean_M03_K": 536.8255849750321,
+      "mean_change_K": -0.003957640890689618
+    },
+    "outlet_z0.6": {
+      "through_wall_dT_T03_K": 7.797882080078125,
+      "through_wall_dT_M03_K": 7.952097574869792,
+      "dT_change_K": 0.15421549479166696,
+      "section_mean_T03_K": 559.9569259531023,
+      "section_mean_M03_K": 559.9563438254755,
+      "mean_change_K": -0.0005821276267852227
+    }
+  },
+  "criteria": {
+    "T_max solid (facet) change <= 0.5 K": true,
+    "T_max solid (cell) change <= 0.5 K": true,
+    "through-wall dT change at mid-span <= 0.5 K and <= 1 %": true,
+    "Q change <= 1 %": true,
+    "solid volume-mean T change <= 0.5 K": true,
+    "node field: max |difference| <= 0.5 K anywhere": true,
+    "y+ max change <= 1 % (same fluid mesh)": true
+  },
+  "T03_ADEQUATE": true,
+  "remap_required": false
+}

@@ -1,0 +1,64 @@
+% ===================================================================== Chapter 14
+\chapter{Support Sensitivity}\label{ch:supports}
+
+\section{Importance of End Restraint}
+The end supports enter the problem twice. Axially, they decide whether the thermal growth is free (LC1) or prevented (LC2), and hence whether
+a compressive force exists at all. Laterally and rotationally, they set the effective length of the resulting column and therefore its
+buckling load. The real flange of the duct is not defined in this project, so three idealised scenarios with the same axial
+restraint but different lateral and rotational restraint were analysed at the baseline design (Table~\ref{tab:support}). They are listed
+in the order in which they were defined; they are not a ranking.
+
+\input{../Tables/tab_support}
+
+\section{S1}
+S1 is the LC2 support of the baseline: both end faces are held axially over their full area, which keeps them plane and prevents end rotation,
+while the ends remain free to translate sideways. Structurally this is a guided (sway) column with $K = 1$. Its first mode is the sway mode of
+Figure~\ref{fig:bkmode} with $\lambda_1$ = 1.108 and $P_{cr}$ = 608.25~kN.
+
+\section{S2}
+S2 adds lateral restraint at both ends ($U_\theta = 0$ on every end-face node): both ends are clamped against translation and rotation
+($K = 0.5$). The first mode becomes the clamped-column shape with its maximum at mid-span (Figure~\ref{fig:s2s3}a), and $\lambda_1$ rises to
+4.300 ($P_{cr}$ = 2,360.40~kN). The corresponding elastic buckling stress would be about 2500~MPa, far above yield, so a laterally held duct
+would reach first yield or inelastic buckling long before this elastic bifurcation (Johnson estimate 1.58, squash 1.755).
+
+\section{S3}
+S3 clamps the inlet face and pins the outlet: the outlet face is tied to a deformable remote point on the axis that is held in position but
+free to rotate ($K = 0.699$). This was the first use of a remote-point support in the project, so the exact formulation written by Mechanical
+(pilot node with target element, contact elements on the outlet faces, bonded multipoint constraint) was first copied into the constant-property
+toy tube (benchmark B03). The benchmark passed in two runs: the reactions matched $E\alpha\Delta T A$, no rigid-body motion occurred, and the toy
+$\lambda_1$ of 2.2377 fell between the plain (2.2908) and shear-corrected (2.2256) fixed--pinned Euler values. The real S3 case then gave
+$\lambda_1$ = 2.232 ($P_{cr}$ = 1,225.36~kN) with the fixed--pinned mode shape, maximum lateral deflection at 0.605 $L$ from the clamped end
+(Figure~\ref{fig:s2s3}b).
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC2NS_Linear_Buckling_Mode_1_Total_Deformation_iso.png}\caption{S2, both ends clamped (load multiplier 4.2999)}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{S3_BK_Mode_1_iso.png}\caption{S3, clamped--pinned (load multiplier 2.2322)}\end{subfigure}
+\caption{First buckling modes of the support-sensitivity scenarios (normalised eigenvectors).}
+\label{fig:s2s3}
+\src{\provmech}
+\end{figure}
+
+\section{Buckling-Factor Sensitivity}
+The static state is identical in all three scenarios to better than 0.01\,\%: peak von Mises 605.16~MPa, mean axial stress $-$582.44~MPa and
+end force 548,936.6~N (Figure~\ref{fig:supp}b). The stability, by contrast, changes by a factor of 3.9: the FE ratios S1 : S3 : S2 are
+1 : 2.015 : 3.881, close to the Euler ratios 1 : 2.047 : 4 for $K$ = 1, 0.699 and 0.5 (Figure~\ref{fig:supp}a). Greater lateral and rotational
+restraint of the ends shortens the effective length and raises the idealised buckling factor. The governing mechanism changes with it: under
+S1 the elastic bifurcation comes before first yield (1.108 $<$ 1.730); under S2 and S3 first yield comes first (1.730 $<$ 2.232 and 4.300).
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{F14_support_vs_lambda1.png}\caption{First buckling load factor $\lambda_1$}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{F15_support_vs_LC2_stress.png}\caption{Maximum von Mises stress of the static state [MPa]}\end{subfigure}
+\caption[Support sensitivity at the baseline design]{Support sensitivity at the baseline design: stability depends strongly on the end restraint, the static stress does not.}
+\label{fig:supp}
+\src{\provdata}
+\end{figure}
+
+\section{Implications of Support Uncertainty}
+The end-support definition is the largest single uncertainty in the structural conclusion. A beam-column estimate calibrated to the FE
+results (rotation-fixed ends) shows the relative lateral stiffness between the ends that would be needed: about 0.45~kN/mm for $\lambda_1$ =
+1.5, about 0.71~kN/mm to reach the first-yield factor of 1.73, and about 3.9~kN/mm for full no-sway behaviour. Conversely, rotational
+flexibility of real flanges would lower $\lambda_1$ below the S1 value (a conceptual $K$ = 2 gives about 0.28). None of S1, S2 or S3 is
+therefore a bound on a real installation, and none is recommended here: the scenarios show the model's response to a boundary condition that
+must be defined from the real mounting design before any statement about the stability of a component can be made (open task T-034).

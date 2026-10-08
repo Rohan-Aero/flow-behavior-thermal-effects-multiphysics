@@ -1,0 +1,88 @@
+{
+  "bbox_solid_inner": [
+    -0.01, 
+    -0.01, 
+    0.0, 
+    0.01, 
+    0.01, 
+    0.59999999999999998
+  ], 
+  "area_solid_inlet_end": 0.0012063715789784803, 
+  "area_solid_inner": 0.037699111843077518, 
+  "bbox_fluid": [
+    -0.01, 
+    -0.01, 
+    0.0, 
+    0.01, 
+    0.01, 
+    0.59999999999999998
+  ], 
+  "fluid_volume_m3": 0.0001884955592153876, 
+  "Do_mm_input": 44.0, 
+  "share_topology": "ShareTopology.FindAndFix OK: True", 
+  "named_selections": [
+    "FLUID_DOMAIN", 
+    "SOLID_DOMAIN", 
+    "FLUID_INLET", 
+    "FLUID_OUTLET", 
+    "FLUID_WALL", 
+    "FLUID_SOLID_INTERFACE", 
+    "SOLID_INNER_INTERFACE", 
+    "HEATED_OUTER_WALL", 
+    "SOLID_INLET_END", 
+    "SOLID_OUTLET_END", 
+    "STRUCTURAL_SUPPORT"
+  ], 
+  "case": "T03_THICK", 
+  "area_fluid_inlet": 0.00031415926535897936, 
+  "Di_mm_input": 20.0, 
+  "bbox_heated_outer": [
+    -0.021999999999999999, 
+    -0.021999999999999999, 
+    0.0, 
+    0.021999999999999999, 
+    0.021999999999999999, 
+    0.59999999999999998
+  ], 
+  "solid_faces": 4, 
+  "total_bodies": 2, 
+  "status": "complete", 
+  "solid_volume_m3": 0.0007238229473870881, 
+  "area_heated_outer": 0.082938046054770523, 
+  "area_fluid_outlet": 0.00031415926535897936, 
+  "area_solid_outlet_end": 0.0012063715789784803, 
+  "fluid_faces": 3, 
+  "exports": {
+    "T03_THICK.stp": [
+      true, 
+      9341
+    ], 
+    "T03_THICK.scdocx": [
+      true, 
+      42138
+    ]
+  }, 
+  "bbox_solid": [
+    -0.021999999999999999, 
+    -0.021999999999999999, 
+    0.0, 
+    0.021999999999999999, 
+    0.021999999999999999, 
+    0.59999999999999998
+  ], 
+  "final_groups": [
+    "FLUID_DOMAIN", 
+    "SOLID_DOMAIN", 
+    "FLUID_INLET", 
+    "FLUID_OUTLET", 
+    "FLUID_WALL", 
+    "FLUID_SOLID_INTERFACE", 
+    "SOLID_INNER_INTERFACE", 
+    "HEATED_OUTER_WALL", 
+    "SOLID_INLET_END", 
+    "SOLID_OUTLET_END", 
+    "STRUCTURAL_SUPPORT"
+  ], 
+  "area_fluid_wall": 0.037699111843077518, 
+  "L_mm_input": 600.0
+}

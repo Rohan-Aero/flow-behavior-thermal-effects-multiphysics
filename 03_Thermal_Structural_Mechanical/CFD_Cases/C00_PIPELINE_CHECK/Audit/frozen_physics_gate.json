@@ -1,0 +1,11 @@
+{
+  "case": "C00_PIPELINE_CHECK",
+  "intended": {},
+  "allowed_patterns": [],
+  "diff_after_replace": 0,
+  "diff_after_change": [],
+  "unexpected": [],
+  "intended_but_absent": [],
+  "applied_read_back": {},
+  "passed": true
+}

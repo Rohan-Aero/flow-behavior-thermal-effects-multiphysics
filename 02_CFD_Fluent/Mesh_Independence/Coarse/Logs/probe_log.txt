@@ -1,0 +1,16 @@
+OK    transcript                                             
+OK    read medium final CASE (settings only, no data)        
+OK    snapshot settings (medium case)                        {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+mesh.child_names = ['adapt', 'geometry', 'anisotropic_adaption', 'check_before_solve', 'check_verbosity', 'enhanced_orthogonal_quality', 'matching_tolerance', 'modify_zones', 'show_periodic_shadow_zones', 'reorder', 'repair_improve', 'surface_mesh', 'polyhedra', 'wall_distance_method']
+mesh.command_names = ['adjacency', 'check', 'memory_usage', 'mesh_info', 'quality', 'rotate', 'scale', 'size_info', 'redistribute_boundary_layer', 'swap_mesh_faces', 'smooth_mesh', 'replace', 'translate']
+file.child_names = ['single_precision_coordinates', 'binary_legacy_files', 'cff_files', 'auto_merge_zones', 'convert_hanging_nodes_during_read', 'async_optimize', 'write_pdat', 'export', 'import_', 'parametric_project', 'cffio_options', 'batch_options', 'interpolate', 'table_file_manager']
+file.command_names = ['define_macro', 'execute_macro', 'read_macros', 'read', 'read_case', 'read_case_data', 'read_case_lightweight', 'read_data', 'read_mesh', 'read_surface_mesh', 'read_journal', 'start_journal', 'start_python_journal', 'stop_journal', 'replace_mesh', 'write', 'write_case', 'write_data', 'write_case_data', 'read_settings', 'read_field_functions', 'read_injections', 'read_profile', 'read_pdf', 'read_isat_table', 'show_configuration', 'stop_macro', 'start_transcript', 'stop_transcript', 'data_file_options', 'beta_settings']
+mesh.replace arguments = ['file_name', 'zones']
+OK    replace mesh via settings API                          
+OK    mesh check                                             
+OK    mesh.size_info                                         
+warn  mesh.info                                              AttributeError: 'mesh' object has no attribute 'info'.
+The most similar names are: size_info, mesh_info
+ZONES {"cell_fluid": ["fluid_domain"], "cell_solid": ["solid_domain"], "velocity_inlet": ["fluid_inlet"], "pressure_outlet": ["fluid_outlet"], "wall": ["fluid_solid_interface-shadow", "fluid_solid_interface", "heated_outer_wall", "solid_inlet_end", "solid_outlet_end"], "interior": []}
+OK    snapshot settings (after replace)                      {'setup': {'general': {'solver': {'type': 'pressure-based', 'velocity_formulation': 'absolute', 'time': 'stead
+SETTINGS DIFF medium case -> after replace: 0 differences

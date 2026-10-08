@@ -1,0 +1,26 @@
+# Effect of CFD uncertainty on Section 2 closed-form structural quantities (per-kelvin sensitivities). RE-ANALYSIS 2026.
+E_Pa,1.88105e+11
+alpha,1.37157e-05
+sigma_LC2_per_K_MPa,2.57998
+LC2_sigma_MPa,-657.227
+LC1_sigma_MPa,16.3133
+dT_mean_above_ref,254.741
+free_growth_mm,2.09637
+U_Tmax_fine_GCI_K,3.37089
+U_Tmax_medium_vs_best_K,4.44273
+U_Tmax_medium_raw_vs_circle_extrapolated_K,4.51627
+U_Tmax_bulk_correction_effect_K,0.0735411
+U_dTwall_K,0.03959
+model_gap_Tmax_vs_analytical_K,-19.1358
+LC2_dsigma_MPa_mesh_medium,11.4622
+LC2_dsigma_pct_mesh_medium,1.74402
+growth_dmm_mesh_medium,0.036561
+LC2_dsigma_MPa_model_vs_analytical,49.3701
+LC2_dsigma_pct_model_vs_analytical,7.51188
+growth_dmm_model_vs_analytical,0.157476
+U_Tsolidmean_medium_vs_best_K,3.14598
+growth_dmm_mesh_medium_from_Tmean,0.0258896
+growth_pct_mesh_medium_of_CFD_mean_rise,1.39522
+LC1_dsigma_pct_mesh,0.52226
+LC1_dsigma_MPa_mesh,0.0851981
+Q_mesh_resolution_pct,6.2386e-12

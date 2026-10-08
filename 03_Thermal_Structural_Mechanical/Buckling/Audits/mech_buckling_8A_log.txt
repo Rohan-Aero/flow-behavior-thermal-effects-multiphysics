@@ -1,0 +1,250 @@
+11:45:40 === SECTION 8A MECHANICAL LINEAR BUCKLING (RE-ANALYSIS 2026) ===
+11:45:40 analyses [('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('Eigenvalue Buckling', 'Buckling'), ('Static Structural', 'Static'), ('Eigenvalue Buckling 2', 'Buckling')]
+11:45:40 new analyses: buckling ['Eigenvalue Buckling', 'Eigenvalue Buckling 2'] static ['Static Structural']
+11:45:40 prestress links {'LC2NS_Linear_Buckling': [('PreStressICEnvironment', 'LC2NS_NoSway_Static_SENSITIVITY'), ('ic_name', 'Pre-Stress (LC2NS_NoSway_Static_SENSITIVITY)')], 'LC2_Linear_Buckling': [('PreStressICEnvironment', 'LC2_Axially_Restrained'), ('ic_name', 'Pre-Stress (LC2_Axially_Restrained)')]}
+11:45:40 PASS  mesh: 108,252 nodes / 23,400 elements (unchanged since 7A) | expected 108252 / 23400 | found 108252 / 23400
+11:45:40 PASS  licence: below the measured Student MAPDL limit (128,000 nodes) | expected < 128,000 | found 108252
+11:45:40 PASS  CS_DUCT_CYL fully defined, cylindrical, origin 0,0,0 | expected FullyDefined / Cylindrical / (0,0,0) | found FullyDefined / Cylindrical
+11:45:40 PASS  LC2 hoop nodes = 7A ids 25862/25874/25886 at r 20 mm, z 0.3 m | expected [25862, 25874, 25886] | found [(25862, 0.02, 0.29999999999999999), (25874, 0.02, 0.29999999999999999), (25886, 0.02, 0.29999999999999999)]
+11:45:40 PASS  LC2: mapped temperature identical to the 7A export (thermal field unchanged) | expected byte-identical | found identical
+11:45:40 PASS  LC2: environment (stress-free reference) temperature 300 K | expected 300 K | found 26.850000000000023 [C]
+11:45:40 PASS  LC2: no under-defined / error objects | expected none | found []
+11:45:41 PASS  LC2: pressure objects suppressed (thermal-only pre-stress) | expected all suppressed | found [('LC2_P_equivalent_uniform_443Pa_SUPPRESSED', True), ('LC2_P_CFD_linear_fit_SUPPRESSED', True)]
+11:45:41 OK   LC2 LargeDeflection False
+11:45:41 OK   LC2 SolverType Direct
+11:45:41 OK   LC2 WeakSprings Off
+11:45:41 OK   LC2 InertiaRelief False
+11:45:41 OK   LC2 FutureAnalysis PrestressedAnalysis
+11:45:41 PASS  LC2: small deflection, direct solver (as solved in 7B) | expected LargeDeflection off, Direct | found {'InertiaRelief': 'False', 'LargeDeflection': 'False', 'SolverType': 'Direct', 'WeakSprings': 'Off', 'FutureAnalysis': 'PrestressedAnalysis'}
+11:45:44 PASS  LC2 input vs 7B solved LC2 input: identical nblock section | expected identical | found identical
+11:45:44 PASS  LC2 input vs 7B solved LC2 input: identical eblock section | expected identical | found identical
+11:45:44 PASS  LC2 input vs 7B solved LC2 input: identical bf section | expected identical | found identical
+11:45:44 PASS  LC2 input vs 7B solved LC2 input: identical material section | expected identical | found identical
+11:45:44 PASS  LC2 input vs 7B solved LC2 input: identical resolved constraints | expected [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)] | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+11:45:44 PASS  LC2 input: U_z = 0 on 1,224 end-face nodes + 3 rotated mid-span nodes U_theta = 0, nothing else | expected d uz (1224) + nrot csys12 (3) + d uy (3) | found [('D', 'uy', 0.0, 3, 77622, 25862, 25886), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252), ('NROT_csys12', '', 0.0, 3, 77622, 25862, 25886)]
+11:45:44 PASS  LC2 input: no weak springs, no extra elements, no pressure | expected none | found (False, [], False)
+11:45:44 OK   LC2 buckling: 6 modes 
+11:45:44 OK   LC2 buckling: exclude negative load multipliers 
+11:45:44 OK   LC2 buckling MaximumModesToFind 6
+11:45:44 OK   LC2 buckling IncludeNegativeLoadMultiplier No
+11:45:44 OK   LC2 buckling SolverType ProgramControlled
+11:45:44 OK   LC2 buckling KeepPreStressLoadPattern True
+11:45:44 PASS  LC2 buckling: no loads or supports of its own (it inherits the LC2 pre-stress state and supports) | expected none | found []
+11:45:44 PASS  LC2 buckling: pre-stress environment = LC2_Axially_Restrained | expected LC2 | found [('PreStressICEnvironment', 'LC2_Axially_Restrained'), ('ic_name', 'Pre-Stress (LC2_Axially_Restrained)')]
+11:45:44 PASS  LC2 buckling: no under-defined / error objects | expected none | found []
+11:45:45 PASS  LC2NS: External Data linked | expected 1 | found 1
+11:45:52 OK   LC2NS import 
+11:45:52 PASS  LC2NS: mapped temperature identical to the 7A export | expected byte-identical | found identical
+11:45:53 OK   LC2NS solver type -> Direct 
+11:45:53 PASS  LC2NS: no under-defined / error objects | expected none | found []
+11:45:55 PASS  LC2NS input vs LC2 input: identical nblock section | expected identical | found identical
+11:45:55 PASS  LC2NS input vs LC2 input: identical eblock section | expected identical | found identical
+11:45:55 PASS  LC2NS input vs LC2 input: identical bf section | expected identical | found identical
+11:45:55 PASS  LC2NS input vs LC2 input: identical material section | expected identical | found identical
+11:45:55 PASS  LC2NS input: D uy = 0 and D uz = 0 on exactly the 1,224 LC2 end-face nodes; no other D | expected uy and uz on the 1224 LC2 end-face nodes (id sum 80282530) | found [('D', 'uy', 0.0, 1224, 80282530, 18577, 108252), ('D', 'uz', 0.0, 1224, 80282530, 18577, 108252)]
+11:45:56 PASS  LC2NS input: every end-face node in CS_DUCT_CYL (NMOD THXY = node angle; nodes at theta = 0 need none) | expected 1224 end-face nodes: NMOD angle error < 1e-6 deg, un-rotated nodes only at theta = 0, no rotation elsewhere | found 1202 NMOD (max angle error 1.421e-13 deg); 22 without NMOD at |theta| max 3.976e-14 deg; 0 rotations outside the end faces
+11:45:56 OK   LC2NS buckling: 6 modes 
+11:45:56 OK   LC2NS buckling: exclude negative load multipliers 
+11:45:56 PASS  LC2NS buckling: pre-stress environment = LC2NS | expected LC2NS | found [('PreStressICEnvironment', 'LC2NS_NoSway_Static_SENSITIVITY'), ('ic_name', 'Pre-Stress (LC2NS_NoSway_Static_SENSITIVITY)')]
+11:45:56 PRE-SOLVE GATE PASS (29 checks)
+11:45:56 OK   LC2BK mode 1 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000070 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:56 OK   LC2BK mode 1 set 
+11:45:56 OK   LC2BK mode 1 dir X <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000071 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:56 OK   LC2BK mode 1 dir set 
+11:45:56 OK   LC2BK mode 1 dir Y <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000072 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:56 OK   LC2BK mode 1 dir set 
+11:45:56 OK   LC2BK mode 2 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000073 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:56 OK   LC2BK mode 2 set 
+11:45:56 OK   LC2BK mode 2 dir X <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000074 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:56 OK   LC2BK mode 2 dir set 
+11:45:56 OK   LC2BK mode 2 dir Y <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000075 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:56 OK   LC2BK mode 2 dir set 
+11:45:56 OK   LC2BK mode 3 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000076 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:56 OK   LC2BK mode 3 set 
+11:45:56 OK   LC2BK mode 4 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000077 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:56 OK   LC2BK mode 4 set 
+11:45:56 OK   LC2BK mode 5 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000078 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:56 OK   LC2BK mode 5 set 
+11:45:56 OK   LC2BK mode 6 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000079 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:56 OK   LC2BK mode 6 set 
+11:45:56 OK   LC2BK snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x000000000000007A [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+11:45:56 OK   LC2BK snippet input 
+11:45:57 OK   LC2NSBK mode 1 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x000000000000007B [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:57 OK   LC2NSBK mode 1 set 
+11:45:57 OK   LC2NSBK mode 1 dir X <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x000000000000007C [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:57 OK   LC2NSBK mode 1 dir set 
+11:45:57 OK   LC2NSBK mode 1 dir Y <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x000000000000007D [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:57 OK   LC2NSBK mode 1 dir set 
+11:45:57 OK   LC2NSBK mode 2 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x000000000000007E [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:57 OK   LC2NSBK mode 2 set 
+11:45:57 OK   LC2NSBK mode 2 dir X <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x000000000000007F [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:57 OK   LC2NSBK mode 2 dir set 
+11:45:57 OK   LC2NSBK mode 2 dir Y <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x0000000000000080 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+11:45:57 OK   LC2NSBK mode 2 dir set 
+11:45:57 OK   LC2NSBK mode 3 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000081 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:57 OK   LC2NSBK mode 3 set 
+11:45:57 OK   LC2NSBK mode 4 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000082 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:57 OK   LC2NSBK mode 4 set 
+11:45:57 OK   LC2NSBK mode 5 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000083 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:57 OK   LC2NSBK mode 5 set 
+11:45:57 OK   LC2NSBK mode 6 total deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000084 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+11:45:57 OK   LC2NSBK mode 6 set 
+11:45:57 OK   LC2NSBK snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x0000000000000085 [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+11:45:57 OK   LC2NSBK snippet input 
+11:45:58 OK   LC2_Linear_Buckling write input 
+11:45:59 OK   LC2NS_Linear_Buckling write input 
+11:45:59 SOLVING LC2_prestress_resolve ...
+11:47:29 OK   LC2_prestress_resolve solve 
+11:47:29 LC2_prestress_resolve: state Solved status Done 90 s messages []
+11:47:30 OK   LC2_prestress_resolve evaluate 
+11:47:31 LC2 re-solve vs 7B: vm 605160873.381 vs 605160873.381, Rz 548936.613753 vs 548936.613753 -> True
+11:47:31 SOLVING LC2_Linear_Buckling ...
+11:52:03 OK   LC2_Linear_Buckling solve 
+11:52:03 LC2_Linear_Buckling: state Solved status Done 272 s messages []
+11:52:04 OK   LC2_Linear_Buckling evaluate 
+11:52:04 OK   LC2_Linear_Buckling mode 1 tot LoadMultiplier 1.10804699642
+11:52:04 OK   LC2_Linear_Buckling mode 1 tot Maximum 1.0475683685027544 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 1 tot Minimum 0.0021860855174142069 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 1 dirX LoadMultiplier 1.10804699642
+11:52:04 OK   LC2_Linear_Buckling mode 1 dirX Maximum 1 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 1 dirX Minimum -0.98892074823379517 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 1 dirY LoadMultiplier 1.10804699642
+11:52:04 OK   LC2_Linear_Buckling mode 1 dirY Maximum 0.31001022458076477 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 1 dirY Minimum -0.31350606679916382 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 2 tot LoadMultiplier 1.10804714283
+11:52:04 OK   LC2_Linear_Buckling mode 2 tot Maximum 1.0475683685027544 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 2 tot Minimum 0.0021860855173542987 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 2 dirX LoadMultiplier 1.10804714283
+11:52:04 OK   LC2_Linear_Buckling mode 2 dirX Maximum 0.31350606679916382 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 2 dirX Minimum -0.31001022458076477 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 2 dirY LoadMultiplier 1.10804714283
+11:52:04 OK   LC2_Linear_Buckling mode 2 dirY Maximum 1 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 2 dirY Minimum -0.98892074823379517 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 3 tot LoadMultiplier 4.29789593913
+11:52:04 OK   LC2_Linear_Buckling mode 3 tot Maximum 1.0735282222510263 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 3 tot Minimum 0.00015511815481583248 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 4 tot LoadMultiplier 4.29790515849
+11:52:04 OK   LC2_Linear_Buckling mode 4 tot Maximum 1.0735280703334187 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 4 tot Minimum 0.00015512331616548511 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 5 tot LoadMultiplier 9.22481520486
+11:52:04 OK   LC2_Linear_Buckling mode 5 tot Maximum 1.0914309242384677 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 5 tot Minimum 0.0029735358507377314 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 6 tot LoadMultiplier 9.22483203836
+11:52:04 OK   LC2_Linear_Buckling mode 6 tot Maximum 1.0914437677802873 [m]
+11:52:04 OK   LC2_Linear_Buckling mode 6 tot Minimum 0.002973410414717118 [m]
+11:52:05 OK   graphics Auto scale (mode shapes) 
+11:52:05 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:11 OK   image LC2_Linear_Buckling_Mode_1_Total_Deformation iso (None, None, None, None)
+11:52:12 OK   image LC2_Linear_Buckling_Mode_1_Total_Deformation side_YZ (None, None, None, None)
+11:52:12 OK   image LC2_Linear_Buckling_Mode_1_Total_Deformation top_XZ (None, None, None, None)
+11:52:12 OK   graphics Auto scale (mode shapes) 
+11:52:12 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:13 OK   image LC2_Linear_Buckling_Mode_1_Deformation_X iso (None, None, None, None)
+11:52:13 OK   graphics Auto scale (mode shapes) 
+11:52:13 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:14 OK   image LC2_Linear_Buckling_Mode_1_Deformation_Y iso (None, None, None, None)
+11:52:14 OK   graphics Auto scale (mode shapes) 
+11:52:14 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:15 OK   image LC2_Linear_Buckling_Mode_2_Total_Deformation iso (None, None, None, None)
+11:52:16 OK   image LC2_Linear_Buckling_Mode_2_Total_Deformation side_YZ (None, None, None, None)
+11:52:17 OK   image LC2_Linear_Buckling_Mode_2_Total_Deformation top_XZ (None, None, None, None)
+11:52:17 OK   graphics Auto scale (mode shapes) 
+11:52:17 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:18 OK   image LC2_Linear_Buckling_Mode_2_Deformation_X iso (None, None, None, None)
+11:52:18 OK   graphics Auto scale (mode shapes) 
+11:52:18 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:19 OK   image LC2_Linear_Buckling_Mode_2_Deformation_Y iso (None, None, None, None)
+11:52:19 OK   graphics Auto scale (mode shapes) 
+11:52:19 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:20 OK   image LC2_Linear_Buckling_Mode_3_Total_Deformation iso (None, None, None, None)
+11:52:20 OK   image LC2_Linear_Buckling_Mode_3_Total_Deformation side_YZ (None, None, None, None)
+11:52:21 OK   image LC2_Linear_Buckling_Mode_3_Total_Deformation top_XZ (None, None, None, None)
+11:52:21 OK   graphics Auto scale (mode shapes) 
+11:52:21 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:52:22 OK   image LC2_Linear_Buckling_Mode_4_Total_Deformation iso (None, None, None, None)
+11:52:23 OK   image LC2_Linear_Buckling_Mode_4_Total_Deformation side_YZ (None, None, None, None)
+11:52:24 OK   image LC2_Linear_Buckling_Mode_4_Total_Deformation top_XZ (None, None, None, None)
+11:52:24 OK   graphics true scale 
+11:52:24 OK   graphics multiplier 1 
+11:52:24 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)
+11:52:24 SOLVING LC2NS_NoSway_Static ...
+11:53:41 OK   LC2NS_NoSway_Static solve 
+11:53:41 LC2NS_NoSway_Static: state Solved status Done 77 s messages []
+11:53:43 OK   LC2NS evaluate 
+11:53:44 OK   LC2NS add VM <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x00000000000000A9 [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+11:53:44 OK   LC2NS add reaction <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x00000000000000AA [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+11:53:44 OK   LC2NS reaction scope 
+11:53:47 OK   LC2NS evaluate 2 
+11:53:47 OK   r 8.07364635910246E-09 [N]
+11:53:47 OK   r 4.86598360771584E-08 [N]
+11:53:47 OK   r 548936.61375304486 [N]
+11:53:48 SOLVING LC2NS_Linear_Buckling ...
+11:58:20 OK   LC2NS_Linear_Buckling solve 
+11:58:20 LC2NS_Linear_Buckling: state Solved status Done 272 s messages []
+11:58:22 OK   LC2NS_Linear_Buckling evaluate 
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 tot LoadMultiplier 4.29994503256
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 tot Maximum 1.1873774678657179 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 tot Minimum 9.7813048341777176E-05 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 dirX LoadMultiplier 4.29994503256
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 dirX Maximum 0.64271712303161621 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 dirX Minimum -0.0017797616310417652 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 dirY LoadMultiplier 4.29994503256
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 dirY Maximum 1 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 1 dirY Minimum -0.0010097363265231252 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 tot LoadMultiplier 4.29994539945
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 tot Maximum 1.1873774678655438 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 tot Minimum 9.7813186584971832E-05 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 dirX LoadMultiplier 4.29994539945
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 dirX Maximum 1 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 dirX Minimum -0.0010097363265231252 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 dirY LoadMultiplier 4.29994539945
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 dirY Maximum 0.0017797613982111216 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 2 dirY Minimum -0.64271712303161621 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 3 tot LoadMultiplier 8.35615275568
+11:58:22 OK   LC2NS_Linear_Buckling mode 3 tot Maximum 1.006314330968624 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 3 tot Minimum 0.00016280965064652264 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 4 tot LoadMultiplier 8.35615475633
+11:58:22 OK   LC2NS_Linear_Buckling mode 4 tot Maximum 1.0063143656023712 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 4 tot Minimum 0.00016281040734611452 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 5 tot LoadMultiplier 15.4244407757
+11:58:22 OK   LC2NS_Linear_Buckling mode 5 tot Maximum 1.0011510998639159 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 5 tot Minimum 0.00022185052512213585 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 6 tot LoadMultiplier 15.4244432465
+11:58:22 OK   LC2NS_Linear_Buckling mode 6 tot Maximum 1.001151105933519 [m]
+11:58:22 OK   LC2NS_Linear_Buckling mode 6 tot Minimum 0.00022184925910551098 [m]
+11:58:23 OK   graphics Auto scale (mode shapes) 
+11:58:23 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:24 OK   image LC2NS_Linear_Buckling_Mode_1_Total_Deformation iso (None, None, None, None)
+11:58:25 OK   image LC2NS_Linear_Buckling_Mode_1_Total_Deformation side_YZ (None, None, None, None)
+11:58:26 OK   image LC2NS_Linear_Buckling_Mode_1_Total_Deformation top_XZ (None, None, None, None)
+11:58:26 OK   graphics Auto scale (mode shapes) 
+11:58:26 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:27 OK   image LC2NS_Linear_Buckling_Mode_1_Deformation_X iso (None, None, None, None)
+11:58:27 OK   graphics Auto scale (mode shapes) 
+11:58:27 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:28 OK   image LC2NS_Linear_Buckling_Mode_1_Deformation_Y iso (None, None, None, None)
+11:58:28 OK   graphics Auto scale (mode shapes) 
+11:58:28 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:28 OK   image LC2NS_Linear_Buckling_Mode_2_Total_Deformation iso (None, None, None, None)
+11:58:29 OK   image LC2NS_Linear_Buckling_Mode_2_Total_Deformation side_YZ (None, None, None, None)
+11:58:30 OK   image LC2NS_Linear_Buckling_Mode_2_Total_Deformation top_XZ (None, None, None, None)
+11:58:30 OK   graphics Auto scale (mode shapes) 
+11:58:30 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:31 OK   image LC2NS_Linear_Buckling_Mode_2_Deformation_X iso (None, None, None, None)
+11:58:31 OK   graphics Auto scale (mode shapes) 
+11:58:31 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:32 OK   image LC2NS_Linear_Buckling_Mode_2_Deformation_Y iso (None, None, None, None)
+11:58:32 OK   graphics Auto scale (mode shapes) 
+11:58:32 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:33 OK   image LC2NS_Linear_Buckling_Mode_3_Total_Deformation iso (None, None, None, None)
+11:58:34 OK   image LC2NS_Linear_Buckling_Mode_3_Total_Deformation side_YZ (None, None, None, None)
+11:58:34 OK   image LC2NS_Linear_Buckling_Mode_3_Total_Deformation top_XZ (None, None, None, None)
+11:58:34 OK   graphics Auto scale (mode shapes) 
+11:58:34 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.Auto, 1.0)
+11:58:35 OK   image LC2NS_Linear_Buckling_Mode_4_Total_Deformation iso (None, None, None, None)
+11:58:36 OK   image LC2NS_Linear_Buckling_Mode_4_Total_Deformation side_YZ (None, None, None, None)
+11:58:37 OK   image LC2NS_Linear_Buckling_Mode_4_Total_Deformation top_XZ (None, None, None, None)
+11:58:37 OK   graphics true scale 
+11:58:37 OK   graphics multiplier 1 
+11:58:37 OK   scaling readback (Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)
+11:58:37 MECH-BUCKLING-8A-DONE

@@ -1,0 +1,9 @@
+! SECTION 9B-2 - driver: re-extract S2 (8A LC2NS static) and, as validation, S1 (8A LC2 re-solve). Nothing is solved.
+/batch
+*set,rstname,'s2'
+*set,tag,'s2x'
+/input,s2_reextract,inp
+*set,rstname,'s1'
+*set,tag,'s1x'
+/input,s2_reextract,inp
+/exit,nosave

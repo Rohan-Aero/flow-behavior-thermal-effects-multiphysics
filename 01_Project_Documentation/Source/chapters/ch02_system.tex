@@ -1,0 +1,66 @@
+% ===================================================================== Chapter 2
+\chapter{Engineering System}\label{ch:system}
+
+\section{System Description}
+The system is a straight, thick-walled circular duct of Inconel 718 with air flowing through its bore. A uniform heat flux enters the outer
+surface, conducts through the wall and is removed by the turbulent air flow. The end faces are adiabatic. Structurally, the duct either
+expands freely (LC1) or is held axially at both ends (LC2), in which case the prevented thermal growth produces an axial compressive
+force. All dimensions and loads are selected class-B inputs (Chapter~\ref{ch:params}).
+
+\section{Heated Duct Geometry}
+Figure~\ref{fig:drawing} shows the dimensioned drawing prepared in Section 3 of the project. The bore diameter of 20~mm and the length of
+600~mm give $L/D_i$ = 30, long enough for the flow to become hydrodynamically developed over the rear part of the duct. The diameter ratio
+$D_o/D_i$ = 2 produces a 10~mm wall, thick enough for a measurable through-wall temperature difference and for a stiff column section.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.74\linewidth]{ENGINEERING_DRAWING.png}
+\caption[Engineering drawing of the heated duct]{Engineering drawing of the heated duct: longitudinal section and cross-section (dimensions in mm).}
+\label{fig:drawing}
+\src{Source: \texttt{03\_CAD\_Geometry/Drawings/ENGINEERING\_DRAWING.png} (project drawing of the analysed duct).}
+\end{figure}
+
+\section{Geometry Parameters}
+Table~\ref{tab:geometry} lists the geometry. The heated area differs between the true cylinder and the CFD mesh, because the CFD section is
+an inscribed 48-sided polygon; the resulting 0.071\,\% difference in heat input is exact and is discussed in Chapters~\ref{ch:cfdres}
+and~\ref{ch:mi}.
+
+\input{../Tables/tab_geometry}
+
+\section{Fluid Domain}
+The fluid domain is a solid body filling the bore ($\diameter$20~mm $\times$ 600~mm, volume $1.884956\times10^{-4}$ m$^3$). Air enters
+through \texttt{FLUID\_INLET} at $z = 0$ and leaves through \texttt{FLUID\_OUTLET} at $z$ = 600~mm; its only lateral boundary is the
+fluid--solid interface.
+
+\section{Solid Domain}
+The solid domain is the Inconel 718 annulus between $r$ = 10~mm and $r$ = 20~mm (volume $5.654867\times10^{-4}$ m$^3$, mass 4.631 kg). Its outer
+cylinder carries the heat flux; its inner cylinder is the conjugate interface; its end annuli are adiabatic and, in the structural model,
+carry the axial supports.
+
+\section{Heat-Transfer Path}
+Heat follows a single series path (Figure~\ref{fig:physics}): conduction radially inward through the wall, convection from the bore
+surface into the air, and advection of the absorbed energy to the outlet. The analytical baseline shows that the conduction resistance of
+the wall is only 3.4\,\% of the total resistance between outer wall and air; the air film carries the remaining 96.6\,\%
+($R_{cond}/R_{conv}$ = 0.0342). The metal temperature is therefore controlled mainly by the heat-transfer coefficient on the air side, not by
+the conductivity of the wall.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\linewidth]{PHYSICS_SCHEMATIC.png}
+\caption[Physics chain mapped onto the CAD entities]{Physics chain mapped onto the CAD entities: flow, convection, conduction, expansion and stress. The values printed in the five
+process boxes are Section 2 analytical estimates, not final results.}
+\label{fig:physics}
+\src{Source: \texttt{03\_CAD\_Geometry/Drawings/PHYSICS\_SCHEMATIC.png} (Section 3).}
+\end{figure}
+
+\section{Structural Load Path}
+The wall temperature rises from the inlet to the outlet by more than 100~K and exceeds the 300~K stress-free reference everywhere. In free
+expansion (LC1) the duct lengthens and only the non-uniform temperature distribution creates stress. When both end faces are held axially
+(LC2), the axial growth is prevented; the end supports then react an axial compressive force $N$ equal to the integrated restrained thermal
+strain times the axial stiffness of the section. This force is the column load that governs the buckling analysis of Chapter~\ref{ch:buckling}.
+
+\section{Baseline Operating Condition}
+The baseline operating point P00 is summarised in Table~\ref{tab:operating}. The inlet Reynolds number of about 30,000 places the flow well
+inside the turbulent regime; the bulk temperature rise of about 69~K reduces the Reynolds number to 25,545 at the outlet.
+
+\input{../Tables/tab_operating}

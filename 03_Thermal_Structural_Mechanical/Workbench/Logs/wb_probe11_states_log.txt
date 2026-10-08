@@ -1,0 +1,21 @@
+opened (read-only diagnosis; no Save is called)
+state Geometry/Geometry <cell state: UpToDate: wb2qh_uptodate>
+state Mesh/Geometry 1 <cell state: UpToDate: wb2qh_uptodate>
+state Mesh/Mesh <cell state: Incomplete: wb2qh_modelcellSim_ur>
+state Fluent/Setup <cell state: Unfulfilled: wb2qh_fluent_setup>
+state Fluent/Solution <cell state: Unfulfilled: wb2qh_fluent_solution>
+state LC1 Free Expansion/Engineering Data <cell state: UpToDate: wb2qh_uptodate>
+state LC1 Free Expansion/Geometry 2 <cell state: UpToDate: wb2qh_uptodate>
+state LC1 Free Expansion/Model <cell state: EditRequired: wb2qh_mech_attnreqd>
+state LC1 Free Expansion/Setup 2 <cell state: Incomplete: wb2qh_Mech_ur>
+state LC1 Free Expansion/Solution 1 <cell state: Incomplete: wb2qh_Mech_ur>
+state LC1 Free Expansion/Results <cell state: Incomplete: wb2qh_Mech_ur>
+state LC2 Axially Restrained/Engineering Data 1 <cell state: UpToDate: wb2qh_uptodate>
+state LC2 Axially Restrained/Geometry 3 <cell state: UpToDate: wb2qh_uptodate>
+state LC2 Axially Restrained/Model 1 <cell state: EditRequired: wb2qh_mech_attnreqd>
+state LC2 Axially Restrained/Setup 3 <cell state: Incomplete: wb2qh_Mech_ur>
+state LC2 Axially Restrained/Solution 2 <cell state: Incomplete: wb2qh_Mech_ur>
+state LC2 Axially Restrained/Results 1 <cell state: Incomplete: wb2qh_Mech_ur>
+state CFD solid T (baseline_medium_final)/Setup 1 <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+mechanical script sent
+=== PROBE 11 DONE (not saved) ===

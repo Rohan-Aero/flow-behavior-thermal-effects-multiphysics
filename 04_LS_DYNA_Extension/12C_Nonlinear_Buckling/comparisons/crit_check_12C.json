@@ -1,0 +1,242 @@
+{
+ "C1_A0p1": {
+  "t": [
+   0.7000000000000004,
+   0.7500000000000004,
+   0.8000000000000005,
+   0.8500000000000005,
+   0.9
+  ],
+  "lambda": [
+   1.1500000000000001,
+   1.1750000000000003,
+   1.2000000000000004,
+   1.2500000000000004,
+   1.3
+  ],
+  "T_maxabs_diff_vs_C1_final_K": 0.0,
+  "T_node18865_final_K": 479.38531650000004,
+  "states": [
+   {
+    "t": 0.7000000000000004,
+    "lambda": 1.1500000000000001,
+    "vm_elem_max_MPa": 1190.51463140864,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1190.51463140864,
+    "vm_outlet_layer_max_MPa": 1164.314796632651,
+    "vm_midspan_max_MPa": 652.772468205007,
+    "lat_end_mm": 5.527683788644901,
+    "lat_mid_mm": 0.0041346310630335165,
+    "section_distortion_max_mm": 0.11223071178852102
+   },
+   {
+    "t": 0.7500000000000004,
+    "lambda": 1.1750000000000003,
+    "vm_elem_max_MPa": 1280.25422495756,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1280.25422495756,
+    "vm_outlet_layer_max_MPa": 1252.092246410223,
+    "vm_midspan_max_MPa": 656.1453214187811,
+    "lat_end_mm": 6.453761181243303,
+    "lat_mid_mm": 0.005619642974252295,
+    "section_distortion_max_mm": 0.11561974035723763
+   },
+   {
+    "t": 0.8000000000000005,
+    "lambda": 1.2000000000000004,
+    "vm_elem_max_MPa": 1360.4188623622076,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1360.4188623622076,
+    "vm_outlet_layer_max_MPa": 1330.3445169680815,
+    "vm_midspan_max_MPa": 658.8413082546875,
+    "lat_end_mm": 7.289597335744267,
+    "lat_mid_mm": 0.007154358408659853,
+    "section_distortion_max_mm": 0.11885004857969107
+   },
+   {
+    "t": 0.8500000000000005,
+    "lambda": 1.2500000000000004,
+    "vm_elem_max_MPa": 1499.6167520996921,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1499.6167520996921,
+    "vm_outlet_layer_max_MPa": 1465.8166368908567,
+    "vm_midspan_max_MPa": 662.6026223369887,
+    "lat_end_mm": 8.75963733807306,
+    "lat_mid_mm": 0.010300265302031125,
+    "section_distortion_max_mm": 0.12497386540716163
+   },
+   {
+    "t": 0.9,
+    "lambda": 1.3,
+    "vm_elem_max_MPa": 1619.0484187156912,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1619.0484187156912,
+    "vm_outlet_layer_max_MPa": 1581.5334858610179,
+    "vm_midspan_max_MPa": 665.6488026848757,
+    "lat_end_mm": 10.040558510059173,
+    "lat_mid_mm": 0.013503480314396256,
+    "section_distortion_max_mm": 0.13079218607162926
+   }
+  ]
+ },
+ "C3_A0p6": {
+  "t": [
+   0.7000000000000004,
+   0.7500000000000004,
+   0.8000000000000005,
+   0.8500000000000005,
+   0.9
+  ],
+  "lambda": [
+   1.1500000000000001,
+   1.1750000000000003,
+   1.2000000000000004,
+   1.2500000000000004,
+   1.3
+  ],
+  "T_maxabs_diff_vs_C1_final_K": 0.0,
+  "T_node18865_final_K": 479.38531650000004,
+  "states": [
+   {
+    "t": 0.7000000000000004,
+    "lambda": 1.1500000000000001,
+    "vm_elem_max_MPa": 1322.074072372022,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1322.074072372022,
+    "vm_outlet_layer_max_MPa": 1293.6794461185618,
+    "vm_midspan_max_MPa": 620.2685345119933,
+    "lat_end_mm": 7.268350236750071,
+    "lat_mid_mm": 0.008096421704848469,
+    "section_distortion_max_mm": 0.11362114696394665
+   },
+   {
+    "t": 0.7500000000000004,
+    "lambda": 1.1750000000000003,
+    "vm_elem_max_MPa": 1381.8558014338669,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1381.8558014338669,
+    "vm_outlet_layer_max_MPa": 1351.856565265483,
+    "vm_midspan_max_MPa": 624.6201052507969,
+    "lat_end_mm": 7.86860188015925,
+    "lat_mid_mm": 0.00938894233740495,
+    "section_distortion_max_mm": 0.11656019949261322
+   },
+   {
+    "t": 0.8000000000000005,
+    "lambda": 1.2000000000000004,
+    "vm_elem_max_MPa": 1439.1737375666808,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1439.1737375666808,
+    "vm_outlet_layer_max_MPa": 1407.5447591038146,
+    "vm_midspan_max_MPa": 628.4551740125684,
+    "lat_end_mm": 8.45138548650464,
+    "lat_mid_mm": 0.01073440478597668,
+    "section_distortion_max_mm": 0.11945578994871286
+   },
+   {
+    "t": 0.8500000000000005,
+    "lambda": 1.2500000000000004,
+    "vm_elem_max_MPa": 1546.6678498345086,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1546.6678498345086,
+    "vm_outlet_layer_max_MPa": 1511.7239771404177,
+    "vm_midspan_max_MPa": 634.4573498217977,
+    "lat_end_mm": 9.562390633477929,
+    "lat_mid_mm": 0.01354648679297229,
+    "section_distortion_max_mm": 0.12512885742870478
+   },
+   {
+    "t": 0.9,
+    "lambda": 1.3,
+    "vm_elem_max_MPa": 1645.593802708335,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1645.593802708335,
+    "vm_outlet_layer_max_MPa": 1607.220084499805,
+    "vm_midspan_max_MPa": 639.4849313474759,
+    "lat_end_mm": 10.604515545284466,
+    "lat_mid_mm": 0.016477207848767605,
+    "section_distortion_max_mm": 0.1306671417304802
+   }
+  ]
+ },
+ "C5_A1p2": {
+  "t": [
+   0.7000000000000004,
+   0.7500000000000004,
+   0.8000000000000005,
+   0.8500000000000005,
+   0.9
+  ],
+  "lambda": [
+   1.1500000000000001,
+   1.1750000000000003,
+   1.2000000000000004,
+   1.2500000000000004,
+   1.3
+  ],
+  "T_maxabs_diff_vs_C1_final_K": 0.0,
+  "T_node18865_final_K": 479.38531650000004,
+  "states": [
+   {
+    "t": 0.7000000000000004,
+    "lambda": 1.1500000000000001,
+    "vm_elem_max_MPa": 1383.2230646213563,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1383.2230646213563,
+    "vm_outlet_layer_max_MPa": 1353.6459303816105,
+    "vm_midspan_max_MPa": 590.2877853147588,
+    "lat_end_mm": 8.233464730151297,
+    "lat_mid_mm": 0.011552974424359642,
+    "section_distortion_max_mm": 0.11396817600267195
+   },
+   {
+    "t": 0.7500000000000004,
+    "lambda": 1.1750000000000003,
+    "vm_elem_max_MPa": 1432.2983424424053,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1432.2983424424053,
+    "vm_outlet_layer_max_MPa": 1401.2219028795823,
+    "vm_midspan_max_MPa": 594.89836380768,
+    "lat_end_mm": 8.7189453858455,
+    "lat_mid_mm": 0.012791749476930472,
+    "section_distortion_max_mm": 0.11674438886235035
+   },
+   {
+    "t": 0.8000000000000005,
+    "lambda": 1.2000000000000004,
+    "vm_elem_max_MPa": 1480.0173175874047,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1480.0173175874047,
+    "vm_outlet_layer_max_MPa": 1447.4119366977948,
+    "vm_midspan_max_MPa": 599.1263944630427,
+    "lat_end_mm": 9.196821318634596,
+    "lat_mid_mm": 0.014071340322274193,
+    "section_distortion_max_mm": 0.11949732692890172
+   },
+   {
+    "t": 0.8500000000000005,
+    "lambda": 1.2500000000000004,
+    "vm_elem_max_MPa": 1571.4229926636674,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1571.4229926636674,
+    "vm_outlet_layer_max_MPa": 1535.685934782622,
+    "vm_midspan_max_MPa": 606.1337676946371,
+    "lat_end_mm": 10.127600723033291,
+    "lat_mid_mm": 0.01673539816471743,
+    "section_distortion_max_mm": 0.12493827011832825
+   },
+   {
+    "t": 0.9,
+    "lambda": 1.3,
+    "vm_elem_max_MPa": 1657.7430978614996,
+    "vm_elem_max_z_mm": 1.064,
+    "vm_inlet_layer_max_MPa": 1657.7430978614996,
+    "vm_outlet_layer_max_MPa": 1618.7348502139707,
+    "vm_midspan_max_MPa": 612.2786568026546,
+    "lat_end_mm": 11.024201690703963,
+    "lat_mid_mm": 0.019514697869261938,
+    "section_distortion_max_mm": 0.1303014307847254
+   }
+  ]
+ }
+}

@@ -1,0 +1,401 @@
+[
+ {
+  "slide_figure": "cad_3d_interface.png",
+  "report_figure": "05_fluid_solid_interface.png",
+  "project_path": "03_CAD_Geometry/Screenshots/05_fluid_solid_interface.png",
+  "project_sha256": "541E5EBC12E88ABFA8874A8F1DBB52BD44E453109614C77981855FCD2D29556F",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "541E5EBC12E88ABFA8874A8F1DBB52BD44E453109614C77981855FCD2D29556F",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   140,
+   195,
+   630,
+   370
+  ],
+  "size_px": [
+   490,
+   175
+  ],
+  "output_sha256": "8EC7E87B482015A58F7E4FF9D23E39689459BC8B24647B258C6AB2AC81814A52",
+  "provenance": "cad_render",
+  "purpose": "S1 title: SpaceClaim CAD, fluid body inside the solid annulus (title/footnote removed)"
+ },
+ {
+  "slide_figure": "drawing_longitudinal.png",
+  "report_figure": "ENGINEERING_DRAWING.png",
+  "project_path": "03_CAD_Geometry/Drawings/ENGINEERING_DRAWING.png",
+  "project_sha256": "E269D4441AC3878CC65063CF5421F3316C2B6310F8268F98D95AE602E6DF8B0A",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "E269D4441AC3878CC65063CF5421F3316C2B6310F8268F98D95AE602E6DF8B0A",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   110,
+   160,
+   2330,
+   896
+  ],
+  "size_px": [
+   2220,
+   736
+  ],
+  "output_sha256": "5790550CA8EBF6BB4B0359B2FC1916E809719DCDEB7482794F30A39543384F5E",
+  "provenance": "drawing",
+  "purpose": "S3/S5: Section 3 drawing, longitudinal section (sheet frame, cross-section and title block removed)"
+ },
+ {
+  "slide_figure": "cad_cross_section.png",
+  "report_figure": "02b_cross_section_end_on.png",
+  "project_path": "03_CAD_Geometry/Screenshots/02b_cross_section_end_on.png",
+  "project_sha256": "B2647B7D4B6656929EDB15A6087423BAA2E8FF319A84E78783560FCAB0F0B540",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "B2647B7D4B6656929EDB15A6087423BAA2E8FF319A84E78783560FCAB0F0B540",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   80,
+   100,
+   800,
+   815
+  ],
+  "size_px": [
+   720,
+   715
+  ],
+  "output_sha256": "5B6A4187E0FE1142D3F4092C6508278B94457C99C04BE9BF16388751F60F37D7",
+  "provenance": "cad_render",
+  "purpose": "S5: end face drawn from the SpaceClaim tessellation (title/footnote removed)"
+ },
+ {
+  "slide_figure": "mesh_family.png",
+  "report_figure": "mesh_08_refinement_comparison.png",
+  "project_path": "05_Meshing/Screenshots/mesh_08_refinement_comparison.png",
+  "project_sha256": "4EBDB91512BAEC39AE0489666308A55F777F13AE36610A5E5DEC39AB412B29EC",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "A909F27B2C2222EE92CD3196B1849B0D48B1C6BBA9D20CA68E2C917622272B71",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   0,
+   178,
+   1790,
+   755
+  ],
+  "size_px": [
+   1790,
+   577
+  ],
+  "output_sha256": "372ED92146B22CDE33C4D39F07AA116CBFDAAEE02A823F2D5B71424AF4B11391",
+  "provenance": "mesh_render",
+  "purpose": "S7: coarse / medium / fine CFD mesh cross-sections (title/footnote removed)"
+ },
+ {
+  "slide_figure": "convergence_residuals.png",
+  "report_figure": "fig16_convergence_nt.png",
+  "project_path": "06_Fluent_CFD/Figures/fig16_convergence.png",
+  "project_sha256": "92F102EAABF02AEDE37A9F328ECAA10E5B9DDCA2CB740F63F556AFC997AA8479",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "162A8DCDA91154AEF1D5FC92C55E9BB681B3FF4CE8B5802560BED0DE42D7F2D1",
+  "title_strip_removed_in_10B_px": 43,
+  "crop_box_px": [
+   0,
+   40,
+   705,
+   742
+  ],
+  "size_px": [
+   705,
+   702
+  ],
+  "output_sha256": "AAEAC2B87C971BBC71DA45654BF043AF521B462C4C855DACEDDBA88BA825FF67",
+  "provenance": "cfd_plot",
+  "purpose": "S7: panel (a) scaled residuals of the baseline run"
+ },
+ {
+  "slide_figure": "mapping_fluent_vs_mechanical.png",
+  "report_figure": "F7A_03_side_by_side_and_difference_nt.png",
+  "project_path": "07_Thermal_Analysis/Figures/F7A_03_side_by_side_and_difference.png",
+  "project_sha256": "6C6CE3331F73430D39072CBE81374D93721F83BD6773B07A627F04C4E650EEBD",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "0A8C58806F6B11ADD612C169984752DB3317125F3620AFB994F0E71DBC10F232",
+  "title_strip_removed_in_10B_px": 47,
+  "crop_box_px": [
+   0,
+   0,
+   1760,
+   800
+  ],
+  "size_px": [
+   1760,
+   800
+  ],
+  "output_sha256": "9220755F4DA66E043B73319C38DD6507E2A7EE31E5F6CE4E93C2520039F09538",
+  "provenance": "data_plot",
+  "purpose": "S10: Fluent cell temperatures vs mapped Mechanical nodal temperatures (difference panel omitted)"
+ },
+ {
+  "slide_figure": "mech_imported_temperature.png",
+  "report_figure": "LC1_00_Imported_Temperature_iso.png",
+  "project_path": "08_Structural_Analysis/Figures/Mechanical/LC1_00_Imported_Temperature_iso.png",
+  "project_sha256": "6BEC7F65634B0199DA9F1D775743EA64D9EBA17F25C1AD0BAC6121FFEC878BB9",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "A32AD17F186F3FA9887B0B700A090B7DE58DDC4067B52FB4D7B708E373E3D6DC",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "91B96AFC084D4971AB8FE43A66CBDE0E5DC5A58D8FC2DD3C55B3EC5B0177821F",
+  "provenance": "mechanical",
+  "purpose": "S10: imported body temperature in Mechanical (deg C legend as exported)"
+ },
+ {
+  "slide_figure": "mech_LC1_deformation.png",
+  "report_figure": "LC1_Total_Deformation_iso.png",
+  "project_path": "08_Structural_Analysis/Figures/Mechanical/LC1_Total_Deformation_iso.png",
+  "project_sha256": "2FE7DBF5E023592889F784E604750FADFD999B6182B2A382F95DCFC29544D471",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "A85FE6380BD09ED0782F88158512693EAD6B19D441FAF2D11B41B8A120DDE482",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "32D736382A948FA9E7698CEA3328BFEA5C0B05FDBA62FA71D6E45BBBE5B81940",
+  "provenance": "mechanical",
+  "purpose": "S11: LC1 total deformation"
+ },
+ {
+  "slide_figure": "mech_LC1_vonmises.png",
+  "report_figure": "LC1_Equivalent_Stress_averaged_iso.png",
+  "project_path": "08_Structural_Analysis/Figures/Mechanical/LC1_Equivalent_Stress_averaged_iso.png",
+  "project_sha256": "AF4138DA933470F1BF25D6FE0E5860EBD739BAEFFEB650E9418DC9724121E715",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "3EFF91FDFDA7EE0B3F4F7851A335E08F0B88A7F66480225F725DED9BF9D415E0",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "CF9D99E51AFB1718DBDE7374C510053B1E97C87D7EAA1E4DB0524CE22AA52D3C",
+  "provenance": "mechanical",
+  "purpose": "S11: LC1 von Mises stress"
+ },
+ {
+  "slide_figure": "mech_LC2_deformation.png",
+  "report_figure": "LC2_Total_Deformation_iso.png",
+  "project_path": "08_Structural_Analysis/Figures/Mechanical/LC2_Total_Deformation_iso.png",
+  "project_sha256": "657C88C8062DC8798B886BBEC6901275855F9049E9DD259580513DFA04937838",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "4975649338C183055B4A9F4999F5DF8B9A5A1BD71EAF989F223DB3F37AA783C3",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "6AFFE067674F1C09015F2EFFFF7D2D9D827E82115E4D824701068EA25CF7D718",
+  "provenance": "mechanical",
+  "purpose": "S11: LC2 total deformation"
+ },
+ {
+  "slide_figure": "mech_LC2_vonmises.png",
+  "report_figure": "LC2_Equivalent_Stress_averaged_iso.png",
+  "project_path": "08_Structural_Analysis/Figures/Mechanical/LC2_Equivalent_Stress_averaged_iso.png",
+  "project_sha256": "4E88DCE465C07B18D83C7CD678EAC28D281F3C84141631AB16A5390FEDD3853A",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "368531F7D2B2E8E53FCF8904C70FC1E3C64454799F9AAE48EBE171D202C52E1B",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "34D3454088F9384DDA7D5E13B71CF09B71AE2282253E2387452F5034BA3EC845",
+  "provenance": "mechanical",
+  "purpose": "S11: LC2 von Mises stress"
+ },
+ {
+  "slide_figure": "mech_S1_mode1_side.png",
+  "report_figure": "LC2_Linear_Buckling_Mode_1_Total_Deformation_side_YZ.png",
+  "project_path": "08_Structural_Analysis/Buckling/figures/Mechanical/LC2_Linear_Buckling_Mode_1_Total_Deformation_side_YZ.png",
+  "project_sha256": "07F0FBF04CFE07D3270561448F3E779DD031578C6BBB43E6E729651547FFD3CA",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "5D896771B9629F527DDF93B21949B8160F6A07A1B0A897B9955991B9CC69A7C9",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1538,
+   892
+  ],
+  "size_px": [
+   1524,
+   872
+  ],
+  "output_sha256": "5BF2B7EB6B9643D32B6E01E7C4050D95F0983199DEBF52C0C4AE60F9C972A14E",
+  "provenance": "mechanical",
+  "purpose": "S12: S1 buckling mode 1, side view"
+ },
+ {
+  "slide_figure": "mech_S1_mode1_iso.png",
+  "report_figure": "LC2_Linear_Buckling_Mode_1_Total_Deformation_iso.png",
+  "project_path": "08_Structural_Analysis/Buckling/figures/Mechanical/LC2_Linear_Buckling_Mode_1_Total_Deformation_iso.png",
+  "project_sha256": "55DBBD5CC626AFD1F2CCB97C6EA8C418E18B722DEE16B5C7B85E30EAD59EFB02",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "E7AC3294F0937F46D9A6D6844136DB99A544A1A0BB5CD5A8E3185F21EB55A690",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "30F7BF7E4BD1FC7E2A2FF8653C53B7DA1C1FF5CB6912CED82F68F9B9ECFAA5E1",
+  "provenance": "mechanical",
+  "purpose": "S12/S13: S1 buckling mode 1, isometric"
+ },
+ {
+  "slide_figure": "mech_S3_mode1_iso.png",
+  "report_figure": "S3_BK_Mode_1_iso.png",
+  "project_path": "10_Parametric_Study/Structural_Cases/S3_LC2_INTERMEDIATE/Figures/S3_BK_Mode_1_iso.png",
+  "project_sha256": "2FC62F47260DADD371EF8DEC7849795000A6EC9804448DBAD6FCA14FDE2D2AE2",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "8610099EA6E42ADA3537AB98104CC6695A79C8D0A20E84AD6BBB000D9005F6B0",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "71224484535530EE1ECCB2B8112DB588DC578DD4D8147AF33E68BC94238AA384",
+  "provenance": "mechanical",
+  "purpose": "S13: S3 buckling mode 1"
+ },
+ {
+  "slide_figure": "mech_S2_mode1_iso.png",
+  "report_figure": "LC2NS_Linear_Buckling_Mode_1_Total_Deformation_iso.png",
+  "project_path": "08_Structural_Analysis/Buckling/figures/Mechanical/LC2NS_Linear_Buckling_Mode_1_Total_Deformation_iso.png",
+  "project_sha256": "B08C873D46754B86D363D3896A40F03F695C5594DD4DC8E4CC45D598CB09909F",
+  "matches_10A_manifest": true,
+  "report_copy_sha256": "C4FBE6723D4DEE371590EE3CA36D47B338A13826D116CD1374455759F09E780C",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   14,
+   20,
+   1570,
+   892
+  ],
+  "size_px": [
+   1556,
+   872
+  ],
+  "output_sha256": "D1F27450CCD1481B191913781EC6FC2EE891EEF78B01FB578FD6BACC25670F45",
+  "provenance": "mechanical",
+  "purpose": "S13: S2 (8A LC2NS) buckling mode 1"
+ },
+ {
+  "slide_figure": "LSD_deformed_shape_C5_nt.png",
+  "report_figure": "LSD_deformed_shape_C5_nt.png",
+  "project_path": "15_LS_DYNA_Extension/12C_Nonlinear_Buckling/plots/F5_deformed_shape_critical_state.png",
+  "project_sha256": "11FA90FB7359D88504BFFE4A019AD05D9188DF836513E20321F52E1FBB2E41E1",
+  "matches_10A_manifest": false,
+  "report_copy_sha256": "29586E0B433734A856BBA3F5135E72A5058CFBDDFC69329A76E44C2F74E99898",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   0,
+   50,
+   1650,
+   660
+  ],
+  "size_px": [
+   1650,
+   610
+  ],
+  "output_sha256": "29586E0B433734A856BBA3F5135E72A5058CFBDDFC69329A76E44C2F74E99898",
+  "provenance": "lsdyna_plot",
+  "purpose": "S14 LS-DYNA extension: deformed shape of case C5 (1.2 mm) at lambda 1.15-1.30",
+  "added_in": "Section 13 (12C plot, title strip cropped; not in the 10A manifest)"
+ },
+ {
+  "slide_figure": "LSD_load_lateral_nt.png",
+  "report_figure": "LSD_load_lateral_nt.png",
+  "project_path": "15_LS_DYNA_Extension/12C_Nonlinear_Buckling/plots/F3_load_lateral_all.png",
+  "project_sha256": "6AB60A089EC74FE5EA6AF5773D245FE3F3F82AF90761B2DA90555B6F1FE18CB4",
+  "matches_10A_manifest": false,
+  "report_copy_sha256": "2215AC37CF6B1320FC56C6452CAA196A0FA42D9510C1AAFF931616B497FD1758",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   0,
+   50,
+   1650,
+   660
+  ],
+  "size_px": [
+   1650,
+   610
+  ],
+  "output_sha256": "2215AC37CF6B1320FC56C6452CAA196A0FA42D9510C1AAFF931616B497FD1758",
+  "provenance": "lsdyna_plot",
+  "purpose": "S15 imperfection sensitivity: load - lateral displacement and normalised curves",
+  "added_in": "Section 13 (12C plot, title strip cropped; not in the 10A manifest)"
+ },
+ {
+  "slide_figure": "LSD_mechanical_vs_nonlinear_nt.png",
+  "report_figure": "LSD_mechanical_vs_nonlinear_nt.png",
+  "project_path": "15_LS_DYNA_Extension/12C_Nonlinear_Buckling/plots/F7_mechanical_vs_nonlinear.png",
+  "project_sha256": "5BFABFB5989B235299E53AB2E33303F83B9AAF53550044A73960E2C68D3916C6",
+  "matches_10A_manifest": false,
+  "report_copy_sha256": "541BC20463BBBB088EF1CD04FA6C67427C76A6575664B36FD804914867EA5B87",
+  "title_strip_removed_in_10B_px": 0,
+  "crop_box_px": [
+   0,
+   49,
+   1275,
+   630
+  ],
+  "size_px": [
+   1275,
+   581
+  ],
+  "output_sha256": "541BC20463BBBB088EF1CD04FA6C67427C76A6575664B36FD804914867EA5B87",
+  "provenance": "lsdyna_plot",
+  "purpose": "S16 Mechanical vs LS-DYNA: linear critical loads, maximum attained N and Southwell estimates",
+  "added_in": "Section 13 (12C plot, title strip cropped; not in the 10A manifest)"
+ }
+]

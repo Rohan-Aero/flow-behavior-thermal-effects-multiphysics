@@ -1,0 +1,18 @@
+--- Archive/param_cases_v2_used_for_9B1.py	2026-09-26 17:06:31.613458468 +0000
++++ param_cases.py	2026-09-26 17:06:31.639988449 +0000
+@@ -66,8 +66,15 @@
+     "T03_THICK": dict(variable="wall thickness (Q held constant)", value=12.0, units="mm", intended=_t(12.0),
+                       allowed=[P_QPP], derived=["QPP"],
+                       mesh="../../Mesh_Checks/Mesh_T03_THICK/T03_THICK.msh", counts=(168480, 116640, 51840)),
++    # Section 9B-2 Part A (approved in 9A as M03): T03 geometry and heat input with the SOLID radially refined x1.5
++    # (18 layers, first 0.333 mm); fluid mesh unchanged. Relative to P00 it changes exactly what T03 changes.
++    "M03_T03_CFD_SOLID18": dict(variable="CFD mesh adequacy of T03 (solid layers 12 -> 18)", value=18, units="solid layers",
++                                intended=_t(12.0), allowed=[P_QPP], derived=["QPP"],
++                                mesh="../../Mesh_Checks/Mesh_M03_T03_CFD_SOLID18/M03_T03_CFD_SOLID18.msh",
++                                counts=(194400, 116640, 77760)),
+ }
+ ORDER = ["C00_PIPELINE_CHECK", "V01_LOW", "V03_HIGH", "Q01_LOW", "Q03_HIGH", "T01_THIN", "T03_THICK"]
++ORDER_9B2 = ["M03_T03_CFD_SOLID18"]
+ 
+ 
+ def resolved(case):

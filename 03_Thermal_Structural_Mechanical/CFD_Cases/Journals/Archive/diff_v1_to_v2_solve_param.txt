@@ -1,0 +1,50 @@
+--- Archive/solve_param_v1_used_for_C00.py	2026-09-26 12:35:06.497962342 +0000
++++ solve_param.py	2026-09-26 12:25:01.711067987 +0000
+@@ -198,7 +198,8 @@
+ if "V_IN" in CDEF["intended"]:
+     APPLIED["V_IN"] = step("CASE CHANGE inlet velocity -> %.6f m/s" % V_IN, set_velocity)
+     APPLIED["TI"] = step("DERIVED  turbulent intensity 0.16 Re^-1/8 -> %.9f" % TI, set_ti)
+-    APPLIED["INIT_W"] = step("DERIVED  init z-velocity (from inlet) -> %.6f m/s" % INIT_W, set_init_w)
++if "INIT_W" in CDEF["intended"]:      # not used by any approved case (the initial field is P00's in every case)
++    APPLIED["INIT_W"] = step("init z-velocity -> %.6f m/s" % INIT_W, set_init_w)
+ if "QPP" in CDEF["intended"]:
+     APPLIED["QPP"] = step("CASE CHANGE heated-wall heat flux -> %.9f W/m2" % QPP, set_qpp)
+ 
+@@ -439,7 +440,7 @@
+         return (_close(pick("temperature"), T_IN) and _close(pick("z-velocity"), INIT_W) and
+                 abs(pick("x-velocity")) < 1e-12 and abs(pick("y-velocity")) < 1e-12 and abs(pick("pressure")) < 1e-9)
+ 
+-    chk("6A init defaults (T 300 K, w = inlet velocity, u = v = 0, p 0 Pa)",
++    chk("6A init defaults (T 300 K, w 23.5 m/s = P00, u = v = 0, p 0 Pa)",
+         lambda: {k: v for k, v in S.initialization.defaults().items() if isinstance(v, (int, float))}, init_ok)
+ 
+     # --- every common row must equal P00's own audit of the same stage, except the intended rows,
+@@ -489,7 +490,7 @@
+     exit()
+ 
+ # ---------------------------------------------------------------------------
+-# 3. initialisation - fresh standard initialisation (T 300 K, w = inlet velocity, 0 Pa)
++# 3. initialisation - fresh standard initialisation from P00's own defaults (300 K, w = 23.5 m/s, 0 Pa)
+ # ---------------------------------------------------------------------------
+ step("initialization type standard", lambda: setattr(ini, "initialization_type", "standard"))
+ step("standard initialize (300 K, w = %.4f m/s, 0 Pa gauge)" % INIT_W, lambda: ini.standard_initialize())
+@@ -862,7 +863,19 @@
+ 
+ # final validity pass over the complete history (every iteration of every stage)
+ validity("final", scan_messages=False)
++def _sha(path):
++    try:
++        import hashlib
++        return hashlib.sha256(open(path, "rb").read()).hexdigest().upper()
++    except Exception as e:
++        return "ERROR %s" % e
++
++
+ write_json("Audit/run_summary.json", {"case": CASE, "status": STATUS[0], "converged": converged,
++                                      "journal_sha256": _sha("../Journals/solve_param.py"),
++                                      "param_cases_sha256": _sha("../Journals/param_cases.py"),
++                                      "s5_common_sha256": _sha("../Journals/s5_common.py"),
++                                      "mesh_sha256": _sha(MESH),
+                                       "variable": CDEF["variable"], "value": CDEF["value"], "units": CDEF["units"],
+                                       "resolved_parameters": P, "applied_read_back": APPLIED,
+                                       "frozen_physics_gate_passed": GATE["passed"],

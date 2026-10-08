@@ -1,0 +1,62 @@
+[
+ {
+  "file": "Source/main.tex",
+  "old": "\\input{chapters/ch14_supports}\n",
+  "new": "\\input{chapters/ch14_supports}\n\\input{chapters/ch14b_lsdyna}\n"
+ },
+ {
+  "file": "Tables/tables_index.tsv",
+  "old": "tab_support\ttab:support\t",
+  "new": null
+ },
+ {
+  "file": "Source/chapters/frontmatter.tex",
+  "old": "flux and the 8~mm wall.\n\nThe results are not validated against measurement. The real end restraint, geometric imperfections and\n",
+  "new": "flux and the 8~mm wall. An additional geometrically nonlinear analysis with ANSYS LS-DYNA, performed as an extension with mode-shaped\nnumerical imperfections of 0.1, 0.6 and 1.2~mm, gives Southwell characteristic-load estimates of 607.7--612.3~kN, close to the linear\ncritical load of 608.25~kN, while lateral deflection and stress grow strongly with the imperfection amplitude.\n\nThe results are not validated against measurement. The real end restraint, measured geometric imperfections and\n"
+ },
+ {
+  "file": "Source/chapters/ch01_introduction.tex",
+  "old": "These exclusions are revisited as limitations in Chapter~\\ref{ch:unc} and as future work in Chapter~\\ref{ch:future}.\n",
+  "new": "These exclusions are revisited as limitations in Chapter~\\ref{ch:unc} and as future work in Chapter~\\ref{ch:future}. An additional\ngeometrically nonlinear, elastic buckling analysis with ANSYS LS-DYNA, performed as an extension of the thermo-structural analysis, is\nreported separately in Section~\\ref{sec:lsdyna}; it does not change the scope or the results of the main study.\n"
+ },
+ {
+  "file": "Source/chapters/ch13_buckling.tex",
+  "old": "materially nonlinear analysis would be required to determine a collapse load (Chapter~\\ref{ch:future}).",
+  "new": "materially nonlinear analysis would be required to determine a collapse load (Chapter~\\ref{ch:future}). An elastic, geometrically\nnonlinear imperfection-sensitivity extension is reported in Section~\\ref{sec:lsdyna}; it does not determine a collapse load."
+ },
+ {
+  "file": "Source/chapters/ch16_uncertainty.tex",
+  "old": "laterally below the bifurcation load and its capacity is lower; the size of the reduction is unknown without an imperfection-sensitive\nnonlinear analysis.\n",
+  "new": "laterally below the bifurcation load and its capacity is lower; the size of the reduction is unknown without an imperfection-sensitive\nnonlinear analysis. The additional LS-DYNA analysis (Section~\\ref{sec:lsdyna}) quantifies the elastic response for three numerical imperfection\namplitudes; without measured imperfection data and an inelastic material model, the reduction for a real tube remains unknown.\n"
+ },
+ {
+  "file": "Source/chapters/ch17_discussion.tex",
+  "old": "indicator for a perfect column; imperfections and inelastic behaviour act only to lower the real capacity.\n",
+  "new": "indicator for a perfect column; imperfections and inelastic behaviour act only to lower the real capacity. The additional LS-DYNA\nanalysis (Section~\\ref{sec:lsdyna}) is consistent with this: with mode-shaped imperfections the lateral deflection and stress grow well below\n$\\lambda_1$, while the Southwell characteristic-load estimates stay within 1\\,\\% of the linear critical load.\n"
+ },
+ {
+  "file": "Source/chapters/ch18_conclusions.tex",
+  "old": "      stability conclusion.\n\\item \\textbf{Limitations.} The real end restraint, geometric imperfections and inelastic material behaviour were not modelled, the CFD model\n      form was not varied, and no experimental data exist.",
+  "new": "      stability conclusion.\n\\item \\textbf{Additional nonlinear LS-DYNA analysis (extension).} With numerical mode-1 imperfections of 0.1, 0.6 and 1.2~mm, the\n      Southwell characteristic-load estimates (607.7--612.3~kN) are close to the linear critical load of 608.25~kN: the characteristic\n      global buckling load is relatively insensitive to the tested amplitudes, while the onset of lateral deformation, the deflection\n      and the stress at a given load are strongly imperfection-sensitive. The model is elastic and first local yield is reached at\n      $\\lambda$ = 0.974--1.109, so the later parts of the load paths lie outside its validated range. The result is not a real-world\n      capacity, a factor of safety or an experimental validation (Section~\\ref{sec:lsdyna}).\n\\item \\textbf{Limitations.} The real end restraint and inelastic material behaviour were not modelled, geometric imperfections only as\n      numerical amplitudes in the additional elastic LS-DYNA analysis, the CFD model form was not varied, and no experimental data exist."
+ },
+ {
+  "file": "Source/chapters/ch19_future.tex",
+  "old": "The following work would close the open items identified in Chapter~\\ref{ch:unc}. None of it has been performed.\n",
+  "new": "The following work would close the open items identified in Chapter~\\ref{ch:unc}. None of it has been performed, except that item 3\nis addressed in part by the additional elastic LS-DYNA analysis of Section~\\ref{sec:lsdyna}.\n"
+ },
+ {
+  "file": "Source/chapters/ch19_future.tex",
+  "old": "      the geometrically nonlinear load--deflection path to the limit point (task T-035).\n",
+  "new": "      the geometrically nonlinear load--deflection path to the limit point (task T-035). The additional LS-DYNA analysis covers the\n      elastic part with numerical amplitudes of 0.1--1.2~mm; tolerance-based amplitudes, an elastic--plastic material model and the\n      limit point remain open.\n"
+ },
+ {
+  "file": "Tables/tab_unc.tex",
+  "old": "8 & Geometric imperfection & not modelled; reduces real capacity below $\\lambda_1$ by an unknown amount & primary \\\\",
+  "new": "8 & Geometric imperfection & not modelled in the Mechanical study (numerical amplitudes only in the additional elastic LS-DYNA analysis, Section~\\ref{sec:lsdyna}); reduces real capacity below $\\lambda_1$ by an unknown amount & primary \\\\"
+ },
+ {
+  "file": "Tables/tables_index.tsv",
+  "old": null,
+  "new": "tab_lsdyna\ttab:lsdyna\tAdditional LS-DYNA nonlinear analysis: three-point imperfection sensitivity under S1 / LC2 (elastic, geometrically nonlinear)"
+ }
+]

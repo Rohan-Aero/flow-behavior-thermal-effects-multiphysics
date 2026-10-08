@@ -1,0 +1,18 @@
+fluent system FLU components ['Setup', 'Solution']
+OK   component Setup /Schematic/Component:Setup
+OK   container Setup Setup
+DIR container Setup: ['CopyLauncherSettings', 'Edit', 'Exit', 'GetAllParameters', 'GetFiles', 'GetFluentLauncherSettings', 'GetTGridMeshImportOptions', 'Import', 'Name', 'SendCommand', 'ToString', 'Type']
+DIR component Setup: ['Clean', 'Container', 'DeleteShare', 'DeleteTransfer', 'DirectoryName', 'DisplayText', 'GetContainer', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Name', 'Notes', 'Refresh', 'RemoveFromSystem', 'ReplaceWithShare', 'Reset', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'ToString', 'TransferData', 'TransferSpecificData', 'Type', 'Update', 'UpdateConditionParameter', 'UpdateUpstreamComponents', 'UserId']
+OK   component Solution /Schematic/Component:Solution
+OK   container Solution Solution
+DIR container Solution: ['Continue', 'CopyLauncherSettings', 'Edit', 'Exit', 'GetAllParameters', 'GetComponentSettingsForRsmDpUpdate', 'GetConvergenceChart', 'GetConvergenceCharts', 'GetExpertProperties', 'GetFiles', 'GetFluentLauncherSettings', 'GetFluentSolutionProperties', 'GetSolutionSettings', 'ImportInitialData', 'MarkUpToDate', 'MarkUpdateRequired', 'Name', 'SendCommand', 'ToString', 'Type']
+DIR component Solution: ['Clean', 'Container', 'DeleteShare', 'DeleteTransfer', 'DirectoryName', 'DisplayText', 'GetContainer', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Name', 'Notes', 'Refresh', 'RemoveFromSystem', 'ReplaceWithShare', 'Reset', 'SetEntityProperties', 'SetEntityProperty', 'SimulationSetEntityProperty', 'ToString', 'TransferData', 'TransferSpecificData', 'Type', 'Update', 'UpdateConditionParameter', 'UpdateUpstreamComponents', 'UserId']
+FAIL setup.Import case: The following required arguments for command/query Fluent.Import are missing or null: FileType
+FAIL setup.Import case FileType: Cannot convert value Fluent Case File from String to FileType.
+FAIL solution.Import data: 'DataContainerReference' object has no attribute 'Import'
+OK   setup files []
+OK   solution files []
+OK   solution component state n/a
+OK   link Solution -> Setup 
+saved
+=== WB PROBE 5 DONE ===

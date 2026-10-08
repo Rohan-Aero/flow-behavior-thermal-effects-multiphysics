@@ -1,0 +1,34 @@
+OK   generate mesh 
+OK   nodes/elements (108252, 23400)
+analysis children [('Analysis Settings', 'ANSYSAnalysisSettings'), ('Imported Load (Setup) ', 'ImportedLoadGroup'), ('Solution', 'Solution')]
+P0_ProgramControlled before import: id=File2:Temperature1 control=ProgramControlled alg=BucketVolume method=PointElement wt=ShapeFunctions out=WeightedAvg
+OK   P0_ProgramControlled import 
+P0_ProgramControlled after import: state=Solved control=ProgramControlled alg=BucketVolume method=PointElement wt=ShapeFunctions out=WeightedAvg
+OK   P0_ProgramControlled source min/max ('150.687341 [C]', '289.39364 [C]')
+P0_ProgramControlled NS [('Outside Nodes', 0)]
+OK   P0_ProgramControlled export 
+OK   P0_ProgramControlled write input 
+OK   P1_Bucket_ShapeFn_Projection manual 
+OK   P1_Bucket_ShapeFn_Projection algorithm 
+OK   P1_Bucket_ShapeFn_Projection weighting 
+OK   P1_Bucket_ShapeFn_Projection outside 
+P1_Bucket_ShapeFn_Projection before import: id=File2:Temperature1 control=Manual alg=BucketVolume method=PointElement wt=ShapeFunctions out=Projection
+OK   P1_Bucket_ShapeFn_Projection import 
+P1_Bucket_ShapeFn_Projection after import: state=UnderDefined control=Manual alg=BucketVolume method=PointElement wt=ShapeFunctions out=Projection
+FAIL P1_Bucket_ShapeFn_Projection source min/max: Unable to convert from unit [m] to unit [K].
+P1_Bucket_ShapeFn_Projection NS []
+OK   P1_Bucket_ShapeFn_Projection export 
+OK   P1_Bucket_ShapeFn_Projection write input 
+OK   P2_Bucket_ShapeFn_Nearest manual 
+OK   P2_Bucket_ShapeFn_Nearest algorithm 
+OK   P2_Bucket_ShapeFn_Nearest weighting 
+OK   P2_Bucket_ShapeFn_Nearest outside 
+P2_Bucket_ShapeFn_Nearest before import: id=File2:Temperature1 control=Manual alg=BucketVolume method=PointElement wt=ShapeFunctions out=NearestNode
+OK   P2_Bucket_ShapeFn_Nearest import 
+P2_Bucket_ShapeFn_Nearest after import: state=Solved control=Manual alg=BucketVolume method=PointElement wt=ShapeFunctions out=NearestNode
+OK   P2_Bucket_ShapeFn_Nearest source min/max ('150.687341 [C]', '289.39364 [C]')
+P2_Bucket_ShapeFn_Nearest NS []
+OK   P2_Bucket_ShapeFn_Nearest export 
+OK   P2_Bucket_ShapeFn_Nearest write input 
+messages [('Warning', 'Not enough constraints appear to be applied to prevent rigid body motion.  This may lead to solution warnings or errors.  Check results carefully.'), ('Info', 'The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times.'), ('Info', 'Changes to Named Selection Creation options will take effect on next import operation.'), ('Info', 'Changes to Named Selection Creation options will take effect on next import operation.'), ('Error', 'A general failure occurred during the solution process.'), ('Warning', 'During data mapping, target nodes were found outside the boundaries of the source point data.  A different method may have been used to calculate the interpolated value.  You can find more information by looking at the Summary comment or by turning on named selection creation for outside nodes to he'), ('Info', 'Changes to Named Selection Creation options will take effect on next import operation.'), ('Info', 'When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No.')]
+PROBE9-DONE

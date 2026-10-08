@@ -1,0 +1,333 @@
+{
+ "cases": {}, 
+ "LC2_settings": {
+  "InertiaRelief": "False", 
+  "LargeDeflection": "False", 
+  "SolverType": "Direct", 
+  "WeakSprings": "Off", 
+  "FutureAnalysis": "PrestressedAnalysis"
+ }, 
+ "note": "RE-ANALYSIS 2026 - newly generated linear buckling results (not recovered originals)", 
+ "presolve_input_LC2NS": {
+  "lines_with_443.41": [], 
+  "extra_eblocks": [], 
+  "wsprings": false, 
+  "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+  "lines": 241423, 
+  "misc": [
+   "antype,0", 
+   "eqsl,sparse,,,,,1", 
+   "et,1,186", 
+   "keyo,1,2,1", 
+   "nsub,1,1,1", 
+   "outres,all,none", 
+   "outres,cont,all,", 
+   "outres,eangl,all", 
+   "outres,epel,all,", 
+   "outres,eppl,all,", 
+   "outres,epth,all,", 
+   "outres,erase", 
+   "outres,etmp,all", 
+   "outres,nsol,all,", 
+   "outres,rsol,all", 
+   "outres,strs,all,", 
+   "outres,veng,all"
+  ], 
+  "nblock_header": "nblock,3,,119077", 
+  "n_bf": 108252, 
+  "constraints_raw": [
+   "local,12,1,0.,0.,0.,0.,0.,0.", 
+   "csys,0", 
+   "cmsel,s,_DISPZEROUY", 
+   "d,all,uy,0", 
+   "nsel,all", 
+   "cmsel,s,_DISPZEROUZ", 
+   "d,all,uz,0", 
+   "nsel,all"
+  ], 
+  "pressure_lines": [], 
+  "constraint_set": [
+   [
+    "D", 
+    "uy", 
+    0.0, 
+    1224, 
+    80282530, 
+    18577, 
+    108252
+   ], 
+   [
+    "D", 
+    "uz", 
+    0.0, 
+    1224, 
+    80282530, 
+    18577, 
+    108252
+   ]
+  ], 
+  "has_443.41": false, 
+  "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Buckling\\Audits\\Presolve_Inputs\\LC2NS_presolve_8A_ds.dat", 
+  "bf_min_K": 423.83737199999996, 
+  "n_elem_lines": 23400, 
+  "bf_min_C": 150.687372, 
+  "bf_max_K": 562.55763989999991, 
+  "eblock_header": "eblock,21,COMPACT,,23400", 
+  "bf_max_C": 289.4076399, 
+  "material": [
+   "tref,26.85", 
+   "MP,DENS,1,8190,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,20", 
+   "MPTEMP,2,100", 
+   "MPTEMP,3,200", 
+   "MPTEMP,4,300", 
+   "MPTEMP,5,400", 
+   "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,20", 
+   "MPTEMP,2,100", 
+   "MPTEMP,3,200", 
+   "MPTEMP,4,300", 
+   "MPTEMP,5,400", 
+   "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,93.33", 
+   "MPTEMP,2,204.44", 
+   "MPTEMP,3,315.56", 
+   "MPTEMP,4,426.67", 
+   "MPTEMP,5,537.78", 
+   "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+   "MPTEMP,,,,,,,,", 
+   "MPAMOD,1,21.11,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,20", 
+   "MPTEMP,2,100", 
+   "MPTEMP,3,200", 
+   "MPTEMP,4,300", 
+   "MPTEMP,5,400", 
+   "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+   "MPTEMP,,,,,,,,"
+  ], 
+  "n_nodes": 108252
+ }, 
+ "presolve_input_LC2": {
+  "lines_with_443.41": [], 
+  "extra_eblocks": [], 
+  "wsprings": false, 
+  "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+  "lines": 240310, 
+  "misc": [
+   "antype,0", 
+   "eqsl,sparse,,,,,1", 
+   "et,1,186", 
+   "keyo,1,2,1", 
+   "nsub,1,1,1", 
+   "outres,all,none", 
+   "outres,cont,all,", 
+   "outres,eangl,all", 
+   "outres,epel,all,", 
+   "outres,eppl,all,", 
+   "outres,epth,all,", 
+   "outres,erase", 
+   "outres,etmp,all", 
+   "outres,nsol,all,", 
+   "outres,rsol,all", 
+   "outres,strs,all,", 
+   "outres,veng,all"
+  ], 
+  "nblock_header": "nblock,3,,119077", 
+  "n_bf": 108252, 
+  "constraints_raw": [
+   "local,12,1,0.,0.,0.,0.,0.,0.", 
+   "csys,0", 
+   "csys,12", 
+   "nrot,_CM92", 
+   "csys,0", 
+   "cmsel,s,_DISPZEROUZ", 
+   "d,all,uz,0", 
+   "nsel,all", 
+   "d,_CM93U,uy,0.", 
+   "nsel,s,d,ux", 
+   "nsel,a,d,uy", 
+   "nsel,a,d,uz", 
+   "nsel,s,d,ux", 
+   "nsel,a,d,uy", 
+   "nsel,a,d,uz"
+  ], 
+  "pressure_lines": [], 
+  "constraint_set": [
+   [
+    "D", 
+    "uy", 
+    0.0, 
+    3, 
+    77622, 
+    25862, 
+    25886
+   ], 
+   [
+    "D", 
+    "uz", 
+    0.0, 
+    1224, 
+    80282530, 
+    18577, 
+    108252
+   ], 
+   [
+    "NROT_csys12", 
+    "", 
+    0.0, 
+    3, 
+    77622, 
+    25862, 
+    25886
+   ]
+  ], 
+  "has_443.41": false, 
+  "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Buckling\\Audits\\Presolve_Inputs\\LC2_presolve_8A_ds.dat", 
+  "bf_min_K": 423.83737199999996, 
+  "n_elem_lines": 23400, 
+  "bf_min_C": 150.687372, 
+  "bf_max_K": 562.55763989999991, 
+  "eblock_header": "eblock,21,COMPACT,,23400", 
+  "bf_max_C": 289.4076399, 
+  "material": [
+   "tref,26.85", 
+   "MP,DENS,1,8190,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,20", 
+   "MPTEMP,2,100", 
+   "MPTEMP,3,200", 
+   "MPTEMP,4,300", 
+   "MPTEMP,5,400", 
+   "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,20", 
+   "MPTEMP,2,100", 
+   "MPTEMP,3,200", 
+   "MPTEMP,4,300", 
+   "MPTEMP,5,400", 
+   "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,93.33", 
+   "MPTEMP,2,204.44", 
+   "MPTEMP,3,315.56", 
+   "MPTEMP,4,426.67", 
+   "MPTEMP,5,537.78", 
+   "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+   "MPTEMP,,,,,,,,", 
+   "MPAMOD,1,21.11,", 
+   "MPTEMP,,,,,,,,", 
+   "MPTEMP,1,20", 
+   "MPTEMP,2,100", 
+   "MPTEMP,3,200", 
+   "MPTEMP,4,300", 
+   "MPTEMP,5,400", 
+   "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+   "MPTEMP,,,,,,,,"
+  ], 
+  "n_nodes": 108252
+ }, 
+ "FATAL": "PRE-SOLVE GATE FAILED - nothing solved: ['LC2NS input: the 1,224 end-face nodes rotated to csys 12 with U_theta = 0 and U_z = 0; nothing else']", 
+ "LC2_buckling_settings": {
+  "MaximumModesToFind": "6", 
+  "SolverType": "ProgramControlled", 
+  "KeepPreStressLoadPattern": "True", 
+  "IncludeNegativeLoadMultiplier": "ProgramControlled"
+ }, 
+ "LC2_buckling_objects": [
+  [
+   "Pre-Stress (LC2_Axially_Restrained)", 
+   "InitialCondition", 
+   "FullyDefined"
+  ], 
+  [
+   "Analysis Settings", 
+   "ANSYSAnalysisSettings", 
+   "FullyDefined"
+  ], 
+  [
+   "Solution", 
+   "Solution", 
+   "NotSolved"
+  ], 
+  [
+   "Solution Information", 
+   "SolutionInformation", 
+   "NotSolved"
+  ]
+ ], 
+ "analyses_on_open": [
+  [
+   "LC1_Free_Expansion", 
+   "Static"
+  ], 
+  [
+   "LC2_Axially_Restrained", 
+   "Static"
+  ], 
+  [
+   "LC2P_Restrained_Thermal_Plus_Pressure", 
+   "Static"
+  ], 
+  [
+   "Eigenvalue Buckling", 
+   "Buckling"
+  ], 
+  [
+   "Static Structural", 
+   "Static"
+  ], 
+  [
+   "Eigenvalue Buckling 2", 
+   "Buckling"
+  ]
+ ], 
+ "LC2_input_misc": [
+  "antype,0", 
+  "eqsl,sparse,,,,,1", 
+  "et,1,186", 
+  "keyo,1,2,1", 
+  "nsub,1,1,1", 
+  "outres,all,none", 
+  "outres,cont,all,", 
+  "outres,eangl,all", 
+  "outres,epel,all,", 
+  "outres,eppl,all,", 
+  "outres,epth,all,", 
+  "outres,erase", 
+  "outres,etmp,all", 
+  "outres,nsol,all,", 
+  "outres,rsol,all", 
+  "outres,strs,all,", 
+  "outres,veng,all"
+ ], 
+ "prestress_links": {
+  "LC2NS_Linear_Buckling": [
+   [
+    "PreStressICEnvironment", 
+    "LC2NS_NoSway_Static_SENSITIVITY"
+   ], 
+   [
+    "ic_name", 
+    "Pre-Stress (LC2NS_NoSway_Static_SENSITIVITY)"
+   ]
+  ], 
+  "LC2_Linear_Buckling": [
+   [
+    "PreStressICEnvironment", 
+    "LC2_Axially_Restrained"
+   ], 
+   [
+    "ic_name", 
+    "Pre-Stress (LC2_Axially_Restrained)"
+   ]
+  ]
+ }
+}

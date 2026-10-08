@@ -1,0 +1,22 @@
+{
+  "cell_fluid": [
+    "fluid_domain"
+  ],
+  "cell_solid": [
+    "solid_domain"
+  ],
+  "velocity_inlet": [
+    "fluid_inlet"
+  ],
+  "pressure_outlet": [
+    "fluid_outlet"
+  ],
+  "wall": [
+    "fluid_solid_interface-shadow",
+    "fluid_solid_interface",
+    "heated_outer_wall",
+    "solid_inlet_end",
+    "solid_outlet_end"
+  ],
+  "interior": []
+}

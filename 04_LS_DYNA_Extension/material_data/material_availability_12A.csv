@@ -1,0 +1,10 @@
+property,available,temperature_points_C,values,unit,source,status,ls_dyna_use_12A
+youngs_modulus,yes,20|100|200|300|400,204|199|193|187|180,GPa,VDM Alloy 718 Data Sheet 4127 (materials_7A.csv; M010),datasheet,MAT_004 E(T)
+poissons_ratio,yes (assumed),all,0.294,-,literature range 0.284-0.294 (M012),ASSUMED (T-014 / F-011),MAT_004 PR (constant)
+secant_CTE_from_21.11C,yes,93.33|204.44|315.56|426.67|537.78,12.8|13.3|13.9|14.2|14.8,1e-6/K,Special Metals / HTM (M011),datasheet (secant; MPAMOD to TREF 26.85 C in Mechanical),convert exactly to instantaneous alpha curve for MAT_ADD_THERMAL_EXPANSION (not computed in 12A)
+yield_strength_0.2pct,yes (typical),20|100|200|300|400,1030|1060|1040|1020|1000,MPa,VDM 4127 age-hardened (M013),datasheet typical values (not minimum),first-yield check along the path only; NOT used as a material yield in LS-DYNA
+plastic_stress_strain_curve,no,-,-,-,none in project,MISSING (F-045; T-036),material nonlinearity UNAVAILABLE - not invented
+tangent_or_hardening_modulus,no,-,-,-,none in project,MISSING (F-045; T-036),not used; ETAN not defined (thermo-elastic MAT_004)
+density,yes,-,8190,kg/m3,Special Metals / HTM (materials_7A.csv),datasheet,MAT_004 RO (no gravity; static implicit)
+reference_temperature,yes,-,300,K,project decision (M014; TREF 26.85 C),re-analysed choice,TB = 300 K in LOAD_THERMAL_VARIABLE_NODE
+thermal_conductivity,yes,20|100|200|300|400,11.5|12.1|13.5|15.2|17.1,W/m K,VDM 4127,datasheet,not used (no thermal solve)

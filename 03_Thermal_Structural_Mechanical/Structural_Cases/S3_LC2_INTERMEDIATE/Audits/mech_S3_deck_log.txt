@@ -1,0 +1,84 @@
+15:01:17 === SECTION 9B-2 S3 SUPPORT SENSITIVITY, MODE deck (RE-ANALYSIS 2026) ===
+15:01:17 PASS  one new static (S3) and one buckling analysis in the copy | expected 1 / 1 | found [('LC1_Free_Expansion', 'Static'), ('LC2_Axially_Restrained', 'Static'), ('LC2P_Restrained_Thermal_Plus_Pressure', 'Static'), ('Static Structural', 'Static'), ('Eigenvalue Buckling', 'Buckling')]
+15:01:17 PASS  mesh B unchanged (108,252 nodes / 23,400 SOLID186) | expected 108252 / 23400 | found 108252 / 23400
+15:01:18 PASS  end faces: 612 inlet and 612 outlet nodes | expected 612 / 612 | found 612 / 612
+15:01:18 PASS  S3: External Data linked (one imported load group) | expected 1 | found 1
+15:01:18 NOTE object ImportLoad failed (Object reference not set to an instance of an object.); importing through the parent Imported Load group
+15:01:24 OK   S3 import (group) 
+15:01:24 S3 imported body temperature state Solved
+15:01:25 OK   remote displacement: deformable 
+15:01:25 OK   pilot x 
+15:01:25 OK   pilot y 
+15:01:25 OK   pilot z 
+15:01:25 OK   pilot XComponent = 0 
+15:01:25 OK   pilot YComponent = 0 
+15:01:25 OK   pilot ZComponent = 0 
+15:01:25 OK   pilot RotationX free 
+15:01:25 OK   pilot RotationY free 
+15:01:25 OK   pilot RotationZ free 
+15:01:25 OK   S3 solver type -> Direct (sparse, as 7B) 
+15:01:25 OK   add S3_Equivalent_Stress_averaged <Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress object at 0x000000000000002B [Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress]>
+15:01:25 OK   add S3_Total_Deformation <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x000000000000002C [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:25 OK   add S3_Axial_Deformation_Uz_global <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x000000000000002D [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:01:25 OK   S3_Axial_Deformation_Uz_global Z 
+15:01:25 OK   add S3_Lateral_Deformation_Ux_global <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x000000000000002E [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:01:25 OK   S3_Lateral_Deformation_Ux_global X 
+15:01:25 OK   add S3_Lateral_Deformation_Uy_global <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation object at 0x000000000000002F [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.DirectionalDeformation]>
+15:01:25 OK   S3_Lateral_Deformation_Uy_global Y 
+15:01:25 OK   add S3_Axial_Stress_Sz_global <Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress object at 0x0000000000000030 [Ansys.ACT.Automation.Mechanical.Results.StressResults.NormalStress]>
+15:01:25 OK   S3_Axial_Stress_Sz_global Z 
+15:01:25 OK   add S3_Force_Reaction_INLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x0000000000000031 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:01:26 OK   S3_Force_Reaction_INLET_END scope 
+15:01:26 OK   add S3_Force_Reaction_OUTLET_PILOT <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction object at 0x0000000000000032 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.ForceReaction]>
+15:01:26 OK   S3_Force_Reaction_OUTLET_PILOT scope 
+15:01:26 OK   add S3_Moment_Reaction_INLET_END <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x0000000000000033 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:01:26 OK   S3_Moment_Reaction_INLET_END scope 
+15:01:26 OK   add S3_Moment_Reaction_OUTLET_PILOT <Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction object at 0x0000000000000034 [Ansys.ACT.Automation.Mechanical.Results.ProbeResults.MomentReaction]>
+15:01:26 OK   S3_Moment_Reaction_OUTLET_PILOT scope 
+15:01:26 OK   S3 APDL post snippet (7B s7b_post_snippet, unchanged) <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x0000000000000035 [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+15:01:26 OK   snippet input 
+15:01:26 OK   buckling 6 modes 
+15:01:26 OK   buckling positive multipliers only 
+15:01:26 OK   mode 1 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000036 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:26 OK   mode 1 set 
+15:01:26 OK   mode 2 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000037 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:26 OK   mode 2 set 
+15:01:26 OK   mode 3 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000038 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:26 OK   mode 3 set 
+15:01:26 OK   mode 4 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x0000000000000039 [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:26 OK   mode 4 set 
+15:01:26 OK   mode 5 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x000000000000003A [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:26 OK   mode 5 set 
+15:01:26 OK   mode 6 result <Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation object at 0x000000000000003B [Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation]>
+15:01:26 OK   mode 6 set 
+15:01:26 OK   buckling snippet <Ansys.ACT.Automation.Mechanical.CommandSnippet object at 0x000000000000003C [Ansys.ACT.Automation.Mechanical.CommandSnippet]>
+15:01:26 OK   buckling snippet input 
+15:01:27 OK   inlet scope SOLID_INLET_END
+15:01:27 OK   outlet scope SOLID_OUTLET_END
+15:01:27 OK   XComponent Discrete
+15:01:27 OK   YComponent Discrete
+15:01:27 OK   ZComponent Discrete
+15:01:27 OK   RotationX Free
+15:01:27 OK   RotationY Free
+15:01:27 OK   RotationZ Free
+15:01:27 support definition {'inlet': {'cs': 'CS_DUCT_CYL', 'X_radial': 'Free', 'scope': 'SOLID_INLET_END', 'name': 'S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'Y_theta': 'Discrete', 'Z_axial': 'Discrete'}, 'outlet': {'behavior': 'Deformable', 'pilot_xyz_m': [0.0, 0.0, 0.59999999999999998], 'scope': 'SOLID_OUTLET_END', 'name': 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE', 'components': {'RotationX': 'Free', 'RotationY': 'Free', 'RotationZ': 'Free', 'YComponent': 'Discrete', 'XComponent': 'Discrete', 'ZComponent': 'Discrete'}}}
+15:01:27 PASS  S3 outlet: deformable remote displacement, pilot (0, 0, 0.6) m, Ux = Uy = Uz = 0, rotations free | expected as defined in 9A | found {'behavior': 'Deformable', 'pilot_xyz_m': [0.0, 0.0, 0.59999999999999998], 'scope': 'SOLID_OUTLET_END', 'name': 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE', 'components': {'RotationX': 'Free', 'RotationY': 'Free', 'RotationZ': 'Free', 'YComponent': 'Discrete', 'XComponent': 'Discrete', 'ZCompo
+15:01:27 PASS  S3 inlet: displacement on SOLID_INLET_END in CS_DUCT_CYL, U_theta = U_z = 0, radial free | expected CS_DUCT_CYL; X free, Y = Z = 0 | found {'cs': 'CS_DUCT_CYL', 'X_radial': 'Free', 'scope': 'SOLID_INLET_END', 'name': 'S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'Y_theta': 'Discrete', 'Z_axial': 'Discrete'}
+15:01:27 PASS  S3: no mid-span hoop nodes, no other supports | expected ['S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE'] | found ['S3_INLET_END_Uz0_Utheta0_CS_DUCT_CYL', 'S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE']
+15:01:27 PASS  S3: environment (reference) temperature 300 K | expected 300 K | found 26.850000000000023 [C]
+15:01:27 PASS  S3: import settings = 7A (Manual / BucketVolume / ShapeFunctions / NearestNode) | expected ('Manual', 'BucketVolume', 'ShapeFunctions', 'NearestNode') | found Manual / BucketVolume / ShapeFunctions / NearestNode
+15:01:27 PASS  S3: mapped temperature identical to the LC2 (S1) mapping | expected identical | found identical
+15:01:27 PASS  S3: no under-defined / error objects | expected none | found []
+15:01:27 PASS  S3_BUCKLING: no under-defined / error objects | expected none | found []
+15:01:27 PASS  buckling: pre-stress environment = S3 static | expected S3_LC2_Intermediate_Clamped_Pinned | found ['S3_LC2_Intermediate_Clamped_Pinned']
+15:01:27 PASS  buckling: no loads or supports of its own | expected none | found []
+15:01:30 PASS  S3 input: SOLID186 element block identical to the 7B LC2 input | expected identical | found identical
+15:01:30 PASS  S3 input: all 7B mesh nodes present unchanged (a pilot node may be added) | expected 7B NBLOCK subset, +0/1 node | found 108253 vs 108252 lines
+15:01:30 PASS  S3 input: nodal temperatures identical to the 7B LC2 input | expected identical | found identical
+15:01:30 PASS  S3 input: every 7B material line present, in order (E(T), alpha(T), nu, TREF) | expected 7B material lines in order | found 35 vs 35 lines
+15:01:30 PASS  S3 input: MPC key options = bonded always (12,5), force-distributed / deformable (4,1), MPC (2,2); pilot not fixed (2,1), 6-DOF set | expected 5 key options | found ['keyo,1,2,1', 'keyo,tid,2,1', 'keyo,tid,4,111111', 'keyo,cid,12,5', 'keyo,cid,4,1', 'keyo,cid,2,2']
+15:01:30 PASS  S3 input: pilot node carries U_x = U_y = U_z = 0 only (rotations free) | expected d,108253,ux/uy/uz,0. | found ['d,108253,ux,0.', 'd,108253,uy,0.', 'd,108253,uz,0.']
+15:01:30 PASS  S3 input: sparse direct solver | expected eqsl,sparse | found ['eqsl,sparse,,,,,1']
+15:01:30 PASS  S3 input: remote point written as MPC contact pair (TARGE170 pilot + CONTA174/175 surface elements) | expected et,..,170 and et,..,174/175 | found ['et,1,186', 'et,cid,174', 'et,tid,170']
+15:01:30 PRE-SOLVE GATE PASS (22 checks)
+15:01:30 MECH-S3-DECK-DONE (nothing solved)

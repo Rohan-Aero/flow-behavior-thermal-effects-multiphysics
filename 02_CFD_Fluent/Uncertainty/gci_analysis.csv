@@ -1,0 +1,31 @@
+"# Celik et al. (2008) procedure; 1 = fine, 2 = medium, 3 = coarse; r21 = 1.4631, r32 = 1.4555 from total cells. GCI only where monotonic with credible apparent order. RE-ANALYSIS 2026."
+quantity,units,phi3_coarse,phi2_medium,phi1_fine,eps32,eps21,R_eps21_over_eps32,behaviour,p_apparent,p_credible,p_used,Fs,phi_extrapolated,e_a21_pct,e_ext21_pct,GCI_fine21_pct,GCI_medium32_pct,asymptotic_ratio,U_oscillatory_half_range,basis,GCI_fine21_abs,GCI_medium32_abs
+Mass flow (inlet),g/s,8.6312313,8.6621551,8.6759203,-0.030924,-0.013765,0.4451,monotonic,2.180,True,2.00,1.25,8.686572,0.1587,0.1226,0.1739,0.3990,1.072,nan,value,0.015086,0.034562
+Mass flow / planar-area ratio,g/s,8.6869419,8.6869419,8.6869419,-2.3981e-13,6.0396e-14,nan,within noise,nan,,nan,,nan,nan,nan,nan,nan,nan,nan,value,nan,nan
+"Pressure drop, static (area-wtd, inlet - outlet)",Pa,437.09427,438.12633,439.12124,-1.0321,-0.99491,0.9640,monotonic,0.133,False,2.00,3.0,nan,0.2266,nan,0.5959,0.6319,0.495,nan,value,2.6169,2.7683
+"Pressure drop, geometry-adjusted (estimate)",Pa,434.85357,437.12769,438.67612,-2.2741,-1.5484,0.6809,monotonic,1.054,True,1.05,1.25,441.81481,0.3530,0.7104,0.8944,1.3403,1.004,nan,value,3.9234,5.8589
+  wall-shear term,Pa,241.01624,242.86798,244.27973,-1.8517,-1.4117,0.7624,monotonic,0.754,True,0.75,1.25,248.52491,0.5779,1.7082,2.1723,2.9115,1.006,nan,value,5.3065,7.0712
+  1-D acceleration term,Pa,149.70628,149.30938,149.13386,0.3969,0.17552,0.4422,monotonic,2.197,True,2.00,1.25,148.99963,0.1177,0.0901,0.1290,0.2971,1.076,nan,value,0.19236,0.44359
+"Outlet temperature, mass-weighted",K,369.11538,368.93236,368.85149,0.18302,0.080869,0.4419,monotonic,2.200,True,2.00,1.25,368.78973,0.1175,0.0898,0.1287,0.2967,1.077,nan,rise above 300 K,0.08863,0.20455
+"Outlet temperature, geometry-corrected",K,368.78303,368.78498,368.78605,-0.0019437,-0.001074,0.5525,monotonic,1.607,True,1.61,1.25,368.78732,0.0016,0.0019,0.0023,0.0043,1.000,nan,rise above 300 K,0.0015918,0.0029343
+Heat-transfer rate,W,602.21731,602.75524,602.99441,-0.53793,-0.23917,0.4446,monotonic,2.183,True,2.00,1.25,603.1791,0.0397,0.0306,0.0435,0.0997,1.072,nan,value,0.26212,0.60121
+Heat-transfer rate / lateral-area ratio,W,603.18579,603.18579,603.18579,-2.2055e-11,3.763e-11,nan,within noise,nan,,nan,,nan,nan,nan,nan,nan,nan,nan,value,nan,nan
+Maximum solid temperature (outer-wall facet max),K,565.40354,562.57675,560.83073,2.8268,1.746,0.6177,monotonic,1.312,True,1.31,1.25,558.13402,0.6694,1.0447,1.2924,2.1150,0.993,nan,rise above 300 K,3.3709,5.5534
+"Maximum solid temperature, geometry-corrected",K,565.07119,562.42937,560.7653,2.6418,1.6641,0.6299,monotonic,1.260,True,1.26,1.25,558.06048,0.6382,1.0481,1.2966,2.0810,0.994,nan,rise above 300 K,3.381,5.4611
+Maximum solid temperature (cell centre),K,564.65144,562.1271,560.60205,2.5243,1.5251,0.6041,monotonic,1.371,True,1.37,1.25,558.37455,0.5852,0.8621,1.0684,1.7895,0.994,nan,rise above 300 K,2.7844,4.6907
+Minimum solid temperature (cell centre),K,425.40597,423.96647,423.08886,1.4395,0.87762,0.6097,monotonic,1.346,True,1.35,1.25,421.7775,0.7130,1.0768,1.3317,2.2072,0.993,nan,rise above 300 K,1.6392,2.7362
+Peak inner-wall temperature,K,558.12216,555.2671,553.50403,2.8551,1.7631,0.6175,monotonic,1.313,True,1.31,1.25,550.78255,0.6955,1.0852,1.3419,2.1960,0.993,nan,rise above 300 K,3.4018,5.6057
+"Inner-wall temperature, mid-span",K,534.24482,531.67203,530.17255,2.5728,1.4995,0.5828,monotonic,1.466,True,1.47,1.25,528.16458,0.6515,0.8801,1.0905,1.8925,0.994,nan,rise above 300 K,2.51,4.3843
+"Outer-wall temperature, mid-span",K,541.79865,539.25255,537.76917,2.5461,1.4834,0.5826,monotonic,1.467,True,1.47,1.25,535.78452,0.6239,0.8417,1.0434,1.8119,0.994,nan,rise above 300 K,2.4808,4.335
+"Inner-wall temperature, mid-span, geometry-corrected",K,534.07721,531.59775,530.13957,2.4795,1.4582,0.5881,monotonic,1.442,True,1.44,1.25,528.14473,0.6336,0.8744,1.0835,1.8637,0.994,nan,rise above 300 K,2.4936,4.3163
+"Through-wall dT, MID-SPAN z = 300 mm",K,7.5538322,7.5805176,7.5966263,-0.026685,-0.016109,0.6037,monotonic,1.373,True,1.37,1.25,7.6201076,0.2121,0.3081,0.3864,0.6528,1.002,nan,value,0.029352,0.049488
+"Through-wall dT, z = 570 mm",K,7.3344775,7.3606072,7.3775563,-0.02613,-0.016949,0.6487,monotonic,1.182,True,1.18,1.25,7.4073879,0.2297,0.4027,0.5054,0.7944,1.002,nan,value,0.03729,0.058476
+"h, mid-span",W/m2K,79.692836,80.693507,81.291572,-1.0007,-0.59806,0.5977,monotonic,1.399,True,1.40,1.25,82.14224,0.7357,1.0356,1.3081,2.2442,1.007,nan,value,1.0633,1.8109
+Fully developed Nu (exact window x/D 18-29),-,53.37984,54.171964,54.663499,-0.79212,-0.49154,0.6205,monotonic,1.300,True,1.30,1.25,55.431752,0.8992,1.3859,1.7568,2.9069,1.009,nan,value,0.96032,1.5747
+Fully developed Darcy f (exact window x/D 18-29),-,0.021339153,0.021626268,0.0218095,-0.00028712,-0.00018323,0.6382,monotonic,1.225,True,1.23,1.25,0.022117927,0.8401,1.3945,1.7677,2.8418,1.008,nan,value,0.00038553,0.00061457
+Volume-mean solid temperature,K,527.65554,525.48293,524.18435,2.1726,1.2986,0.5977,monotonic,1.399,True,1.40,1.25,522.33695,0.5792,0.8309,1.0301,1.7440,0.994,nan,rise above 300 K,2.3092,3.9325
+y+ minimum,-,0.20683885,0.20816019,0.2089572,-0.0013213,-0.00079702,0.6032,monotonic,1.375,True,1.37,1.25,0.21011679,0.3814,0.5519,0.6937,1.1749,1.004,nan,value,0.0014495,0.0024458
+y+ area mean,-,0.23811778,0.2409596,0.24267484,-0.0028418,-0.0017152,0.6036,monotonic,1.373,True,1.37,1.25,0.24517427,0.7068,1.0194,1.2874,2.1864,1.007,nan,value,0.0031243,0.0052683
+"y+ mean, fully developed window",-,0.22516082,0.22864995,0.23074027,-0.0034891,-0.0020903,0.5991,monotonic,1.393,True,1.39,1.25,0.23373094,0.9059,1.2795,1.6202,2.7777,1.009,nan,value,0.0037383,0.0063512
+y+ maximum,-,0.52173273,0.58483568,0.65298614,-0.063103,-0.06815,1.0800,divergent or not in asymptotic range,nan,,nan,,nan,nan,nan,nan,nan,nan,nan,value,nan,nan
+"Reynolds number, outlet",-,25535.445,25544.911,25549.1,-9.4665,-4.1885,0.4425,monotonic,2.196,True,2.00,1.25,25552.306,0.0164,0.0125,0.0180,0.0414,1.077,nan,value,4.5904,10.58

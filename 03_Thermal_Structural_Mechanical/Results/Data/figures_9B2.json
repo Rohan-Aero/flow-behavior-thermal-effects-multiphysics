@@ -1,0 +1,19 @@
+{
+ "figures": [
+  "F01_V_vs_pressure_drop.png",
+  "F02_V_vs_outlet_temperature.png",
+  "F03_V_vs_max_solid_temperature.png",
+  "F04_V_vs_LC2_stress.png",
+  "F05_V_vs_lambda1.png",
+  "F06_q_vs_outlet_temperature.png",
+  "F07_q_vs_max_solid_temperature.png",
+  "F08_q_vs_LC2_stress.png",
+  "F09_q_vs_lambda1.png",
+  "F10_t_vs_max_deformation.png",
+  "F11_t_vs_LC2_stress.png",
+  "F12_t_vs_lambda1.png",
+  "F13_t_vs_critical_buckling_load.png",
+  "F14_support_vs_lambda1.png",
+  "F15_support_vs_LC2_stress.png"
+ ]
+}

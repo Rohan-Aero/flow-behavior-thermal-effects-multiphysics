@@ -1,0 +1,56 @@
+{
+ "note": "RE-ANALYSIS 2026 - indicative hand checks for interpretation; NOT finite-element results",
+ "LC1_section2_factors": {
+  "dT_ratio": 1.0411529304029052,
+  "alpha_tangent_over_section2_secant": 1.0871186023110306,
+  "E_ratio": 1.00616907781322,
+  "section2_rescaled_MPa": 18.57446785208793,
+  "timoshenko_CFD_bore_hoop_MPa": 18.54698663315836,
+  "FE_bore_hoop_MPa": 18.308767755555554
+ },
+ "LC2_over_LC1": {
+  "peak_over_peak": 24.922012695481293,
+  "midspan_max_over_midspan_max": 32.29794200123345,
+  "section2": 40.3,
+  "expected_band": [
+   30,
+   50
+  ]
+ },
+ "F035_local_bound": {
+  "dT_K": 2.57,
+  "E_Pa": 195720220000.0,
+  "alpha_tan": 1.38e-05,
+  "bound_MPa": 9.832030201869687,
+  "meaning": "stress change if a 2.57 K local temperature error were fully constrained (E alpha dT/(1-nu)); an upper bound, not a computed value"
+ },
+ "buckling_indicative": {
+  "applied_mean_stress_MPa": 582.4398368194766,
+  "N_kN": 548.9366137530317,
+  "radius_of_gyration_mm": 11.180339887498947,
+  "E_hot_Pa": 187639000000.0,
+  "Sy_hot_Pa": 1022130000.0,
+  "cases": {
+   "ends clamped, no lateral sway (K = 0.5)": {
+    "slenderness": 26.832815729997478,
+    "euler_MPa": 2572.114861411119,
+    "johnson_transition_slenderness": 60.19679342595498,
+    "critical_MPa": 920.5842105239783,
+    "ratio_to_applied": 1.5805653259416514
+   },
+   "ends clamped, lateral sway free (K = 1.0)": {
+    "slenderness": 53.665631459994955,
+    "euler_MPa": 643.0287153527797,
+    "johnson_transition_slenderness": 60.19679342595498,
+    "critical_MPa": 615.9468420959136,
+    "ratio_to_applied": 1.0575286976581277
+   }
+  },
+  "note": "hand estimate with hot-end properties (lowest E and S_y); Euler/Johnson, perfect straight tube; the LC2 FE end faces are free to translate laterally (only U_z held), the 3 mid-span hoop nodes hold the mid-section. Needs an eigenvalue buckling analysis with the real end conditions."
+ },
+ "small_deflection": {
+  "max_total_deformation_LC1_mm": 1.8443072934482097,
+  "max_elastic_strain_LC2": 0.00313088205,
+  "wall_mm": 10.0
+ }
+}

@@ -1,0 +1,1383 @@
+{
+ "mesh_metrics": {
+  "ParallelDeviation": {
+   "min": 10.0, 
+   "max": 10.0, 
+   "avg": 10.0
+  }, 
+  "MaximumCornerAngle": {
+   "min": 95.0, 
+   "max": 95.0, 
+   "avg": 95.0
+  }, 
+  "JacobianRatio": {
+   "min": 1.1153, 
+   "max": 1.2046000000000001, 
+   "avg": 1.1534999999998823
+  }, 
+  "OrthogonalQuality": "n/a 'type' object has no attribute 'OrthogonalQuality'", 
+  "ElementQuality": {
+   "min": 0.23667418368906179, 
+   "max": 0.99120634986953271, 
+   "avg": 0.68822512405436509
+  }, 
+  "WarpingFactor": {
+   "min": 0.0, 
+   "max": 1.3706999999999999e-13, 
+   "avg": 1.4806164365752031e-14
+  }, 
+  "Skewness": {
+   "min": 0.055555555678873811, 
+   "max": 0.055555555678877488, 
+   "avg": 0.055555555678877128
+  }, 
+  "AspectRatio": {
+   "min": 1.1374, 
+   "max": 4.8823, 
+   "avg": 2.4130510769230935
+  }
+ }, 
+ "final_input": {
+  "LC1": {
+   "same_constraints_as_presolve": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "same_bf_as_presolve": true, 
+   "same_material_as_presolve": true
+  }, 
+  "LC2P": {
+   "same_constraints_as_presolve": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "same_bf_as_presolve": true, 
+   "same_material_as_presolve": true
+  }, 
+  "LC2": {
+   "same_constraints_as_presolve": true, 
+   "eqsl": [
+    "eqsl,sparse,,,,,1"
+   ], 
+   "same_bf_as_presolve": true, 
+   "same_material_as_presolve": true
+  }
+ }, 
+ "cases": {
+  "LC1": {
+   "messages": [], 
+   "solver_files_copied": [
+    "file.DSP", 
+    "file.mntr", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "results": {
+    "Maximum_Principal_Stress": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Maximum_Principal_Stress.txt", 
+     "Minimum": "-90840.128844035469 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -90840.128844035469, 
+     "Average_value": 5683765.234961167, 
+     "Average": "5683765.234961167 [Pa]", 
+     "Maximum": "27973406.565989289 [Pa]", 
+     "Maximum_value": 27973406.565989289
+    }, 
+    "Minimum_Principal_Stress": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Minimum_Principal_Stress.txt", 
+     "Minimum": "-20968782.209365342 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -20968782.209365342, 
+     "Average_value": -3387549.6091906377, 
+     "Average": "-3387549.6091906377 [Pa]", 
+     "Maximum": "2887404.0064737974 [Pa]", 
+     "Maximum_value": 2887404.0064737974
+    }, 
+    "Axial_Stress_Sz_global": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Axial_Stress_Sz_global.txt", 
+     "Minimum": "-11598030.25 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -11598030.25, 
+     "Average_value": 1736954.7642743634, 
+     "Average": "1736954.7642743634 [Pa]", 
+     "Maximum": "18580108 [Pa]", 
+     "Maximum_value": 18580108.0
+    }, 
+    "Radial_Stress_Sr_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Radial_Stress_Sr_CS_DUCT_CYL.txt", 
+     "Minimum": "-209105.67052550198 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -209105.67052550198, 
+     "Average_value": 1446121.0482432682, 
+     "Average": "1446121.0482432682 [Pa]", 
+     "Maximum": "4381767.5695281047 [Pa]", 
+     "Maximum_value": 4381767.5695281047
+    }, 
+    "Moment_Reaction_LC1_SUPPORT_3NODES_DirectFE": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "4.2409958612765459E-08 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000D6 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>", 
+     "XAxis_value": -2.0457667032973247e-07, 
+     "YAxis_value": 4.2409958612765459e-08, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 1.7933205798119542e-08, 
+     "ZAxis": "1.7933205798119542E-08 [N m]", 
+     "XAxis": "-2.0457667032973247E-07 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 2.0969458386647529e-07, 
+     "Total": "2.0969458386647529E-07 [N m]"
+    }, 
+    "Total_Deformation": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Total_Deformation.txt", 
+     "Minimum": "1.6744322956242991E-05 [m]", 
+     "state": "Solved", 
+     "Minimum_value": 1.6744322956242991e-05, 
+     "Average_value": 0.00086162231389768946, 
+     "Average": "0.00086162231389768946 [m]", 
+     "Maximum": "0.0018443073450347429 [m]", 
+     "Maximum_value": 0.0018443073450347429
+    }, 
+    "Equivalent_Stress_UNaveraged": {
+     "Minimum": "254375.0525165791 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": 254375.0525165791, 
+     "Average_value": 7662450.8228437053, 
+     "Average": "7662450.8228437053 [Pa]", 
+     "Maximum": "24355971.092357233 [Pa]", 
+     "Maximum_value": 24355971.092357233
+    }, 
+    "Structural_Error": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Structural_Error.txt", 
+     "Minimum": "6.2085073206268221E-11 [J]", 
+     "state": "Solved", 
+     "Minimum_value": 6.2085073206268221e-11, 
+     "Average_value": 7.4415584721087024e-06, 
+     "Average": "7.4415584721087024E-06 [J]", 
+     "Maximum": "1.9057770135222754E-09 [J]", 
+     "Maximum_value": 1.9057770135222754e-09
+    }, 
+    "Hoop_Stress_Stheta_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Hoop_Stress_Stheta_CS_DUCT_CYL.txt", 
+     "Minimum": "-20968769.698185217 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -20968769.698185217, 
+     "Average_value": 351222.75898577907, 
+     "Average": "351222.75898577907 [Pa]", 
+     "Maximum": "27973383.38777091 [Pa]", 
+     "Maximum_value": 27973383.38777091
+    }, 
+    "Equivalent_Elastic_Strain": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Equivalent_Elastic_Strain.txt", 
+     "Minimum": "1.3804771719797895E-06 [m m^-1]", 
+     "state": "Solved", 
+     "Minimum_value": 1.3804771719797895e-06, 
+     "Average_value": 4.5020793168017613e-05, 
+     "Average": "4.5020793168017613E-05 [m m^-1]", 
+     "Maximum": "0.00012408641452266812 [m m^-1]", 
+     "Maximum_value": 0.00012408641452266812
+    }, 
+    "Force_Reaction_LC1_SUPPORT_3NODES_DirectFE": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "3.866251878648087E-07 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000D6 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>", 
+     "XAxis_value": 7.7646825726884971e-08, 
+     "YAxis_value": 3.866251878648087e-07, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": 2.2809181071670181e-09, 
+     "ZAxis": "2.2809181071670181E-09 [N]", 
+     "XAxis": "7.7646825726884971E-08 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 3.9435170599906305e-07, 
+     "Total": "3.9435170599906305E-07 [N]"
+    }, 
+    "Radial_Deformation_Ur_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Radial_Deformation_Ur_CS_DUCT_CYL.txt", 
+     "Minimum": "1.636135815759789E-05 [m]", 
+     "state": "Solved", 
+     "Minimum_value": 1.636135815759789e-05, 
+     "Average_value": 4.4842387310236504e-05, 
+     "Average": "4.4842387310236504E-05 [m]", 
+     "Maximum": "7.1571758404305228E-05 [m]", 
+     "Maximum_value": 7.1571758404305228e-05
+    }, 
+    "Axial_Deformation_Uz_global": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Axial_Deformation_Uz_global.txt", 
+     "Minimum": "-2.6448213064078629E-10 [m]", 
+     "state": "Solved", 
+     "Minimum_value": -2.6448213064078629e-10, 
+     "Average_value": 0.00085841394162044734, 
+     "Average": "0.00085841394162044734 [m]", 
+     "Maximum": "0.0018429411575198174 [m]", 
+     "Maximum_value": 0.0018429411575198174
+    }, 
+    "Equivalent_Stress_averaged": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC1\\LC1_Equivalent_Stress_averaged.txt", 
+     "Minimum": "259244.17667387432 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": 259244.17667387432, 
+     "Average_value": 8565857.7343567014, 
+     "Average": "8565857.7343567014 [Pa]", 
+     "Maximum": "24282182.951123707 [Pa]", 
+     "Maximum_value": 24282182.951123707
+    }
+   }, 
+   "solve_wall_s": 68.0, 
+   "working_dir": "<PROJECT_ROOT>\\08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-2\\MECH\\", 
+   "images": [
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_00_Imported_Temperature_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_00_Imported_Temperature_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Total_Deformation_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Total_Deformation_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Axial_Deformation_Uz_global_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Axial_Deformation_Uz_global_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Radial_Deformation_Ur_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Radial_Deformation_Ur_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Equivalent_Stress_averaged_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Equivalent_Stress_averaged_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Equivalent_Stress_UNaveraged_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Equivalent_Stress_UNaveraged_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Maximum_Principal_Stress_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Maximum_Principal_Stress_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Minimum_Principal_Stress_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Minimum_Principal_Stress_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Axial_Stress_Sz_global_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Axial_Stress_Sz_global_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Hoop_Stress_Stheta_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Hoop_Stress_Stheta_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Radial_Stress_Sr_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Radial_Stress_Sr_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Equivalent_Elastic_Strain_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Equivalent_Elastic_Strain_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC1_Force_Reaction_LC1_SUPPORT_3NODES_DirectFE_side.png"
+   ], 
+   "solution_state": "Solved", 
+   "working_dir_files": [
+    "CAERep.xml", 
+    "MatML.xml", 
+    "Setup 1", 
+    "ds.dat", 
+    "file.DSP", 
+    "file.aapresults", 
+    "file.mntr", 
+    "file.rst", 
+    "file0.err", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "solution_status": "Done"
+  }, 
+  "LC2P": {
+   "messages": [], 
+   "solver_files_copied": [
+    "file.DSP", 
+    "file.mntr", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "results": {
+    "Maximum_Principal_Stress": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Maximum_Principal_Stress.txt", 
+     "Minimum": "-146640.31855560953 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -146640.31855560953, 
+     "Average_value": 5368953.2292952975, 
+     "Average": "5368953.2292952975 [Pa]", 
+     "Maximum": "48585203.56092903 [Pa]", 
+     "Maximum_value": 48585203.56092903
+    }, 
+    "Minimum_Principal_Stress": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Minimum_Principal_Stress.txt", 
+     "Minimum": "-613496701.71016145 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -613496701.71016145, 
+     "Average_value": -580564676.99533439, 
+     "Average": "-580564676.99533439 [Pa]", 
+     "Maximum": "-538198769.620828 [Pa]", 
+     "Maximum_value": -538198769.620828
+    }, 
+    "Axial_Stress_Sz_global": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Axial_Stress_Sz_global.txt", 
+     "Minimum": "-613496640 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -613496640.0, 
+     "Average_value": -580564297.13660717, 
+     "Average": "-580564297.13660717 [Pa]", 
+     "Maximum": "-538198736 [Pa]", 
+     "Maximum_value": -538198736.0
+    }, 
+    "Moment_Reaction_LC2P_OUTLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "1.6798402668882773E-09 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000105 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": -3.9757299674647584e-09, 
+     "YAxis_value": 1.6798402668882773e-09, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 0.0, 
+     "ZAxis": "0 [N m]", 
+     "XAxis": "-3.9757299674647584E-09 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 4.3160505206098559e-09, 
+     "Total": "4.3160505206098559E-09 [N m]"
+    }, 
+    "Radial_Stress_Sr_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Radial_Stress_Sr_CS_DUCT_CYL.txt", 
+     "Minimum": "-146656.81250000073 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -146656.81250000073, 
+     "Average_value": 1506907.5663877719, 
+     "Average": "1506907.5663877719 [Pa]", 
+     "Maximum": "7559349.0866335873 [Pa]", 
+     "Maximum_value": 7559349.0866335873
+    }, 
+    "Force_Reaction_LC2P_HOOP_3NODES_DirectFE": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "6.9444296535436933E-08 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x0000000000000106 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>", 
+     "XAxis_value": 6.286043490546093e-09, 
+     "YAxis_value": 6.9444296535436933e-08, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": 0.0, 
+     "ZAxis": "0 [N]", 
+     "XAxis": "6.286043490546093E-09 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 6.9728219997836855e-08, 
+     "Total": "6.9728219997836855E-08 [N]"
+    }, 
+    "Total_Deformation": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Total_Deformation.txt", 
+     "Minimum": "2.6759394609122497E-05 [m]", 
+     "state": "Solved", 
+     "Minimum_value": 2.6759394609122497e-05, 
+     "Average_value": 8.7879537786334321e-05, 
+     "Average": "8.7879537786334321E-05 [m]", 
+     "Maximum": "0.00013488429663734432 [m]", 
+     "Maximum_value": 0.00013488429663734432
+    }, 
+    "Force_Reaction_LC2P_OUTLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "0 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000105 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": 0.0, 
+     "YAxis_value": 0.0, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": -548936.53184400487, 
+     "ZAxis": "-548936.53184400487 [N]", 
+     "XAxis": "0 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 548936.53184400487, 
+     "Total": "548936.53184400487 [N]"
+    }, 
+    "Moment_Reaction_LC2P_INLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "1.321521558850236E-09 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000104 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": 7.3679506940038664e-10, 
+     "YAxis_value": 1.321521558850236e-09, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 0.0, 
+     "ZAxis": "0 [N m]", 
+     "XAxis": "7.3679506940038664E-10 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 1.5130387320880714e-09, 
+     "Total": "1.5130387320880714E-09 [N m]"
+    }, 
+    "Equivalent_Stress_UNaveraged": {
+     "Minimum": "561194597.1354332 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": 561194597.1354332, 
+     "Average_value": 581713219.36672807, 
+     "Average": "581713219.36672807 [Pa]", 
+     "Maximum": "605185405.8463726 [Pa]", 
+     "Maximum_value": 605185405.8463726
+    }, 
+    "Moment_Reaction_LC2P_HOOP_3NODES_DirectFE": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "1.8858131220993058E-09 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x0000000000000106 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>", 
+     "XAxis_value": -2.0833289788471612e-08, 
+     "YAxis_value": 1.8858131220993058e-09, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 2.548115241282383e-09, 
+     "ZAxis": "2.548115241282383E-09 [N m]", 
+     "XAxis": "-2.0833289788471612E-08 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 2.1073090561775056e-08, 
+     "Total": "2.1073090561775056E-08 [N m]"
+    }, 
+    "Structural_Error": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Structural_Error.txt", 
+     "Minimum": "3.7785428445158404E-11 [J]", 
+     "state": "Solved", 
+     "Minimum_value": 3.7785428445158404e-11, 
+     "Average_value": 7.1484269863860703e-06, 
+     "Average": "7.14842698638607E-06 [J]", 
+     "Maximum": "2.5357173853993465E-09 [J]", 
+     "Maximum_value": 2.5357173853993465e-09
+    }, 
+    "Force_Reaction_LC2P_INLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "0 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x0000000000000104 [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": 0.0, 
+     "YAxis_value": 0.0, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": 548936.53184399707, 
+     "ZAxis": "548936.53184399707 [N]", 
+     "XAxis": "0 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 548936.53184399707, 
+     "Total": "548936.53184399707 [N]"
+    }, 
+    "Hoop_Stress_Stheta_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL.txt", 
+     "Minimum": "-18280340.009585492 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -18280340.009585492, 
+     "Average_value": 481343.51670038083, 
+     "Average": "481343.51670038083 [Pa]", 
+     "Maximum": "48585191.383945785 [Pa]", 
+     "Maximum_value": 48585191.383945785
+    }, 
+    "Equivalent_Elastic_Strain": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Equivalent_Elastic_Strain.txt", 
+     "Minimum": "0.0028663610607215996 [m m^-1]", 
+     "state": "Solved", 
+     "Minimum_value": 0.0028663610607215996, 
+     "Average_value": 0.0030588100414492103, 
+     "Average": "0.0030588100414492103 [m m^-1]", 
+     "Maximum": "0.0031308822859384719 [m m^-1]", 
+     "Maximum_value": 0.0031308822859384719
+    }, 
+    "Radial_Deformation_Ur_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Radial_Deformation_Ur_CS_DUCT_CYL.txt", 
+     "Minimum": "2.6745363582212604E-05 [m]", 
+     "state": "Solved", 
+     "Minimum_value": 2.6745363582212604e-05, 
+     "Average_value": 5.8356297326654117e-05, 
+     "Average": "5.8356297326654117E-05 [m]", 
+     "Maximum": "8.9734032063631716E-05 [m]", 
+     "Maximum_value": 8.9734032063631716e-05
+    }, 
+    "Axial_Deformation_Uz_global": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Axial_Deformation_Uz_global.txt", 
+     "Minimum": "-0.00010875624866457656 [m]", 
+     "state": "Solved", 
+     "Minimum_value": -0.00010875624866457656, 
+     "Average_value": -5.9359478612651504e-05, 
+     "Average": "-5.9359478612651504E-05 [m]", 
+     "Maximum": "0 [m]", 
+     "Maximum_value": 0.0
+    }, 
+    "Equivalent_Stress_averaged": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2P\\LC2P_Equivalent_Stress_averaged.txt", 
+     "Minimum": "561219348.74773955 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": 561219348.74773955, 
+     "Average_value": 581628431.49322987, 
+     "Average": "581628431.49322987 [Pa]", 
+     "Maximum": "605160918.41220629 [Pa]", 
+     "Maximum_value": 605160918.41220629
+    }
+   }, 
+   "solve_wall_s": 62.5, 
+   "working_dir": "<PROJECT_ROOT>\\08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-4\\MECH\\", 
+   "images": [
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_00_Imported_Temperature_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_00_Imported_Temperature_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Total_Deformation_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Total_Deformation_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Axial_Deformation_Uz_global_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Axial_Deformation_Uz_global_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Radial_Deformation_Ur_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Radial_Deformation_Ur_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Equivalent_Stress_averaged_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Equivalent_Stress_averaged_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Equivalent_Stress_UNaveraged_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Equivalent_Stress_UNaveraged_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Maximum_Principal_Stress_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Maximum_Principal_Stress_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Minimum_Principal_Stress_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Minimum_Principal_Stress_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Axial_Stress_Sz_global_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Axial_Stress_Sz_global_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Hoop_Stress_Stheta_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Radial_Stress_Sr_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Radial_Stress_Sr_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Equivalent_Elastic_Strain_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Equivalent_Elastic_Strain_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Force_Reaction_LC2P_INLET_END_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Force_Reaction_LC2P_INLET_END_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Force_Reaction_LC2P_OUTLET_END_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Force_Reaction_LC2P_OUTLET_END_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2P_Force_Reaction_LC2P_HOOP_3NODES_DirectFE_side.png"
+   ], 
+   "solution_state": "Solved", 
+   "working_dir_files": [
+    "CAERep.xml", 
+    "MatML.xml", 
+    "Setup 1", 
+    "ds.dat", 
+    "file.DSP", 
+    "file.aapresults", 
+    "file.mntr", 
+    "file.rst", 
+    "file0.err", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "solution_status": "Done"
+  }, 
+  "LC2": {
+   "messages": [], 
+   "solver_files_copied": [
+    "file.DSP", 
+    "file.mntr", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "results": {
+    "Maximum_Principal_Stress": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Maximum_Principal_Stress.txt", 
+     "Minimum": "-146641.88105857663 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -146641.88105857663, 
+     "Average_value": 5368777.51248935, 
+     "Average": "5368777.51248935 [Pa]", 
+     "Maximum": "48584465.809348524 [Pa]", 
+     "Maximum_value": 48584465.809348524
+    }, 
+    "Minimum_Principal_Stress": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Minimum_Principal_Stress.txt", 
+     "Minimum": "-613496797.71015179 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -613496797.71015179, 
+     "Average_value": -580564763.84318531, 
+     "Average": "-580564763.84318531 [Pa]", 
+     "Maximum": "-538198865.62079906 [Pa]", 
+     "Maximum_value": -538198865.62079906
+    }, 
+    "Axial_Stress_Sz_global": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Axial_Stress_Sz_global.txt", 
+     "Minimum": "-613496736 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -613496736.0, 
+     "Average_value": -580564383.98462844, 
+     "Average": "-580564383.98462844 [Pa]", 
+     "Maximum": "-538198832 [Pa]", 
+     "Maximum_value": -538198832.0
+    }, 
+    "Force_Reaction_LC2_OUTLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "0 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EB [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": 0.0, 
+     "YAxis_value": 0.0, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": -548936.61375305, 
+     "ZAxis": "-548936.61375305 [N]", 
+     "XAxis": "0 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 548936.61375305, 
+     "Total": "548936.61375305 [N]"
+    }, 
+    "Force_Reaction_LC2_HOOP_3NODES_DirectFE": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "9.4984197396286163E-08 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000EC [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>", 
+     "XAxis_value": 1.3478937723548877e-09, 
+     "YAxis_value": 9.4984197396286163e-08, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": 0.0, 
+     "ZAxis": "0 [N]", 
+     "XAxis": "1.3478937723548877E-09 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 9.499376070373362e-08, 
+     "Total": "9.499376070373362E-08 [N]"
+    }, 
+    "Radial_Stress_Sr_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Radial_Stress_Sr_CS_DUCT_CYL.txt", 
+     "Minimum": "-146658.37500000035 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -146658.37500000035, 
+     "Average_value": 1507066.132286886, 
+     "Average": "1507066.132286886 [Pa]", 
+     "Maximum": "7559502.6530930921 [Pa]", 
+     "Maximum_value": 7559502.6530930921
+    }, 
+    "Total_Deformation": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Total_Deformation.txt", 
+     "Minimum": "2.6759350782612561E-05 [m]", 
+     "state": "Solved", 
+     "Minimum_value": 2.6759350782612561e-05, 
+     "Average_value": 8.7879513848026239e-05, 
+     "Average": "8.7879513848026239E-05 [m]", 
+     "Maximum": "0.0001348842790853183 [m]", 
+     "Maximum_value": 0.0001348842790853183
+    }, 
+    "Moment_Reaction_LC2_HOOP_3NODES_DirectFE": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "4.0436814777461217E-10 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement object at 0x00000000000000EC [Ansys.ACT.Automation.Mechanical.BoundaryConditions.NodalDisplacement]>", 
+     "XAxis_value": -2.8495260351185718e-08, 
+     "YAxis_value": 4.0436814777461217e-10, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 2.4338097639841246e-09, 
+     "ZAxis": "2.4338097639841246E-09 [N m]", 
+     "XAxis": "-2.8495260351185718E-08 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 2.8601867177652158e-08, 
+     "Total": "2.8601867177652158E-08 [N m]"
+    }, 
+    "Equivalent_Stress_UNaveraged": {
+     "Minimum": "561194449.98568213 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": 561194449.98568213, 
+     "Average_value": 581713156.78565264, 
+     "Average": "581713156.78565264 [Pa]", 
+     "Maximum": "605185329.08066726 [Pa]", 
+     "Maximum_value": 605185329.08066726
+    }, 
+    "Force_Reaction_LC2_INLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "0 [N]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EA [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": 0.0, 
+     "YAxis_value": 0.0, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "Centroid", 
+     "ZAxis_value": 548936.61375303147, 
+     "ZAxis": "548936.61375303147 [N]", 
+     "XAxis": "0 [N]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 548936.61375303147, 
+     "Total": "548936.61375303147 [N]"
+    }, 
+    "Structural_Error": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Structural_Error.txt", 
+     "Minimum": "3.780955536761454E-11 [J]", 
+     "state": "Solved", 
+     "Minimum_value": 3.780955536761454e-11, 
+     "Average_value": 7.1482439538073817e-06, 
+     "Average": "7.1482439538073817E-06 [J]", 
+     "Maximum": "2.5356842773900687E-09 [J]", 
+     "Maximum_value": 2.5356842773900687e-09
+    }, 
+    "Hoop_Stress_Stheta_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Hoop_Stress_Stheta_CS_DUCT_CYL.txt", 
+     "Minimum": "-18280635.762958009 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": -18280635.762958009, 
+     "Average_value": 480889.24722448766, 
+     "Average": "480889.24722448766 [Pa]", 
+     "Maximum": "48584453.63203612 [Pa]", 
+     "Maximum_value": 48584453.63203612
+    }, 
+    "Moment_Reaction_LC2_INLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "-2.0749748586013084E-09 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EA [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": 1.6709841288431448e-09, 
+     "YAxis_value": -2.0749748586013084e-09, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 0.0, 
+     "ZAxis": "0 [N m]", 
+     "XAxis": "1.6709841288431448E-09 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 2.664152514904731e-09, 
+     "Total": "2.664152514904731E-09 [N m]"
+    }, 
+    "Equivalent_Elastic_Strain": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Equivalent_Elastic_Strain.txt", 
+     "Minimum": "0.002866360431839709 [m m^-1]", 
+     "state": "Solved", 
+     "Minimum_value": 0.002866360431839709, 
+     "Average_value": 0.0030588097054694932, 
+     "Average": "0.0030588097054694932 [m m^-1]", 
+     "Maximum": "0.00313088198859073 [m m^-1]", 
+     "Maximum_value": 0.00313088198859073
+    }, 
+    "Moment_Reaction_LC2_OUTLET_END": {
+     "BoundaryConditionSelection_value": null, 
+     "state": "Solved", 
+     "YAxis": "-1.6345573783382861E-09 [N m]", 
+     "BoundaryConditionSelection": "<Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement object at 0x00000000000000EB [Ansys.ACT.Automation.Mechanical.BoundaryConditions.Displacement]>", 
+     "XAxis_value": -3.77600883894047e-09, 
+     "YAxis_value": -1.6345573783382861e-09, 
+     "Summation_value": null, 
+     "LocationMethod_value": null, 
+     "Summation": "OrientationSystem", 
+     "ZAxis_value": 0.0, 
+     "ZAxis": "0 [N m]", 
+     "XAxis": "-3.77600883894047E-09 [N m]", 
+     "LocationMethod": "BoundaryCondition", 
+     "Total_value": 4.1146106225056934e-09, 
+     "Total": "4.1146106225056934E-09 [N m]"
+    }, 
+    "Radial_Deformation_Ur_CS_DUCT_CYL": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Radial_Deformation_Ur_CS_DUCT_CYL.txt", 
+     "Minimum": "2.6745319755702546E-05 [m]", 
+     "state": "Solved", 
+     "Minimum_value": 2.6745319755702546e-05, 
+     "Average_value": 5.8356262881672141e-05, 
+     "Average": "5.8356262881672141E-05 [m]", 
+     "Maximum": "8.9734010160285162E-05 [m]", 
+     "Maximum_value": 8.9734010160285162e-05
+    }, 
+    "Axial_Deformation_Uz_global": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Axial_Deformation_Uz_global.txt", 
+     "Minimum": "-0.00010875624866457656 [m]", 
+     "state": "Solved", 
+     "Minimum_value": -0.00010875624866457656, 
+     "Average_value": -5.9359478614046181e-05, 
+     "Average": "-5.9359478614046181E-05 [m]", 
+     "Maximum": "0 [m]", 
+     "Maximum_value": 0.0
+    }, 
+    "Equivalent_Stress_averaged": {
+     "export": "<PROJECT_ROOT>\\08_Structural_Analysis\\Exports\\LC2\\LC2_Equivalent_Stress_averaged.txt", 
+     "Minimum": "561219217.69242561 [Pa]", 
+     "state": "Solved", 
+     "Minimum_value": 561219217.69242561, 
+     "Average_value": 581628367.48040009, 
+     "Average": "581628367.48040009 [Pa]", 
+     "Maximum": "605160873.38074636 [Pa]", 
+     "Maximum_value": 605160873.38074636
+    }
+   }, 
+   "solve_wall_s": 63.7, 
+   "working_dir": "<PROJECT_ROOT>\\08_Structural_Analysis\\Workbench\\Flow_Behavior_Thermal_Effects_Structural_7B_files\\dp0\\SYS-3\\MECH\\", 
+   "images": [
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_00_Imported_Temperature_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_00_Imported_Temperature_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Total_Deformation_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Total_Deformation_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Axial_Deformation_Uz_global_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Axial_Deformation_Uz_global_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Radial_Deformation_Ur_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Radial_Deformation_Ur_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Equivalent_Stress_averaged_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Equivalent_Stress_averaged_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Equivalent_Stress_UNaveraged_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Equivalent_Stress_UNaveraged_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Maximum_Principal_Stress_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Maximum_Principal_Stress_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Minimum_Principal_Stress_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Minimum_Principal_Stress_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Axial_Stress_Sz_global_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Axial_Stress_Sz_global_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Hoop_Stress_Stheta_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Hoop_Stress_Stheta_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Radial_Stress_Sr_CS_DUCT_CYL_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Radial_Stress_Sr_CS_DUCT_CYL_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Equivalent_Elastic_Strain_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Equivalent_Elastic_Strain_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Force_Reaction_LC2_INLET_END_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Force_Reaction_LC2_INLET_END_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Force_Reaction_LC2_OUTLET_END_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Force_Reaction_LC2_OUTLET_END_side.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE_iso.png", 
+    "<PROJECT_ROOT>\\08_Structural_Analysis\\Figures\\Mechanical\\LC2_Force_Reaction_LC2_HOOP_3NODES_DirectFE_side.png"
+   ], 
+   "solution_state": "Solved", 
+   "working_dir_files": [
+    "CAERep.xml", 
+    "MatML.xml", 
+    "Setup 1", 
+    "ds.dat", 
+    "file.DSP", 
+    "file.aapresults", 
+    "file.mntr", 
+    "file.rst", 
+    "file0.err", 
+    "s7b_nodal.csv", 
+    "s7b_prrsol.txt", 
+    "s7b_react.csv", 
+    "s7b_totals.txt", 
+    "solve.out"
+   ], 
+   "solution_status": "Done"
+  }
+ }, 
+ "note": "RE-ANALYSIS 2026 - newly generated structural solutions (not recovered originals)", 
+ "final_states": {
+  "LC1": "Solved", 
+  "LC2P": "Solved", 
+  "LC2": "Solved"
+ }, 
+ "presolve_input": {
+  "LC1": {
+   "lines_with_443.41": [], 
+   "extra_eblocks": [], 
+   "wsprings": false, 
+   "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+   "lines": 240187, 
+   "misc": [
+    "antype,0", 
+    "eqsl,pcg,1e-8,,,,,,1", 
+    "et,1,186", 
+    "keyo,1,2,1", 
+    "nsub,1,1,1", 
+    "outres,all,none", 
+    "outres,cont,all,", 
+    "outres,eangl,all", 
+    "outres,epel,all,", 
+    "outres,eppl,all,", 
+    "outres,epth,all,", 
+    "outres,erase", 
+    "outres,etmp,all", 
+    "outres,nsol,all,", 
+    "outres,rsol,all", 
+    "outres,strs,all,", 
+    "outres,veng,all"
+   ], 
+   "nblock_header": "nblock,3,,119077", 
+   "n_bf": 108252, 
+   "constraints_raw": [
+    "local,12,1,0.,0.,0.,0.,0.,0.", 
+    "csys,0", 
+    "csys,12", 
+    "nrot,_CM77", 
+    "csys,0", 
+    "d,_CM78U,uy,0.", 
+    "d,_CM78U,uz,0."
+   ], 
+   "pressure_lines": [], 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     56646, 
+     18870, 
+     18894
+    ]
+   ], 
+   "has_443.41": false, 
+   "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC1_presolve_ds.dat", 
+   "bf_min_K": 423.83737199999996, 
+   "n_elem_lines": 23400, 
+   "bf_min_C": 150.687372, 
+   "bf_max_K": 562.55763989999991, 
+   "eblock_header": "eblock,21,COMPACT,,23400", 
+   "bf_max_C": 289.4076399, 
+   "material": [
+    "tref,26.85", 
+    "MP,DENS,1,8190,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,93.33", 
+    "MPTEMP,2,204.44", 
+    "MPTEMP,3,315.56", 
+    "MPTEMP,4,426.67", 
+    "MPTEMP,5,537.78", 
+    "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+    "MPTEMP,,,,,,,,", 
+    "MPAMOD,1,21.11,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+    "MPTEMP,,,,,,,,"
+   ], 
+   "n_nodes": 108252
+  }, 
+  "LC2P": {
+   "lines_with_443.41": [
+    "sf,all,pres,443.41"
+   ], 
+   "extra_eblocks": [
+    {
+     "header": "eblock,21,COMPACT,,4680", 
+     "count": 4680
+    }
+   ], 
+   "wsprings": false, 
+   "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+   "lines": 244901, 
+   "misc": [
+    "antype,0", 
+    "eqsl,pcg,1e-8,,,,,,1", 
+    "et,1,186", 
+    "et,2,154", 
+    "keyo,1,2,1", 
+    "nsub,1,1,1", 
+    "outres,all,none", 
+    "outres,cont,all,", 
+    "outres,eangl,all", 
+    "outres,epel,all,", 
+    "outres,eppl,all,", 
+    "outres,epth,all,", 
+    "outres,erase", 
+    "outres,etmp,all", 
+    "outres,nsol,all,", 
+    "outres,rsol,all", 
+    "outres,strs,all,", 
+    "outres,veng,all", 
+    "sf,all,pres,443.41"
+   ], 
+   "nblock_header": "nblock,3,,119077", 
+   "n_bf": 108252, 
+   "constraints_raw": [
+    "local,12,1,0.,0.,0.,0.,0.,0.", 
+    "csys,0", 
+    "csys,12", 
+    "nrot,_CM114", 
+    "csys,0", 
+    "cmsel,s,_DISPZEROUZ", 
+    "d,all,uz,0", 
+    "nsel,all", 
+    "nsel,all", 
+    "d,_CM115U,uy,0."
+   ], 
+   "pressure_lines": [
+    "/title,Flow_Behavior_Thermal_Effects_Structural_7B--LC2P_Restrained_Thermal_Plus_Pressure", 
+    "sf,all,pres,443.41"
+   ], 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     1224, 
+     80282530, 
+     18577, 
+     108252
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ]
+   ], 
+   "has_443.41": true, 
+   "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC2P_presolve_ds.dat", 
+   "bf_min_K": 423.83737199999996, 
+   "n_elem_lines": 23400, 
+   "bf_min_C": 150.687372, 
+   "bf_max_K": 562.55763989999991, 
+   "eblock_header": "eblock,21,COMPACT,,23400", 
+   "bf_max_C": 289.4076399, 
+   "material": [
+    "tref,26.85", 
+    "MP,DENS,1,8190,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,93.33", 
+    "MPTEMP,2,204.44", 
+    "MPTEMP,3,315.56", 
+    "MPTEMP,4,426.67", 
+    "MPTEMP,5,537.78", 
+    "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+    "MPTEMP,,,,,,,,", 
+    "MPAMOD,1,21.11,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+    "MPTEMP,,,,,,,,"
+   ], 
+   "n_nodes": 108252
+  }, 
+  "LC2": {
+   "lines_with_443.41": [], 
+   "extra_eblocks": [], 
+   "wsprings": false, 
+   "bfblock_header": "bfblock,2,temp,108252,108252,0", 
+   "lines": 240204, 
+   "misc": [
+    "antype,0", 
+    "eqsl,pcg,1e-8,,,,,,1", 
+    "et,1,186", 
+    "keyo,1,2,1", 
+    "nsub,1,1,1", 
+    "outres,all,none", 
+    "outres,cont,all,", 
+    "outres,eangl,all", 
+    "outres,epel,all,", 
+    "outres,eppl,all,", 
+    "outres,epth,all,", 
+    "outres,erase", 
+    "outres,etmp,all", 
+    "outres,nsol,all,", 
+    "outres,rsol,all", 
+    "outres,strs,all,", 
+    "outres,veng,all"
+   ], 
+   "nblock_header": "nblock,3,,119077", 
+   "n_bf": 108252, 
+   "constraints_raw": [
+    "local,12,1,0.,0.,0.,0.,0.,0.", 
+    "csys,0", 
+    "csys,12", 
+    "nrot,_CM92", 
+    "csys,0", 
+    "cmsel,s,_DISPZEROUZ", 
+    "d,all,uz,0", 
+    "nsel,all", 
+    "d,_CM93U,uy,0."
+   ], 
+   "pressure_lines": [], 
+   "constraint_set": [
+    [
+     "D", 
+     "uy", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ], 
+    [
+     "D", 
+     "uz", 
+     0.0, 
+     1224, 
+     80282530, 
+     18577, 
+     108252
+    ], 
+    [
+     "NROT_csys12", 
+     "", 
+     0.0, 
+     3, 
+     77622, 
+     25862, 
+     25886
+    ]
+   ], 
+   "has_443.41": false, 
+   "file": "<PROJECT_ROOT>\\08_Structural_Analysis\\Audits\\Presolve_Inputs\\LC2_presolve_ds.dat", 
+   "bf_min_K": 423.83737199999996, 
+   "n_elem_lines": 23400, 
+   "bf_min_C": 150.687372, 
+   "bf_max_K": 562.55763989999991, 
+   "eblock_header": "eblock,21,COMPACT,,23400", 
+   "bf_max_C": 289.4076399, 
+   "material": [
+    "tref,26.85", 
+    "MP,DENS,1,8190,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,93.33", 
+    "MPTEMP,2,204.44", 
+    "MPTEMP,3,315.56", 
+    "MPTEMP,4,426.67", 
+    "MPTEMP,5,537.78", 
+    "MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,", 
+    "MPTEMP,,,,,,,,", 
+    "MPAMOD,1,21.11,", 
+    "MPTEMP,,,,,,,,", 
+    "MPTEMP,1,20", 
+    "MPTEMP,2,100", 
+    "MPTEMP,3,200", 
+    "MPTEMP,4,300", 
+    "MPTEMP,5,400", 
+    "MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,", 
+    "MPTEMP,,,,,,,,"
+   ], 
+   "n_nodes": 108252
+  }
+ }, 
+ "settings_before": {
+  "LC1": {
+   "InertiaRelief": "False", 
+   "LargeDeflection": "False", 
+   "NumberOfSteps": "1", 
+   "SolverType": "ProgramControlled", 
+   "WeakSprings": "Off"
+  }, 
+  "LC2P": {
+   "InertiaRelief": "False", 
+   "LargeDeflection": "False", 
+   "NumberOfSteps": "1", 
+   "SolverType": "ProgramControlled", 
+   "WeakSprings": "Off"
+  }, 
+  "LC2": {
+   "InertiaRelief": "False", 
+   "LargeDeflection": "False", 
+   "NumberOfSteps": "1", 
+   "SolverType": "ProgramControlled", 
+   "WeakSprings": "Off"
+  }
+ }, 
+ "unit_system": "StandardMKS", 
+ "graphics_deformation_scaling": "(Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.DeformationScaling.True, 1.0)", 
+ "all_messages_end": [
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ], 
+  [
+   "Warning", 
+   "Not enough constraints appear to be applied to prevent rigid body motion.  This may lead to solution warnings or errors.  Check results carefully."
+  ], 
+  [
+   "Info", 
+   "The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times."
+  ], 
+  [
+   "Warning", 
+   "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+  ], 
+  [
+   "Warning", 
+   "Not enough constraints appear to be applied to prevent rigid body motion.  This may lead to solution warnings or errors.  Check results carefully."
+  ], 
+  [
+   "Info", 
+   "The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times."
+  ], 
+  [
+   "Warning", 
+   "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+  ], 
+  [
+   "Warning", 
+   "Not enough constraints appear to be applied to prevent rigid body motion.  This may lead to solution warnings or errors.  Check results carefully."
+  ], 
+  [
+   "Info", 
+   "The Imported Body Temperature load will set the Program Controlled Tabular Loading option to Off when Mapped Data property is set to Input file, and the specified analysis time values match the step end times."
+  ], 
+  [
+   "Warning", 
+   "The reference temperature for the thermal expansion coefficient differs from the reference temperature of one or more bodies. The data will be adjusted to have a zero thermal strain at the reference temperature of each body. If the number of temperature points is sparse this could cause invalid values to be used for calculations. The recommendation is to have the same reference temperature on the bodies as the thermal expansion coefficient's reference temperature in Engineering Data or a dense number of temperature points."
+  ], 
+  [
+   "Info", 
+   "Changes to Named Selection Creation options will take effect on next import operation."
+  ], 
+  [
+   "Info", 
+   "Changes to Named Selection Creation options will take effect on next import operation."
+  ], 
+  [
+   "Info", 
+   "When you change the Color Theme, Mechanical automatically uses the background color of the selected theme. To use the background colors specified in Workbench, set the Use Color Theme in Geometry Window preference to No."
+  ]
+ ], 
+ "presolve_input_raw_constraints_identical_to_7A": {
+  "LC1": true, 
+  "LC2": true
+ }, 
+ "LC2P_definition": {
+  "pressure": "uniform 443.41 Pa gauge (= CFD wall static pressure at the first station, maximum of the CFD wall distribution) on SOLID_INNER_INTERFACE, normal to the bore (pushes outward). Differential internal-external pressure: the outlet is at 0 Pa gauge and the outside of the duct at ambient, so no atmospheric absolute pressure is applied.", 
+  "why_uniform": "upper bound of the CFD distribution p(z) = 407.36-681.55 z <= 443.41 Pa; the model is linear, so the pressure contribution scales with p and the uniform maximum bounds the effect of the real distribution", 
+  "restraints": "identical to LC2", 
+  "states": {
+   "orientation": "FullyDefined", 
+   "pressure": "FullyDefined", 
+   "hoop": "FullyDefined", 
+   "inlet": "FullyDefined", 
+   "outlet": "FullyDefined", 
+   "import": "Solved"
+  }, 
+  "temperature": "identical CFD import"
+ }, 
+ "solver_setting": {
+  "LC1": "Direct", 
+  "LC2P": "Direct", 
+  "LC2": "Direct"
+ }
+}

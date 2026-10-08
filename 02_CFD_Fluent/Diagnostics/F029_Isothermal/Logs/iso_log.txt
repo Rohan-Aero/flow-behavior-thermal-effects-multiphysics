@@ -1,0 +1,46 @@
+================================================================================
+SECTION 6B F-029 DIAGNOSTIC - ISOTHERMAL FLOW, MEDIUM MESH - RE-ANALYSIS 2026
+================================================================================
+OK    transcript                                             
+OK    read medium final CASE (settings only, data NOT read)  
+OK    mesh size_info                                         
+OK    monitor file -> Monitors/iso_monitors.out              
+OK    startup scheme pressure -> second-order                'second-order'
+OK    startup scheme mom -> first-order-upwind               'first-order-upwind'
+OK    startup scheme k -> first-order-upwind                 'first-order-upwind'
+OK    startup scheme omega -> first-order-upwind             'first-order-upwind'
+OK    startup scheme temperature -> first-order-upwind       'first-order-upwind'
+OK    energy equation NOT solved (isothermal diagnostic)     
+AUDIT ok   viscous model                  ('k-omega', 'sst')
+AUDIT ok   wall omega treatment           'correlation'
+AUDIT ok   inlet velocity [m/s]           23.5
+AUDIT ok   inlet temperature [K]          300
+AUDIT ok   inlet intensity [-]            0.04411209588036475
+AUDIT ok   outlet gauge pressure [Pa]     0
+AUDIT ok   equations solved               {'flow': True, 'kw': True, 'temperature': False}
+AUDIT ok   p-v coupling                   'Coupled'
+AUDIT ok   scheme mom (startup)           'first-order-upwind'
+OK    standard initialize (300 K, w 23.5 m/s, 0 Pa)          
+OK    stage 1 first-order: iterate 150                       
+OK    final scheme pressure -> second-order                  'second-order'
+OK    final scheme mom -> second-order-upwind                'second-order-upwind'
+OK    final scheme k -> second-order-upwind                  'second-order-upwind'
+OK    final scheme omega -> second-order-upwind              'second-order-upwind'
+OK    final scheme temperature -> second-order-upwind        'second-order-upwind'
+OK    second-order: iterate 100                              
+EVAL iter 250: not evaluable
+OK    second-order: iterate 100                              
+EVAL iter 350: not yet
+OK    second-order: iterate 100                              
+EVAL iter 450: CONVERGED
+OK    confirmation: iterate 100                              
+CONFIRM iter 550: HOLDS
+OK    write case                                             
+OK    write data                                             
+OK    flux report mass                                       
+OK    SI p_area                                              
+OK    SI T_mass                                              
+OK    export Exports/wall_interface.csv                      
+OK    export Exports/boundary_inlet.csv                      
+OK    export Exports/boundary_outlet.csv                     
+ISO RUN COMPLETE converged=True total=550

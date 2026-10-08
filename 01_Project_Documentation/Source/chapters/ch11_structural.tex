@@ -1,0 +1,116 @@
+% ===================================================================== Chapter 11
+\chapter{Thermo-Structural Analysis}\label{ch:struct}
+
+\section{Structural Model}
+The structural model (Table~\ref{tab:smodel}) is a linear static ANSYS Mechanical \cite{ansysmech} model of the Inconel 718 annulus loaded only by the mapped
+temperature field. Before any solve, a gate of 61 automated checks compared the written solver inputs with the prepared model section by
+section (nodes, elements, temperatures, material, constraints). Each load case solved in about one minute with the sparse direct solver.
+
+\input{../Tables/tab_smodel}
+
+\section{Structural Mesh}
+Mesh B uses quadratic 20-node hexahedra (SOLID186), five through the wall (2.0~mm each), 36 around the circumference and 130 along the axis,
+graded towards the inlet where the temperature gradients are largest (Figure~\ref{fig:smesh}). With 108,252~nodes it uses 84.6\,\% of the
+measured Student limit. Its adequacy is demonstrated by the seven-mesh study of Chapter~\ref{ch:smesh}.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.58\linewidth}\centering\includegraphics[width=\linewidth,trim=0 80 0 60,clip]{B_mesh_iso.png}\caption{Isometric view}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.40\linewidth}\centering\includegraphics[width=\linewidth,trim=250 40 250 40,clip]{B_mesh_end_face.png}\caption{End face: 36 $\times$ 5 elements}\end{subfigure}
+\caption[Structural mesh B]{Structural mesh B: 108,252~nodes, 23,400 SOLID186 elements.}
+\label{fig:smesh}
+\src{\provmech{} The white margins of the export are trimmed for layout.}
+\end{figure}
+
+\section{LC1 Free Expansion}
+In LC1 the duct is supported in a statically determinate way and can expand freely; the reactions are about $10^{-6}$ N, confirming that no
+spurious restraint exists. The maximum total deformation is 1.8443~mm at the outer edge of the outlet face, and the free axial growth
+(area-weighted mean over the end face) is 1.8409~mm (Figure~\ref{fig:lc1}). An independent integration of the thermal strain over the same
+temperature field gives the same growth to $1.3\times10^{-5}$. The growth is 12.2\,\% below the Section 2 estimate of 2.096~mm because the CFD mean
+temperature rise (about 225.5~K) is lower than the analytical one (254.7~K).
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC1_Total_Deformation_iso.png}\caption{Total deformation [m]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC1_Equivalent_Stress_averaged_iso.png}\caption{Von Mises stress [Pa]}\end{subfigure}
+\caption[LC1 free expansion]{LC1 free expansion: maximum deformation 1.8443~mm at the outlet end; maximum von Mises stress 24.28~MPa at the bore near the inlet.}
+\label{fig:lc1}
+\src{\provmech}
+\end{figure}
+
+The LC1 stresses come only from the non-uniform temperature. Along most of the duct the bore carries about 18~MPa von Mises (18.20~MPa at
+mid-span), the value predicted by the thick-cylinder solution, Equation~\eqref{eq:timoshenko}, evaluated on the CFD field (18.55~MPa). The
+maximum, 24.28~MPa at the bore 6.5~mm from the inlet face (427.81~K), is an end effect of the steep axial and radial gradients in the first
+slab (Figure~\ref{fig:lcprof}a). This peak lies in the region where the mapped temperatures carry the Fluent node-reconstruction limitation,
+so its value is bounded at $\pm$9.8~MPa (Chapter~\ref{ch:mapping}); it drives no conclusion.
+
+\section{LC2 Axially Restrained Expansion}
+In LC2 both end faces are held axially. The axial growth is prevented, the maximum total deformation drops to 0.1349~mm (outer surface,
+$z \approx$ 244~mm), and the duct carries an almost uniform axial compression (Figure~\ref{fig:lc2}). The end faces react $\pm$548,936.6~N,
+balanced to $1.8\times10^{-8}$ N and equal to the analytical restrained force of the same temperature field, Equation~\eqref{eq:restrained},
+to $10^{-5}$. The mean axial stress is $-$582.44~MPa.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC2_Total_Deformation_iso.png}\caption{Total deformation [m]}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.49\linewidth}\centering\includegraphics[width=\linewidth,height=52mm,keepaspectratio]{LC2_Equivalent_Stress_averaged_iso.png}\caption{Von Mises stress [Pa]}\end{subfigure}
+\caption[LC2 axially restrained expansion (S1 supports)]{LC2 axially restrained expansion (S1 supports): maximum deformation 0.1349~mm; maximum von Mises stress 605.16~MPa at the outer edge of the inlet face.}
+\label{fig:lc2}
+\src{\provmech}
+\end{figure}
+
+\section{Temperature-Dependent Elastic Properties}
+Because $E$ decreases and $\alpha$ increases with temperature, the restrained stress $E\alpha\Delta T$ is not proportional to the temperature
+rise alone. The analytical model evaluated $E$ and $\alpha$ once at the mean temperature; the FE model evaluates them at every node. Section 2
+rescaled to the CFD mean temperature rise gives $-$581.9~MPa, within 0.1\,\% of the FE mean axial stress of $-$582.44~MPa. The difference from
+the original analytical $-$657.2~MPa ($-$11.4\,\%) is therefore the temperature basis, not the structural model.
+
+\section{Thermal Stress}
+Table~\ref{tab:lcres} summarises both load cases. The LC2 peak von Mises stress of 605.16~MPa occurs at the outer edge of the inlet face
+(437.99~K), where the uniform compression combines with the steep temperature gradient of the inlet end (Figure~\ref{fig:lcprof}b). In the interior the von Mises stress is 587--591~MPa, with axial stresses of $-$593.4~MPa at the outer surface and
+$-$564.9~MPa at the bore at mid-span. The column load is the end force of 548.94~kN, equivalent to the mean axial
+stress of $-$582.44~MPa; the 605.16~MPa is a local peak and not the column load.
+
+\input{../Tables/tab_lcres}
+
+
+The ratio of restrained to gradient stress is 32 at mid-span and 25 between the peaks: the axial restraint, not the through-wall temperature
+gradient, dominates the thermal stress. This confirms in kind the Section 2 prediction of a factor of about 40.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[t]{0.45\linewidth}\centering\includegraphics[width=\linewidth,height=78mm,keepaspectratio]{F7B_01_LC1_axial_profiles.png}\caption{LC1: temperature, axial displacement and von Mises stress}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.53\linewidth}\centering\includegraphics[width=\linewidth,height=78mm,keepaspectratio]{F7B_02_LC2_axial_profiles.png}\caption{LC2: temperature, axial displacement, von Mises and axial stress}\end{subfigure}
+\caption{Axial profiles (circumferential means at the bore and outer surface) along the duct for LC1 and LC2.}
+\label{fig:lcprof}
+\src{\provdata}
+\end{figure}
+
+
+\section{Deformation}
+The LC1 growth is distributed along the duct in proportion to the local temperature rise, so the axial displacement grows faster towards the
+hot outlet (Figure~\ref{fig:lcprof}a). In LC2 the axial displacement is small and mainly an internal redistribution: the axial displacement reaches
+at most 0.109~mm, and the maximum radial displacement is 0.0897~mm. The small LC2 deformation hides a large stored strain energy, which is
+the reason the restrained duct must also be assessed for stability.
+
+\section{Reaction Forces}
+In LC2 the axial force is constant along the length and equal to the end
+reaction; in LC1 the section force computed from the corner-node stresses is about 125~N, i.e.\ zero to within about 0.02\,\% of the LC2 force, as it must be for a free body. The three
+mid-span hoop nodes of LC2 react about $10^{-7}$ N; they only suppress rigid-body rotation.
+
+
+\section{Pressure-Load Effect}
+The fluid pressure acts on the bore. Load case LC2P applied the highest CFD wall pressure, 443.41~Pa gauge, uniformly over the whole bore as
+a bound (atmospheric pressure acts on all surfaces and was not applied). The peak von Mises stress changed from 605.160873 to 605.160918~MPa,
+i.e.\ by +45~Pa or $7.4\times10^{-6}$\,\%; a Lam\'e check of the pressure-induced stress agreed within 0.3\,\%.
+Pressure loading is negligible compared with the thermal loading and was not re-applied in the parametric cases, whose pressure drops are
+of the same order.
+
+
+The first-yield assessment of the LC2 static state is given in Table~\ref{tab:yield}. The local yield strength at the critical node
+(164.8\,\textdegree C) is 1047.0~MPa, giving a utilisation of 0.578 and a first-yield load factor of 1.730: the static state is elastic, and the
+thermal load would have to rise by 73\,\% before the first point yields. This is a statement about the static stress state only. It is not a
+structural margin, because the restrained duct becomes unstable before that load level is reached under the S1 supports
+(Chapter~\ref{ch:buckling}).
+
+\input{../Tables/tab_yield}

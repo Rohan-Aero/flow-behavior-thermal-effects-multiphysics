@@ -1,0 +1,1 @@
+S3 deck run 2 (27-09-2026 14:34): with the S3 Setup refresh the ImportLoad of the new Imported Body Temperature still failed ('Object reference not set'). Nothing meshed, written or solved. Fix (as done in 8A for LC2NS): re-import the existing LC2 object first, which loads the External Data into Mechanical, then import the new S3 object (mech_s3_9B2.py). RE-ANALYSIS 2026.

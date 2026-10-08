@@ -1,0 +1,25 @@
+
+ PRINT REACTION SOLUTIONS PER NODE
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2026 R1          26.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:27:49  SEP 26, 2026 Elapsed Time=     13.324
+
+ MS8B_C--LC1_Free_Expansion                                                    
+
+
+ 
+  ***** POST1 TOTAL REACTION SOLUTION LISTING *****                            
+ 
+  LOAD STEP=     1  SUBSTEP=     1                                             
+   TIME=    1.0000      LOAD CASE=   0                                         
+ 
+  THE FOLLOWING X,Y,Z SOLUTIONS ARE IN THE GLOBAL COORDINATE SYSTEM            
+ 
+    NODE       FX           FY           FZ    
+   40022 -0.16943E-006 0.97822E-007 0.51911E-005
+   40040               0.15836E-006 0.17841E-006
+   40058  0.15407E-006 0.88952E-007-0.55873E-005
+
+ TOTAL VALUES
+ VALUE  -0.15364E-007 0.34513E-006-0.21782E-006

@@ -1,0 +1,11 @@
+9B-1 thickness meshes - RE-ANALYSIS 2026
+generator <PROJECT_ROOT>\05_Meshing\Scripts\make_mesh.py sha256 F2217FE03A7B56503E1D0576D44E868D5EA25C309B925794ED9E36C075B0D816
+STEP 0 wrapper validation: regenerated 2C6FCFB31108654D vs baseline 2C6FCFB31108654D -> BYTE-IDENTICAL
+T01_THIN: Do 0.036 NRS 9 cells 155520 (fluid 116640 / solid 38880) neg 0  sha D2CB86B952E5BE6D  5.0 s
+   heated area mesh 6.780996439e-02 exact polygon 6.780996439e-02 (rel 0.00e+00); circle pi*Do*L 6.785840132e-02
+   solid vol rel 2.22e-16  fluid vol rel 2.22e-16  interface faces 4320/4320  fluid mesh identical True/True
+   solid layers 9 first 5.0000e-04 last 1.4138e-03 growth 1.1388 (rule smallest n 9)
+T03_THICK: Do 0.044 NRS 12 cells 168480 (fluid 116640 / solid 51840) neg 0  sha 9B6CC26C153BD447  12.6 s
+   heated area mesh 8.287884536e-02 exact polygon 8.287884536e-02 (rel 2.22e-16); circle pi*Do*L 8.293804605e-02
+   solid vol rel 0.00e+00  fluid vol rel 2.22e-16  interface faces 4320/4320  fluid mesh identical True/True
+   solid layers 12 first 5.0000e-04 last 1.7238e-03 growth 1.1191 (rule smallest n 12)

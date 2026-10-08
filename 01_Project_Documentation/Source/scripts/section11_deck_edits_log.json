@@ -1,0 +1,152 @@
+[
+ {
+  "part": "ppt/slides/slide1.xml",
+  "old": "Re-analysed CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct",
+  "new": "CFD, Conjugate Heat Transfer and Thermo-Structural Analysis of a Heated Cylindrical Duct"
+ },
+ {
+  "part": "ppt/slides/slide1.xml",
+  "old": "Re-analysis note  ",
+  "new": "Numerical analysis  "
+ },
+ {
+  "part": "ppt/slides/slide1.xml",
+  "old": "The original internship files were unavailable. Geometry, simulation set-up and results shown here are re-analysed engineering work, regenerated in 2026 with ANSYS and associated calculations.",
+  "new": "ANSYS Workbench, ANSYS Fluent and ANSYS Mechanical"
+ },
+ {
+  "part": "ppt/slides/slide2.xml",
+  "old": "Re-analysis note.  ",
+  "new": "Note on the analysis record.  "
+ },
+ {
+  "part": "ppt/slides/slide2.xml",
+  "old": "The original internship project files were unavailable at the time of re-analysis. The presented geometry, simulation setup and numerical results therefore represent re-analysed engineering work generated using ANSYS and associated calculations.",
+  "new": "The original internship project files were not retained. The geometry, simulation set-up and numerical results presented here come from a re-analysis of the internship problem, carried out after the internship with ANSYS Workbench, Fluent and Mechanical."
+ },
+ {
+  "part": "ppt/slides/slide2.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide16.xml",
+  "old": "Within the re-analysed, idealised model — each statement traces to the final engineering audit",
+  "new": "Within the idealised model — each statement traces to the final engineering audit"
+ },
+ {
+  "part": "ppt/slides/slide16.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide17.xml",
+  "old": "Re-analysed project: original internship files unavailable",
+  "new": "Original internship files not retained; analysis redone"
+ },
+ {
+  "part": "ppt/slides/slide17.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide18.xml",
+  "old": "Within a re-analysed, idealised numerical model that has not been validated against measurement.",
+  "new": "Within an idealised numerical model that has not been validated against measurement."
+ },
+ {
+  "part": "ppt/notesSlides/notesSlide1.xml",
+  "old": "One point up front: the original internship files were not available, so the geometry, set-up and results are a documented 2026 re-analysis in ANSYS.",
+  "new": "One point up front: the original internship files were not retained, so the geometry, set-up and results come from a documented re-analysis in ANSYS, carried out after the internship."
+ },
+ {
+  "part": "ppt/notesSlides/notesSlide2.xml",
+  "old": "The box at the bottom is the re-analysis note. The re-analysis ran on ANSYS Student 2026 R1, whose 128,000-node structural limit matters later.",
+  "new": "The box at the bottom notes how the analysis record was produced. The analysis ran on the ANSYS Student licence, whose 128,000-node structural limit matters later."
+ },
+ {
+  "part": "ppt/notesSlides/notesSlide17.xml",
+  "old": "This is a re-analysis with no experimental data, so the model is verified, not validated.",
+  "new": "This is a re-analysis with no experimental data, so the model is verified, not validated."
+ },
+ {
+  "part": "ppt/notesSlides/notesSlide18.xml",
+  "old": "To conclude. Within a re-analysed, idealised numerical model, the chain",
+  "new": "To conclude. Within an idealised numerical model, the chain"
+ },
+ {
+  "part": "docProps/core.xml",
+  "old": "<dc:subject>Re-analysed CFD, conjugate heat transfer and thermo-structural analysis of a heated cylindrical duct</dc:subject>",
+  "new": "<dc:subject>CFD, conjugate heat transfer and thermo-structural analysis of a heated cylindrical duct</dc:subject>"
+ },
+ {
+  "part": "docProps/app.xml",
+  "old": "<Company>Eleation internship (Feb-May 2025) - re-analysis 2026</Company>",
+  "new": "<Company>Eleation internship (Feb-May 2025)</Company>"
+ },
+ {
+  "part": "ppt/slides/slide3.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide4.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide5.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide6.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide7.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide8.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide9.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide10.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide11.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide12.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide13.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide14.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ },
+ {
+  "part": "ppt/slides/slide15.xml",
+  "old": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)  ·  re-analysed engineering work, 2026",
+  "new": "R. B. Patel  ·  Eleation internship project (Feb–May 2025)"
+ }
+]

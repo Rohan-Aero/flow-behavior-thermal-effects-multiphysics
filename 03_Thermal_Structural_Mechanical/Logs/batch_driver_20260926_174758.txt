@@ -1,0 +1,4 @@
+2026-09-26 17:47:58  batch start: cases=C00_PIPELINE_CHECK audit-only=1 cores=4
+2026-09-26 17:48:01  case C00_PIPELINE_CHECK launched
+2026-09-26 17:51:26  case C00_PIPELINE_CHECK finished: status AUDIT_ONLY, wall 201.9 s
+2026-09-26 17:51:26  batch done

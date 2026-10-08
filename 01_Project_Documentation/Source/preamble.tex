@@ -1,0 +1,98 @@
+% ===================================================================== preamble.tex
+% Section 10B report - RE-ANALYSIS 2026
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\usepackage[scaled=0.90]{helvet}
+\usepackage{textcomp}
+\usepackage[a4paper,left=20mm,right=20mm,top=20mm,bottom=20mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm,upgreek}
+\usepackage{graphicx}
+\usepackage[labelfont={bf,sf},font=small,skip=4pt]{caption}
+\usepackage[labelfont={bf,sf},font=small]{subcaption}
+\usepackage{booktabs,array,tabularx,multirow,makecell,longtable}
+\usepackage{siunitx}
+\sisetup{group-separator={,},group-minimum-digits=4,per-mode=symbol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*,topsep=2pt}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black,
+  pdftitle={Flow Behavior and Thermal Effects in Multiphysics Systems},
+  pdfauthor={Rohan Balram Patel},
+  pdfsubject={CFD, conjugate heat transfer and thermo-structural analysis of a heated cylindrical duct},
+  pdfkeywords={CFD, conjugate heat transfer, ANSYS Fluent, ANSYS Mechanical, thermal stress, linear buckling, Eleation internship}}
+
+\graphicspath{{../Figures/}}
+\definecolor{recon}{RGB}{150,40,30}
+\definecolor{boxbg}{RGB}{246,243,236}
+
+% headings
+\titleformat{\chapter}[hang]{\sffamily\bfseries\LARGE}{\thechapter}{0.8em}{}[\vspace{2pt}\titlerule]
+\titlespacing*{\chapter}{0pt}{6pt}{10pt}
+% chapters run on without a forced page break (compact report layout)
+\makeatletter\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{\par\FloatBarrier\vspace{8pt}}{}{}\makeatother
+\titleformat{\section}{\sffamily\bfseries\large}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\sffamily\bfseries\normalsize}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{9pt plus 2pt minus 2pt}{4pt plus 1pt}
+\titlespacing*{\subsection}{0pt}{7pt plus 2pt minus 2pt}{3pt plus 1pt}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+
+% header / footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize Flow Behavior and Thermal Effects in Multiphysics Systems}
+\fancyhead[R]{\sffamily\footnotesize Eleation internship, February--May 2025}
+\fancyfoot[C]{\sffamily\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\sffamily\footnotesize\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% lists of figures / tables
+\renewcommand{\cftfigfont}{\small}
+\renewcommand{\cfttabfont}{\small}
+\renewcommand{\cftfigpagefont}{\small}
+\renewcommand{\cfttabpagefont}{\small}
+\setlength{\cftbeforefigskip}{1pt}
+\setlength{\cftbeforetabskip}{1pt}
+\setlength{\cftbeforechapskip}{4pt}
+
+% floats
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\parindent}{0pt}
+
+% helper macros
+\newcommand{\diameter}{\text{\O}}
+\newcommand{\lamone}{\ensuremath{\lambda_1}}
+\newcommand{\degC}{\,\textdegree C}
+\newcommand{\src}[1]{\par\vspace{1pt}{\footnotesize\itshape #1}}
+\newcommand{\provmech}{ANSYS Mechanical image export (\texttt{Graphics.ExportImage}) of the solved result object, unedited.}
+\newcommand{\provcfd}{Plotted with matplotlib from data exported from the converged ANSYS Fluent solution; not a GUI screenshot.}
+\newcommand{\provmesh}{matplotlib render of the actual mesh arrays read by Fluent; not an ANSYS GUI screenshot.}
+\newcommand{\provcad}{Rendered from the geometry exported by ANSYS SpaceClaim; not a GUI screenshot.}
+\newcommand{\provdata}{Plotted with matplotlib from the solver output tables of this project.}
+\newcommand{\recbox}[1]{\par\smallskip\noindent\fcolorbox{recon}{boxbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\small #1}}\par\smallskip}
+
+\renewcommand{\bibname}{References}
+\setlength{\textfloatsep}{10pt plus 2pt minus 3pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\emergencystretch}{3em}
+\assignpagestyle{\chapter}{fancy}
+\setlength{\bibsep}{1.5pt plus 0.5pt}

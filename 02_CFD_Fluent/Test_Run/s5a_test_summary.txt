@@ -1,0 +1,35 @@
+Section 5A diagnostic solve - final-iteration values
+RE-ANALYSIS 2026. NOT a converged solution; do not quote as a result.
+
+quantity                  CFD @150 iterations     Section 2 analytical      comparison
+----------------------------------------------------------------------------------------------------
+iterations                150                                               
+mass flow in              8.662155 g/s            8.6866 g/s                -0.281 %
+mass imbalance            1.348e-08 kg/s          0                         1.56e-04 % of mdot
+Q into outer wall         602.7552 W              603.186 W                 -0.071 %
+Q across interface        602.7762 W                                        
+Q out with the air        603.0718 W                                        
+energy closure            -0.3165 W               0                         0.053 % of input
+dp (p_in - p_out)         438.935 Pa              441.5 Pa                  -0.58 %
+T outlet bulk             368.969 K               368.85 K                  +0.032 %
+T max wetted wall         555.054 K               574.4 K (exit)            -3.37 %
+T max solid               561.915 K                                         
+T mean solid (volume)     525.171 K               554.7 K (exit mid-wall)   different quantity
+through-wall dT           6.861 K                 6.6-8.0 K                 in band
+max outlet velocity       34.953 m/s              28.89 m/s bulk            centreline/bulk = 1.210
+max y+ (PRELIMINARY)      0.5916                  target <= 1               not a converged value
+solid T startup peak      761.0 K at iter 35      n/a                       +199 K over the settled value - decays smoothly, see F-022
+interface Q startup peak  641.5 W at iter 38      n/a                       same transient
+residual continuity       3.2794e-04              1e-4                      NOT met
+residual x-velocity       8.1527e-10              1e-4                      met
+residual y-velocity       8.0805e-10              1e-4                      met
+residual z-velocity       1.3589e-07              1e-4                      met
+residual energy           2.7820e-08              1e-6                      met
+residual k                2.2323e-06              1e-4                      met
+residual omega            1.6984e-05              1e-4                      met
+
+Geometric note: the mesh represents the circular section by an inscribed
+48-sided polygon. That accounts for the CFD being below the analytical value by
+  -0.0714 % on heated-wall area (lateral, sin(pi/N)/(pi/N) = 0.999286)
+  -0.2853 % on inlet area   (planar,  (N/2pi)sin(2pi/N) = 0.997147)
+It is a discretisation effect, not a physics or boundary-condition error.

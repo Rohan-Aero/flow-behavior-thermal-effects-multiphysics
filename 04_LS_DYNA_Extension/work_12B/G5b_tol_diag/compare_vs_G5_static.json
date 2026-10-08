@@ -1,0 +1,30 @@
+{
+ "ref": "<PROJECT_ROOT>\\15_LS_DYNA_Extension\\work_12B\\G5_static",
+ "test": "<PROJECT_ROOT>\\15_LS_DYNA_Extension\\work_12B\\G5b_tol_diag",
+ "time": 1.0,
+ "n_nodes": 108252,
+ "reaction_inlet_N": [
+  553247.0399999991,
+  553247.0399999991
+ ],
+ "reaction_inlet_rel_diff": 0.0,
+ "peak_vm_MPa": [
+  605.1601789318246,
+  605.1601789318246
+ ],
+ "peak_vm_node": [
+  18865,
+  18865
+ ],
+ "peak_vm_rel_diff": 0.0,
+ "vm_diff_MPa": {
+  "rms": 0.0005337192553515047,
+  "max_abs": 0.010049965760946274
+ },
+ "sz_diff_MPa": {
+  "rms": 0.0005334053825626833,
+  "max_abs": 0.01,
+  "mean": -3.6950818460628904e-07
+ },
+ "mean_sz_ratio_test_over_ref": 1.0000000006362724
+}

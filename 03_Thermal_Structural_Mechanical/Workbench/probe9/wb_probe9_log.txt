@@ -1,0 +1,28 @@
+DIR filedata: ['Container', 'Description', 'DisplayText', 'File', 'FileDataProperty', 'GetDataProperty', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'Master', 'ModifyFileData', 'Name', 'Output', 'SetAsMaster', 'SetDelimiterCharacter', 'SetDelimiterType', 'SetDummyNetData', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatType', 'SetMaterialFieldData', 'SetStartImportAtLine', 'SimulationSetEntityProperty', 'ToString', 'Type']
+DIR fileprop: ['ColumnsData', 'Container', 'ConversionOption', 'CoordinateSystemType', 'DelimiterCharacter', 'DelimiterType', 'Dimensions', 'DisplayText', 'DummyNetData', 'FileIdentifier', 'FormatString', 'FormatType', 'GetColumnData', 'GetEntityProperties', 'GetEntityProperty', 'GetExpression', 'GetProperties', 'GetProperty', 'HasAssociatedParameter', 'LengthUnit', 'MaterialFieldData', 'Name', 'OriginX', 'OriginXUnit', 'OriginY', 'OriginYUnit', 'OriginZ', 'OriginZUnit', 'ScaleX', 'ScaleXToolTip', 'ScaleXValid', 'ScaleY', 'ScaleYToolTip', 'ScaleYValid', 'ScaleZ', 'ScaleZToolTip', 'ScaleZValid', 'SetColumnDataType', 'SetCoordinateSystemType', 'SetDimensionLengthUnit', 'SetDimensionType', 'SetEntityProperties', 'SetEntityProperty', 'SetFormatString', 'SetLengthUnit', 'SimulationSetEntityProperty', 'Sliver', 'StartImportAtLine', 'SupportingFiles', 'ThetaXY', 'ThetaXYUnit', 'ThetaYZ', 'ThetaYZUnit', 'ThetaZX', 'ThetaZXUnit', 'ToString', 'Type']
+OK   cdb FormatType Cdb
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   cdb master? True
+FAIL cdb prop CheckValidBlockedCdbFile: 'DataReference' object has no attribute 'CheckValidBlockedCdbFile'
+FAIL cdb prop NodeAndElementRenumberingMethod: 'DataReference' object has no attribute 'NodeAndElementRenumberingMethod'
+FAIL cdb prop ProcessNodalComponents: 'DataReference' object has no attribute 'ProcessNodalComponents'
+FAIL cdb prop ProcessElementComponents: 'DataReference' object has no attribute 'ProcessElementComponents'
+FAIL cdb prop ProcessModelData: 'DataReference' object has no attribute 'ProcessModelData'
+OK   cdb prop LengthUnit m
+OK   csv FormatType Delimited
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   columns [('Node ID', '', ''), ('Temperature', 'K', 'Temperature1')]
+OK   external data update 
+OK   external data state <cell state: UpToDate: wb2qh_setupcell_extmod_utd>
+OK   link ED -> SS 
+saved
+OK   model refresh 
+mechanical opened
+mechanical script sent
+=== WB PROBE 9 DONE ===

@@ -1,0 +1,15 @@
+2026-09-26 17:52:13  cleared case_mesh_zones.json
+2026-09-26 17:52:13  cleared frozen_physics_gate.json
+2026-09-26 17:52:14  cleared run_summary.json
+2026-09-26 17:52:14  cleared settings_diff_P00_vs_case_after_replace.json
+2026-09-26 17:52:14  cleared settings_state_C00_PIPELINE_CHECK_case.json
+2026-09-26 17:52:14  cleared settings_state_P00_case.json
+2026-09-26 17:52:14  cleared setup_audit_1_presolve.json
+2026-09-26 17:52:14  cleared setup_audit_1_presolve.txt
+2026-09-26 17:52:14  cleared C00_PIPELINE_CHECK_transcript.trn
+2026-09-26 17:52:14  cleared C00_PIPELINE_CHECK_log.txt
+2026-09-26 17:52:14  launching case C00_PIPELINE_CHECK (audit-only=0): 3ddp -g -py -t4 -i ../Journals/solve_param.py
+2026-09-26 17:52:14  fluent pid 15828
+2026-09-26 18:17:56  fluent exited
+2026-09-26 18:18:00  wall clock 1542.8 s; journal status CONVERGED
+2026-09-26 18:18:00  driver done

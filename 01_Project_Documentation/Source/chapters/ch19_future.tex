@@ -1,0 +1,28 @@
+% ===================================================================== Chapter 19
+\chapter{Future Work}\label{ch:future}
+The following work would close the open items identified in Chapter~\ref{ch:unc}. None of it has been performed, except that item 3
+is addressed in part by the additional elastic LS-DYNA analysis of Section~\ref{sec:lsdyna}.
+
+\begin{enumerate}
+\item \textbf{Experimental validation.} Wall thermocouples and pressure taps on a representative heated-duct rig would allow the thermal field and
+      pressure drop to be validated rather than only verified; this is the only route to model-form uncertainty estimates.
+\item \textbf{End-support characterisation.} Define the lateral and rotational stiffness of the real mounting from its design or from
+      measurement, and repeat the buckling analysis with elastic supports (task T-034).
+\item \textbf{Geometric imperfections and nonlinear buckling.} Seed an imperfection shaped like mode 1 with tolerance-based amplitudes and follow
+      the geometrically nonlinear load--deflection path to the limit point (task T-035). The additional LS-DYNA analysis covers the
+      elastic part with numerical amplitudes of 0.1--1.2~mm; tolerance-based amplitudes, an elastic--plastic material model and the
+      limit point remain open.
+\item \textbf{Material plasticity and temperature-dependent inelastic behaviour.} Use temperature-dependent stress--strain curves of age-hardened
+      Inconel 718, preferably specification-minimum data, for an elastic--plastic analysis and an inelastic buckling assessment (task T-036);
+      source Poisson's ratio and minimum-guaranteed yield strengths (task T-014).
+\item \textbf{Radiation.} Quantify internal surface-to-surface radiation in the bore, which was neglected and estimated to be conservative for the
+      wall temperature (task T-009).
+\item \textbf{Advanced turbulence and property modelling.} Compare alternative turbulence and near-wall formulations and study the inlet
+      turbulence intensity, to explain the remaining friction-factor difference and quantify the heat-transfer model-form uncertainty.
+\item \textbf{Designed parametric study.} Replace the one-factor study with a factorial or response-surface design over velocity, heat flux and
+      thickness, including interactions; extend the air property table beyond 600~K if the envelope is widened.
+\item \textbf{Non-uniform heating and transients.} Circumferentially non-uniform heating would add thermal bending that interacts with the column
+      mode; transient start-up and thermal cycling would allow a low-cycle-fatigue assessment.
+\item \textbf{Two-way fluid--structure coupling, if justified.} Only if a future configuration produced deformations that change the flow passage
+      significantly; for the present duct the flow-area change of 0.70\,\% does not justify it.
+\end{enumerate}

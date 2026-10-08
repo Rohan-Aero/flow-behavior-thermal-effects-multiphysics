@@ -1,0 +1,30 @@
+=== SECTION 9B-2 WB PARAMETRIC MECHANICAL ALL (RE-ANALYSIS 2026) ===
+---- case C00_PIPELINE_CHECK {'bias': 4.0, 'geometry': None, 'tag': 'C00_PIPELINE_CHECK', 'Di': 0.02, 'L': 0.59999999999999998, 'source_node_T_K': [423.83734130859375, 562.54364013671875], 'source_T_range_K': [423.21115, 562.57678], 'buckling': True, 'cfd_case': 'C00_PIPELINE_CHECK', 'nc': 36, 'cdb': '10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb', 'Do': 0.040000000000000001, 'nr': 5, 'csv': '10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv', 'na': 130, 'pressure': False}
+saved as <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\C00_PIPELINE_CHECK\Project\C00_PIPELINE_CHECK.wbpj (7B project not written)
+OK   ED rename 
+OK   ED modify master file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_mesh.cdb 
+OK   ED modify data file -> <PROJECT_ROOT>\10_Parametric_Study/Mapping/C00_PIPELINE_CHECK/fluent_solid_node_temperature.csv 
+OK   cdb length unit m 
+OK   cdb SetAsMaster 
+OK   csv start line 2 
+OK   csv comma 
+OK   csv length unit m 
+OK   col0 Node ID 
+OK   col1 Temperature 
+OK   col1 unit K 
+OK   length units read-back ['m', 'm']
+OK   format read-back ['Cdb', 'Delimited']
+OK   csv start line read-back 2
+OK   csv delimiter read-back ['Comma', ',']
+ED read-back {'after': ['<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\10_Parametric_Study\\Mapping\\C00_PIPELINE_CHECK\\fluent_solid_node_temperature.csv'], 'delimiter': ['Comma', ','], 'master': [True, False], 'ok': True, 'start_line': '2', 'length_units': ['m', 'm'], 'columns': [('Node ID', ''), ('Temperature', 'K')], 'before': ['<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_mesh.cdb', '<PROJECT_ROOT>\\07_Thermal_Analysis\\Mapping\\MeshBased\\fluent_solid_node_temperature.csv'], 'format': ['Cdb', 'Delimited'], 'case': 'C00_PIPELINE_CHECK'}
+OK   ED update 
+OK   refresh Setup of LC1 Free Expansion (External Data -> analysis) 
+OK   refresh Setup of LC2 Axially Restrained (External Data -> analysis) 
+OK   refresh Setup of LC2P Restrained Thermal + Pressure (External Data -> analysis) 
+OK   rename LC2 Linear Buckling C00_PIPELINE_CHECK 
+OK   model refresh 
+mechanical opened
+mechanical script returned
+saved C00_PIPELINE_CHECK
+STOP: case C00_PIPELINE_CHECK FATAL: PRE-SOLVE GATE FAILED - nothing solved: ['LC1 input (C00 control): nodal temperatures identical to the 7B solved input', 'LC2 input (C00 control): nodal temperatures identical to the 7B solved input']
+=== WB PARAMETRIC MECHANICAL ALL DONE ===

@@ -1,0 +1,4 @@
+2026-09-25 15:29:11  launching runwb2 -B -R <PROJECT_ROOT>\08_Structural_Analysis\Workbench\Scripts\wb_zoom_images_7B.wbjn
+2026-09-25 15:29:11  pid 5640
+2026-09-25 15:30:03  runwb2 exited
+2026-09-25 15:30:03  driver done

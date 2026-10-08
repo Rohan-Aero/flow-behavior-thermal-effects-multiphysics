@@ -1,0 +1,44 @@
+{
+ "XC": {
+  "through_wall_elements": 3,
+  "radial_levels": 7,
+  "T_bore_K": 531.6883167142857,
+  "T_outer_K": 539.267814047619,
+  "ref1d_with_mesh_temperature_bore_s_t_MPa": 18.711061335422215
+ },
+ "C": {
+  "through_wall_elements": 4,
+  "radial_levels": 9,
+  "T_bore_K": 531.6884532962963,
+  "T_outer_K": 539.2679369259259,
+  "ref1d_with_mesh_temperature_bore_s_t_MPa": 18.691687450110923
+ },
+ "B": {
+  "through_wall_elements": 5,
+  "radial_levels": 11,
+  "T_bore_K": 531.6868110555556,
+  "T_outer_K": 539.2664043888888,
+  "ref1d_with_mesh_temperature_bore_s_t_MPa": 18.69464053897092
+ },
+ "FR": {
+  "through_wall_elements": 6,
+  "radial_levels": 13,
+  "T_bore_K": 531.6868110555556,
+  "T_outer_K": 539.2664043888888,
+  "ref1d_with_mesh_temperature_bore_s_t_MPa": 18.699659427791733
+ },
+ "FA": {
+  "through_wall_elements": 5,
+  "radial_levels": 11,
+  "T_bore_K": 531.6868110555556,
+  "T_outer_K": 539.2664043888888,
+  "ref1d_with_mesh_temperature_bore_s_t_MPa": 18.69464053897092
+ },
+ "FC": {
+  "through_wall_elements": 5,
+  "radial_levels": 11,
+  "T_bore_K": 531.6883167142857,
+  "T_outer_K": 539.2678140476189,
+  "ref1d_with_mesh_temperature_bore_s_t_MPa": 18.694255222539134
+ }
+}

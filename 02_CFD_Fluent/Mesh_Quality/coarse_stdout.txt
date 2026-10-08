@@ -1,0 +1,160 @@
+
+Opening input/output transcript to file "<PROJECT_ROOT>\05_Meshing\\fluent-20260919-144843-12960.trn".
+Auto-Transcript Start Time:  14:48:43, 19 Sep 2026 India Standard Time 
+
+              Welcome to ANSYS Fluent 2026 R1
+
+              Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262  
+ 
+Connected License Server List:	<Non FlexNet Publisher License Server (FNPLS)>
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+
+     --------------------------------------------------------------
+     This is a student version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "<HOST>" (win64).
+Host waiting for connection from Node 0 at 127.0.0.1:62715 
+
+Node 0 connecting to the Host ... connection established.
+
+------------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    CPU Model Name                           
+------------------------------------------------------------------------------------
+n0    <HOST>     1/12  Windows-x64  19140  12th Gen Intel(R) Core(TM) i5-12450HX    
+host  <HOST>           Windows-x64  20436  12th Gen Intel(R) Core(TM) i5-12450HX    
+
+MPI Option Selected: intel
+------------------------------------------------------------------------------------
+
+Cleanup script file is <PROJECT_ROOT>\\05_Meshing\\cleanup-fluent-<HOST>-20436.bat
+
+<HOST> is already loaded (33.6041).                       Process affinity not being set.
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+
+Reading journal file Scripts/check_coarse.jou...
+
+> /file/read-case Mesh_Coarse/coarse.msh
+
+Reading "Mesh_Coarse/coarse.msh"...
+
+Buffering for file scan...
+
+   53741 nodes.
+   38400 hexahedral cells, zone  2.
+   13440 hexahedral cells, zone  3.
+  113600 quadrilateral interior faces, zone  4.
+   38176 quadrilateral interior faces, zone  5.
+     640 quadrilateral velocity-inlet faces, zone  6.
+     640 quadrilateral pressure-outlet faces, zone  7.
+    1920 quadrilateral wall faces, zone  8.
+    1920 quadrilateral wall faces, zone  9.
+     224 quadrilateral wall faces, zone 10.
+     224 quadrilateral wall faces, zone 11.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	fluid_solid_interface-shadow
+	solid_outlet_end
+	solid_inlet_end
+	heated_outer_wall
+	fluid_solid_interface
+	fluid_outlet
+	fluid_inlet
+	interior-solid
+	interior-fluid
+	solid_domain
+	fluid_domain
+     parallel,
+Done.
+
+> /mesh/check
+
+ Domain Extents:
+   x-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   y-coordinate: min (m) = -2.000000e-02, max (m) = 2.000000e-02
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 6.000000e-01
+ Volume statistics:
+   minimum volume (m3): 2.049465e-10
+   maximum volume (m3): 1.056568e-07
+     total volume (m3): 7.491468e-04
+ Face area statistics:
+   minimum face area (m2): 2.049465e-08
+   maximum face area (m2): 3.920686e-05
+ Checking mesh................................
+ Done.
+
+> /mesh/quality
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  4.48186e-01 cell 12286 on zone 2 (ID: 10751 on partition: 0) at location (-8.77705e-03, -4.67899e-03,  1.15000e-01)
+
+
+Maximum Aspect Ratio =  9.74491e+02 cell 18815 on zone 2 (ID: 17664 on partition: 0) at location (-7.69276e-03, -6.30528e-03,  2.35000e-01)
+
+> /define/boundary-conditions/list-zones
+  id  name                       type                adj-zone-material     wall-material         kind
+----  -------------------------  ------------------  --------------------  --------------------  ----
+   2  fluid_domain               fluid               air                                         cell
+   3  solid_domain               solid               aluminum                                    cell
+   4  interior-fluid             interior                                                        face
+   5  interior-solid             interior                                                        face
+   6  fluid_inlet                velocity-inlet                                                  face
+   7  fluid_outlet               pressure-outlet                                                 face
+   8  fluid_solid_interface      wall                air                   aluminum              face
+   9  heated_outer_wall          wall                aluminum              aluminum              face
+  10  solid_inlet_end            wall                aluminum              aluminum              face
+  11  solid_outlet_end           wall                aluminum              aluminum              face
+  12  fluid_solid_interface-shadow  wall                aluminum              aluminum              face
+
+> (display "########## DONE coarse ##########")
+########## DONE coarse ##########
+
+> /exit yes
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  14:49:10, 19 Sep 2026 India Standard Time 
+Total Transcript Time: 0 Minute 27 Second.
+
+Automatic transcript closed.

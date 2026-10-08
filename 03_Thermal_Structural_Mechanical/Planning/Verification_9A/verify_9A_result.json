@@ -1,0 +1,220 @@
+{
+ "summary": "43/43 PASS",
+ "checks": [
+  {
+   "check": "P00_BASELINE: Re_in = rho V D / mu",
+   "pass": true,
+   "detail": "29956.6 vs 29956.6"
+  },
+  {
+   "check": "V01_LOW: Re_in = rho V D / mu",
+   "pass": true,
+   "detail": "26960.9 vs 26960.9"
+  },
+  {
+   "check": "V03_HIGH: Re_in = rho V D / mu",
+   "pass": true,
+   "detail": "32952.2 vs 32952.2"
+  },
+  {
+   "check": "Q01_LOW: Q = q'' pi Do L",
+   "pass": true,
+   "detail": "542.867 W vs 542.867 W"
+  },
+  {
+   "check": "Q03_HIGH: Q = q'' pi Do L",
+   "pass": true,
+   "detail": "663.504 W vs 663.504 W"
+  },
+  {
+   "check": "T01_THIN: Q = q'' pi Do L",
+   "pass": true,
+   "detail": "603.186 W vs 603.186 W"
+  },
+  {
+   "check": "T03_THICK: Q = q'' pi Do L",
+   "pass": true,
+   "detail": "603.186 W vs 603.186 W"
+  },
+  {
+   "check": "Q01_LOW: T_out by energy balance (cp 1008.5) within 0.5 K of the marching model",
+   "pass": true,
+   "detail": "361.97 vs 361.98 K"
+  },
+  {
+   "check": "Q03_HIGH: T_out by energy balance (cp 1008.5) within 0.5 K of the marching model",
+   "pass": true,
+   "detail": "375.74 vs 375.72 K"
+  },
+  {
+   "check": "T01_THIN: lambda1(S1) ~ r_g^2 scaling within 1 %",
+   "pass": true,
+   "detail": "0.9396 vs 0.9419"
+  },
+  {
+   "check": "T03_THICK: lambda1(S1) ~ r_g^2 scaling within 1 %",
+   "pass": true,
+   "detail": "1.2942 vs 1.2914"
+  },
+  {
+   "check": "V01_LOW: lambda1 ~ 1/N within 2 %",
+   "pass": true,
+   "detail": "1.0050 vs 0.9978"
+  },
+  {
+   "check": "V03_HIGH: lambda1 ~ 1/N within 2 %",
+   "pass": true,
+   "detail": "1.2094 vs 1.2165"
+  },
+  {
+   "check": "Q01_LOW: lambda1 ~ 1/N within 2 %",
+   "pass": true,
+   "detail": "1.2542 vs 1.2645"
+  },
+  {
+   "check": "Q03_HIGH: lambda1 ~ 1/N within 2 %",
+   "pass": true,
+   "detail": "0.9893 vs 0.9810"
+  },
+  {
+   "check": "T01 FE 36x4x130: nodes 89424, fits 128,000 = True",
+   "pass": true,
+   "detail": "89424"
+  },
+  {
+   "check": "T03 FE 36x6x130: nodes 127080, fits 128,000 = True",
+   "pass": true,
+   "detail": "127080"
+  },
+  {
+   "check": "t = 14 mm FE 36x7x130: nodes 145908, fits 128,000 = False",
+   "pass": true,
+   "detail": "145908"
+  },
+  {
+   "check": "M01/M02 FE 36x5x130: nodes 108252, fits 128,000 = True",
+   "pass": true,
+   "detail": "108252"
+  },
+  {
+   "check": "CFD solid layers for t = 8 mm (first 0.5 mm, growth <= 1.147)",
+   "pass": true,
+   "detail": "n 9, g 1.1388"
+  },
+  {
+   "check": "CFD solid layers for t = 10 mm (first 0.5 mm, growth <= 1.147)",
+   "pass": true,
+   "detail": "n 10, g 1.1469"
+  },
+  {
+   "check": "CFD solid layers for t = 12 mm (first 0.5 mm, growth <= 1.147)",
+   "pass": true,
+   "detail": "n 12, g 1.1191"
+  },
+  {
+   "check": "CFD cell counts T01 / T03 / M03",
+   "pass": true,
+   "detail": "155,520 / 168,480 / 194,400"
+  },
+  {
+   "check": "V01_LOW: y+ max ~ V^0.9 within 2 % of the screening estimate, and <= 0.8",
+   "pass": true,
+   "detail": "0.532 vs 0.533"
+  },
+  {
+   "check": "V03_HIGH: y+ max ~ V^0.9 within 2 % of the screening estimate, and <= 0.8",
+   "pass": true,
+   "detail": "0.637 vs 0.636"
+  },
+  {
+   "check": "V01_LOW: no INVALID flag, near-wall air <= 590 K, solid <= 663 K",
+   "pass": true,
+   "detail": "580.3 K / 586.9 K"
+  },
+  {
+   "check": "V03_HIGH: no INVALID flag, near-wall air <= 590 K, solid <= 663 K",
+   "pass": true,
+   "detail": "534.6 K / 541.6 K"
+  },
+  {
+   "check": "Q01_LOW: no INVALID flag, near-wall air <= 590 K, solid <= 663 K",
+   "pass": true,
+   "detail": "527.5 K / 533.9 K"
+  },
+  {
+   "check": "Q03_HIGH: no INVALID flag, near-wall air <= 590 K, solid <= 663 K",
+   "pass": true,
+   "detail": "583.4 K / 590.7 K"
+  },
+  {
+   "check": "T01_THIN: no INVALID flag, near-wall air <= 590 K, solid <= 663 K",
+   "pass": true,
+   "detail": "555.3 K / 561.1 K"
+  },
+  {
+   "check": "T03_THICK: no INVALID flag, near-wall air <= 590 K, solid <= 663 K",
+   "pass": true,
+   "detail": "555.3 K / 563.1 K"
+  },
+  {
+   "check": "cand_V_0.800 is rejected (INVALID)",
+   "pass": true,
+   "detail": "INVALID: near-wall air 611 K above the 600 K air-property ta"
+  },
+  {
+   "check": "cand_Q_9500 is rejected (INVALID)",
+   "pass": true,
+   "detail": "INVALID: near-wall air 608 K above the 600 K air-property ta"
+  },
+  {
+   "check": "cand_Q_10000 is rejected (INVALID)",
+   "pass": true,
+   "detail": "INVALID: near-wall air 626 K above the 600 K air-property ta"
+  },
+  {
+   "check": "corner_Vlow_Qhigh is rejected (INVALID)",
+   "pass": true,
+   "detail": "INVALID: near-wall air 611 K above the 600 K air-property ta"
+  },
+  {
+   "check": "self-check vs Section 2 reproduced",
+   "pass": true,
+   "detail": "8 quantities"
+  },
+  {
+   "check": "matrix: required columns in order",
+   "pass": true,
+   "detail": "Case, Parameter, Value, Units, Geometry change?, Mesh change?, CFD required?, Mechanical required?, Expected trend, Reason, Status"
+  },
+  {
+   "check": "matrix: every case name follows the convention",
+   "pass": true,
+   "detail": "18 rows"
+  },
+  {
+   "check": "matrix: 8 new Fluent runs",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "matrix: 29 Mechanical analyses (+ 1 MAPDL benchmark)",
+   "pass": true,
+   "detail": "29"
+  },
+  {
+   "check": "matrix: P00 is the solved reference; aliases point to P00",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "S1 / S2 lambda1 in the support study = 8A solver files",
+   "pass": true,
+   "detail": "S1 1.108047 (8A 1.108047), S2 4.29995 (8A 4.29995)"
+  },
+  {
+   "check": "required-stiffness formula confirmed by the independent beam FE",
+   "pass": true,
+   "detail": "6 targets"
+  }
+ ]
+}

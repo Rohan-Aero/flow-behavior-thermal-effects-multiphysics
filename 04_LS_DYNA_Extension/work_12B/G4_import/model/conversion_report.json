@@ -1,0 +1,76 @@
+{
+ "source": "<PROJECT_ROOT>\\08_Structural_Analysis\\LC2_Restrained\\Solver_Output\\LC2_solve_input_ds.dat",
+ "source_sha256": "51d806783abc26ac2a6f89e47e3a19f079c59acb53d3655a90e21ecf6ae15b09",
+ "nodes": 108252,
+ "node_id_range": [
+  1,
+  108252
+ ],
+ "elements": 23400,
+ "nodes_referenced": 108252,
+ "nodes_unreferenced": 0,
+ "tref_C": 26.85,
+ "mpdata": {
+  "DENS": [
+   8190.0
+  ],
+  "EX": [
+   204000000000.0,
+   199000000000.0,
+   193000000000.0,
+   187000000000.0,
+   180000000000.0
+  ],
+  "NUXY": [
+   0.294,
+   0.294,
+   0.294,
+   0.294,
+   0.294
+  ],
+  "ALPX": [
+   1.28e-05,
+   1.33e-05,
+   1.39e-05,
+   1.42e-05,
+   1.48e-05
+  ],
+  "MPAMOD_DEFTEMP_C": [
+   21.11
+  ],
+  "KXX": [
+   11.5,
+   12.1,
+   13.5,
+   15.2,
+   17.1
+  ]
+ },
+ "n_endface_uz": 1224,
+ "hoop_nodes": [
+  25862,
+  25874,
+  25886
+ ],
+ "n_inlet": 612,
+ "n_outlet": 612,
+ "lc1_support_nodes": [
+  18870,
+  18882,
+  18894
+ ],
+ "d_commands": [
+  "d,all,uz,0",
+  "d,_CM93U,uy,0."
+ ],
+ "nrot_commands": [
+  "nrot,_CM92"
+ ],
+ "n_temperatures": 108252,
+ "T_K_min": 423.83737199999996,
+ "T_K_max": 562.5576398999999,
+ "volume_m3": 0.0005654855855241835,
+ "min_detJ": 9.480599859733697e-10,
+ "n_gauss_detJ_le_0": 0,
+ "L_m": 0.6
+}

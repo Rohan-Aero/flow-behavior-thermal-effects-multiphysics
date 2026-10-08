@@ -1,0 +1,23 @@
+{
+  "case": "Q01_LOW",
+  "intended": {
+    "QPP": 7200.0
+  },
+  "allowed_patterns": [
+    "^/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux(/value)?$"
+  ],
+  "diff_after_replace": 0,
+  "diff_after_change": [
+    {
+      "path": "/setup/boundary_conditions/wall/heated_outer_wall/thermal/heat_flux/value",
+      "P00": "8000.0",
+      "case": "7200.0"
+    }
+  ],
+  "unexpected": [],
+  "intended_but_absent": [],
+  "applied_read_back": {
+    "QPP": 7200.0
+  },
+  "passed": true
+}

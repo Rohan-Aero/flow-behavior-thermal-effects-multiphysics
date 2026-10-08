@@ -1,0 +1,963 @@
+/batch
+/config,noeldb,1     ! force off writing results to database
+*get,_wallstrt,active,,time,wall
+! ANSYS input file written by Workbench version 2026 R1
+! File used for geometry attach: <PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\S3_LC2_INTERMEDIATE\Project\S3_LC2_INTERMEDIATE_files\dp0\Geom\DM\Geom.scdocx
+/title,S3_LC2_INTERMEDIATE--S3_LC2_Intermediate_Clamped_Pinned
+! ****** Begin Custom Load Command Snippet ******
+/COM, ACT Extensions:
+/COM,     LSDYNA, 2026.1
+/COM,     5f463412-bd3e-484b-87e7-cbc0a665e474, wbex
+/COM,     ANSYSMotion, 2026.1
+/COM,     20180725-3f81-49eb-9f31-41364844c769, wbex
+! ****** End   Custom Load Command Snippet ******
+*DIM,_wb_ProjectScratch_dir,string,248
+_wb_ProjectScratch_dir(1) = '<PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\S3_LC2_INTERMEDIATE\Project\S3_LC2_INTERMEDIATE_files\dp0\SYS-5\MECH\'
+*DIM,_wb_SolverFiles_dir,string,248
+_wb_SolverFiles_dir(1) = '<PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\S3_LC2_INTERMEDIATE\Project\S3_LC2_INTERMEDIATE_files\dp0\SYS-5\MECH\'
+*DIM,_wb_userfiles_dir,string,248
+_wb_userfiles_dir(1) = '<PROJECT_ROOT>\10_Parametric_Study\Structural_Cases\S3_LC2_INTERMEDIATE\Project\S3_LC2_INTERMEDIATE_files\user_files\'
+/com,--- Data in consistent MKS units. See Solving Units in the help system for more information.
+/units,MKS
+/nopr
+/wb,file,start              !  signify a WB generated input file
+/prep7
+! Turn off shape checking because checks already performed inside WB mesher.
+! See help system for more information.
+SHPP,OFF,,NOWARN
+/nolist
+etcon,set             ! allow ANSYS to choose best KEYOP's for 180x elements, resets any applicable keyopt to MAPDL defaults
+/com,*********** Send User Defined Coordinate System(s) ***********
+local,12,1,0.,0.,0.,0.,0.,0.
+csys,0
+/com,*********** Nodes for the whole assembly ***********
+nblock,3,,119077
+-1
+/com,*********** Nodes for all Remote Points ***********
+nblock,3
+-1
+/wb,elem,start            !  set before creation of elements
+/com,*********** Elements for Body 1 'SOLID_DOMAIN' ***********
+et,1,186
+keyo,1,2,1          ! set full integration on SOLID186
+MAT,1 $ TYPE,1 $ REAL,1 $ SECNUM,1 $ ESYS,0    ! ELEMNODES = 20
+eblock,21,COMPACT,,23400
+-1
+secnum,1    ! reset the section ID to default
+! Material Id = {775DDC5B-7B46-4211-8DDD-94A76E806DC9}
+/wb,elem,end               !  done creating elements
+toffst,273.15,      ! Temperature offset from absolute zero
+/com,*********** Set Reference Temperature ***********
+tref,26.85
+/wb,mat,start              !  starting to send materials
+/com,*********** Send Materials ***********
+Temperature = 'TEMP' ! Temperature
+MP,DENS,1,8190,	! kg m^-3
+MPTEMP,,,,,,,,
+MPTEMP,1,20
+MPTEMP,2,100
+MPTEMP,3,200
+MPTEMP,4,300
+MPTEMP,5,400
+MPDATA,EX,1, ,204000000000,199000000000,193000000000,187000000000,180000000000,	! Pa
+MPTEMP,,,,,,,,
+MPTEMP,,,,,,,,
+MPTEMP,1,20
+MPTEMP,2,100
+MPTEMP,3,200
+MPTEMP,4,300
+MPTEMP,5,400
+MPDATA,NUXY,1, ,0.294,0.294,0.294,0.294,0.294,
+MPTEMP,,,,,,,,
+MPTEMP,,,,,,,,
+MPTEMP,1,93.33
+MPTEMP,2,204.44
+MPTEMP,3,315.56
+MPTEMP,4,426.67
+MPTEMP,5,537.78
+MPDATA,ALPX,1, ,1.28e-05,1.33e-05,1.39e-05,1.42e-05,1.48e-05,	! C^-1
+MPTEMP,,,,,,,,
+MPAMOD,1,21.11,	! C
+MPTEMP,,,,,,,,
+MPTEMP,1,20
+MPTEMP,2,100
+MPTEMP,3,200
+MPTEMP,4,300
+MPTEMP,5,400
+MPDATA,KXX,1, ,11.5,12.1,13.5,15.2,17.1,	! W m^-1 C^-1
+MPTEMP,,,,,,,,
+MP,UVID,1,7e1fe15c-7c1b-4e2a-8ae8-067123cb21c5
+
+/wb,mat,end                !  done sending materials
+!************************* Model Summary ********************
+! SOLID_DOMAIN,	Inconel_718_Re_analysis,	matid,	1
+!************************* End Model Summary ********************
+! get the diagonal of the bounding box. Needed later for other things
+*get,_xmin,node,,mnloc,x
+*get,_ymin,node,,mnloc,y
+*get,_zmin,node,,mnloc,z
+*get,_xmax,node,,mxloc,x
+*get,_ymax,node,,mxloc,y
+*get,_zmax,node,,mxloc,z
+_ASMDIAG=(_xmax-_xmin)*(_xmax-_xmin)+(_ymax-_ymin)*(_ymax-_ymin)+(_zmax-_zmin)*(_zmax-_zmin)
+_ASMDIAG=SQRT(_ASMDIAG)
+/wb,contact,start          !  starting to send contact
+/wb,contact,end            !  done creating contacts
+/com,*********** Send Named Selection as Element Component ***********
+esel,s,type,,1
+cm,SOLID_DOMAIN,elem
+esel,all
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,FLUID_WALL,NODE,        4
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,FLUID_SOLID_INTERFACE,NODE,        4
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,SOLID_INNER_INTERFACE,NODE,        4
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,HEATED_OUTER_WALL,NODE,        8
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,SOLID_INLET_END,NODE,       74
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,SOLID_OUTLET_END,NODE,       22
+/com,*********** Send Named Selection as Node Component ***********
+CMBLOCK,STRUCTURAL_SUPPORT,NODE,       74
+CMBLOCK,NS_LC1_SUPPORT_3NODES_INLET_OUTE,NODE,        3
+CMBLOCK,NS_LC2_HOOP_3NODES_MIDSPAN_OUTER,NODE,        3
+/golist
+/wb,load,start             !  starting to send loads
+/com,*********** Create Displacement Components For Use In Future MSUP or Multistage Analysis ******
+CMBLOCK,_CM295_DISP,NODE,       74
+/com,******* Constant Zero Displacement Y *******
+CMBLOCK,_DISPZEROUY,NODE,       74
+cmsel,s,_DISPZEROUY
+d,all,uy,0
+nsel,all
+/com,******* Constant Zero Displacement Z *******
+CMBLOCK,_DISPZEROUZ,NODE,       74
+cmsel,s,_DISPZEROUZ
+d,all,uz,0
+nsel,all
+/com,*********** Node Rotations ***********
+nmod,18721,,,,-180.,0.,0.
+nmod,18722,,,,-180.,0.,0.
+nmod,18723,,,,-180.,0.,0.
+nmod,18724,,,,-180.,0.,0.
+nmod,18725,,,,170.,0.,0.
+nmod,18726,,,,170.,0.,0.
+nmod,18727,,,,170.,0.,0.
+nmod,18728,,,,170.,0.,0.
+nmod,18729,,,,160.,0.,0.
+nmod,18730,,,,160.,0.,0.
+nmod,18731,,,,160.,0.,0.
+nmod,18732,,,,160.,0.,0.
+nmod,18733,,,,150.,0.,0.
+nmod,18734,,,,150.,0.,0.
+nmod,18735,,,,150.,0.,0.
+nmod,18736,,,,150.,0.,0.
+nmod,18737,,,,140.,0.,0.
+nmod,18738,,,,140.,0.,0.
+nmod,18739,,,,140.,0.,0.
+nmod,18740,,,,140.,0.,0.
+nmod,18741,,,,130.,0.,0.
+nmod,18742,,,,130.,0.,0.
+nmod,18743,,,,130.,0.,0.
+nmod,18744,,,,130.,0.,0.
+nmod,18745,,,,120.,0.,0.
+nmod,18746,,,,120.,0.,0.
+nmod,18747,,,,120.,0.,0.
+nmod,18748,,,,120.,0.,0.
+nmod,18749,,,,110.,0.,0.
+nmod,18750,,,,110.,0.,0.
+nmod,18751,,,,110.,0.,0.
+nmod,18752,,,,110.,0.,0.
+nmod,18753,,,,100.,0.,0.
+nmod,18754,,,,100.,0.,0.
+nmod,18755,,,,100.,0.,0.
+nmod,18756,,,,100.,0.,0.
+nmod,18757,,,,90.0000000000001,0.,0.
+nmod,18758,,,,90.0000000000001,0.,0.
+nmod,18759,,,,90.0000000000001,0.,0.
+nmod,18760,,,,90.0000000000001,0.,0.
+nmod,18761,,,,80.0000000000001,0.,0.
+nmod,18762,,,,80.0000000000001,0.,0.
+nmod,18763,,,,80.0000000000001,0.,0.
+nmod,18764,,,,80.0000000000001,0.,0.
+nmod,18765,,,,70.0000000000001,0.,0.
+nmod,18766,,,,70.0000000000001,0.,0.
+nmod,18767,,,,70.0000000000001,0.,0.
+nmod,18768,,,,70.0000000000001,0.,0.
+nmod,18769,,,,60.0000000000001,0.,0.
+nmod,18770,,,,60.0000000000001,0.,0.
+nmod,18771,,,,60.0000000000001,0.,0.
+nmod,18772,,,,60.0000000000001,0.,0.
+nmod,18773,,,,50.0000000000001,0.,0.
+nmod,18774,,,,50.0000000000001,0.,0.
+nmod,18775,,,,50.0000000000001,0.,0.
+nmod,18776,,,,50.0000000000001,0.,0.
+nmod,18777,,,,40.0000000000001,0.,0.
+nmod,18778,,,,40.0000000000001,0.,0.
+nmod,18779,,,,40.0000000000001,0.,0.
+nmod,18780,,,,40.0000000000001,0.,0.
+nmod,18781,,,,30.,0.,0.
+nmod,18782,,,,30.,0.,0.
+nmod,18783,,,,30.,0.,0.
+nmod,18784,,,,30.,0.,0.
+nmod,18785,,,,20.0000000000001,0.,0.
+nmod,18786,,,,20.0000000000001,0.,0.
+nmod,18787,,,,20.0000000000001,0.,0.
+nmod,18788,,,,20.0000000000001,0.,0.
+nmod,18789,,,,10.0000000000001,0.,0.
+nmod,18790,,,,10.0000000000001,0.,0.
+nmod,18791,,,,10.0000000000001,0.,0.
+nmod,18792,,,,10.0000000000001,0.,0.
+nmod,18797,,,,-9.99999999999996,0.,0.
+nmod,18798,,,,-9.99999999999995,0.,0.
+nmod,18799,,,,-9.99999999999996,0.,0.
+nmod,18800,,,,-9.99999999999996,0.,0.
+nmod,18801,,,,-19.9999999999999,0.,0.
+nmod,18802,,,,-19.9999999999999,0.,0.
+nmod,18803,,,,-19.9999999999999,0.,0.
+nmod,18804,,,,-20.,0.,0.
+nmod,18805,,,,-30.,0.,0.
+nmod,18806,,,,-30.,0.,0.
+nmod,18807,,,,-30.,0.,0.
+nmod,18808,,,,-30.,0.,0.
+nmod,18809,,,,-40.,0.,0.
+nmod,18810,,,,-40.,0.,0.
+nmod,18811,,,,-40.,0.,0.
+nmod,18812,,,,-40.,0.,0.
+nmod,18813,,,,-50.,0.,0.
+nmod,18814,,,,-50.,0.,0.
+nmod,18815,,,,-50.,0.,0.
+nmod,18816,,,,-50.,0.,0.
+nmod,18817,,,,-60.,0.,0.
+nmod,18818,,,,-60.,0.,0.
+nmod,18819,,,,-60.,0.,0.
+nmod,18820,,,,-60.,0.,0.
+nmod,18821,,,,-70.,0.,0.
+nmod,18822,,,,-70.,0.,0.
+nmod,18823,,,,-70.,0.,0.
+nmod,18824,,,,-70.,0.,0.
+nmod,18825,,,,-80.,0.,0.
+nmod,18826,,,,-80.,0.,0.
+nmod,18827,,,,-80.,0.,0.
+nmod,18828,,,,-80.,0.,0.
+nmod,18829,,,,-90.,0.,0.
+nmod,18830,,,,-90.,0.,0.
+nmod,18831,,,,-90.,0.,0.
+nmod,18832,,,,-90.,0.,0.
+nmod,18833,,,,-100.,0.,0.
+nmod,18834,,,,-100.,0.,0.
+nmod,18835,,,,-100.,0.,0.
+nmod,18836,,,,-100.,0.,0.
+nmod,18837,,,,-110.,0.,0.
+nmod,18838,,,,-110.,0.,0.
+nmod,18839,,,,-110.,0.,0.
+nmod,18840,,,,-110.,0.,0.
+nmod,18841,,,,-120.,0.,0.
+nmod,18842,,,,-120.,0.,0.
+nmod,18843,,,,-120.,0.,0.
+nmod,18844,,,,-120.,0.,0.
+nmod,18845,,,,-130.,0.,0.
+nmod,18846,,,,-130.,0.,0.
+nmod,18847,,,,-130.,0.,0.
+nmod,18848,,,,-130.,0.,0.
+nmod,18849,,,,-140.,0.,0.
+nmod,18850,,,,-140.,0.,0.
+nmod,18851,,,,-140.,0.,0.
+nmod,18852,,,,-140.,0.,0.
+nmod,18853,,,,-150.,0.,0.
+nmod,18854,,,,-150.,0.,0.
+nmod,18855,,,,-150.,0.,0.
+nmod,18856,,,,-150.,0.,0.
+nmod,18857,,,,-160.,0.,0.
+nmod,18858,,,,-160.,0.,0.
+nmod,18859,,,,-160.,0.,0.
+nmod,18860,,,,-160.,0.,0.
+nmod,18861,,,,-170.,0.,0.
+nmod,18862,,,,-170.,0.,0.
+nmod,18863,,,,-170.,0.,0.
+nmod,18864,,,,-170.,0.,0.
+nmod,18865,,,,-170.,0.,0.
+nmod,18866,,,,-160.,0.,0.
+nmod,18867,,,,-150.,0.,0.
+nmod,18868,,,,-140.,0.,0.
+nmod,18869,,,,-130.,0.,0.
+nmod,18870,,,,-120.,0.,0.
+nmod,18871,,,,-110.,0.,0.
+nmod,18872,,,,-100.,0.,0.
+nmod,18873,,,,-90.,0.,0.
+nmod,18874,,,,-80.,0.,0.
+nmod,18875,,,,-70.,0.,0.
+nmod,18876,,,,-60.,0.,0.
+nmod,18877,,,,-50.,0.,0.
+nmod,18878,,,,-40.,0.,0.
+nmod,18879,,,,-30.,0.,0.
+nmod,18880,,,,-19.9999999999999,0.,0.
+nmod,18881,,,,-9.99999999999996,0.,0.
+nmod,18883,,,,10.0000000000001,0.,0.
+nmod,18884,,,,20.0000000000001,0.,0.
+nmod,18885,,,,30.,0.,0.
+nmod,18886,,,,40.0000000000001,0.,0.
+nmod,18887,,,,50.0000000000001,0.,0.
+nmod,18888,,,,60.0000000000001,0.,0.
+nmod,18889,,,,70.0000000000001,0.,0.
+nmod,18890,,,,80.0000000000001,0.,0.
+nmod,18891,,,,90.0000000000001,0.,0.
+nmod,18892,,,,100.,0.,0.
+nmod,18893,,,,110.,0.,0.
+nmod,18894,,,,120.,0.,0.
+nmod,18895,,,,130.,0.,0.
+nmod,18896,,,,140.,0.,0.
+nmod,18897,,,,150.,0.,0.
+nmod,18898,,,,160.,0.,0.
+nmod,18899,,,,-180.,0.,0.
+nmod,18900,,,,170.,0.,0.
+nmod,18901,,,,-170.,0.,0.
+nmod,18902,,,,-160.,0.,0.
+nmod,18903,,,,-150.,0.,0.
+nmod,18904,,,,-140.,0.,0.
+nmod,18905,,,,-130.,0.,0.
+nmod,18906,,,,-120.,0.,0.
+nmod,18907,,,,-110.,0.,0.
+nmod,18908,,,,-100.,0.,0.
+nmod,18909,,,,-90.,0.,0.
+nmod,18910,,,,-80.,0.,0.
+nmod,18911,,,,-70.,0.,0.
+nmod,18912,,,,-60.,0.,0.
+nmod,18913,,,,-50.,0.,0.
+nmod,18914,,,,-40.,0.,0.
+nmod,18915,,,,-30.,0.,0.
+nmod,18916,,,,-19.9999999999999,0.,0.
+nmod,18917,,,,-9.99999999999996,0.,0.
+nmod,18919,,,,10.0000000000001,0.,0.
+nmod,18920,,,,20.0000000000001,0.,0.
+nmod,18921,,,,30.,0.,0.
+nmod,18922,,,,40.0000000000001,0.,0.
+nmod,18923,,,,50.0000000000001,0.,0.
+nmod,18924,,,,60.0000000000001,0.,0.
+nmod,18925,,,,70.0000000000001,0.,0.
+nmod,18926,,,,80.0000000000001,0.,0.
+nmod,18927,,,,90.0000000000001,0.,0.
+nmod,18928,,,,100.,0.,0.
+nmod,18929,,,,110.,0.,0.
+nmod,18930,,,,120.,0.,0.
+nmod,18931,,,,130.,0.,0.
+nmod,18932,,,,140.,0.,0.
+nmod,18933,,,,150.,0.,0.
+nmod,18934,,,,160.,0.,0.
+nmod,18935,,,,-180.,0.,0.
+nmod,18936,,,,170.,0.,0.
+nmod,89137,,,,-180.,0.,0.
+nmod,89138,,,,175.,0.,0.
+nmod,89139,,,,-175.,0.,0.
+nmod,89140,,,,-180.,0.,0.
+nmod,89141,,,,-180.,0.,0.
+nmod,89142,,,,175.,0.,0.
+nmod,89143,,,,-175.,0.,0.
+nmod,89144,,,,-180.,0.,0.
+nmod,89145,,,,175.,0.,0.
+nmod,89146,,,,-175.,0.,0.
+nmod,89147,,,,175.,0.,0.
+nmod,89148,,,,-175.,0.,0.
+nmod,89149,,,,-180.,0.,0.
+nmod,89150,,,,170.,0.,0.
+nmod,89151,,,,165.,0.,0.
+nmod,89152,,,,170.,0.,0.
+nmod,89153,,,,170.,0.,0.
+nmod,89154,,,,165.,0.,0.
+nmod,89155,,,,170.,0.,0.
+nmod,89156,,,,165.,0.,0.
+nmod,89157,,,,165.,0.,0.
+nmod,89158,,,,170.,0.,0.
+nmod,89159,,,,160.,0.,0.
+nmod,89160,,,,155.,0.,0.
+nmod,89161,,,,160.,0.,0.
+nmod,89162,,,,160.,0.,0.
+nmod,89163,,,,155.,0.,0.
+nmod,89164,,,,160.,0.,0.
+nmod,89165,,,,155.,0.,0.
+nmod,89166,,,,155.,0.,0.
+nmod,89167,,,,160.,0.,0.
+nmod,89168,,,,150.,0.,0.
+nmod,89169,,,,145.,0.,0.
+nmod,89170,,,,150.,0.,0.
+nmod,89171,,,,150.,0.,0.
+nmod,89172,,,,145.,0.,0.
+nmod,89173,,,,150.,0.,0.
+nmod,89174,,,,145.,0.,0.
+nmod,89175,,,,145.,0.,0.
+nmod,89176,,,,150.,0.,0.
+nmod,89177,,,,140.,0.,0.
+nmod,89178,,,,135.,0.,0.
+nmod,89179,,,,140.,0.,0.
+nmod,89180,,,,140.,0.,0.
+nmod,89181,,,,135.,0.,0.
+nmod,89182,,,,140.,0.,0.
+nmod,89183,,,,135.,0.,0.
+nmod,89184,,,,135.,0.,0.
+nmod,89185,,,,140.,0.,0.
+nmod,89186,,,,130.,0.,0.
+nmod,89187,,,,125.,0.,0.
+nmod,89188,,,,130.,0.,0.
+nmod,89189,,,,130.,0.,0.
+nmod,89190,,,,125.,0.,0.
+nmod,89191,,,,130.,0.,0.
+nmod,89192,,,,125.,0.,0.
+nmod,89193,,,,125.,0.,0.
+nmod,89194,,,,130.,0.,0.
+nmod,89195,,,,120.,0.,0.
+nmod,89196,,,,115.,0.,0.
+nmod,89197,,,,120.,0.,0.
+nmod,89198,,,,120.,0.,0.
+nmod,89199,,,,115.,0.,0.
+nmod,89200,,,,120.,0.,0.
+nmod,89201,,,,115.,0.,0.
+nmod,89202,,,,115.,0.,0.
+nmod,89203,,,,120.,0.,0.
+nmod,89204,,,,110.,0.,0.
+nmod,89205,,,,105.,0.,0.
+nmod,89206,,,,110.,0.,0.
+nmod,89207,,,,110.,0.,0.
+nmod,89208,,,,105.,0.,0.
+nmod,89209,,,,110.,0.,0.
+nmod,89210,,,,105.,0.,0.
+nmod,89211,,,,105.,0.,0.
+nmod,89212,,,,110.,0.,0.
+nmod,89213,,,,100.,0.,0.
+nmod,89214,,,,95.0000000000001,0.,0.
+nmod,89215,,,,100.,0.,0.
+nmod,89216,,,,100.,0.,0.
+nmod,89217,,,,95.0000000000001,0.,0.
+nmod,89218,,,,100.,0.,0.
+nmod,89219,,,,95.0000000000001,0.,0.
+nmod,89220,,,,95.0000000000001,0.,0.
+nmod,89221,,,,100.,0.,0.
+nmod,89222,,,,90.0000000000001,0.,0.
+nmod,89223,,,,85.0000000000001,0.,0.
+nmod,89224,,,,90.0000000000001,0.,0.
+nmod,89225,,,,90.0000000000001,0.,0.
+nmod,89226,,,,85.0000000000001,0.,0.
+nmod,89227,,,,90.0000000000001,0.,0.
+nmod,89228,,,,85.0000000000001,0.,0.
+nmod,89229,,,,85.0000000000001,0.,0.
+nmod,89230,,,,90.0000000000001,0.,0.
+nmod,89231,,,,80.0000000000001,0.,0.
+nmod,89232,,,,75.0000000000001,0.,0.
+nmod,89233,,,,80.0000000000001,0.,0.
+nmod,89234,,,,80.0000000000001,0.,0.
+nmod,89235,,,,75.0000000000001,0.,0.
+nmod,89236,,,,80.0000000000001,0.,0.
+nmod,89237,,,,75.0000000000001,0.,0.
+nmod,89238,,,,75.0000000000001,0.,0.
+nmod,89239,,,,80.0000000000001,0.,0.
+nmod,89240,,,,70.0000000000001,0.,0.
+nmod,89241,,,,65.0000000000001,0.,0.
+nmod,89242,,,,70.0000000000001,0.,0.
+nmod,89243,,,,70.0000000000001,0.,0.
+nmod,89244,,,,65.0000000000001,0.,0.
+nmod,89245,,,,70.0000000000001,0.,0.
+nmod,89246,,,,65.0000000000001,0.,0.
+nmod,89247,,,,65.0000000000001,0.,0.
+nmod,89248,,,,70.0000000000001,0.,0.
+nmod,89249,,,,60.0000000000001,0.,0.
+nmod,89250,,,,55.,0.,0.
+nmod,89251,,,,60.0000000000001,0.,0.
+nmod,89252,,,,60.0000000000001,0.,0.
+nmod,89253,,,,55.,0.,0.
+nmod,89254,,,,60.0000000000001,0.,0.
+nmod,89255,,,,55.,0.,0.
+nmod,89256,,,,55.,0.,0.
+nmod,89257,,,,60.0000000000001,0.,0.
+nmod,89258,,,,50.0000000000001,0.,0.
+nmod,89259,,,,45.0000000000001,0.,0.
+nmod,89260,,,,50.0000000000001,0.,0.
+nmod,89261,,,,50.0000000000001,0.,0.
+nmod,89262,,,,45.0000000000001,0.,0.
+nmod,89263,,,,50.0000000000001,0.,0.
+nmod,89264,,,,45.0000000000001,0.,0.
+nmod,89265,,,,45.0000000000001,0.,0.
+nmod,89266,,,,50.0000000000001,0.,0.
+nmod,89267,,,,40.,0.,0.
+nmod,89268,,,,35.0000000000001,0.,0.
+nmod,89269,,,,40.0000000000001,0.,0.
+nmod,89270,,,,40.,0.,0.
+nmod,89271,,,,35.,0.,0.
+nmod,89272,,,,40.,0.,0.
+nmod,89273,,,,35.,0.,0.
+nmod,89274,,,,35.0000000000001,0.,0.
+nmod,89275,,,,40.0000000000001,0.,0.
+nmod,89276,,,,30.,0.,0.
+nmod,89277,,,,25.0000000000001,0.,0.
+nmod,89278,,,,30.,0.,0.
+nmod,89279,,,,30.,0.,0.
+nmod,89280,,,,25.0000000000001,0.,0.
+nmod,89281,,,,30.,0.,0.
+nmod,89282,,,,25.0000000000001,0.,0.
+nmod,89283,,,,25.0000000000001,0.,0.
+nmod,89284,,,,30.,0.,0.
+nmod,89285,,,,20.0000000000001,0.,0.
+nmod,89286,,,,15.,0.,0.
+nmod,89287,,,,20.0000000000001,0.,0.
+nmod,89288,,,,20.0000000000001,0.,0.
+nmod,89289,,,,15.,0.,0.
+nmod,89290,,,,20.0000000000001,0.,0.
+nmod,89291,,,,15.,0.,0.
+nmod,89292,,,,15.,0.,0.
+nmod,89293,,,,20.0000000000001,0.,0.
+nmod,89294,,,,10.0000000000001,0.,0.
+nmod,89295,,,,5.00000000000005,0.,0.
+nmod,89296,,,,10.0000000000001,0.,0.
+nmod,89297,,,,10.0000000000001,0.,0.
+nmod,89298,,,,5.00000000000005,0.,0.
+nmod,89299,,,,10.0000000000001,0.,0.
+nmod,89300,,,,5.00000000000005,0.,0.
+nmod,89301,,,,5.00000000000005,0.,0.
+nmod,89302,,,,10.0000000000001,0.,0.
+nmod,89304,,,,-4.99999999999995,0.,0.
+nmod,89307,,,,-4.99999999999995,0.,0.
+nmod,89309,,,,-4.99999999999995,0.,0.
+nmod,89310,,,,-4.99999999999995,0.,0.
+nmod,89312,,,,-9.99999999999995,0.,0.
+nmod,89313,,,,-14.9999999999999,0.,0.
+nmod,89314,,,,-9.99999999999995,0.,0.
+nmod,89315,,,,-9.99999999999995,0.,0.
+nmod,89316,,,,-14.9999999999999,0.,0.
+nmod,89317,,,,-9.99999999999995,0.,0.
+nmod,89318,,,,-14.9999999999999,0.,0.
+nmod,89319,,,,-14.9999999999999,0.,0.
+nmod,89320,,,,-9.99999999999995,0.,0.
+nmod,89321,,,,-20.,0.,0.
+nmod,89322,,,,-25.,0.,0.
+nmod,89323,,,,-19.9999999999999,0.,0.
+nmod,89324,,,,-20.,0.,0.
+nmod,89325,,,,-25.,0.,0.
+nmod,89326,,,,-19.9999999999999,0.,0.
+nmod,89327,,,,-25.,0.,0.
+nmod,89328,,,,-25.,0.,0.
+nmod,89329,,,,-19.9999999999999,0.,0.
+nmod,89330,,,,-30.,0.,0.
+nmod,89331,,,,-34.9999999999999,0.,0.
+nmod,89332,,,,-30.,0.,0.
+nmod,89333,,,,-30.,0.,0.
+nmod,89334,,,,-35.,0.,0.
+nmod,89335,,,,-30.,0.,0.
+nmod,89336,,,,-35.,0.,0.
+nmod,89337,,,,-34.9999999999999,0.,0.
+nmod,89338,,,,-30.,0.,0.
+nmod,89339,,,,-40.,0.,0.
+nmod,89340,,,,-45.,0.,0.
+nmod,89341,,,,-40.,0.,0.
+nmod,89342,,,,-40.,0.,0.
+nmod,89343,,,,-45.,0.,0.
+nmod,89344,,,,-40.,0.,0.
+nmod,89345,,,,-45.,0.,0.
+nmod,89346,,,,-45.,0.,0.
+nmod,89347,,,,-40.,0.,0.
+nmod,89348,,,,-50.,0.,0.
+nmod,89349,,,,-55.,0.,0.
+nmod,89350,,,,-50.,0.,0.
+nmod,89351,,,,-50.,0.,0.
+nmod,89352,,,,-55.,0.,0.
+nmod,89353,,,,-50.,0.,0.
+nmod,89354,,,,-55.,0.,0.
+nmod,89355,,,,-55.,0.,0.
+nmod,89356,,,,-50.,0.,0.
+nmod,89357,,,,-60.,0.,0.
+nmod,89358,,,,-65.,0.,0.
+nmod,89359,,,,-60.,0.,0.
+nmod,89360,,,,-60.,0.,0.
+nmod,89361,,,,-65.,0.,0.
+nmod,89362,,,,-60.,0.,0.
+nmod,89363,,,,-65.,0.,0.
+nmod,89364,,,,-65.,0.,0.
+nmod,89365,,,,-60.,0.,0.
+nmod,89366,,,,-70.,0.,0.
+nmod,89367,,,,-75.,0.,0.
+nmod,89368,,,,-70.,0.,0.
+nmod,89369,,,,-70.,0.,0.
+nmod,89370,,,,-75.,0.,0.
+nmod,89371,,,,-70.,0.,0.
+nmod,89372,,,,-75.,0.,0.
+nmod,89373,,,,-75.,0.,0.
+nmod,89374,,,,-70.,0.,0.
+nmod,89375,,,,-80.,0.,0.
+nmod,89376,,,,-85.,0.,0.
+nmod,89377,,,,-80.,0.,0.
+nmod,89378,,,,-80.,0.,0.
+nmod,89379,,,,-85.,0.,0.
+nmod,89380,,,,-80.,0.,0.
+nmod,89381,,,,-85.,0.,0.
+nmod,89382,,,,-85.,0.,0.
+nmod,89383,,,,-80.,0.,0.
+nmod,89384,,,,-90.,0.,0.
+nmod,89385,,,,-95.,0.,0.
+nmod,89386,,,,-90.,0.,0.
+nmod,89387,,,,-90.,0.,0.
+nmod,89388,,,,-95.,0.,0.
+nmod,89389,,,,-90.,0.,0.
+nmod,89390,,,,-95.,0.,0.
+nmod,89391,,,,-95.,0.,0.
+nmod,89392,,,,-90.,0.,0.
+nmod,89393,,,,-100.,0.,0.
+nmod,89394,,,,-105.,0.,0.
+nmod,89395,,,,-100.,0.,0.
+nmod,89396,,,,-100.,0.,0.
+nmod,89397,,,,-105.,0.,0.
+nmod,89398,,,,-100.,0.,0.
+nmod,89399,,,,-105.,0.,0.
+nmod,89400,,,,-105.,0.,0.
+nmod,89401,,,,-100.,0.,0.
+nmod,89402,,,,-110.,0.,0.
+nmod,89403,,,,-115.,0.,0.
+nmod,89404,,,,-110.,0.,0.
+nmod,89405,,,,-110.,0.,0.
+nmod,89406,,,,-115.,0.,0.
+nmod,89407,,,,-110.,0.,0.
+nmod,89408,,,,-115.,0.,0.
+nmod,89409,,,,-115.,0.,0.
+nmod,89410,,,,-110.,0.,0.
+nmod,89411,,,,-120.,0.,0.
+nmod,89412,,,,-125.,0.,0.
+nmod,89413,,,,-120.,0.,0.
+nmod,89414,,,,-120.,0.,0.
+nmod,89415,,,,-125.,0.,0.
+nmod,89416,,,,-120.,0.,0.
+nmod,89417,,,,-125.,0.,0.
+nmod,89418,,,,-125.,0.,0.
+nmod,89419,,,,-120.,0.,0.
+nmod,89420,,,,-130.,0.,0.
+nmod,89421,,,,-135.,0.,0.
+nmod,89422,,,,-130.,0.,0.
+nmod,89423,,,,-130.,0.,0.
+nmod,89424,,,,-135.,0.,0.
+nmod,89425,,,,-130.,0.,0.
+nmod,89426,,,,-135.,0.,0.
+nmod,89427,,,,-135.,0.,0.
+nmod,89428,,,,-130.,0.,0.
+nmod,89429,,,,-140.,0.,0.
+nmod,89430,,,,-145.,0.,0.
+nmod,89431,,,,-140.,0.,0.
+nmod,89432,,,,-140.,0.,0.
+nmod,89433,,,,-145.,0.,0.
+nmod,89434,,,,-140.,0.,0.
+nmod,89435,,,,-145.,0.,0.
+nmod,89436,,,,-145.,0.,0.
+nmod,89437,,,,-140.,0.,0.
+nmod,89438,,,,-150.,0.,0.
+nmod,89439,,,,-155.,0.,0.
+nmod,89440,,,,-150.,0.,0.
+nmod,89441,,,,-150.,0.,0.
+nmod,89442,,,,-155.,0.,0.
+nmod,89443,,,,-150.,0.,0.
+nmod,89444,,,,-155.,0.,0.
+nmod,89445,,,,-155.,0.,0.
+nmod,89446,,,,-150.,0.,0.
+nmod,89447,,,,-160.,0.,0.
+nmod,89448,,,,-165.,0.,0.
+nmod,89449,,,,-160.,0.,0.
+nmod,89450,,,,-160.,0.,0.
+nmod,89451,,,,-165.,0.,0.
+nmod,89452,,,,-160.,0.,0.
+nmod,89453,,,,-165.,0.,0.
+nmod,89454,,,,-165.,0.,0.
+nmod,89455,,,,-160.,0.,0.
+nmod,89456,,,,-170.,0.,0.
+nmod,89457,,,,-170.,0.,0.
+nmod,89458,,,,-170.,0.,0.
+nmod,89459,,,,-170.,0.,0.
+nmod,89460,,,,-170.,0.,0.
+nmod,89461,,,,-165.,0.,0.
+nmod,89462,,,,-175.,0.,0.
+nmod,89464,,,,-155.,0.,0.
+nmod,89466,,,,-145.,0.,0.
+nmod,89468,,,,-135.,0.,0.
+nmod,89470,,,,-125.,0.,0.
+nmod,89472,,,,-115.,0.,0.
+nmod,89474,,,,-105.,0.,0.
+nmod,89476,,,,-95.,0.,0.
+nmod,89478,,,,-85.,0.,0.
+nmod,89480,,,,-75.,0.,0.
+nmod,89482,,,,-65.,0.,0.
+nmod,89484,,,,-55.,0.,0.
+nmod,89486,,,,-45.,0.,0.
+nmod,89488,,,,-34.9999999999999,0.,0.
+nmod,89490,,,,-25.,0.,0.
+nmod,89492,,,,-14.9999999999999,0.,0.
+nmod,89494,,,,-4.99999999999995,0.,0.
+nmod,89496,,,,5.00000000000005,0.,0.
+nmod,89498,,,,15.,0.,0.
+nmod,89500,,,,25.0000000000001,0.,0.
+nmod,89502,,,,35.0000000000001,0.,0.
+nmod,89504,,,,45.0000000000001,0.,0.
+nmod,89506,,,,55.,0.,0.
+nmod,89508,,,,65.0000000000001,0.,0.
+nmod,89510,,,,75.0000000000001,0.,0.
+nmod,89512,,,,85.0000000000001,0.,0.
+nmod,89514,,,,95.0000000000001,0.,0.
+nmod,89516,,,,105.,0.,0.
+nmod,89518,,,,115.,0.,0.
+nmod,89520,,,,125.,0.,0.
+nmod,89522,,,,135.,0.,0.
+nmod,89524,,,,145.,0.,0.
+nmod,89526,,,,155.,0.,0.
+nmod,89528,,,,165.,0.,0.
+nmod,89530,,,,175.,0.,0.
+nmod,89533,,,,-165.,0.,0.
+nmod,89534,,,,-175.,0.,0.
+nmod,89536,,,,-155.,0.,0.
+nmod,89538,,,,-145.,0.,0.
+nmod,89540,,,,-135.,0.,0.
+nmod,89542,,,,-125.,0.,0.
+nmod,89544,,,,-115.,0.,0.
+nmod,89546,,,,-105.,0.,0.
+nmod,89548,,,,-95.,0.,0.
+nmod,89550,,,,-85.,0.,0.
+nmod,89552,,,,-75.,0.,0.
+nmod,89554,,,,-65.,0.,0.
+nmod,89556,,,,-55.,0.,0.
+nmod,89558,,,,-45.,0.,0.
+nmod,89560,,,,-34.9999999999999,0.,0.
+nmod,89562,,,,-25.,0.,0.
+nmod,89564,,,,-14.9999999999999,0.,0.
+nmod,89566,,,,-4.99999999999995,0.,0.
+nmod,89568,,,,5.00000000000005,0.,0.
+nmod,89570,,,,15.,0.,0.
+nmod,89572,,,,25.0000000000001,0.,0.
+nmod,89574,,,,35.0000000000001,0.,0.
+nmod,89576,,,,45.0000000000001,0.,0.
+nmod,89578,,,,55.,0.,0.
+nmod,89580,,,,65.0000000000001,0.,0.
+nmod,89582,,,,75.0000000000001,0.,0.
+nmod,89584,,,,85.0000000000001,0.,0.
+nmod,89586,,,,95.0000000000001,0.,0.
+nmod,89588,,,,105.,0.,0.
+nmod,89590,,,,115.,0.,0.
+nmod,89592,,,,125.,0.,0.
+nmod,89594,,,,135.,0.,0.
+nmod,89596,,,,145.,0.,0.
+nmod,89598,,,,155.,0.,0.
+nmod,89600,,,,165.,0.,0.
+nmod,89602,,,,175.,0.,0.
+/com,*********** Create Remote Point "Internal Remote Point" ***********
+! -------- Remote Point Used by "S3_OUTLET_PILOT_Ux0_Uy0_Uz0_ROT_FREE_DEFORMABLE" --------
+*set,tid,3
+*set,cid,2
+et,cid,174
+et,tid,170
+keyo,tid,2,1               ! Don't fix the pilot node
+keyo,tid,4,111111
+keyo,cid,12,5              ! Bonded Contact 
+keyo,cid,4,1               ! Deformable RBE3 style load
+keyo,cid,2,2               ! MPC style contact
+MAT,2 $ TYPE,2 $ REAL,2 $ SECNUM,2 $ ESYS,0    ! ELEMNODES = 8
+eblock,21,COMPACT,,180
+-1
+secnum,1    ! reset the section ID to default
+*set,_npilot,108253
+_npilot298=_npilot
+type,tid
+mat ,cid
+real,cid
+tshape,pilo
+en,33302,_npilot
+tshape
+/com,*********** Construct Remote Displacement ***********
+
+/COM,*** Create a component for all remote displacements ***
+CMBLOCK,REMOTEDISPALL,NODE,        1
+
+/gst,on,on
+fini
+*get,_numnode,node,0,count
+*get,_numelem,elem,0,count
+*get, _MAXELEMNUM, elem, 0, NUM, MAX
+*get, _MAXNODENUM, node, 0, NUM, MAX
+*get, _MAXELEMTYPE, etyp, 0, NUM, MAX
+*get, _MAXREALCONST, rcon, 0, NUM, MAX
+/go
+/wb,load,end               !  done creating loads
+/com,--- Number of total nodes = %_numnode%
+/com,--- Number of contact elements = 180
+/com,--- Number of spring elements = 0
+/com,--- Number of bearing elements = 0
+/com,--- Number of solid elements = 23400
+/com,--- Number of condensed parts = 0
+/com,--- Number of total elements = %_numelem%
+*get,_wallbsol,active,,time,wall
+/com,****************************************************************************
+/com,*************************    SOLUTION       ********************************
+/com,****************************************************************************
+/solu
+antype,0                   ! static analysis
+_thickRatio=  1     ! Ratio of thick parts in the model
+eqsl,sparse,,,,,1
+cntr,print,1               ! print out contact info and also make no initial contact an error
+nldiag,cont,iter           ! print out contact info each equilibrium iteration
+rescontrol,linear,last           ! Turn on restart files due to future eigen analysis intent
+/com,****************************************************
+/com,******************* SOLVE FOR LS 1 OF 1 ****************
+d,108253,ux,0.
+d,108253,uy,0.
+d,108253,uz,0.
+/nopr
+/com,*********** Create Imported Load "Imported_Body_Temperature_CFD" ***********
+/nopr
+bfblock,2,temp,108252,108252,0
+bf,end,loc,-1,
+/gopr
+/gopr
+nsub,1,1,1
+time,1.
+outres,erase
+outres,all,none
+outres,nsol,all,
+outres,rsol,all
+outres,eangl,all
+outres,etmp,all
+outres,veng,all
+outres,strs,all,
+outres,epel,all,
+outres,eppl,all,
+outres,epth,all,
+outres,cont,all,
+! *********** WB SOLVE COMMAND ***********
+! check interactive state
+*get,ANSINTER_,active,,int
+*if,ANSINTER_,ne,0,then
+/eof
+*endif
+solve
+/com *************** Write FE CONNECTORS ********* 
+CEWRITE,file,ce,,INTE
+/com,****************************************************
+/com,*************** FINISHED SOLVE FOR LS 1 *************
+fini
+*get,_wallasol,active,,time,wall
+/nopr
+*get,_numnode,node,0,count
+*get,_numelem,elem,0,count
+*get, _MAXELEMNUM, elem, 0, NUM, MAX
+*get, _MAXNODENUM, node, 0, NUM, MAX,,,INTERNAL
+*get, _MAXELEMTYPE, etyp, 0, NUM, MAX
+*get, _MAXREALCONST, rcon, 0, NUM, MAX
+*get,_NSOLTHREADS,active,0,ntfs
+*get,_NSOLPROCESSES,active,0,npfs
+/gopr
+/post1
+! ****** Begin Command Snippet ******
+! =====================================================================================================
+! SECTION 7B - post-processing command snippet (RE-ANALYSIS 2026, newly written).
+! Inserted by mech_solve_7B.py as a Solution-level "Commands (APDL)" object in LC1, LC2 and LC2P, so MAPDL
+! runs it in POST1 immediately after the solve, in the same session (the database still holds the D constraints).
+! It READS results only: no load, constraint, material or temperature is changed.
+! Files written in the solver working directory:
+!   s7b_prrsol.txt     PRRSOL: reaction of every constrained node (nodal coordinate systems)
+!   s7b_react.csv      node, x, y, z, RFX, RFY, RFZ (nodal CS; the Direct FE nodes are rotated to CS_DUCT_CYL)
+!   s7b_nodal.csv      node, x, y, z, u_r, u_theta, u_z, s_r, s_theta, s_z, s1, s3, s_eqv, epel_eqv, T_used
+!                      (RSYS 12 = CS_DUCT_CYL, local 12 in the input file; averaged nodal values; SI units, T in degC)
+!   s7b_totals.txt     node counts and the sums of the constrained-node reactions (nodal CS) at full precision
+! (FSUM is not used: Mechanical's OUTRES does not store element nodal forces - toy test, 7B.
+!  Force/moment balance is computed from s7b_react.csv, with the Direct FE nodes transformed from CS_DUCT_CYL.)
+! =====================================================================================================
+/post1
+set,last
+allsel,all
+rsys,0
+*get,s7b_nmx,node,0,num,max
+*get,s7b_ncnt,node,0,count
+! ---------------- constrained nodes and reactions ----------------
+nsel,s,d,ux
+nsel,a,d,uy
+nsel,a,d,uz
+*get,s7b_nrc,node,0,count
+/output,s7b_prrsol,txt
+prrsol
+/output
+nsel,s,d,ux
+nsel,a,d,uy
+nsel,a,d,uz
+*del,s7b_m,,nopr
+*del,s7b_r,,nopr
+*dim,s7b_m,array,s7b_nmx
+*dim,s7b_r,array,s7b_nmx,7
+*vget,s7b_m(1),node,1,nsel
+*vfill,s7b_r(1,1),ramp,1,1
+*vget,s7b_r(1,2),node,1,loc,x
+*vget,s7b_r(1,3),node,1,loc,y
+*vget,s7b_r(1,4),node,1,loc,z
+*vget,s7b_r(1,5),node,1,rf,fx
+*vget,s7b_r(1,6),node,1,rf,fy
+*vget,s7b_r(1,7),node,1,rf,fz
+*cfopen,s7b_react,csv
+*vwrite
+('node,x_m,y_m,z_m,RFX_nodalCS_N,RFY_nodalCS_N,RFZ_nodalCS_N')
+*vmask,s7b_m(1)
+*vwrite,s7b_r(1,1),s7b_r(1,2),s7b_r(1,3),s7b_r(1,4),s7b_r(1,5),s7b_r(1,6),s7b_r(1,7)
+(F10.0,6(',',E22.14))
+*cfclos
+*vmask,s7b_m(1)
+*vscfun,s7b_fx,sum,s7b_r(1,5)
+*vmask,s7b_m(1)
+*vscfun,s7b_fy,sum,s7b_r(1,6)
+*vmask,s7b_m(1)
+*vscfun,s7b_fz,sum,s7b_r(1,7)
+! ---------------- full nodal table in CS_DUCT_CYL ----------------
+allsel,all
+rsys,12
+*del,s7b_a,,nopr
+*dim,s7b_a,array,s7b_nmx,15
+*vget,s7b_m(1),node,1,nsel
+*vfill,s7b_a(1,1),ramp,1,1
+*vget,s7b_a(1,2),node,1,loc,x
+*vget,s7b_a(1,3),node,1,loc,y
+*vget,s7b_a(1,4),node,1,loc,z
+*vget,s7b_a(1,5),node,1,u,x
+*vget,s7b_a(1,6),node,1,u,y
+*vget,s7b_a(1,7),node,1,u,z
+*vget,s7b_a(1,8),node,1,s,x
+*vget,s7b_a(1,9),node,1,s,y
+*vget,s7b_a(1,10),node,1,s,z
+*vget,s7b_a(1,11),node,1,s,1
+*vget,s7b_a(1,12),node,1,s,3
+*vget,s7b_a(1,13),node,1,s,eqv
+*vget,s7b_a(1,14),node,1,epel,eqv
+*vget,s7b_a(1,15),node,1,bfe,temp
+*cfopen,s7b_nodal,csv
+*vwrite
+('node,x_m,y_m,z_m,u_r_m,u_t_m,u_z_m,s_r_Pa,s_t_Pa,s_z_Pa,s1_Pa,s3_Pa,seqv_Pa,epel_eqv,T_used_C')
+*vmask,s7b_m(1)
+*vwrite,s7b_a(1,1),s7b_a(1,2),s7b_a(1,3),s7b_a(1,4),s7b_a(1,5),s7b_a(1,6),s7b_a(1,7),s7b_a(1,8),s7b_a(1,9),s7b_a(1,10),s7b_a(1,11),s7b_a(1,12),s7b_a(1,13),s7b_a(1,14),s7b_a(1,15)
+(F10.0,14(',',E17.9))
+*cfclos
+*cfopen,s7b_totals,txt
+*vwrite,s7b_ncnt,s7b_nmx,s7b_nrc
+('nodes ',F10.0,' max_node ',F10.0,' constrained_nodes ',F10.0)
+*vwrite,s7b_fx,s7b_fy,s7b_fz
+('SUM_RF_nodalCS_N ',3E24.15)
+*cfclos
+rsys,0
+allsel,all
+
+! ****** End   Command Snippet ******
+xmlo,ENCODING,ISO-8859-1
+xmlo,parm
+/xml,parm,xml
+fini
+/gopr
+*get,_walldone,active,,time,wall
+_preptime=(_wallbsol-_wallstrt)*3600
+_solvtime=(_wallasol-_wallbsol)*3600
+_posttime=(_walldone-_wallasol)*3600
+_totaltim=(_walldone-_wallstrt)*3600
+*get,_dlbratio,active,0,solu,dlbr
+*get,_combtime,active,0,solu,comb
+*get,_ssmode,active,0,solu,ssmm
+*get,_ndofs,active,0,solu,ndof
+/com,--- Total number of nodes = %_numnode%
+/com,--- Total number of elements = %_numelem%
+/com,--- Element load balance ratio = %_dlbratio%
+/com,--- Time to combine distributed files = %_combtime%
+/com,--- Sparse memory mode = %_ssmode%
+/com,--- Number of DOF = %_ndofs%
+/wb,file,end               ! done with WB generated input

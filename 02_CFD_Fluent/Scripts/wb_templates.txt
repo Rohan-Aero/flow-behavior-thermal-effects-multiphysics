@@ -1,0 +1,8 @@
+GetAllTemplates failed: name 'GetAllTemplates' is not defined
+--- candidate GetTemplate calls ---
+  FAIL {'TemplateName': 'Fluid Flow (Fluent)'} -> Template Fluid Flow (Fluent) not found in Project.
+  FAIL {'TemplateName': 'Fluid Flow', 'Solver': 'Fluent'} -> Template Fluid Flow (Fluent) not found in Project.
+  OK   {'TemplateName': 'FLUENT'} -> FLUENT
+  FAIL {'TemplateName': 'Fluent'} -> Template Fluent not found in Project.
+  OK   {'TemplateName': 'Mesh'} -> Mesh
+  OK   {'TemplateName': 'Geometry'} -> Geometry

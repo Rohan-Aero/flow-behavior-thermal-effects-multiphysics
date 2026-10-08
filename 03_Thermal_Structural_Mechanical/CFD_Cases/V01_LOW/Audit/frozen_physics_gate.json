@@ -1,0 +1,31 @@
+{
+  "case": "V01_LOW",
+  "intended": {
+    "V_IN": 21.15,
+    "TI": 0.04469689751121414
+  },
+  "allowed_patterns": [
+    "^/setup/boundary_conditions/velocity_inlet/fluid_inlet/momentum/velocity_magnitude(/value)?$",
+    "^/setup/boundary_conditions/velocity_inlet/fluid_inlet/turbulence/turbulent_intensity(/value)?$"
+  ],
+  "diff_after_replace": 0,
+  "diff_after_change": [
+    {
+      "path": "/setup/boundary_conditions/velocity_inlet/fluid_inlet/momentum/velocity_magnitude/value",
+      "P00": "23.5",
+      "case": "21.15"
+    },
+    {
+      "path": "/setup/boundary_conditions/velocity_inlet/fluid_inlet/turbulence/turbulent_intensity",
+      "P00": "0.04411209588036475",
+      "case": "0.04469689751121414"
+    }
+  ],
+  "unexpected": [],
+  "intended_but_absent": [],
+  "applied_read_back": {
+    "V_IN": 21.15,
+    "TI": "turbulent_intensity <- 0.04469689751121414 (direct, read back 0.04469689751121414)"
+  },
+  "passed": true
+}

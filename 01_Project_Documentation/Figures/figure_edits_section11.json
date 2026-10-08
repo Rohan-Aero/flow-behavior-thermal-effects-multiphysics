@@ -1,0 +1,788 @@
+[
+ {
+  "file": "01_axial_temperatures.png",
+  "size_before": [
+   1322,
+   768
+  ],
+  "sha256_before": "0A4E78541A4AE8FDC2A2A298C3D5BEE9D3791E9E4B2B2831E287A47A0E72494B",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1322,
+   724
+  ],
+  "removed_band_px": [
+   739,
+   753
+  ],
+  "size_after": [
+   1322,
+   724
+  ],
+  "sha256_after": "54C22BB048F33FEC567363B213CB09B7051719F2D5DF44A64150BF09234D2CC1"
+ },
+ {
+  "file": "F14_support_vs_lambda1.png",
+  "size_before": [
+   960,
+   630
+  ],
+  "sha256_before": "019024272BE54F75B2F6CD148F7B46960A19226E73A255B228DDC516EEDF0F72",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   960,
+   611
+  ],
+  "removed_band_px": [
+   614,
+   626
+  ],
+  "size_after": [
+   960,
+   611
+  ],
+  "sha256_after": "C0B1AD41AE56217D88BF19A436567DF324A6EDA4D626505BF330B7C9966111D7"
+ },
+ {
+  "file": "F15_support_vs_LC2_stress.png",
+  "size_before": [
+   960,
+   630
+  ],
+  "sha256_before": "881A4F7A84B594BBE09D214CFF2A1368F239DB2A66BEB8A8E321D49C641009A3",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   960,
+   611
+  ],
+  "removed_band_px": [
+   614,
+   626
+  ],
+  "size_after": [
+   960,
+   611
+  ],
+  "sha256_after": "D4009C4893C841DC2CF5F44C833EC5F947CCFB6FBB88344489B47C85DE3510E6"
+ },
+ {
+  "file": "F7A_03_side_by_side_and_difference_nt.png",
+  "size_before": [
+   1760,
+   1265
+  ],
+  "sha256_before": "0A8C58806F6B11ADD612C169984752DB3317125F3620AFB994F0E71DBC10F232",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1760,
+   1242
+  ],
+  "removed_band_px": [
+   1248,
+   1260
+  ],
+  "size_after": [
+   1760,
+   1242
+  ],
+  "sha256_after": "E376B0B803476A432E07F1C95B6DF4D82235DCB549A018B5720E370F9981C7BC"
+ },
+ {
+  "file": "F7A_05_through_wall_midspan_nt.png",
+  "size_before": [
+   1200,
+   731
+  ],
+  "sha256_before": "4798A9ECDDC6D32E16E22A88D1575EFB190FC865CA59BD81E251409640725BAA",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1200,
+   709
+  ],
+  "removed_band_px": [
+   717,
+   729
+  ],
+  "size_after": [
+   1200,
+   709
+  ],
+  "sha256_after": "D638AC4215B0828EB23ECC6902D802229B543980503A172EB15097F3FAB423BC"
+ },
+ {
+  "file": "F7B_01_LC1_axial_profiles.png",
+  "size_before": [
+   1170,
+   916
+  ],
+  "sha256_before": "6E7548FAFEB01C9EC9876E6FB39337C805B791258D89A5EA735DF784E64CADA7",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1170,
+   891
+  ],
+  "removed_band_px": [
+   902,
+   914
+  ],
+  "size_after": [
+   1170,
+   891
+  ],
+  "sha256_after": "8148F36AD8EC015D28363E223D056A3B99DE195F476540784305B4E4DC45E385"
+ },
+ {
+  "file": "F7B_02_LC2_axial_profiles.png",
+  "size_before": [
+   1170,
+   1222
+  ],
+  "sha256_before": "C42744831E31E6B21610B074E8DA71DA6494EB5899269334941ADBD4F05A399A",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1170,
+   1192
+  ],
+  "removed_band_px": [
+   1206,
+   1218
+  ],
+  "size_after": [
+   1170,
+   1192
+  ],
+  "sha256_after": "28E159E480AD1A4501217D870A9871A3685865EAB10362754F53FD243D438F29"
+ },
+ {
+  "file": "F8A_03_critical_load_summary.png",
+  "size_before": [
+   1300,
+   728
+  ],
+  "sha256_before": "0B2382C27BC65CB79EFF66B88FBFD1D9EDCE8F2406D1574B8D1E59DBC8A05AF6",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1300,
+   694
+  ],
+  "removed_band_px": [
+   714,
+   726
+  ],
+  "size_after": [
+   1300,
+   694
+  ],
+  "sha256_after": "A8D10838A6F26A60A74ED48C37F806E9F73EF8C7F55D6EB0BA27FA70E8554588"
+ },
+ {
+  "file": "F8A_04_load_factor_comparison.png",
+  "size_before": [
+   1300,
+   676
+  ],
+  "sha256_before": "C92345A46F6CCDC366697D6AB9873EC536E46C4A31CEAD6230A84358A15E1E39",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   1300,
+   650
+  ],
+  "removed_band_px": [
+   663,
+   675
+  ],
+  "size_after": [
+   1300,
+   650
+  ],
+  "sha256_after": "A0E4F87CB046E75DA79BCC9CD4D46272D95578334A449DFC022F1DCFAD04AF00"
+ },
+ {
+  "file": "F8B_01_structural_mesh_comparison.png",
+  "size_before": [
+   2080,
+   936
+  ],
+  "sha256_before": "C211EAF481718314F562E7C8EC16D2FFDFA8C0A6772B1764BA95E1533D5A58A3",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   2080,
+   903
+  ],
+  "removed_band_px": [
+   908,
+   933
+  ],
+  "size_after": [
+   2080,
+   903
+  ],
+  "sha256_after": "A00B4D3054093CE01312E063BAC283444E24D4ABCA06948A39858B1D380BB4AA"
+ },
+ {
+  "file": "F8B_02_LC2_stress_vs_mesh.png",
+  "size_before": [
+   2028,
+   546
+  ],
+  "sha256_before": "87AA202CE32373F037A597B90B7D044F778795EC1920B0B06DEF955C6EF747B8",
+  "operation": "crop footer line",
+  "crop_box": [
+   0,
+   0,
+   2028,
+   522
+  ],
+  "removed_band_px": [
+   533,
+   545
+  ],
+  "size_after": [
+   2028,
+   522
+  ],
+  "sha256_after": "B32E0007AAB5DF7ABA8EE7D8AB52BBA8A550F09FCA8CC1045269307897218CAE"
+ },
+ {
+  "file": "MI01_cells_vs_pressure_drop.png",
+  "size_before": [
+   1226,
+   883
+  ],
+  "sha256_before": "95197E63AE0CF09BDFED03902C2C0CA5C969485A8591491C1B82AD4730811807",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    923,
+    849,
+    1137,
+    868,
+    "RE-ANALYSIS 2026."
+   ]
+  ],
+  "trimmed_to_height": 883,
+  "size_after": [
+   1226,
+   883
+  ],
+  "sha256_after": "496B098E3F74A26CC2FF2C63B020B67C549834CF7081C737D80C54C134B449A1"
+ },
+ {
+  "file": "MI04_cells_vs_max_solid_temperature.png",
+  "size_before": [
+   1276,
+   882
+  ],
+  "sha256_before": "29AA9737FF3B9BE9C0F59427137FCE523EC3822CF383E897D05311EAF7AC3E58",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    518,
+    848,
+    732,
+    867,
+    "RE-ANALYSIS 2026."
+   ]
+  ],
+  "trimmed_to_height": 868,
+  "size_after": [
+   1276,
+   868
+  ],
+  "sha256_after": "D3211F493D6972C4A88BD04CC2796900D3F569D348B216454FE3EA1D7597B987"
+ },
+ {
+  "file": "MI06_cells_vs_nusselt.png",
+  "size_before": [
+   1222,
+   865
+  ],
+  "sha256_before": "CA48D08619B2F7271A3608CC902162222C68A5F6B63FC752A19FE06987CEB71C",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    898,
+    832,
+    1117,
+    851,
+    "RE-ANALYSIS 2026."
+   ]
+  ],
+  "trimmed_to_height": 865,
+  "size_after": [
+   1222,
+   865
+  ],
+  "sha256_after": "9A03B8E4341F5A2F623213DF7B1155FE6AA1B0B7CB4A0889F90F4B28F32AAAEB"
+ },
+ {
+  "file": "MI07_cells_vs_friction_factor.png",
+  "size_before": [
+   1254,
+   865
+  ],
+  "sha256_before": "B9CD068C72E57B341A8DD2B6D14FCCD7CA236A953F5325E91D6EF19BB5CE19A9",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    854,
+    832,
+    1073,
+    851,
+    "RE-ANALYSIS 2026."
+   ]
+  ],
+  "trimmed_to_height": 865,
+  "size_after": [
+   1254,
+   865
+  ],
+  "sha256_after": "5B41B1CAE5DE213131D158D79C6BD8B3686F46461DFF59080F8DA3E75915A788"
+ },
+ {
+  "file": "MI11_F029_friction_evidence_nt.png",
+  "size_before": [
+   1602,
+   893
+  ],
+  "sha256_before": "16C1B153A2EE70D242FFA5AFAC13720148997CE88A869A65BA0932CBACA79DBD",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1189,
+    859,
+    1407,
+    878,
+    "RE-ANALYSIS 2026."
+   ]
+  ],
+  "trimmed_to_height": 893,
+  "size_after": [
+   1602,
+   893
+  ],
+  "sha256_after": "12DBA88733C8949D5070FB4CD59B8DADFD1EE8A6C765CE8A0875C6F97AA645BB"
+ },
+ {
+  "file": "fig01_velocity_contour_nt.png",
+  "size_before": [
+   1641,
+   1606
+  ],
+  "sha256_before": "F4BD689DB2A1CF097469BB78AEC0A15D1E5816AB23A9FFA7DC965E41A46B0C12",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    956,
+    1569,
+    1471,
+    1594,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 1606,
+  "size_after": [
+   1641,
+   1606
+  ],
+  "sha256_after": "18DA032967DEB8CE0DA4464261B8228ED9A7D8F6A163474D88E47F5DBD6E1910"
+ },
+ {
+  "file": "fig04_pressure_contour_nt.png",
+  "size_before": [
+   1632,
+   624
+  ],
+  "sha256_before": "33A719765D3FCFE37316F4E28135F1928B4532F138C6334274BB2EBFF9DE0727",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1262,
+    564,
+    1559,
+    584,
+    "RE-ANALYSIS 2026 - not an"
+   ],
+   [
+    785,
+    587,
+    1016,
+    612,
+    "original internship result."
+   ]
+  ],
+  "trimmed_to_height": 600,
+  "size_after": [
+   1632,
+   600
+  ],
+  "sha256_after": "3679927691AFEDF2BA5EF86489A1B950C830B7823A2AE574C4AE8B7D02826EAC"
+ },
+ {
+  "file": "fig05_fluid_temperature_contour_nt.png",
+  "size_before": [
+   1649,
+   1204
+  ],
+  "sha256_before": "2879234518EBAF3D30E0966EAA0A4C4F76BA4060527E6B854C76A922CC06D8B6",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    745,
+    1167,
+    1256,
+    1192,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 1204,
+  "size_after": [
+   1649,
+   1204
+  ],
+  "sha256_after": "7F0A2838E34D087B177D02A4DBF4E9E4E7F1168F37D942762AAABBB65D3DBE69"
+ },
+ {
+  "file": "fig06_solid_temperature_contour_nt.png",
+  "size_before": [
+   2116,
+   1056
+  ],
+  "sha256_before": "0B12BDFD99E0A4B676E1D0EC726AA17694A589FE2D29B7AB00324329EBE20EA5",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    857,
+    1019,
+    1372,
+    1044,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 1056,
+  "size_after": [
+   2116,
+   1056
+  ],
+  "sha256_after": "2844FBA1CB62A62E49B14794C1D36BA1BA626B341901D6D2C87AE1A1ACED10CC"
+ },
+ {
+  "file": "fig08_wall_heat_flux_nt.png",
+  "size_before": [
+   1915,
+   997
+  ],
+  "sha256_before": "53033BFA5F8870594D93E95854DA958F2F7F2AA3116118F86C223E494655E112",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1492,
+    937,
+    1669,
+    957,
+    "RE-ANALYSIS"
+   ],
+   [
+    806,
+    960,
+    1157,
+    985,
+    "2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 973,
+  "size_after": [
+   1915,
+   973
+  ],
+  "sha256_after": "51535711EC4076C1A3C5E55A6F5E59B51CF6A524CCA4E703B18CCA1BABAE7E19"
+ },
+ {
+  "file": "fig09_yplus_nt.png",
+  "size_before": [
+   2106,
+   921
+  ],
+  "sha256_before": "7AEFA633CF4AF5FCDC42E0F7945CA0C9C8DFB7C75E65A0CB55DFA0B7FB96C275",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    979,
+    884,
+    1494,
+    909,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 921,
+  "size_after": [
+   2106,
+   921
+  ],
+  "sha256_after": "D448C89F3A5B87378549AC19C2D6F5FA3A1C0A841EEB416CA3DE782A6FACEB95"
+ },
+ {
+  "file": "fig10_pressure_axial_nt.png",
+  "size_before": [
+   1467,
+   804
+  ],
+  "sha256_before": "61CAC1899949615B7A405FBDD89AE31ECD404F2A97424634D0199A1542AAC7A8",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1223,
+    743,
+    1449,
+    763,
+    "RE-ANALYSIS 2026"
+   ],
+   [
+    614,
+    767,
+    916,
+    792,
+    "- not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 779,
+  "size_after": [
+   1467,
+   779
+  ],
+  "sha256_after": "D7A9734E5DA60655A1B462F58BAB27B24AD4113B73AD64D5DA5A7670F93EC327"
+ },
+ {
+  "file": "fig11_bulk_temperature_axial_nt.png",
+  "size_before": [
+   1531,
+   940
+  ],
+  "sha256_before": "9BC5BF1CD52A1BE13956A289BAD8C707E12F35EDAE5E0D2588D2EF76A51B9E94",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    539,
+    899,
+    1054,
+    932,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 916,
+  "size_after": [
+   1531,
+   916
+  ],
+  "sha256_after": "073824AA8434526F473226587087EBEC3285973F984DB70BF38FC844437411AC"
+ },
+ {
+  "file": "fig12_through_wall_temperature_nt.png",
+  "size_before": [
+   1758,
+   963
+  ],
+  "sha256_before": "D97C1E3D2FB090808E8B952B743ACB42186BF9781CEE80AB0461D204AF37E099",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1083,
+    901,
+    1540,
+    926,
+    "RE-ANALYSIS 2026 - not an original internship"
+   ],
+   [
+    856,
+    926,
+    926,
+    947,
+    "result."
+   ]
+  ],
+  "trimmed_to_height": 942,
+  "size_after": [
+   1758,
+   942
+  ],
+  "sha256_after": "987C44B6E861FAC7EB9F9E3554DAC8AE75A63723F029E6E5F3151883BBC770EA"
+ },
+ {
+  "file": "fig13_velocity_profiles_nt.png",
+  "size_before": [
+   1396,
+   839
+  ],
+  "sha256_before": "510A40055DD4FF332DE5318C66EA6DCF19F3830E65E320232341BA0F5E3C7136",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    766,
+    802,
+    1276,
+    827,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 839,
+  "size_after": [
+   1396,
+   839
+  ],
+  "sha256_after": "B1182FBB6E9B6FFCD683F6D32F6883683BF240BEE7BAF2B80147D7CCE1F85294"
+ },
+ {
+  "file": "fig14_radial_temperature_nt.png",
+  "size_before": [
+   1491,
+   863
+  ],
+  "sha256_before": "161C244818040CC21432582483CA18BA4DD607F4F53681A296A8C42E558C9D67",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    763,
+    826,
+    1278,
+    851,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 863,
+  "size_after": [
+   1491,
+   863
+  ],
+  "sha256_after": "003CA7D2BDE5E3968565421B1A6DA5AB5851CAFA177B7BD14FFAFE4A45CA1854"
+ },
+ {
+  "file": "fig15_nusselt_friction_nt.png",
+  "size_before": [
+   1787,
+   897
+  ],
+  "sha256_before": "08173FF24EE89146E2ED89C6ED738817FF7E8828C33E4223F6ED5FCD10A6F413",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    784,
+    860,
+    1294,
+    885,
+    "RE-ANALYSIS 2026 - not an original internship result."
+   ]
+  ],
+  "trimmed_to_height": 897,
+  "size_after": [
+   1787,
+   897
+  ],
+  "sha256_after": "6966FE0F8061519A444E1D4AF1F12A9C2BA4DFD2AA0CD430C87C1BC82A550CDF"
+ },
+ {
+  "file": "fig16_convergence_nt.png",
+  "size_before": [
+   2063,
+   845
+  ],
+  "sha256_before": "162A8DCDA91154AEF1D5FC92C55E9BB681B3FF4CE8B5802560BED0DE42D7F2D1",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1432,
+    785,
+    1729,
+    805,
+    "RE-ANALYSIS 2026 - not an"
+   ],
+   [
+    949,
+    808,
+    1180,
+    833,
+    "original internship result."
+   ]
+  ],
+  "trimmed_to_height": 821,
+  "size_after": [
+   2063,
+   821
+  ],
+  "sha256_after": "BB25B5493711921AF822B45A01B439BE9C287E6C18E5138D5F1CDBBBFB210062"
+ },
+ {
+  "file": "ENGINEERING_DRAWING.png",
+  "size_before": [
+   2481,
+   1753
+  ],
+  "sha256_before": "E269D4441AC3878CC65063CF5421F3316C2B6310F8268F98D95AE602E6DF8B0A",
+  "operation": "mask framing phrase",
+  "masked_words": [
+   [
+    1766,
+    1599,
+    2250,
+    1621,
+    "RE-ANALYSIS (2026) - dimensions newly selected,"
+   ],
+   [
+    1871,
+    1616,
+    2148,
+    1638,
+    "NOT original internship values"
+   ]
+  ],
+  "trimmed_to_height": 1753,
+  "size_after": [
+   2481,
+   1753
+  ],
+  "sha256_after": "A33BF769E3CAD52010820F7B3849D5FBF92069DB1C9DF35CD5FC164A7C8C175C"
+ },
+ {
+  "file": "PHYSICS_SCHEMATIC.png",
+  "size_before": [
+   2325,
+   1230
+  ],
+  "sha256_before": "0C557F08BC0532B93B61E045805EEB38C87E89C808D29250C138E9B6D7978B60",
+  "operation": "mask framing phrase (whole subtitle line)",
+  "masked_words": [
+   [
+    437,
+    66,
+    1902,
+    93,
+    "Flow Behavior and Thermal Effects in Multiphysics Systems | RE-ANALYSIS (2026) - geometry newly created, not original internship files"
+   ]
+  ],
+  "trimmed_to_height": 1230,
+  "size_after": [
+   2325,
+   1230
+  ],
+  "sha256_after": "792CBDBED86AE43E928A8E789FE8E1513E0BF912777EC78AA63D772014510EFF"
+ }
+]

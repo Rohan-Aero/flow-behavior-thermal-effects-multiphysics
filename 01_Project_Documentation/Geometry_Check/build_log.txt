@@ -1,0 +1,20 @@
+=== SPACECLAIM BUILD v3 ===
+FLUID 1.8849555922e-04 m3 (3 faces) | SOLID 5.6548667765e-04 m3 (4 faces)
+-- API PROBE --
+part attrs with 'roup': ['CurveGroups', 'Groups']
+ShareTopologyOptions members: ['DefaultTolerance', 'Equals', 'GetHashCode', 'GetType', 'MemberwiseClone', 'PreserveInstances', 'ReferenceEquals', 'ToString', 'Tolerance']
+NamedSelection.Create result attrs: ['CreatedNamedSelection', 'Equals', 'GetCreated', 'GetHashCode', 'GetModified', 'GetType', 'IsActiveDoc', 'MemberwiseClone', 'ReferenceEquals', 'Success', 'ToString']
+  result.CreatedNamedSelection = <SpaceClaim.Api.V232.Group object at 0x000000000000002B [SpaceClaim.Api.V232.Group]>
+  part.Groups -> ['Group1']
+-- named selections --
+created 11 named selections: ['FLUID_DOMAIN', 'SOLID_DOMAIN', 'FLUID_INLET', 'FLUID_OUTLET', 'FLUID_WALL', 'FLUID_SOLID_INTERFACE', 'SOLID_INNER_INTERFACE', 'HEATED_OUTER_WALL', 'SOLID_INLET_END', 'SOLID_OUTLET_END', 'STRUCTURAL_SUPPORT']
+final group list: ['FLUID_DOMAIN', 'SOLID_DOMAIN', 'FLUID_INLET', 'FLUID_OUTLET', 'FLUID_WALL', 'FLUID_SOLID_INTERFACE', 'SOLID_INNER_INTERFACE', 'HEATED_OUTER_WALL', 'SOLID_INLET_END', 'SOLID_OUTLET_END', 'STRUCTURAL_SUPPORT']
+share topology: no suitable enum member in ['DefaultTolerance', 'Equals', 'GetHashCode', 'GetType', 'MemberwiseClone', 'PreserveInstances', 'ReferenceEquals', 'ToString', 'Tolerance']
+DocumentSave.Execute ok for heated_duct.scdoc
+DocumentSave.Execute ok for heated_duct.step
+DocumentSave.Execute ok for heated_duct.x_t
+DocumentSave.Execute ok for heated_duct.xmt_txt
+dir Native_CAD -> ['heated_duct.scdocx']
+dir STEP -> ['heated_duct.step']
+dir Parasolid -> []
+=== BUILD COMPLETE ===

@@ -1,0 +1,42 @@
+{
+ "note": "check of the hand formula only",
+ "checks": [
+  {
+   "target": 1.2,
+   "k_N_per_mm": 103.9297655156229,
+   "beamFE_lambda": 1.1999895102807103,
+   "ok": true
+  },
+  {
+   "target": 1.5,
+   "k_N_per_mm": 445.0714445989029,
+   "beamFE_lambda": 1.4999895034159456,
+   "ok": true
+  },
+  {
+   "target": 1.7301038062283738,
+   "k_N_per_mm": 709.0429321624541,
+   "beamFE_lambda": 1.7300932842045915,
+   "ok": true
+  },
+  {
+   "target": 2.0,
+   "k_N_per_mm": 1021.4882203438567,
+   "beamFE_lambda": 1.9999894217604859,
+   "ok": true
+  },
+  {
+   "target": 2.5,
+   "k_N_per_mm": 1609.5088615626091,
+   "beamFE_lambda": 2.4999892243458697,
+   "ok": true
+  },
+  {
+   "target": 3.0,
+   "k_N_per_mm": 2211.8076248484576,
+   "beamFE_lambda": 2.9999888677118323,
+   "ok": true
+  }
+ ],
+ "all_ok": true
+}

@@ -1,0 +1,10 @@
+                         "Surface Integral Report"
+
+                            Area                [m^2]
+-------------------------------- --------------------
+                     fluid_inlet        0.00031326286
+                    fluid_outlet        0.00031326286
+               heated_outer_wall          0.075344405
+           fluid_solid_interface          0.037672202
+                ---------------- --------------------
+                             Net           0.11364313

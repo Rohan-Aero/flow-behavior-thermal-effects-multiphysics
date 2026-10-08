@@ -1,0 +1,425 @@
+[
+  {
+    "tag": "stage3+100",
+    "iteration": 400,
+    "residuals": {
+      "continuity": 2.2606e-05,
+      "x-velocity": 1.243e-10,
+      "y-velocity": 1.2343e-10,
+      "z-velocity": 9.4419e-09,
+      "energy": 2.2364e-09,
+      "k": 1.942e-07,
+      "omega": 7.8321e-07,
+      "F_wall_z": 0.076092,
+      "q_net_all": -0.023097,
+      "q_ends": 0.0,
+      "T_solid_mi": 428.92,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 552.93,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.24076,
+      "yplus_min": 0.20828,
+      "T_inner_av": 520.87,
+      "T_outer_av": 529.65,
+      "T_outer_ma": 563.08,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 438.14,
+      "yplus_max": 0.57774,
+      "v_out_max": 34.992,
+      "T_solid_me": 526.39,
+      "T_solid_ma": 562.67,
+      "T_wall_max": 554.78,
+      "T_out_bulk": 368.94,
+      "p_out": 0.0,
+      "p_in": 438.14,
+      "q_fluid_ne": -602.78,
+      "q_interfac": 602.76,
+      "q_heated_w": 602.76,
+      "mass_imbal": 6.3485e-10,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {},
+    "ready": false,
+    "why": "residuals ok, stage-3 rows 100 < 200"
+  },
+  {
+    "tag": "stage3+200",
+    "iteration": 500,
+    "residuals": {
+      "continuity": 3.0776e-08,
+      "x-velocity": 1.2913e-13,
+      "y-velocity": 1.2983e-13,
+      "z-velocity": 1.2043e-11,
+      "energy": 2.2869e-12,
+      "k": 1.8527e-10,
+      "omega": 1.3201e-09,
+      "F_wall_z": 0.076092,
+      "q_net_all": -2.4801e-05,
+      "q_ends": 0.0,
+      "T_solid_mi": 428.92,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 552.93,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.24076,
+      "yplus_min": 0.20828,
+      "T_inner_av": 520.87,
+      "T_outer_av": 529.65,
+      "T_outer_ma": 563.07,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 438.14,
+      "yplus_max": 0.57774,
+      "v_out_max": 34.992,
+      "T_solid_me": 526.38,
+      "T_solid_ma": 562.66,
+      "T_wall_max": 554.78,
+      "T_out_bulk": 368.93,
+      "p_out": 0.0,
+      "p_in": 438.14,
+      "q_fluid_ne": -602.76,
+      "q_interfac": 602.76,
+      "q_heated_w": 602.76,
+      "mass_imbal": 1.4989e-12,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 3.0776e-08,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 1.2913e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 1.2983e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 1.2043e-11,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 1.8527e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 1.3201e-09,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual energy": {
+        "value": 2.2869e-12,
+        "target": 1e-06,
+        "ok": true
+      },
+      "drift T_out_bulk over 200 it [K]": {
+        "value": 0.418933026333832,
+        "target": 0.1,
+        "ok": false
+      },
+      "drift T_solid_max over 200 it [K]": {
+        "value": 0.3899595426828455,
+        "target": 0.1,
+        "ok": false
+      },
+      "drift T_wall_max over 200 it [K]": {
+        "value": 0.390380859375,
+        "target": 0.1,
+        "ok": false
+      },
+      "drift T_outer_max over 200 it [K]": {
+        "value": 0.3897705078125,
+        "target": 0.1,
+        "ok": false
+      },
+      "rel drift dp_area over 200 it": {
+        "value": 0.0032900643353788676,
+        "target": 0.001,
+        "ok": false
+      },
+      "rel drift q_interface over 200 it": {
+        "value": 0.001656543462262134,
+        "target": 0.001,
+        "ok": false
+      },
+      "rel drift mdot_out over 200 it": {
+        "value": 8.63534490694522e-05,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance |in-out|/in": {
+        "value": 1.7304568123186335e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "energy imbalance |sum Q|/Q_wall": {
+        "value": 4.1145881112365606e-08,
+        "target": 0.005,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": false
+  },
+  {
+    "tag": "stage3+300",
+    "iteration": 600,
+    "residuals": {
+      "continuity": 2.6926e-10,
+      "x-velocity": 9.9178e-16,
+      "y-velocity": 9.6631e-16,
+      "z-velocity": 3.0086e-14,
+      "energy": 1.9391e-14,
+      "k": 9.8926e-13,
+      "omega": 6.164e-13,
+      "F_wall_z": 0.076092,
+      "q_net_all": -2.0651e-08,
+      "q_ends": 0.0,
+      "T_solid_mi": 428.92,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 552.93,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.24076,
+      "yplus_min": 0.20828,
+      "T_inner_av": 520.87,
+      "T_outer_av": 529.65,
+      "T_outer_ma": 563.07,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 438.14,
+      "yplus_max": 0.57774,
+      "v_out_max": 34.992,
+      "T_solid_me": 526.38,
+      "T_solid_ma": 562.66,
+      "T_wall_max": 554.78,
+      "T_out_bulk": 368.93,
+      "p_out": 0.0,
+      "p_in": 438.14,
+      "q_fluid_ne": -602.76,
+      "q_interfac": 602.76,
+      "q_heated_w": 602.76,
+      "mass_imbal": 3.211e-15,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 2.6926e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 9.9178e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 9.6631e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 3.0086e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 9.8926e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 6.164e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual energy": {
+        "value": 1.9391e-14,
+        "target": 1e-06,
+        "ok": true
+      },
+      "drift T_out_bulk over 200 it [K]": {
+        "value": 0.002520236693271727,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_solid_max over 200 it [K]": {
+        "value": 0.005418152760398698,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_wall_max over 200 it [K]": {
+        "value": 0.0054931640625,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_outer_max over 200 it [K]": {
+        "value": 0.00537109375,
+        "target": 0.1,
+        "ok": true
+      },
+      "rel drift dp_area over 200 it": {
+        "value": 1.3997715920504582e-06,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift q_interface over 200 it": {
+        "value": 2.3879396130882893e-06,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out over 200 it": {
+        "value": 8.59610855707188e-08,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance |in-out|/in": {
+        "value": 3.706898695847967e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "energy imbalance |sum Q|/Q_wall": {
+        "value": 3.4261359730206716e-11,
+        "target": 0.005,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  },
+  {
+    "tag": "confirmation+400",
+    "iteration": 700,
+    "residuals": {
+      "continuity": 1.7545e-10,
+      "x-velocity": 4.0372e-16,
+      "y-velocity": 3.9505e-16,
+      "z-velocity": 2.0088e-14,
+      "energy": 2.5725e-14,
+      "k": 8.0783e-13,
+      "omega": 2.231e-13,
+      "F_wall_z": 0.076092,
+      "q_net_all": -1.1357e-10,
+      "q_ends": 0.0,
+      "T_solid_mi": 428.92,
+      "T_fluid_mi": 300.0,
+      "T_fluid_ma": 552.93,
+      "area_in": 0.00031326,
+      "yplus_avg": 0.24076,
+      "yplus_min": 0.20828,
+      "T_inner_av": 520.87,
+      "T_outer_av": 529.65,
+      "T_outer_ma": 563.07,
+      "T_in_bulk": 300.0,
+      "p_out_area": 0.0,
+      "p_in_area": 438.14,
+      "yplus_max": 0.57774,
+      "v_out_max": 34.992,
+      "T_solid_me": 526.38,
+      "T_solid_ma": 562.66,
+      "T_wall_max": 554.78,
+      "T_out_bulk": 368.93,
+      "p_out": 0.0,
+      "p_in": 438.14,
+      "q_fluid_ne": -602.76,
+      "q_interfac": 602.76,
+      "q_heated_w": 602.76,
+      "mass_imbal": 1.9429e-16,
+      "mdot_out": -0.0086622,
+      "mdot_in": 0.0086622
+    },
+    "checks": {
+      "residual continuity": {
+        "value": 1.7545e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual x-velocity": {
+        "value": 4.0372e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual y-velocity": {
+        "value": 3.9505e-16,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual z-velocity": {
+        "value": 2.0088e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual k": {
+        "value": 8.0783e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual omega": {
+        "value": 2.231e-13,
+        "target": 0.0001,
+        "ok": true
+      },
+      "residual energy": {
+        "value": 2.5725e-14,
+        "target": 1e-06,
+        "ok": true
+      },
+      "drift T_out_bulk over 200 it [K]": {
+        "value": 2.6336560949857812e-06,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_solid_max over 200 it [K]": {
+        "value": 7.860325808906055e-06,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_wall_max over 200 it [K]": {
+        "value": 0.0,
+        "target": 0.1,
+        "ok": true
+      },
+      "drift T_outer_max over 200 it [K]": {
+        "value": 0.0,
+        "target": 0.1,
+        "ok": true
+      },
+      "rel drift dp_area over 200 it": {
+        "value": 8.858226472499886e-10,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift q_interface over 200 it": {
+        "value": 3.9820008351385455e-09,
+        "target": 0.001,
+        "ok": true
+      },
+      "rel drift mdot_out over 200 it": {
+        "value": 1.6886595769631769e-10,
+        "target": 0.0001,
+        "ok": true
+      },
+      "mass imbalance |in-out|/in": {
+        "value": 2.2429640947324274e-14,
+        "target": 0.0001,
+        "ok": true
+      },
+      "energy imbalance |sum Q|/Q_wall": {
+        "value": 1.8842333262029458e-13,
+        "target": 0.005,
+        "ok": true
+      }
+    },
+    "ready": true,
+    "converged": true
+  }
+]

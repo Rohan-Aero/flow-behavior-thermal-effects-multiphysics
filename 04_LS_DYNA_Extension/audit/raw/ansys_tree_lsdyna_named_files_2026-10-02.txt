@@ -1,0 +1,178 @@
+
+FullName                                                                                                                                                            Length LastWriteTime      
+--------                                                                                                                                                            ------ -------------      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ACP\lib\vtkmodules\vtkIOLSDyna.cp310-win_amd64.pyd                                                                    105800 02-02-2026 13:27:50
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ACP\fiolyx_lsdyna.dll                                                                                                 242176 02-02-2026 13:27:38
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ACP\vtkIOLSDyna-9.2.dll                                                                                               281608 02-02-2026 13:27:30
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\keywordmanager\Ansys.ACTLSDYNA.KeywordLibrary.dll                                             15032936 03-02-2026 06:42:59
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\keywordmanager\Ansys.ACTLSDYNA.KeywordParser.dll                                               8416304 03-02-2026 06:43:00
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\de\LSDynaSolverExtension.resources.dll                                                   126488 03-02-2026 06:42:59
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\fr\LSDynaSolverExtension.resources.dll                                                   129560 03-02-2026 06:43:00
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\ja\LSDynaSolverExtension.resources.dll                                                   130072 03-02-2026 06:43:01
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\zh\LSDynaSolverExtension.resources.dll                                                   111432 03-02-2026 06:43:02
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\Ansys.ACTLSDYNA.BinoutLibrary.dll                                                        610832 03-02-2026 06:43:01
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\Ansys.ACTLSDYNA.Interfaces.dll                                                            24840 03-02-2026 06:43:02
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDYNAAcousticAnalysisTemplate.xml                                                         2541 03-02-2026 06:27:36
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDYNAAnalysisTemplate.xml                                                                 2670 03-02-2026 06:27:36
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDYNAReader.dll                                                                          65808 03-02-2026 06:43:02
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDynaSolverExtension.dll                                                               2869856 03-02-2026 06:43:04
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\LSDYNASolverRepresentation.xml                                                           244870 03-02-2026 06:27:36
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA\RestartLSDYNAAnalysisTemplate.xml                                                          1987 03-02-2026 06:27:36
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA.wbex                                                                                    2103016 03-02-2026 06:28:22
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ACTLSDYNA_MaterialDefinitionMethods.xml                                                 5690 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ACTLSDYNA_MaterialProperties.xml                                                       49165 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ACTLSDYNA_Relationships.xml                                                            13851 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ACTLSDYNA_SpecialProperties.xml                                                        88614 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ExplicitDynamicsResourcesLSDYNA.xml                                                     9698 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ExplicitDynamicsResourcesWBAcousticLSDYNA.xml                                            558 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\ExplicitDynamicsResourcesWBLSDYNA.xml                                                  32747 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\LSDYNAExternal_MaterialDefinitionMethods.xml                                            9347 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\LSDYNAExternal_MaterialProperties.xml                                                 967014 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\LSDYNAExternal_Relationships.xml                                                       17088 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\LSDYNA_MaterialDefinitionMethods.xml                                                    6012 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Metadata\LSDYNA_Relationships.xml                                                                9215 03-02-2026 06:00:32
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\de\Ansys.SolverManager.Proxies.LSDYNA.resources.dll                                                   20232 04-02-2026 02:55:11
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\fr\Ansys.SolverManager.Proxies.LSDYNA.resources.dll                                                   20744 04-02-2026 02:54:48
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\it\Ansys.SolverManager.Proxies.LSDYNA.resources.dll                                                   20232 04-02-2026 02:54:56
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\ja\Ansys.SolverManager.Proxies.LSDYNA.resources.dll                                                   20744 04-02-2026 02:55:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ans.Addins.LSDYNASolverCOM.dll                                                                      2550512 04-02-2026 02:55:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ans.FEConsumePlugin.LSDYNA.COM.dll                                                                   677200 04-02-2026 02:55:11
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ans.FEController.PlugInLSDYNACOM.dll                                                                 434520 04-02-2026 02:55:05
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ans.FEParsePlugin.LSDYNA.COM.dll                                                                     396160 04-02-2026 02:55:00
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ans.Post.ResultReaderPlugInLSDYNACOM.dll                                                            3218392 04-02-2026 02:54:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ans.X17.LSDYNA.dll                                                                                  1389632 13-01-2026 05:26:13
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ansys.SolverManager.Proxies.LSDYNA.dll                                                                32672 04-02-2026 02:54:56
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ansys.SolverManager.Proxies.RestartWBLSDYNA.dll                                                       20688 04-02-2026 02:54:57
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\Ansys.SolverManager.Proxies.WBLSDYNA.dll                                                              22224 04-02-2026 02:54:59
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\LSDYNAParser.dll                                                                                   29674352 04-02-2026 02:55:04
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\CPython\mech_templates\property_provider_template_lsdyna.py                                  11530 04-02-2026 01:32:06
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\Filters\ExplicitDynamicsLSDYNA.xml                                                           49790 04-02-2026 01:32:06
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\Filters\ExplicitDynamicsWBLSDYNA.xml                                                         60709 04-02-2026 01:32:06
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\Filters\ExplicitDynamicsWBLSDYNAAcoustic.xml                                                 58738 04-02-2026 01:32:06
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\lsdyna_sale_workflow_trim_mesh.png                                            116617 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\lsdyna_ug_mesh_motion_obj.png                                                  15467 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_glsdyna_ug_mulsteps_multiple_rpm.png                                        44090 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_glsdyna_ug_shell_vol_fill_bottle.png                                       112215 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_2d_mat.png                                                          116579 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_custom_time_step_obj2.png                                            22882 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_d3drlf.png                                                           46856 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_deform2rigid.png                                                     12671 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_heat_generation.png                                                  27518 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_kelvin.png                                                           16624 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_keyword_snippet.png                                                  73053 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_mat_support.png                                                      16126 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_pressure.png                                                         16823 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_python.png                                                           12482 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_radiation.png                                                        25444 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_rand_i.png                                                           96815 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_remote_points.png                                                    97232 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\html\graphics\wn_lsdyna_section.png                                                          13668 03-02-2026 23:31:45
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\IronPython\mech_templates\property_provider_template_lsdyna.py                               10802 04-02-2026 01:32:07
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\SampleData\ScriptDefinedResult\SampleAnswerSetScriptLSDYNA.txt                                2174 04-02-2026 01:32:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\DesignSpace\DSPages\Views\Commands\modes\mode-lsdyna.js                                                           3111 04-02-2026 01:32:09
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\WBAddins\MechanicalExtensions\Assembler\Views\Commands\modes\mode-lsdyna.js                                       2791 04-02-2026 01:13:26
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\customize\include\lsdynacom.inc                                                                                  10121 03-02-2026 04:16:30
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\docu\LS-DYNA_Manual_Vol_III_R16.pdf                                                                            4004858 03-02-2026 04:20:21
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\docu\LS-DYNA_Manual_Vol_II_R16.pdf                                                                            14349251 03-02-2026 04:20:21
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ansys\docu\LS-DYNA_Manual_Vol_I_R16.pdf                                                                             31080047 03-02-2026 04:20:21
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\ensight261\data\racecar\f1-poly-flow-global-surface-fine.k                                                       6482680 10-10-2022 21:54:23
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\PyGeometry\tornado\test\test.key                                          1736 01-12-2025 15:29:42
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\Lib\site-packages\vtk.libs\vtkIOLSDyna-9.4.2.dll                       263680 02-12-2025 17:25:39
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\Lib\site-packages\vtk.libs\vtkIOParallelLSDyna-9.4.2.dll                39424 02-12-2025 17:25:39
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\Lib\site-packages\vtkmodules\vtkIOLSDyna.cp310-win_amd64.pyd           111104 02-12-2025 17:25:40
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\Lib\site-packages\vtkmodules\vtkIOLSDyna.pyi                            11295 02-12-2025 17:25:40
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\Lib\site-packages\vtkmodules\vtkIOParallelLSDyna.cp310-win_amd64.pyd    26624 02-12-2025 17:25:40
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\python\Lib\site-packages\vtkmodules\vtkIOParallelLSDyna.pyi                     1064 02-12-2025 17:25:40
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\launcherQT\src\LsdynaTabs.py                                                                               46704 28-01-2026 20:04:24
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\launcherQT\src\RunLsdyna.py                                                                                 6251 28-01-2026 20:04:24
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\WBAddinConfiguration\LSDYNAAddIn.xml                                                                         510 04-02-2026 01:10:16
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\dpf\bin\winx64\Ans.Dpf.LSDYNAHGP.dll                                                                                 4520864 12-01-2026 19:37:46
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\dpf\bin\winx64\Ans.Dpf.LSDYNAHGP.xml                                                                                     207 12-01-2026 17:44:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\installer\dev_configs\lsdyna\config_lsdyna.json                                                                         2701 24-02-2026 15:02:56
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\examples\simple_car\reference\simplecar.k                                                                   791486 09-01-2026 13:44:17
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\lib\python3.10\Lib\site-packages\vtk.libs\vtkIOLSDyna-9.4.2.dll                                             263680 02-02-2026 00:28:42
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\lib\python3.10\Lib\site-packages\vtk.libs\vtkIOParallelLSDyna-9.4.2.dll                                      39424 02-02-2026 00:28:42
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\lib\python3.10\Lib\site-packages\vtkmodules\vtkIOLSDyna.cp310-win_amd64.pyd                                 111104 02-02-2026 00:28:38
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\lib\python3.10\Lib\site-packages\vtkmodules\vtkIOLSDyna.pyi                                                  11295 02-02-2026 00:28:38
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\lib\python3.10\Lib\site-packages\vtkmodules\vtkIOParallelLSDyna.cp310-win_amd64.pyd                          26624 02-02-2026 00:28:38
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\lib\python3.10\Lib\site-packages\vtkmodules\vtkIOParallelLSDyna.pyi                                           1064 02-02-2026 00:28:38
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\plugins\lsdyna_plugin_core.dll                                                                              462848 02-02-2026 04:02:36
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\plugins\lsdyna_plugin_gui.dll                                                                               361472 02-02-2026 04:03:06
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\optiSLang\scripting\integrations\internal\LSDYNA_cetk.pye                                                              11205 02-02-2026 04:08:28
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\rocky\bin\lib\vtkIOLSDyna-9.4.dll                                                                                     266752 07-11-2025 23:19:27
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\rocky\bin\lib\vtkmodules.vtkIOLSDyna.cp310-win_amd64.pyd                                                              111104 07-11-2025 23:26:28
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\RSM\bin\HPCServices\Hpc_Agent\certificates\ca.key                                                                       3365 08-01-2026 20:45:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\RSM\bin\HPCServices\Hpc_Agent\certificates\server_localhost.key                                                         3294 08-01-2026 20:45:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\RSM\bin\HPCServices\Hpc_Agent\certificates\server_wildcard.win.ansys.com.key                                            3298 08-01-2026 20:45:08
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\RSM\Config\xml\Mechanical_LSDYNAJob.xml                                                                                  582 08-01-2026 20:44:36
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SEC\SolverExecutionController\sec\bootstrap\lsdyna.py                                                                   2258 12-01-2026 16:33:27
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SEC\SolverExecutionController\sec\plugins\lsdyna.py                                                                    26057 12-01-2026 16:33:27
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\Participants\LsDyna\lsdyna.bat                                                                           1382 18-12-2025 06:11:35
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\Participants\LsDyna\lsdyna.sh                                                                            1121 18-12-2025 06:11:35
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\Participants\LsDyna\lsdynaintelmpi.bat                                                                   2412 18-12-2025 06:11:35
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\Participants\LsDyna\lsdynaintelmpi.sh                                                                    2218 18-12-2025 06:11:35
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\PyLib\cosimulation\participantloader\LsDynaLoader.pyc                                                    8723 18-12-2025 07:13:41
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\PyLib\cosimulation\participantmanager\participantprocess\LsDynaSubprocess.pyc                            1902 18-12-2025 07:13:41
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\tp\MPI\WindowsHPC\mat_pie_lin_pla.k                                                                                   618901 19-08-2025 01:46:59
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\tp\MPI\WindowsHPC\runlsdyna.bat                                                                                          556 19-08-2025 01:46:59
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\tp\MPI\WindowsHPC\RUNLSDYNA.xml                                                                                         1999 19-08-2025 01:46:59
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\TurboGrid\tools\icemcfd-26.1\lib\ai_env\scripts\fea2.0\aie_lsdyna.tcl                                                 147028 13-01-2026 00:01:29
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\TurboGrid\tools\icemcfd-26.1\lib\ai_env\scripts\aie_v3pvarLsDyna.tcl                                                    4884 13-01-2026 00:01:29
+C:\Program Files\ANSYS Inc\v261\installer\dev_configs\lsdyna\config_lsdyna.json                                                                                       2701 02-02-2026 20:19:06
+
+
+
+
+FullName                                                                                                                                                   
+--------                                                                                                                                                   
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ACP\acp2dyna                                                                                                 
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\ACP\lib\traitsui\examples\demo\Dynamic_Forms                                                                 
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\ACT\extensions\LSDYNA                                                                                 
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\WBAddins\MechanicalExtensions\FastDynamicResponse                                                      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\WBAddins\MechanicalExtensions\RotorDynApp                                                              
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\apex261\machines\win64\Python-3.12.11\Lib\site-packages\ansys_dynamicreporting_core-0.10.6.dist-info     
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\apex261\machines\win64\Python-3.12.11\Lib\site-packages\ansys\dynamicreporting                           
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\apex261\machines\win64\Python-3.12.11\Lib\site-packages\boto3\dynamodb                                   
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\apex261\machines\win64\Python-3.12.11\Lib\site-packages\boto3\data\dynamodb                              
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\apex261\machines\win64\Python-3.12.11\Lib\site-packages\botocore\data\dynamodb                           
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\apex261\machines\win64\Python-3.12.11\Lib\site-packages\botocore\data\dynamodbstreams                    
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\ensight261\machines\win64\lib_readers\udr_ls-dyna_lstc                                                   
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\ensight261\other_data\ensight\dyna                                                                       
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\CEI\ensight261\src\readers\ls-dyna3d204                                                                      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\PyDynamicReporting                                             
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\PyDynamicReporting\ansys_dynamicreporting_core-0.10.6.dist-info
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\PyDynamicReporting\ansys\dynamicreporting                      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\_dynamo                                            
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\ao\nn\intrinsic\quantized\dynamic                  
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\ao\nn\qat\dynamic                                  
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\ao\nn\quantized\dynamic                            
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\ao\nn\sparse\quantized\dynamic                     
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\include\torch\csrc\dynamo                          
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\nn\intrinsic\quantized\dynamic                     
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\nn\qat\dynamic                                     
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Ansys\Torch\torch\nn\quantized\dynamic                               
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\_dynamo                                             
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\ao\nn\intrinsic\quantized\dynamic                   
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\ao\nn\qat\dynamic                                   
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\ao\nn\quantized\dynamic                             
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\ao\nn\sparse\quantized\dynamic                      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\include\torch\csrc\dynamo                           
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\nn\intrinsic\quantized\dynamic                      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\nn\qat\dynamic                                      
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\nn\quantized\dynamic                                
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\commonfiles\CPython\3_10\winx64\Release\Fluentcgen\torch\_C\_dynamo                                          
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\fluent\fluent26.1.0\KINetics\data\Dynamic_Flamespeed_Libraries                                               
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\installer\dev_configs\lsdyna                                                                                 
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\reaction\forte.win64\data\Dynamic_Flamespeed_Libraries                                                       
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\rocky\bin\prepost_scripting_stubs                                                                            
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\SystemCoupling\Participants\LsDyna                                                                           
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\tp\openjre\21\legal\jdk.dynalink                                                                             
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\tp\qt\5.15.19\winx64\licenses\qtwebengine\src\3rdparty\chromium\base\third_party\dynamic_annotations         
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\TurboGrid\tools\icemcfd-26.1\lib\ai_env\resource\prepost                                                     
+C:\Program Files\ANSYS Inc\ANSYS Student\v261\TurboGrid\tools\icemcfd-26.1\lib\ai_env\scripts\prepost                                                      
+C:\Program Files\ANSYS Inc\Shared Files\licensing\tools\java\winx64\legal\jdk.dynalink                                                                     
+C:\Program Files\ANSYS Inc\v261\installer\dev_configs\lsdyna                                                                                               
+
+
+
+DONE
