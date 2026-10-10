@@ -80,3 +80,7 @@ Solver databases, binary result files, aborted and killed solver runs, licence-p
 ## Reproducing the analysis
 
 Reproducing the analysis needs ANSYS and LS-DYNA with valid licences. Scripts and input files that referred to the original working folder now use placeholders such as `<PROJECT_ROOT>`, `<OUTPUT_ROOT>` and `<SCRATCH_ROOT>`. Set these to local paths before running anything. This README does not claim that the analyses can be re-run from this copy.
+
+## SQL results database (follow-on extension)
+
+A separate follow-on extension, added after the internship period and after the LS-DYNA study, loads the project's existing result summary tables (the sources of the key results above) into a normalised SQLite database. It comes with a Python importer, a library of tested SQL queries, a data dictionary and a validation report. It runs no solver, adds no new simulation or result, and was not part of the February–May 2025 internship. See [06_Simulation_Data_SQL/README.md](06_Simulation_Data_SQL/README.md).

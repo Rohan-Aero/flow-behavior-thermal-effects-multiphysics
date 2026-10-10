@@ -1,16 +1,18 @@
 # GitHub Content Audit
 
-Status: final publication audit of the staging copy. **Decision: NOT-PUBLIC-READY.** Nothing has been published. No GitHub repository has been created, git has not been initialised, nothing has been pushed, and no licence has been selected. The master project archive has not been modified. The audit stops here until the owner has reviewed the open points in section 8.
+Status: final publication audit of the staging copy, with a later update (section 10) that records the publication state and the integration of the SQL extension. **Decision recorded by the audit: NOT-PUBLIC-READY.** Sections 0 to 9 are the audit as it was written, before publication, and are kept as they were. At that time nothing had been published: no GitHub repository had been created, git had not been initialised, nothing had been pushed, and no licence had been selected. The repository has since been published on GitHub (section 10). Publication does not resolve the open points in section 8, and this document does not record that any of them has been resolved. No licence has been selected. The master project archive has not been modified.
 
 ## 0. Final decision
 
-The copy is NOT-PUBLIC-READY. The inventory, manifest, licence exclusion, link and sensitive-information checks pass (section 7). The following items block publication:
+At the time of the audit the copy was NOT-PUBLIC-READY, and this decision has not been revised in this document. The inventory, manifest, licence exclusion, link and sensitive-information checks passed (section 7). The following items were recorded as blocking publication:
 
 1. Eleation's permission to publish its name and the internship description: the owner reports verbal confirmation from Eleation. No written record is held. This is an external decision, not a licensing assumption (section 5).
 2. The redistribution terms for Ansys Student and LS-DYNA solver outputs have not been verified against the applicable licence text. The repository makes no claim that these outputs are freely redistributable.
 3. Provenance wording was changed in the working files, in the workbook PARAMETERS.xlsx and in a dataset copy. The owner has not yet reviewed that change. Technical uses of "reconstruct" in the Fluent sense are kept on purpose (section 6).
 4. The compiled report states no date, but working documents and the presentation text state 2026 in several places. The owner must choose one date policy. The presentation was not modified, because the report and presentation are outside this task (section 6).
 5. The QC checklist recorded a page count, a PDF hash and a DOCX hash that did not match the delivered files. They are corrected here, but the QC checks were recorded against an earlier build and must be re-run.
+
+None of these five items is recorded as resolved in the repository documents. NOTICE.md (sections 3 and 5) still states that the redistribution terms for the solver outputs and Eleation's permission to publish its name are unconfirmed.
 
 ## 1. Scope and method
 
@@ -34,7 +36,7 @@ The counts below are the final recount. Groups A, C and D together account for e
 | D. Quarantined duplicate files | 242 | 0.50 GB | Byte-identical copies moved out of the repository to a quarantine folder beside it. They are not in the repository. |
 | Master archive (A + C + D) | 5,916 | 36.06 GB | Reconciles exactly: 2,919 + 2,755 + 242 = 5,916. |
 
-Files in the repository: 2,925 (groups A and B, including MANIFEST.csv). The manifest, MANIFEST.csv, has 3,167 rows: 2,924 live rows, one for each file in the repository except MANIFEST.csv itself, and 243 removed rows (242 duplicate files and ieee.csl). Every live row matches a file on disk.
+Files in the repository: 2,925 (groups A and B, including MANIFEST.csv). The manifest, MANIFEST.csv, has 3,167 rows: 2,924 live rows, one for each file in the repository except MANIFEST.csv itself, and 243 removed rows (242 duplicate files and ieee.csl). Every live row matches a file on disk. These counts describe the staging copy at the time of the audit. The repository still had 2,925 tracked files at commit 22bb33a, the last commit before the SQL extension; the extension later added 24 files that are not in the manifest (section 10).
 
 The ieee.csl file is in the quarantine folder, in a subfolder named excluded_from_public. The master copy is unchanged. It was excluded because its upstream licence (CC BY-SA 3.0) and its modified contributor metadata do not allow it to be redistributed here. Its upstream details are recorded in NOTICE.md.
 
@@ -187,3 +189,41 @@ Modification times of master files were not compared. Names, sizes and hashes we
 Some scripts refer to master folder names and to the removed duplicate paths. Each removed path has the same content at the kept path listed in MANIFEST.csv, so references can be changed to the kept path. The master-folder count in section 4 uses a folder-name pattern. It is an indicator, not an exact count of path references.
 
 The size figures for excluded files come from the first audit and are carried forward.
+
+## 10. Update after publication: repository state and SQL extension
+
+This section was added after sections 0 to 9 were written, and it does not change them. It uses targeted checks only: comparison of git object identifiers, the extension's own validation procedure, and pattern scans of the files and lines that were added. It does not repeat the full-tree sensitive scan of section 4 or the full re-hash of section 7, so those results still describe the staging copy.
+
+### 10.1 Publication state
+
+- The repository is on GitHub at https://github.com/Rohan-Aero/flow-behavior-thermal-effects-multiphysics. On 2026-10-10 its page was reachable without authentication, so it is public.
+- The history on the main branch before the SQL extension has three commits, all dated 2026-10-08: 52e1a20 (initial release), 546fef0 (licensing text removed from the README) and 22bb33a (project status and internship wording revised). At 22bb33a the repository had 2,925 tracked files, the same count as in section 2.
+- README.md describes the repository as a public project repository. No licence has been selected (NOTICE.md, section 6).
+- The decision in section 0 and the open points in section 8 are unchanged. This update did not review whether any of them has been resolved. Publication and the SQL extension did not resolve or change any of them, and the licensing, redistribution, permission and provenance caveats in sections 5 and 6 and in NOTICE.md all still apply.
+
+### 10.2 SQL extension
+
+- 06_Simulation_Data_SQL/ is a follow-on extension, added after the internship period and after the LS-DYNA study. It is not part of the February–May 2025 internship. It runs no solver and adds no new simulation or result. A Python importer loads result summary tables that already exist in the repository into a SQLite database, and a validation script checks the database against those files and against the project data register. All values are from the project's re-analysis. None is recovered internship data, and no experimental data exist.
+- The folder holds 24 files, about 174 KB: documentation, the schema, the importer, the validation script, 15 SQL query files, and two generated reports. The importer reads 22 repository files. REPOSITORY_STRUCTURE.md lists its contents.
+- **The generated database is not in Git.** The file database/simulation_results.db (about 232 KB) is ignored by the folder's own .gitignore and is rebuilt with import_results.py. It is excluded because it can be rebuilt exactly, because it is a binary that cannot be reviewed as a diff, and because it contains values derived from solver output, for which the redistribution question in section 5 is unresolved. The extension adds no raw solver output, no vendor banner text and no exported field data. It contains only summary numbers copied from files that were already in the repository, so it does not settle the section 5 question.
+- MANIFEST.csv has not been changed. It was written before the extension existed, so it does not list the 24 extension files or the later edits to README.md, REPOSITORY_STRUCTURE.md and this document. Its 2,924 live rows are unchanged.
+- **Manifest hashes and line endings.** Of the 22 repository files the importer reads, 8 match their MANIFEST.csv hash byte for byte. The other 14 match only after Windows CRLF line endings are restored (CSV rows with CRLF and, in some files, an LF first comment line), because git stores them with LF. No other difference was found. The extent of this effect in the remaining repository files was not measured. The statement in section 7 that each file matches its manifest hash describes the staging copy, and in a git clone text files that had CRLF endings can need this correction.
+
+### 10.3 Checks run for this integration
+
+| Check | Result |
+|---|---|
+| Extension validation (validate_database.py, existing procedure): schema and integrity, counts, units, missing values, privacy scan of stored text, source files and hashes, every stored value against its cited source cell, 104 values against MASTER_PROJECT_DATA.csv, raw Fluent, eigenvalue and reaction files, reproducibility, rollback on injected failure, all 15 queries | 68 checks passed, 0 failed. Rerun on the final branch. The regenerated reports were identical to the committed ones |
+| Rebuild from a clean checkout with no database present | Passed (68 of 68) before the documentation edits. The database was byte-identical to the working-tree database |
+| Protected content: git tree or blob identifiers of 01_Project_Documentation, 02_CFD_Fluent, 03_Thermal_Structural_Mechanical, 04_LS_DYNA_Extension, 05_Data, 07_Audit_and_Provenance, MANIFEST.csv, NOTICE.md and .gitignore on the main branch and on the feature branch. This covers the report PDF and DOCX, the presentation, and the CFD, Mechanical and LS-DYNA data | Identical in all 9 |
+| Files changed against main | The 24 files of 06_Simulation_Data_SQL (all added), README.md (4 lines added: the SQL extension section), REPOSITORY_STRUCTURE.md and GITHUB_CONTENT_AUDIT.md (this update). No other file |
+| Relative links in README.md, REPOSITORY_STRUCTURE.md, GITHUB_CONTENT_AUDIT.md and the five Markdown files of the extension (8 documents, 12 relative links) | None broken |
+| Pattern scan of the 24 extension files for user-profile and container paths, e-mail addresses, keys and tokens, and credential words | No sensitive content. Two matches are not findings: the word "token" in a code comment, and the validator's own search pattern |
+| Git whitespace check of the diff | No errors |
+
+### 10.4 Caveats carried into the extension
+
+- One source discrepancy is kept, not resolved. For the LS-DYNA case C1 the maximum load is at load factor 1.185 in the summary table, the full-precision JSON and the binout N file, and at 1.19 in the extracted series file. The two are one 0.005 load step apart on a flat maximum, with N within about 3 N. It is stored as a DISCREPANCY record in the database.
+- The flag that marks LS-DYNA results beyond the source's own yield indicator as not physical behaviour is a rule of the extension (06_Simulation_Data_SQL/data_dictionary.md, section 6). The LS-DYNA model is elastic only.
+- Maximum stresses and LS-DYNA peak values cannot be recomputed from raw data, because the raw nodal exports and LS-DYNA binary files are not in the repository. They are checked against summary files, the register and extracted series.
+- The sqlite3 command-line route in the extension's README was not tested. The Python route was.
