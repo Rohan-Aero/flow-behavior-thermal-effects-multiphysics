@@ -246,8 +246,9 @@ def check_sources(db, rep, repo):
         # MANIFEST.csv hashes were taken on Windows files (CRLF rows, sometimes an LF first comment line); git stores LF.
         lf = b.replace(b"\r\n", b"\n")
         first, _, rest = lf.partition(b"\n")
-        variants = {H(b): "exact", H(lf.replace(b"\n", b"\r\n")): "crlf", H(first + b"\n" + rest.replace(b"\n", b"\r\n")): "crlf"}
-        hit = variants.get(manifest.get(p))
+        variants = [(H(b), "exact"), (H(lf.replace(b"\n", b"\r\n")), "crlf"),
+                    (H(first + b"\n" + rest.replace(b"\n", b"\r\n")), "crlf")]  # first match wins: exact beats crlf
+        hit = next((kind for h, kind in variants if h == manifest.get(p)), None)
         if hit == "exact":
             exact += 1
         elif hit:
