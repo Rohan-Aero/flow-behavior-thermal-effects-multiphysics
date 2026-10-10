@@ -1,6 +1,6 @@
 # Repository Structure
 
-This copy groups the master archive under six top-level folders. Each group keeps the contents of the master folders mapped to it, with the master folder name dropped, so that files sit where their group says. Where two master folders held files with the same name, the second copy carries a suffix (listed below). Admin, interview-preparation, session-output and root working files are not included.
+This copy groups the master archive under six top-level folders. A seventh folder, 06_Simulation_Data_SQL, holds a follow-on extension that was written after the master archive and has no master source folder (see below). Each mapped group keeps the contents of the master folders mapped to it, with the master folder name dropped, so that files sit where their group says. Where two master folders held files with the same name, the second copy carries a suffix (listed below). Admin, interview-preparation, session-output and root working files are not included.
 
 ## Top-level layout
 
@@ -16,12 +16,13 @@ Flow_Behavior_Thermal_Effects_Multiphysics_GitHub/
 ├── 03_Thermal_Structural_Mechanical/
 ├── 04_LS_DYNA_Extension/
 ├── 05_Data/
+├── 06_Simulation_Data_SQL/
 └── 07_Audit_and_Provenance/
 ```
 
-There is no 06 folder. The planned analysis-and-scripts folder was not created, because the scripts depend on the study folders they sit in, and moving them would break their relative references. The numbering therefore skips 06. The master archive itself has no 04 or 12 folder either.
+When this copy was first prepared there was no 06 folder. The planned analysis-and-scripts folder was not created, because the scripts depend on the study folders they sit in, and moving them would break their relative references, so the numbering skipped 06. That folder still does not exist. The number 06 is now used by a different folder, 06_Simulation_Data_SQL, a follow-on extension added after the internship period and after the LS-DYNA study. It is not a mapping of any master folder and it is not the planned analysis-and-scripts folder. The master archive itself has no 04 or 12 folder either.
 
-MANIFEST.csv lists every file in this repository with its size, SHA-256 hash, group and source location in the master archive. It also lists the 242 duplicate files that were removed from this copy, marked as removed, with the path of the identical copy that was kept.
+MANIFEST.csv lists every file in this repository with its size, SHA-256 hash, group and source location in the master archive. It also lists the 242 duplicate files that were removed from this copy, marked as removed, with the path of the identical copy that was kept. The manifest was written before the SQL extension existed. The 24 files of 06_Simulation_Data_SQL and the later edits to README.md, REPOSITORY_STRUCTURE.md and GITHUB_CONTENT_AUDIT.md are not recorded in it, and MANIFEST.csv has not been changed. For text files that had Windows line endings in the staging copy, the manifest hash is that of the original file and can differ from the LF file that git stores (see GITHUB_CONTENT_AUDIT.md, section 10).
 
 ## Mapping from master folders
 
@@ -44,6 +45,7 @@ MANIFEST.csv lists every file in this repository with its size, SHA-256 hash, gr
 | 15_Interview_Preparation | Not included | Personal |
 | Claude outputs | Not included | Session outputs |
 | Master root notes and README | Not included | Replaced by this repository's README |
+| (none: written after the master archive) | 06_Simulation_Data_SQL/ | Follow-on SQL extension. See the next section |
 
 ## Suffixed copies
 
@@ -80,6 +82,21 @@ Three Fluent cleanup scripts had a host name in their filenames. They are rename
 
 The Workbench project files (.wbpj) that owned the dp0 folders are not in this repository, because their extension is not on the allow-list. The dp0 copies were therefore not usable on their own. Smaller duplicate copies, under 100 KB in total about 6.6 MB across 507 files, were kept because they record per-run audit history.
 
+## SQL extension folder
+
+06_Simulation_Data_SQL/ is a separate follow-on extension. It is not part of the February–May 2025 internship. It runs no solver and adds no new simulation or result: a Python importer loads result summary files that already exist in 01_Project_Documentation/, 02_CFD_Fluent/, 03_Thermal_Structural_Mechanical/, 04_LS_DYNA_Extension/ and 05_Data/ into a SQLite database, and a validation script checks that database against those files. The folder holds 24 files:
+
+| Path | Content |
+|---|---|
+| README.md, data_dictionary.md | Usage, design, metric definitions, source-to-table mapping and known source observations |
+| schema.sql, import_results.py, validate_database.py | Database schema, importer and validation script (Python standard library only) |
+| queries/ | 15 SQL query files |
+| validation/ | VALIDATION_REPORT.md and QUERY_RUN_LOG.md, written by validate_database.py |
+| database/ | README.md only. The generated simulation_results.db is not committed (it is ignored by the folder's own .gitignore). Rebuild it with import_results.py |
+| .gitignore | Ignore rules for the generated database and Python caches |
+
+Paths inside this folder use the repository layout above, not the master layout. The importer and the validation script only read files outside this folder. When the extension was added, README.md received one new section that links to it.
+
 ## Key locations
 
 | Content | Path |
@@ -95,6 +112,8 @@ The Workbench project files (.wbpj) that owned the dp0 folders are not in this r
 | LS-DYNA 12C data | 04_LS_DYNA_Extension/12C_Nonlinear_Buckling/IMPERFECTION_SENSITIVITY.csv and MECHANICAL_vs_LSDYNA.csv |
 | LS-DYNA 12C plots | 04_LS_DYNA_Extension/12C_Nonlinear_Buckling/ |
 | Master audit records | 07_Audit_and_Provenance/ |
+| SQL extension (guide) | 06_Simulation_Data_SQL/README.md |
+| SQL extension validation report | 06_Simulation_Data_SQL/validation/VALIDATION_REPORT.md |
 | Full file list with hashes | MANIFEST.csv |
 
 ## Paths inside documents
