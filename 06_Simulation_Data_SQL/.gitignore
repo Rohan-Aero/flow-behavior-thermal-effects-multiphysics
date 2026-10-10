@@ -1,0 +1,5 @@
+# generated locally by import_results.py; rebuild instead of committing (see README.md)
+database/*.db
+database/*.db.partial
+__pycache__/
+*.pyc
