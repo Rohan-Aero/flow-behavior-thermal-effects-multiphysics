@@ -43,3 +43,7 @@ Eleation's permission to publish its name and the internship description has not
 ## 6. Licence status
 
 No open-source licence has been selected for this repository. There is no MIT, Apache, GPL or other repository-wide licence. Sections 1 to 5 each keep their own terms. Nothing in this repository grants reuse rights beyond the terms that the rights holders have themselves stated.
+
+## 7. High-pressure and cryogenic systems extension
+
+`09_High_Pressure_Cryogenic_Systems/` is a conceptual, educational study written after the internship. Its third-party sources, their licences or terms, and the credits they require are listed in `09_High_Pressure_Cryogenic_Systems/THIRD_PARTY_NOTICES.md`. In short: nitrogen property values in that folder are computed with the MIT-licensed CoolProp library (the MIT licence covers the CoolProp software only; it does not cover this repository, the repository's content or any material-property data); the SI defining constants are credited to the BIPM (CC BY 4.0); NIST Standard Reference Data (WebBook tables, CODATA values, cryogenic material fits) are **not** included, because NIST states they may not be reproduced without permission. Section 6 is unchanged: no repository-wide open-source licence has been selected.

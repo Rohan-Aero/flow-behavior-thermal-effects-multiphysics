@@ -1,0 +1,4 @@
+basis,heat_absorbed_per_kg_LN2_kJ,LN2_kg_per_MJ,LN2_L_per_MJ,status,data_class,note,assumption_ids
+LATENT_ONLY,199.176,5.02068,6.22848,CALCULATED,CALCULATED from VERIFIED,only the latent heat is used: the largest liquid use per megajoule,
+VAPOUR_LEAVES_AT_300K,433.212,2.30834,2.86365,CALCULATED,CALCULATED from VERIFIED,the vapour also warms to 300 K: the smallest liquid use per megajoule,
+METAL_HEAT_TO_REMOVE,,,,UNAVAILABLE,UNRESOLVED,"needs the specific heat and mass of the line, valves, flanges, supports and receiver (UI-21, UI-28, UI-35); the verified material data were removed from this release",UI-21;UI-28;UI-35
