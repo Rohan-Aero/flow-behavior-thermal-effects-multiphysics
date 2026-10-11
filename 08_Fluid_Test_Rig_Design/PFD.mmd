@@ -1,0 +1,48 @@
+---
+title: "PFD - Heated-duct air test rig - CONCEPTUAL, not approved for construction"
+---
+%% Process flow diagram, design case (8.69 g/s, 300 K ambient, 50 mm concept line bore).
+%% Stream values (S-numbers) are rows of stream_table.csv; static pressures are gauge.
+%% Equipment and instrument tags follow equipment_schedule.csv and instrument_index.csv.
+%% Render: mmdc -c mermaid-config.json -i PFD.mmd -o PFD.svg   (see README.md)
+flowchart TB
+  classDef eq fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef ctl fill:#eef2f7,stroke:#111111,stroke-width:1px,color:#111111
+  classDef inst fill:#ffffff,stroke:#111111,stroke-width:1px,color:#111111
+  classDef note fill:#ffffff,stroke:#777777,stroke-width:1px,stroke-dasharray:3 3,color:#111111
+
+  INL101["INL-101<br/>Ambient air intake"]:::eq
+  FLT101["FLT-101<br/>Intake filter"]:::eq
+  BLW101(["BLW-101<br/>Blower"]):::eq
+  VFD101["VFD-101<br/>Variable-speed drive"]:::ctl
+  FE101["FE-101<br/>Flow element"]:::eq
+  ADP101["ADP-101<br/>Contraction adapter"]:::eq
+  ADP102["ADP-102<br/>Expansion adapter"]:::eq
+  STK101["STK-101<br/>Discharge to atmosphere<br/>(S14: exit plane, 0 Pa(g))"]:::eq
+
+  subgraph HTR101["HTR-101 heater subsystem boundary: separate design, not designed here"]
+    TA101["TA-101<br/>Heated duct test article<br/>existing project geometry<br/>heat to air 602.755 W (CFD)"]:::eq
+  end
+
+  FT101(("FT-101")):::inst
+  FIC101(("FIC-101")):::inst
+  PDT102(("PDT-102")):::inst
+  TT103(("TT-103")):::inst
+
+  INL101 -->|"S1: 300.0 K, 0 Pa(g), 8.69 g/s"| FLT101
+  FLT101 -->|"S3: 300.0 K, -120 Pa(g), 8.69 g/s"| BLW101
+  BLW101 -->|"S4: 300.0 K, 1158 Pa(g), 8.69 g/s"| FE101
+  FE101 -->|"S8: 300.0 K, 911 Pa(g), 8.69 g/s"| ADP101
+  ADP101 -->|"S10: 300.0 K, 411 Pa(g), 8.69 g/s"| TA101
+  TA101 -->|"S11: 368.9 K, -27 Pa(g), 8.69 g/s"| ADP102
+  ADP102 -->|"S13: 368.9 K, 22 Pa(g), 8.69 g/s"| STK101
+
+  FE101 --- FT101
+  FT101 -.-> FIC101
+  FIC101 -.-> VFD101
+  VFD101 -.->|"speed"| BLW101
+  TA101 --- PDT102
+  ADP102 --- TT103
+
+  NOTE["Flow is set by blower speed (FIC-101 to VFD-101); no throttling valve in the line.<br/>No valve or restriction in the discharge path.<br/>Independent over-temperature trip and flow-proving trip: see P&ID."]:::note
+  style HTR101 fill:#fff7e0,stroke:#8a6d00,stroke-width:2px,stroke-dasharray:6 4

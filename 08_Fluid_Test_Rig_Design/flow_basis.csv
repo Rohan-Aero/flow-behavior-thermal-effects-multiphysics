@@ -1,0 +1,13 @@
+quantity,unit,calculated,reference,reference_source,difference_pct,tolerance_pct,status,note
+volumetric flow,m3/s,0.00738274,0.007383,BASELINE_PARAMETERS.md,-0.003,0.10,PASS,A*V with A = pi*Di^2/4
+mass flow (circular tube),kg/s,0.00868647,0.008686,BASELINE_PARAMETERS.md,0.005,0.10,PASS,"rho_in*V*A, rho = p/(R T)"
+mass flow vs CFD,kg/s,0.00868647,0.00866215,CFD_BASELINE_RESULTS.md s4,0.281,0.50,PASS,CFD uses a 48-sided facetted bore: -0.285 % flow area (documented in the CFD results)
+inlet Reynolds number,-,29957.9,29958,M034,-0.000,0.20,PASS,"4 mdot/(pi D mu), Sutherland mu"
+outlet Reynolds number,-,25656.9,25545,M035,0.438,1.00,PASS,CFD uses tabulated mu(T); Sutherland differs slightly
+inlet Mach number,-,0.0676797,0.0677,FLUID_CALCULATIONS.md,-0.030,0.50,PASS,V/sqrt(gamma R T)
+inlet dynamic pressure,Pa,324.886,324.9,FLUID_CALCULATIONS.md,-0.004,0.20,PASS,0.5 rho V^2
+outlet dynamic pressure,Pa,399.534,399.5,FLUID_CALCULATIONS.md,0.009,0.30,PASS,1-D value at the CFD outlet bulk temperature
+outlet velocity (continuity),m/s,28.8995,28.894,CFD_BASELINE_RESULTS.md s4,0.019,0.20,PASS,mdot/(rho_out A) with CFD bulk outlet T
+outlet temperature (energy balance),K,368.889,368.93,M037,-0.011,0.10,PASS,"T_in + q'' A_o/(mdot cp), cp = 1008 J/(kg K) assumed (AS-03)"
+heating acceleration term,Pa,149.296,149.31,CFD_BASELINE_RESULTS.md s4,-0.009,1.00,PASS,G^2 (1/rho_out - 1/rho_in)
+friction factor (smooth Colebrook vs Petukhov),-,0.0234907,0.0236471,FLUID_CALCULATIONS.md (Petukhov),-0.661,2.00,PASS,method cross-check at Re_in; CFD fully developed f = 0.02163 (M043)
