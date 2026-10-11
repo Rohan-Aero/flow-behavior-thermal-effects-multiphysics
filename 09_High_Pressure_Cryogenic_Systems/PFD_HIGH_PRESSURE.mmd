@@ -1,0 +1,78 @@
+---
+title: "PFD - High-pressure GN2 supply and pressure control | CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION."
+---
+%% Process flow diagram of the conceptual high-pressure gaseous-nitrogen supply and pressure-control system.
+%% Pressures and temperatures marked IL-nn are ILLUSTRATIVE study cases, not requirements. Values marked (calc) come from calculations.py.
+%% Tags follow equipment_schedule.csv and instrument_index.csv; stations SB-nnn are rows of boundary_conditions.csv; lines are in line_list_high_pressure.csv.
+%% CALC T_out_stage1=280.8
+%% CALC T_out_stage2=271.7
+%% CALC p_DI_MPa_g=0.983
+%% Render: mmdc -c mermaid-config.json -i PFD_HIGH_PRESSURE.mmd -o PFD_HIGH_PRESSURE.svg   (see README.md)
+flowchart TB
+  classDef eq fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef ctl fill:#dfe8f3,stroke:#111111,stroke-width:1px,color:#111111
+  classDef inst fill:#ffffff,stroke:#111111,stroke-width:1px,color:#111111
+  classDef rel fill:#ffffff,stroke:#b00020,stroke-width:2px,color:#111111
+  classDef note fill:#ffffff,stroke:#777777,stroke-width:1px,stroke-dasharray:3 3,color:#111111
+  classDef ban fill:#fdecee,stroke:#b00020,stroke-width:3px,color:#b00020
+
+  BAN["CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION.<br/>Illustrative study case only: no requirement, size or rating is given."]:::ban
+
+  subgraph SUPB["SOURCE BOUNDARY - supplier scope, conditions unresolved (UI-02)"]
+    SRC301["SRC-301<br/>Nitrogen source interface"]:::eq
+  end
+
+  subgraph CONC["GN2 PRESSURE-CONTROL CONCEPT - this study"]
+    FLT301["FLT-301<br/>HP particulate filter"]:::eq
+    PCV301["PCV-301<br/>Stage-1 regulator"]:::eq
+    PCV302["PCV-302<br/>Stage-2 regulator"]:::eq
+    FE301["FE-301<br/>Flow element"]:::eq
+    FCV301["FCV-301<br/>Flow control valve"]:::eq
+    XV301["XV-301<br/>Remote shutoff valve"]:::eq
+    PSV301["PSV-301<br/>Stage-1 outlet relief device<br/>set pressure and capacity unresolved"]:::rel
+    PSV302["PSV-302<br/>Delivery relief device<br/>set pressure and capacity unresolved"]:::rel
+    CS301["CS-301<br/>Control and data acquisition"]:::ctl
+  end
+
+  subgraph USERB["DOWNSTREAM BOUNDARY - user scope, not designed here (UI-01, UI-03, UI-04)"]
+    DI301["DI-301<br/>Delivery interface"]:::eq
+  end
+
+  subgraph VENTB["VENT / DISCHARGE BOUNDARY - safe location unresolved (UI-11, UI-12)"]
+    VH301["VH-301<br/>Vent header"]:::eq
+    VS301["VS-301<br/>Vent stack (discharge)"]:::eq
+  end
+
+  PT301(("PT-301")):::inst
+  PT302(("PT-302")):::inst
+  PT303(("PT-303")):::inst
+  TT302(("TT-302")):::inst
+  FT301(("FT-301")):::inst
+
+  SRC301 ==>|"SB-301 · L-301, L-302<br/>20 MPa(g) (IL-02), 300 K (IL-05)<br/>through double block and bleed (P&ID)"| FLT301
+  FLT301 ==>|"L-303"| PCV301
+  PCV301 ==>|"SB-302 · L-304<br/>5 MPa(g) (IL-03), 280.8 K (calc)"| PCV302
+  PCV302 ==>|"SB-303 · L-305<br/>1 MPa(g) (IL-04), 271.7 K (calc)"| FE301
+  FE301 ==> FCV301
+  FCV301 ==> XV301
+  XV301 ==>|"SB-304 · L-305<br/>0.983 MPa(g) nominal (calc)"| DI301
+
+  PCV301 -.->|"relief tap"| PSV301
+  PCV302 -.->|"relief tap"| PSV302
+  PSV301 -->|"L-307<br/>relief discharge"| VH301
+  PSV302 -->|"L-308<br/>relief discharge"| VH301
+  VH301 ==>|"L-309<br/>SB-305 exit: ambient"| VS301
+
+  SRC301 --- PT301
+  PCV301 --- PT302
+  PCV302 --- PT303
+  PCV302 --- TT302
+  FE301 --- FT301
+  FT301 -.->|"signal"| CS301
+  CS301 -.->|"flow loop"| FCV301
+
+  STATES["OPERATING STATES (valve positions: HIGH_PRESSURE_SYSTEM.md s.6)<br/>H0 isolated and depressurized · H1 pressurize · H2 normal delivery<br/>H3 hold pressurized · H4 controlled depressurization · H5 emergency shutdown<br/>Bold arrows flow in H1 to H3. H4 and H5 discharge through the bleed manifold (P&ID) and the vent header."]:::note
+  NOTE["All instruments report to CS-301 (P&ID).<br/>Regulators are not overpressure protection: PSV-301 and PSV-302 must cover a failed-open regulator.<br/>No relief set pressure, capacity, size or rating is given."]:::note
+  BAN ~~~ SRC301
+  DI301 ~~~ STATES
+  STATES ~~~ NOTE

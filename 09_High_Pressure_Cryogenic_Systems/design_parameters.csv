@@ -1,0 +1,166 @@
+param_id,system,group,name,value,unit,class,source_ref,bound_min,bound_max,assumption_id,note
+EX-01,BOTH,existing,Ambient / gas reference temperature (CFD inlet temperature),300,K,EXISTING,M002,250,350,,
+EX-02,BOTH,existing,Operating (ambient) absolute pressure,101325,Pa,EXISTING,M005,90000,110000,,
+EX-03,HP,existing,Air inlet velocity of the heated-duct CFD baseline,23.5,m/s,EXISTING,M003,1,100,,
+EX-04,HP,existing,Heated-duct inner diameter,0.02,m,EXISTING,M023,0.001,0.5,,
+EX-05,HP,existing,Specific gas constant of dry air,287.058,J/(kg K),EXISTING,01_Project_Documentation/BASELINE_PARAMETERS.md,280,295,,
+VC-01,BOTH,verified constant,Molar gas constant,8.314462618,J/(mol K),VERIFIED,VC-01,8.3,8.4,,
+VC-02,BOTH,verified constant,Molar mass of nitrogen,28.01348,g/mol,VERIFIED,VC-02,28,28.1,,
+VC-03,CRYO,verified constant,Stefan-Boltzmann constant,5.670374419e-08,W/(m2 K4),VERIFIED,VC-03,5.6e-08,5.7e-08,,
+VC-04,BOTH,verified constant,Oxygen volume fraction of dry air,20.95,percent,VERIFIED,VC-04,20,21,,
+VC-05,BOTH,verified constant,Oxygen-deficient atmosphere threshold (29 CFR 1910.146(b)),19.5,percent,VERIFIED,VC-05,19,20,,
+VC-06,CRYO,verified constant,Boiling temperature of oxygen at 0.101325 MPa (context only: oxygen condenses above the nitrogen boiling temperature),90.18781,K,VERIFIED,VC-06,89,91,,
+VP-01,CRYO,verified property,Boiling temperature of N2 at 0.101325 MPa,77.35499,K,VERIFIED,VP:N2_SAT_0MPAG,77,78,,
+VP-02,CRYO,verified property,Saturated liquid density at 0.101325 MPa,806.0845,kg/m3,VERIFIED,VP:N2_SAT_0MPAG,800,810,,
+VP-03,CRYO,verified property,Saturated vapour density at 0.101325 MPa,4.612137,kg/m3,VERIFIED,VP:N2_SAT_0MPAG,4,5,,
+VP-04,CRYO,verified property,Saturated liquid enthalpy at 0.101325 MPa,-122.0183,kJ/kg,VERIFIED,VP:N2_SAT_0MPAG,-125,-120,,
+VP-05,CRYO,verified property,Saturated vapour enthalpy at 0.101325 MPa,77.15772,kJ/kg,VERIFIED,VP:N2_SAT_0MPAG,75,80,,
+VP-06,CRYO,verified property,Saturated liquid cv at 0.101325 MPa,1.084068,kJ/(kg K),VERIFIED,VP:N2_SAT_0MPAG,1,1.2,,
+VP-07,HP,verified property,Gas density at 300 K and 0.101325 MPa,1.138165,kg/m3,VERIFIED,VP:N2_GAS_300K_ISOTHERM,1,1.3,,
+VP-08,HP,verified property,cp/cv of N2 at 300 K and 0.101325 MPa (used as the isentropic exponent in screening),1.401239774,-,VERIFIED,VP:N2_GAS_300K_ISOTHERM,1.3,1.5,,
+AS-02-low,HP,assumption,"Pipe wall roughness, low case",0.0015,mm,ASSUMED,AS-02,0.001,0.5,AS-02,same set as 08_Fluid_Test_Rig_Design AS-04; material TBD
+AS-02-nom,HP,assumption,"Pipe wall roughness, nom case",0.045,mm,ASSUMED,AS-02,0.001,0.5,AS-02,same set as 08_Fluid_Test_Rig_Design AS-04; material TBD
+AS-02-high,HP,assumption,"Pipe wall roughness, high case",0.15,mm,ASSUMED,AS-02,0.001,0.5,AS-02,same set as 08_Fluid_Test_Rig_Design AS-04; material TBD
+AS-03-bend-low,HP,assumption,"Generic loss coefficient K, Bend / elbow, low",0.15,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-bend-nom,HP,assumption,"Generic loss coefficient K, Bend / elbow, nom",0.3,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-bend-high,HP,assumption,"Generic loss coefficient K, Bend / elbow, high",0.9,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-valve-low,HP,assumption,"Generic loss coefficient K, Open full-bore isolation valve, low",0.05,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-valve-nom,HP,assumption,"Generic loss coefficient K, Open full-bore isolation valve, nom",0.1,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-valve-high,HP,assumption,"Generic loss coefficient K, Open full-bore isolation valve, high",0.3,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-check-low,HP,assumption,"Generic loss coefficient K, Check valve, fully open, low",1,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-check-nom,HP,assumption,"Generic loss coefficient K, Check valve, fully open, nom",2,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-03-check-high,HP,assumption,"Generic loss coefficient K, Check valve, fully open, high",5,-,ASSUMED,AS-03,0,20,AS-03,"on line velocity pressure; generic, not vendor data"
+AS-04-filter-low,HP,assumption,"Filter pressure-drop allocation, low, fraction of local absolute pressure",0.001,-,ASSUMED,AS-04,0,0.1,AS-04,"design allocation to be met by a vendor, not a datasheet value"
+AS-04-filter-nom,HP,assumption,"Filter pressure-drop allocation, nom, fraction of local absolute pressure",0.0025,-,ASSUMED,AS-04,0,0.1,AS-04,"design allocation to be met by a vendor, not a datasheet value"
+AS-04-filter-high,HP,assumption,"Filter pressure-drop allocation, high, fraction of local absolute pressure",0.005,-,ASSUMED,AS-04,0,0.1,AS-04,"design allocation to be met by a vendor, not a datasheet value"
+AS-04-fe-low,HP,assumption,"Flow element pressure-drop allocation, low, fraction of local absolute pressure",0.002,-,ASSUMED,AS-04,0,0.1,AS-04,"design allocation to be met by a vendor, not a datasheet value"
+AS-04-fe-nom,HP,assumption,"Flow element pressure-drop allocation, nom, fraction of local absolute pressure",0.005,-,ASSUMED,AS-04,0,0.1,AS-04,"design allocation to be met by a vendor, not a datasheet value"
+AS-04-fe-high,HP,assumption,"Flow element pressure-drop allocation, high, fraction of local absolute pressure",0.01,-,ASSUMED,AS-04,0,0.1,AS-04,"design allocation to be met by a vendor, not a datasheet value"
+AS-05-lf-low,HP,assumption,"Route length factor, low",0.75,-,ASSUMED,AS-05,0.5,3,AS-05,covers a layout different from the conceptual one
+AS-05-lf-nom,HP,assumption,"Route length factor, nom",1,-,ASSUMED,AS-05,0.5,3,AS-05,covers a layout different from the conceptual one
+AS-05-lf-high,HP,assumption,"Route length factor, high",1.5,-,ASSUMED,AS-05,0.5,3,AS-05,covers a layout different from the conceptual one
+AS-05-len-L-301,HP,assumption,Conceptual route length of L-301,2,m,ASSUMED,AS-05,0.1,100,AS-05,no layout drawing exists
+AS-05-bends-L-301,HP,assumption,Conceptual number of bends in L-301,2,-,ASSUMED,AS-05,0,50,AS-05,
+AS-05-len-L-302,HP,assumption,Conceptual route length of L-302,0.5,m,ASSUMED,AS-05,0.1,100,AS-05,no layout drawing exists
+AS-05-bends-L-302,HP,assumption,Conceptual number of bends in L-302,0,-,ASSUMED,AS-05,0,50,AS-05,
+AS-05-len-L-303,HP,assumption,Conceptual route length of L-303,3,m,ASSUMED,AS-05,0.1,100,AS-05,no layout drawing exists
+AS-05-bends-L-303,HP,assumption,Conceptual number of bends in L-303,3,-,ASSUMED,AS-05,0,50,AS-05,
+AS-05-len-L-304,HP,assumption,Conceptual route length of L-304,2,m,ASSUMED,AS-05,0.1,100,AS-05,no layout drawing exists
+AS-05-bends-L-304,HP,assumption,Conceptual number of bends in L-304,2,-,ASSUMED,AS-05,0,50,AS-05,
+AS-05-len-L-305,HP,assumption,Conceptual route length of L-305,6,m,ASSUMED,AS-05,0.1,100,AS-05,no layout drawing exists
+AS-05-bends-L-305,HP,assumption,Conceptual number of bends in L-305,5,-,ASSUMED,AS-05,0,50,AS-05,
+AS-06,HP,assumption,"Discharge coefficient of the regulator seat, screening only",0.8,-,ASSUMED,AS-06,0.3,1,AS-06,replace with vendor flow-coefficient data
+AS-10-low,CRYO,assumption,"Effective emissivity of the MLI blanket (equivalent value), low",0.001,-,ASSUMED,AS-10,0.0001,0.1,AS-10,placeholder; vendor or test data required
+AS-10-nom,CRYO,assumption,"Effective emissivity of the MLI blanket (equivalent value), nom",0.003,-,ASSUMED,AS-10,0.0001,0.1,AS-10,placeholder; vendor or test data required
+AS-10-high,CRYO,assumption,"Effective emissivity of the MLI blanket (equivalent value), high",0.01,-,ASSUMED,AS-10,0.0001,0.1,AS-10,placeholder; vendor or test data required
+AS-11-low,CRYO,assumption,"Emissivity of bare metal surfaces (both surfaces), low",0.05,-,ASSUMED,AS-11,0.01,1,AS-11,surface finish unknown
+AS-11-nom,CRYO,assumption,"Emissivity of bare metal surfaces (both surfaces), nom",0.1,-,ASSUMED,AS-11,0.01,1,AS-11,surface finish unknown
+AS-11-high,CRYO,assumption,"Emissivity of bare metal surfaces (both surfaces), high",0.3,-,ASSUMED,AS-11,0.01,1,AS-11,surface finish unknown
+AS-12-low,CRYO,assumption,"Overall thermal accommodation coefficient, low",0.7,-,ASSUMED,AS-12,0.1,1,AS-12,
+AS-12-nom,CRYO,assumption,"Overall thermal accommodation coefficient, nom",0.9,-,ASSUMED,AS-12,0.1,1,AS-12,
+AS-12-high,CRYO,assumption,"Overall thermal accommodation coefficient, high",1,-,ASSUMED,AS-12,0.1,1,AS-12,
+AS-13-design,CRYO,assumption,"Annulus gas pressure, design vacuum",0.001,Pa,ASSUMED,AS-13,1e-06,10,AS-13,placeholder; the vacuum level of a real jacket is a vendor figure
+AS-13-degraded,CRYO,assumption,"Annulus gas pressure, degraded vacuum",1,Pa,ASSUMED,AS-13,0.001,1000,AS-13,
+AS-13-lost,CRYO,assumption,"Annulus gas pressure, vacuum lost",101325,Pa,ASSUMED,AS-13,10000,200000,AS-13,
+AS-15-hot-high,CRYO,assumption,"Warm-side (jacket) temperature, high case",313,K,ASSUMED,AS-15,300,340,AS-15,same warm-day bound as 08_Fluid_Test_Rig_Design AS-13
+IL-01,HP,illustrative,Illustrative nitrogen mass flow (set equal to the heated-duct air design flow),0.008686472278,kg/s,ILLUSTRATIVE,CALC from EX-01..EX-05,0.001,0.1,IL-01,NOT a nitrogen flow requirement; gives the study a repository-traceable magnitude
+IL-02,HP,illustrative,Illustrative source pressure,20,MPa(g),ILLUSTRATIVE,IL-02,0.5,45,IL-02,NOT a source specification
+IL-03,HP,illustrative,Illustrative stage-1 outlet (intermediate) set pressure,5,MPa(g),ILLUSTRATIVE,IL-03,0.5,45,IL-03,
+IL-04,HP,illustrative,Illustrative stage-2 outlet (delivery) set pressure,1,MPa(g),ILLUSTRATIVE,IL-04,0.1,45,IL-04,NOT a downstream requirement
+IL-05,HP,illustrative,Illustrative gas temperature at the source,300,K,ILLUSTRATIVE,EX-01,250,350,IL-05,
+IL-06,HP,illustrative,Illustrative uniform line inner diameter for the reference budget,10,mm,ILLUSTRATIVE,IL-06,2,100,IL-06,not a pipe or tube size
+IL-07,HP,illustrative,Line inner-diameter sweep for the sensitivity study,6;8;10;12;16;20,mm,ILLUSTRATIVE,IL-07,,,IL-07,
+IL-08,HP,illustrative,Component-loss multiplier sweep for the sensitivity study,0.5;1;2;4,-,ILLUSTRATIVE,IL-08,,,IL-08,
+IL-09,HP,illustrative,"Illustrative limit on passive loss downstream of stage 2, fraction of the delivery set pressure",0.05,-,ILLUSTRATIVE,IL-09,0.001,0.5,IL-09,stands in for the unresolved downstream limit UI-04
+IL-10,HP,illustrative,Stage-1 inlet pressure sweep (source depletion and over-supply),30;25;20;15;10;7;6,MPa(g),ILLUSTRATIVE,IL-10,,,IL-10,
+IL-11,HP,illustrative,Stage-2 inlet pressure sweep (including stage 1 failed open),20;15;10;7;5;3;2,MPa(g),ILLUSTRATIVE,IL-11,,,IL-11,
+IL-12,CRYO,illustrative,Illustrative inner line outside diameter,25,mm,ILLUSTRATIVE,IL-12,5,200,IL-12,not a pipe size
+IL-13,CRYO,illustrative,Illustrative inner line wall thickness,2,mm,ILLUSTRATIVE,IL-13,0.5,20,IL-13,not a pressure-design thickness
+IL-14,CRYO,illustrative,Illustrative vacuum-jacket inner diameter,50,mm,ILLUSTRATIVE,IL-14,10,400,IL-14,
+IL-15,CRYO,illustrative,Illustrative straight-run lengths for totals,5;10;20,m,ILLUSTRATIVE,IL-15,,,IL-15,NOT a routing
+IL-16,CRYO,illustrative,Trapped-liquid screening pressure levels,0.5;1;5;10,MPa(g),ILLUSTRATIVE,IL-16,,,IL-16,"screening thresholds, NOT allowable pressures or relief settings"
+IL-17,BOTH,illustrative,Illustrative well-mixed room volumes for oxygen-deficiency screening,10;100;1000,m3,ILLUSTRATIVE,IL-17,,,IL-17,
+IL-18,CRYO,illustrative,Closed-volume fill densities for the trapped-liquid isochores,806.0844;760;700,kg/m3,ILLUSTRATIVE,IL-18,,,IL-18,806.0844 is the saturated liquid density at 0.101325 MPa (VP-02)
+UI-01,HP,unresolved,Required downstream operating pressure and tolerance,,-,UNRESOLVED,UNRESOLVED:UI-01,,,,
+UI-02,HP,unresolved,"Nitrogen source type, pressure range, temperature range and depletion profile",,-,UNRESOLVED,UNRESOLVED:UI-02,,,,
+UI-03,HP,unresolved,Required mass-flow range and duty cycle,,-,UNRESOLVED,UNRESOLVED:UI-03,,,,
+UI-04,HP,unresolved,Downstream minimum and maximum pressure limits,,-,UNRESOLVED,UNRESOLVED:UI-04,,,,
+UI-05,BOTH,unresolved,"Pressure-system classification, governing design code and jurisdiction",,-,UNRESOLVED,UNRESOLVED:UI-05,,,,
+UI-06,HP,unresolved,Design pressure and design temperature of each pressure zone,,-,UNRESOLVED,UNRESOLVED:UI-06,,,,
+UI-07,HP,unresolved,"Relief-device set pressures, required capacities and discharge locations",,-,UNRESOLVED,UNRESOLVED:UI-07,,,,
+UI-08,HP,unresolved,"Regulator characteristics: supply-pressure effect, droop, lock-up, minimum differential, flow curves",,-,UNRESOLVED,UNRESOLVED:UI-08,,,,
+UI-09,HP,unresolved,"Component specifications and ratings (valves, filter, flow element, check valve cracking pressure, hoses)",,-,UNRESOLVED,UNRESOLVED:UI-09,,,,
+UI-10,BOTH,unresolved,"Materials, seals, cleaning level and compatibility for the service temperature range",,-,UNRESOLVED,UNRESOLVED:UI-10,,,,
+UI-11,HP,unresolved,"Vent routing, discharge location, stack height, noise and silencing",,-,UNRESOLVED,UNRESOLVED:UI-11,,,,
+UI-12,BOTH,unresolved,"Room or area volume, ventilation rate and oxygen-deficiency classification",,-,UNRESOLVED,UNRESOLVED:UI-12,,,,
+UI-13,BOTH,unresolved,Power and instrument-air failure positions and electrical area classification,,-,UNRESOLVED,UNRESOLVED:UI-13,,,,
+UI-20,CRYO,unresolved,"Source vessel capacity, maximum allowable working pressure, relief and vent capacity",,-,UNRESOLVED,UNRESOLVED:UI-20,,,,
+UI-21,CRYO,unresolved,"Transfer-line length, routing, elevation and bore",,-,UNRESOLVED,UNRESOLVED:UI-21,,,,
+UI-22,CRYO,unresolved,"Allowable pressures, relief set pressures, relief capacities and vent sizes",,-,UNRESOLVED,UNRESOLVED:UI-22,,,,
+UI-23,CRYO,unresolved,"Insulation system data: vacuum level, MLI specification, vendor heat-leak figures",,-,UNRESOLVED,UNRESOLVED:UI-23,,,,
+UI-24,CRYO,unresolved,"Support and spacer design, bellows or loop movement capacity",,-,UNRESOLVED,UNRESOLVED:UI-24,,,,
+UI-25,CRYO,unresolved,"Material grades, low-temperature toughness requirements and allowable stresses",,-,UNRESOLVED,UNRESOLVED:UI-25,,,,
+UI-26,CRYO,unresolved,"Receiving vessel or user, fill rate and pressure",,-,UNRESOLVED,UNRESOLVED:UI-26,,,,
+UI-27,CRYO,unresolved,"Required transfer rate, duration and driving pressure difference",,-,UNRESOLVED,UNRESOLVED:UI-27,,,,
+UI-28,CRYO,unresolved,"Cooldown time limit, valve and flange thermal masses",,-,UNRESOLVED,UNRESOLVED:UI-28,,,,
+UI-29,CRYO,unresolved,"Phase separator and cold vent sizing, vent dispersion and ground-level cold-vapour behaviour",,-,UNRESOLVED,UNRESOLVED:UI-29,,,,
+UI-30,CRYO,unresolved,"Installation environment: indoor or outdoor, drainage, spill containment, personnel exposure",,-,UNRESOLVED,UNRESOLVED:UI-30,,,,
+UI-31,CRYO,unresolved,Cryogenic-qualified instrument ranges and accuracy,,-,UNRESOLVED,UNRESOLVED:UI-31,,,,
+UI-32,CRYO,unresolved,Measured emissivity and MLI performance,,-,UNRESOLVED,UNRESOLVED:UI-32,,,,
+UI-33,CRYO,unresolved,"Two-phase pressure drop, flow regime and hydraulic-transient data",,-,UNRESOLVED,UNRESOLVED:UI-33,,,,
+UI-34,CRYO,unresolved,"Thermal expansion and elastic modulus of the line material, 77 K to 300 K, from a source with verified reuse terms",,-,UNRESOLVED,UNRESOLVED:UI-34,,,,
+UI-35,CRYO,unresolved,"Thermal conductivity and specific heat of the line and support materials, 77 K to 300 K, from a source with verified reuse terms",,-,UNRESOLVED,UNRESOLVED:UI-35,,,,
+CA-mdot_g_s,HP,calculated result,Illustrative nitrogen mass flow,8.686472278,g/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Qstd_L_s,HP,calculated result,Illustrative flow as volume at 300 K and 0.101325 MPa,7.631997362,L/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Z_source,HP,calculated result,Compressibility factor at the illustrative source condition,1.057560608,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dT_stage1,HP,calculated result,Isenthalpic temperature change across stage 1 (illustrative case),-19.24866303,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-T_out_stage1,HP,calculated result,"Gas temperature after stage 1, no heat gain (illustrative case)",280.751337,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-p_DI_MPa_g,HP,calculated result,Nominal pressure at the delivery interface after passive losses,0.9833611542,MPa(g),CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-T_boil_O2_K,CRYO,calculated result,Boiling temperature of oxygen at 0.101325 MPa (context only),90.18781,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-T_sat_K,CRYO,calculated result,Boiling temperature of N2 at 0.101325 MPa,77.35499,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-T_out_stage2,HP,calculated result,"Gas temperature after stage 2, no heat gain",271.6961268,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-ratio_stage1,HP,calculated result,"Outlet/inlet absolute pressure ratio, stage 1",0.2537805344,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-flux_source,HP,calculated result,Choked mass flux per mm2 of flow area at the illustrative source pressure (Cd=AS-06),35.89391751,g/(s mm2),CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-flux_multiple_source,HP,calculated result,Illustrative flow multiples passed by 1 mm2 at the source pressure,4.132162789,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-flux_stage2_fail,HP,calculated result,Choked flux per mm2 into stage 2 with stage 1 failed open,35.89391751,g/(s mm2),CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Areq_stage1,HP,calculated result,Effective flow area needed for the illustrative flow at stage 1 (Cd=AS-06),0.2420040185,mm2,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dp_del_nom_kPa,HP,calculated result,Nominal passive loss downstream of stage 2,16.63884579,kPa,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dp_del_pct,HP,calculated result,Nominal delivery-zone loss as percent of the delivery set pressure,1.663884579,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dp_all_nom_kPa,HP,calculated result,"Nominal passive loss, all zones",68.16145787,kPa,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dp_del_high_kPa,HP,calculated result,High-case passive loss downstream of stage 2,36.29872133,kPa,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-vendor_share_del_pct,HP,calculated result,Share of the nominal delivery-zone loss that rests on generic K or allocations needing vendor data,44.17029232,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dp_hp_nom_kPa,HP,calculated result,"Nominal passive loss, high-pressure zone (mostly the filter allocation)",50.79742285,kPa,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-sens_worst_pct,HP,calculated result,"Delivery loss, smallest swept bore with 4x component losses, percent of set pressure",23.83551812,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-sens_worst_v,HP,calculated result,Peak delivery velocity at the smallest swept bore,30.64232589,m/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S1_nom,CRYO,calculated result,"Heat leak per metre, scenario S1, nominal",0.1313655301,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S2_nom,CRYO,calculated result,"Heat leak per metre, scenario S2, nominal",2.500444667,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S3_nom,CRYO,calculated result,"Heat leak per metre, scenario S3, nominal",14.1258138,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S4_nom,CRYO,calculated result,"Heat leak per metre, scenario S4, nominal",34.58296896,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S1_low,CRYO,calculated result,"Heat leak per metre, S1, low case",0.05428798711,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S1_high,CRYO,calculated result,"Heat leak per metre, S1, high case",0.4531639425,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-boil_S1_L_h_10m,CRYO,calculated result,"Boil-off of a 10 m held-cold line, S1 nominal",0.02945549349,L/h,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-boil_S4_L_h_10m,CRYO,calculated result,"Boil-off of a 10 m held-cold line, S4 nominal (lower bound)",7.754381355,L/h,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Ra_S4,CRYO,calculated result,Rayleigh number of the annulus gap with vacuum lost,364433.9788,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-ratio_S4_S1,CRYO,calculated result,"Heat-leak ratio, vacuum lost to design vacuum",263.2575603,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-hfg,CRYO,calculated result,Latent heat of vaporization of N2 at 0.101325 MPa,199.17602,kJ/kg,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S1_1MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S1 nominal heat leak",21.95438023,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S2_1MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S2 nominal heat leak",1.153414365,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dpdT_trap,CRYO,calculated result,Pressure rise per kelvin of a liquid-full closed volume (isochore slope near 80 K),1.7289296,MPa/K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-cool_kg_per_MJ_latent,CRYO,calculated result,"LN2 per megajoule of heat absorbed, latent heat only (largest use per megajoule)",5.020684719,kg/MJ,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-cool_kg_per_MJ_full,CRYO,calculated result,"LN2 per megajoule of heat absorbed, vapour leaves at 300 K (smallest use per megajoule)",2.308340241,kg/MJ,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-odh_ln2_L_10m3,BOTH,calculated result,LN2 vaporised in a well-mixed 10 m3 room that lowers oxygen to 19.5 percent,1.012722019,L,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-odh_ratio_ln2,CRYO,calculated result,Gas volume (litres) at 300 K per litre of LN2,708.2316712,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-odh_gn2_L_10m3,HP,calculated result,Pressurised volume at 20 MPa(g) whose release lowers a well-mixed 10 m3 room to 19.5 percent,3.82419281,L,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dT_stage2,HP,calculated result,"Isenthalpic temperature change across stage 2, normal case",-9.055210136,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-dT_single,HP,calculated result,"Isenthalpic temperature change, single stage from source to delivery set pressure",-28.30387317,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Areq_stage1_6MPa,HP,calculated result,Effective flow area needed at stage 1 with the source depleted to 6 MPa(g),1.020108756,mm2,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Areq_growth,HP,calculated result,"Growth of the required stage-1 flow area, source depleted to 6 MPa(g) versus 20 MPa(g)",4.215255441,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-unc_mli_pct,CRYO,calculated result,"Swing of the S1 heat leak across the MLI emissivity range, percent of nominal",246.0501776,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-boil_S1_g_s_m,CRYO,calculated result,"Boil-off per metre of line, S1 nominal",0.0006595449096,g/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S1_5MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 5 MPa(g), S1 nominal heat leak",109.9311568,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_E_1MPa_kJ_m,CRYO,calculated result,Heat absorbed per metre of bore by liquid-full trapped LN2 to reach 1 MPa(g),0.1730429278,kJ/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_E_5MPa_kJ_m,CRYO,calculated result,Heat absorbed per metre of bore by liquid-full trapped LN2 to reach 5 MPa(g),0.8664698813,kJ/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S4_1MPa_s,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S4 nominal heat leak",5.003703644,s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-ratio_sat_1atm,CRYO,calculated result,Saturated liquid to saturated vapour density ratio at 0.101325 MPa,174.7746218,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Tfull_760_K,CRYO,calculated result,First tabulated single-phase temperature of the 760 kg/m3 closed volume,87.355,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Tfull_700_K,CRYO,calculated result,First tabulated single-phase temperature of the 700 kg/m3 closed volume,99.855,K,CALCULATED,calculations.py,,,,headline value quoted in the documents

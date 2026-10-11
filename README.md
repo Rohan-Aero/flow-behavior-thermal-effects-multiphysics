@@ -88,3 +88,7 @@ A separate follow-on extension, added after the internship period and after the 
 ## Fluid test rig design (follow-on extension)
 
 A separate follow-on exercise, added after the internship period, the LS-DYNA study and the SQL extension, designs a conceptual air-supply, flow-control, instrumentation and discharge system around the heated duct: calculations, a pressure budget, a PFD and a P&ID, schedules, a preliminary hazard review and a validation report. It is a conceptual, educational design, not approved for construction. It runs no solver, adds no new simulation result and was not part of the February–May 2025 internship. See [08_Fluid_Test_Rig_Design/README.md](08_Fluid_Test_Rig_Design/README.md).
+
+## High-pressure gas and cryogenic systems (follow-on study)
+
+A separate follow-on educational study, added after the internship period and after the fluid test rig design, develops conceptual architectures, screening calculations, diagrams, schedules and preliminary hazard reviews for a high-pressure gaseous-nitrogen supply and pressure-control system and a liquid-nitrogen transfer and conditioning system. It is conceptual only, not approved for construction, claims no compliance with any standard, runs no solver, adds no new simulation result and was not part of the February–May 2025 internship. The heated-duct rig of the previous section remains a low-pressure air system. See [09_High_Pressure_Cryogenic_Systems/README.md](09_High_Pressure_Cryogenic_Systems/README.md).

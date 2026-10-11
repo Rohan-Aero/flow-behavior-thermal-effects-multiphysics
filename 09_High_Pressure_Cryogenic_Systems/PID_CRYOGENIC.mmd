@@ -1,0 +1,128 @@
+---
+title: "P&ID - Liquid-nitrogen transfer and conditioning | CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION."
+---
+%% Conceptual piping and instrumentation diagram. No valve size, rating, relief setting, material or model is specified.
+%% Tags: equipment_schedule.csv and instrument_index.csv. Lines: line_list_cryogenic.csv. Stations SC-nnn: boundary_conditions.csv.
+%% Hexagon: valve. Circle: instrument. Red outline: relief device. Signal lines drawn only for the trip; all other instruments report to CS-401 as listed in instrument_index.csv.
+%% Render: mmdc -c mermaid-config.json -i PID_CRYOGENIC.mmd -o PID_CRYOGENIC.svg   (see README.md)
+flowchart TB
+  classDef eq fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef valve fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef inst fill:#ffffff,stroke:#111111,stroke-width:1px,color:#111111
+  classDef ctl fill:#dfe8f3,stroke:#111111,stroke-width:1px,color:#111111
+  classDef rel fill:#ffffff,stroke:#b00020,stroke-width:2px,color:#111111
+  classDef tap fill:#111111,stroke:#111111,color:#ffffff
+  classDef note fill:#ffffff,stroke:#777777,stroke-width:1px,stroke-dasharray:3 3,color:#111111
+  classDef ban fill:#fdecee,stroke:#b00020,stroke-width:3px,color:#b00020
+
+  BAN["CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION.<br/>Liquid nitrogen only. No size, rating, relief setting or model is given."]:::ban
+
+  subgraph VESB["SOURCE BOUNDARY - vessel vendor scope (UI-20)"]
+    VES401["VES-401<br/>LN2 source vessel interface<br/>SC-401: saturated liquid, property basis"]:::eq
+  end
+
+  subgraph SRCS["SOURCE SIDE (L-401)"]
+    HV401{{"HV-401<br/>Source withdrawal valve"}}:::valve
+    PI401(("PI-401")):::inst
+    PT401(("PT-401")):::inst
+    TEE1(("tee")):::tap
+    TRV401["TRV-401<br/>Thermal relief, HV-401 to XV-401"]:::rel
+    XV401{{"XV-401<br/>Remote isolation valve"}}:::valve
+    ZS401(("ZS-401")):::inst
+    TT401(("TT-401")):::inst
+  end
+
+  subgraph VJB["VJ-401 VACUUM-JACKETED TRANSFER LINE ASSEMBLY (L-402) - vendor system"]
+    VJ401["VJ-401<br/>Inner line with MLI in the vacuum annulus"]:::eq
+    BL401["BL-401<br/>Contraction bellows or flexible joint"]:::eq
+    SUP401["SUP-401<br/>Line supports and guides"]:::eq
+    TEE2(("tee")):::tap
+    PSV401["PSV-401<br/>Jacket annulus relief device"]:::rel
+    TRV402["TRV-402<br/>Thermal relief, transfer line section"]:::rel
+    PT403(("PT-403")):::inst
+    TT404(("TT-404")):::inst
+    TT402(("TT-402")):::inst
+  end
+
+  subgraph RCVS["RECEIVING END (L-402, L-403, L-404)"]
+    PS401["PS-401<br/>Phase separator and cooldown vent pot"]:::eq
+    TT403(("TT-403")):::inst
+    PT402(("PT-402")):::inst
+    PT404(("PT-404")):::inst
+    PSHH401(("PSHH-401")):::inst
+    HV403{{"HV-403<br/>Phase-separator vent valve, vent path kept open"}}:::valve
+    HV402{{"HV-402<br/>Receiver isolation valve"}}:::valve
+  end
+
+  subgraph RECB["RECEIVER BOUNDARY - user scope (UI-26)"]
+    RCV401["RCV-401<br/>Receiver interface"]:::eq
+    LT401(("LT-401")):::inst
+  end
+
+  subgraph PURGB["PURGE (L-409) - source unresolved (UI-02)"]
+    GP401["GP-401<br/>Dry nitrogen purge supply interface"]:::eq
+    HV405{{"HV-405<br/>Purge isolation valve"}}:::valve
+    CV402{{"CV-402<br/>Purge check valve"}}:::valve
+  end
+
+  subgraph VENTB["COLD VENT / DISCHARGE BOUNDARY - location unresolved (UI-22, UI-29)"]
+    VH401["VH-401<br/>Cold vent header"]:::eq
+    VS401["VS-401<br/>Cold vent stack (discharge)<br/>SC-405: ambient"]:::eq
+  end
+
+  subgraph CTLB["CONTROL AND SAFETY BOUNDARY - not designed here"]
+    CS401["CS-401<br/>Control and data acquisition"]:::ctl
+    ES401["ES-401<br/>Independent trip and interlock logic"]:::ctl
+  end
+
+  subgraph AREAB["AREA CONTROLS - UI-12"]
+    VNT401["VNT-401<br/>Area ventilation"]:::eq
+    AT401(("AT-401")):::inst
+  end
+
+  VES401 -->|"L-401"| HV401
+  HV401 -->|"L-401"| TEE1
+  TEE1 -->|"L-401"| XV401
+  TEE1 -.- TRV401
+  XV401 -->|"L-402"| BL401
+  BL401 -->|"L-402"| VJ401
+  VJ401 -->|"L-402"| TEE2
+  TEE2 -->|"L-402"| PS401
+  TEE2 -.- TRV402
+  VJ401 -.- PSV401
+  VJ401 --- SUP401
+  PS401 -->|"L-403"| HV402
+  HV402 -->|"L-403"| RCV401
+  PS401 -->|"L-404"| HV403
+  HV403 -->|"L-404"| VH401
+  GP401 -->|"L-409"| HV405
+  HV405 -->|"L-409"| CV402
+  CV402 -->|"L-409, injection near XV-401"| XV401
+  VES401 -.->|"L-410 vessel vent interface"| VH401
+  TRV401 -->|"L-405"| VH401
+  TRV402 -->|"L-406"| VH401
+  PSV401 -->|"L-407"| VH401
+  VH401 -->|"L-408"| VS401
+
+  HV401 --- PI401
+  HV401 --- PT401
+  XV401 --- ZS401
+  XV401 --- TT401
+  VJ401 --- PT403
+  VJ401 --- TT404
+  VJ401 --- TT402
+  PS401 --- TT403
+  PS401 --- PT402
+  PS401 --- PT404
+  PS401 --- PSHH401
+  RCV401 --- LT401
+  PSHH401 -.->|"trip input"| ES401
+  ES401 -.->|"closes"| XV401
+  VNT401 --- AT401
+  AT401 -.->|"alarm"| CS401
+
+  STATES["OPERATING STATES: C0 warm, shut down · C1 dry purge · C2 cooldown · C3 normal transfer · C4 stop, drain, vent path open · C5 warm-up · C6 emergency shutdown<br/>Never leave a liquid-capable section closed at both ends without a relief path. Valve-position table: CRYOGENIC_SYSTEM.md s.6."]:::note
+  NOTE["Flow direction: vessel to receiver; cold vapour and relief discharge to the vent header.<br/>Relief set pressures, capacities and vent sizes are unresolved (UI-22). The jacket relief PSV-401 protects the vacuum jacket against an inner-line leak."]:::note
+  BAN ~~~ VES401
+  RCV401 ~~~ STATES
+  STATES ~~~ NOTE

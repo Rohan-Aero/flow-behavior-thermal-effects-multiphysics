@@ -1,0 +1,70 @@
+---
+title: "PFD - Liquid-nitrogen transfer and conditioning | CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION."
+---
+%% Process flow diagram of the conceptual liquid-nitrogen transfer and conditioning system (nitrogen only; no oxygen, hydrogen or propellant).
+%% Properties are VERIFIED equation-of-state values; heat-leak and boil-off values are CALCULATED from ASSUMED placeholders (calc) and are screening values per metre of line.
+%% Tags follow equipment_schedule.csv and instrument_index.csv; stations SC-nnn are rows of boundary_conditions.csv; lines are in line_list_cryogenic.csv.
+%% CALC T_sat_K=77.355
+%% CALC Q_S1_nom=0.131
+%% CALC Q_S4_nom=34.6
+%% CALC boil_S1_L_h_10m=0.0295
+%% Render: mmdc -c mermaid-config.json -i PFD_CRYOGENIC.mmd -o PFD_CRYOGENIC.svg   (see README.md)
+flowchart TB
+  classDef eq fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef ctl fill:#dfe8f3,stroke:#111111,stroke-width:1px,color:#111111
+  classDef inst fill:#ffffff,stroke:#111111,stroke-width:1px,color:#111111
+  classDef note fill:#ffffff,stroke:#777777,stroke-width:1px,stroke-dasharray:3 3,color:#111111
+  classDef ban fill:#fdecee,stroke:#b00020,stroke-width:3px,color:#b00020
+
+  BAN["CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION.<br/>Liquid nitrogen only. No capacity, pressure, vent size, relief setting or rating is given."]:::ban
+
+  subgraph VESB["SOURCE BOUNDARY - vessel vendor scope (UI-20)"]
+    VES401["VES-401<br/>LN2 source vessel interface"]:::eq
+  end
+
+  subgraph XFER["LN2 TRANSFER AND CONDITIONING CONCEPT - this study"]
+    XV401["XV-401<br/>Remote isolation valve"]:::eq
+    TT401(("TT-401")):::inst
+    VJ401["VJ-401<br/>Vacuum-jacketed transfer line assembly<br/>inner line, MLI, supports, bellows (P&ID)"]:::eq
+    PT403(("PT-403")):::inst
+    PS401["PS-401<br/>Phase separator and cooldown vent pot"]:::eq
+    TT403(("TT-403")):::inst
+    CS401["CS-401<br/>Control and data acquisition"]:::ctl
+  end
+
+  subgraph PURGB["PURGE BOUNDARY - source unresolved (UI-02)"]
+    GP401["GP-401<br/>Dry nitrogen purge supply interface"]:::eq
+  end
+
+  subgraph RECB["RECEIVER BOUNDARY - user scope, not designed here (UI-26)"]
+    RCV401["RCV-401<br/>Receiver interface"]:::eq
+    LT401(("LT-401")):::inst
+  end
+
+  subgraph VENTB["COLD VENT / DISCHARGE BOUNDARY - location unresolved (UI-22, UI-29)"]
+    VH401["VH-401<br/>Cold vent header"]:::eq
+    VS401["VS-401<br/>Cold vent stack (discharge)"]:::eq
+  end
+
+  VES401 ==>|"SC-401 · L-401<br/>saturated LN2, 77.355 K at 0 MPa(g) (property basis, calc)"| XV401
+  XV401 ==>|"SC-402 · L-402<br/>screening heat leak per metre, nominal (radiation + gas conduction only, lower bound):<br/>0.131 W/m design vacuum (S1), 34.6 W/m vacuum lost (S4) (calc)<br/>boil-off of a held-cold 10 m line, S1: 0.0295 L/h (calc)"| VJ401
+  VJ401 ==>|"L-402<br/>two-phase in cooldown (C2), liquid in transfer (C3)<br/>thermal contraction and support heat: not calculated (UI-34, UI-35)"| PS401
+  PS401 ==>|"L-403<br/>liquid to receiver"| RCV401
+  PS401 -->|"L-404<br/>cold vapour (cooldown, vent)"| VH401
+  VH401 ==>|"L-408 · SC-405 exit: ambient<br/>cold vapour is denser than air until warm"| VS401
+  GP401 -->|"L-409<br/>dry GN2 purge (C1, C5)"| VJ401
+
+  XV401 --- TT401
+  VJ401 --- PT403
+  PS401 --- TT403
+  RCV401 --- LT401
+  TT401 -.->|"signals"| CS401
+  TT403 -.-> CS401
+  PT403 -.-> CS401
+  LT401 -.-> CS401
+
+  STATES["OPERATING STATES (valve positions: CRYOGENIC_SYSTEM.md s.6)<br/>C0 warm, shut down · C1 dry purge · C2 cooldown · C3 normal transfer<br/>C4 stop, drain and keep a vent path open · C5 warm-up · C6 emergency shutdown<br/>Bold arrows carry liquid in C2 to C4. The vent path through PS-401 stays open whenever liquid could be isolated."]:::note
+  NOTE["Trapped liquid is assumed credible: every liquid-capable section needs a relief path (relief devices: P&ID).<br/>Source vessel relief and vent are vessel scope. Receiver filling is not designed here."]:::note
+  BAN ~~~ VES401
+  RCV401 ~~~ STATES
+  STATES ~~~ NOTE

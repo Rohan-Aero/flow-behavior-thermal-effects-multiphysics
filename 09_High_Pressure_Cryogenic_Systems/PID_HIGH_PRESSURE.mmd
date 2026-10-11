@@ -1,0 +1,144 @@
+---
+title: "P&ID - High-pressure GN2 supply and pressure control | CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION."
+---
+%% Conceptual piping and instrumentation diagram. No valve size, rating, set pressure, material or model is specified.
+%% Tags: equipment_schedule.csv and instrument_index.csv. Lines: line_list_high_pressure.csv. Stations SB-nnn: boundary_conditions.csv.
+%% Dashed outline: conditional item (CV-301). Red outline: relief device. Hexagon: valve. Circle: instrument. Signal lines drawn only for the flow loop, the trip and the oxygen monitor;
+%% all other instruments report to CS-301 as listed in instrument_index.csv.
+%% Render: mmdc -c mermaid-config.json -i PID_HIGH_PRESSURE.mmd -o PID_HIGH_PRESSURE.svg   (see README.md)
+flowchart TB
+  classDef eq fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef valve fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef inst fill:#ffffff,stroke:#111111,stroke-width:1px,color:#111111
+  classDef ctl fill:#dfe8f3,stroke:#111111,stroke-width:1px,color:#111111
+  classDef rel fill:#ffffff,stroke:#b00020,stroke-width:2px,color:#111111
+  classDef prov fill:#ffffff,stroke:#111111,stroke-width:2px,stroke-dasharray:6 4,color:#111111
+  classDef tap fill:#111111,stroke:#111111,color:#ffffff
+  classDef note fill:#ffffff,stroke:#777777,stroke-width:1px,stroke-dasharray:3 3,color:#111111
+  classDef ban fill:#fdecee,stroke:#b00020,stroke-width:3px,color:#b00020
+
+  BAN["CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION.<br/>No size, rating, set pressure or model is given."]:::ban
+
+  subgraph SUPB["SOURCE BOUNDARY - supplier scope (UI-02)"]
+    SRC301["SRC-301<br/>Nitrogen source interface<br/>SB-301: 20 MPa(g) illustrative"]:::eq
+    PT301(("PT-301")):::inst
+    TT301(("TT-301")):::inst
+  end
+
+  subgraph HPZ["HIGH-PRESSURE ZONE (L-301 to L-303)"]
+    HV301{{"HV-301<br/>Block 1"}}:::valve
+    TEEA(("tee")):::tap
+    HV302{{"HV-302<br/>Block 2"}}:::valve
+    HV303{{"HV-303<br/>Block-to-block bleed, normally closed"}}:::valve
+    FLT301["FLT-301<br/>HP particulate filter"]:::eq
+    PDT301(("PDT-301")):::inst
+    PI301(("PI-301")):::inst
+  end
+
+  subgraph INTZ["INTERMEDIATE ZONE (L-304)"]
+    PCV301(["PCV-301<br/>Stage-1 regulator"]):::eq
+    TEEB(("tee")):::tap
+    PSV301["PSV-301<br/>Stage-1 outlet relief device"]:::rel
+    HV306{{"HV-306<br/>Intermediate bleed, normally closed"}}:::valve
+    PT302(("PT-302")):::inst
+    PI302(("PI-302")):::inst
+  end
+
+  subgraph DELZ["DELIVERY ZONE (L-305)"]
+    PCV302(["PCV-302<br/>Stage-2 regulator"]):::eq
+    TEEC(("tee")):::tap
+    PSV302["PSV-302<br/>Delivery relief device"]:::rel
+    PT303(("PT-303")):::inst
+    PI303(("PI-303")):::inst
+    TT302(("TT-302")):::inst
+    FE301["FE-301<br/>Flow element"]:::eq
+    FT301(("FT-301")):::inst
+    FIC301(("FIC-301")):::inst
+    FCV301{{"FCV-301<br/>Flow control valve"}}:::valve
+    CV301{{"CV-301<br/>Check valve, conditional"}}:::prov
+    XV301{{"XV-301<br/>Remote shutoff valve"}}:::valve
+    ZS301(("ZS-301")):::inst
+    TEED(("tee")):::tap
+    HV304{{"HV-304<br/>Delivery block valve"}}:::valve
+    HV305{{"HV-305<br/>Delivery bleed, normally closed"}}:::valve
+    TP301["TP-301<br/>Test and calibration connection"]:::eq
+    PSHH301(("PSHH-301")):::inst
+  end
+
+  subgraph USERB["DOWNSTREAM BOUNDARY - user scope, not designed here"]
+    DI301["DI-301<br/>Delivery interface<br/>SB-304"]:::eq
+  end
+
+  subgraph VENTB["VENT / DISCHARGE BOUNDARY - location unresolved (UI-11, UI-12)"]
+    BLM(("L-306 bleed manifold")):::tap
+    RO301["RO-301<br/>Bleed restrictor"]:::eq
+    VH301["VH-301<br/>Vent header"]:::eq
+    VS301["VS-301<br/>Vent stack (discharge)<br/>SB-305: ambient"]:::eq
+  end
+
+  subgraph CTLB["CONTROL AND SAFETY BOUNDARY - not designed here"]
+    CS301["CS-301<br/>Control and data acquisition"]:::ctl
+    ES301["ES-301<br/>Independent trip and interlock logic"]:::ctl
+  end
+
+  subgraph AREAB["AREA CONTROLS - UI-12"]
+    VNT301["VNT-301<br/>Area ventilation"]:::eq
+    AT301(("AT-301")):::inst
+  end
+
+  SRC301 -->|"L-301"| HV301
+  HV301 -->|"L-302"| TEEA
+  TEEA -->|"L-302"| HV302
+  TEEA --- HV303
+  HV302 -->|"L-303"| FLT301
+  FLT301 -->|"L-303"| PCV301
+  PCV301 -->|"L-304"| TEEB
+  TEEB -->|"L-304"| PCV302
+  TEEB -.- PSV301
+  TEEB --- HV306
+  PCV302 -->|"L-305"| TEEC
+  TEEC -->|"L-305"| FE301
+  TEEC -.- PSV302
+  FE301 --> FCV301
+  FCV301 --> CV301
+  CV301 --> XV301
+  XV301 -->|"L-305"| TEED
+  TEED --> HV304
+  TEED --- HV305
+  TEED --- TP301
+  HV304 -->|"L-305"| DI301
+
+  HV303 -->|"L-306"| BLM
+  HV306 -->|"L-306"| BLM
+  HV305 -->|"L-306"| BLM
+  BLM -->|"L-306"| RO301
+  RO301 -->|"L-306"| VH301
+  PSV301 -->|"L-307"| VH301
+  PSV302 -->|"L-308"| VH301
+  VH301 -->|"L-309"| VS301
+
+  SRC301 --- PT301
+  SRC301 --- TT301
+  FLT301 --- PDT301
+  FLT301 --- PI301
+  PCV301 --- PT302
+  PCV301 --- PI302
+  PCV302 --- PT303
+  PCV302 --- PI303
+  PCV302 --- TT302
+  FE301 --- FT301
+  FT301 -.->|"signal"| FIC301
+  FIC301 -.->|"controls"| FCV301
+  XV301 --- ZS301
+  DI301 --- PSHH301
+  PSHH301 -.->|"trip input"| ES301
+  ES301 -.->|"closes"| XV301
+  VNT301 --- AT301
+  AT301 -.->|"alarm"| CS301
+  CS301 --- FIC301
+
+  STATES["OPERATING STATES: H0 isolated and depressurized · H1 pressurize · H2 normal delivery · H3 hold pressurized · H4 controlled depressurization · H5 emergency shutdown<br/>Normal state H2: HV-301, HV-302, HV-304, XV-301 open; HV-303, HV-305, HV-306 closed. Full valve-position table: HIGH_PRESSURE_SYSTEM.md s.6."]:::note
+  NOTE["Flow direction: source to delivery interface; relief and bleed discharge to the vent header.<br/>Regulators are not overpressure protection. Relief set pressures, capacities and the check-valve decision are unresolved (UI-07, UI-09)."]:::note
+  BAN ~~~ SRC301
+  DI301 ~~~ STATES
+  STATES ~~~ NOTE
