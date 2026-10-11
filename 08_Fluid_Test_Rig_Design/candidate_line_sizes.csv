@@ -1,0 +1,5 @@
+line_bore_mm,line_area_mm2,v_cold_m_s,re_cold,v_hot_m_s,re_hot,orifice_beta,orifice_signal_Pa,orifice_iso5167_2_scope,friction_Pa,fittings_Pa,filter_Pa,flow_element_Pa,isolation_valve_Pa,adapters_Pa,test_article_Pa,discharge_Pa,total_low_Pa,total_nom_Pa,total_high_Pa,ta_share_of_nom_pct,unsupported_data_share_pct,FTP_upper_warm_high_Pa,screening_pass,notes
+25,490.9,15.040,23966,18.496,20526,0.700,1169.9,NO,1030.82,413.43,100.00,603.25,13.31,214.96,363.48,163.65,1527.38,2902.90,5161.58,12.5,40.9,6287.72,NO,bore below ISO 5167-2 minimum of 50 mm; orifice not covered by the standard; beta clamped at upper limit; signal above target
+40,1256.6,5.875,14979,7.225,12828,0.631,300.0,NO,109.66,63.08,100.00,179.32,2.03,451.27,363.48,24.97,724.54,1293.82,1981.62,28.1,36.0,2357.83,NO,bore below ISO 5167-2 minimum of 50 mm; orifice not covered by the standard
+50,1963.5,3.760,11983,4.624,10263,0.517,300.0,yes,38.83,25.84,100.00,215.36,0.83,523.07,363.48,10.23,669.25,1277.63,1857.27,28.4,37.5,2205.12,yes,
+80,5026.5,1.469,7489,1.806,6414,0.328,300.0,yes,4.58,3.94,100.00,263.43,0.13,608.15,363.48,1.56,655.51,1345.27,1881.24,27.0,38.6,2234.60,yes,

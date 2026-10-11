@@ -1,0 +1,26 @@
+quantity,value,unit,class,basis
+"TA-101 tube mass (Inconel 718, no flanges/heater/insulation)",4.631,kg,DERIVED,rho_s * pi/4 (Do^2 - Di^2) * L; rho_s = M008
+TA-101 tube weight,45.42,N,DERIVED,mass * 9.80665
+"Free axial growth, existing Mechanical LC1",1.8409,mm,EXISTING_RESULT,M085
+"Free axial growth, simple estimate alpha*L*(Tmean-Tref)",1.8562,mm,DERIVED,"alpha 13.72e-6 1/K, Tmean 525.48 K (CFD volume mean), Tref 300 K"
+"Difference, estimate vs LC1",0.83,%,DERIVED,cross-check
+Largest LC1 maximum deformation in the existing parametric envelope,2.0680,mm,EXISTING_RESULT,"M155 (Q03_HIGH); lower bound for joint travel, margin to be set at detail design"
+"Full-restraint axial force, existing LC2 end reaction",548936.6,N,EXISTING_RESULT,"M091; bounding case, NOT a rig configuration"
+"Full-restraint axial force, simple estimate E*A*alpha*dT",548431.1,N,DERIVED,"E = 188.1 GPa at 555 K, A = pi/4 (Do^2-Di^2)"
+"Difference, estimate vs LC2",-0.09,%,DERIVED,cross-check
+Tube axial stiffness E*A/L,2.955e+08,N/m,DERIVED,E*A/L
+Adiabatic heating rate of the bare tube if flow is lost with heat input on,0.2706,K/s,DERIVED,Q_cfd/(m*cp_s); ignores heater/insulation mass and losses (AS-18)
+Time for +100 K at that rate,370,s,DERIVED,100/(rate); bare tube only
+"First bending frequency, cantilever bound",83.3,Hz,DERIVED,"Euler-Bernoulli, bare tube (AS-18)"
+"First bending frequency, pinned-pinned bound",233.8,Hz,DERIVED,"Euler-Bernoulli, bare tube (AS-18)"
+"First bending frequency, fixed-fixed bound",530.0,Hz,DERIVED,"Euler-Bernoulli, bare tube (AS-18)"
+"Test-article inlet static gauge pressure, design case",411.31,Pa,DERIVED,stream_table.csv station S10; negligible against the thermal stresses of M090
+"Existing peak outer-wall temperature, baseline",562.58,K,EXISTING_RESULT,M039
+"Existing peak outer-wall temperature, highest of the studied cases",591.13,K,EXISTING_RESULT,M154 (Q03_HIGH)
+Existing outlet bulk air temperature,368.93,K,EXISTING_RESULT,M037
+"Blower heating of the air, low-efficiency bound",5.39,K,ASSUMED,all shaft power to the air; eta 0.20 (AS-14)
+"Blower heating of the air, high-efficiency bound",2.15,K,ASSUMED,all shaft power to the air; eta 0.50 (AS-14)
+Illustrative end force at placeholder joint stiffness 10 N/mm,18.6,N,ASSUMED,"F = k_series * free growth; stiffness is a placeholder, vendor data required"
+Illustrative end force at placeholder joint stiffness 100 N/mm,185.6,N,ASSUMED,"F = k_series * free growth; stiffness is a placeholder, vendor data required"
+Illustrative end force at placeholder joint stiffness 1000 N/mm,1849.9,N,ASSUMED,"F = k_series * free growth; stiffness is a placeholder, vendor data required"
+Illustrative end force at placeholder joint stiffness 10000 N/mm,17953.9,N,ASSUMED,"F = k_series * free growth; stiffness is a placeholder, vendor data required"
