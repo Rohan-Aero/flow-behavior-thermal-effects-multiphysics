@@ -1,0 +1,15 @@
+station,tag,line_id,description,T_K,mdot_g_s,rho_kg_m3,V_m_s,P0_gauge_Pa,p_static_gauge_Pa
+S1,INL-101,L-101,Ambient air at intake,300.00,8.686,1.1766,0.000,0.00,0.00
+S2,FLT-101,L-102,Start of L-102: after filter and line entrance,300.00,8.686,1.1766,3.760,-104.16,-112.48
+S3,BLW-101,L-102,End of L-102: blower suction flange,300.00,8.686,1.1766,3.760,-111.80,-120.11
+S4,BLW-101,L-103,Start of L-103: blower discharge flange,300.00,8.686,1.1766,3.760,1165.83,1157.52
+S5,HV-101,L-103,"End of L-103: after HV-101, start of the metering run",300.00,8.686,1.1766,3.760,1147.23,1138.91
+S6,FE-101,L-104,Flow element upstream (after 20 D straight run),300.00,8.686,1.1766,3.760,1142.09,1133.77
+S7,FE-101,L-104,Flow element downstream (after permanent loss),300.00,8.686,1.1766,3.760,926.73,918.41
+S8,ADP-101,L-104,End of L-104: contraction adapter inlet,300.00,8.686,1.1766,3.760,919.09,910.77
+S9,ADP-101,L-105,Start of L-105: after contraction,300.00,8.686,1.1766,23.500,782.64,457.75
+S10,TA-101,L-105,End of L-105: test-article inlet plane IF-1,300.00,8.686,1.1766,23.500,736.20,411.31
+S11,TA-101,L-106,Start of L-106: test-article outlet plane IF-2,368.93,8.686,0.9568,28.900,372.72,-26.82
+S12,ADP-102,L-106,End of L-106: before expansion,368.93,8.686,0.9568,28.900,314.45,-85.08
+S13,ADP-102,L-107,Start of L-107: after expansion,368.93,8.686,0.9568,4.624,32.54,22.31
+S14,STK-101,L-107,"End of L-107: discharge exit plane, before exit loss",368.93,8.686,0.9568,4.624,10.23,0.00

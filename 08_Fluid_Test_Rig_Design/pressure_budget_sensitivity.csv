@@ -1,0 +1,28 @@
+kind,item,tag,description,dp_nom_Pa,delta_low_Pa,delta_high_Pa,delta_high_pct_of_total,data_class
+OAT,B17,ADP-102,"Expansion, 20 mm bore to line bore (outside CFD)",281.91,-192.58,28.19,2.21,CALC
+OAT,B10,FE-101,"Orifice-type flow element, permanent pressure loss (signal 300 Pa at this flow)",215.36,-165.36,53.84,4.21,ASSUMED_GENERIC
+OAT,B02,FLT-101,"Intake filter, clean-to-loaded allocation (linear in flow)",100.00,-50.00,150.00,11.74,ALLOCATION
+OAT,B15,TA-101,"Heated duct, CFD static drop converted to total-pressure loss",363.48,-54.52,140.37,10.99,CFD_DERIVED
+OAT,B13,ADP-101,"Contraction, line bore to 20 mm test-article bore (outside CFD)",136.45,-79.95,34.11,2.67,ASSUMED_GENERIC
+OAT,B16,L-106,Unheated 20 mm outlet instrument spool (outside CFD),58.26,-21.47,52.89,4.14,CALC
+OAT,B14,L-105,Unheated 20 mm inlet instrument spool (outside CFD),46.44,-17.57,43.10,3.37,CALC
+OAT,B20,L-107,"90-degree bends x2, discharge line",6.14,-3.07,12.27,0.96,ASSUMED_GENERIC
+OAT,B07,L-103,"90-degree bends x2, blower discharge",4.99,-2.50,9.98,0.78,ASSUMED_GENERIC
+OAT,B18,L-107,"Straight pipe, mixing section and discharge line (hot air)",13.11,-3.68,8.35,0.65,CALC
+OAT,B19,FC-102,"Flexible connection (thermal-growth accommodation), hot",3.07,-2.05,7.16,0.56,ASSUMED_GENERIC
+OAT,B06,L-103,"Straight pipe, blower discharge to metering run",10.29,-2.93,6.69,0.52,CALC
+OAT,B05,FC-101,Flexible connector at blower discharge,2.50,-1.66,5.82,0.46,ASSUMED_GENERIC
+OAT,B04,L-102,"90-degree bends x1, filter to blower suction",2.50,-1.25,4.99,0.39,ASSUMED_GENERIC
+OAT,B12,L-104,"90-degree bends x1, to test-article adapter",2.50,-1.25,4.99,0.39,ASSUMED_GENERIC
+OAT,B01,FLT-101,Line entrance from filter plenum to blower suction line,4.16,-3.74,4.16,0.33,ASSUMED_GENERIC
+OAT,B03,L-102,"Straight pipe, filter to blower suction",5.14,-1.46,3.35,0.26,CALC
+OAT,B09,L-104,"Metering run, 20 D straight upstream of FE-101",5.14,-1.46,3.35,0.26,CALC
+OAT,B11,L-104,Straight pipe: 10 D downstream of FE-101 plus route to the test-article adapter,5.14,-1.46,3.35,0.26,CALC
+OAT,B08,HV-101,"Isolation valve, full-bore, fully open",0.83,-0.42,1.66,0.13,ASSUMED_GENERIC
+OAT,B21,STK-101,Free-jet discharge to atmosphere (velocity pressure dumped),10.23,0.00,1.02,0.08,CALC
+GLOBAL,x0.50,,All ASSUMED_GENERIC and ALLOCATION rows scaled by 0.50,1277.63,,-239.24,-18.73,
+GLOBAL,x0.75,,All ASSUMED_GENERIC and ALLOCATION rows scaled by 0.75,1277.63,,-119.62,-9.36,
+GLOBAL,x1.00,,All ASSUMED_GENERIC and ALLOCATION rows scaled by 1.00,1277.63,,0.00,0.00,
+GLOBAL,x1.50,,All ASSUMED_GENERIC and ALLOCATION rows scaled by 1.50,1277.63,,239.24,18.73,
+GLOBAL,x2.00,,All ASSUMED_GENERIC and ALLOCATION rows scaled by 2.00,1277.63,,478.48,37.45,
+GLOBAL,x3.00,,All ASSUMED_GENERIC and ALLOCATION rows scaled by 3.00,1277.63,,956.96,74.90,

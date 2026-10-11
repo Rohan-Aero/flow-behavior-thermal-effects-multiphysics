@@ -1,0 +1,129 @@
+---
+title: "P&ID - Heated-duct air test rig - CONCEPTUAL - NOT APPROVED FOR CONSTRUCTION"
+---
+%% Piping and instrumentation diagram, conceptual. No valve sizes, ratings, materials or models are specified.
+%% Tags: equipment_schedule.csv, instrument_index.csv. Lines: line_list.csv (bores, lengths and ratings are there, mostly TBD).
+%% Every instrument without a drawn signal line reports to CS-101 (data acquisition).
+%% Render: mmdc -c mermaid-config.json -i PID.mmd -o PID.svg   (see README.md)
+flowchart TB
+  classDef eq fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef valve fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111
+  classDef inst fill:#ffffff,stroke:#111111,stroke-width:1px,color:#111111
+  classDef ctl fill:#dfe8f3,stroke:#111111,stroke-width:1px,color:#111111
+  classDef prov fill:#ffffff,stroke:#b00020,stroke-width:2px,stroke-dasharray:6 4,color:#111111
+  classDef sup fill:#eeeeee,stroke:#555555,stroke-width:1px,color:#111111
+  classDef tap fill:#111111,stroke:#111111,color:#ffffff
+  classDef note fill:#ffffff,stroke:#777777,stroke-width:1px,stroke-dasharray:3 3,color:#111111
+
+  %% main process line
+  INL101["INL-101<br/>Ambient air intake"]:::eq
+  FLT101["FLT-101<br/>Intake filter"]:::eq
+  BLW101(["BLW-101<br/>Blower"]):::eq
+  FC101["FC-101<br/>Flexible connector"]:::eq
+  TEE3(("tee")):::tap
+  HV101{{"HV-101<br/>Isolation valve<br/>locked open"}}:::valve
+  FE101(["FE-101<br/>Flow element"]):::eq
+  ADP101["ADP-101<br/>Contraction adapter"]:::eq
+
+  IF1["IF-1<br/>Inlet interface plane"]:::eq
+  IF2["IF-2<br/>Outlet interface plane"]:::eq
+
+  subgraph HTR101["HTR-101 heater subsystem boundary: separate design, not designed here"]
+    TA101["TA-101<br/>Heated duct test article"]:::eq
+    TE111(("TE-111")):::inst
+    TE112(("TE-112")):::inst
+    TE113(("TE-113")):::inst
+    HPWR["Heater power<br/>and controls"]:::ctl
+    TE120(("TE-120")):::inst
+    TSHH120(("TSHH-120")):::inst
+    JT120(("JT-120")):::inst
+  end
+
+  ADP102["ADP-102<br/>Expansion adapter"]:::eq
+  FC102["FC-102<br/>Flexible connection<br/>thermal growth"]:::eq
+  STK101["STK-101<br/>Discharge to atmosphere<br/>no valve permitted"]:::eq
+
+  INL101 -->|"L-101"| FLT101
+  FLT101 -->|"L-102"| BLW101
+  BLW101 -->|"L-103"| FC101
+  FC101 -->|"L-103"| TEE3
+  TEE3 -->|"L-103"| HV101
+  HV101 -->|"L-104"| FE101
+  FE101 -->|"L-104"| ADP101
+  ADP101 -->|"L-105"| IF1
+  IF1 --> TA101
+  TA101 --> IF2
+  IF2 -->|"L-106"| ADP102
+  ADP102 -->|"L-107"| FC102
+  FC102 -->|"L-107"| STK101
+
+  %% provisional relief branch
+  PSV101["PSV-101<br/>Relief device<br/>PROVISIONAL"]:::prov
+  VENT["Vent to a safe location"]:::note
+  TEE3 -.->|"L-108"| PSV101
+  PSV101 -.-> VENT
+
+  %% supports
+  SUP101["SUP-101<br/>Fixed support"]:::sup
+  SUP102["SUP-102<br/>Guided sliding support"]:::sup
+  IF1 --- SUP101
+  IF2 --- SUP102
+
+  %% PDT-102 and PDSL-102 measure across TA-101 (taps at IF-1 and IF-2)
+  %% instruments, drawn outward from what they measure
+  INL101 --- PT100(("PT-100")):::inst
+  INL101 --- TT100(("TT-100")):::inst
+  FLT101 --- PDT101(("PDT-101")):::inst
+  BLW101 --- PT101(("PT-101")):::inst
+  HV101 --- ZSO101(("ZSO-101")):::inst
+  FE101 --- FT101(("FT-101")):::inst
+  FE101 --- PT102(("PT-102")):::inst
+  FE101 --- TT101(("TT-101")):::inst
+  IF1 --- PT103(("PT-103")):::inst
+  IF1 --- TT102(("TT-102")):::inst
+  TA101 --- PDT102(("PDT-102")):::inst
+  TA101 --- PDSL102(("PDSL-102")):::inst
+  TA101 --- TE111
+  TA101 --- TE112
+  TA101 --- TE113
+  TA101 --- TE120
+  TE120 -.-> TSHH120
+  HPWR --- JT120
+  FC102 --- TE103(("TE-103")):::inst
+  TE103 --- TT103(("TT-103")):::inst
+
+  %% control and safety
+  VFD101["VFD-101<br/>Variable-speed drive"]:::ctl
+  FIC101(("FIC-101")):::inst
+  CS101["CS-101<br/>Control and monitoring"]:::ctl
+  ES101["ES-101<br/>Hardwired safety logic"]:::ctl
+  HS101(("HS-101<br/>E-stop")):::inst
+
+  FT101 -.-> FIC101
+  PT102 -.-> FIC101
+  TT101 -.-> FIC101
+  FIC101 -.-> CS101
+  CS101 -.->|"setpoint"| VFD101
+  VFD101 -.->|"speed"| BLW101
+
+  PT101 ==>|"PAHH"| ES101
+  ZSO101 ==>|"open permissive"| ES101
+  PDSL102 ==>|"low dp"| ES101
+  TSHH120 ==>|"over-temperature"| ES101
+  HS101 ==> ES101
+  ES101 ==>|"stop"| VFD101
+  ES101 ==>|"heater power off"| HPWR
+
+  NOTE["CONCEPTUAL, NOT APPROVED FOR CONSTRUCTION.<br/>No valve size, rating, material or model is specified.<br/>Flow is set by blower speed: no throttling valve in the line.<br/>No valve or restriction in the discharge path (L-107).<br/>PSV-101 sits upstream of HV-101 and is kept only if the blower shut-off pressure requires it."]:::note
+
+  %% legend (a column of swatches, then the line types)
+  LG0["LEGEND"]:::note
+  LG1["Equipment"]:::eq
+  LG3{{"Valve"}}:::valve
+  LG4(("Instr.")):::inst
+  LG5["Controller or logic"]:::ctl
+  LG2["Provisional item"]:::prov
+  LG6["Support"]:::sup
+  LG7["Process line L-nnn: solid arrow<br/>Instrument connection: thin line<br/>Electrical signal: dotted arrow<br/>Hardwired trip or interlock: thick arrow<br/>Dashed amber box: separate subsystem"]:::note
+  LG0 ~~~ LG1 ~~~ LG3 ~~~ LG4 ~~~ LG5 ~~~ LG2 ~~~ LG6 ~~~ LG7
+  style HTR101 fill:#fff7e0,stroke:#8a6d00,stroke-width:2px,stroke-dasharray:6 4
