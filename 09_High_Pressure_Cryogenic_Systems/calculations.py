@@ -231,12 +231,7 @@ def build_register(consts, props):
     add("AS-13-design", "CRYO", "assumption", "Annulus gas pressure, design vacuum", 1e-3, "Pa", "ASSUMED", "AS-13", 1e-6, 10, "AS-13", "placeholder; the vacuum level of a real jacket is a vendor figure")
     add("AS-13-degraded", "CRYO", "assumption", "Annulus gas pressure, degraded vacuum", 1.0, "Pa", "ASSUMED", "AS-13", 1e-3, 1e3, "AS-13")
     add("AS-13-lost", "CRYO", "assumption", "Annulus gas pressure, vacuum lost", 101325.0, "Pa", "ASSUMED", "AS-13", 1e4, 2e5, "AS-13")
-    for lab, v in zip(("low", "nom", "high"), (1e-5, 2e-5, 1e-4)):
-        add(f"AS-14-AL-{lab}", "CRYO", "assumption", f"Cross-section over length of one stainless support path, {lab}", v, "m", "ASSUMED", "AS-14", 1e-7, 1e-2, "AS-14")
-    for lab, v in zip(("low", "nom", "high"), (0.5, 1.0, 2.0)):
-        add(f"AS-14-n-{lab}", "CRYO", "assumption", f"Number of support paths per metre of line, {lab}", v, "1/m", "ASSUMED", "AS-14", 0, 10, "AS-14")
     add("AS-15-hot-high", "CRYO", "assumption", "Warm-side (jacket) temperature, high case", 313.0, "K", "ASSUMED", "AS-15", 300, 340, "AS-15", "same warm-day bound as 08_Fluid_Test_Rig_Design AS-13")
-    add("AS-16", "CRYO", "assumption", "Density of 304 stainless steel", 8000.0, "kg/m3", "ASSUMED", "AS-16", 7500, 8500, "AS-16", "typical handbook magnitude, not verified")
     # ---- ILLUSTRATIVE study cases (IL-nn): none is a requirement ----
     A = math.pi * P("EX-04") ** 2 / 4.0
     rho_air = P("EX-02") / (P("EX-05") * P("EX-01"))
@@ -293,6 +288,8 @@ UNRESOLVED_INPUTS_SHORT = [
     ("UI-31", "CRYO", "Cryogenic-qualified instrument ranges and accuracy"),
     ("UI-32", "CRYO", "Measured emissivity and MLI performance"),
     ("UI-33", "CRYO", "Two-phase pressure drop, flow regime and hydraulic-transient data"),
+    ("UI-34", "CRYO", "Thermal expansion and elastic modulus of the line material, 77 K to 300 K, from a source with verified reuse terms"),
+    ("UI-35", "CRYO", "Thermal conductivity and specific heat of the line and support materials, 77 K to 300 K, from a source with verified reuse terms"),
 ]
 
 
@@ -546,21 +543,10 @@ def sensitivity_rows(hp):
 # ======================================================================================
 # 4. CRYOGENIC LN2: heat leak, boil-off, cooldown, contraction, trapped liquid
 # ======================================================================================
-def log_poly(coefs, T):
-    x = math.log10(T)
-    return 10.0 ** sum(c * x ** n for n, c in enumerate(coefs))
-
-
 class Cryo:
     def __init__(self, props, consts):
         self.props = props
         self.cv = lambda i: float(consts[i]["value"])
-        self.k_ss_c = [self.cv(f"VC-{n}") for n in range(10, 19)]
-        self.cp_ss_c = [self.cv(f"VC-{n}") for n in range(20, 29)]
-        self.E_ss_c = [self.cv(f"VC-{n}") for n in range(30, 35)]
-        self.ex_ss = ([self.cv(f"VC-{n}") for n in range(40, 45)], self.cv("VC-45"), self.cv("VC-46"))
-        self.ex_al = ([self.cv(f"VC-{n}") for n in range(50, 55)], self.cv("VC-55"), self.cv("VC-56"))
-        self.E_al_c = [self.cv(f"VC-{n}") for n in range(60, 65)]
         self.sigma = P("VC-03")
         self.Ru = P("VC-01")
         self.M = P("VC-02") / 1000.0
@@ -572,41 +558,6 @@ class Cryo:
         self.liq, self.vap = props.sat("0")
         self.hfg = (self.vap["h_kJ_kg"] - self.liq["h_kJ_kg"]) * 1e3          # J/kg
         self.kv = props.k_vapor_1atm()
-
-    # material fits ------------------------------------------------------------------
-    def k_ss(self, T):
-        return log_poly(self.k_ss_c, T)
-
-    def cp_ss(self, T):
-        return log_poly(self.cp_ss_c, T)
-
-    @staticmethod
-    def poly(c, T):
-        return sum(ci * T ** n for n, ci in enumerate(c))
-
-    def strain_y(self, mat, T):
-        """(L - L293)/L293 x 1e5 from the NIST fit."""
-        c, tlow, f = self.ex_ss if mat == "SS304" else self.ex_al
-        return f if T < tlow else self.poly(c, T)
-
-    def dy_dT(self, mat, T):
-        c, tlow, f = self.ex_ss if mat == "SS304" else self.ex_al
-        if T < tlow:
-            return 0.0
-        return sum(n * ci * T ** (n - 1) for n, ci in enumerate(c) if n)
-
-    def E_GPa(self, mat, T):
-        return self.poly(self.E_ss_c if mat == "SS304" else self.E_al_c, T)
-
-    def contraction(self, mat, T1, T2):
-        """Fractional length change (L(T2) - L(T1)) / L(T1) between two temperatures."""
-        y1, y2 = self.strain_y(mat, T1) * 1e-5, self.strain_y(mat, T2) * 1e-5
-        return (y2 - y1) / (1.0 + y1)
-
-    def restrained_stress_MPa(self, mat, T_hi, T_lo):
-        """Thermal stress (MPa, tensile positive) of a fully restrained bar cooled from T_hi to T_lo: integral of E(T) alpha(T) dT."""
-        f = lambda T: self.E_GPa(mat, T) * 1e3 * self.dy_dT(mat, T) * 1e-5
-        return simpson(f, T_lo, T_hi)
 
     # heat transfer ------------------------------------------------------------------
     def rad_bare(self, Th, Tc, e1, e2):
@@ -638,9 +589,6 @@ class Cryo:
         qfm, qc = self.gas_fm(Th, Tc, p, alpha), self.gas_cont(Th, Tc)
         return 1.0 / (1.0 / qfm + 1.0 / qc)
 
-    def supports(self, Th, AL, n):
-        return n * AL * simpson(self.k_ss, self.Tc, min(Th, 300.0))
-
     def rayleigh_annulus(self, Th):
         """Rayleigh number on the annulus gap at the mean gas temperature, vapour properties at 1 atm."""
         Tm = 0.5 * (Th + self.Tc)
@@ -661,8 +609,7 @@ class Cryo:
 
     def params(self, lab):
         Th = 300.0 if lab != "high" else P("AS-15-hot-high")
-        return dict(Th=Th, e_mli=P(f"AS-10-{lab}"), e_bare=P(f"AS-11-{lab}"), alpha=P(f"AS-12-{lab}"),
-                    AL=P(f"AS-14-AL-{lab}"), n=P(f"AS-14-n-{lab}"))
+        return dict(Th=Th, e_mli=P(f"AS-10-{lab}"), e_bare=P(f"AS-11-{lab}"), alpha=P(f"AS-12-{lab}"))
 
     def leak(self, scen, par, override=None):
         sid, _, rad, vac = next(s for s in self.SCEN if s[0] == scen)
@@ -678,8 +625,7 @@ class Cryo:
             q_gas = self.gas_bridge(Th, self.Tc, p, q["alpha"])
         else:
             q_gas = self.gas_cont(Th, self.Tc)
-        q_sup = self.supports(Th, q["AL"], q["n"])
-        return q_rad, q_gas, q_sup
+        return q_rad, q_gas          # support conduction is UNAVAILABLE: no verified conductivity data (UI-24, UI-35)
 
     def boil(self, Q):
         """Boil-off for a heat load Q (W): mass flow, liquid volume rate, vapour volume flows."""
@@ -689,31 +635,34 @@ class Cryo:
                     vap_L_s_300K=m / rho_amb * 1e3)
 
 
+TOTAL_BASIS = "radiation + gas conduction only; support conduction UNAVAILABLE (UI-24, UI-35), so the total is a LOWER BOUND"
+
+
 def heat_leak_rows(cy):
     rows = []
     for sid, desc, rad, vac in cy.SCEN:
         for lab in ("low", "nom", "high"):
             par = cy.params(lab)
-            qr, qg, qs = cy.leak(sid, par)
-            Q = qr + qg + qs
+            qr, qg = cy.leak(sid, par)
+            Q = qr + qg
             b = cy.boil(Q)
             Lref = float(P("IL-15").split(";")[1])
             rows.append(dict(scenario=sid, description=desc, case=lab, T_hot_K=par["Th"], T_cold_K=cy.Tc, annulus_p_Pa=P(f"AS-13-{vac}"),
-                             Q_rad_W_m=qr, Q_gas_W_m=qg, Q_support_W_m=qs, Q_total_W_m=Q,
-                             share_rad_pct=100 * qr / Q, share_gas_pct=100 * qg / Q, share_support_pct=100 * qs / Q,
+                             Q_rad_W_m=qr, Q_gas_W_m=qg, Q_support_W_m=None, Q_total_W_m=Q,
+                             share_rad_pct=100 * qr / Q, share_gas_pct=100 * qg / Q, share_support_pct=None,
                              boil_g_s_m=b["g_s"] / 1.0, boil_L_h_m=b["L_h"], Q_ref_length_W=Q * Lref, boil_ref_length_L_h=b["L_h"] * Lref,
                              ref_length_m=Lref, Ra_gap=cy.rayleigh_annulus(par["Th"]) if vac == "lost" else None,
                              confidence={"design": "MEDIUM-LOW (placeholders)", "degraded": "LOW (transitional regime, bridged)", "lost": "LOWER BOUND (convection ignored)"}[vac],
-                             data_class="CALCULATED from ASSUMED inputs",
-                             assumption_ids="AS-10;AS-12;AS-13;AS-14;AS-15;IL-12;IL-14" if rad == "mli" else "AS-11;AS-12;AS-13;AS-14;AS-15;IL-12;IL-14"))
+                             total_basis=TOTAL_BASIS, data_class="CALCULATED from ASSUMED inputs",
+                             assumption_ids="AS-10;AS-12;AS-13;AS-15;IL-12;IL-14" if rad == "mli" else "AS-11;AS-12;AS-13;AS-15;IL-12;IL-14"))
     rows.append(dict(scenario="VESSEL", description="Source vessel evaporation (normal evaporation rate)", case="-", T_hot_K=None, T_cold_K=None, annulus_p_Pa=None,
                      Q_rad_W_m=None, Q_gas_W_m=None, Q_support_W_m=None, Q_total_W_m=None, share_rad_pct=None, share_gas_pct=None, share_support_pct=None,
                      boil_g_s_m=None, boil_L_h_m=None, Q_ref_length_W=None, boil_ref_length_L_h=None, ref_length_m=None, Ra_gap=None,
-                     confidence="NOT CALCULATED", data_class="UNRESOLVED", assumption_ids="UI-20;UI-23"))
+                     total_basis="", confidence="NOT CALCULATED", data_class="UNRESOLVED", assumption_ids="UI-20;UI-23"))
     rows.append(dict(scenario="ENDS", description="Terminations, valves, flanges and bayonet joints", case="-", T_hot_K=None, T_cold_K=None, annulus_p_Pa=None,
                      Q_rad_W_m=None, Q_gas_W_m=None, Q_support_W_m=None, Q_total_W_m=None, share_rad_pct=None, share_gas_pct=None, share_support_pct=None,
                      boil_g_s_m=None, boil_L_h_m=None, Q_ref_length_W=None, boil_ref_length_L_h=None, ref_length_m=None, Ra_gap=None,
-                     confidence="NOT CALCULATED", data_class="UNRESOLVED", assumption_ids="UI-21;UI-23;UI-24"))
+                     total_basis="", confidence="NOT CALCULATED", data_class="UNRESOLVED", assumption_ids="UI-21;UI-23;UI-24"))
     return rows
 
 
@@ -721,7 +670,7 @@ def uncertainty_rows(cy):
     """One-at-a-time sensitivity of the S1 and S2 totals: each parameter at its low and high value, others nominal."""
     rows = []
     nom = cy.params("nom")
-    for sid, keys in (("S1", ("e_mli", "alpha", "AL", "n", "Th")), ("S2", ("e_bare", "alpha", "AL", "n", "Th"))):
+    for sid, keys in (("S1", ("e_mli", "alpha", "Th")), ("S2", ("e_bare", "alpha", "Th"))):
         base = sum(cy.leak(sid, nom))
         for key in keys:
             vals = {}
@@ -735,36 +684,38 @@ def uncertainty_rows(cy):
 
 
 def cooldown_rows(cy):
+    """Liquid nitrogen needed per megajoule of heat removed. The heat to remove from the metal is UNAVAILABLE (no verified material data)."""
+    rho_l = cy.liq["rho_kg_m3"]
+    dh_full = (cy.props.h_gas(300.0, 0) - cy.liq["h_kJ_kg"]) * 1e3        # J per kg LN2 if the vapour leaves at 300 K
     rows = []
-    Am = math.pi / 4.0 * (cy.Do ** 2 - cy.Di_bore ** 2)
-    m_per_m = P("AS-16") * Am
-    dh_metal = simpson(cy.cp_ss, cy.Tc, 300.0)                     # J/kg, 300 K down to the boiling temperature
-    rho_amb_h = cy.props.h_gas(300.0, 0)                           # kJ/kg gas at 300 K, 1 atm
-    dh_full = (rho_amb_h - cy.liq["h_kJ_kg"]) * 1e3                # J per kg LN2 if the vapour leaves at 300 K
-    for L in (1.0,) + tuple(float(x) for x in P("IL-15").split(";")):
-        E = m_per_m * L * dh_metal
-        rows.append(dict(length_m=L, metal_mass_kg=m_per_m * L, metal_dh_kJ_kg=dh_metal / 1e3, energy_to_remove_kJ=E / 1e3,
-                         LN2_kg_latent_only=E / cy.hfg, LN2_L_latent_only=E / cy.hfg / cy.liq["rho_kg_m3"] * 1e3,
-                         LN2_kg_full_sensible=E / dh_full, LN2_L_full_sensible=E / dh_full / cy.liq["rho_kg_m3"] * 1e3,
-                         hfg_kJ_kg=cy.hfg / 1e3, dh_full_kJ_kg=dh_full / 1e3, data_class="CALCULATED from VERIFIED (cp fit) and ASSUMED (density, geometry)",
-                         scope="inner line metal only; valves, flanges, supports, receiver and jacket thermal masses excluded (UI-28)",
-                         assumption_ids="AS-16;IL-12;IL-13"))
+    for basis, h, note in (("LATENT_ONLY", cy.hfg, "only the latent heat is used: the largest liquid use per megajoule"),
+                           ("VAPOUR_LEAVES_AT_300K", dh_full, "the vapour also warms to 300 K: the smallest liquid use per megajoule")):
+        rows.append(dict(basis=basis, heat_absorbed_per_kg_LN2_kJ=h / 1e3, LN2_kg_per_MJ=1e6 / h, LN2_L_per_MJ=1e6 / h / rho_l * 1e3, status="CALCULATED",
+                         data_class="CALCULATED from VERIFIED", note=note, assumption_ids=""))
+    rows.append(dict(basis="METAL_HEAT_TO_REMOVE", heat_absorbed_per_kg_LN2_kJ=None, LN2_kg_per_MJ=None, LN2_L_per_MJ=None, status="UNAVAILABLE",
+                     data_class="UNRESOLVED", note="needs the specific heat and mass of the line, valves, flanges, supports and receiver (UI-21, UI-28, UI-35); the verified material data were removed from this release",
+                     assumption_ids="UI-21;UI-28;UI-35"))
     return rows
 
 
-def contraction_rows(cy):
-    rows = []
-    Am = math.pi / 4.0 * (cy.Do ** 2 - cy.Di_bore ** 2)
-    for mat in ("SS304", "AL6061T6"):
-        eps = -cy.contraction(mat, 300.0, cy.Tc)          # positive = shortening on cooling
-        sig = cy.restrained_stress_MPa(mat, 293.0, cy.Tc)
-        for L in (float(x) for x in P("IL-15").split(";")):
-            rows.append(dict(material=mat, install_T_K=300.0, cold_T_K=cy.Tc, length_m=L, contraction_strain_pct=eps * 100.0, dL_mm=eps * L * 1e3,
-                             restrained_stress_MPa=sig, restrained_force_kN=sig * Am * 1e3, section_area_mm2=Am * 1e6,
-                             E_293K_GPa=cy.E_GPa(mat, 293.0), E_cold_GPa=cy.E_GPa(mat, cy.Tc),
-                             fit_error_pct=5 if mat == "SS304" else 4, data_class="CALCULATED from VERIFIED (NIST fits)",
-                             note="stress is the fully restrained bound from 293 K (upper end of the E fit); no allowable stress is compared because none is available (UI-25)"))
-    return rows
+def unavailable_rows():
+    """Material-dependent results that cannot be calculated because no data with verified reuse terms are held. No values, no defaults."""
+    ui34 = "linear thermal expansion (integrated, 300 K to 77 K) and elastic modulus of the material (UI-34)"
+    ui35 = "thermal conductivity of the support and line material, 77 K to 300 K (UI-35)"
+    return [
+        dict(category="THERMAL_CONTRACTION", quantity="Free thermal contraction of the inner line, 300 K to the boiling temperature", status="UNAVAILABLE", required_input=ui34,
+             equation="dL/L = integral of alpha(T) dT from 300 K to the boiling temperature", ui_ids="UI-34",
+             note="no expansion data with verified reuse terms are held; the length, route and material are also unresolved (UI-21, UI-25)"),
+        dict(category="THERMAL_CONTRACTION", quantity="Movement of the inner line relative to the warm jacket", status="UNAVAILABLE", required_input=ui34,
+             equation="equal to the free contraction of the inner line", ui_ids="UI-24; UI-34", note="the movement capacity of bellows or loops is vendor data (UI-24)"),
+        dict(category="THERMAL_CONTRACTION", quantity="Restraint stress and force if the line were fully restrained (bound)", status="UNAVAILABLE", required_input=ui34,
+             equation="sigma = integral of E(T) alpha(T) dT; force = sigma x section area", ui_ids="UI-25; UI-34", note="no allowable stress is available either (UI-25)"),
+        dict(category="SUPPORT_CONDUCTION", quantity="Heat conduction through supports and spacers, per metre of line", status="UNAVAILABLE", required_input=ui35,
+             equation="Q' = n (A/L) integral of k(T) dT", ui_ids="UI-24; UI-35", note="the support design is also unresolved (UI-24); the heat-leak totals therefore exclude it and are lower bounds"),
+        dict(category="COOLDOWN_METAL", quantity="Heat to remove from the metal of the line and fittings on cooldown", status="UNAVAILABLE",
+             required_input="specific heat of the material, 77 K to 300 K, and the masses (UI-21, UI-28, UI-35)", equation="Q = m integral of cp(T) dT", ui_ids="UI-21; UI-28; UI-35",
+             note="liquid use per megajoule is available in cryogenic_cooldown.csv"),
+    ]
 
 
 def trapped_rows(cy):
@@ -775,21 +726,21 @@ def trapped_rows(cy):
         iso[key] = sel
         for r in sel:
             rows.append(dict(section="ISOCHORE", fill_density_kg_m3=rho, T_K=r["T_K"], p_MPa_g=round(r["p_MPa_abs"] - Props.P_ATM, 6), phase=r["phase"],
-                             heat_case="", Q_W_m="", target_p_MPa_g="", dT_K="", time_min="", note="closed volume warmed at constant density: verified equation-of-state table"))
+                             heat_case="", Q_W_m="", target_p_MPa_g="", dT_K="", energy_kJ_per_m="", time_min="", note="closed volume warmed at constant density: verified equation-of-state table"))
     sel = iso["806"]
     Ts, ps = [r["T_K"] for r in sel], [round(r["p_MPa_abs"] - Props.P_ATM, 6) for r in sel]
     mass = cy.liq["rho_kg_m3"] * math.pi / 4.0 * cy.Di_bore ** 2     # kg per metre of bore, full of saturated liquid
     cv = P("VP-06") * 1e3
     for sid in ("S1", "S2", "S4"):
         for lab in ("nom", "high"):
-            Q = sum(cy.leak(sid, cy.params(lab)))
+            Q = sum(cy.leak(sid, cy.params(lab)))              # radiation + gas only: support conduction is unavailable
             for tp in (float(x) for x in P("IL-16").split(";")):
                 Tt = interp(ps, Ts, tp)
                 dT = Tt - cy.Tc
                 t = mass * cv * dT / Q
                 rows.append(dict(section="TIME_TO_PRESSURE", fill_density_kg_m3=cy.liq["rho_kg_m3"], T_K=Tt, p_MPa_g=tp, phase="single_phase",
-                                 heat_case=f"{sid} {lab}", Q_W_m=Q, target_p_MPa_g=tp, dT_K=dT, time_min=t / 60.0,
-                                 note=f"liquid only ({mass:.4g} kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"))
+                                 heat_case=f"{sid} {lab}", Q_W_m=Q, target_p_MPa_g=tp, dT_K=dT, energy_kJ_per_m=mass * cv * dT / 1e3, time_min=t / 60.0,
+                                 note=f"liquid only ({mass:.4g} kg per metre of bore), cv at 77.355 K; INDICATIVE ONLY: metal thermal mass is ignored (shortens the time) and support conduction is unavailable (lengthens it), so no bound is claimed; use the energy; the pressure threshold is a screening level, not an allowable"))
     return rows
 
 
@@ -848,16 +799,18 @@ MISSING_INPUTS = {
     "UI-21": ("Length, routing and bore set total heat leak, contraction and pressure drop", "Totals of heat leak, boil-off, contraction, cooldown, trapped volume", "Responsible engineer", "All totals", "IL-15 illustrative straight runs and per-metre results"),
     "UI-22": ("Allowable pressures and relief arrangement protect against trapped-liquid and boil-off overpressure", "Relief sizing for trapped liquid, boil-off and vacuum-jacket failure; vent sizes", "Responsible engineer with vendor data", "Overpressure protection", "none: only the pressure-rise physics is shown"),
     "UI-23": ("Real insulation performance replaces placeholder emissivities and vacuum levels", "Heat leak and boil-off of the real line", "Insulation vendor / test", "Heat leak and boil-off by an unknown factor", "AS-10, AS-11, AS-13 placeholders with low and high cases"),
-    "UI-24": ("Supports, spacers and bellows set conduction paths and movement allowance", "Support heat leak, restraint loads, movement allowance", "Responsible engineer / vendor", "Heat leak, stress", "AS-14 placeholders"),
-    "UI-25": ("Material grades, toughness and allowable stresses decide pass or fail", "Stress compared with allowable, material selection", "Materials engineer / code", "Cannot state any stress margin", "stress magnitude only, no allowable"),
+    "UI-24": ("Supports, spacers and bellows set conduction paths and movement allowance", "Support heat leak, restraint loads, movement allowance", "Responsible engineer / vendor", "Heat leak, stress", "none: support conduction is UNAVAILABLE and the heat-leak totals are lower bounds"),
+    "UI-25": ("Material grades, toughness and allowable stresses decide pass or fail", "Stress compared with allowable, material selection", "Materials engineer / code", "Cannot state any stress margin", "none: restraint stress is UNAVAILABLE (UI-34) and no allowable is assumed"),
     "UI-26": ("The receiver defines fill rate, back-pressure and venting", "Transfer rate, receiver relief, vent routing", "Receiver owner", "Transfer duty", "none"),
     "UI-27": ("Transfer rate and duration set the flow regime and two-phase length", "Hydraulic pressure drop, flashing, cooldown vent flow", "Responsible engineer", "Two-phase behaviour, vent loads", "none"),
-    "UI-28": ("Valves, flanges and receiver thermal mass dominate real cooldown", "Cooldown liquid use and time", "Responsible engineer / vendor", "Cooldown consumption by a large factor", "line-metal-only lower bound"),
+    "UI-28": ("Valves, flanges and receiver thermal mass dominate real cooldown", "Cooldown liquid use and time", "Responsible engineer / vendor", "Cooldown consumption by a large factor", "none: metal cooldown heat is UNAVAILABLE; liquid use per megajoule only"),
     "UI-29": ("Cold vent behaviour (dense cold vapour) decides exposure and the vent design", "Phase separator, vent sizing, dispersion", "Responsible engineer / safety engineer", "Exposure at ground level", "none"),
     "UI-30": ("Indoor or outdoor, drainage and spill containment change hazards", "Spill and exposure assessment", "Facility", "Exposure and embrittlement of nearby structure", "none"),
     "UI-31": ("Instruments must work at 77 K and meet accuracy needs", "Instrument selection", "Controls engineer / vendor", "False readings", "none"),
     "UI-32": ("Measured emissivity and MLI performance replace placeholders", "Heat leak", "Vendor / test", "Heat leak", "AS-10, AS-11"),
     "UI-33": ("Two-phase pressure drop and hydraulic transients are needed for chilldown and valve closure", "Pressure-surge and cooldown assessment", "Responsible engineer", "Surge pressures, damage", "identified qualitatively only"),
+    "UI-34": ("Thermal contraction, movement allowance and restraint stress need expansion and modulus data whose reuse terms are verified", "Free contraction, movement of the inner line, restrained stress and force (thermal_contraction.csv rows UNAVAILABLE)", "Materials engineer, from a source with verified reuse terms or measured data", "No contraction or restraint value can be stated", "none: the results are unavailable and no value is assumed"),
+    "UI-35": ("Support heat conduction and the heat to cool the metal need conductivity and specific-heat data whose reuse terms are verified", "Support conduction, metal cooldown heat, completeness of the heat-leak totals", "Materials engineer, from a source with verified reuse terms or measured data", "Heat-leak totals are lower bounds; cooldown liquid use is unknown", "totals reported as radiation plus gas conduction only (lower bound)"),
 }
 
 
@@ -929,16 +882,16 @@ def boundary_rows(hp, cy):
     return R
 
 
-def design_rows(hp, cy, heat, contr, trapped, sens, budget, cool, oxy):
+def design_rows(hp, cy, heat, trapped, sens, budget, cool, oxy):
     """Append CALCULATED headline results to the register (after the inputs)."""
     rows = list(REG)
-    for key, (val, fmt_s, unit, desc, sysm) in HEADLINES(hp, cy, heat, contr, trapped, sens, budget, cool, oxy).items():
+    for key, (val, fmt_s, unit, desc, sysm) in HEADLINES(hp, cy, heat, trapped, sens, budget, cool, oxy).items():
         rows.append({"param_id": f"CA-{key}", "system": sysm, "group": "calculated result", "name": desc, "value": val, "unit": unit, "class": "CALCULATED",
                      "source_ref": "calculations.py", "bound_min": None, "bound_max": None, "assumption_id": "", "note": "headline value quoted in the documents"})
     return rows
 
 
-def HEADLINES(hp, cy, heat, contr, trapped, sens, budget, cool, oxy):
+def HEADLINES(hp, cy, heat, trapped, sens, budget, cool, oxy):
     """key -> (value, format spec, unit, description, system). The documents quote these between <!--h:key--> markers."""
     H = {}
     nomchain = hp.chain("nom")
@@ -981,23 +934,15 @@ def HEADLINES(hp, cy, heat, contr, trapped, sens, budget, cool, oxy):
     H["Ra_S4"] = (heatd[("S4", "nom")]["Ra_gap"], ".2e", "-", "Rayleigh number of the annulus gap with vacuum lost", "CRYO")
     H["ratio_S4_S1"] = (heatd[("S4", "nom")]["Q_total_W_m"] / heatd[("S1", "nom")]["Q_total_W_m"], ".0f", "-", "Heat-leak ratio, vacuum lost to design vacuum", "CRYO")
     H["hfg"] = (cy.hfg / 1e3, ".2f", "kJ/kg", "Latent heat of vaporization of N2 at 0.101325 MPa", "CRYO")
-    ss = next(r for r in contr if r["material"] == "SS304" and r["length_m"] == 10.0)
-    al = next(r for r in contr if r["material"] == "AL6061T6" and r["length_m"] == 10.0)
-    H["ss_strain_pct"] = (ss["contraction_strain_pct"], ".3f", "percent", "304 stainless contraction, 300 K to 77.355 K", "CRYO")
-    H["ss_dL_10m_mm"] = (ss["dL_mm"], ".1f", "mm", "304 stainless contraction of a 10 m run", "CRYO")
-    H["al_dL_10m_mm"] = (al["dL_mm"], ".1f", "mm", "6061-T6 contraction of a 10 m run", "CRYO")
-    H["ss_stress_MPa"] = (ss["restrained_stress_MPa"], ".0f", "MPa", "304 stainless fully restrained thermal stress bound, 293 K to 77.355 K", "CRYO")
-    H["ss_force_kN"] = (ss["restrained_force_kN"], ".0f", "kN", "Force if the illustrative inner line were fully restrained", "CRYO")
     tr = next(r for r in trapped if r["section"] == "TIME_TO_PRESSURE" and r["heat_case"] == "S1 nom" and r["target_p_MPa_g"] == 1.0)
     H["trap_t_S1_1MPa_min"] = (tr["time_min"], ".0f", "min", "Time for trapped liquid to reach 1 MPa(g), S1 nominal heat leak", "CRYO")
     tr2 = next(r for r in trapped if r["section"] == "TIME_TO_PRESSURE" and r["heat_case"] == "S2 nom" and r["target_p_MPa_g"] == 1.0)
     H["trap_t_S2_1MPa_min"] = (tr2["time_min"], ".0f", "min", "Time for trapped liquid to reach 1 MPa(g), S2 nominal heat leak", "CRYO")
     iso = sorted((r for r in trapped if r["section"] == "ISOCHORE" and r["fill_density_kg_m3"] == 806.0844), key=lambda r: r["T_K"])
     H["dpdT_trap"] = ((iso[2]["p_MPa_g"] - iso[1]["p_MPa_g"]) / (iso[2]["T_K"] - iso[1]["T_K"]), ".2f", "MPa/K", "Pressure rise per kelvin of a liquid-full closed volume (isochore slope near 80 K)", "CRYO")
-    c10 = next(r for r in cool if r["length_m"] == 10.0)
-    H["cool_LN2_kg_m"] = (next(r for r in cool if r["length_m"] == 1.0)["LN2_kg_latent_only"], ".2f", "kg/m", "LN2 to cool 1 m of inner line, latent heat only (upper bound of this estimate)", "CRYO")
-    H["cool_LN2_L_10m_lat"] = (c10["LN2_L_latent_only"], ".1f", "L", "LN2 to cool 10 m of inner line, latent heat only", "CRYO")
-    H["cool_LN2_L_10m_full"] = (c10["LN2_L_full_sensible"], ".1f", "L", "LN2 to cool 10 m of inner line, vapour leaves at 300 K", "CRYO")
+    cl = {r["basis"]: r for r in cool}
+    H["cool_kg_per_MJ_latent"] = (cl["LATENT_ONLY"]["LN2_kg_per_MJ"], ".3f", "kg/MJ", "LN2 per megajoule of heat absorbed, latent heat only (largest use per megajoule)", "CRYO")
+    H["cool_kg_per_MJ_full"] = (cl["VAPOUR_LEAVES_AT_300K"]["LN2_kg_per_MJ"], ".3f", "kg/MJ", "LN2 per megajoule of heat absorbed, vapour leaves at 300 K (smallest use per megajoule)", "CRYO")
     o_ln2 = next(r for r in oxy if r["source"] == "LN2" and r["room_volume_m3"] == 10.0)
     H["odh_ln2_L_10m3"] = (o_ln2["litres_to_reach_threshold"], ".2f", "L", "LN2 vaporised in a well-mixed 10 m3 room that lowers oxygen to 19.5 percent", "BOTH")
     H["odh_ratio_ln2"] = (o_ln2["ambient_gas_m3_per_litre"] * 1e3, ".0f", "-", "Gas volume (litres) at 300 K per litre of LN2", "CRYO")
@@ -1012,10 +957,11 @@ def HEADLINES(hp, cy, heat, contr, trapped, sens, budget, cool, oxy):
     H["Areq_growth"] = (d6["A_req_mm2"] / s1["A_req_mm2"], ".1f", "-", "Growth of the required stage-1 flow area, source depleted to 6 MPa(g) versus 20 MPa(g)", "HP")
     unc_d = {(r["scenario"], r["parameter"]): r for r in uncertainty_rows(cy)}
     H["unc_mli_pct"] = (unc_d[("S1", "e_mli")]["swing_pct_of_nominal"], ".0f", "percent", "Swing of the S1 heat leak across the MLI emissivity range, percent of nominal", "CRYO")
-    H["unc_AL_pct"] = (unc_d[("S1", "AL")]["swing_pct_of_nominal"], ".0f", "percent", "Swing of the S1 heat leak across the support A/L range, percent of nominal", "CRYO")
     H["boil_S1_g_s_m"] = (heatd[("S1", "nom")]["boil_g_s_m"], ".3g", "g/s", "Boil-off per metre of line, S1 nominal", "CRYO")
     trd = {(r["heat_case"], r["target_p_MPa_g"]): r for r in trapped if r["section"] == "TIME_TO_PRESSURE"}
     H["trap_t_S1_5MPa_min"] = (trd[("S1 nom", 5.0)]["time_min"], ".0f", "min", "Time for trapped liquid to reach 5 MPa(g), S1 nominal heat leak", "CRYO")
+    H["trap_E_1MPa_kJ_m"] = (trd[("S1 nom", 1.0)]["energy_kJ_per_m"], ".2f", "kJ/m", "Heat absorbed per metre of bore by liquid-full trapped LN2 to reach 1 MPa(g)", "CRYO")
+    H["trap_E_5MPa_kJ_m"] = (trd[("S1 nom", 5.0)]["energy_kJ_per_m"], ".2f", "kJ/m", "Heat absorbed per metre of bore by liquid-full trapped LN2 to reach 5 MPa(g)", "CRYO")
     H["trap_t_S4_1MPa_s"] = (trd[("S4 nom", 1.0)]["time_min"] * 60.0, ".0f", "s", "Time for trapped liquid to reach 1 MPa(g), S4 nominal heat leak", "CRYO")
     H["ratio_sat_1atm"] = (cy.liq["rho_kg_m3"] / cy.vap["rho_kg_m3"], ".0f", "-", "Saturated liquid to saturated vapour density ratio at 0.101325 MPa", "CRYO")
     for key in ("760", "700"):
@@ -1046,19 +992,19 @@ def main():
     heat = heat_leak_rows(cy)
     unc = uncertainty_rows(cy)
     cool = cooldown_rows(cy)
-    contr = contraction_rows(cy)
+    unavailable = unavailable_rows()
     trapped = trapped_rows(cy)
     prop = property_screening_rows(cy)
     oxy = oxygen_rows(hp, cy)
     bcs = boundary_rows(hp, cy)
-    H = HEADLINES(hp, cy, heat, contr, trapped, sens, budget, cool, oxy)
+    H = HEADLINES(hp, cy, heat, trapped, sens, budget, cool, oxy)
     if args.headlines:
         for k, (v, f, u, d, s) in H.items():
             print(f"{k} = {format(v, f)} {u}  | {d}")
         return 0
 
     write_csv(out / "design_parameters.csv", ["param_id", "system", "group", "name", "value", "unit", "class", "source_ref", "bound_min", "bound_max", "assumption_id", "note"],
-              design_rows(hp, cy, heat, contr, trapped, sens, budget, cool, oxy), digits=10)
+              design_rows(hp, cy, heat, trapped, sens, budget, cool, oxy), digits=10)
     write_csv(out / "boundary_conditions.csv", ["station", "system", "location", "tag", "p_MPa_g", "T_K", "data_class", "source_ref", "note"], bcs)
     write_csv(out / "pressure_budget.csv",
               ["case_id", "item_id", "zone", "line_id", "tag", "group", "description", "method", "data_class", "data_basis", "assumption_ids", "included_in_total",
@@ -1068,14 +1014,14 @@ def main():
               ["case", "stage", "p_in_MPa_g", "p_out_MPa_g", "T_in_K", "ratio", "ratio_crit", "choked", "Z_in", "rho_in", "T_out_K", "dT_K", "below_273K", "G_kg_m2s", "flux_g_s_mm2", "A_req_mm2", "multiple"], env)
     write_csv(out / "cryogenic_heat_leak.csv",
               ["scenario", "description", "case", "T_hot_K", "T_cold_K", "annulus_p_Pa", "Q_rad_W_m", "Q_gas_W_m", "Q_support_W_m", "Q_total_W_m", "share_rad_pct", "share_gas_pct", "share_support_pct",
-               "boil_g_s_m", "boil_L_h_m", "ref_length_m", "Q_ref_length_W", "boil_ref_length_L_h", "Ra_gap", "confidence", "data_class", "assumption_ids"], heat)
+               "boil_g_s_m", "boil_L_h_m", "ref_length_m", "Q_ref_length_W", "boil_ref_length_L_h", "Ra_gap", "confidence", "total_basis", "data_class", "assumption_ids"], heat)
     write_csv(out / "cryogenic_uncertainty.csv",
               ["scenario", "parameter", "nominal_value", "low_value", "high_value", "Q_nominal_W_m", "Q_at_low_W_m", "Q_at_high_W_m", "swing_W_m", "swing_pct_of_nominal"], unc)
     write_csv(out / "cryogenic_cooldown.csv",
-              ["length_m", "metal_mass_kg", "metal_dh_kJ_kg", "energy_to_remove_kJ", "hfg_kJ_kg", "dh_full_kJ_kg", "LN2_kg_latent_only", "LN2_L_latent_only", "LN2_kg_full_sensible", "LN2_L_full_sensible", "data_class", "scope", "assumption_ids"], cool)
+              ["basis", "heat_absorbed_per_kg_LN2_kJ", "LN2_kg_per_MJ", "LN2_L_per_MJ", "status", "data_class", "note", "assumption_ids"], cool)
     write_csv(out / "thermal_contraction.csv",
-              ["material", "install_T_K", "cold_T_K", "length_m", "contraction_strain_pct", "dL_mm", "restrained_stress_MPa", "restrained_force_kN", "section_area_mm2", "E_293K_GPa", "E_cold_GPa", "fit_error_pct", "data_class", "note"], contr)
-    write_csv(out / "trapped_liquid.csv", ["section", "fill_density_kg_m3", "T_K", "p_MPa_g", "phase", "heat_case", "Q_W_m", "target_p_MPa_g", "dT_K", "time_min", "note"], trapped)
+              ["category", "quantity", "status", "required_input", "equation", "ui_ids", "note"], unavailable)
+    write_csv(out / "trapped_liquid.csv", ["section", "fill_density_kg_m3", "T_K", "p_MPa_g", "phase", "heat_case", "Q_W_m", "target_p_MPa_g", "dT_K", "energy_kJ_per_m", "time_min", "note"], trapped)
     write_csv(out / "cryogenic_property_screening.csv",
               ["p_MPa_g", "T_sat_K", "rho_liquid_kg_m3", "rho_vapour_kg_m3", "h_fg_kJ_kg", "liquid_to_sat_vapour_volume_ratio", "liquid_to_ambient_gas_volume_ratio", "data_class", "note"], prop)
     write_csv(out / "oxygen_deficiency_screening.csv",

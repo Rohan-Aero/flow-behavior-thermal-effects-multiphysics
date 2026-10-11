@@ -1,50 +1,12 @@
 id,quantity,value,unit,source_url,source_description,retrieved
-VC-01,Molar gas constant,8.314462618,J/(mol K),https://physics.nist.gov/cgi-bin/cuu/Value?r,NIST CODATA 2022 recommended value (exact; the page shows 8.314 462 618...),2026-10-11
-VC-02,Molar mass of nitrogen (N2),28.0134,g/mol,https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Units=SI,NIST Chemistry WebBook nitrogen page: Molecular weight 28.0134,2026-10-11
-VC-03,Stefan-Boltzmann constant,5.670374419e-8,W/(m2 K4),https://physics.nist.gov/cgi-bin/cuu/Value?sigma,NIST CODATA 2022 recommended value (exact; the page shows 5.670 374 419... x 10^-8),2026-10-11
-VC-04,Oxygen volume fraction of dry air,20.95,percent,https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html,NASA Earth Fact Sheet: atmospheric composition by volume dry air 78.08% N2 and 20.95% O2,2026-10-11
-VC-05,Oxygen-deficient atmosphere threshold,19.5,percent,https://www.law.cornell.edu/cfr/text/29/1910.146,29 CFR 1910.146(b) as hosted by Cornell LII: Oxygen deficient atmosphere means an atmosphere containing less than 19.5 percent oxygen by volume (eCFR and OSHA hosts were not reachable),2026-10-11
-VC-06,Boiling temperature of oxygen at 0.101325 MPa,90.18781,K,"https://webbook.nist.gov/cgi/fluid.cgi?Action=Data&Wide=on&ID=C7782447&Digits=7&RefState=DEF&Type=IsoBar&P=0.101325&TLow=70&THigh=120&TInc=25&TUnit=K&PUnit=MPa&DUnit=kg/m3&HUnit=kJ/kg",NIST Chemistry WebBook fluid properties of oxygen: saturated liquid and vapour rows at 90.18781 K (used only to state that oxygen condenses at a higher temperature than nitrogen),2026-10-11
-VC-10,304 stainless thermal conductivity fit a,-1.4087,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,NIST cryogenic materials 304 stainless; log10 k = sum c_n (log10 T)^n; k in W/(m K); equation range 1-300 K; fit error 2 percent,2026-10-11
-VC-11,304 stainless thermal conductivity fit b,1.3982,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-12,304 stainless thermal conductivity fit c,0.2543,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-13,304 stainless thermal conductivity fit d,-0.6260,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-14,304 stainless thermal conductivity fit e,0.2334,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-15,304 stainless thermal conductivity fit f,0.4256,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-16,304 stainless thermal conductivity fit g,-0.4658,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-17,304 stainless thermal conductivity fit h,0.1650,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-18,304 stainless thermal conductivity fit i,-0.0199,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-10,2026-10-11
-VC-20,304 stainless specific heat fit a,22.0061,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,NIST cryogenic materials 304 stainless; log10 cp = sum c_n (log10 T)^n; cp in J/(kg K); equation range 4-300 K; fit error 5 percent,2026-10-11
-VC-21,304 stainless specific heat fit b,-127.5528,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-22,304 stainless specific heat fit c,303.647,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-23,304 stainless specific heat fit d,-381.0098,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-24,304 stainless specific heat fit e,274.0328,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-25,304 stainless specific heat fit f,-112.9212,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-26,304 stainless specific heat fit g,24.7593,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-27,304 stainless specific heat fit h,-2.239153,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-28,304 stainless specific heat fit i,0,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-20,2026-10-11
-VC-30,304 stainless Young's modulus fit a (57-293 K),2.100593E2,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,NIST cryogenic materials 304 stainless; E in GPa = a + bT + cT^2 + dT^3 + eT^4; equation range 57-293 K; fit error 1 percent,2026-10-11
-VC-31,304 stainless Young's modulus fit b (57-293 K),1.534883E-1,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-30,2026-10-11
-VC-32,304 stainless Young's modulus fit c (57-293 K),-1.617390E-3,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-30,2026-10-11
-VC-33,304 stainless Young's modulus fit d (57-293 K),5.117060E-6,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-30,2026-10-11
-VC-34,304 stainless Young's modulus fit e (57-293 K),-6.154600E-9,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-30,2026-10-11
-VC-40,304 stainless linear expansion fit a,-2.9554E2,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,NIST cryogenic materials 304 stainless; (L-L293)/L293 x 1e5 = a + bT + cT^2 + dT^3 + eT^4 above T low (23 K); equation range 4-300 K; fit error 5 percent,2026-10-11
-VC-41,304 stainless linear expansion fit b,-3.9811E-1,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-40,2026-10-11
-VC-42,304 stainless linear expansion fit c,9.2683E-3,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-40,2026-10-11
-VC-43,304 stainless linear expansion fit d,-2.0261E-5,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-40,2026-10-11
-VC-44,304 stainless linear expansion fit e,1.7127E-8,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-40,2026-10-11
-VC-45,304 stainless linear expansion T low,23,K,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-40,2026-10-11
-VC-46,304 stainless linear expansion constant f below T low,-300.04,x1e5 m/m,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,as VC-40,2026-10-11
-VC-50,6061-T6 aluminum linear expansion fit a,-4.1277E2,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,NIST cryogenic materials 6061-T6 aluminum; (L-L293)/L293 x 1e5 = a + bT + cT^2 + dT^3 above T low (18 K); equation range 4-300 K; fit error 4 percent,2026-10-11
-VC-51,6061-T6 aluminum linear expansion fit b,-3.0389E-1,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-50,2026-10-11
-VC-52,6061-T6 aluminum linear expansion fit c,8.7696E-3,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-50,2026-10-11
-VC-53,6061-T6 aluminum linear expansion fit d,-9.9821E-6,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-50,2026-10-11
-VC-54,6061-T6 aluminum linear expansion fit e,0,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-50,2026-10-11
-VC-55,6061-T6 aluminum linear expansion T low,18,K,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-50,2026-10-11
-VC-56,6061-T6 aluminum linear expansion constant f below T low,-415.45,x1e5 m/m,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-50,2026-10-11
-VC-60,6061-T6 aluminum Young's modulus fit a,7.771221E1,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,NIST cryogenic materials 6061-T6 aluminum; E in GPa = a + bT + cT^2 + dT^3 + eT^4; equation range 2-295 K; fit error 1 percent,2026-10-11
-VC-61,6061-T6 aluminum Young's modulus fit b,1.030646E-2,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-60,2026-10-11
-VC-62,6061-T6 aluminum Young's modulus fit c,-2.924100E-4,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-60,2026-10-11
-VC-63,6061-T6 aluminum Young's modulus fit d,8.993600E-7,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-60,2026-10-11
-VC-64,6061-T6 aluminum Young's modulus fit e,-1.070900E-9,coefficient,https://trc.nist.gov/cryogenics/materials/6061%20Aluminum/6061_T6Aluminum_rev.htm,as VC-60,2026-10-11
-VC-07,CoolProp library version used to generate verified_properties.csv,8.0.0,-,https://github.com/CoolProp/CoolProp,"CoolProp (MIT licence) implementing the reference equation of state for nitrogen of Span et al. 2000 and the transport correlations of Lemmon and Jacobsen 2004",2026-10-11
+VC-01,Molar gas constant,8.31446261815324,J/(mol K),https://doi.org/10.59161/AUEZ1291,"Derived: N_A x k_B from the exact defining constants of the SI (VC-08, VC-09); BIPM SI Brochure 9th edition, CC BY 4.0",2026-10-11
+VC-02,Molar mass of nitrogen (N2),28.01348,g/mol,https://github.com/CoolProp/CoolProp,"Value used by CoolProp 8.0.0 (MIT licence) for nitrogen (PropsSI molemass); 2 x 14.00674. Read from the library, not from a NIST page",2026-10-11
+VC-03,Stefan-Boltzmann constant,5.670374419184e-8,W/(m2 K4),https://doi.org/10.59161/AUEZ1291,"Derived: 2 pi^5 k_B^4 / (15 h^3 c^2) from the exact defining constants of the SI (VC-09, VC-10, VC-11); BIPM SI Brochure 9th edition, CC BY 4.0",2026-10-11
+VC-04,Oxygen volume fraction of dry air,20.95,percent,https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html,NASA Earth Fact Sheet: atmospheric composition by volume dry air 78.08% N2 and 20.95% O2 (NASA content is generally not copyrighted; credit NASA),2026-10-11
+VC-05,Oxygen-deficient atmosphere threshold,19.5,percent,https://www.govinfo.gov/content/pkg/CFR-2023-title29-vol5/xml/CFR-2023-title29-vol5-sec1910-146.xml,"29 CFR 1910.146(b), US Government Publishing Office edition (US federal regulation, public domain): Oxygen deficient atmosphere means an atmosphere containing less than 19.5 percent oxygen by volume",2026-10-11
+VC-06,Boiling temperature of oxygen at 0.101325 MPa,90.18781,K,https://github.com/CoolProp/CoolProp,"Value computed with CoolProp 8.0.0 (MIT licence), fluid Oxygen, saturation at 101325 Pa; used only to state that oxygen condenses at a higher temperature than nitrogen",2026-10-11
+VC-07,"CoolProp library version used to generate verified_properties.csv and VC-02, VC-06",8.0.0,-,https://github.com/CoolProp/CoolProp,"CoolProp (MIT licence, Copyright (c) 2012-2018 Ian H. Bell and other CoolProp developers) implementing the reference equation of state for nitrogen of Span et al. 2000 and the transport correlations of Lemmon and Jacobsen 2004",2026-10-11
+VC-08,"Avogadro constant (exact, defines the mole)",6.02214076e23,1/mol,https://doi.org/10.59161/AUEZ1291,"Defining constant of the SI; BIPM SI Brochure 9th edition, CC BY 4.0",2026-10-11
+VC-09,Boltzmann constant (exact),1.380649e-23,J/K,https://doi.org/10.59161/AUEZ1291,"Defining constant of the SI; BIPM SI Brochure 9th edition, CC BY 4.0",2026-10-11
+VC-10,Planck constant (exact),6.62607015e-34,J s,https://doi.org/10.59161/AUEZ1291,"Defining constant of the SI; BIPM SI Brochure 9th edition, CC BY 4.0",2026-10-11
+VC-11,Speed of light in vacuum (exact),299792458,m/s,https://doi.org/10.59161/AUEZ1291,"Defining constant of the SI; BIPM SI Brochure 9th edition, CC BY 4.0",2026-10-11

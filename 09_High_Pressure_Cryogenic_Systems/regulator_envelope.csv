@@ -3,16 +3,16 @@ case,stage,p_in_MPa_g,p_out_MPa_g,T_in_K,ratio,ratio_crit,choked,Z_in,rho_in,T_o
 "stage 1, inlet sweep to the intermediate set pressure",PCV-301,25,5,300,0.203229,0.528073,TRUE,1.09749,256.867,277.385,-22.6154,FALSE,43999.2,43.9992,0.197423,5.06526
 "stage 1, inlet sweep to the intermediate set pressure",PCV-301,20,5,300,0.253781,0.528073,TRUE,1.05756,213.467,280.751,-19.2487,FALSE,35893.9,35.8939,0.242004,4.13216
 "stage 1, inlet sweep to the intermediate set pressure",PCV-301,15,5,300,0.337806,0.528073,TRUE,1.02624,165.263,285.585,-14.4155,FALSE,27374,27.374,0.317325,3.15134
-"stage 1, inlet sweep to the intermediate set pressure",PCV-301,10,5,300,0.505015,0.528073,TRUE,1.00551,112.824,292.011,-7.98927,FALSE,18498.3,18.4983,0.469581,2.12956
-"stage 1, inlet sweep to the intermediate set pressure",PCV-301,7,5,300,0.718362,0.528073,FALSE,0.998747,79.8536,296.627,-3.37283,FALSE,11952.8,11.9528,0.726733,1.37602
-"stage 1, inlet sweep to the intermediate set pressure",PCV-301,6,5,300,0.836101,0.528073,FALSE,0.997466,68.6968,298.285,-1.71469,FALSE,8515.24,8.51524,1.02011,0.980288
-"stage 2, normal (inlet is the cold stage-1 outlet gas)",PCV-302,5,1,280.751,0.21589,0.528073,TRUE,0.988327,61.943,271.696,-9.05521,TRUE,9740.49,9.74049,0.89179,1.12134
+"stage 1, inlet sweep to the intermediate set pressure",PCV-301,10,5,300,0.505015,0.528073,TRUE,1.00552,112.824,292.011,-7.98927,FALSE,18498.3,18.4983,0.469581,2.12956
+"stage 1, inlet sweep to the intermediate set pressure",PCV-301,7,5,300,0.718362,0.528073,FALSE,0.998749,79.8536,296.627,-3.37283,FALSE,11952.8,11.9528,0.726733,1.37602
+"stage 1, inlet sweep to the intermediate set pressure",PCV-301,6,5,300,0.836101,0.528073,FALSE,0.997469,68.6968,298.285,-1.71469,FALSE,8515.24,8.51524,1.02011,0.980288
+"stage 2, normal (inlet is the cold stage-1 outlet gas)",PCV-302,5,1,280.751,0.21589,0.528073,TRUE,0.98833,61.943,271.696,-9.05521,TRUE,9740.49,9.74049,0.89179,1.12134
 "stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,20,1,300,0.0547887,0.528073,TRUE,1.05756,213.467,271.696,-28.3039,TRUE,35893.9,35.8939,0.242004,4.13216
 "stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,15,1,300,0.072929,0.528073,TRUE,1.02624,165.263,276.865,-23.135,FALSE,27374,27.374,0.317325,3.15134
-"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,10,1,300,0.109028,0.528073,TRUE,1.00551,112.824,283.715,-16.2847,FALSE,18498.3,18.4983,0.469581,2.12956
-"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,7,1,300,0.155087,0.528073,TRUE,0.998747,79.8536,288.621,-11.3786,FALSE,13048.5,13.0485,0.665708,1.50216
-"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,5,1,300,0.21589,0.528073,TRUE,0.996672,57.4832,292.199,-7.80076,FALSE,9383.29,9.38329,0.925738,1.08022
-"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,3,1,300,0.355114,0.528073,TRUE,0.996527,34.9517,296,-4.00009,FALSE,5704.94,5.70494,1.52262,0.656761
-"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,2,1,300,0.52411,0.528073,TRUE,0.997165,23.6667,297.977,-2.02335,FALSE,3864.19,3.86419,2.24794,0.444851
+"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,10,1,300,0.109028,0.528073,TRUE,1.00552,112.824,283.715,-16.2847,FALSE,18498.3,18.4983,0.469581,2.12956
+"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,7,1,300,0.155087,0.528073,TRUE,0.998749,79.8536,288.621,-11.3786,FALSE,13048.5,13.0485,0.665708,1.50216
+"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,5,1,300,0.21589,0.528073,TRUE,0.996675,57.4832,292.199,-7.80076,FALSE,9383.29,9.38329,0.925738,1.08022
+"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,3,1,300,0.355114,0.528073,TRUE,0.99653,34.9517,296,-4.00009,FALSE,5704.94,5.70494,1.52262,0.656761
+"stage 2, inlet sweep at 300 K (stage 1 failed open, full source pressure possible)",PCV-302,2,1,300,0.52411,0.528073,TRUE,0.997167,23.6667,297.977,-2.02335,FALSE,3864.19,3.86419,2.24794,0.444851
 "single stage, source to delivery set pressure",PCV-301/302 alternative,20,1,300,0.0547887,0.528073,TRUE,1.05756,213.467,271.696,-28.3039,TRUE,35893.9,35.8939,0.242004,4.13216
-"controlled depressurization, delivery set pressure to ambient (JT only; expansion cooling of the remaining gas not modelled)",HV-305,1,0,300,0.0920028,0.528073,TRUE,0.998265,12.3902,297.901,-2.09872,FALSE,2024.14,2.02414,,0.233022
+"controlled depressurization, delivery set pressure to ambient (JT only; expansion cooling of the remaining gas not modelled)",HV-305,1,0,300,0.0920028,0.528073,TRUE,0.998268,12.3902,297.901,-2.09872,FALSE,2024.14,2.02414,,0.233022

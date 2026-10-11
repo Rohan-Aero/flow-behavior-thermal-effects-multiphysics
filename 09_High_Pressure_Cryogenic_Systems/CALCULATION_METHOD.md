@@ -8,7 +8,7 @@
 
 | Kind | Where it lives | Example |
 |---|---|---|
-| Verified property data | `verified_properties.csv`, `verified_constants.csv` (source URL, retrieval date) | Nitrogen density, enthalpy, viscosity; NIST fit coefficients |
+| Verified property data | `verified_properties.csv`, `verified_constants.csv` (source URL, retrieval date) | Nitrogen density, enthalpy, viscosity, conductivity; physical constants (no material-property data) |
 | Equations | This file and `calculations.py` | Isothermal flow, radiation, free-molecular conduction |
 | Illustrative assumptions and cases | `design_parameters.csv`, classes ASSUMED (AS-nn) and ILLUSTRATIVE (IL-nn), registered in `DESIGN_BASIS.md` section 5 | Source pressure 20 MPa(g), MLI emissivity 0.003 |
 | Calculated results | The other CSVs; headline results are also in `design_parameters.csv` as CALCULATED rows | Heat leak, pressure loss |
@@ -88,28 +88,28 @@ Q'_c = 2 pi (integral of k(T) dT from Tc to Th) / ln(D2/D1)
 
 with the nitrogen conductivity from the verified table. The Rayleigh number of the gap, `g (1/Tm) (Th - Tc) delta^3 / (nu a)`, is reported to show when convection matters. For the degraded vacuum the two limits are bridged as `1 / (1/Q'_fm + 1/Q'_c)`, a **low-confidence interpolation** (AS-13). Air in the annulus is represented by nitrogen.
 
-**5.4 Supports (AS-14).** `Q'_s = n (A/L) integral of k_304(T) dT`, from Tc to the lower of Th and 300 K (the fit's upper limit), with the NIST fit for 304 stainless steel.
+**5.4 Supports: not calculated.** Support conduction `Q'_s = n (A/L) integral of k(T) dT` needs the thermal conductivity of the support material (UI-35) and the support design (UI-24). No conductivity data with verified reuse terms are held, so no value is computed and **the heat-leak totals are radiation plus residual-gas conduction only: lower bounds**. The unavailable result is recorded in `thermal_contraction.csv` with its required input.
 
 **5.5 Boil-off.** `mdot = Q / h_fg` with `h_fg` from the verified saturation rows at 0.101325 MPa; liquid volume rate with the saturated liquid density; vapour volume flows with the saturated vapour density and the 300 K gas density. Totals use the illustrative length (IL-15) and scale linearly (AS-17); terminations are excluded. The source vessel evaporation rate is **not** calculated (UI-20).
 
 **5.6 Uncertainty.** `cryogenic_uncertainty.csv` varies one parameter at a time between its low and high value with the others at nominal, and reports the swing. `cryogenic_heat_leak.csv` carries low, nominal and high cases for each scenario (S1 to S4).
 
-**5.7 Cooldown (AS-16, AS-21).** Energy to cool the metal `m' L integral of cp_304(T) dT` from 300 K to the boiling temperature with the NIST fit; liquid nitrogen is bounded between latent heat only (`h_fg`) and vapour leaving at 300 K (`h_gas(300 K) - h_liquid`).
+**5.7 Cooldown.** The heat to remove from the metal, `m integral of cp(T) dT` from 300 K to the boiling temperature, needs the specific heat and mass of the line and fittings (UI-21, UI-28, UI-35) and is **UNAVAILABLE**. What is calculated is the liquid nitrogen per megajoule absorbed, `1 / h_abs`, between two bounds: latent heat only (`h_abs = h_fg`, the largest use per megajoule) and vapour leaving at 300 K (`h_abs = h_gas(300 K) - h_liquid`, the smallest).
 
-**5.8 Thermal contraction (AS-19).** `(L(T) - L(T0)) / L(T0)` from the NIST fit of `(L - L293)/L293 x 1e5` (a polynomial above a lower limit temperature, a constant below it) between 300 K and the boiling temperature. The fully restrained thermal stress bound is `integral of E(T) alpha(T) dT` from the cold temperature to 293 K, with `alpha = dy/dT` of the same fit and `E(T)` from the NIST fit. No allowable stress is compared (UI-25).
+**5.8 Thermal contraction: not calculated.** The free contraction `(L(T) - L(T0)) / L(T0) = integral of alpha(T) dT` and the fully restrained stress bound `integral of E(T) alpha(T) dT` need the linear expansion and the elastic modulus of the line material (UI-34, UI-25). No data with verified reuse terms are held, so these results are UNAVAILABLE and no number is produced (`thermal_contraction.csv`).
 
-**5.9 Trapped liquid (AS-18).** The pressure of a closed volume warmed at constant density is read from the verified isochore (806.0844 kg/m3 for a liquid-full volume at the 1 atm saturated density). Time to a pressure threshold `t = m cv dT / Q'` per metre of bore, with `m` the liquid mass per metre, `cv` the saturated-liquid value (VP-06) and `dT` the temperature rise from the isochore at the threshold (IL-16). The thermal mass of the metal and supports is ignored, so the time is the shortest. A partly filled volume is shown by the isochores at 760 and 700 kg/m3 (IL-18).
+**5.9 Trapped liquid (AS-18).** The pressure of a closed volume warmed at constant density is read from the verified isochore (806.0844 kg/m3 for a liquid-full volume at the 1 atm saturated density). The heat absorbed per metre of bore is `E' = m cv dT`, with `m` the liquid mass per metre, `cv` the saturated-liquid value (VP-06) and `dT` the temperature rise from the isochore at the threshold (IL-16). The time is `t = E' / Q'` with the radiation and gas-conduction heat leak. It is **indicative only**: the thermal mass of the metal is ignored (this shortens the time) and the support conduction is unavailable (leaving it out lengthens the time), so no bound is claimed. A partly filled volume is shown by the isochores at 760 and 700 kg/m3 (IL-18).
 
 **5.10 Property screening.** `cryogenic_property_screening.csv` gives, for four saturation pressures, the boiling temperature, the latent heat, the densities and the volume ratios of liquid to saturated vapour and to ambient gas.
 
 ## 6. Limits of validity
 
-- Everything depends on placeholders (AS-02 to AS-06, AS-10 to AS-16) and illustrative cases (IL-nn). A different case gives a different number; no number here is a prediction for a real system.
+- Everything depends on placeholders (AS-02 to AS-06, AS-10 to AS-13, AS-15) and illustrative cases (IL-nn). A different case gives a different number; no number here is a prediction for a real system.
 - The pressure budget assumes 300 K gas (AS-01) and no heat gain; the real cold gas is denser.
 - Choked-flux figures use an ideal-gas exponent with a real density; at high pressure the real-gas behaviour differs and a relief calculation needs the real fluid model and a certified coefficient.
 - The degraded-vacuum heat leak is an interpolation; the lost-vacuum value is a lower bound; MLI behaviour at degraded vacuum is not modelled.
 - Free-molecular conduction uses an overall accommodation coefficient and an arithmetic mean temperature.
-- Elastic stress bounds only; no plasticity, no allowable.
+- No stress calculation is done: the restraint stress is unavailable (UI-34) and no allowable is available (UI-25).
 - No transient, two-phase, hydraulic-surge or stress-analysis calculation is done.
 
 ## 7. What is not calculated, and why
@@ -124,3 +124,5 @@ with the nitrogen conductivity from the verified table. The Rayleigh number of t
 | Dispersion of cold vapour and vent plumes | Needs the site and the vent design (UI-11, UI-29) |
 | Regulator droop, supply-pressure effect, lock-up | Need vendor data (UI-08) |
 | Stress margin against an allowable | No allowable stress is available (UI-25) |
+| Thermal contraction, movement and restraint stress | No expansion or modulus data with verified reuse terms (UI-34) |
+| Heat conduction through supports; heat to cool the metal | No conductivity or specific-heat data with verified reuse terms (UI-35) |

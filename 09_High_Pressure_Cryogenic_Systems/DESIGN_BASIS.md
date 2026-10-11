@@ -20,7 +20,7 @@ The classes used in every document and CSV of this folder:
 Study, at concept level, two ground-support fluid systems:
 
 1. **High-pressure gaseous nitrogen (GN2) supply and pressure control.** Functional architecture, a boundary-condition register, a mass-flow and pressure-loss method, a regulator operating-envelope screening, a pressure-drop budget structure and its sensitivity. See `HIGH_PRESSURE_SYSTEM.md`.
-2. **Liquid-nitrogen (LN2) transfer and conditioning.** Functional architecture, a heat-leak and boil-off model, thermal contraction, trapped-liquid pressure rise, relief and vent philosophy, and the operating states. See `CRYOGENIC_SYSTEM.md`.
+2. **Liquid-nitrogen (LN2) transfer and conditioning.** Functional architecture, a heat-leak and boil-off model (radiation and gas conduction; support conduction and thermal contraction are unavailable, section 4), trapped-liquid pressure rise, relief and vent philosophy, and the operating states. See `CRYOGENIC_SYSTEM.md`.
 
 **Out of scope.** Liquid oxygen, liquid hydrogen, propellants, combustion, hazardous operating trials, selection of components, ratings, sizes or prices, relief-device sizing, vessel or piping integrity, any claim of code compliance, and any change to the existing heated-duct air rig.
 
@@ -74,6 +74,8 @@ Nothing below was invented. Each item is registered as UNRESOLVED with no value 
 | UI-31 | Cryogenic-qualified instrument ranges and accuracy |
 | UI-32 | Measured emissivity and MLI performance |
 | UI-33 | Two-phase pressure drop, flow regime and hydraulic-transient data |
+| UI-34 | Thermal expansion and elastic modulus of the line material, 77 K to 300 K, from a source with verified reuse terms |
+| UI-35 | Thermal conductivity and specific heat of the line and support materials, 77 K to 300 K, from a source with verified reuse terms |
 
 Because of these, **no operating pressure, source condition, flow, vessel capacity, allowable pressure, relief setting, vent size or component rating is established** by this study. The pressures and flows used in the calculations are illustrative study cases (IL-nn), chosen so that the equations can be exercised, and every output that depends on them says so.
 
@@ -85,22 +87,22 @@ All retrieval and comparison was on 2026-10-11. Verified data are kept apart fro
 
 **Why the NIST WebBook tables are not stored.** NIST states that its Standard Reference Data are copyrighted and may not be reproduced, stored or transmitted without permission. The table here is computed from the published equation of state, not copied from any NIST table. The NIST WebBook was used as a **comparison**: all 574 rows were compared with a NIST WebBook fetch at authoring (the fetch was not kept). The largest relative differences were 5.4e-7 for density, 9.1e-7 for cp, 1.4e-7 for cv, 8.8e-7 for the Joule-Thomson coefficient and 9.1e-7 for viscosity; 1e-4 kJ/kg (absolute) for enthalpy; 3.9e-5 for the pressure of a closed-volume isochore at its steepest point; and 5.1e-4 for the conductivity of the saturated liquid at 1 atm, which comes from a 0.001 K difference in the boiling temperature. `validate_design.py --online` repeats a spot comparison with the live NIST WebBook (7 gas states and the 1 atm saturation states), and regenerates the table when CoolProp is installed.
 
-| Data | Source | How it is stored |
+| Data | Source and reuse basis | How it is stored |
 |---|---|---|
-| Molar mass of nitrogen (28.0134 g/mol) | NIST Chemistry WebBook nitrogen page | `verified_constants.csv` VC-02 |
-| Molar gas constant, Stefan-Boltzmann constant | NIST CODATA 2022 pages (both exact) | VC-01, VC-03 |
-| Oxygen volume fraction of dry air (20.95 percent) | NASA Earth Fact Sheet | VC-04 |
-| Oxygen-deficient atmosphere threshold (19.5 percent by volume) | 29 CFR 1910.146(b), read as hosted by Cornell LII (the eCFR and OSHA hosts could not be reached) | VC-05 |
-| Boiling temperature of oxygen at 0.101325 MPa (90.188 K) | NIST Chemistry WebBook oxygen fluid properties | VC-06; context only |
-| 304 stainless steel: thermal conductivity, specific heat, Young's modulus, linear expansion | NIST cryogenic materials pages (curve-fit coefficients) | VC-10 to VC-46, coefficients transcribed verbatim |
-| 6061-T6 aluminium: linear expansion, Young's modulus | NIST cryogenic materials pages | VC-50 to VC-64 |
+| Molar mass of nitrogen (28.01348 g/mol) | The value used by CoolProp 8.0.0 (MIT licence) for nitrogen | `verified_constants.csv` VC-02 |
+| Molar gas constant (8.31446261815324 J/(mol K)) and Stefan-Boltzmann constant (5.670374419184e-8 W/(m2 K4)) | Derived from the exact defining constants of the SI (Avogadro, Boltzmann, Planck, speed of light): BIPM, *The International System of Units (SI)*, 9th edition, CC BY 4.0, https://doi.org/10.59161/AUEZ1291 | VC-01, VC-03; defining constants VC-08 to VC-11 |
+| Oxygen volume fraction of dry air (20.95 percent) | NASA Earth Fact Sheet (NASA content is generally not copyrighted; credit NASA) | VC-04 |
+| Oxygen-deficient atmosphere threshold (19.5 percent by volume) | 29 CFR 1910.146(b), US Government Publishing Office edition of the Code of Federal Regulations (US federal regulation, public domain) | VC-05 |
+| Boiling temperature of oxygen at 0.101325 MPa (90.188 K) | Computed with CoolProp 8.0.0 (MIT licence) | VC-06; context only |
 | CoolProp version used | CoolProp 8.0.0 | VC-07 |
 
-The NIST material pages state their own fit errors (1 to 5 percent), which are kept in the CSV. The 316 stainless page lists the same expansion coefficients as the 304 page; only 304 is used. The coefficients and constants are a few dozen cited numbers with their URLs; as `NOTICE.md` section 4 does for the main project's material data, the repository owner should confirm that publishing them with their citations is acceptable.
+**Material data are not included.** An earlier draft of this study carried about 60 curve-fit coefficients for the thermal conductivity, specific heat, Young's modulus and linear expansion of 304 stainless steel and 6061-T6 aluminium, transcribed from the NIST cryogenic materials pages. Those pages are NIST Standard Reference Data, whose reuse terms for redistribution were not cleared, and no substitute with verified reuse terms was found. They were **removed**, and no replacement value was invented. The calculations that need them are marked **UNAVAILABLE** and carry no value: free thermal contraction, movement of the inner line, restraint stress and force, heat conduction through supports, and the heat to cool the metal on cooldown (`thermal_contraction.csv`, `cryogenic_cooldown.csv`; inputs UI-34 and UI-35). The heat-leak totals therefore cover radiation and residual-gas conduction only and are **lower bounds**. Section 7 of `CALCULATION_METHOD.md` lists what is not calculated.
+
+Licences and required credits of the third-party material that remains are in `THIRD_PARTY_NOTICES.md`. The CoolProp licence covers the CoolProp software only; it does not cover any material-property data.
 
 ## 5. Assumptions and illustrative cases register
 
-Every number that is not EXISTING or VERIFIED, or an equation result, is listed here. `validate_design.py` checks that each ID used in the code, the CSV files and the documents is registered here, and that each registered ID is used.
+Every number that is not EXISTING or VERIFIED, or an equation result, is listed here. `validate_design.py` checks that each ID used in the code, the CSV files and the documents is registered here, and that each registered ID is used. Numbers are not reused: a gap in the numbering marks an assumption withdrawn from this release.
 
 | ID | Assumption or illustrative case | Value or form | Basis, and what replaces it |
 |---|---|---|---|
@@ -117,14 +119,10 @@ Every number that is not EXISTING or VERIFIED, or an equation result, is listed 
 | AS-11 | Emissivity of bare metal surfaces, both surfaces | 0.05 / 0.10 / 0.30 | Surface finish unknown |
 | AS-12 | Overall thermal accommodation coefficient | 0.7 / 0.9 / 1.0 | Placeholder range |
 | AS-13 | Annulus gas pressure | 1e-3 Pa (design), 1 Pa (degraded), 101,325 Pa (lost) | Placeholders (UI-23) |
-| AS-14 | Support conduction paths | A/L = 1e-5 / 2e-5 / 1e-4 m; 0.5 / 1 / 2 paths per metre | No support design exists (UI-24) |
 | AS-15 | Warm-side temperature | 300 K; 313 K in the high case | 300 K is M002; 313 K is the warm-day bound used in `08_Fluid_Test_Rig_Design` AS-13 |
-| AS-16 | Density of 304 stainless steel | 8000 kg/m3 | Typical handbook magnitude, not verified |
 | AS-17 | Heat leak scales linearly with length | Terminations, valves, flanges and bayonets are excluded | Their heat leak is UI-21, UI-23 and UI-24 |
-| AS-18 | Trapped liquid | Rigid closed volume, uniform temperature, no vapour space (806 kg/m3 case), thermal mass of metal and supports ignored | Shortest-time (conservative) screening |
-| AS-19 | Thermal contraction and stress | NIST fits; installed at 300 K; elastic; fully restrained bound computed from 293 K because the modulus fit ends there | Bound only; no allowable stress is available (UI-25) |
+| AS-18 | Trapped liquid | Rigid closed volume, uniform temperature, no vapour space (806 kg/m3 case); the heat input is the radiation and gas-conduction leak only (support conduction is unavailable), and the thermal mass of the metal is ignored | Indicative screening only: ignoring the metal makes the time shorter than a real line, leaving out support conduction makes it longer, so no bound is claimed. The heat absorbed per metre is the more robust figure |
 | AS-20 | Oxygen-deficiency screening | Well-mixed room, displaced mixture leaves, release at ambient temperature | Local concentrations can be far lower than the room average |
-| AS-21 | Cooldown | Inner-line metal only | Valves, flanges, supports, receiver and jacket are excluded (UI-28) |
 | IL-01 | Illustrative nitrogen mass flow | Equal to the heated-duct air design flow, recomputed from M002, M003, M005, M023 and the air gas constant | A traceable magnitude, **not** a nitrogen flow requirement |
 | IL-02 | Illustrative source pressure | 20 MPa(g) | Chosen to exercise the equations. Not a source specification |
 | IL-03 | Illustrative intermediate set pressure | 5 MPa(g) | Study case |
@@ -158,7 +156,7 @@ Tags have the form `<letters>-<three digits>`. Area 3xx is the high-pressure GN2
 | **NASA-STD-8719.17D** (NASA Standard for Ground-Based Pressure Vessels and Pressurized Systems (PVS); approved 2022-04-26) | The full PDF text of 1.1, 1.2, 4.2.3.3 (inert-gas piping exclusion up to 150 psig and NPS 2), 4.2.3.23, 4.10.1.10 to 4.10.1.13, 4.10.2 and 4.10.3. A regulator is not overpressure protection (4.10.1.10). Pressure systems downstream of a regulator are certified for the source pressure or protected by relief devices that accommodate a full-open regulator failure (4.10.3.2). Safety-related pressure indicators are controlled (4.10.2) | Sections 4.3 to 4.9, 4.11 to 4.13 and the appendices were not read in full | Reference practice for the regulator, relief and indicator architecture. Not applied formally |
 | **ASME B31.3** (Process Piping), edition listed: 2024 | The ASME catalogue page lists B31.3 - 2024, describes its scope (materials and components, design, fabrication, assembly, erection, examination, inspection and testing of piping, including cryogenic plants) and shows that the text is sold | **The code text was not read.** Whether it applies, which fluid service category applies, and which edition governs depend on jurisdiction and owner (UI-05) | Listed only as an item for review. NASA-STD-5005D 5.2.1 and 5.2.2 name it for pneumatic and cryogenic GSE |
 | ASME Boiler and Pressure Vessel Code, Section VIII | Named by NASA-STD-5005D 5.2.1, 5.2.2 and 5.2.11 | **Not read and not independently verified** | For review (UI-05, UI-20) |
-| 29 CFR 1910.146(b) | The definition of an oxygen-deficient atmosphere (less than 19.5 percent oxygen by volume), read on a Cornell LII copy | Applicability of the permit-required confined spaces rule to any installation | The 19.5 percent figure is the screening threshold (VC-05) |
+| 29 CFR 1910.146(b) | The definition of an oxygen-deficient atmosphere (less than 19.5 percent oxygen by volume), read on the Government Publishing Office edition at govinfo.gov (and earlier on a Cornell LII copy) | Applicability of the permit-required confined spaces rule to any installation | The 19.5 percent figure is the screening threshold (VC-05) |
 | CGA E-4, CGA P-1, NFPA 55 and NFPA 59A | Named inside the NASA documents only | **Not read, not verified** | None |
 
 Publicly accessible NASA ground-systems development guidance **actually used** is the two NASA standards above. Other NASA ground-systems documents (for example the KSC design requirements) were not reviewed.

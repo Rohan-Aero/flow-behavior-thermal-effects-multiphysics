@@ -5,7 +5,7 @@ EX-03,HP,existing,Air inlet velocity of the heated-duct CFD baseline,23.5,m/s,EX
 EX-04,HP,existing,Heated-duct inner diameter,0.02,m,EXISTING,M023,0.001,0.5,,
 EX-05,HP,existing,Specific gas constant of dry air,287.058,J/(kg K),EXISTING,01_Project_Documentation/BASELINE_PARAMETERS.md,280,295,,
 VC-01,BOTH,verified constant,Molar gas constant,8.314462618,J/(mol K),VERIFIED,VC-01,8.3,8.4,,
-VC-02,BOTH,verified constant,Molar mass of nitrogen,28.0134,g/mol,VERIFIED,VC-02,28,28.1,,
+VC-02,BOTH,verified constant,Molar mass of nitrogen,28.01348,g/mol,VERIFIED,VC-02,28,28.1,,
 VC-03,CRYO,verified constant,Stefan-Boltzmann constant,5.670374419e-08,W/(m2 K4),VERIFIED,VC-03,5.6e-08,5.7e-08,,
 VC-04,BOTH,verified constant,Oxygen volume fraction of dry air,20.95,percent,VERIFIED,VC-04,20,21,,
 VC-05,BOTH,verified constant,Oxygen-deficient atmosphere threshold (29 CFR 1910.146(b)),19.5,percent,VERIFIED,VC-05,19,20,,
@@ -62,14 +62,7 @@ AS-12-high,CRYO,assumption,"Overall thermal accommodation coefficient, high",1,-
 AS-13-design,CRYO,assumption,"Annulus gas pressure, design vacuum",0.001,Pa,ASSUMED,AS-13,1e-06,10,AS-13,placeholder; the vacuum level of a real jacket is a vendor figure
 AS-13-degraded,CRYO,assumption,"Annulus gas pressure, degraded vacuum",1,Pa,ASSUMED,AS-13,0.001,1000,AS-13,
 AS-13-lost,CRYO,assumption,"Annulus gas pressure, vacuum lost",101325,Pa,ASSUMED,AS-13,10000,200000,AS-13,
-AS-14-AL-low,CRYO,assumption,"Cross-section over length of one stainless support path, low",1e-05,m,ASSUMED,AS-14,1e-07,0.01,AS-14,
-AS-14-AL-nom,CRYO,assumption,"Cross-section over length of one stainless support path, nom",2e-05,m,ASSUMED,AS-14,1e-07,0.01,AS-14,
-AS-14-AL-high,CRYO,assumption,"Cross-section over length of one stainless support path, high",0.0001,m,ASSUMED,AS-14,1e-07,0.01,AS-14,
-AS-14-n-low,CRYO,assumption,"Number of support paths per metre of line, low",0.5,1/m,ASSUMED,AS-14,0,10,AS-14,
-AS-14-n-nom,CRYO,assumption,"Number of support paths per metre of line, nom",1,1/m,ASSUMED,AS-14,0,10,AS-14,
-AS-14-n-high,CRYO,assumption,"Number of support paths per metre of line, high",2,1/m,ASSUMED,AS-14,0,10,AS-14,
 AS-15-hot-high,CRYO,assumption,"Warm-side (jacket) temperature, high case",313,K,ASSUMED,AS-15,300,340,AS-15,same warm-day bound as 08_Fluid_Test_Rig_Design AS-13
-AS-16,CRYO,assumption,Density of 304 stainless steel,8000,kg/m3,ASSUMED,AS-16,7500,8500,AS-16,"typical handbook magnitude, not verified"
 IL-01,HP,illustrative,Illustrative nitrogen mass flow (set equal to the heated-duct air design flow),0.008686472278,kg/s,ILLUSTRATIVE,CALC from EX-01..EX-05,0.001,0.1,IL-01,NOT a nitrogen flow requirement; gives the study a repository-traceable magnitude
 IL-02,HP,illustrative,Illustrative source pressure,20,MPa(g),ILLUSTRATIVE,IL-02,0.5,45,IL-02,NOT a source specification
 IL-03,HP,illustrative,Illustrative stage-1 outlet (intermediate) set pressure,5,MPa(g),ILLUSTRATIVE,IL-03,0.5,45,IL-03,
@@ -115,9 +108,11 @@ UI-30,CRYO,unresolved,"Installation environment: indoor or outdoor, drainage, sp
 UI-31,CRYO,unresolved,Cryogenic-qualified instrument ranges and accuracy,,-,UNRESOLVED,UNRESOLVED:UI-31,,,,
 UI-32,CRYO,unresolved,Measured emissivity and MLI performance,,-,UNRESOLVED,UNRESOLVED:UI-32,,,,
 UI-33,CRYO,unresolved,"Two-phase pressure drop, flow regime and hydraulic-transient data",,-,UNRESOLVED,UNRESOLVED:UI-33,,,,
+UI-34,CRYO,unresolved,"Thermal expansion and elastic modulus of the line material, 77 K to 300 K, from a source with verified reuse terms",,-,UNRESOLVED,UNRESOLVED:UI-34,,,,
+UI-35,CRYO,unresolved,"Thermal conductivity and specific heat of the line and support materials, 77 K to 300 K, from a source with verified reuse terms",,-,UNRESOLVED,UNRESOLVED:UI-35,,,,
 CA-mdot_g_s,HP,calculated result,Illustrative nitrogen mass flow,8.686472278,g/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-Qstd_L_s,HP,calculated result,Illustrative flow as volume at 300 K and 0.101325 MPa,7.631997362,L/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Z_source,HP,calculated result,Compressibility factor at the illustrative source condition,1.057557588,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Z_source,HP,calculated result,Compressibility factor at the illustrative source condition,1.057560608,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-dT_stage1,HP,calculated result,Isenthalpic temperature change across stage 1 (illustrative case),-19.24866303,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-T_out_stage1,HP,calculated result,"Gas temperature after stage 1, no heat gain (illustrative case)",280.751337,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-p_DI_MPa_g,HP,calculated result,Nominal pressure at the delivery interface after passive losses,0.9833611542,MPa(g),CALCULATED,calculations.py,,,,headline value quoted in the documents
@@ -137,28 +132,22 @@ CA-vendor_share_del_pct,HP,calculated result,Share of the nominal delivery-zone 
 CA-dp_hp_nom_kPa,HP,calculated result,"Nominal passive loss, high-pressure zone (mostly the filter allocation)",50.79742285,kPa,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-sens_worst_pct,HP,calculated result,"Delivery loss, smallest swept bore with 4x component losses, percent of set pressure",23.83551812,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-sens_worst_v,HP,calculated result,Peak delivery velocity at the smallest swept bore,30.64232589,m/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Q_S1_nom,CRYO,calculated result,"Heat leak per metre, scenario S1, nominal",0.1854035071,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Q_S2_nom,CRYO,calculated result,"Heat leak per metre, scenario S2, nominal",2.554482644,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Q_S3_nom,CRYO,calculated result,"Heat leak per metre, scenario S3, nominal",14.17986362,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Q_S4_nom,CRYO,calculated result,"Heat leak per metre, scenario S4, nominal",34.63700691,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Q_S1_low,CRYO,calculated result,"Heat leak per metre, S1, low case",0.06779749917,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-Q_S1_high,CRYO,calculated result,"Heat leak per metre, S1, high case",0.9935434146,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-boil_S1_L_h_10m,CRYO,calculated result,"Boil-off of a 10 m held-cold line, S1 nominal",0.04157218255,L/h,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-boil_S4_L_h_10m,CRYO,calculated result,"Boil-off of a 10 m held-cold line, S4 nominal (lower bound)",7.766498037,L/h,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S1_nom,CRYO,calculated result,"Heat leak per metre, scenario S1, nominal",0.1313655301,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S2_nom,CRYO,calculated result,"Heat leak per metre, scenario S2, nominal",2.500444667,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S3_nom,CRYO,calculated result,"Heat leak per metre, scenario S3, nominal",14.1258138,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S4_nom,CRYO,calculated result,"Heat leak per metre, scenario S4, nominal",34.58296896,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S1_low,CRYO,calculated result,"Heat leak per metre, S1, low case",0.05428798711,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-Q_S1_high,CRYO,calculated result,"Heat leak per metre, S1, high case",0.4531639425,W/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-boil_S1_L_h_10m,CRYO,calculated result,"Boil-off of a 10 m held-cold line, S1 nominal",0.02945549349,L/h,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-boil_S4_L_h_10m,CRYO,calculated result,"Boil-off of a 10 m held-cold line, S4 nominal (lower bound)",7.754381355,L/h,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-Ra_S4,CRYO,calculated result,Rayleigh number of the annulus gap with vacuum lost,364433.9788,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-ratio_S4_S1,CRYO,calculated result,"Heat-leak ratio, vacuum lost to design vacuum",186.8195885,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-ratio_S4_S1,CRYO,calculated result,"Heat-leak ratio, vacuum lost to design vacuum",263.2575603,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-hfg,CRYO,calculated result,Latent heat of vaporization of N2 at 0.101325 MPa,199.17602,kJ/kg,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-ss_strain_pct,CRYO,calculated result,"304 stainless contraction, 300 K to 77.355 K",0.2904654527,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-ss_dL_10m_mm,CRYO,calculated result,304 stainless contraction of a 10 m run,29.04654527,mm,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-al_dL_10m_mm,CRYO,calculated result,6061-T6 contraction of a 10 m run,40.41688017,mm,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-ss_stress_MPa,CRYO,calculated result,"304 stainless fully restrained thermal stress bound, 293 K to 77.355 K",579.6124172,MPa,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-ss_force_kN,CRYO,calculated result,Force if the illustrative inner line were fully restrained,83.76168114,kN,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-trap_t_S1_1MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S1 nominal heat leak",15.5555245,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-trap_t_S2_1MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S2 nominal heat leak",1.129014834,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S1_1MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S1 nominal heat leak",21.95438023,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S2_1MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S2 nominal heat leak",1.153414365,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-dpdT_trap,CRYO,calculated result,Pressure rise per kelvin of a liquid-full closed volume (isochore slope near 80 K),1.7289296,MPa/K,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-cool_LN2_kg_m,CRYO,calculated result,"LN2 to cool 1 m of inner line, latent heat only (upper bound of this estimate)",0.5021294428,kg/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-cool_LN2_L_10m_lat,CRYO,calculated result,"LN2 to cool 10 m of inner line, latent heat only",6.229240766,L,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-cool_LN2_L_10m_full,CRYO,calculated result,"LN2 to cool 10 m of inner line, vapour leaves at 300 K",2.863993247,L,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-cool_kg_per_MJ_latent,CRYO,calculated result,"LN2 per megajoule of heat absorbed, latent heat only (largest use per megajoule)",5.020684719,kg/MJ,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-cool_kg_per_MJ_full,CRYO,calculated result,"LN2 per megajoule of heat absorbed, vapour leaves at 300 K (smallest use per megajoule)",2.308340241,kg/MJ,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-odh_ln2_L_10m3,BOTH,calculated result,LN2 vaporised in a well-mixed 10 m3 room that lowers oxygen to 19.5 percent,1.012722019,L,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-odh_ratio_ln2,CRYO,calculated result,Gas volume (litres) at 300 K per litre of LN2,708.2316712,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-odh_gn2_L_10m3,HP,calculated result,Pressurised volume at 20 MPa(g) whose release lowers a well-mixed 10 m3 room to 19.5 percent,3.82419281,L,CALCULATED,calculations.py,,,,headline value quoted in the documents
@@ -166,11 +155,12 @@ CA-dT_stage2,HP,calculated result,"Isenthalpic temperature change across stage 2
 CA-dT_single,HP,calculated result,"Isenthalpic temperature change, single stage from source to delivery set pressure",-28.30387317,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-Areq_stage1_6MPa,HP,calculated result,Effective flow area needed at stage 1 with the source depleted to 6 MPa(g),1.020108756,mm2,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-Areq_growth,HP,calculated result,"Growth of the required stage-1 flow area, source depleted to 6 MPa(g) versus 20 MPa(g)",4.215255441,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-unc_mli_pct,CRYO,calculated result,"Swing of the S1 heat leak across the MLI emissivity range, percent of nominal",174.3360334,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-unc_AL_pct,CRYO,calculated result,"Swing of the S1 heat leak across the support A/L range, percent of nominal",131.1575755,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-boil_S1_g_s_m,CRYO,calculated result,"Boil-off per metre of line, S1 nominal",0.0009308525551,g/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-trap_t_S1_5MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 5 MPa(g), S1 nominal heat leak",77.89046125,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
-CA-trap_t_S4_1MPa_s,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S4 nominal heat leak",4.995897257,s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-unc_mli_pct,CRYO,calculated result,"Swing of the S1 heat leak across the MLI emissivity range, percent of nominal",246.0501776,percent,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-boil_S1_g_s_m,CRYO,calculated result,"Boil-off per metre of line, S1 nominal",0.0006595449096,g/s,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S1_5MPa_min,CRYO,calculated result,"Time for trapped liquid to reach 5 MPa(g), S1 nominal heat leak",109.9311568,min,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_E_1MPa_kJ_m,CRYO,calculated result,Heat absorbed per metre of bore by liquid-full trapped LN2 to reach 1 MPa(g),0.1730429278,kJ/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_E_5MPa_kJ_m,CRYO,calculated result,Heat absorbed per metre of bore by liquid-full trapped LN2 to reach 5 MPa(g),0.8664698813,kJ/m,CALCULATED,calculations.py,,,,headline value quoted in the documents
+CA-trap_t_S4_1MPa_s,CRYO,calculated result,"Time for trapped liquid to reach 1 MPa(g), S4 nominal heat leak",5.003703644,s,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-ratio_sat_1atm,CRYO,calculated result,Saturated liquid to saturated vapour density ratio at 0.101325 MPa,174.7746218,-,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-Tfull_760_K,CRYO,calculated result,First tabulated single-phase temperature of the 760 kg/m3 closed volume,87.355,K,CALCULATED,calculations.py,,,,headline value quoted in the documents
 CA-Tfull_700_K,CRYO,calculated result,First tabulated single-phase temperature of the 700 kg/m3 closed volume,99.855,K,CALCULATED,calculations.py,,,,headline value quoted in the documents

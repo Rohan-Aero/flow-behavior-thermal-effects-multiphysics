@@ -5,14 +5,14 @@ Standard library only. Read-only on the repository except for VALIDATION_REPORT.
 (to --outdir, default this folder). The report has no timestamps, so it is reproducible.
 
     python validate_design.py                 # all checks and the mutation tests; rewrite VALIDATION_REPORT.md
-    python validate_design.py --online        # also re-check the verified data against the live NIST, NASA and CFR pages and, if CoolProp is installed, regenerate the nitrogen table
+    python validate_design.py --online        # also re-check the constants against the live NASA and CFR pages, compare spot states with the NIST WebBook (read only, never stored) and, if CoolProp is installed, regenerate the nitrogen table
     python validate_design.py --no-mutation   # skip the mutation tests (about a minute)
     python validate_design.py --outdir DIR    # write the report somewhere else
 
 Exit code 1 if any check or mutation test fails. A failed check is investigated, never relaxed to pass.
 The independent re-calculations here deliberately use different formulations from calculations.py
-(a bisection solution of Colebrook-White and the Haaland formula for friction, direct summation of the
-fit polynomials, trapezoid sums for Simpson integrals, constants derived from exact SI definitions) so
+(a bisection solution of Colebrook-White and the Haaland formula for friction, trapezoid sums for
+Simpson integrals, constants derived from exact SI definitions) so
 that a shared mistake is less likely. Every tolerance has a stated reason; none was loosened to pass.
 
 Mutation tests copy this folder (and the few repository files it reads) to a temporary directory,
@@ -43,7 +43,7 @@ OUTPUTS = ["design_parameters.csv", "boundary_conditions.csv", "pressure_budget.
            "cryogenic_heat_leak.csv", "cryogenic_uncertainty.csv", "cryogenic_cooldown.csv", "thermal_contraction.csv", "trapped_liquid.csv",
            "cryogenic_property_screening.csv", "oxygen_deficiency_screening.csv", "missing_inputs_register.csv"]
 DOCS = ["README.md", "DESIGN_BASIS.md", "HIGH_PRESSURE_SYSTEM.md", "CRYOGENIC_SYSTEM.md", "CALCULATION_METHOD.md",
-        "HAZARD_REVIEW_HIGH_PRESSURE.md", "HAZARD_REVIEW_CRYOGENIC.md", "LIMITATIONS_AND_NEXT_STEPS.md"]
+        "HAZARD_REVIEW_HIGH_PRESSURE.md", "HAZARD_REVIEW_CRYOGENIC.md", "LIMITATIONS_AND_NEXT_STEPS.md", "THIRD_PARTY_NOTICES.md"]
 DIAGRAMS = {"PFD_HIGH_PRESSURE": ("HP", "pfd"), "PID_HIGH_PRESSURE": ("HP", "pid"), "PFD_CRYOGENIC": ("CRYO", "pfd"), "PID_CRYOGENIC": ("CRYO", "pid")}
 TAG_RE = re.compile(r"\b[A-Z]{1,5}-\d{3}\b")
 NON_EQUIPMENT_PREFIX = {"L", "SB", "SC"}          # lines and stations share the tag pattern
@@ -194,20 +194,23 @@ def check_A(c):
     a.ok(len(fb) == 1 and close(il01, float(fb[0]["calculated"]), 2e-6), f"08 flow_basis {fb[0]['calculated'] if fb else None}")
     a.done("equal within 2e-6 (the 08 file holds 6 digits)", "IL-01 is reused only for its magnitude")
 
-    a = c.acc("V-A03", "Verified constants satisfy exact SI relations and register copies match the file")
+    a = c.acc("V-A03", "Verified constants: SI defining constants are exact; derived constants and copies agree; every source is listed in THIRD_PARTY_NOTICES.md")
     VC = lambda i: float(consts[i]["value"])
     NA, kB, h, cl = 6.02214076e23, 1.380649e-23, 6.62607015e-34, 299792458.0
-    a.ok(close(VC("VC-01"), NA * kB, 1e-9), "R_u = N_A k_B")
-    a.ok(close(VC("VC-03"), 2 * math.pi ** 5 * kB ** 4 / (15 * h ** 3 * cl ** 2), 1e-8), "sigma from k, h, c")
-    a.ok(close(VC("VC-02"), 2 * 14.007, 1e-4), "M(N2) vs 2 x 14.007")
+    a.ok((VC("VC-08"), VC("VC-09"), VC("VC-10"), VC("VC-11")) == (NA, kB, h, cl), "the four SI defining constants are the exact defined values")
+    a.ok(close(VC("VC-01"), NA * kB, 1e-13), "R_u = N_A k_B")
+    a.ok(close(VC("VC-03"), 2 * math.pi ** 5 * kB ** 4 / (15 * h ** 3 * cl ** 2), 1e-11), "sigma from k, h, c")
+    a.ok(close(VC("VC-02"), 2 * 14.00674, 1e-6), "M(N2) vs 2 x 14.00674 (conventional atomic weight of nitrogen used by the library)")
     a.ok(20.0 < VC("VC-04") < 21.5 and 19.0 < VC("VC-05") < VC("VC-04"), "oxygen fractions")
     a.ok(VC("VC-06") > float(reg["VP-01"]["value"]), "O2 boils above N2")
+    notices = text(c.ext / "THIRD_PARTY_NOTICES.md") if (c.ext / "THIRD_PARTY_NOTICES.md").exists() else ""
     for k, row in consts.items():
         a.ok(row["source_url"].startswith("https://") and row["retrieved"], f"{k} has no URL or date")
+        a.ok(row["source_url"] in notices, f"{k}: source {row['source_url']} is not listed in THIRD_PARTY_NOTICES.md")
     for pid, r in reg.items():
         if r["class"] == "VERIFIED" and r["source_ref"].startswith("VC-"):
             a.ok(close(float(r["value"]), VC(r["source_ref"]), 1e-9), f"{pid} differs from {r['source_ref']}")
-    a.done("exact SI relations hold; every row has a URL and date", "CODATA exact values and the standard atomic weight")
+    a.done("exact SI relations hold; every row has a URL and date; every source URL is in THIRD_PARTY_NOTICES.md", "BIPM SI defining constants (CC BY 4.0), CoolProp 8.0.0 (MIT), NASA, 29 CFR 1910.146(b)")
 
     a = c.acc("V-A04", "Verified nitrogen tables are internally consistent")
     S = props.sets
@@ -237,22 +240,41 @@ def check_A(c):
     a.ok(abs(hfg - 199.18) < 0.05, f"latent heat {hfg}")
     a.done("tolerances: 0.15 percent for the ideal-gas density (Z = 0.9998), 5 percent for Clapeyron (central difference over a 19 K interval carries a curvature error of a few percent)", "equation-of-state tables")
 
-    a = c.acc("V-A05", "NIST material fits: independent evaluation, reference points and sanity windows")
-    co = lambda r: [VC(f"VC-{n}") for n in r]
-    ex_ss, ex_al = co(range(40, 45)), co(range(50, 55))
-    horner = lambda cf, T: sum(ci * T ** n for n, ci in enumerate(cf))
-    a.ok(abs(horner(ex_ss, 293.0)) < 1.0 and abs(horner(ex_al, 293.0)) < 1.0, "expansion is referenced to 293 K: y(293) must be near zero (units 1e-5; fit errors are 5 and 4 percent of about 280 and 400)")
-    a.ok(-295 < horner(ex_ss, 77.355) < -265, f"304 expansion at 77 K: {horner(ex_ss, 77.355):.1f}")
-    a.ok(-420 < horner(ex_al, 77.355) < -385, f"6061 expansion at 77 K: {horner(ex_al, 77.355):.1f}")
-    a.ok(close(cy.strain_y("SS304", 150.0), horner(ex_ss, 150.0), 1e-12) and close(cy.strain_y("AL6061T6", 150.0), horner(ex_al, 150.0), 1e-12), "code matches direct summation")
-    kss = lambda T: 10 ** sum(cf * math.log10(T) ** n for n, cf in enumerate(co(range(10, 19))))
-    cpss = lambda T: 10 ** sum(cf * math.log10(T) ** n for n, cf in enumerate(co(range(20, 29))))
-    a.ok(close(cy.k_ss(100.0), kss(100.0), 1e-12) and close(cy.cp_ss(100.0), cpss(100.0), 1e-12), "log-polynomial fits match direct summation")
-    a.ok(12.0 < kss(300.0) < 17.0 and 440 < cpss(300.0) < 520, f"304 at 300 K: k {kss(300.0):.2f} W/(m K), cp {cpss(300.0):.0f} J/(kg K)")
-    a.ok(195 < horner(co(range(30, 35)), 293.0) < 205 and 68 < horner(co(range(60, 65)), 293.0) < 72, "Young's modulus at 293 K near 200 and 70 GPa")
-    a.done("windows are broad physical magnitudes consistent with the NIST fit errors of 1 to 5 percent", "NIST cryogenic materials")
+    a = c.acc("V-A05", "Provenance guard: no uncleared third-party data in the folder; licence notices intact; unavailable results hold no numbers")
+    allowed = {"doi.org", "github.com", "nssdc.gsfc.nasa.gov", "www.govinfo.gov"}
+    a.ok(set(consts) == {f"VC-{n:02d}" for n in range(1, 12)}, f"verified_constants.csv ids {sorted(consts)}")
+    for k, row in consts.items():
+        host = row["source_url"].split("/")[2]
+        a.ok(host in allowed, f"{k}: source host {host} has no recorded reuse basis (allowed: {sorted(allowed)})")
+    banned = re.compile(r"trc\.nist\.gov|webbook\.nist\.gov|physics\.nist\.gov|cryogenic materials|SS304|AL6061T6|304 stainless|6061-T6", re.I)
+    for p in sorted(c.ext.iterdir()):
+        if p.suffix in (".csv", ".mmd", ".py") and p.name not in ("validate_design.py", "THIRD_PARTY_NOTICES.md"):
+            m = banned.search(text(p))
+            a.ok(not m, f"{p.name}: contains '{m.group(0) if m else ''}' (material-fit or NIST SRD source reference)")
+    a.ok(not hasattr(mod, "contraction_rows") and not hasattr(cy, "k_ss") and not hasattr(cy, "cp_ss") and not hasattr(cy, "strain_y"), "the calculation holds no material-property code")
+    a.ok(len(props.sets) == 13 and sum(len(v) for v in props.sets.values()) == 574, "nitrogen table size")
+    a.ok(not any(r["class"] == "VERIFIED" and "material" in r["name"].lower() for r in reg.values()), "no VERIFIED material row in the register")
+    a.ok(any(r["id"] == "UI-34" for r in c.csv("missing_inputs_register.csv")) and any(r["id"] == "UI-35" for r in c.csv("missing_inputs_register.csv")), "UI-34 and UI-35 are registered")
+    tc = c.csv("thermal_contraction.csv")
+    a.ok(len(tc) >= 5 and all(r["status"] == "UNAVAILABLE" for r in tc), "every thermal_contraction.csv row is UNAVAILABLE")
+    a.ok({r["category"] for r in tc} == {"THERMAL_CONTRACTION", "SUPPORT_CONDUCTION", "COOLDOWN_METAL"}, "categories")
+    for r in tc:
+        a.ok(all(num(v) is None for v in r.values()), f"{r['quantity']}: a cell holds a number")
+        a.ok(bool(r["required_input"]) and bool(r["equation"]), f"{r['quantity']}: no required input or equation")
+    for r in c.csv("cryogenic_heat_leak.csv"):
+        a.ok(r["Q_support_W_m"] == "" and r["share_support_pct"] == "", f"{r['scenario']} {r['case']}: support conduction has a value")
+        if r["Q_total_W_m"]:
+            a.ok("LOWER BOUND" in r["total_basis"], f"{r['scenario']} {r['case']}: total not labelled a lower bound")
+    meta = ["Permission is hereby granted, free of charge", "Copyright (c) 2012-2018 Ian H. Bell and other CoolProp developers", "MIT License",
+            "covers the CoolProp **software** only", "CC BY 4.0", "NIST Standard Reference Data", "not** stored", "UNAVAILABLE"]
+    for needle in meta:
+        a.ok(needle in notices, f"THIRD_PARTY_NOTICES.md lacks '{needle}'")
+    if (c.repo / "NOTICE.md").exists():                                  # absent in the mutation copies, which hold only the files the checks read
+        root_notice = text(c.repo / "NOTICE.md")
+        a.ok("THIRD_PARTY_NOTICES.md" in root_notice and "covers the CoolProp software only" in root_notice, "root NOTICE.md points to the third-party notices and limits the MIT licence to CoolProp")
+    a.done("verified constants come only from the BIPM, CoolProp, NASA and the CFR; no NIST SRD source, material-fit coefficient or material name remains; the five material-dependent results carry no number", "NIST WebBook, CODATA and cryogenic-material data are not stored (THIRD_PARTY_NOTICES.md section 7)")
 
-    a = c.acc("V-A06", "Online: verified constants, material coefficients and property values match the live public pages")
+    a = c.acc("V-A06", "Online: transcribed constants are on their live pages, library values agree, and spot states agree with the NIST WebBook (read for comparison only)")
     if not c.online:
         c.rec("V-A06", a.desc, True, skip=True, note="needs network access; run with --online (performed at authoring, see the report header)")
     else:
@@ -265,17 +287,14 @@ def check_A(c):
                     page_cache[u] = r.read().decode("utf-8", "replace")
             return page_cache[u]
         flat = lambda s: re.sub(r"\s+", "", html.unescape(re.sub(r"<[^>]+>", " ", s)))
-        for k, row in consts.items():
-            v = row["value"]
-            if v == "0" or k == "VC-07":
-                continue
+        probes = {"VC-04": "20.95", "VC-05": "lessthan19.5percentoxygenbyvolume"}
+        for k, probe in probes.items():
             try:
-                body = flat(page(row["source_url"]))
+                body = flat(page(consts[k]["source_url"]))
             except Exception as e:                                       # network or HTTP failure counts as a failed check
                 a.ok(False, f"{k}: {type(e).__name__}")
                 continue
-            probe = v.replace("e-8", "") if k == "VC-03" else v
-            a.ok(probe in body, f"{k}: {v} not on the page")
+            a.ok(probe in body, f"{k}: '{probe}' not on the page")
         # spot checks of the generated nitrogen table against the NIST WebBook (values are read, never stored)
         base = ("https://webbook.nist.gov/cgi/fluid.cgi?Action=Data&Wide=on&ID=C7727379&Digits=7&RefState=DEF&TUnit=K&PUnit=MPa"
                 "&DUnit=kg/m3&HUnit=kJ/kg&WUnit=m/s&VisUnit=uPa*s&STUnit=N/m")
@@ -317,12 +336,16 @@ def check_A(c):
         gen = load_module(c.ext / "generate_verified_properties.py", "gen_mod")
         try:
             import CoolProp  # noqa: F401
+            import CoolProp.CoolProp as CP
+            a.ok(close(float(consts["VC-02"]["value"]), CP.PropsSI("molemass", "Nitrogen") * 1e3, 1e-9), "VC-02 differs from the CoolProp molar mass of nitrogen")
+            a.ok(close(float(consts["VC-06"]["value"]), CP.PropsSI("T", "P", 101325.0, "Q", 0, "Oxygen"), 1e-6), "VC-06 differs from the CoolProp boiling temperature of oxygen")
+            a.ok(CP.get_global_param_string("version") == consts["VC-07"]["value"], "installed CoolProp version differs from VC-07")
             fresh = gen.to_csv_text(gen.build())
             a.ok(gen.compare(text(c.ext / "verified_properties.csv"), fresh, 1e-6), "verified_properties.csv differs from a fresh CoolProp generation (relative 1e-6)")
             note_cp = "table regenerated with CoolProp and compared"
         except ImportError:
             note_cp = "CoolProp not installed here: the table was not regenerated"
-        a.done("every transcribed value is on its page; spot states agree with the NIST WebBook within 5e-6 relative (observed agreement at authoring: about 1e-6)", f"NIST CODATA, NIST WebBook, NIST cryogenic materials, NASA, Cornell LII; {note_cp}")
+        a.done("the NASA and CFR values are on their pages; spot states agree with the NIST WebBook within 5e-6 relative (observed agreement at authoring: about 1e-6)", f"NASA, govinfo.gov; NIST WebBook read for comparison only and never stored; {note_cp}")
 
 
 # ======================================================================================
@@ -346,7 +369,7 @@ def check_B(c):
     reg = c.reg()
     P = lambda k: float(reg[k]["value"])
     ALLOWED = {"K", "Pa", "MPa(g)", "m", "mm", "kg/s", "g/s", "kg/m3", "-", "percent", "J/(mol K)", "g/mol", "W/(m2 K4)", "m/s", "J/(kg K)", "kJ/kg",
-               "kJ/(kg K)", "1/m", "m3", "L/s", "W/m", "L/h", "MPa", "kPa", "kg/m", "kg/m2", "W", "kN", "MPa/K", "min", "s", "L", "g/(s mm2)", "mm2", "W/(m K)"}
+               "kJ/(kg K)", "1/m", "m3", "L/s", "W/m", "L/h", "MPa", "kPa", "kg/m", "kg/m2", "W", "kN", "MPa/K", "min", "s", "L", "g/(s mm2)", "mm2", "W/(m K)", "kg/MJ", "kJ/m"}
     a = c.acc("V-B01", "Units: allowed unit strings, and unit conversions in the CSV outputs agree with independent recomputation")
     for pid, r in reg.items():
         a.ok(r["unit"] in ALLOWED, f"{pid}: unit '{r['unit']}'")
@@ -364,15 +387,17 @@ def check_B(c):
             gs = float(r["Q_total_W_m"]) / (cy.hfg) * 1e3
             a.ok(close(float(r["boil_g_s_m"]), gs, 2e-5), f"{r['scenario']} {r['case']} boil g/s")
             a.ok(close(float(r["boil_L_h_m"]), gs * 1e-3 / rho_l * 1e3 * 3600, 2e-5), f"{r['scenario']} {r['case']} boil L/h")
-    for r in c.csv("thermal_contraction.csv"):
-        a.ok(close(float(r["dL_mm"]), float(r["contraction_strain_pct"]) / 100 * float(r["length_m"]) * 1e3, 2e-5), f"{r['material']} {r['length_m']} m dL_mm")
-        a.ok(close(float(r["restrained_force_kN"]), float(r["restrained_stress_MPa"]) * float(r["section_area_mm2"]) * 1e-3, 2e-5), f"{r['material']} force kN")
+    for r in c.csv("cryogenic_cooldown.csv"):
+        if r["status"] == "CALCULATED":
+            a.ok(close(float(r["LN2_kg_per_MJ"]), 1e3 / float(r["heat_absorbed_per_kg_LN2_kJ"]), 2e-5), f"{r['basis']}: kg per MJ")
+            a.ok(close(float(r["LN2_L_per_MJ"]), float(r["LN2_kg_per_MJ"]) / rho_l * 1e3, 2e-5), f"{r['basis']}: litres per MJ")
     for r in c.csv("trapped_liquid.csv"):
         if r["section"] == "TIME_TO_PRESSURE":
             m = rho_l * math.pi / 4 * cy.Di_bore ** 2
             exp = m * P("VP-06") * 1e3 * float(r["dT_K"]) / float(r["Q_W_m"]) / 60.0
             a.ok(close(float(r["time_min"]), exp, 3e-5), f"trapped {r['heat_case']} {r['target_p_MPa_g']} time")
-    a.done("conversion factors agree to 2e-5 (CSV values carry 6 significant digits)", "kPa, MPa, g/s, L/h, mm, kN, min")
+            a.ok(close(float(r["energy_kJ_per_m"]), m * P("VP-06") * float(r["dT_K"]), 3e-5), f"trapped {r['heat_case']} {r['target_p_MPa_g']} energy")
+    a.done("conversion factors agree to 2e-5 (CSV values carry 6 significant digits)", "kPa, MPa, g/s, L/h, kJ, kg per MJ, min")
 
     a = c.acc("V-B02", "Pipe pressure loss: isothermal compressible formula against independent Colebrook (bisection) and Haaland")
     p1, D, eps = 1.101325e6, 0.010, 4.5e-5
@@ -404,59 +429,54 @@ def check_B(c):
     a.ok(abs((2 / (1.4 + 1)) ** (1.4 / 0.4) - 0.5283) < 1e-4, "critical ratio 0.5283 for gamma 1.4")
     a.done("equal to 1e-12 (same equations, written independently)", "")
 
-    a = c.acc("V-B04", "Radiation, gas conduction and support formulas against limiting cases")
+    a = c.acc("V-B04", "Radiation and gas-conduction formulas against limiting cases (support conduction is not modelled)")
     Th, Tc = 300.0, cy.Tc
     save = cy.Dj
     cy.Dj = cy.Do * (1 + 1e-9)
     plane = cy.sigma * (Th ** 4 - Tc ** 4) / (1 / 0.2 + 1 / 0.2 - 1) * math.pi * cy.Do
     a.ok(close(cy.rad_bare(Th, Tc, 0.2, 0.2), plane, 1e-6), "concentric cylinders tend to parallel plates when the gap closes")
     cy.Dj = save
-    a.ok(close(cy.rad_mli(Th, Tc, 0.003), 5.670374419e-8 * math.pi * cy.Do * 0.003 * (Th ** 4 - Tc ** 4), 1e-8), "MLI radiation")
+    a.ok(close(cy.rad_mli(Th, Tc, 0.003), 5.670374419184e-8 * math.pi * cy.Do * 0.003 * (Th ** 4 - Tc ** 4), 1e-8), "MLI radiation")
     Tm = 0.5 * (Th + Tc)
-    lam = (1.4 + 1) / (1.4 - 1) * math.sqrt(8.314462618 / (8 * math.pi * 0.0280134 * Tm))
+    lam = (1.4 + 1) / (1.4 - 1) * math.sqrt(8.31446261815324 / (8 * math.pi * 0.02801348 * Tm))
     a.ok(1.3 < lam < 1.7, f"free-molecular coefficient {lam:.3f} W/(m2 K Pa)")
     a.ok(close(cy.gas_fm(Th, Tc, 1e-3, 0.9), 0.9 * lam * 1e-3 * (Th - Tc) * math.pi * cy.Do, 1e-8), "free-molecular heat flow")
     kv0 = cy.kv
     cy.kv = [(Tc, 0.02), (320.0, 0.02)]
     a.ok(close(cy.gas_cont(Th, Tc), 2 * math.pi * 0.02 * (Th - Tc) / math.log(cy.Dj / cy.Do), 1e-9), "continuum conduction for a constant conductivity")
     cy.kv = kv0
-    ks0 = cy.k_ss
-    cy.k_ss = lambda T: 10.0
-    a.ok(close(cy.supports(300.0, 2e-5, 1.0), 2e-5 * 10.0 * (300.0 - cy.Tc), 1e-9), "support conduction for a constant conductivity")
-    cy.k_ss = ks0
+    a.ok(not hasattr(cy, "supports"), "no support-conduction code exists (no conductivity data are held)")
     qfm, qc = cy.gas_fm(Th, Tc, 1.0, 0.9), cy.gas_cont(Th, Tc)
     br = cy.gas_bridge(Th, Tc, 1.0, 0.9)
     a.ok(br < min(qfm, qc) and close(br, 1 / (1 / qfm + 1 / qc), 1e-12), "bridged value is below both limits")
     a.done("limiting cases to 1e-6 to 1e-12 (closed-form identities)", "")
 
-    a = c.acc("V-B05", "Cooldown energy and boil-off arithmetic")
-    n = 4000
-    Ts = [cy.Tc + i * (300.0 - cy.Tc) / n for i in range(n + 1)]
-    trap = sum(0.5 * (cy.cp_ss(x) + cy.cp_ss(y)) * (y - x) for x, y in zip(Ts, Ts[1:]))
-    cool = {float(r["length_m"]): r for r in c.csv("cryogenic_cooldown.csv")}
-    a.ok(close(float(cool[1.0]["metal_dh_kJ_kg"]) * 1e3, trap, 1e-5), "integral of cp against a trapezoid sum")
-    Am = math.pi / 4 * (cy.Do ** 2 - cy.Di_bore ** 2)
-    a.ok(close(float(cool[10.0]["metal_mass_kg"]), P("AS-16") * Am * 10.0, 1e-5), "metal mass")
-    a.ok(close(float(cool[10.0]["LN2_kg_latent_only"]), float(cool[10.0]["energy_to_remove_kJ"]) / float(cool[10.0]["hfg_kJ_kg"]), 1e-5), "LN2 mass = energy / latent heat")
-    a.ok(float(cool[10.0]["LN2_kg_full_sensible"]) < float(cool[10.0]["LN2_kg_latent_only"]), "using the vapour sensible heat needs less liquid than latent heat only")
-    a.ok(close(float(cool[10.0]["hfg_kJ_kg"]), (cy.vap["h_kJ_kg"] - cy.liq["h_kJ_kg"]), 1e-5), "latent heat from the table")
-    a.done("to 1e-5; trapezoid sum with 4000 intervals against Simpson with 2000", "")
+    a = c.acc("V-B05", "Cooldown: liquid per megajoule from the verified enthalpies; the metal heat is unavailable")
+    cool = {r["basis"]: r for r in c.csv("cryogenic_cooldown.csv")}
+    a.ok(close(float(cool["LATENT_ONLY"]["heat_absorbed_per_kg_LN2_kJ"]), cy.vap["h_kJ_kg"] - cy.liq["h_kJ_kg"], 1e-5), "latent heat from the table")
+    a.ok(close(float(cool["VAPOUR_LEAVES_AT_300K"]["heat_absorbed_per_kg_LN2_kJ"]), props.h_gas(300.0, 0) - cy.liq["h_kJ_kg"], 1e-5), "enthalpy rise to 300 K gas from the table")
+    a.ok(float(cool["VAPOUR_LEAVES_AT_300K"]["LN2_kg_per_MJ"]) < float(cool["LATENT_ONLY"]["LN2_kg_per_MJ"]), "using the vapour sensible heat needs less liquid than latent heat only")
+    m = cool["METAL_HEAT_TO_REMOVE"]
+    a.ok(m["status"] == "UNAVAILABLE" and all(m[k] == "" for k in ("heat_absorbed_per_kg_LN2_kJ", "LN2_kg_per_MJ", "LN2_L_per_MJ")), "the metal heat row is UNAVAILABLE and holds no number")
+    a.ok(set(cool) == {"LATENT_ONLY", "VAPOUR_LEAVES_AT_300K", "METAL_HEAT_TO_REMOVE"}, "cooldown rows")
+    a.done("to 1e-5", "")
 
-    a = c.acc("V-B06", "Thermal contraction and restrained stress bounds")
-    tc = {(r["material"], r["length_m"]): r for r in c.csv("thermal_contraction.csv")}
-    for mat, key in (("SS304", "SS304"), ("AL6061T6", "AL6061T6")):
-        cf = [float(consts[f"VC-{n}"]["value"]) for n in (range(40, 45) if mat == "SS304" else range(50, 55))]
-        y = lambda T: sum(ci * T ** k for k, ci in enumerate(cf)) * 1e-5
-        eps_ind = -(y(cy.Tc) - y(300.0)) / (1 + y(300.0))
-        r10 = tc[(key, "10")]
-        a.ok(close(float(r10["contraction_strain_pct"]) / 100, eps_ind, 2e-5), f"{mat} strain")
-        e293 = float(r10["E_293K_GPa"]) * 1e3
-        ecold = float(r10["E_cold_GPa"]) * 1e3
-        eps_293 = -(y(cy.Tc) - y(293.0)) / (1 + y(293.0))
-        sig = float(r10["restrained_stress_MPa"])
-        a.ok(e293 * eps_293 * 0.999 <= sig <= ecold * eps_293 * 1.001, f"{mat} stress {sig:.1f} MPa outside [E(293) eps, E(cold) eps]")
-    a.ok(float(tc[("AL6061T6", "10")]["dL_mm"]) > float(tc[("SS304", "10")]["dL_mm"]), "aluminium shortens more than stainless steel")
-    a.done("to 2e-5; stress bounded by the moduli at the two ends", "")
+    a = c.acc("V-B06", "Unavailable results: contraction, support conduction and metal cooldown heat are never calculated or defaulted")
+    for uid in ("UI-24", "UI-34", "UI-35"):
+        try:
+            mod.P(uid)
+            a.ok(False, f"{uid}: P() returned a value for an unresolved input")
+        except mod.MissingInputError:
+            a.ok(True, "")
+    tc = c.csv("thermal_contraction.csv")
+    a.ok(sum(r["category"] == "THERMAL_CONTRACTION" for r in tc) == 3, "three contraction results are registered as unavailable")
+    for r in tc:
+        ids = re.findall(r"UI-\d\d", r["required_input"] + " " + r["ui_ids"])
+        a.ok(bool(ids) and all(i in reg and reg[i]["class"] == "UNRESOLVED" for i in ids), f"{r['quantity']}: required inputs {ids} must be registered UNRESOLVED")
+    heat = [r for r in c.csv("cryogenic_heat_leak.csv") if r["Q_total_W_m"]]
+    for r in heat:
+        a.ok(close(float(r["Q_total_W_m"]), float(r["Q_rad_W_m"]) + float(r["Q_gas_W_m"]), 2e-5), f"{r['scenario']} {r['case']}: total is radiation plus gas conduction")
+    a.done("each unavailable result has no number, a registered unresolved input and its equation; totals are radiation plus gas conduction", "")
 
     a = c.acc("V-B07", "Joule-Thomson drop consistent with the integral of the tabulated coefficient")
     env = {(r["stage"], r["p_in_MPa_g"], r["p_out_MPa_g"], r["T_in_K"]): r for r in c.csv("regulator_envelope.csv")}
@@ -617,9 +637,9 @@ def check_D(c):
     a = c.acc("V-D02", "Output sanity: totals equal their parts, scenario order, shares, signs")
     heat = [r for r in c.csv("cryogenic_heat_leak.csv") if r["Q_total_W_m"]]
     for r in heat:
-        parts = float(r["Q_rad_W_m"]) + float(r["Q_gas_W_m"]) + float(r["Q_support_W_m"])
+        parts = float(r["Q_rad_W_m"]) + float(r["Q_gas_W_m"])
         a.ok(close(float(r["Q_total_W_m"]), parts, 2e-5), f"{r['scenario']} {r['case']}: total {r['Q_total_W_m']} vs parts {parts:.6g}")
-        a.ok(abs(float(r["share_rad_pct"]) + float(r["share_gas_pct"]) + float(r["share_support_pct"]) - 100) < 1e-3, f"{r['scenario']} {r['case']}: shares")
+        a.ok(abs(float(r["share_rad_pct"]) + float(r["share_gas_pct"]) - 100) < 1e-3, f"{r['scenario']} {r['case']}: shares")
     q = {(r["scenario"], r["case"]): float(r["Q_total_W_m"]) for r in heat}
     a.ok(q[("S1", "nom")] < q[("S2", "nom")] < q[("S3", "nom")] < q[("S4", "nom")], "S1 < S2 < S3 < S4")
     for s in ("S1", "S2", "S3", "S4"):
@@ -630,8 +650,6 @@ def check_D(c):
     for r in c.csv("pressure_budget.csv"):
         if r["included_in_total"] == "TRUE":
             a.ok(float(r["dp_nom_kPa"]) >= 0, f"{r['item_id']}: negative loss")
-    for r in c.csv("thermal_contraction.csv"):
-        a.ok(float(r["contraction_strain_pct"]) > 0 and float(r["restrained_stress_MPa"]) > 0, f"{r['material']}: contraction and stress positive")
     for r in c.csv("cryogenic_property_screening.csv"):
         a.ok(float(r["liquid_to_sat_vapour_volume_ratio"]) > 1 and float(r["h_fg_kJ_kg"]) > 0, f"p {r['p_MPa_g']}")
     a.done("", "")
@@ -713,7 +731,7 @@ def check_E(c):
         for k, v in marks:
             a.ok(k in H and H[k] == v, f"{name}: CALC {k}={v} but calculated {H.get(k)}")
             a.ok(v in body, f"{name}: label does not show {v}")
-    a.ok(sum(len(re.findall(r"^%% CALC", text(c.ext / f"{n}.mmd"), re.M)) for n in DIAGRAMS) >= 8, "at least 8 numbers are tied")
+    a.ok(sum(len(re.findall(r"^%% CALC", text(c.ext / f"{n}.mmd"), re.M)) for n in DIAGRAMS) >= 7, "at least 7 numbers are tied (8 before the contraction number was removed)")
     bc = {r["station"]: r for r in c.csv("boundary_conditions.csv")}
     pfd = strip_comments(text(c.ext / "PFD_HIGH_PRESSURE.mmd"))
     a.ok(f"{float(bc['SB-301']['p_MPa_g']):g} MPa(g)" in pfd and f"{float(bc['SB-302']['p_MPa_g']):g} MPa(g)" in pfd and f"{float(bc['SB-303']['p_MPa_g']):g} MPa(g)" in pfd, "illustrative pressures on the GN2 PFD equal the boundary register")
@@ -803,10 +821,9 @@ def c_headlines(c):
     sens = mod.sensitivity_rows(hp)
     heat = mod.heat_leak_rows(cy)
     cool = mod.cooldown_rows(cy)
-    contr = mod.contraction_rows(cy)
     trapped = mod.trapped_rows(cy)
     oxy = mod.oxygen_rows(hp, cy)
-    H = mod.HEADLINES(hp, cy, heat, contr, trapped, sens, budget, cool, oxy)
+    H = mod.HEADLINES(hp, cy, heat, trapped, sens, budget, cool, oxy)
     return {k: format(v[0], v[1]) for k, v in H.items()}
 
 
@@ -1074,30 +1091,33 @@ def check_K(c):
     repo = c.repo
     r = git(["rev-parse", "--is-inside-work-tree"], repo) if (repo / ".git").exists() else None
     if r is None or r.returncode != 0:
-        for cid, d in (("V-K01", "Existing repository files are unchanged (only the root README link may change)"), ("V-K02", "The root README change is an added link only")):
+        for cid, d in (("V-K01", "Existing repository files are unchanged (only the root README link and the NOTICE.md section may change)"), ("V-K02", "The root README and NOTICE.md changes are additions only")):
             c.rec(cid, d, True, skip=True, note="not a git checkout (mutation copy or unpacked archive)")
         return
     base = next((b for b in ("origin/main", "main") if git(["rev-parse", "--verify", "-q", b], repo).returncode == 0), None)
     if base is None:
-        for cid, d in (("V-K01", "Existing repository files are unchanged (only the root README link may change)"), ("V-K02", "The root README change is an added link only")):
+        for cid, d in (("V-K01", "Existing repository files are unchanged (only the root README link and the NOTICE.md section may change)"), ("V-K02", "The root README and NOTICE.md changes are additions only")):
             c.rec(cid, d, True, skip=True, note="no main branch to compare with")
         return
-    a = c.acc("V-K01", "Existing repository files are unchanged (only the root README link may change)")
+    a = c.acc("V-K01", "Existing repository files are unchanged (only the root README link and the NOTICE.md section may change)")
     d = git(["diff", "--name-status", base], repo).stdout.splitlines()
     new = git(["ls-files", "--others", "--exclude-standard"], repo).stdout.splitlines()
     for ln in d:
         st, path = ln.split("\t", 1)
-        a.ok(path == "README.md" and st == "M" or (st == "A" and path.startswith("09_High_Pressure_Cryogenic_Systems/")), f"{st} {path}")
+        a.ok(path in ("README.md", "NOTICE.md") and st == "M" or (st == "A" and path.startswith("09_High_Pressure_Cryogenic_Systems/")), f"{st} {path}")
     for path in new:
         a.ok(path.startswith("09_High_Pressure_Cryogenic_Systems/"), f"untracked {path}")
-    a.done(f"only README.md modified; new files only under 09_High_Pressure_Cryogenic_Systems/ (compared with {base})", "08_Fluid_Test_Rig_Design, the CFD, Mechanical, LS-DYNA, SQL, report and presentation files are unchanged")
-    a = c.acc("V-K02", "The root README change is an added link only")
+    a.done(f"only README.md and NOTICE.md modified; new files only under 09_High_Pressure_Cryogenic_Systems/ (compared with {base})", "08_Fluid_Test_Rig_Design, the CFD, Mechanical, LS-DYNA, SQL, report and presentation files are unchanged")
+    a = c.acc("V-K02", "The root README and NOTICE.md changes are additions only")
     dd = git(["diff", "-U0", base, "--", "README.md"], repo).stdout.splitlines()
     removed = [ln for ln in dd if ln.startswith("-") and not ln.startswith("---")]
     added = [ln for ln in dd if ln.startswith("+") and not ln.startswith("+++")]
     a.ok(not removed, f"{len(removed)} lines removed from README.md")
     a.ok(len(added) == 0 or any("09_High_Pressure_Cryogenic_Systems/README.md" in ln for ln in added), "the added text links to the new folder")
     a.ok(len(added) <= 6, f"{len(added)} lines added")
+    dn = git(["diff", "-U0", base, "--", "NOTICE.md"], repo).stdout.splitlines()
+    a.ok(not [ln for ln in dn if ln.startswith("-") and not ln.startswith("---")], "no line removed from NOTICE.md")
+    a.ok(any("THIRD_PARTY_NOTICES.md" in ln for ln in dn if ln.startswith("+")) or not dn, "the added NOTICE.md text points to the third-party notices")
     a.done("", "")
 
 
@@ -1204,11 +1224,13 @@ def props_density_mutation(ext, repo):
 MUTATIONS = [
     ("Change the CFD inlet temperature M002 in the master register copy (300 K to 310 K)", master_mutation, ["V-A01"]),
     ("Raise the tabulated N2 density at 300 K and 1 atm by 5 percent", props_density_mutation, ["V-A04"]),
-    ("Set the molar gas constant to 8.4", mutate_replace("verified_constants.csv", "VC-01,Molar gas constant,8.314462618", "VC-01,Molar gas constant,8.4"), ["V-A03"]),
-    ("Corrupt a NIST expansion coefficient (a: -2.9554E2 to -2.7554E2)", mutate_replace("verified_constants.csv", "-2.9554E2", "-2.7554E2"), ["V-A05"]),
+    ("Set the molar gas constant to 8.4", mutate_replace("verified_constants.csv", "VC-01,Molar gas constant,8.31446261815324", "VC-01,Molar gas constant,8.4"), ["V-A03"]),
+    ("Re-insert an uncleared NIST cryogenic-material fit coefficient into verified_constants.csv", mutate_replace("verified_constants.csv", "VC-11,Speed of light in vacuum (exact),299792458", "VC-12,304 stainless thermal conductivity fit a,-1.4087,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,NIST fit,2026-10-11\nVC-11,Speed of light in vacuum (exact),299792458"), ["V-A05", "V-A03"]),
     ("Multiply one nominal budget loss (B19 delivery pipe friction) by 1.5 in pressure_budget.csv", mutate_csv_cell("pressure_budget.csv", ("item_id",), ("B19",), "dp_nom_kPa", "13.9"), ["V-C03", "V-I01"]),
-    ("Multiply a thermal-contraction length change by 1.1", mutate_csv_cell("thermal_contraction.csv", ("material", "length_m"), ("SS304", "10"), "dL_mm", "31.95"), ["V-B01", "V-I01"]),
-    ("Double the S1 nominal heat-leak total", mutate_csv_cell("cryogenic_heat_leak.csv", ("scenario", "case"), ("S1", "nom"), "Q_total_W_m", "0.37"), ["V-D02", "V-I01"]),
+    ("Put a contraction number into the unavailable thermal-contraction register", mutate_csv_cell("thermal_contraction.csv", ("category", "ui_ids"), ("THERMAL_CONTRACTION", "UI-34"), "note", "29.0"), ["V-A05", "V-I01"]),
+    ("Silently default a support-conduction value in the heat-leak table", mutate_csv_cell("cryogenic_heat_leak.csv", ("scenario", "case"), ("S1", "nom"), "Q_support_W_m", "0.05"), ["V-A05", "V-I01"]),
+    ("Alter the CoolProp copyright line in THIRD_PARTY_NOTICES.md", mutate_replace("THIRD_PARTY_NOTICES.md", "Copyright (c) 2012-2018 Ian H. Bell and other CoolProp developers", "Copyright (c) 2012-2018 CoolProp"), ["V-A05"]),
+    ("Double the S1 nominal heat-leak total", mutate_csv_cell("cryogenic_heat_leak.csv", ("scenario", "case"), ("S1", "nom"), "Q_total_W_m", "0.262"), ["V-D02", "V-I01"]),
     ("Change the K of a bend in calculations.py without regenerating the outputs", mutate_replace("calculations.py", "(0.15, 0.30, 0.90)", "(0.15, 0.60, 0.90)"), ["V-I01"]),
     ("Delete the FLT-301 row from the equipment schedule", mutate_delete_row("equipment_schedule.csv", "tag", "FLT-301"), ["V-E02"]),
     ("Remove the banner from the cryogenic P&ID source", mutate_replace("PID_CRYOGENIC.mmd", "CONCEPTUAL — NOT APPROVED FOR CONSTRUCTION.", "DRAFT", 2), ["V-E04"]),
@@ -1277,8 +1299,8 @@ def write_report(path, results, mutations, online):
         for r in skips:
             L.append(f"- **{r[0]}** {r[1]}: {r[5]}.")
     L += ["- **Solver runs.** Fluent, Mechanical, LS-DYNA and the SQL import were not run, by design. No CFD or finite-element result is reused: the existing models cover air below 1 atm and Inconel 718 at 293 to 673 K only.",
-          "- **Independent verification of the NIST values.** The data are checked for internal consistency (ideal-gas limit, Clapeyron relation, isotherm against isobars, monotonic isochores) and, with `--online`, against the live pages. They were not checked against a second independent equation of state or against measurements.",
-          "- **Fit accuracy.** The NIST material fits carry their own stated errors (1 to 5 percent); no measured data were used.",
+          "- **Independent verification of the nitrogen table.** The data are checked for internal consistency (ideal-gas limit, Clapeyron relation, isotherm against isobars, monotonic isochores) and, with `--online`, against the live NIST WebBook (read for comparison only, never stored) and a fresh CoolProp run. They were not checked against a second independent equation of state or against measurements.",
+          "- **Material-property values.** None are held (UI-34, UI-35), so none can be tested. The five dependent results are UNAVAILABLE and are tested only for the absence of numbers and defaults (V-A05, V-B06).",
           "- **Validation against experiment or a real system.** None exists. The numbers are screening values for placeholder assumptions.",
           "- **Relief-device sizing, vessel and piping integrity, stress margins, two-phase and transient behaviour, plume dispersion.** Not calculated (`CALCULATION_METHOD.md` section 7); there is nothing to test.",
           "- **Standards compliance.** Not claimed, so not tested. The standards were read in part or only as listings (`DESIGN_BASIS.md` section 7).",
