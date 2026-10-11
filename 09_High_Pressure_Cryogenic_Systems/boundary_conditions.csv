@@ -1,0 +1,16 @@
+station,system,location,tag,p_MPa_g,T_K,data_class,source_ref,note
+SB-301,HP,Nitrogen source interface,SRC-301,20,300,ILLUSTRATIVE,IL-02;IL-05,"source range, depletion and temperature variation are UI-02"
+SB-302,HP,Stage-1 outlet,PCV-301,5,280.751,ILLUSTRATIVE;CALCULATED,IL-03,temperature is the isenthalpic outlet of the 300 K source gas (no heat gain)
+SB-303,HP,Stage-2 outlet,PCV-302,1,271.696,ILLUSTRATIVE;CALCULATED,IL-04,temperature is the isenthalpic outlet of the stage-1 outlet gas (no heat gain)
+SB-304,HP,Delivery interface,DI-301,0.983361,,CALCULATED,pressure_budget.csv T-DEL,nominal passive loss subtracted; required interface pressure is UI-01/UI-04
+SB-305,HP,Vent stack exit,VS-301,0,,ASSUMED,AS-01,ambient at the exit; back-pressure during relief is UI-07/UI-11
+SB-306,HP,"Design pressure, high-pressure zone",L-301..L-303,,,UNRESOLVED,UI-06,no design pressure is assumed
+SB-307,HP,"Design pressure, intermediate zone",L-304,,,UNRESOLVED,UI-06,
+SB-308,HP,"Design pressure, delivery zone",L-305,,,UNRESOLVED,UI-06,
+SB-309,HP,Set pressure of PSV-301 and PSV-302,PSV-301;PSV-302,,,UNRESOLVED,UI-07,no relief setting is assumed
+SC-401,CRYO,Source vessel liquid,VES-401,0,77.355,ILLUSTRATIVE;VERIFIED,VP-01,0 MPa(g) is used to read properties; the real vessel pressure is UI-20
+SC-402,CRYO,Transfer line liquid inlet,L-401,0,77.355,ILLUSTRATIVE;VERIFIED,VP-01,subcooling or pressure above the boiling pressure is not assumed
+SC-403,CRYO,Vacuum annulus,L-401,,,ASSUMED,AS-13,"annulus pressure 1e-3 Pa (design), 1 Pa (degraded), 101325 Pa (lost); outer jacket 300 K"
+SC-404,CRYO,Receiver,RCV-401,,,UNRESOLVED,UI-26,
+SC-405,CRYO,Cold vent exit,VS-401,0,,ASSUMED,AS-01,ambient at the exit; relief back-pressure and vent temperature are UI-22/UI-29
+SC-406,CRYO,Allowable pressure and relief setting,TRV-401;TRV-402,,,UNRESOLVED,UI-22,no allowable pressure or relief setting is assumed

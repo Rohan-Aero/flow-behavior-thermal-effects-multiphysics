@@ -1,0 +1,5 @@
+p_MPa_g,T_sat_K,rho_liquid_kg_m3,rho_vapour_kg_m3,h_fg_kJ_kg,liquid_to_sat_vapour_volume_ratio,liquid_to_ambient_gas_volume_ratio,data_class,note
+0,77.355,806.085,4.61214,199.176,174.775,708.232,CALCULATED from VERIFIED,saturated liquid; ambient gas is 300 K and 0.101325 MPa
+0.2,87.9563,755.464,12.7231,183.882,59.3774,663.756,CALCULATED from VERIFIED,saturated liquid; ambient gas is 300 K and 0.101325 MPa
+0.5,96.4101,710.355,24.7226,168.609,28.733,624.123,CALCULATED from VERIFIED,saturated liquid; ambient gas is 300 K and 0.101325 MPa
+1,105.262,655.748,45.7519,148.131,14.3327,576.145,CALCULATED from VERIFIED,saturated liquid; ambient gas is 300 K and 0.101325 MPa

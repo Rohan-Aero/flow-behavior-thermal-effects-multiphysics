@@ -1,0 +1,67 @@
+section,fill_density_kg_m3,T_K,p_MPa_g,phase,heat_case,Q_W_m,target_p_MPa_g,dT_K,time_min,note
+ISOCHORE,806.084,77.355,0,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,79.855,4.3728,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,82.355,8.69512,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,84.855,12.9687,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,87.355,17.1957,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,89.855,21.3779,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,92.355,25.5173,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,94.855,29.6157,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,97.355,33.6746,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,806.084,99.855,37.6957,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,77.355,0,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,79.855,0.033384,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,82.355,0.074489,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,84.855,0.124355,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,87.355,0.60038,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,89.855,4.09329,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,92.355,7.55874,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,94.855,10.9966,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,97.355,14.4073,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,99.855,17.7912,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,102.355,21.1489,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,104.855,24.4812,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,107.355,27.7886,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,760,109.855,31.0717,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,77.355,0,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,79.855,0.033384,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,82.355,0.074489,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,84.855,0.124355,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,87.355,0.184053,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,89.855,0.254678,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,92.355,0.33735,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,94.855,0.43321,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,97.355,0.543417,two_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,99.855,2.30599,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,102.355,4.91301,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,104.855,7.51033,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,107.355,10.0967,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,109.855,12.6714,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,112.355,15.2339,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,114.855,17.784,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,117.355,20.3216,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+ISOCHORE,700,119.855,22.8466,single_phase,,,,,,closed volume warmed at constant density: verified equation-of-state table
+TIME_TO_PRESSURE,806.085,77.6409,0.5,single_phase,S1 nom,0.185404,0.5,0.285868,7.7779,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.9267,1,single_phase,S1 nom,0.185404,1,0.571726,15.5555,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,80.2178,5,single_phase,S1 nom,0.185404,5,2.86278,77.8905,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,83.1183,10,single_phase,S1 nom,0.185404,10,5.76334,156.809,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.6409,0.5,single_phase,S1 high,0.993543,0.5,0.285868,1.45142,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.9267,1,single_phase,S1 high,0.993543,1,0.571726,2.90279,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,80.2178,5,single_phase,S1 high,0.993543,5,2.86278,14.535,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,83.1183,10,single_phase,S1 high,0.993543,10,5.76334,29.2619,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.6409,0.5,single_phase,S2 nom,2.55448,0.5,0.285868,0.564517,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.9267,1,single_phase,S2 nom,2.55448,1,0.571726,1.12901,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,80.2178,5,single_phase,S2 nom,2.55448,5,2.86278,5.65326,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,83.1183,10,single_phase,S2 nom,2.55448,10,5.76334,11.3811,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.6409,0.5,single_phase,S2 high,10.031,0.5,0.285868,0.143759,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.9267,1,single_phase,S2 high,10.031,1,0.571726,0.287513,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,80.2178,5,single_phase,S2 high,10.031,5,2.86278,1.43965,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,83.1183,10,single_phase,S2 high,10.031,10,5.76334,2.89831,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.6409,0.5,single_phase,S4 nom,34.637,0.5,0.285868,0.0416332,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.9267,1,single_phase,S4 nom,34.637,1,0.571726,0.083265,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,80.2178,5,single_phase,S4 nom,34.637,5,2.86278,0.416929,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,83.1183,10,single_phase,S4 nom,34.637,10,5.76334,0.83936,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.6409,0.5,single_phase,S4 high,38.5566,0.5,0.285868,0.0374008,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,77.9267,1,single_phase,S4 high,38.5566,1,0.571726,0.0748004,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,80.2178,5,single_phase,S4 high,38.5566,5,2.86278,0.374545,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
+TIME_TO_PRESSURE,806.085,83.1183,10,single_phase,S4 high,38.5566,10,5.76334,0.754032,"liquid only (0.2792 kg per metre of bore), cv at 77.355 K, metal and support thermal mass ignored (shortest time); pressure threshold is a screening level, not an allowable"
