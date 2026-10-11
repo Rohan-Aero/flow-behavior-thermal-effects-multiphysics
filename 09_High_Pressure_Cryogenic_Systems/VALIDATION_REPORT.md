@@ -109,7 +109,7 @@ These checks validate the arithmetic, the data traceability and the internal con
 
 | ID | Check | Result | Expected | Actual | Note |
 | --- | --- | --- | --- | --- | --- |
-| V-K01 | Existing repository files are unchanged (only the root README link and the NOTICE.md section may change) | PASS | only README.md and NOTICE.md modified; new files only under 09_High_Pressure_Cryogenic_Systems/ (compared with origin/main) | 48 conditions, all hold | 08_Fluid_Test_Rig_Design, the CFD, Mechanical, LS-DYNA, SQL, report and presentation files are unchanged |
+| V-K01 | Existing repository files are unchanged (only the root README link and the NOTICE.md section may change) | PASS | outside this folder only README.md and NOTICE.md may be modified; nothing else is added, changed or removed (compared with origin/main) | 2 conditions, all hold | 08_Fluid_Test_Rig_Design, the CFD, Mechanical, LS-DYNA, SQL, report and presentation files are unchanged |
 | V-K02 | The root README and NOTICE.md changes are additions only | PASS | all conditions hold | 5 conditions, all hold |  |
 
 ## L. Numbers quoted in documents

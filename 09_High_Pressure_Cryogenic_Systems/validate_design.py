@@ -1104,10 +1104,10 @@ def check_K(c):
     new = git(["ls-files", "--others", "--exclude-standard"], repo).stdout.splitlines()
     for ln in d:
         st, path = ln.split("\t", 1)
-        a.ok(path in ("README.md", "NOTICE.md") and st == "M" or (st == "A" and path.startswith("09_High_Pressure_Cryogenic_Systems/")), f"{st} {path}")
+        a.ok(path in ("README.md", "NOTICE.md") and st == "M" or (st in ("A", "M") and path.startswith("09_High_Pressure_Cryogenic_Systems/")), f"{st} {path}")
     for path in new:
         a.ok(path.startswith("09_High_Pressure_Cryogenic_Systems/"), f"untracked {path}")
-    a.done(f"only README.md and NOTICE.md modified; new files only under 09_High_Pressure_Cryogenic_Systems/ (compared with {base})", "08_Fluid_Test_Rig_Design, the CFD, Mechanical, LS-DYNA, SQL, report and presentation files are unchanged")
+    a.done(f"outside this folder only README.md and NOTICE.md may be modified; nothing else is added, changed or removed (compared with {base})", "08_Fluid_Test_Rig_Design, the CFD, Mechanical, LS-DYNA, SQL, report and presentation files are unchanged")
     a = c.acc("V-K02", "The root README and NOTICE.md changes are additions only")
     dd = git(["diff", "-U0", base, "--", "README.md"], repo).stdout.splitlines()
     removed = [ln for ln in dd if ln.startswith("-") and not ln.startswith("---")]
@@ -1225,7 +1225,7 @@ MUTATIONS = [
     ("Change the CFD inlet temperature M002 in the master register copy (300 K to 310 K)", master_mutation, ["V-A01"]),
     ("Raise the tabulated N2 density at 300 K and 1 atm by 5 percent", props_density_mutation, ["V-A04"]),
     ("Set the molar gas constant to 8.4", mutate_replace("verified_constants.csv", "VC-01,Molar gas constant,8.31446261815324", "VC-01,Molar gas constant,8.4"), ["V-A03"]),
-    ("Re-insert an uncleared NIST cryogenic-material fit coefficient into verified_constants.csv", mutate_replace("verified_constants.csv", "VC-11,Speed of light in vacuum (exact),299792458", "VC-12,304 stainless thermal conductivity fit a,-1.4087,coefficient,https://trc.nist.gov/cryogenics/materials/304Stainless/304Stainless_rev.htm,NIST fit,2026-10-11\nVC-11,Speed of light in vacuum (exact),299792458"), ["V-A05", "V-A03"]),
+    ("Re-insert an uncleared NIST cryogenic-material fit coefficient into verified_constants.csv", mutate_replace("verified_constants.csv", "VC-11,Speed of light in vacuum (exact),299792458", "VC-12,Material fit coefficient (dummy test value),-9.9999,coefficient,https://trc.nist.gov/cryogenics/materials/example,NIST fit,2026-10-11\nVC-11,Speed of light in vacuum (exact),299792458"), ["V-A05", "V-A03"]),
     ("Multiply one nominal budget loss (B19 delivery pipe friction) by 1.5 in pressure_budget.csv", mutate_csv_cell("pressure_budget.csv", ("item_id",), ("B19",), "dp_nom_kPa", "13.9"), ["V-C03", "V-I01"]),
     ("Put a contraction number into the unavailable thermal-contraction register", mutate_csv_cell("thermal_contraction.csv", ("category", "ui_ids"), ("THERMAL_CONTRACTION", "UI-34"), "note", "29.0"), ["V-A05", "V-I01"]),
     ("Silently default a support-conduction value in the heat-leak table", mutate_csv_cell("cryogenic_heat_leak.csv", ("scenario", "case"), ("S1", "nom"), "Q_support_W_m", "0.05"), ["V-A05", "V-I01"]),
